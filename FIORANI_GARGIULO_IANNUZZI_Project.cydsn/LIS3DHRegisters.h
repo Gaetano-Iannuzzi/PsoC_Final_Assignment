@@ -67,4 +67,7 @@
 #define LIS3DH_8G_CTRL_REG4           0xA0
 #define LIS3DH_16G_CTRL_REG4          0xB0
 
+//FIFO mode
+#define LIS3DH_FIFO_MODE_CTRL_REG     0x40
+
 /* [] END OF FILE */
