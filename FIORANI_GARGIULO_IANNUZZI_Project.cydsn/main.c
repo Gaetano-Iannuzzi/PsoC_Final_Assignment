@@ -9,6 +9,7 @@
  *
  * ========================================
 */
+#include "LIS3DHRegisters.h"
 #include "Menu_Functions.h"
 #include "project.h"
 
