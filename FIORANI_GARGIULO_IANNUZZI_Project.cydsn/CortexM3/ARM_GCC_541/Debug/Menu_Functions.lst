@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\aless\AppData\Local\Temp\cczMu9Sx.s 			page 1
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccl8WFMB.s 			page 1
 
 
    1              		.syntax unified
@@ -43,1442 +43,1581 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\cczMu9Sx.s 			page 1
   33              		.cfi_def_cfa_offset 8
   34              		.cfi_offset 4, -8
   35              		.cfi_offset 14, -4
-   8:Menu_Functions.c ****     ch_received = UART_GetChar(); // Leggo il dato ricevuto dall'UART.
+   8:Menu_Functions.c ****     if (TurnedON == 1)  ch_received = '?';
   36              		.loc 1 8 0
-  37 0002 FFF7FEFF 		bl	UART_GetChar
-  38              	.LVL0:
-  39 0006 584B     		ldr	r3, .L26
-  40 0008 1870     		strb	r0, [r3]
-   9:Menu_Functions.c ****     if ((ch_received == '?')||TurnedON==1)
-  41              		.loc 1 9 0
-  42 000a 3F28     		cmp	r0, #63
-  43 000c 04D0     		beq	.L2
-  44              		.loc 1 9 0 is_stmt 0 discriminator 1
-  45 000e 574B     		ldr	r3, .L26+4
-  46 0010 1B68     		ldr	r3, [r3]
-  47 0012 012B     		cmp	r3, #1
-  48 0014 40F0A680 		bne	.L1
-ARM GAS  C:\Users\aless\AppData\Local\Temp\cczMu9Sx.s 			page 2
+  37 0002 5B4B     		ldr	r3, .L32
+  38 0004 1B68     		ldr	r3, [r3]
+  39 0006 012B     		cmp	r3, #1
+  40 0008 03D1     		bne	.L2
+  41              		.loc 1 8 0 is_stmt 0 discriminator 1
+  42 000a 3F22     		movs	r2, #63
+  43 000c 594B     		ldr	r3, .L32+4
+  44 000e 1A70     		strb	r2, [r3]
+  45 0010 03E0     		b	.L3
+  46              	.L2:
+   9:Menu_Functions.c ****     else ch_received = UART_GetChar(); // Leggo il dato ricevuto dall'UART.
+  47              		.loc 1 9 0 is_stmt 1
+  48 0012 FFF7FEFF 		bl	UART_GetChar
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccl8WFMB.s 			page 2
 
 
-  49              	.L2:
-  10:Menu_Functions.c ****     {
-  11:Menu_Functions.c ****         
-  12:Menu_Functions.c ****         LoopContinue = 1;
-  50              		.loc 1 12 0 is_stmt 1
-  51 0018 0122     		movs	r2, #1
-  52 001a 554B     		ldr	r3, .L26+8
-  53 001c 1A60     		str	r2, [r3]
-  13:Menu_Functions.c **** 
-  14:Menu_Functions.c ****         while (LoopContinue == 1)
-  54              		.loc 1 14 0
-  55 001e 9CE0     		b	.L4
-  56              	.L24:
-  15:Menu_Functions.c ****         {
-  16:Menu_Functions.c ****             MenuActive = 1;
-  57              		.loc 1 16 0
-  58 0020 0122     		movs	r2, #1
-  59 0022 544B     		ldr	r3, .L26+12
-  60 0024 1A60     		str	r2, [r3]
-  17:Menu_Functions.c ****             while (MenuActive == 1)
-  61              		.loc 1 17 0
-  62 0026 93E0     		b	.L5
-  63              	.L23:
-  18:Menu_Functions.c ****                 {
-  19:Menu_Functions.c ****                     UART_PutString("*********    MENU: CHOOSE SETTINGS    *********\r\rf. Full Scal
-  64              		.loc 1 19 0
-  65 0028 5348     		ldr	r0, .L26+16
-  66 002a FFF7FEFF 		bl	UART_PutString
-  67              	.LVL1:
-  20:Menu_Functions.c ****                     UART_PutString("***********************************************\r\n");
-  68              		.loc 1 20 0
-  69 002e 5348     		ldr	r0, .L26+20
-  70 0030 FFF7FEFF 		bl	UART_PutString
-  71              	.LVL2:
-  21:Menu_Functions.c ****         
-  22:Menu_Functions.c ****         {
-  23:Menu_Functions.c ****             UART_ClearRxBuffer();
-  72              		.loc 1 23 0
-  73 0034 FFF7FEFF 		bl	UART_ClearRxBuffer
-  74              	.LVL3:
-  75              	.L6:
-  24:Menu_Functions.c ****             
-  25:Menu_Functions.c ****             while (!UART_GetRxBufferSize());
-  76              		.loc 1 25 0 discriminator 1
-  77 0038 FFF7FEFF 		bl	UART_GetRxBufferSize
-  78              	.LVL4:
-  79 003c 0028     		cmp	r0, #0
-  80 003e FBD0     		beq	.L6
-  26:Menu_Functions.c ****             
-  27:Menu_Functions.c ****             ch_received = UART_GetChar();
-  81              		.loc 1 27 0
-  82 0040 FFF7FEFF 		bl	UART_GetChar
-  83              	.LVL5:
-  84 0044 484B     		ldr	r3, .L26
-  85 0046 1870     		strb	r0, [r3]
-  28:Menu_Functions.c ****             
-  29:Menu_Functions.c ****             
-ARM GAS  C:\Users\aless\AppData\Local\Temp\cczMu9Sx.s 			page 3
+  49              	.LVL0:
+  50 0016 574B     		ldr	r3, .L32+4
+  51 0018 1870     		strb	r0, [r3]
+  52              	.L3:
+  10:Menu_Functions.c ****     
+  11:Menu_Functions.c ****     if (ch_received == '?')
+  53              		.loc 1 11 0
+  54 001a 564B     		ldr	r3, .L32+4
+  55 001c 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+  56 001e 3F2B     		cmp	r3, #63
+  57 0020 40F0A580 		bne	.L1
+  12:Menu_Functions.c ****     {
+  13:Menu_Functions.c ****         LoopContinue = 1;
+  58              		.loc 1 13 0
+  59 0024 0122     		movs	r2, #1
+  60 0026 544B     		ldr	r3, .L32+8
+  61 0028 1A60     		str	r2, [r3]
+  14:Menu_Functions.c ****         UART_ClearRxBuffer();
+  62              		.loc 1 14 0
+  63 002a FFF7FEFF 		bl	UART_ClearRxBuffer
+  64              	.LVL1:
+  15:Menu_Functions.c **** 
+  16:Menu_Functions.c ****         while (LoopContinue == 1)
+  65              		.loc 1 16 0
+  66 002e 99E0     		b	.L5
+  67              	.L30:
+  17:Menu_Functions.c ****         {
+  18:Menu_Functions.c ****             MenuActive = 1;
+  68              		.loc 1 18 0
+  69 0030 0122     		movs	r2, #1
+  70 0032 524B     		ldr	r3, .L32+12
+  71 0034 1A60     		str	r2, [r3]
+  19:Menu_Functions.c ****             while (MenuActive == 1)
+  72              		.loc 1 19 0
+  73 0036 90E0     		b	.L6
+  74              	.L29:
+  20:Menu_Functions.c ****                 {
+  21:Menu_Functions.c ****                     UART_PutString("*********    MENU: CHOOSE SETTINGS    *********\r\rf. Full Scal
+  75              		.loc 1 21 0
+  76 0038 5148     		ldr	r0, .L32+16
+  77 003a FFF7FEFF 		bl	UART_PutString
+  78              	.LVL2:
+  22:Menu_Functions.c ****                     UART_PutString("***********************************************\r\n");
+  79              		.loc 1 22 0
+  80 003e 5148     		ldr	r0, .L32+20
+  81 0040 FFF7FEFF 		bl	UART_PutString
+  82              	.LVL3:
+  83              	.L7:
+  23:Menu_Functions.c ****         
+  24:Menu_Functions.c ****                     
+  25:Menu_Functions.c ****                     while (!UART_GetRxBufferSize());
+  84              		.loc 1 25 0 discriminator 1
+  85 0044 FFF7FEFF 		bl	UART_GetRxBufferSize
+  86              	.LVL4:
+  87 0048 0028     		cmp	r0, #0
+  88 004a FBD0     		beq	.L7
+  26:Menu_Functions.c ****                     
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccl8WFMB.s 			page 3
 
 
-  30:Menu_Functions.c ****             
-  31:Menu_Functions.c ****             if (ch_received == 'f')
-  86              		.loc 1 31 0
-  87 0048 6628     		cmp	r0, #102
-  88 004a 32D1     		bne	.L7
-  32:Menu_Functions.c ****             {
-  33:Menu_Functions.c ****                     UART_PutString("*********    CHOOSE ACCELEROMETER FULL SCALE    *********\r\r1.
-  89              		.loc 1 33 0
-  90 004c 4C48     		ldr	r0, .L26+24
-  91 004e FFF7FEFF 		bl	UART_PutString
-  92              	.LVL6:
-  34:Menu_Functions.c ****                     UART_PutString("*********************************************************\r\n")
-  93              		.loc 1 34 0
-  94 0052 4C48     		ldr	r0, .L26+28
-  95 0054 FFF7FEFF 		bl	UART_PutString
-  96              	.LVL7:
-  97              	.L8:
-  35:Menu_Functions.c ****                 
-  36:Menu_Functions.c ****                     while(!UART_GetRxBufferSize());
-  98              		.loc 1 36 0 discriminator 1
-  99 0058 FFF7FEFF 		bl	UART_GetRxBufferSize
- 100              	.LVL8:
- 101 005c 0028     		cmp	r0, #0
- 102 005e FBD0     		beq	.L8
-  37:Menu_Functions.c ****                 
-  38:Menu_Functions.c ****                     ch_received = UART_GetChar();
- 103              		.loc 1 38 0
- 104 0060 FFF7FEFF 		bl	UART_GetChar
- 105              	.LVL9:
- 106 0064 404C     		ldr	r4, .L26
- 107 0066 2070     		strb	r0, [r4]
-  39:Menu_Functions.c ****                     
-  40:Menu_Functions.c ****                     UART_ClearRxBuffer();
- 108              		.loc 1 40 0
- 109 0068 FFF7FEFF 		bl	UART_ClearRxBuffer
- 110              	.LVL10:
-  41:Menu_Functions.c ****                     
-  42:Menu_Functions.c ****                     switch (ch_received)
- 111              		.loc 1 42 0
- 112 006c 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
- 113 006e 313B     		subs	r3, r3, #49
- 114 0070 032B     		cmp	r3, #3
- 115 0072 1ED8     		bhi	.L7
- 116 0074 DFE803F0 		tbb	[pc, r3]
- 117              	.L10:
- 118 0078 02       		.byte	(.L9-.L10)/2
- 119 0079 09       		.byte	(.L11-.L10)/2
- 120 007a 10       		.byte	(.L12-.L10)/2
- 121 007b 17       		.byte	(.L13-.L10)/2
- 122              		.p2align 1
- 123              	.L9:
-  43:Menu_Functions.c ****                     {
-  44:Menu_Functions.c ****                         case '1':
-  45:Menu_Functions.c ****                             UART_PutString("HAI SCELTO +-2g\r\r");
- 124              		.loc 1 45 0
- 125 007c 4248     		ldr	r0, .L26+32
- 126 007e FFF7FEFF 		bl	UART_PutString
-ARM GAS  C:\Users\aless\AppData\Local\Temp\cczMu9Sx.s 			page 4
+  27:Menu_Functions.c ****                     ch_received = UART_GetChar();                 
+  89              		.loc 1 27 0
+  90 004c FFF7FEFF 		bl	UART_GetChar
+  91              	.LVL5:
+  92 0050 484B     		ldr	r3, .L32+4
+  93 0052 1870     		strb	r0, [r3]
+  28:Menu_Functions.c ****                     
+  29:Menu_Functions.c ****                     if (ch_received == 'f')
+  94              		.loc 1 29 0
+  95 0054 6628     		cmp	r0, #102
+  96 0056 30D1     		bne	.L8
+  30:Menu_Functions.c ****                     {
+  31:Menu_Functions.c ****                         UART_PutString("*********    CHOOSE ACCELEROMETER FULL SCALE    *********\r
+  97              		.loc 1 31 0
+  98 0058 4B48     		ldr	r0, .L32+24
+  99 005a FFF7FEFF 		bl	UART_PutString
+ 100              	.LVL6:
+  32:Menu_Functions.c ****                         UART_PutString("*********************************************************\r
+ 101              		.loc 1 32 0
+ 102 005e 4B48     		ldr	r0, .L32+28
+ 103 0060 FFF7FEFF 		bl	UART_PutString
+ 104              	.LVL7:
+ 105              	.L9:
+  33:Menu_Functions.c ****                     
+  34:Menu_Functions.c ****                         while(!UART_GetRxBufferSize());
+ 106              		.loc 1 34 0 discriminator 1
+ 107 0064 FFF7FEFF 		bl	UART_GetRxBufferSize
+ 108              	.LVL8:
+ 109 0068 0028     		cmp	r0, #0
+ 110 006a FBD0     		beq	.L9
+  35:Menu_Functions.c ****                     
+  36:Menu_Functions.c ****                         ch_received = UART_GetChar();
+ 111              		.loc 1 36 0
+ 112 006c FFF7FEFF 		bl	UART_GetChar
+ 113              	.LVL9:
+ 114 0070 404C     		ldr	r4, .L32+4
+ 115 0072 2070     		strb	r0, [r4]
+  37:Menu_Functions.c ****                         
+  38:Menu_Functions.c ****                         UART_ClearRxBuffer();
+ 116              		.loc 1 38 0
+ 117 0074 FFF7FEFF 		bl	UART_ClearRxBuffer
+ 118              	.LVL10:
+  39:Menu_Functions.c ****                         
+  40:Menu_Functions.c ****                         switch (ch_received)
+ 119              		.loc 1 40 0
+ 120 0078 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
+ 121 007a 313B     		subs	r3, r3, #49
+ 122 007c 042B     		cmp	r3, #4
+ 123 007e 18D8     		bhi	.L10
+ 124 0080 DFE803F0 		tbb	[pc, r3]
+ 125              	.L12:
+ 126 0084 03       		.byte	(.L11-.L12)/2
+ 127 0085 07       		.byte	(.L13-.L12)/2
+ 128 0086 0B       		.byte	(.L14-.L12)/2
+ 129 0087 0F       		.byte	(.L15-.L12)/2
+ 130 0088 13       		.byte	(.L16-.L12)/2
+ 131 0089 00       		.p2align 1
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccl8WFMB.s 			page 4
 
 
- 127              	.LVL11:
-  46:Menu_Functions.c ****                             LoopContinue = 2;
- 128              		.loc 1 46 0
- 129 0082 0222     		movs	r2, #2
- 130 0084 3A4B     		ldr	r3, .L26+8
- 131 0086 1A60     		str	r2, [r3]
-  47:Menu_Functions.c ****                             break;
- 132              		.loc 1 47 0
- 133 0088 13E0     		b	.L7
- 134              	.L11:
-  48:Menu_Functions.c ****                         case '2':
-  49:Menu_Functions.c ****                             UART_PutString("HAI SCELTO +-4g\r\r");
- 135              		.loc 1 49 0
- 136 008a 4048     		ldr	r0, .L26+36
- 137 008c FFF7FEFF 		bl	UART_PutString
- 138              	.LVL12:
-  50:Menu_Functions.c ****                             LoopContinue = 2;
- 139              		.loc 1 50 0
- 140 0090 0222     		movs	r2, #2
- 141 0092 374B     		ldr	r3, .L26+8
- 142 0094 1A60     		str	r2, [r3]
-  51:Menu_Functions.c ****                             break;
- 143              		.loc 1 51 0
- 144 0096 0CE0     		b	.L7
- 145              	.L12:
-  52:Menu_Functions.c ****                         case '3':
-  53:Menu_Functions.c ****                             UART_PutString("HAI SCELTO +-8g\r\r");
- 146              		.loc 1 53 0
- 147 0098 3D48     		ldr	r0, .L26+40
- 148 009a FFF7FEFF 		bl	UART_PutString
- 149              	.LVL13:
-  54:Menu_Functions.c ****                             LoopContinue = 2;
- 150              		.loc 1 54 0
- 151 009e 0222     		movs	r2, #2
- 152 00a0 334B     		ldr	r3, .L26+8
- 153 00a2 1A60     		str	r2, [r3]
-  55:Menu_Functions.c ****                             break;
- 154              		.loc 1 55 0
- 155 00a4 05E0     		b	.L7
- 156              	.L13:
-  56:Menu_Functions.c ****                         case '4':
-  57:Menu_Functions.c ****                             UART_PutString("HAI SCELTO +-16g\r\r");
- 157              		.loc 1 57 0
- 158 00a6 3B48     		ldr	r0, .L26+44
- 159 00a8 FFF7FEFF 		bl	UART_PutString
- 160              	.LVL14:
-  58:Menu_Functions.c ****                             LoopContinue = 2;
- 161              		.loc 1 58 0
- 162 00ac 0222     		movs	r2, #2
- 163 00ae 304B     		ldr	r3, .L26+8
- 164 00b0 1A60     		str	r2, [r3]
- 165              	.L7:
-  59:Menu_Functions.c ****                             break;
+ 132              	.L11:
+  41:Menu_Functions.c ****                         {
+  42:Menu_Functions.c ****                              case '1':
+  43:Menu_Functions.c ****                                     UART_PutString("YOU CHOOSE +-2g\r\r");
+ 133              		.loc 1 43 0
+ 134 008a 4148     		ldr	r0, .L32+32
+ 135 008c FFF7FEFF 		bl	UART_PutString
+ 136              	.LVL11:
+  44:Menu_Functions.c ****                                         break;
+ 137              		.loc 1 44 0
+ 138 0090 63E0     		b	.L6
+ 139              	.L13:
+  45:Menu_Functions.c ****                                 case '2':
+  46:Menu_Functions.c ****                                     UART_PutString("YOU CHOOSE +-4g\r\r");
+ 140              		.loc 1 46 0
+ 141 0092 4048     		ldr	r0, .L32+36
+ 142 0094 FFF7FEFF 		bl	UART_PutString
+ 143              	.LVL12:
+  47:Menu_Functions.c ****                                     break;
+ 144              		.loc 1 47 0
+ 145 0098 5FE0     		b	.L6
+ 146              	.L14:
+  48:Menu_Functions.c ****                                 case '3':
+  49:Menu_Functions.c ****                                     UART_PutString("YOU CHOOSE +-8g\r\r");
+ 147              		.loc 1 49 0
+ 148 009a 3F48     		ldr	r0, .L32+40
+ 149 009c FFF7FEFF 		bl	UART_PutString
+ 150              	.LVL13:
+  50:Menu_Functions.c ****                                     break;
+ 151              		.loc 1 50 0
+ 152 00a0 5BE0     		b	.L6
+ 153              	.L15:
+  51:Menu_Functions.c ****                                 case '4':
+  52:Menu_Functions.c ****                                     UART_PutString("YOU CHOOSE +-16g\r\r");
+ 154              		.loc 1 52 0
+ 155 00a2 3E48     		ldr	r0, .L32+44
+ 156 00a4 FFF7FEFF 		bl	UART_PutString
+ 157              	.LVL14:
+  53:Menu_Functions.c ****                                     break;
+ 158              		.loc 1 53 0
+ 159 00a8 57E0     		b	.L6
+ 160              	.L16:
+  54:Menu_Functions.c ****                                 case '5':
+  55:Menu_Functions.c ****                                     UART_PutString("GOING BACK TO MENU\r\r");
+ 161              		.loc 1 55 0
+ 162 00aa 3D48     		ldr	r0, .L32+48
+ 163 00ac FFF7FEFF 		bl	UART_PutString
+ 164              	.LVL15:
+  56:Menu_Functions.c ****                                     break;
+ 165              		.loc 1 56 0
+ 166 00b0 53E0     		b	.L6
+ 167              	.L10:
+  57:Menu_Functions.c ****                                 default:
+  58:Menu_Functions.c ****                                     UART_PutString("INVALID INPUT, GOING BACK TO MENU\r\r\r\r\r\r")
+ 168              		.loc 1 58 0
+ 169 00b2 3C48     		ldr	r0, .L32+52
+ 170 00b4 FFF7FEFF 		bl	UART_PutString
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccl8WFMB.s 			page 5
+
+
+ 171              	.LVL16:
+ 172 00b8 4FE0     		b	.L6
+ 173              	.L8:
+  59:Menu_Functions.c ****                         }
   60:Menu_Functions.c ****                     }
-  61:Menu_Functions.c ****             }
-  62:Menu_Functions.c ****             
-  63:Menu_Functions.c ****             if (ch_received == 'p')
-ARM GAS  C:\Users\aless\AppData\Local\Temp\cczMu9Sx.s 			page 5
+  61:Menu_Functions.c ****                 
+  62:Menu_Functions.c ****                     else if (ch_received == 'p')
+ 174              		.loc 1 62 0
+ 175 00ba 7028     		cmp	r0, #112
+ 176 00bc 30D1     		bne	.L18
+  63:Menu_Functions.c ****                     {
+  64:Menu_Functions.c ****                         UART_PutString("*********    CHOOSE ACCELEROMETER SAMPLING FREQUENCY    ***
+ 177              		.loc 1 64 0
+ 178 00be 3A48     		ldr	r0, .L32+56
+ 179 00c0 FFF7FEFF 		bl	UART_PutString
+ 180              	.LVL17:
+  65:Menu_Functions.c ****                         UART_PutString("***********************************************************
+ 181              		.loc 1 65 0
+ 182 00c4 3948     		ldr	r0, .L32+60
+ 183 00c6 FFF7FEFF 		bl	UART_PutString
+ 184              	.LVL18:
+ 185              	.L19:
+  66:Menu_Functions.c ****                         
+  67:Menu_Functions.c ****                         while(!UART_GetRxBufferSize());
+ 186              		.loc 1 67 0 discriminator 1
+ 187 00ca FFF7FEFF 		bl	UART_GetRxBufferSize
+ 188              	.LVL19:
+ 189 00ce 0028     		cmp	r0, #0
+ 190 00d0 FBD0     		beq	.L19
+  68:Menu_Functions.c ****                         
+  69:Menu_Functions.c ****                         ch_received = UART_GetChar();
+ 191              		.loc 1 69 0
+ 192 00d2 FFF7FEFF 		bl	UART_GetChar
+ 193              	.LVL20:
+ 194 00d6 274C     		ldr	r4, .L32+4
+ 195 00d8 2070     		strb	r0, [r4]
+  70:Menu_Functions.c ****                         
+  71:Menu_Functions.c ****                         UART_ClearRxBuffer();
+ 196              		.loc 1 71 0
+ 197 00da FFF7FEFF 		bl	UART_ClearRxBuffer
+ 198              	.LVL21:
+  72:Menu_Functions.c **** 
+  73:Menu_Functions.c ****                         switch (ch_received)
+ 199              		.loc 1 73 0
+ 200 00de 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
+ 201 00e0 313B     		subs	r3, r3, #49
+ 202 00e2 042B     		cmp	r3, #4
+ 203 00e4 18D8     		bhi	.L20
+ 204 00e6 DFE803F0 		tbb	[pc, r3]
+ 205              	.L22:
+ 206 00ea 03       		.byte	(.L21-.L22)/2
+ 207 00eb 07       		.byte	(.L23-.L22)/2
+ 208 00ec 0B       		.byte	(.L24-.L22)/2
+ 209 00ed 0F       		.byte	(.L25-.L22)/2
+ 210 00ee 13       		.byte	(.L26-.L22)/2
+ 211 00ef 00       		.p2align 1
+ 212              	.L21:
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccl8WFMB.s 			page 6
 
 
- 166              		.loc 1 63 0
- 167 00b2 2D4B     		ldr	r3, .L26
- 168 00b4 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 169 00b6 702B     		cmp	r3, #112
- 170 00b8 32D1     		bne	.L14
-  64:Menu_Functions.c ****             {
-  65:Menu_Functions.c ****                 UART_PutString("*********    CHOOSE ACCELEROMETER SAMPLING FREQUENCY    *********\r
- 171              		.loc 1 65 0
- 172 00ba 3748     		ldr	r0, .L26+48
- 173 00bc FFF7FEFF 		bl	UART_PutString
- 174              	.LVL15:
-  66:Menu_Functions.c ****                 UART_PutString("*****************************************************************\r
- 175              		.loc 1 66 0
- 176 00c0 3648     		ldr	r0, .L26+52
- 177 00c2 FFF7FEFF 		bl	UART_PutString
- 178              	.LVL16:
- 179              	.L15:
-  67:Menu_Functions.c ****                 
-  68:Menu_Functions.c ****                 while(!UART_GetRxBufferSize());
- 180              		.loc 1 68 0 discriminator 1
- 181 00c6 FFF7FEFF 		bl	UART_GetRxBufferSize
- 182              	.LVL17:
- 183 00ca 0028     		cmp	r0, #0
- 184 00cc FBD0     		beq	.L15
-  69:Menu_Functions.c ****                 
-  70:Menu_Functions.c ****                 ch_received = UART_GetChar();
- 185              		.loc 1 70 0
- 186 00ce FFF7FEFF 		bl	UART_GetChar
- 187              	.LVL18:
- 188 00d2 254C     		ldr	r4, .L26
- 189 00d4 2070     		strb	r0, [r4]
-  71:Menu_Functions.c ****                 
-  72:Menu_Functions.c ****                 UART_ClearRxBuffer();
- 190              		.loc 1 72 0
- 191 00d6 FFF7FEFF 		bl	UART_ClearRxBuffer
- 192              	.LVL19:
-  73:Menu_Functions.c **** 
-  74:Menu_Functions.c ****                 switch (ch_received)
- 193              		.loc 1 74 0
- 194 00da 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
- 195 00dc 313B     		subs	r3, r3, #49
- 196 00de 032B     		cmp	r3, #3
- 197 00e0 1ED8     		bhi	.L14
- 198 00e2 DFE803F0 		tbb	[pc, r3]
- 199              	.L17:
- 200 00e6 02       		.byte	(.L16-.L17)/2
- 201 00e7 09       		.byte	(.L18-.L17)/2
- 202 00e8 10       		.byte	(.L19-.L17)/2
- 203 00e9 17       		.byte	(.L20-.L17)/2
- 204              		.p2align 1
- 205              	.L16:
-  75:Menu_Functions.c ****                 {
-  76:Menu_Functions.c ****                     case '1':
-  77:Menu_Functions.c ****                         UART_PutString("HAI SCELTO 1 Hz\r\r");
- 206              		.loc 1 77 0
- 207 00ea 2D48     		ldr	r0, .L26+56
- 208 00ec FFF7FEFF 		bl	UART_PutString
-ARM GAS  C:\Users\aless\AppData\Local\Temp\cczMu9Sx.s 			page 6
+  74:Menu_Functions.c ****                         {
+  75:Menu_Functions.c ****                             case '1':
+  76:Menu_Functions.c ****                                 UART_PutString("YOU CHOOSE 1 Hz\r\r");
+ 213              		.loc 1 76 0
+ 214 00f0 2F48     		ldr	r0, .L32+64
+ 215 00f2 FFF7FEFF 		bl	UART_PutString
+ 216              	.LVL22:
+  77:Menu_Functions.c ****                                 break;
+ 217              		.loc 1 77 0
+ 218 00f6 30E0     		b	.L6
+ 219              	.L23:
+  78:Menu_Functions.c ****                             case '2':
+  79:Menu_Functions.c ****                                 UART_PutString("YOU CHOOSE 10 Hz\r\r");
+ 220              		.loc 1 79 0
+ 221 00f8 2E48     		ldr	r0, .L32+68
+ 222 00fa FFF7FEFF 		bl	UART_PutString
+ 223              	.LVL23:
+  80:Menu_Functions.c ****                                 break;
+ 224              		.loc 1 80 0
+ 225 00fe 2CE0     		b	.L6
+ 226              	.L24:
+  81:Menu_Functions.c ****                             case '3':
+  82:Menu_Functions.c ****                                 UART_PutString("YOU CHOOSE 25 Hz\r\r");
+ 227              		.loc 1 82 0
+ 228 0100 2D48     		ldr	r0, .L32+72
+ 229 0102 FFF7FEFF 		bl	UART_PutString
+ 230              	.LVL24:
+  83:Menu_Functions.c ****                                 break;
+ 231              		.loc 1 83 0
+ 232 0106 28E0     		b	.L6
+ 233              	.L25:
+  84:Menu_Functions.c ****                             case '4':
+  85:Menu_Functions.c ****                                 UART_PutString("YOU CHOOSE 50 Hz\r\r");
+ 234              		.loc 1 85 0
+ 235 0108 2C48     		ldr	r0, .L32+76
+ 236 010a FFF7FEFF 		bl	UART_PutString
+ 237              	.LVL25:
+  86:Menu_Functions.c ****                                 break;
+ 238              		.loc 1 86 0
+ 239 010e 24E0     		b	.L6
+ 240              	.L26:
+  87:Menu_Functions.c ****                             case '5':
+  88:Menu_Functions.c ****                                 UART_PutString("GOING BACK TO MENU\r\r");
+ 241              		.loc 1 88 0
+ 242 0110 2348     		ldr	r0, .L32+48
+ 243 0112 FFF7FEFF 		bl	UART_PutString
+ 244              	.LVL26:
+  89:Menu_Functions.c ****                                 break;
+ 245              		.loc 1 89 0
+ 246 0116 20E0     		b	.L6
+ 247              	.L20:
+  90:Menu_Functions.c ****                             default:
+  91:Menu_Functions.c ****                                 UART_PutString("INVALID INPUT, GOING BACK TO MENU\r\r\r\r\r\r");
+ 248              		.loc 1 91 0
+ 249 0118 2248     		ldr	r0, .L32+52
+ 250 011a FFF7FEFF 		bl	UART_PutString
+ 251              	.LVL27:
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccl8WFMB.s 			page 7
 
 
- 209              	.LVL20:
-  78:Menu_Functions.c ****                         LoopContinue = 2;
- 210              		.loc 1 78 0
- 211 00f0 0222     		movs	r2, #2
- 212 00f2 1F4B     		ldr	r3, .L26+8
- 213 00f4 1A60     		str	r2, [r3]
-  79:Menu_Functions.c ****                         break;
- 214              		.loc 1 79 0
- 215 00f6 13E0     		b	.L14
- 216              	.L18:
-  80:Menu_Functions.c ****                     case '2':
-  81:Menu_Functions.c ****                         UART_PutString("HAI SCELTO 10 Hz\r\r");
- 217              		.loc 1 81 0
- 218 00f8 2A48     		ldr	r0, .L26+60
- 219 00fa FFF7FEFF 		bl	UART_PutString
- 220              	.LVL21:
-  82:Menu_Functions.c ****                         LoopContinue = 2;
- 221              		.loc 1 82 0
- 222 00fe 0222     		movs	r2, #2
- 223 0100 1B4B     		ldr	r3, .L26+8
- 224 0102 1A60     		str	r2, [r3]
-  83:Menu_Functions.c ****                         break;
- 225              		.loc 1 83 0
- 226 0104 0CE0     		b	.L14
- 227              	.L19:
-  84:Menu_Functions.c ****                     case '3':
-  85:Menu_Functions.c ****                         UART_PutString("HAI SCELTO 25 Hz\r\r");
- 228              		.loc 1 85 0
- 229 0106 2848     		ldr	r0, .L26+64
- 230 0108 FFF7FEFF 		bl	UART_PutString
- 231              	.LVL22:
-  86:Menu_Functions.c ****                         LoopContinue = 2;
- 232              		.loc 1 86 0
- 233 010c 0222     		movs	r2, #2
- 234 010e 184B     		ldr	r3, .L26+8
- 235 0110 1A60     		str	r2, [r3]
-  87:Menu_Functions.c ****                         break;
- 236              		.loc 1 87 0
- 237 0112 05E0     		b	.L14
- 238              	.L20:
-  88:Menu_Functions.c ****                     case '4':
-  89:Menu_Functions.c ****                         UART_PutString("HAI SCELTO 50 Hz\r\r");
- 239              		.loc 1 89 0
- 240 0114 2548     		ldr	r0, .L26+68
- 241 0116 FFF7FEFF 		bl	UART_PutString
- 242              	.LVL23:
-  90:Menu_Functions.c ****                         LoopContinue = 2;
- 243              		.loc 1 90 0
- 244 011a 0222     		movs	r2, #2
- 245 011c 144B     		ldr	r3, .L26+8
- 246 011e 1A60     		str	r2, [r3]
- 247              	.L14:
-  91:Menu_Functions.c ****                         break;
-  92:Menu_Functions.c ****                 }
-  93:Menu_Functions.c ****             }
-  94:Menu_Functions.c ****             if ((ch_received == 'b') || (ch_received == 's'))
- 248              		.loc 1 94 0
-ARM GAS  C:\Users\aless\AppData\Local\Temp\cczMu9Sx.s 			page 7
+ 252 011e 1CE0     		b	.L6
+ 253              	.L18:
+  92:Menu_Functions.c ****                         }
+  93:Menu_Functions.c ****                     }
+  94:Menu_Functions.c ****                     else if ((ch_received == 'b') || (ch_received == 's'))
+ 254              		.loc 1 94 0
+ 255 0120 6228     		cmp	r0, #98
+ 256 0122 01D0     		beq	.L27
+ 257              		.loc 1 94 0 is_stmt 0 discriminator 1
+ 258 0124 7328     		cmp	r0, #115
+ 259 0126 12D1     		bne	.L28
+ 260              	.L27:
+  95:Menu_Functions.c ****                     {
+  96:Menu_Functions.c ****                         UART_PutString("*********    FINE ESEMPIO    *********\r");
+ 261              		.loc 1 96 0 is_stmt 1
+ 262 0128 2548     		ldr	r0, .L32+80
+ 263 012a FFF7FEFF 		bl	UART_PutString
+ 264              	.LVL28:
+  97:Menu_Functions.c ****                         UART_PutString("***********************************************************
+ 265              		.loc 1 97 0
+ 266 012e 2548     		ldr	r0, .L32+84
+ 267 0130 FFF7FEFF 		bl	UART_PutString
+ 268              	.LVL29:
+  98:Menu_Functions.c ****                         LoopContinue = 0;
+ 269              		.loc 1 98 0
+ 270 0134 0023     		movs	r3, #0
+ 271 0136 104A     		ldr	r2, .L32+8
+ 272 0138 1360     		str	r3, [r2]
+  99:Menu_Functions.c ****                         MenuActive = 0;
+ 273              		.loc 1 99 0
+ 274 013a 104A     		ldr	r2, .L32+12
+ 275 013c 1360     		str	r3, [r2]
+ 100:Menu_Functions.c ****                         if (TurnedON == 1) TurnedON = 0;
+ 276              		.loc 1 100 0
+ 277 013e 0C4B     		ldr	r3, .L32
+ 278 0140 1B68     		ldr	r3, [r3]
+ 279 0142 012B     		cmp	r3, #1
+ 280 0144 09D1     		bne	.L6
+ 281              		.loc 1 100 0 is_stmt 0 discriminator 1
+ 282 0146 0022     		movs	r2, #0
+ 283 0148 094B     		ldr	r3, .L32
+ 284 014a 1A60     		str	r2, [r3]
+ 285 014c 05E0     		b	.L6
+ 286              	.L28:
+ 101:Menu_Functions.c ****                     }
+ 102:Menu_Functions.c ****                     else
+ 103:Menu_Functions.c ****                     {
+ 104:Menu_Functions.c ****                         UART_PutString("*********    INVALID INPUT, GOING BACK TO MENU    *********
+ 287              		.loc 1 104 0 is_stmt 1
+ 288 014e 1E48     		ldr	r0, .L32+88
+ 289 0150 FFF7FEFF 		bl	UART_PutString
+ 290              	.LVL30:
+ 105:Menu_Functions.c ****                         UART_PutString("***********************************************************
+ 291              		.loc 1 105 0
+ 292 0154 1D48     		ldr	r0, .L32+92
+ 293 0156 FFF7FEFF 		bl	UART_PutString
+ 294              	.LVL31:
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccl8WFMB.s 			page 8
 
 
- 249 0120 114B     		ldr	r3, .L26
- 250 0122 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 251 0124 622B     		cmp	r3, #98
- 252 0126 01D0     		beq	.L21
- 253              		.loc 1 94 0 is_stmt 0 discriminator 1
- 254 0128 732B     		cmp	r3, #115
- 255 012a 11D1     		bne	.L5
- 256              	.L21:
-  95:Menu_Functions.c ****             {
-  96:Menu_Functions.c ****                 UART_PutString("*********    FINE ESEMPIO    *********\r");
- 257              		.loc 1 96 0 is_stmt 1
- 258 012c 2048     		ldr	r0, .L26+72
- 259 012e FFF7FEFF 		bl	UART_PutString
- 260              	.LVL24:
-  97:Menu_Functions.c ****                 UART_PutString("*****************************************************************\r
- 261              		.loc 1 97 0
- 262 0132 2048     		ldr	r0, .L26+76
- 263 0134 FFF7FEFF 		bl	UART_PutString
- 264              	.LVL25:
-  98:Menu_Functions.c ****                 LoopContinue = 0;
- 265              		.loc 1 98 0
- 266 0138 0023     		movs	r3, #0
- 267 013a 0D4A     		ldr	r2, .L26+8
- 268 013c 1360     		str	r3, [r2]
-  99:Menu_Functions.c ****                 MenuActive = 0;
- 269              		.loc 1 99 0
- 270 013e 0D4A     		ldr	r2, .L26+12
- 271 0140 1360     		str	r3, [r2]
- 100:Menu_Functions.c ****                 if (TurnedON == 1) TurnedON = 0;
- 272              		.loc 1 100 0
- 273 0142 0A4B     		ldr	r3, .L26+4
- 274 0144 1B68     		ldr	r3, [r3]
- 275 0146 012B     		cmp	r3, #1
- 276 0148 02D1     		bne	.L5
- 277              		.loc 1 100 0 is_stmt 0 discriminator 1
- 278 014a 0022     		movs	r2, #0
- 279 014c 074B     		ldr	r3, .L26+4
- 280 014e 1A60     		str	r2, [r3]
- 281              	.L5:
-  17:Menu_Functions.c ****                 {
- 282              		.loc 1 17 0 is_stmt 1
- 283 0150 084B     		ldr	r3, .L26+12
- 284 0152 1B68     		ldr	r3, [r3]
- 285 0154 012B     		cmp	r3, #1
- 286 0156 3FF467AF 		beq	.L23
- 287              	.L4:
-  14:Menu_Functions.c ****         {
- 288              		.loc 1 14 0
- 289 015a 054B     		ldr	r3, .L26+8
- 290 015c 1B68     		ldr	r3, [r3]
- 291 015e 012B     		cmp	r3, #1
- 292 0160 3FF45EAF 		beq	.L24
- 293              	.L1:
- 294 0164 10BD     		pop	{r4, pc}
- 295              	.L27:
- 296 0166 00BF     		.align	2
- 297              	.L26:
-ARM GAS  C:\Users\aless\AppData\Local\Temp\cczMu9Sx.s 			page 8
+ 295              	.L6:
+  19:Menu_Functions.c ****                 {
+ 296              		.loc 1 19 0
+ 297 015a 084B     		ldr	r3, .L32+12
+ 298 015c 1B68     		ldr	r3, [r3]
+ 299 015e 012B     		cmp	r3, #1
+ 300 0160 3FF46AAF 		beq	.L29
+ 301              	.L5:
+  16:Menu_Functions.c ****         {
+ 302              		.loc 1 16 0
+ 303 0164 044B     		ldr	r3, .L32+8
+ 304 0166 1B68     		ldr	r3, [r3]
+ 305 0168 012B     		cmp	r3, #1
+ 306 016a 3FF461AF 		beq	.L30
+ 307              	.L1:
+ 308 016e 10BD     		pop	{r4, pc}
+ 309              	.L33:
+ 310              		.align	2
+ 311              	.L32:
+ 312 0170 00000000 		.word	TurnedON
+ 313 0174 00000000 		.word	ch_received
+ 314 0178 00000000 		.word	LoopContinue
+ 315 017c 00000000 		.word	MenuActive
+ 316 0180 00000000 		.word	.LC0
+ 317 0184 84000000 		.word	.LC1
+ 318 0188 B8000000 		.word	.LC2
+ 319 018c 28010000 		.word	.LC3
+ 320 0190 64010000 		.word	.LC4
+ 321 0194 78010000 		.word	.LC5
+ 322 0198 8C010000 		.word	.LC6
+ 323 019c A0010000 		.word	.LC7
+ 324 01a0 B4010000 		.word	.LC8
+ 325 01a4 CC010000 		.word	.LC9
+ 326 01a8 F4010000 		.word	.LC10
+ 327 01ac 6C020000 		.word	.LC11
+ 328 01b0 B0020000 		.word	.LC12
+ 329 01b4 C4020000 		.word	.LC13
+ 330 01b8 D8020000 		.word	.LC14
+ 331 01bc EC020000 		.word	.LC15
+ 332 01c0 00030000 		.word	.LC16
+ 333 01c4 28030000 		.word	.LC17
+ 334 01c8 70030000 		.word	.LC18
+ 335 01cc B0030000 		.word	.LC19
+ 336              		.cfi_endproc
+ 337              	.LFE64:
+ 338              		.size	Custom_ISR_MENU, .-Custom_ISR_MENU
+ 339              		.comm	MenuActive,4,4
+ 340              		.comm	LoopContinue,4,4
+ 341              		.comm	ch_received,1,1
+ 342              		.comm	PacketReadyFlag,1,1
+ 343              		.comm	DataBuffer,4,4
+ 344              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 345              		.align	2
+ 346              	.LC0:
+ 347 0000 2A2A2A2A 		.ascii	"*********    MENU: CHOOSE SETTINGS    *********\015"
+ 347      2A2A2A2A 
+ 347      2A202020 
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccl8WFMB.s 			page 9
 
 
- 298 0168 00000000 		.word	ch_received
- 299 016c 00000000 		.word	TurnedON
- 300 0170 00000000 		.word	LoopContinue
- 301 0174 00000000 		.word	MenuActive
- 302 0178 00000000 		.word	.LC0
- 303 017c 84000000 		.word	.LC1
- 304 0180 B8000000 		.word	.LC2
- 305 0184 1C010000 		.word	.LC3
- 306 0188 58010000 		.word	.LC4
- 307 018c 6C010000 		.word	.LC5
- 308 0190 80010000 		.word	.LC6
- 309 0194 94010000 		.word	.LC7
- 310 0198 A8010000 		.word	.LC8
- 311 019c 14020000 		.word	.LC9
- 312 01a0 58020000 		.word	.LC10
- 313 01a4 6C020000 		.word	.LC11
- 314 01a8 80020000 		.word	.LC12
- 315 01ac 94020000 		.word	.LC13
- 316 01b0 A8020000 		.word	.LC14
- 317 01b4 D0020000 		.word	.LC15
- 318              		.cfi_endproc
- 319              	.LFE64:
- 320              		.size	Custom_ISR_MENU, .-Custom_ISR_MENU
- 321              		.comm	MenuActive,4,4
- 322              		.comm	LoopContinue,4,4
- 323              		.comm	ch_received,1,1
- 324              		.comm	PacketReadyFlag,1,1
- 325              		.comm	DataBuffer,4,4
- 326              		.section	.rodata.str1.4,"aMS",%progbits,1
- 327              		.align	2
- 328              	.LC0:
- 329 0000 2A2A2A2A 		.ascii	"*********    MENU: CHOOSE SETTINGS    *********\015"
- 329      2A2A2A2A 
- 329      2A202020 
- 329      204D454E 
- 329      553A2043 
- 330 0030 0D662E20 		.ascii	"\015f. Full Scale\015\012p. Sampling Freq\015\012b."
- 330      46756C6C 
- 330      20536361 
- 330      6C650D0A 
- 330      702E2053 
- 331 0054 20537461 		.ascii	" Start Registration\015\012s. Stop Registration\015"
- 331      72742052 
- 331      65676973 
- 331      74726174 
- 331      696F6E0D 
- 332 007e 0A0D00   		.ascii	"\012\015\000"
- 333 0081 000000   		.space	3
- 334              	.LC1:
- 335 0084 2A2A2A2A 		.ascii	"***********************************************\015"
- 335      2A2A2A2A 
- 335      2A2A2A2A 
- 335      2A2A2A2A 
- 335      2A2A2A2A 
- 336 00b4 0A00     		.ascii	"\012\000"
- 337 00b6 0000     		.space	2
- 338              	.LC2:
-ARM GAS  C:\Users\aless\AppData\Local\Temp\cczMu9Sx.s 			page 9
+ 347      204D454E 
+ 347      553A2043 
+ 348 0030 0D662E20 		.ascii	"\015f. Full Scale\015\012p. Sampling Freq\015\012b."
+ 348      46756C6C 
+ 348      20536361 
+ 348      6C650D0A 
+ 348      702E2053 
+ 349 0054 20537461 		.ascii	" Start Registration\015\012s. Stop Registration\015"
+ 349      72742052 
+ 349      65676973 
+ 349      74726174 
+ 349      696F6E0D 
+ 350 007e 0A0D00   		.ascii	"\012\015\000"
+ 351 0081 000000   		.space	3
+ 352              	.LC1:
+ 353 0084 2A2A2A2A 		.ascii	"***********************************************\015"
+ 353      2A2A2A2A 
+ 353      2A2A2A2A 
+ 353      2A2A2A2A 
+ 353      2A2A2A2A 
+ 354 00b4 0A00     		.ascii	"\012\000"
+ 355 00b6 0000     		.space	2
+ 356              	.LC2:
+ 357 00b8 2A2A2A2A 		.ascii	"*********    CHOOSE ACCELEROMETER FULL SCALE    ***"
+ 357      2A2A2A2A 
+ 357      2A202020 
+ 357      2043484F 
+ 357      4F534520 
+ 358 00eb 2A2A2A2A 		.ascii	"******\015\0151. +-2g\015\0122. +-4g\015\0123. +-8g"
+ 358      2A2A0D0D 
+ 358      312E202B 
+ 358      2D32670D 
+ 358      0A322E20 
+ 359 010c 0D0A342E 		.ascii	"\015\0124. +-16g\015\0125. Go back\015\012\015\000"
+ 359      202B2D31 
+ 359      36670D0A 
+ 359      352E2047 
+ 359      6F206261 
+ 360 0126 0000     		.space	2
+ 361              	.LC3:
+ 362 0128 2A2A2A2A 		.ascii	"***************************************************"
+ 362      2A2A2A2A 
+ 362      2A2A2A2A 
+ 362      2A2A2A2A 
+ 362      2A2A2A2A 
+ 363 015b 2A2A2A2A 		.ascii	"******\015\012\000"
+ 363      2A2A0D0A 
+ 363      00
+ 364              	.LC4:
+ 365 0164 594F5520 		.ascii	"YOU CHOOSE +-2g\015\015\000"
+ 365      43484F4F 
+ 365      5345202B 
+ 365      2D32670D 
+ 365      0D00
+ 366 0176 0000     		.space	2
+ 367              	.LC5:
+ 368 0178 594F5520 		.ascii	"YOU CHOOSE +-4g\015\015\000"
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccl8WFMB.s 			page 10
 
 
- 339 00b8 2A2A2A2A 		.ascii	"*********    CHOOSE ACCELEROMETER FULL SCALE    ***"
- 339      2A2A2A2A 
- 339      2A202020 
- 339      2043484F 
- 339      4F534520 
- 340 00eb 2A2A2A2A 		.ascii	"******\015\0151. +-2g\015\0122. +-4g\015\0123. +-8g"
- 340      2A2A0D0D 
- 340      312E202B 
- 340      2D32670D 
- 340      0A322E20 
- 341 010c 0D0A342E 		.ascii	"\015\0124. +-16g\015\012\015\000"
- 341      202B2D31 
- 341      36670D0A 
- 341      0D00
- 342 011a 0000     		.space	2
- 343              	.LC3:
- 344 011c 2A2A2A2A 		.ascii	"***************************************************"
- 344      2A2A2A2A 
- 344      2A2A2A2A 
- 344      2A2A2A2A 
- 344      2A2A2A2A 
- 345 014f 2A2A2A2A 		.ascii	"******\015\012\000"
- 345      2A2A0D0A 
- 345      00
- 346              	.LC4:
- 347 0158 48414920 		.ascii	"HAI SCELTO +-2g\015\015\000"
- 347      5343454C 
- 347      544F202B 
- 347      2D32670D 
- 347      0D00
- 348 016a 0000     		.space	2
- 349              	.LC5:
- 350 016c 48414920 		.ascii	"HAI SCELTO +-4g\015\015\000"
- 350      5343454C 
- 350      544F202B 
- 350      2D34670D 
- 350      0D00
- 351 017e 0000     		.space	2
- 352              	.LC6:
- 353 0180 48414920 		.ascii	"HAI SCELTO +-8g\015\015\000"
- 353      5343454C 
- 353      544F202B 
- 353      2D38670D 
- 353      0D00
- 354 0192 0000     		.space	2
- 355              	.LC7:
- 356 0194 48414920 		.ascii	"HAI SCELTO +-16g\015\015\000"
- 356      5343454C 
- 356      544F202B 
- 356      2D313667 
- 356      0D0D00
- 357 01a7 00       		.space	1
- 358              	.LC8:
- 359 01a8 2A2A2A2A 		.ascii	"*********    CHOOSE ACCELEROMETER SAMPLING FREQUENC"
- 359      2A2A2A2A 
- 359      2A202020 
- 359      2043484F 
-ARM GAS  C:\Users\aless\AppData\Local\Temp\cczMu9Sx.s 			page 10
+ 368      43484F4F 
+ 368      5345202B 
+ 368      2D34670D 
+ 368      0D00
+ 369 018a 0000     		.space	2
+ 370              	.LC6:
+ 371 018c 594F5520 		.ascii	"YOU CHOOSE +-8g\015\015\000"
+ 371      43484F4F 
+ 371      5345202B 
+ 371      2D38670D 
+ 371      0D00
+ 372 019e 0000     		.space	2
+ 373              	.LC7:
+ 374 01a0 594F5520 		.ascii	"YOU CHOOSE +-16g\015\015\000"
+ 374      43484F4F 
+ 374      5345202B 
+ 374      2D313667 
+ 374      0D0D00
+ 375 01b3 00       		.space	1
+ 376              	.LC8:
+ 377 01b4 474F494E 		.ascii	"GOING BACK TO MENU\015\015\000"
+ 377      47204241 
+ 377      434B2054 
+ 377      4F204D45 
+ 377      4E550D0D 
+ 378 01c9 000000   		.space	3
+ 379              	.LC9:
+ 380 01cc 494E5641 		.ascii	"INVALID INPUT, GOING BACK TO MENU\015\015\015\015\015"
+ 380      4C494420 
+ 380      494E5055 
+ 380      542C2047 
+ 380      4F494E47 
+ 381 01f2 0D00     		.ascii	"\015\000"
+ 382              	.LC10:
+ 383 01f4 2A2A2A2A 		.ascii	"*********    CHOOSE ACCELEROMETER SAMPLING FREQUENC"
+ 383      2A2A2A2A 
+ 383      2A202020 
+ 383      2043484F 
+ 383      4F534520 
+ 384 0227 59202020 		.ascii	"Y    *********\015\0151. 1 Hz\015\0122. 10 Hz\015\012"
+ 384      202A2A2A 
+ 384      2A2A2A2A 
+ 384      2A2A0D0D 
+ 384      312E2031 
+ 385 024a 332E2032 		.ascii	"3. 25 Hz\015\0124. 50 Hz\015\0125. Go back\015\000"
+ 385      3520487A 
+ 385      0D0A342E 
+ 385      20353020 
+ 385      487A0D0A 
+ 386 026a 0000     		.space	2
+ 387              	.LC11:
+ 388 026c 2A2A2A2A 		.ascii	"***************************************************"
+ 388      2A2A2A2A 
+ 388      2A2A2A2A 
+ 388      2A2A2A2A 
+ 388      2A2A2A2A 
+ 389 029f 2A2A2A2A 		.ascii	"**************\015\012\000"
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccl8WFMB.s 			page 11
 
 
- 359      4F534520 
- 360 01db 59202020 		.ascii	"Y    *********\015\0151. 1 Hz\015\0122. 10 Hz\015\012"
- 360      202A2A2A 
- 360      2A2A2A2A 
- 360      2A2A0D0D 
- 360      312E2031 
- 361 01fe 332E2032 		.ascii	"3. 25 Hz\015\0124. 50 Hz\015\012\015\000"
- 361      3520487A 
- 361      0D0A342E 
- 361      20353020 
- 361      487A0D0A 
- 362              	.LC9:
- 363 0214 2A2A2A2A 		.ascii	"***************************************************"
- 363      2A2A2A2A 
- 363      2A2A2A2A 
- 363      2A2A2A2A 
- 363      2A2A2A2A 
- 364 0247 2A2A2A2A 		.ascii	"**************\015\012\000"
- 364      2A2A2A2A 
- 364      2A2A2A2A 
- 364      2A2A0D0A 
- 364      00
- 365              	.LC10:
- 366 0258 48414920 		.ascii	"HAI SCELTO 1 Hz\015\015\000"
- 366      5343454C 
- 366      544F2031 
- 366      20487A0D 
- 366      0D00
- 367 026a 0000     		.space	2
- 368              	.LC11:
- 369 026c 48414920 		.ascii	"HAI SCELTO 10 Hz\015\015\000"
- 369      5343454C 
- 369      544F2031 
- 369      3020487A 
- 369      0D0D00
- 370 027f 00       		.space	1
- 371              	.LC12:
- 372 0280 48414920 		.ascii	"HAI SCELTO 25 Hz\015\015\000"
- 372      5343454C 
- 372      544F2032 
- 372      3520487A 
- 372      0D0D00
- 373 0293 00       		.space	1
- 374              	.LC13:
- 375 0294 48414920 		.ascii	"HAI SCELTO 50 Hz\015\015\000"
- 375      5343454C 
- 375      544F2035 
- 375      3020487A 
- 375      0D0D00
- 376 02a7 00       		.space	1
- 377              	.LC14:
- 378 02a8 2A2A2A2A 		.ascii	"*********    FINE ESEMPIO    *********\015\000"
- 378      2A2A2A2A 
- 378      2A202020 
- 378      2046494E 
- 378      45204553 
- 379              	.LC15:
-ARM GAS  C:\Users\aless\AppData\Local\Temp\cczMu9Sx.s 			page 11
+ 389      2A2A2A2A 
+ 389      2A2A2A2A 
+ 389      2A2A0D0A 
+ 389      00
+ 390              	.LC12:
+ 391 02b0 594F5520 		.ascii	"YOU CHOOSE 1 Hz\015\015\000"
+ 391      43484F4F 
+ 391      53452031 
+ 391      20487A0D 
+ 391      0D00
+ 392 02c2 0000     		.space	2
+ 393              	.LC13:
+ 394 02c4 594F5520 		.ascii	"YOU CHOOSE 10 Hz\015\015\000"
+ 394      43484F4F 
+ 394      53452031 
+ 394      3020487A 
+ 394      0D0D00
+ 395 02d7 00       		.space	1
+ 396              	.LC14:
+ 397 02d8 594F5520 		.ascii	"YOU CHOOSE 25 Hz\015\015\000"
+ 397      43484F4F 
+ 397      53452032 
+ 397      3520487A 
+ 397      0D0D00
+ 398 02eb 00       		.space	1
+ 399              	.LC15:
+ 400 02ec 594F5520 		.ascii	"YOU CHOOSE 50 Hz\015\015\000"
+ 400      43484F4F 
+ 400      53452035 
+ 400      3020487A 
+ 400      0D0D00
+ 401 02ff 00       		.space	1
+ 402              	.LC16:
+ 403 0300 2A2A2A2A 		.ascii	"*********    FINE ESEMPIO    *********\015\000"
+ 403      2A2A2A2A 
+ 403      2A202020 
+ 403      2046494E 
+ 403      45204553 
+ 404              	.LC17:
+ 405 0328 2A2A2A2A 		.ascii	"***************************************************"
+ 405      2A2A2A2A 
+ 405      2A2A2A2A 
+ 405      2A2A2A2A 
+ 405      2A2A2A2A 
+ 406 035b 2A2A2A2A 		.ascii	"**************\015\015\015\012\000"
+ 406      2A2A2A2A 
+ 406      2A2A2A2A 
+ 406      2A2A0D0D 
+ 406      0D0A00
+ 407 036e 0000     		.space	2
+ 408              	.LC18:
+ 409 0370 2A2A2A2A 		.ascii	"*********    INVALID INPUT, GOING BACK TO MENU    *"
+ 409      2A2A2A2A 
+ 409      2A202020 
+ 409      20494E56 
+ 409      414C4944 
+ 410 03a3 2A2A2A2A 		.ascii	"********\015\000"
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccl8WFMB.s 			page 12
 
 
- 380 02d0 2A2A2A2A 		.ascii	"***************************************************"
- 380      2A2A2A2A 
- 380      2A2A2A2A 
- 380      2A2A2A2A 
- 380      2A2A2A2A 
- 381 0303 2A2A2A2A 		.ascii	"**************\015\015\015\012\000"
- 381      2A2A2A2A 
- 381      2A2A2A2A 
- 381      2A2A0D0D 
- 381      0D0A00
- 382              		.text
- 383              	.Letext0:
- 384              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
- 385              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
- 386              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
- 387              		.file 5 "InterruptRoutines.h"
- 388              		.file 6 "Generated_Source\\PSoC5/core_cm3.h"
- 389              		.file 7 "Menu_Functions.h"
- 390              		.file 8 "Generated_Source\\PSoC5/UART.h"
- 391              		.section	.debug_info,"",%progbits
- 392              	.Ldebug_info0:
- 393 0000 51030000 		.4byte	0x351
- 394 0004 0400     		.2byte	0x4
- 395 0006 00000000 		.4byte	.Ldebug_abbrev0
- 396 000a 04       		.byte	0x4
- 397 000b 01       		.uleb128 0x1
- 398 000c CD000000 		.4byte	.LASF30
- 399 0010 0C       		.byte	0xc
- 400 0011 E3010000 		.4byte	.LASF31
- 401 0015 30000000 		.4byte	.LASF32
- 402 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 403 001d 00000000 		.4byte	0
- 404 0021 00000000 		.4byte	.Ldebug_line0
- 405 0025 02       		.uleb128 0x2
- 406 0026 01       		.byte	0x1
- 407 0027 06       		.byte	0x6
- 408 0028 68020000 		.4byte	.LASF0
- 409 002c 03       		.uleb128 0x3
- 410 002d 00000000 		.4byte	.LASF4
- 411 0031 02       		.byte	0x2
- 412 0032 1D       		.byte	0x1d
- 413 0033 37000000 		.4byte	0x37
- 414 0037 02       		.uleb128 0x2
- 415 0038 01       		.byte	0x1
- 416 0039 08       		.byte	0x8
- 417 003a BF000000 		.4byte	.LASF1
- 418 003e 02       		.uleb128 0x2
- 419 003f 02       		.byte	0x2
- 420 0040 05       		.byte	0x5
- 421 0041 13020000 		.4byte	.LASF2
- 422 0045 02       		.uleb128 0x2
- 423 0046 02       		.byte	0x2
- 424 0047 07       		.byte	0x7
- 425 0048 6D010000 		.4byte	.LASF3
- 426 004c 03       		.uleb128 0x3
- 427 004d 0A000000 		.4byte	.LASF5
- 428 0051 02       		.byte	0x2
-ARM GAS  C:\Users\aless\AppData\Local\Temp\cczMu9Sx.s 			page 12
+ 410      2A2A2A2A 
+ 410      0D00
+ 411 03ad 000000   		.space	3
+ 412              	.LC19:
+ 413 03b0 2A2A2A2A 		.ascii	"***************************************************"
+ 413      2A2A2A2A 
+ 413      2A2A2A2A 
+ 413      2A2A2A2A 
+ 413      2A2A2A2A 
+ 414 03e3 2A2A2A2A 		.ascii	"**************\015\015\015\015\015\015\015\012\000"
+ 414      2A2A2A2A 
+ 414      2A2A2A2A 
+ 414      2A2A0D0D 
+ 414      0D0D0D0D 
+ 415              		.text
+ 416              	.Letext0:
+ 417              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
+ 418              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
+ 419              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 420              		.file 5 "InterruptRoutines.h"
+ 421              		.file 6 "Generated_Source\\PSoC5/core_cm3.h"
+ 422              		.file 7 "Menu_Functions.h"
+ 423              		.file 8 "Generated_Source\\PSoC5/UART.h"
+ 424              		.section	.debug_info,"",%progbits
+ 425              	.Ldebug_info0:
+ 426 0000 DB030000 		.4byte	0x3db
+ 427 0004 0400     		.2byte	0x4
+ 428 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 429 000a 04       		.byte	0x4
+ 430 000b 01       		.uleb128 0x1
+ 431 000c 67000000 		.4byte	.LASF30
+ 432 0010 0C       		.byte	0xc
+ 433 0011 7D010000 		.4byte	.LASF31
+ 434 0015 B7010000 		.4byte	.LASF32
+ 435 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 436 001d 00000000 		.4byte	0
+ 437 0021 00000000 		.4byte	.Ldebug_line0
+ 438 0025 02       		.uleb128 0x2
+ 439 0026 01       		.byte	0x1
+ 440 0027 06       		.byte	0x6
+ 441 0028 74020000 		.4byte	.LASF0
+ 442 002c 03       		.uleb128 0x3
+ 443 002d 00000000 		.4byte	.LASF4
+ 444 0031 02       		.byte	0x2
+ 445 0032 1D       		.byte	0x1d
+ 446 0033 37000000 		.4byte	0x37
+ 447 0037 02       		.uleb128 0x2
+ 448 0038 01       		.byte	0x1
+ 449 0039 08       		.byte	0x8
+ 450 003a 59000000 		.4byte	.LASF1
+ 451 003e 02       		.uleb128 0x2
+ 452 003f 02       		.byte	0x2
+ 453 0040 05       		.byte	0x5
+ 454 0041 AD010000 		.4byte	.LASF2
+ 455 0045 02       		.uleb128 0x2
+ 456 0046 02       		.byte	0x2
+ 457 0047 07       		.byte	0x7
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccl8WFMB.s 			page 13
 
 
- 429 0052 3F       		.byte	0x3f
- 430 0053 57000000 		.4byte	0x57
- 431 0057 02       		.uleb128 0x2
- 432 0058 04       		.byte	0x4
- 433 0059 05       		.byte	0x5
- 434 005a 48020000 		.4byte	.LASF6
- 435 005e 02       		.uleb128 0x2
- 436 005f 04       		.byte	0x4
- 437 0060 07       		.byte	0x7
- 438 0061 5B010000 		.4byte	.LASF7
- 439 0065 02       		.uleb128 0x2
- 440 0066 08       		.byte	0x8
- 441 0067 05       		.byte	0x5
- 442 0068 D5010000 		.4byte	.LASF8
- 443 006c 02       		.uleb128 0x2
- 444 006d 08       		.byte	0x8
- 445 006e 07       		.byte	0x7
- 446 006f A1010000 		.4byte	.LASF9
- 447 0073 04       		.uleb128 0x4
- 448 0074 04       		.byte	0x4
- 449 0075 05       		.byte	0x5
- 450 0076 696E7400 		.ascii	"int\000"
- 451 007a 02       		.uleb128 0x2
- 452 007b 04       		.byte	0x4
- 453 007c 07       		.byte	0x7
- 454 007d 94010000 		.4byte	.LASF10
- 455 0081 03       		.uleb128 0x3
- 456 0082 B8010000 		.4byte	.LASF11
- 457 0086 03       		.byte	0x3
- 458 0087 18       		.byte	0x18
- 459 0088 2C000000 		.4byte	0x2c
- 460 008c 03       		.uleb128 0x3
- 461 008d A6000000 		.4byte	.LASF12
- 462 0091 03       		.byte	0x3
- 463 0092 2C       		.byte	0x2c
- 464 0093 4C000000 		.4byte	0x4c
- 465 0097 05       		.uleb128 0x5
- 466 0098 2D020000 		.4byte	.LASF13
- 467 009c 04       		.byte	0x4
- 468 009d E401     		.2byte	0x1e4
- 469 009f 37000000 		.4byte	0x37
- 470 00a3 02       		.uleb128 0x2
- 471 00a4 04       		.byte	0x4
- 472 00a5 04       		.byte	0x4
- 473 00a6 AE000000 		.4byte	.LASF14
- 474 00aa 02       		.uleb128 0x2
- 475 00ab 08       		.byte	0x8
- 476 00ac 04       		.byte	0x4
- 477 00ad 8D010000 		.4byte	.LASF15
- 478 00b1 02       		.uleb128 0x2
- 479 00b2 01       		.byte	0x1
- 480 00b3 08       		.byte	0x8
- 481 00b4 01020000 		.4byte	.LASF16
- 482 00b8 06       		.uleb128 0x6
- 483 00b9 97000000 		.4byte	0x97
- 484 00bd 02       		.uleb128 0x2
- 485 00be 08       		.byte	0x8
-ARM GAS  C:\Users\aless\AppData\Local\Temp\cczMu9Sx.s 			page 13
+ 458 0048 07010000 		.4byte	.LASF3
+ 459 004c 03       		.uleb128 0x3
+ 460 004d 0A000000 		.4byte	.LASF5
+ 461 0051 02       		.byte	0x2
+ 462 0052 3F       		.byte	0x3f
+ 463 0053 57000000 		.4byte	0x57
+ 464 0057 02       		.uleb128 0x2
+ 465 0058 04       		.byte	0x4
+ 466 0059 05       		.byte	0x5
+ 467 005a 54020000 		.4byte	.LASF6
+ 468 005e 02       		.uleb128 0x2
+ 469 005f 04       		.byte	0x4
+ 470 0060 07       		.byte	0x7
+ 471 0061 F5000000 		.4byte	.LASF7
+ 472 0065 02       		.uleb128 0x2
+ 473 0066 08       		.byte	0x8
+ 474 0067 05       		.byte	0x5
+ 475 0068 6F010000 		.4byte	.LASF8
+ 476 006c 02       		.uleb128 0x2
+ 477 006d 08       		.byte	0x8
+ 478 006e 07       		.byte	0x7
+ 479 006f 3B010000 		.4byte	.LASF9
+ 480 0073 04       		.uleb128 0x4
+ 481 0074 04       		.byte	0x4
+ 482 0075 05       		.byte	0x5
+ 483 0076 696E7400 		.ascii	"int\000"
+ 484 007a 02       		.uleb128 0x2
+ 485 007b 04       		.byte	0x4
+ 486 007c 07       		.byte	0x7
+ 487 007d 2E010000 		.4byte	.LASF10
+ 488 0081 03       		.uleb128 0x3
+ 489 0082 52010000 		.4byte	.LASF11
+ 490 0086 03       		.byte	0x3
+ 491 0087 18       		.byte	0x18
+ 492 0088 2C000000 		.4byte	0x2c
+ 493 008c 03       		.uleb128 0x3
+ 494 008d 40000000 		.4byte	.LASF12
+ 495 0091 03       		.byte	0x3
+ 496 0092 2C       		.byte	0x2c
+ 497 0093 4C000000 		.4byte	0x4c
+ 498 0097 05       		.uleb128 0x5
+ 499 0098 39020000 		.4byte	.LASF13
+ 500 009c 04       		.byte	0x4
+ 501 009d E401     		.2byte	0x1e4
+ 502 009f 37000000 		.4byte	0x37
+ 503 00a3 02       		.uleb128 0x2
+ 504 00a4 04       		.byte	0x4
+ 505 00a5 04       		.byte	0x4
+ 506 00a6 48000000 		.4byte	.LASF14
+ 507 00aa 02       		.uleb128 0x2
+ 508 00ab 08       		.byte	0x8
+ 509 00ac 04       		.byte	0x4
+ 510 00ad 27010000 		.4byte	.LASF15
+ 511 00b1 02       		.uleb128 0x2
+ 512 00b2 01       		.byte	0x1
+ 513 00b3 08       		.byte	0x8
+ 514 00b4 9B010000 		.4byte	.LASF16
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccl8WFMB.s 			page 14
 
 
- 486 00bf 04       		.byte	0x4
- 487 00c0 5C020000 		.4byte	.LASF17
- 488 00c4 02       		.uleb128 0x2
- 489 00c5 04       		.byte	0x4
- 490 00c6 07       		.byte	0x7
- 491 00c7 CC010000 		.4byte	.LASF18
- 492 00cb 07       		.uleb128 0x7
- 493 00cc 96000000 		.4byte	.LASF33
- 494 00d0 01       		.byte	0x1
- 495 00d1 06       		.byte	0x6
- 496 00d2 00000000 		.4byte	.LFB64
- 497 00d6 B8010000 		.4byte	.LFE64-.LFB64
- 498 00da 01       		.uleb128 0x1
- 499 00db 9C       		.byte	0x9c
- 500 00dc A7020000 		.4byte	0x2a7
- 501 00e0 08       		.uleb128 0x8
- 502 00e1 06000000 		.4byte	.LVL0
- 503 00e5 28030000 		.4byte	0x328
- 504 00e9 09       		.uleb128 0x9
- 505 00ea 2E000000 		.4byte	.LVL1
- 506 00ee 33030000 		.4byte	0x333
- 507 00f2 00010000 		.4byte	0x100
- 508 00f6 0A       		.uleb128 0xa
- 509 00f7 01       		.uleb128 0x1
- 510 00f8 50       		.byte	0x50
- 511 00f9 05       		.uleb128 0x5
- 512 00fa 03       		.byte	0x3
- 513 00fb 00000000 		.4byte	.LC0
- 514 00ff 00       		.byte	0
- 515 0100 09       		.uleb128 0x9
- 516 0101 34000000 		.4byte	.LVL2
- 517 0105 33030000 		.4byte	0x333
- 518 0109 17010000 		.4byte	0x117
- 519 010d 0A       		.uleb128 0xa
- 520 010e 01       		.uleb128 0x1
- 521 010f 50       		.byte	0x50
- 522 0110 05       		.uleb128 0x5
- 523 0111 03       		.byte	0x3
- 524 0112 84000000 		.4byte	.LC1
- 525 0116 00       		.byte	0
- 526 0117 08       		.uleb128 0x8
- 527 0118 38000000 		.4byte	.LVL3
- 528 011c 3E030000 		.4byte	0x33e
- 529 0120 08       		.uleb128 0x8
- 530 0121 3C000000 		.4byte	.LVL4
- 531 0125 49030000 		.4byte	0x349
- 532 0129 08       		.uleb128 0x8
- 533 012a 44000000 		.4byte	.LVL5
- 534 012e 28030000 		.4byte	0x328
- 535 0132 09       		.uleb128 0x9
- 536 0133 52000000 		.4byte	.LVL6
- 537 0137 33030000 		.4byte	0x333
- 538 013b 49010000 		.4byte	0x149
- 539 013f 0A       		.uleb128 0xa
- 540 0140 01       		.uleb128 0x1
- 541 0141 50       		.byte	0x50
- 542 0142 05       		.uleb128 0x5
-ARM GAS  C:\Users\aless\AppData\Local\Temp\cczMu9Sx.s 			page 14
+ 515 00b8 06       		.uleb128 0x6
+ 516 00b9 97000000 		.4byte	0x97
+ 517 00bd 02       		.uleb128 0x2
+ 518 00be 08       		.byte	0x8
+ 519 00bf 04       		.byte	0x4
+ 520 00c0 68020000 		.4byte	.LASF17
+ 521 00c4 02       		.uleb128 0x2
+ 522 00c5 04       		.byte	0x4
+ 523 00c6 07       		.byte	0x7
+ 524 00c7 66010000 		.4byte	.LASF18
+ 525 00cb 07       		.uleb128 0x7
+ 526 00cc 30000000 		.4byte	.LASF33
+ 527 00d0 01       		.byte	0x1
+ 528 00d1 06       		.byte	0x6
+ 529 00d2 00000000 		.4byte	.LFB64
+ 530 00d6 D0010000 		.4byte	.LFE64-.LFB64
+ 531 00da 01       		.uleb128 0x1
+ 532 00db 9C       		.byte	0x9c
+ 533 00dc 31030000 		.4byte	0x331
+ 534 00e0 08       		.uleb128 0x8
+ 535 00e1 16000000 		.4byte	.LVL0
+ 536 00e5 B2030000 		.4byte	0x3b2
+ 537 00e9 08       		.uleb128 0x8
+ 538 00ea 2E000000 		.4byte	.LVL1
+ 539 00ee BD030000 		.4byte	0x3bd
+ 540 00f2 09       		.uleb128 0x9
+ 541 00f3 3E000000 		.4byte	.LVL2
+ 542 00f7 C8030000 		.4byte	0x3c8
+ 543 00fb 09010000 		.4byte	0x109
+ 544 00ff 0A       		.uleb128 0xa
+ 545 0100 01       		.uleb128 0x1
+ 546 0101 50       		.byte	0x50
+ 547 0102 05       		.uleb128 0x5
+ 548 0103 03       		.byte	0x3
+ 549 0104 00000000 		.4byte	.LC0
+ 550 0108 00       		.byte	0
+ 551 0109 09       		.uleb128 0x9
+ 552 010a 44000000 		.4byte	.LVL3
+ 553 010e C8030000 		.4byte	0x3c8
+ 554 0112 20010000 		.4byte	0x120
+ 555 0116 0A       		.uleb128 0xa
+ 556 0117 01       		.uleb128 0x1
+ 557 0118 50       		.byte	0x50
+ 558 0119 05       		.uleb128 0x5
+ 559 011a 03       		.byte	0x3
+ 560 011b 84000000 		.4byte	.LC1
+ 561 011f 00       		.byte	0
+ 562 0120 08       		.uleb128 0x8
+ 563 0121 48000000 		.4byte	.LVL4
+ 564 0125 D3030000 		.4byte	0x3d3
+ 565 0129 08       		.uleb128 0x8
+ 566 012a 50000000 		.4byte	.LVL5
+ 567 012e B2030000 		.4byte	0x3b2
+ 568 0132 09       		.uleb128 0x9
+ 569 0133 5E000000 		.4byte	.LVL6
+ 570 0137 C8030000 		.4byte	0x3c8
+ 571 013b 49010000 		.4byte	0x149
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccl8WFMB.s 			page 15
 
 
- 543 0143 03       		.byte	0x3
- 544 0144 B8000000 		.4byte	.LC2
- 545 0148 00       		.byte	0
- 546 0149 09       		.uleb128 0x9
- 547 014a 58000000 		.4byte	.LVL7
- 548 014e 33030000 		.4byte	0x333
- 549 0152 60010000 		.4byte	0x160
- 550 0156 0A       		.uleb128 0xa
- 551 0157 01       		.uleb128 0x1
- 552 0158 50       		.byte	0x50
- 553 0159 05       		.uleb128 0x5
- 554 015a 03       		.byte	0x3
- 555 015b 1C010000 		.4byte	.LC3
- 556 015f 00       		.byte	0
- 557 0160 08       		.uleb128 0x8
- 558 0161 5C000000 		.4byte	.LVL8
- 559 0165 49030000 		.4byte	0x349
- 560 0169 08       		.uleb128 0x8
- 561 016a 64000000 		.4byte	.LVL9
- 562 016e 28030000 		.4byte	0x328
- 563 0172 08       		.uleb128 0x8
- 564 0173 6C000000 		.4byte	.LVL10
- 565 0177 3E030000 		.4byte	0x33e
- 566 017b 09       		.uleb128 0x9
- 567 017c 82000000 		.4byte	.LVL11
- 568 0180 33030000 		.4byte	0x333
- 569 0184 92010000 		.4byte	0x192
- 570 0188 0A       		.uleb128 0xa
- 571 0189 01       		.uleb128 0x1
- 572 018a 50       		.byte	0x50
- 573 018b 05       		.uleb128 0x5
- 574 018c 03       		.byte	0x3
- 575 018d 58010000 		.4byte	.LC4
- 576 0191 00       		.byte	0
- 577 0192 09       		.uleb128 0x9
- 578 0193 90000000 		.4byte	.LVL12
- 579 0197 33030000 		.4byte	0x333
- 580 019b A9010000 		.4byte	0x1a9
- 581 019f 0A       		.uleb128 0xa
- 582 01a0 01       		.uleb128 0x1
- 583 01a1 50       		.byte	0x50
- 584 01a2 05       		.uleb128 0x5
- 585 01a3 03       		.byte	0x3
- 586 01a4 6C010000 		.4byte	.LC5
- 587 01a8 00       		.byte	0
- 588 01a9 09       		.uleb128 0x9
- 589 01aa 9E000000 		.4byte	.LVL13
- 590 01ae 33030000 		.4byte	0x333
- 591 01b2 C0010000 		.4byte	0x1c0
- 592 01b6 0A       		.uleb128 0xa
- 593 01b7 01       		.uleb128 0x1
- 594 01b8 50       		.byte	0x50
- 595 01b9 05       		.uleb128 0x5
- 596 01ba 03       		.byte	0x3
- 597 01bb 80010000 		.4byte	.LC6
- 598 01bf 00       		.byte	0
- 599 01c0 09       		.uleb128 0x9
-ARM GAS  C:\Users\aless\AppData\Local\Temp\cczMu9Sx.s 			page 15
+ 572 013f 0A       		.uleb128 0xa
+ 573 0140 01       		.uleb128 0x1
+ 574 0141 50       		.byte	0x50
+ 575 0142 05       		.uleb128 0x5
+ 576 0143 03       		.byte	0x3
+ 577 0144 B8000000 		.4byte	.LC2
+ 578 0148 00       		.byte	0
+ 579 0149 09       		.uleb128 0x9
+ 580 014a 64000000 		.4byte	.LVL7
+ 581 014e C8030000 		.4byte	0x3c8
+ 582 0152 60010000 		.4byte	0x160
+ 583 0156 0A       		.uleb128 0xa
+ 584 0157 01       		.uleb128 0x1
+ 585 0158 50       		.byte	0x50
+ 586 0159 05       		.uleb128 0x5
+ 587 015a 03       		.byte	0x3
+ 588 015b 28010000 		.4byte	.LC3
+ 589 015f 00       		.byte	0
+ 590 0160 08       		.uleb128 0x8
+ 591 0161 68000000 		.4byte	.LVL8
+ 592 0165 D3030000 		.4byte	0x3d3
+ 593 0169 08       		.uleb128 0x8
+ 594 016a 70000000 		.4byte	.LVL9
+ 595 016e B2030000 		.4byte	0x3b2
+ 596 0172 08       		.uleb128 0x8
+ 597 0173 78000000 		.4byte	.LVL10
+ 598 0177 BD030000 		.4byte	0x3bd
+ 599 017b 09       		.uleb128 0x9
+ 600 017c 90000000 		.4byte	.LVL11
+ 601 0180 C8030000 		.4byte	0x3c8
+ 602 0184 92010000 		.4byte	0x192
+ 603 0188 0A       		.uleb128 0xa
+ 604 0189 01       		.uleb128 0x1
+ 605 018a 50       		.byte	0x50
+ 606 018b 05       		.uleb128 0x5
+ 607 018c 03       		.byte	0x3
+ 608 018d 64010000 		.4byte	.LC4
+ 609 0191 00       		.byte	0
+ 610 0192 09       		.uleb128 0x9
+ 611 0193 98000000 		.4byte	.LVL12
+ 612 0197 C8030000 		.4byte	0x3c8
+ 613 019b A9010000 		.4byte	0x1a9
+ 614 019f 0A       		.uleb128 0xa
+ 615 01a0 01       		.uleb128 0x1
+ 616 01a1 50       		.byte	0x50
+ 617 01a2 05       		.uleb128 0x5
+ 618 01a3 03       		.byte	0x3
+ 619 01a4 78010000 		.4byte	.LC5
+ 620 01a8 00       		.byte	0
+ 621 01a9 09       		.uleb128 0x9
+ 622 01aa A0000000 		.4byte	.LVL13
+ 623 01ae C8030000 		.4byte	0x3c8
+ 624 01b2 C0010000 		.4byte	0x1c0
+ 625 01b6 0A       		.uleb128 0xa
+ 626 01b7 01       		.uleb128 0x1
+ 627 01b8 50       		.byte	0x50
+ 628 01b9 05       		.uleb128 0x5
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccl8WFMB.s 			page 16
 
 
- 600 01c1 AC000000 		.4byte	.LVL14
- 601 01c5 33030000 		.4byte	0x333
- 602 01c9 D7010000 		.4byte	0x1d7
- 603 01cd 0A       		.uleb128 0xa
- 604 01ce 01       		.uleb128 0x1
- 605 01cf 50       		.byte	0x50
- 606 01d0 05       		.uleb128 0x5
- 607 01d1 03       		.byte	0x3
- 608 01d2 94010000 		.4byte	.LC7
- 609 01d6 00       		.byte	0
- 610 01d7 09       		.uleb128 0x9
- 611 01d8 C0000000 		.4byte	.LVL15
- 612 01dc 33030000 		.4byte	0x333
- 613 01e0 EE010000 		.4byte	0x1ee
- 614 01e4 0A       		.uleb128 0xa
- 615 01e5 01       		.uleb128 0x1
- 616 01e6 50       		.byte	0x50
- 617 01e7 05       		.uleb128 0x5
- 618 01e8 03       		.byte	0x3
- 619 01e9 A8010000 		.4byte	.LC8
- 620 01ed 00       		.byte	0
- 621 01ee 09       		.uleb128 0x9
- 622 01ef C6000000 		.4byte	.LVL16
- 623 01f3 33030000 		.4byte	0x333
- 624 01f7 05020000 		.4byte	0x205
- 625 01fb 0A       		.uleb128 0xa
- 626 01fc 01       		.uleb128 0x1
- 627 01fd 50       		.byte	0x50
- 628 01fe 05       		.uleb128 0x5
- 629 01ff 03       		.byte	0x3
- 630 0200 14020000 		.4byte	.LC9
- 631 0204 00       		.byte	0
- 632 0205 08       		.uleb128 0x8
- 633 0206 CA000000 		.4byte	.LVL17
- 634 020a 49030000 		.4byte	0x349
- 635 020e 08       		.uleb128 0x8
- 636 020f D2000000 		.4byte	.LVL18
- 637 0213 28030000 		.4byte	0x328
- 638 0217 08       		.uleb128 0x8
- 639 0218 DA000000 		.4byte	.LVL19
- 640 021c 3E030000 		.4byte	0x33e
- 641 0220 09       		.uleb128 0x9
- 642 0221 F0000000 		.4byte	.LVL20
- 643 0225 33030000 		.4byte	0x333
- 644 0229 37020000 		.4byte	0x237
- 645 022d 0A       		.uleb128 0xa
- 646 022e 01       		.uleb128 0x1
- 647 022f 50       		.byte	0x50
- 648 0230 05       		.uleb128 0x5
- 649 0231 03       		.byte	0x3
- 650 0232 58020000 		.4byte	.LC10
- 651 0236 00       		.byte	0
- 652 0237 09       		.uleb128 0x9
- 653 0238 FE000000 		.4byte	.LVL21
- 654 023c 33030000 		.4byte	0x333
- 655 0240 4E020000 		.4byte	0x24e
- 656 0244 0A       		.uleb128 0xa
-ARM GAS  C:\Users\aless\AppData\Local\Temp\cczMu9Sx.s 			page 16
+ 629 01ba 03       		.byte	0x3
+ 630 01bb 8C010000 		.4byte	.LC6
+ 631 01bf 00       		.byte	0
+ 632 01c0 09       		.uleb128 0x9
+ 633 01c1 A8000000 		.4byte	.LVL14
+ 634 01c5 C8030000 		.4byte	0x3c8
+ 635 01c9 D7010000 		.4byte	0x1d7
+ 636 01cd 0A       		.uleb128 0xa
+ 637 01ce 01       		.uleb128 0x1
+ 638 01cf 50       		.byte	0x50
+ 639 01d0 05       		.uleb128 0x5
+ 640 01d1 03       		.byte	0x3
+ 641 01d2 A0010000 		.4byte	.LC7
+ 642 01d6 00       		.byte	0
+ 643 01d7 09       		.uleb128 0x9
+ 644 01d8 B0000000 		.4byte	.LVL15
+ 645 01dc C8030000 		.4byte	0x3c8
+ 646 01e0 EE010000 		.4byte	0x1ee
+ 647 01e4 0A       		.uleb128 0xa
+ 648 01e5 01       		.uleb128 0x1
+ 649 01e6 50       		.byte	0x50
+ 650 01e7 05       		.uleb128 0x5
+ 651 01e8 03       		.byte	0x3
+ 652 01e9 B4010000 		.4byte	.LC8
+ 653 01ed 00       		.byte	0
+ 654 01ee 09       		.uleb128 0x9
+ 655 01ef B8000000 		.4byte	.LVL16
+ 656 01f3 C8030000 		.4byte	0x3c8
+ 657 01f7 05020000 		.4byte	0x205
+ 658 01fb 0A       		.uleb128 0xa
+ 659 01fc 01       		.uleb128 0x1
+ 660 01fd 50       		.byte	0x50
+ 661 01fe 05       		.uleb128 0x5
+ 662 01ff 03       		.byte	0x3
+ 663 0200 CC010000 		.4byte	.LC9
+ 664 0204 00       		.byte	0
+ 665 0205 09       		.uleb128 0x9
+ 666 0206 C4000000 		.4byte	.LVL17
+ 667 020a C8030000 		.4byte	0x3c8
+ 668 020e 1C020000 		.4byte	0x21c
+ 669 0212 0A       		.uleb128 0xa
+ 670 0213 01       		.uleb128 0x1
+ 671 0214 50       		.byte	0x50
+ 672 0215 05       		.uleb128 0x5
+ 673 0216 03       		.byte	0x3
+ 674 0217 F4010000 		.4byte	.LC10
+ 675 021b 00       		.byte	0
+ 676 021c 09       		.uleb128 0x9
+ 677 021d CA000000 		.4byte	.LVL18
+ 678 0221 C8030000 		.4byte	0x3c8
+ 679 0225 33020000 		.4byte	0x233
+ 680 0229 0A       		.uleb128 0xa
+ 681 022a 01       		.uleb128 0x1
+ 682 022b 50       		.byte	0x50
+ 683 022c 05       		.uleb128 0x5
+ 684 022d 03       		.byte	0x3
+ 685 022e 6C020000 		.4byte	.LC11
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccl8WFMB.s 			page 17
 
 
- 657 0245 01       		.uleb128 0x1
- 658 0246 50       		.byte	0x50
- 659 0247 05       		.uleb128 0x5
- 660 0248 03       		.byte	0x3
- 661 0249 6C020000 		.4byte	.LC11
- 662 024d 00       		.byte	0
- 663 024e 09       		.uleb128 0x9
- 664 024f 0C010000 		.4byte	.LVL22
- 665 0253 33030000 		.4byte	0x333
- 666 0257 65020000 		.4byte	0x265
- 667 025b 0A       		.uleb128 0xa
- 668 025c 01       		.uleb128 0x1
- 669 025d 50       		.byte	0x50
- 670 025e 05       		.uleb128 0x5
- 671 025f 03       		.byte	0x3
- 672 0260 80020000 		.4byte	.LC12
- 673 0264 00       		.byte	0
- 674 0265 09       		.uleb128 0x9
- 675 0266 1A010000 		.4byte	.LVL23
- 676 026a 33030000 		.4byte	0x333
- 677 026e 7C020000 		.4byte	0x27c
- 678 0272 0A       		.uleb128 0xa
- 679 0273 01       		.uleb128 0x1
- 680 0274 50       		.byte	0x50
- 681 0275 05       		.uleb128 0x5
- 682 0276 03       		.byte	0x3
- 683 0277 94020000 		.4byte	.LC13
- 684 027b 00       		.byte	0
- 685 027c 09       		.uleb128 0x9
- 686 027d 32010000 		.4byte	.LVL24
- 687 0281 33030000 		.4byte	0x333
- 688 0285 93020000 		.4byte	0x293
- 689 0289 0A       		.uleb128 0xa
- 690 028a 01       		.uleb128 0x1
- 691 028b 50       		.byte	0x50
- 692 028c 05       		.uleb128 0x5
- 693 028d 03       		.byte	0x3
- 694 028e A8020000 		.4byte	.LC14
- 695 0292 00       		.byte	0
- 696 0293 0B       		.uleb128 0xb
- 697 0294 38010000 		.4byte	.LVL25
- 698 0298 33030000 		.4byte	0x333
- 699 029c 0A       		.uleb128 0xa
- 700 029d 01       		.uleb128 0x1
- 701 029e 50       		.byte	0x50
- 702 029f 05       		.uleb128 0x5
- 703 02a0 03       		.byte	0x3
- 704 02a1 D0020000 		.4byte	.LC15
- 705 02a5 00       		.byte	0
- 706 02a6 00       		.byte	0
- 707 02a7 0C       		.uleb128 0xc
- 708 02a8 81000000 		.4byte	0x81
- 709 02ac B7020000 		.4byte	0x2b7
- 710 02b0 0D       		.uleb128 0xd
- 711 02b1 C4000000 		.4byte	0xc4
- 712 02b5 03       		.byte	0x3
- 713 02b6 00       		.byte	0
-ARM GAS  C:\Users\aless\AppData\Local\Temp\cczMu9Sx.s 			page 17
+ 686 0232 00       		.byte	0
+ 687 0233 08       		.uleb128 0x8
+ 688 0234 CE000000 		.4byte	.LVL19
+ 689 0238 D3030000 		.4byte	0x3d3
+ 690 023c 08       		.uleb128 0x8
+ 691 023d D6000000 		.4byte	.LVL20
+ 692 0241 B2030000 		.4byte	0x3b2
+ 693 0245 08       		.uleb128 0x8
+ 694 0246 DE000000 		.4byte	.LVL21
+ 695 024a BD030000 		.4byte	0x3bd
+ 696 024e 09       		.uleb128 0x9
+ 697 024f F6000000 		.4byte	.LVL22
+ 698 0253 C8030000 		.4byte	0x3c8
+ 699 0257 65020000 		.4byte	0x265
+ 700 025b 0A       		.uleb128 0xa
+ 701 025c 01       		.uleb128 0x1
+ 702 025d 50       		.byte	0x50
+ 703 025e 05       		.uleb128 0x5
+ 704 025f 03       		.byte	0x3
+ 705 0260 B0020000 		.4byte	.LC12
+ 706 0264 00       		.byte	0
+ 707 0265 09       		.uleb128 0x9
+ 708 0266 FE000000 		.4byte	.LVL23
+ 709 026a C8030000 		.4byte	0x3c8
+ 710 026e 7C020000 		.4byte	0x27c
+ 711 0272 0A       		.uleb128 0xa
+ 712 0273 01       		.uleb128 0x1
+ 713 0274 50       		.byte	0x50
+ 714 0275 05       		.uleb128 0x5
+ 715 0276 03       		.byte	0x3
+ 716 0277 C4020000 		.4byte	.LC13
+ 717 027b 00       		.byte	0
+ 718 027c 09       		.uleb128 0x9
+ 719 027d 06010000 		.4byte	.LVL24
+ 720 0281 C8030000 		.4byte	0x3c8
+ 721 0285 93020000 		.4byte	0x293
+ 722 0289 0A       		.uleb128 0xa
+ 723 028a 01       		.uleb128 0x1
+ 724 028b 50       		.byte	0x50
+ 725 028c 05       		.uleb128 0x5
+ 726 028d 03       		.byte	0x3
+ 727 028e D8020000 		.4byte	.LC14
+ 728 0292 00       		.byte	0
+ 729 0293 09       		.uleb128 0x9
+ 730 0294 0E010000 		.4byte	.LVL25
+ 731 0298 C8030000 		.4byte	0x3c8
+ 732 029c AA020000 		.4byte	0x2aa
+ 733 02a0 0A       		.uleb128 0xa
+ 734 02a1 01       		.uleb128 0x1
+ 735 02a2 50       		.byte	0x50
+ 736 02a3 05       		.uleb128 0x5
+ 737 02a4 03       		.byte	0x3
+ 738 02a5 EC020000 		.4byte	.LC15
+ 739 02a9 00       		.byte	0
+ 740 02aa 09       		.uleb128 0x9
+ 741 02ab 16010000 		.4byte	.LVL26
+ 742 02af C8030000 		.4byte	0x3c8
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccl8WFMB.s 			page 18
 
 
- 714 02b7 0E       		.uleb128 0xe
- 715 02b8 51020000 		.4byte	.LASF19
- 716 02bc 05       		.byte	0x5
- 717 02bd 18       		.byte	0x18
- 718 02be A7020000 		.4byte	0x2a7
- 719 02c2 05       		.uleb128 0x5
- 720 02c3 03       		.byte	0x3
- 721 02c4 00000000 		.4byte	DataBuffer
- 722 02c8 0E       		.uleb128 0xe
- 723 02c9 1D020000 		.4byte	.LASF20
- 724 02cd 05       		.byte	0x5
- 725 02ce 19       		.byte	0x19
- 726 02cf B8000000 		.4byte	0xb8
- 727 02d3 05       		.uleb128 0x5
- 728 02d4 03       		.byte	0x3
- 729 02d5 00000000 		.4byte	PacketReadyFlag
- 730 02d9 0F       		.uleb128 0xf
- 731 02da 80010000 		.4byte	.LASF21
- 732 02de 06       		.byte	0x6
- 733 02df 1207     		.2byte	0x712
- 734 02e1 E5020000 		.4byte	0x2e5
- 735 02e5 06       		.uleb128 0x6
- 736 02e6 8C000000 		.4byte	0x8c
- 737 02ea 10       		.uleb128 0x10
- 738 02eb 14000000 		.4byte	.LASF22
- 739 02ef 07       		.byte	0x7
- 740 02f0 17       		.byte	0x17
- 741 02f1 73000000 		.4byte	0x73
- 742 02f5 0E       		.uleb128 0xe
- 743 02f6 C0010000 		.4byte	.LASF23
- 744 02fa 07       		.byte	0x7
- 745 02fb 19       		.byte	0x19
- 746 02fc B1000000 		.4byte	0xb1
- 747 0300 05       		.uleb128 0x5
- 748 0301 03       		.byte	0x3
- 749 0302 00000000 		.4byte	ch_received
- 750 0306 0E       		.uleb128 0xe
- 751 0307 F4010000 		.4byte	.LASF24
- 752 030b 07       		.byte	0x7
- 753 030c 1A       		.byte	0x1a
- 754 030d 73000000 		.4byte	0x73
- 755 0311 05       		.uleb128 0x5
- 756 0312 03       		.byte	0x3
- 757 0313 00000000 		.4byte	LoopContinue
- 758 0317 0E       		.uleb128 0xe
- 759 0318 B4000000 		.4byte	.LASF25
- 760 031c 07       		.byte	0x7
- 761 031d 1B       		.byte	0x1b
- 762 031e 73000000 		.4byte	0x73
- 763 0322 05       		.uleb128 0x5
- 764 0323 03       		.byte	0x3
- 765 0324 00000000 		.4byte	MenuActive
- 766 0328 11       		.uleb128 0x11
- 767 0329 06020000 		.4byte	.LASF26
- 768 032d 06020000 		.4byte	.LASF26
- 769 0331 08       		.byte	0x8
- 770 0332 71       		.byte	0x71
-ARM GAS  C:\Users\aless\AppData\Local\Temp\cczMu9Sx.s 			page 18
+ 743 02b3 C1020000 		.4byte	0x2c1
+ 744 02b7 0A       		.uleb128 0xa
+ 745 02b8 01       		.uleb128 0x1
+ 746 02b9 50       		.byte	0x50
+ 747 02ba 05       		.uleb128 0x5
+ 748 02bb 03       		.byte	0x3
+ 749 02bc B4010000 		.4byte	.LC8
+ 750 02c0 00       		.byte	0
+ 751 02c1 09       		.uleb128 0x9
+ 752 02c2 1E010000 		.4byte	.LVL27
+ 753 02c6 C8030000 		.4byte	0x3c8
+ 754 02ca D8020000 		.4byte	0x2d8
+ 755 02ce 0A       		.uleb128 0xa
+ 756 02cf 01       		.uleb128 0x1
+ 757 02d0 50       		.byte	0x50
+ 758 02d1 05       		.uleb128 0x5
+ 759 02d2 03       		.byte	0x3
+ 760 02d3 CC010000 		.4byte	.LC9
+ 761 02d7 00       		.byte	0
+ 762 02d8 09       		.uleb128 0x9
+ 763 02d9 2E010000 		.4byte	.LVL28
+ 764 02dd C8030000 		.4byte	0x3c8
+ 765 02e1 EF020000 		.4byte	0x2ef
+ 766 02e5 0A       		.uleb128 0xa
+ 767 02e6 01       		.uleb128 0x1
+ 768 02e7 50       		.byte	0x50
+ 769 02e8 05       		.uleb128 0x5
+ 770 02e9 03       		.byte	0x3
+ 771 02ea 00030000 		.4byte	.LC16
+ 772 02ee 00       		.byte	0
+ 773 02ef 09       		.uleb128 0x9
+ 774 02f0 34010000 		.4byte	.LVL29
+ 775 02f4 C8030000 		.4byte	0x3c8
+ 776 02f8 06030000 		.4byte	0x306
+ 777 02fc 0A       		.uleb128 0xa
+ 778 02fd 01       		.uleb128 0x1
+ 779 02fe 50       		.byte	0x50
+ 780 02ff 05       		.uleb128 0x5
+ 781 0300 03       		.byte	0x3
+ 782 0301 28030000 		.4byte	.LC17
+ 783 0305 00       		.byte	0
+ 784 0306 09       		.uleb128 0x9
+ 785 0307 54010000 		.4byte	.LVL30
+ 786 030b C8030000 		.4byte	0x3c8
+ 787 030f 1D030000 		.4byte	0x31d
+ 788 0313 0A       		.uleb128 0xa
+ 789 0314 01       		.uleb128 0x1
+ 790 0315 50       		.byte	0x50
+ 791 0316 05       		.uleb128 0x5
+ 792 0317 03       		.byte	0x3
+ 793 0318 70030000 		.4byte	.LC18
+ 794 031c 00       		.byte	0
+ 795 031d 0B       		.uleb128 0xb
+ 796 031e 5A010000 		.4byte	.LVL31
+ 797 0322 C8030000 		.4byte	0x3c8
+ 798 0326 0A       		.uleb128 0xa
+ 799 0327 01       		.uleb128 0x1
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccl8WFMB.s 			page 19
 
 
- 771 0333 11       		.uleb128 0x11
- 772 0334 74020000 		.4byte	.LASF27
- 773 0338 74020000 		.4byte	.LASF27
- 774 033c 08       		.byte	0x8
- 775 033d 8B       		.byte	0x8b
- 776 033e 11       		.uleb128 0x11
- 777 033f 1D000000 		.4byte	.LASF28
- 778 0343 1D000000 		.4byte	.LASF28
- 779 0347 08       		.byte	0x8
- 780 0348 75       		.byte	0x75
- 781 0349 11       		.uleb128 0x11
- 782 034a 33020000 		.4byte	.LASF29
- 783 034e 33020000 		.4byte	.LASF29
- 784 0352 08       		.byte	0x8
- 785 0353 73       		.byte	0x73
- 786 0354 00       		.byte	0
- 787              		.section	.debug_abbrev,"",%progbits
- 788              	.Ldebug_abbrev0:
- 789 0000 01       		.uleb128 0x1
- 790 0001 11       		.uleb128 0x11
- 791 0002 01       		.byte	0x1
- 792 0003 25       		.uleb128 0x25
- 793 0004 0E       		.uleb128 0xe
- 794 0005 13       		.uleb128 0x13
- 795 0006 0B       		.uleb128 0xb
- 796 0007 03       		.uleb128 0x3
- 797 0008 0E       		.uleb128 0xe
- 798 0009 1B       		.uleb128 0x1b
- 799 000a 0E       		.uleb128 0xe
- 800 000b 55       		.uleb128 0x55
- 801 000c 17       		.uleb128 0x17
- 802 000d 11       		.uleb128 0x11
- 803 000e 01       		.uleb128 0x1
- 804 000f 10       		.uleb128 0x10
- 805 0010 17       		.uleb128 0x17
- 806 0011 00       		.byte	0
- 807 0012 00       		.byte	0
- 808 0013 02       		.uleb128 0x2
- 809 0014 24       		.uleb128 0x24
- 810 0015 00       		.byte	0
- 811 0016 0B       		.uleb128 0xb
- 812 0017 0B       		.uleb128 0xb
- 813 0018 3E       		.uleb128 0x3e
- 814 0019 0B       		.uleb128 0xb
- 815 001a 03       		.uleb128 0x3
- 816 001b 0E       		.uleb128 0xe
- 817 001c 00       		.byte	0
- 818 001d 00       		.byte	0
- 819 001e 03       		.uleb128 0x3
- 820 001f 16       		.uleb128 0x16
- 821 0020 00       		.byte	0
- 822 0021 03       		.uleb128 0x3
- 823 0022 0E       		.uleb128 0xe
- 824 0023 3A       		.uleb128 0x3a
- 825 0024 0B       		.uleb128 0xb
- 826 0025 3B       		.uleb128 0x3b
- 827 0026 0B       		.uleb128 0xb
-ARM GAS  C:\Users\aless\AppData\Local\Temp\cczMu9Sx.s 			page 19
+ 800 0328 50       		.byte	0x50
+ 801 0329 05       		.uleb128 0x5
+ 802 032a 03       		.byte	0x3
+ 803 032b B0030000 		.4byte	.LC19
+ 804 032f 00       		.byte	0
+ 805 0330 00       		.byte	0
+ 806 0331 0C       		.uleb128 0xc
+ 807 0332 81000000 		.4byte	0x81
+ 808 0336 41030000 		.4byte	0x341
+ 809 033a 0D       		.uleb128 0xd
+ 810 033b C4000000 		.4byte	0xc4
+ 811 033f 03       		.byte	0x3
+ 812 0340 00       		.byte	0
+ 813 0341 0E       		.uleb128 0xe
+ 814 0342 5D020000 		.4byte	.LASF19
+ 815 0346 05       		.byte	0x5
+ 816 0347 18       		.byte	0x18
+ 817 0348 31030000 		.4byte	0x331
+ 818 034c 05       		.uleb128 0x5
+ 819 034d 03       		.byte	0x3
+ 820 034e 00000000 		.4byte	DataBuffer
+ 821 0352 0E       		.uleb128 0xe
+ 822 0353 29020000 		.4byte	.LASF20
+ 823 0357 05       		.byte	0x5
+ 824 0358 19       		.byte	0x19
+ 825 0359 B8000000 		.4byte	0xb8
+ 826 035d 05       		.uleb128 0x5
+ 827 035e 03       		.byte	0x3
+ 828 035f 00000000 		.4byte	PacketReadyFlag
+ 829 0363 0F       		.uleb128 0xf
+ 830 0364 1A010000 		.4byte	.LASF21
+ 831 0368 06       		.byte	0x6
+ 832 0369 1207     		.2byte	0x712
+ 833 036b 6F030000 		.4byte	0x36f
+ 834 036f 06       		.uleb128 0x6
+ 835 0370 8C000000 		.4byte	0x8c
+ 836 0374 10       		.uleb128 0x10
+ 837 0375 14000000 		.4byte	.LASF22
+ 838 0379 07       		.byte	0x7
+ 839 037a 17       		.byte	0x17
+ 840 037b 73000000 		.4byte	0x73
+ 841 037f 0E       		.uleb128 0xe
+ 842 0380 5A010000 		.4byte	.LASF23
+ 843 0384 07       		.byte	0x7
+ 844 0385 19       		.byte	0x19
+ 845 0386 B1000000 		.4byte	0xb1
+ 846 038a 05       		.uleb128 0x5
+ 847 038b 03       		.byte	0x3
+ 848 038c 00000000 		.4byte	ch_received
+ 849 0390 0E       		.uleb128 0xe
+ 850 0391 8E010000 		.4byte	.LASF24
+ 851 0395 07       		.byte	0x7
+ 852 0396 1A       		.byte	0x1a
+ 853 0397 73000000 		.4byte	0x73
+ 854 039b 05       		.uleb128 0x5
+ 855 039c 03       		.byte	0x3
+ 856 039d 00000000 		.4byte	LoopContinue
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccl8WFMB.s 			page 20
 
 
- 828 0027 49       		.uleb128 0x49
- 829 0028 13       		.uleb128 0x13
- 830 0029 00       		.byte	0
- 831 002a 00       		.byte	0
- 832 002b 04       		.uleb128 0x4
- 833 002c 24       		.uleb128 0x24
- 834 002d 00       		.byte	0
- 835 002e 0B       		.uleb128 0xb
- 836 002f 0B       		.uleb128 0xb
- 837 0030 3E       		.uleb128 0x3e
- 838 0031 0B       		.uleb128 0xb
- 839 0032 03       		.uleb128 0x3
- 840 0033 08       		.uleb128 0x8
- 841 0034 00       		.byte	0
- 842 0035 00       		.byte	0
- 843 0036 05       		.uleb128 0x5
- 844 0037 16       		.uleb128 0x16
- 845 0038 00       		.byte	0
- 846 0039 03       		.uleb128 0x3
- 847 003a 0E       		.uleb128 0xe
- 848 003b 3A       		.uleb128 0x3a
- 849 003c 0B       		.uleb128 0xb
- 850 003d 3B       		.uleb128 0x3b
- 851 003e 05       		.uleb128 0x5
- 852 003f 49       		.uleb128 0x49
- 853 0040 13       		.uleb128 0x13
- 854 0041 00       		.byte	0
- 855 0042 00       		.byte	0
- 856 0043 06       		.uleb128 0x6
- 857 0044 35       		.uleb128 0x35
- 858 0045 00       		.byte	0
- 859 0046 49       		.uleb128 0x49
- 860 0047 13       		.uleb128 0x13
- 861 0048 00       		.byte	0
- 862 0049 00       		.byte	0
- 863 004a 07       		.uleb128 0x7
- 864 004b 2E       		.uleb128 0x2e
- 865 004c 01       		.byte	0x1
- 866 004d 3F       		.uleb128 0x3f
- 867 004e 19       		.uleb128 0x19
- 868 004f 03       		.uleb128 0x3
- 869 0050 0E       		.uleb128 0xe
- 870 0051 3A       		.uleb128 0x3a
- 871 0052 0B       		.uleb128 0xb
- 872 0053 3B       		.uleb128 0x3b
- 873 0054 0B       		.uleb128 0xb
- 874 0055 27       		.uleb128 0x27
- 875 0056 19       		.uleb128 0x19
- 876 0057 11       		.uleb128 0x11
- 877 0058 01       		.uleb128 0x1
- 878 0059 12       		.uleb128 0x12
- 879 005a 06       		.uleb128 0x6
- 880 005b 40       		.uleb128 0x40
- 881 005c 18       		.uleb128 0x18
- 882 005d 9742     		.uleb128 0x2117
- 883 005f 19       		.uleb128 0x19
- 884 0060 01       		.uleb128 0x1
-ARM GAS  C:\Users\aless\AppData\Local\Temp\cczMu9Sx.s 			page 20
+ 857 03a1 0E       		.uleb128 0xe
+ 858 03a2 4E000000 		.4byte	.LASF25
+ 859 03a6 07       		.byte	0x7
+ 860 03a7 1B       		.byte	0x1b
+ 861 03a8 73000000 		.4byte	0x73
+ 862 03ac 05       		.uleb128 0x5
+ 863 03ad 03       		.byte	0x3
+ 864 03ae 00000000 		.4byte	MenuActive
+ 865 03b2 11       		.uleb128 0x11
+ 866 03b3 A0010000 		.4byte	.LASF26
+ 867 03b7 A0010000 		.4byte	.LASF26
+ 868 03bb 08       		.byte	0x8
+ 869 03bc 71       		.byte	0x71
+ 870 03bd 11       		.uleb128 0x11
+ 871 03be 1D000000 		.4byte	.LASF27
+ 872 03c2 1D000000 		.4byte	.LASF27
+ 873 03c6 08       		.byte	0x8
+ 874 03c7 75       		.byte	0x75
+ 875 03c8 11       		.uleb128 0x11
+ 876 03c9 80020000 		.4byte	.LASF28
+ 877 03cd 80020000 		.4byte	.LASF28
+ 878 03d1 08       		.byte	0x8
+ 879 03d2 8B       		.byte	0x8b
+ 880 03d3 11       		.uleb128 0x11
+ 881 03d4 3F020000 		.4byte	.LASF29
+ 882 03d8 3F020000 		.4byte	.LASF29
+ 883 03dc 08       		.byte	0x8
+ 884 03dd 73       		.byte	0x73
+ 885 03de 00       		.byte	0
+ 886              		.section	.debug_abbrev,"",%progbits
+ 887              	.Ldebug_abbrev0:
+ 888 0000 01       		.uleb128 0x1
+ 889 0001 11       		.uleb128 0x11
+ 890 0002 01       		.byte	0x1
+ 891 0003 25       		.uleb128 0x25
+ 892 0004 0E       		.uleb128 0xe
+ 893 0005 13       		.uleb128 0x13
+ 894 0006 0B       		.uleb128 0xb
+ 895 0007 03       		.uleb128 0x3
+ 896 0008 0E       		.uleb128 0xe
+ 897 0009 1B       		.uleb128 0x1b
+ 898 000a 0E       		.uleb128 0xe
+ 899 000b 55       		.uleb128 0x55
+ 900 000c 17       		.uleb128 0x17
+ 901 000d 11       		.uleb128 0x11
+ 902 000e 01       		.uleb128 0x1
+ 903 000f 10       		.uleb128 0x10
+ 904 0010 17       		.uleb128 0x17
+ 905 0011 00       		.byte	0
+ 906 0012 00       		.byte	0
+ 907 0013 02       		.uleb128 0x2
+ 908 0014 24       		.uleb128 0x24
+ 909 0015 00       		.byte	0
+ 910 0016 0B       		.uleb128 0xb
+ 911 0017 0B       		.uleb128 0xb
+ 912 0018 3E       		.uleb128 0x3e
+ 913 0019 0B       		.uleb128 0xb
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccl8WFMB.s 			page 21
 
 
- 885 0061 13       		.uleb128 0x13
- 886 0062 00       		.byte	0
- 887 0063 00       		.byte	0
- 888 0064 08       		.uleb128 0x8
- 889 0065 898201   		.uleb128 0x4109
- 890 0068 00       		.byte	0
- 891 0069 11       		.uleb128 0x11
- 892 006a 01       		.uleb128 0x1
- 893 006b 31       		.uleb128 0x31
- 894 006c 13       		.uleb128 0x13
- 895 006d 00       		.byte	0
- 896 006e 00       		.byte	0
- 897 006f 09       		.uleb128 0x9
- 898 0070 898201   		.uleb128 0x4109
- 899 0073 01       		.byte	0x1
- 900 0074 11       		.uleb128 0x11
- 901 0075 01       		.uleb128 0x1
- 902 0076 31       		.uleb128 0x31
- 903 0077 13       		.uleb128 0x13
- 904 0078 01       		.uleb128 0x1
- 905 0079 13       		.uleb128 0x13
- 906 007a 00       		.byte	0
- 907 007b 00       		.byte	0
- 908 007c 0A       		.uleb128 0xa
- 909 007d 8A8201   		.uleb128 0x410a
- 910 0080 00       		.byte	0
- 911 0081 02       		.uleb128 0x2
- 912 0082 18       		.uleb128 0x18
- 913 0083 9142     		.uleb128 0x2111
- 914 0085 18       		.uleb128 0x18
- 915 0086 00       		.byte	0
- 916 0087 00       		.byte	0
- 917 0088 0B       		.uleb128 0xb
- 918 0089 898201   		.uleb128 0x4109
- 919 008c 01       		.byte	0x1
- 920 008d 11       		.uleb128 0x11
- 921 008e 01       		.uleb128 0x1
- 922 008f 31       		.uleb128 0x31
- 923 0090 13       		.uleb128 0x13
- 924 0091 00       		.byte	0
- 925 0092 00       		.byte	0
- 926 0093 0C       		.uleb128 0xc
- 927 0094 01       		.uleb128 0x1
- 928 0095 01       		.byte	0x1
- 929 0096 49       		.uleb128 0x49
- 930 0097 13       		.uleb128 0x13
- 931 0098 01       		.uleb128 0x1
- 932 0099 13       		.uleb128 0x13
- 933 009a 00       		.byte	0
- 934 009b 00       		.byte	0
- 935 009c 0D       		.uleb128 0xd
- 936 009d 21       		.uleb128 0x21
- 937 009e 00       		.byte	0
- 938 009f 49       		.uleb128 0x49
- 939 00a0 13       		.uleb128 0x13
- 940 00a1 2F       		.uleb128 0x2f
- 941 00a2 0B       		.uleb128 0xb
-ARM GAS  C:\Users\aless\AppData\Local\Temp\cczMu9Sx.s 			page 21
+ 914 001a 03       		.uleb128 0x3
+ 915 001b 0E       		.uleb128 0xe
+ 916 001c 00       		.byte	0
+ 917 001d 00       		.byte	0
+ 918 001e 03       		.uleb128 0x3
+ 919 001f 16       		.uleb128 0x16
+ 920 0020 00       		.byte	0
+ 921 0021 03       		.uleb128 0x3
+ 922 0022 0E       		.uleb128 0xe
+ 923 0023 3A       		.uleb128 0x3a
+ 924 0024 0B       		.uleb128 0xb
+ 925 0025 3B       		.uleb128 0x3b
+ 926 0026 0B       		.uleb128 0xb
+ 927 0027 49       		.uleb128 0x49
+ 928 0028 13       		.uleb128 0x13
+ 929 0029 00       		.byte	0
+ 930 002a 00       		.byte	0
+ 931 002b 04       		.uleb128 0x4
+ 932 002c 24       		.uleb128 0x24
+ 933 002d 00       		.byte	0
+ 934 002e 0B       		.uleb128 0xb
+ 935 002f 0B       		.uleb128 0xb
+ 936 0030 3E       		.uleb128 0x3e
+ 937 0031 0B       		.uleb128 0xb
+ 938 0032 03       		.uleb128 0x3
+ 939 0033 08       		.uleb128 0x8
+ 940 0034 00       		.byte	0
+ 941 0035 00       		.byte	0
+ 942 0036 05       		.uleb128 0x5
+ 943 0037 16       		.uleb128 0x16
+ 944 0038 00       		.byte	0
+ 945 0039 03       		.uleb128 0x3
+ 946 003a 0E       		.uleb128 0xe
+ 947 003b 3A       		.uleb128 0x3a
+ 948 003c 0B       		.uleb128 0xb
+ 949 003d 3B       		.uleb128 0x3b
+ 950 003e 05       		.uleb128 0x5
+ 951 003f 49       		.uleb128 0x49
+ 952 0040 13       		.uleb128 0x13
+ 953 0041 00       		.byte	0
+ 954 0042 00       		.byte	0
+ 955 0043 06       		.uleb128 0x6
+ 956 0044 35       		.uleb128 0x35
+ 957 0045 00       		.byte	0
+ 958 0046 49       		.uleb128 0x49
+ 959 0047 13       		.uleb128 0x13
+ 960 0048 00       		.byte	0
+ 961 0049 00       		.byte	0
+ 962 004a 07       		.uleb128 0x7
+ 963 004b 2E       		.uleb128 0x2e
+ 964 004c 01       		.byte	0x1
+ 965 004d 3F       		.uleb128 0x3f
+ 966 004e 19       		.uleb128 0x19
+ 967 004f 03       		.uleb128 0x3
+ 968 0050 0E       		.uleb128 0xe
+ 969 0051 3A       		.uleb128 0x3a
+ 970 0052 0B       		.uleb128 0xb
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccl8WFMB.s 			page 22
 
 
- 942 00a3 00       		.byte	0
- 943 00a4 00       		.byte	0
- 944 00a5 0E       		.uleb128 0xe
- 945 00a6 34       		.uleb128 0x34
- 946 00a7 00       		.byte	0
- 947 00a8 03       		.uleb128 0x3
- 948 00a9 0E       		.uleb128 0xe
- 949 00aa 3A       		.uleb128 0x3a
- 950 00ab 0B       		.uleb128 0xb
- 951 00ac 3B       		.uleb128 0x3b
- 952 00ad 0B       		.uleb128 0xb
- 953 00ae 49       		.uleb128 0x49
- 954 00af 13       		.uleb128 0x13
- 955 00b0 3F       		.uleb128 0x3f
- 956 00b1 19       		.uleb128 0x19
- 957 00b2 02       		.uleb128 0x2
- 958 00b3 18       		.uleb128 0x18
- 959 00b4 00       		.byte	0
- 960 00b5 00       		.byte	0
- 961 00b6 0F       		.uleb128 0xf
- 962 00b7 34       		.uleb128 0x34
- 963 00b8 00       		.byte	0
- 964 00b9 03       		.uleb128 0x3
- 965 00ba 0E       		.uleb128 0xe
- 966 00bb 3A       		.uleb128 0x3a
- 967 00bc 0B       		.uleb128 0xb
- 968 00bd 3B       		.uleb128 0x3b
- 969 00be 05       		.uleb128 0x5
- 970 00bf 49       		.uleb128 0x49
- 971 00c0 13       		.uleb128 0x13
- 972 00c1 3F       		.uleb128 0x3f
- 973 00c2 19       		.uleb128 0x19
- 974 00c3 3C       		.uleb128 0x3c
- 975 00c4 19       		.uleb128 0x19
- 976 00c5 00       		.byte	0
- 977 00c6 00       		.byte	0
- 978 00c7 10       		.uleb128 0x10
- 979 00c8 34       		.uleb128 0x34
- 980 00c9 00       		.byte	0
- 981 00ca 03       		.uleb128 0x3
- 982 00cb 0E       		.uleb128 0xe
- 983 00cc 3A       		.uleb128 0x3a
- 984 00cd 0B       		.uleb128 0xb
- 985 00ce 3B       		.uleb128 0x3b
- 986 00cf 0B       		.uleb128 0xb
- 987 00d0 49       		.uleb128 0x49
- 988 00d1 13       		.uleb128 0x13
- 989 00d2 3F       		.uleb128 0x3f
- 990 00d3 19       		.uleb128 0x19
- 991 00d4 3C       		.uleb128 0x3c
- 992 00d5 19       		.uleb128 0x19
- 993 00d6 00       		.byte	0
- 994 00d7 00       		.byte	0
- 995 00d8 11       		.uleb128 0x11
- 996 00d9 2E       		.uleb128 0x2e
- 997 00da 00       		.byte	0
- 998 00db 3F       		.uleb128 0x3f
-ARM GAS  C:\Users\aless\AppData\Local\Temp\cczMu9Sx.s 			page 22
+ 971 0053 3B       		.uleb128 0x3b
+ 972 0054 0B       		.uleb128 0xb
+ 973 0055 27       		.uleb128 0x27
+ 974 0056 19       		.uleb128 0x19
+ 975 0057 11       		.uleb128 0x11
+ 976 0058 01       		.uleb128 0x1
+ 977 0059 12       		.uleb128 0x12
+ 978 005a 06       		.uleb128 0x6
+ 979 005b 40       		.uleb128 0x40
+ 980 005c 18       		.uleb128 0x18
+ 981 005d 9742     		.uleb128 0x2117
+ 982 005f 19       		.uleb128 0x19
+ 983 0060 01       		.uleb128 0x1
+ 984 0061 13       		.uleb128 0x13
+ 985 0062 00       		.byte	0
+ 986 0063 00       		.byte	0
+ 987 0064 08       		.uleb128 0x8
+ 988 0065 898201   		.uleb128 0x4109
+ 989 0068 00       		.byte	0
+ 990 0069 11       		.uleb128 0x11
+ 991 006a 01       		.uleb128 0x1
+ 992 006b 31       		.uleb128 0x31
+ 993 006c 13       		.uleb128 0x13
+ 994 006d 00       		.byte	0
+ 995 006e 00       		.byte	0
+ 996 006f 09       		.uleb128 0x9
+ 997 0070 898201   		.uleb128 0x4109
+ 998 0073 01       		.byte	0x1
+ 999 0074 11       		.uleb128 0x11
+ 1000 0075 01       		.uleb128 0x1
+ 1001 0076 31       		.uleb128 0x31
+ 1002 0077 13       		.uleb128 0x13
+ 1003 0078 01       		.uleb128 0x1
+ 1004 0079 13       		.uleb128 0x13
+ 1005 007a 00       		.byte	0
+ 1006 007b 00       		.byte	0
+ 1007 007c 0A       		.uleb128 0xa
+ 1008 007d 8A8201   		.uleb128 0x410a
+ 1009 0080 00       		.byte	0
+ 1010 0081 02       		.uleb128 0x2
+ 1011 0082 18       		.uleb128 0x18
+ 1012 0083 9142     		.uleb128 0x2111
+ 1013 0085 18       		.uleb128 0x18
+ 1014 0086 00       		.byte	0
+ 1015 0087 00       		.byte	0
+ 1016 0088 0B       		.uleb128 0xb
+ 1017 0089 898201   		.uleb128 0x4109
+ 1018 008c 01       		.byte	0x1
+ 1019 008d 11       		.uleb128 0x11
+ 1020 008e 01       		.uleb128 0x1
+ 1021 008f 31       		.uleb128 0x31
+ 1022 0090 13       		.uleb128 0x13
+ 1023 0091 00       		.byte	0
+ 1024 0092 00       		.byte	0
+ 1025 0093 0C       		.uleb128 0xc
+ 1026 0094 01       		.uleb128 0x1
+ 1027 0095 01       		.byte	0x1
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccl8WFMB.s 			page 23
 
 
- 999 00dc 19       		.uleb128 0x19
- 1000 00dd 3C       		.uleb128 0x3c
- 1001 00de 19       		.uleb128 0x19
- 1002 00df 6E       		.uleb128 0x6e
- 1003 00e0 0E       		.uleb128 0xe
- 1004 00e1 03       		.uleb128 0x3
- 1005 00e2 0E       		.uleb128 0xe
- 1006 00e3 3A       		.uleb128 0x3a
- 1007 00e4 0B       		.uleb128 0xb
- 1008 00e5 3B       		.uleb128 0x3b
- 1009 00e6 0B       		.uleb128 0xb
- 1010 00e7 00       		.byte	0
- 1011 00e8 00       		.byte	0
- 1012 00e9 00       		.byte	0
- 1013              		.section	.debug_aranges,"",%progbits
- 1014 0000 1C000000 		.4byte	0x1c
- 1015 0004 0200     		.2byte	0x2
- 1016 0006 00000000 		.4byte	.Ldebug_info0
- 1017 000a 04       		.byte	0x4
- 1018 000b 00       		.byte	0
- 1019 000c 0000     		.2byte	0
- 1020 000e 0000     		.2byte	0
- 1021 0010 00000000 		.4byte	.LFB64
- 1022 0014 B8010000 		.4byte	.LFE64-.LFB64
- 1023 0018 00000000 		.4byte	0
- 1024 001c 00000000 		.4byte	0
- 1025              		.section	.debug_ranges,"",%progbits
- 1026              	.Ldebug_ranges0:
- 1027 0000 00000000 		.4byte	.LFB64
- 1028 0004 B8010000 		.4byte	.LFE64
- 1029 0008 00000000 		.4byte	0
- 1030 000c 00000000 		.4byte	0
- 1031              		.section	.debug_line,"",%progbits
- 1032              	.Ldebug_line0:
- 1033 0000 F9010000 		.section	.debug_str,"MS",%progbits,1
- 1033      02008B01 
- 1033      00000201 
- 1033      FB0E0D00 
- 1033      01010101 
- 1034              	.LASF4:
- 1035 0000 5F5F7569 		.ascii	"__uint8_t\000"
- 1035      6E74385F 
- 1035      7400
- 1036              	.LASF5:
- 1037 000a 5F5F696E 		.ascii	"__int32_t\000"
- 1037      7433325F 
- 1037      7400
- 1038              	.LASF22:
- 1039 0014 5475726E 		.ascii	"TurnedON\000"
- 1039      65644F4E 
- 1039      00
- 1040              	.LASF28:
- 1041 001d 55415254 		.ascii	"UART_ClearRxBuffer\000"
- 1041      5F436C65 
- 1041      61725278 
- 1041      42756666 
- 1041      657200
-ARM GAS  C:\Users\aless\AppData\Local\Temp\cczMu9Sx.s 			page 23
+ 1028 0096 49       		.uleb128 0x49
+ 1029 0097 13       		.uleb128 0x13
+ 1030 0098 01       		.uleb128 0x1
+ 1031 0099 13       		.uleb128 0x13
+ 1032 009a 00       		.byte	0
+ 1033 009b 00       		.byte	0
+ 1034 009c 0D       		.uleb128 0xd
+ 1035 009d 21       		.uleb128 0x21
+ 1036 009e 00       		.byte	0
+ 1037 009f 49       		.uleb128 0x49
+ 1038 00a0 13       		.uleb128 0x13
+ 1039 00a1 2F       		.uleb128 0x2f
+ 1040 00a2 0B       		.uleb128 0xb
+ 1041 00a3 00       		.byte	0
+ 1042 00a4 00       		.byte	0
+ 1043 00a5 0E       		.uleb128 0xe
+ 1044 00a6 34       		.uleb128 0x34
+ 1045 00a7 00       		.byte	0
+ 1046 00a8 03       		.uleb128 0x3
+ 1047 00a9 0E       		.uleb128 0xe
+ 1048 00aa 3A       		.uleb128 0x3a
+ 1049 00ab 0B       		.uleb128 0xb
+ 1050 00ac 3B       		.uleb128 0x3b
+ 1051 00ad 0B       		.uleb128 0xb
+ 1052 00ae 49       		.uleb128 0x49
+ 1053 00af 13       		.uleb128 0x13
+ 1054 00b0 3F       		.uleb128 0x3f
+ 1055 00b1 19       		.uleb128 0x19
+ 1056 00b2 02       		.uleb128 0x2
+ 1057 00b3 18       		.uleb128 0x18
+ 1058 00b4 00       		.byte	0
+ 1059 00b5 00       		.byte	0
+ 1060 00b6 0F       		.uleb128 0xf
+ 1061 00b7 34       		.uleb128 0x34
+ 1062 00b8 00       		.byte	0
+ 1063 00b9 03       		.uleb128 0x3
+ 1064 00ba 0E       		.uleb128 0xe
+ 1065 00bb 3A       		.uleb128 0x3a
+ 1066 00bc 0B       		.uleb128 0xb
+ 1067 00bd 3B       		.uleb128 0x3b
+ 1068 00be 05       		.uleb128 0x5
+ 1069 00bf 49       		.uleb128 0x49
+ 1070 00c0 13       		.uleb128 0x13
+ 1071 00c1 3F       		.uleb128 0x3f
+ 1072 00c2 19       		.uleb128 0x19
+ 1073 00c3 3C       		.uleb128 0x3c
+ 1074 00c4 19       		.uleb128 0x19
+ 1075 00c5 00       		.byte	0
+ 1076 00c6 00       		.byte	0
+ 1077 00c7 10       		.uleb128 0x10
+ 1078 00c8 34       		.uleb128 0x34
+ 1079 00c9 00       		.byte	0
+ 1080 00ca 03       		.uleb128 0x3
+ 1081 00cb 0E       		.uleb128 0xe
+ 1082 00cc 3A       		.uleb128 0x3a
+ 1083 00cd 0B       		.uleb128 0xb
+ 1084 00ce 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccl8WFMB.s 			page 24
 
 
- 1042              	.LASF32:
- 1043 0030 433A5C55 		.ascii	"C:\\Users\\aless\\Documents\\PSoC Creator\\PsoC_Fin"
- 1043      73657273 
- 1043      5C616C65 
- 1043      73735C44 
- 1043      6F63756D 
- 1044 005e 616C5F50 		.ascii	"al_Project_1_03\\FIORANI_GARGIULO_IANNUZZI_Project."
- 1044      726F6A65 
- 1044      63745F31 
- 1044      5F30335C 
- 1044      46494F52 
- 1045 0090 63796473 		.ascii	"cydsn\000"
- 1045      6E00
- 1046              	.LASF33:
- 1047 0096 43757374 		.ascii	"Custom_ISR_MENU\000"
- 1047      6F6D5F49 
- 1047      53525F4D 
- 1047      454E5500 
- 1048              	.LASF12:
- 1049 00a6 696E7433 		.ascii	"int32_t\000"
- 1049      325F7400 
- 1050              	.LASF14:
- 1051 00ae 666C6F61 		.ascii	"float\000"
- 1051      7400
- 1052              	.LASF25:
- 1053 00b4 4D656E75 		.ascii	"MenuActive\000"
- 1053      41637469 
- 1053      766500
- 1054              	.LASF1:
- 1055 00bf 756E7369 		.ascii	"unsigned char\000"
- 1055      676E6564 
- 1055      20636861 
- 1055      7200
- 1056              	.LASF30:
- 1057 00cd 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 1057      43313120 
- 1057      352E342E 
- 1057      31203230 
- 1057      31363036 
- 1058 0100 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 1058      20726576 
- 1058      6973696F 
- 1058      6E203233 
- 1058      37373135 
- 1059 0133 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 1059      66756E63 
- 1059      74696F6E 
- 1059      2D736563 
- 1059      74696F6E 
- 1060              	.LASF7:
- 1061 015b 6C6F6E67 		.ascii	"long unsigned int\000"
- 1061      20756E73 
- 1061      69676E65 
- 1061      6420696E 
- 1061      7400
- 1062              	.LASF3:
- 1063 016d 73686F72 		.ascii	"short unsigned int\000"
-ARM GAS  C:\Users\aless\AppData\Local\Temp\cczMu9Sx.s 			page 24
+ 1085 00cf 0B       		.uleb128 0xb
+ 1086 00d0 49       		.uleb128 0x49
+ 1087 00d1 13       		.uleb128 0x13
+ 1088 00d2 3F       		.uleb128 0x3f
+ 1089 00d3 19       		.uleb128 0x19
+ 1090 00d4 3C       		.uleb128 0x3c
+ 1091 00d5 19       		.uleb128 0x19
+ 1092 00d6 00       		.byte	0
+ 1093 00d7 00       		.byte	0
+ 1094 00d8 11       		.uleb128 0x11
+ 1095 00d9 2E       		.uleb128 0x2e
+ 1096 00da 00       		.byte	0
+ 1097 00db 3F       		.uleb128 0x3f
+ 1098 00dc 19       		.uleb128 0x19
+ 1099 00dd 3C       		.uleb128 0x3c
+ 1100 00de 19       		.uleb128 0x19
+ 1101 00df 6E       		.uleb128 0x6e
+ 1102 00e0 0E       		.uleb128 0xe
+ 1103 00e1 03       		.uleb128 0x3
+ 1104 00e2 0E       		.uleb128 0xe
+ 1105 00e3 3A       		.uleb128 0x3a
+ 1106 00e4 0B       		.uleb128 0xb
+ 1107 00e5 3B       		.uleb128 0x3b
+ 1108 00e6 0B       		.uleb128 0xb
+ 1109 00e7 00       		.byte	0
+ 1110 00e8 00       		.byte	0
+ 1111 00e9 00       		.byte	0
+ 1112              		.section	.debug_aranges,"",%progbits
+ 1113 0000 1C000000 		.4byte	0x1c
+ 1114 0004 0200     		.2byte	0x2
+ 1115 0006 00000000 		.4byte	.Ldebug_info0
+ 1116 000a 04       		.byte	0x4
+ 1117 000b 00       		.byte	0
+ 1118 000c 0000     		.2byte	0
+ 1119 000e 0000     		.2byte	0
+ 1120 0010 00000000 		.4byte	.LFB64
+ 1121 0014 D0010000 		.4byte	.LFE64-.LFB64
+ 1122 0018 00000000 		.4byte	0
+ 1123 001c 00000000 		.4byte	0
+ 1124              		.section	.debug_ranges,"",%progbits
+ 1125              	.Ldebug_ranges0:
+ 1126 0000 00000000 		.4byte	.LFB64
+ 1127 0004 D0010000 		.4byte	.LFE64
+ 1128 0008 00000000 		.4byte	0
+ 1129 000c 00000000 		.4byte	0
+ 1130              		.section	.debug_line,"",%progbits
+ 1131              	.Ldebug_line0:
+ 1132 0000 FC010000 		.section	.debug_str,"MS",%progbits,1
+ 1132      02008B01 
+ 1132      00000201 
+ 1132      FB0E0D00 
+ 1132      01010101 
+ 1133              	.LASF4:
+ 1134 0000 5F5F7569 		.ascii	"__uint8_t\000"
+ 1134      6E74385F 
+ 1134      7400
+ 1135              	.LASF5:
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccl8WFMB.s 			page 25
 
 
- 1063      7420756E 
- 1063      7369676E 
- 1063      65642069 
- 1063      6E7400
- 1064              	.LASF21:
- 1065 0180 49544D5F 		.ascii	"ITM_RxBuffer\000"
- 1065      52784275 
- 1065      66666572 
- 1065      00
- 1066              	.LASF15:
- 1067 018d 646F7562 		.ascii	"double\000"
- 1067      6C6500
- 1068              	.LASF10:
- 1069 0194 756E7369 		.ascii	"unsigned int\000"
- 1069      676E6564 
- 1069      20696E74 
- 1069      00
- 1070              	.LASF9:
- 1071 01a1 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1071      206C6F6E 
- 1071      6720756E 
- 1071      7369676E 
- 1071      65642069 
- 1072              	.LASF11:
- 1073 01b8 75696E74 		.ascii	"uint8_t\000"
- 1073      385F7400 
- 1074              	.LASF23:
- 1075 01c0 63685F72 		.ascii	"ch_received\000"
- 1075      65636569 
- 1075      76656400 
- 1076              	.LASF18:
- 1077 01cc 73697A65 		.ascii	"sizetype\000"
- 1077      74797065 
- 1077      00
- 1078              	.LASF8:
- 1079 01d5 6C6F6E67 		.ascii	"long long int\000"
- 1079      206C6F6E 
- 1079      6720696E 
- 1079      7400
- 1080              	.LASF31:
- 1081 01e3 4D656E75 		.ascii	"Menu_Functions.c\000"
- 1081      5F46756E 
- 1081      6374696F 
- 1081      6E732E63 
- 1081      00
- 1082              	.LASF24:
- 1083 01f4 4C6F6F70 		.ascii	"LoopContinue\000"
- 1083      436F6E74 
- 1083      696E7565 
- 1083      00
- 1084              	.LASF16:
- 1085 0201 63686172 		.ascii	"char\000"
- 1085      00
- 1086              	.LASF26:
- 1087 0206 55415254 		.ascii	"UART_GetChar\000"
- 1087      5F476574 
- 1087      43686172 
-ARM GAS  C:\Users\aless\AppData\Local\Temp\cczMu9Sx.s 			page 25
+ 1136 000a 5F5F696E 		.ascii	"__int32_t\000"
+ 1136      7433325F 
+ 1136      7400
+ 1137              	.LASF22:
+ 1138 0014 5475726E 		.ascii	"TurnedON\000"
+ 1138      65644F4E 
+ 1138      00
+ 1139              	.LASF27:
+ 1140 001d 55415254 		.ascii	"UART_ClearRxBuffer\000"
+ 1140      5F436C65 
+ 1140      61725278 
+ 1140      42756666 
+ 1140      657200
+ 1141              	.LASF33:
+ 1142 0030 43757374 		.ascii	"Custom_ISR_MENU\000"
+ 1142      6F6D5F49 
+ 1142      53525F4D 
+ 1142      454E5500 
+ 1143              	.LASF12:
+ 1144 0040 696E7433 		.ascii	"int32_t\000"
+ 1144      325F7400 
+ 1145              	.LASF14:
+ 1146 0048 666C6F61 		.ascii	"float\000"
+ 1146      7400
+ 1147              	.LASF25:
+ 1148 004e 4D656E75 		.ascii	"MenuActive\000"
+ 1148      41637469 
+ 1148      766500
+ 1149              	.LASF1:
+ 1150 0059 756E7369 		.ascii	"unsigned char\000"
+ 1150      676E6564 
+ 1150      20636861 
+ 1150      7200
+ 1151              	.LASF30:
+ 1152 0067 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1152      43313120 
+ 1152      352E342E 
+ 1152      31203230 
+ 1152      31363036 
+ 1153 009a 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1153      20726576 
+ 1153      6973696F 
+ 1153      6E203233 
+ 1153      37373135 
+ 1154 00cd 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1154      66756E63 
+ 1154      74696F6E 
+ 1154      2D736563 
+ 1154      74696F6E 
+ 1155              	.LASF7:
+ 1156 00f5 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1156      20756E73 
+ 1156      69676E65 
+ 1156      6420696E 
+ 1156      7400
+ 1157              	.LASF3:
+ 1158 0107 73686F72 		.ascii	"short unsigned int\000"
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccl8WFMB.s 			page 26
 
 
- 1087      00
- 1088              	.LASF2:
- 1089 0213 73686F72 		.ascii	"short int\000"
- 1089      7420696E 
- 1089      7400
- 1090              	.LASF20:
- 1091 021d 5061636B 		.ascii	"PacketReadyFlag\000"
- 1091      65745265 
- 1091      61647946 
- 1091      6C616700 
- 1092              	.LASF13:
- 1093 022d 75696E74 		.ascii	"uint8\000"
- 1093      3800
- 1094              	.LASF29:
- 1095 0233 55415254 		.ascii	"UART_GetRxBufferSize\000"
- 1095      5F476574 
- 1095      52784275 
- 1095      66666572 
- 1095      53697A65 
- 1096              	.LASF6:
- 1097 0248 6C6F6E67 		.ascii	"long int\000"
- 1097      20696E74 
- 1097      00
- 1098              	.LASF19:
- 1099 0251 44617461 		.ascii	"DataBuffer\000"
- 1099      42756666 
- 1099      657200
- 1100              	.LASF17:
- 1101 025c 6C6F6E67 		.ascii	"long double\000"
- 1101      20646F75 
- 1101      626C6500 
- 1102              	.LASF0:
- 1103 0268 7369676E 		.ascii	"signed char\000"
- 1103      65642063 
- 1103      68617200 
- 1104              	.LASF27:
- 1105 0274 55415254 		.ascii	"UART_PutString\000"
- 1105      5F507574 
- 1105      53747269 
- 1105      6E6700
- 1106              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 1158      7420756E 
+ 1158      7369676E 
+ 1158      65642069 
+ 1158      6E7400
+ 1159              	.LASF21:
+ 1160 011a 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1160      52784275 
+ 1160      66666572 
+ 1160      00
+ 1161              	.LASF15:
+ 1162 0127 646F7562 		.ascii	"double\000"
+ 1162      6C6500
+ 1163              	.LASF10:
+ 1164 012e 756E7369 		.ascii	"unsigned int\000"
+ 1164      676E6564 
+ 1164      20696E74 
+ 1164      00
+ 1165              	.LASF9:
+ 1166 013b 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1166      206C6F6E 
+ 1166      6720756E 
+ 1166      7369676E 
+ 1166      65642069 
+ 1167              	.LASF11:
+ 1168 0152 75696E74 		.ascii	"uint8_t\000"
+ 1168      385F7400 
+ 1169              	.LASF23:
+ 1170 015a 63685F72 		.ascii	"ch_received\000"
+ 1170      65636569 
+ 1170      76656400 
+ 1171              	.LASF18:
+ 1172 0166 73697A65 		.ascii	"sizetype\000"
+ 1172      74797065 
+ 1172      00
+ 1173              	.LASF8:
+ 1174 016f 6C6F6E67 		.ascii	"long long int\000"
+ 1174      206C6F6E 
+ 1174      6720696E 
+ 1174      7400
+ 1175              	.LASF31:
+ 1176 017d 4D656E75 		.ascii	"Menu_Functions.c\000"
+ 1176      5F46756E 
+ 1176      6374696F 
+ 1176      6E732E63 
+ 1176      00
+ 1177              	.LASF24:
+ 1178 018e 4C6F6F70 		.ascii	"LoopContinue\000"
+ 1178      436F6E74 
+ 1178      696E7565 
+ 1178      00
+ 1179              	.LASF16:
+ 1180 019b 63686172 		.ascii	"char\000"
+ 1180      00
+ 1181              	.LASF26:
+ 1182 01a0 55415254 		.ascii	"UART_GetChar\000"
+ 1182      5F476574 
+ 1182      43686172 
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccl8WFMB.s 			page 27
+
+
+ 1182      00
+ 1183              	.LASF2:
+ 1184 01ad 73686F72 		.ascii	"short int\000"
+ 1184      7420696E 
+ 1184      7400
+ 1185              	.LASF32:
+ 1186 01b7 433A5C55 		.ascii	"C:\\Users\\simon\\Desktop\\ProgettoLTES\\Final Proj"
+ 1186      73657273 
+ 1186      5C73696D 
+ 1186      6F6E5C44 
+ 1186      65736B74 
+ 1187 01e5 6563745C 		.ascii	"ect\\PsoC_Final_Project_1_03\\FIORANI_GARGIULO_IANN"
+ 1187      50736F43 
+ 1187      5F46696E 
+ 1187      616C5F50 
+ 1187      726F6A65 
+ 1188 0216 555A5A49 		.ascii	"UZZI_Project.cydsn\000"
+ 1188      5F50726F 
+ 1188      6A656374 
+ 1188      2E637964 
+ 1188      736E00
+ 1189              	.LASF20:
+ 1190 0229 5061636B 		.ascii	"PacketReadyFlag\000"
+ 1190      65745265 
+ 1190      61647946 
+ 1190      6C616700 
+ 1191              	.LASF13:
+ 1192 0239 75696E74 		.ascii	"uint8\000"
+ 1192      3800
+ 1193              	.LASF29:
+ 1194 023f 55415254 		.ascii	"UART_GetRxBufferSize\000"
+ 1194      5F476574 
+ 1194      52784275 
+ 1194      66666572 
+ 1194      53697A65 
+ 1195              	.LASF6:
+ 1196 0254 6C6F6E67 		.ascii	"long int\000"
+ 1196      20696E74 
+ 1196      00
+ 1197              	.LASF19:
+ 1198 025d 44617461 		.ascii	"DataBuffer\000"
+ 1198      42756666 
+ 1198      657200
+ 1199              	.LASF17:
+ 1200 0268 6C6F6E67 		.ascii	"long double\000"
+ 1200      20646F75 
+ 1200      626C6500 
+ 1201              	.LASF0:
+ 1202 0274 7369676E 		.ascii	"signed char\000"
+ 1202      65642063 
+ 1202      68617200 
+ 1203              	.LASF28:
+ 1204 0280 55415254 		.ascii	"UART_PutString\000"
+ 1204      5F507574 
+ 1204      53747269 
+ 1204      6E6700
+ 1205              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccl8WFMB.s 			page 28
+
+

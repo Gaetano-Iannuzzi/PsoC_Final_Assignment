@@ -14,7 +14,7 @@
     #define __MENU_FUNCTIONS_H
     
     #include "InterruptRoutines.h"
-    //#include "25LC256.h"
+    #include "25LC256.h"
     #include "project.h"
     #include "cytypes.h"
     #include "stdio.h"

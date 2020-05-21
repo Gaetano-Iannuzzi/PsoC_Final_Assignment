@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
   29:Generated_Source\PSoC5/ADC_DelSig.c **** 
   30:Generated_Source\PSoC5/ADC_DelSig.c **** 
   31:Generated_Source\PSoC5/ADC_DelSig.c **** /***************************************
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 2
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 2
 
 
   32:Generated_Source\PSoC5/ADC_DelSig.c **** * Global data allocation
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
   86:Generated_Source\PSoC5/ADC_DelSig.c **** *
   87:Generated_Source\PSoC5/ADC_DelSig.c **** * Return:
   88:Generated_Source\PSoC5/ADC_DelSig.c **** *  None
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 3
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 3
 
 
   89:Generated_Source\PSoC5/ADC_DelSig.c **** *
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  143:Generated_Source\PSoC5/ADC_DelSig.c ****                                           ADC_DelSig_CFG2);
  144:Generated_Source\PSoC5/ADC_DelSig.c ****     #endif /* ADC_DelSig_DEFAULT_NUM_CONFIGS > 1 */
  145:Generated_Source\PSoC5/ADC_DelSig.c ****     #if(ADC_DelSig_DEFAULT_NUM_CONFIGS > 2)
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 4
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 4
 
 
  146:Generated_Source\PSoC5/ADC_DelSig.c ****         ADC_DelSig_GainCompensation(ADC_DelSig_CFG3_INPUT_RANGE,
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  200:Generated_Source\PSoC5/ADC_DelSig.c ****     ADC_DelSig_STBY_PWRMGR_DEC_REG |= ADC_DelSig_STBY_PWR_DEC_EN;
  201:Generated_Source\PSoC5/ADC_DelSig.c ****     ADC_DelSig_STBY_PWRMGR_DSM_REG |= ADC_DelSig_STBY_PWR_DSM_EN;
  202:Generated_Source\PSoC5/ADC_DelSig.c **** 
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 5
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 5
 
 
  203:Generated_Source\PSoC5/ADC_DelSig.c ****     /* Disable PRES, Enable power to VCMBUF0, REFBUF0 and REFBUF1, enable PRES */
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  257:Generated_Source\PSoC5/ADC_DelSig.c ****              (ADC_DelSig_CFG3_REFERENCE != ADC_DelSig_EXT_REF_ON_P32))) ||
  258:Generated_Source\PSoC5/ADC_DelSig.c ****              ((config == 4u) &&
  259:Generated_Source\PSoC5/ADC_DelSig.c ****               (ADC_DelSig_CFG4_INPUT_RANGE == ADC_DelSig_IR_VSSA_TO_2VREF) &&
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 6
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 6
 
 
  260:Generated_Source\PSoC5/ADC_DelSig.c ****              ((ADC_DelSig_CFG4_REFERENCE != ADC_DelSig_EXT_REF_ON_P03) &&
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  314:Generated_Source\PSoC5/ADC_DelSig.c **** *  Subsequent calls of the Start function only enable the ADC and turn
  315:Generated_Source\PSoC5/ADC_DelSig.c **** *  on the power. If multiple configurations are selected, it will
  316:Generated_Source\PSoC5/ADC_DelSig.c **** *  configure the ADC for configuration 1 by default, unless the
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 7
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 7
 
 
  317:Generated_Source\PSoC5/ADC_DelSig.c **** *  ADC_DelSig_SelectConfiguration( ) function has been called to change
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  371:Generated_Source\PSoC5/ADC_DelSig.c **** 
  372:Generated_Source\PSoC5/ADC_DelSig.c ****     /* Stop conversions */
  373:Generated_Source\PSoC5/ADC_DelSig.c ****     ADC_DelSig_DEC_CR_REG &= (uint8)~ADC_DelSig_DEC_START_CONV;
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 8
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 8
 
 
  374:Generated_Source\PSoC5/ADC_DelSig.c ****     ADC_DelSig_DEC_SR_REG |=  ADC_DelSig_DEC_INTR_CLEAR;
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  428:Generated_Source\PSoC5/ADC_DelSig.c **** *  gain:  Two bit value to select a gain of 1, 2, 4, or 8.
  429:Generated_Source\PSoC5/ADC_DelSig.c **** *
  430:Generated_Source\PSoC5/ADC_DelSig.c **** * Return:
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 9
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 9
 
 
  431:Generated_Source\PSoC5/ADC_DelSig.c **** *  None
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  485:Generated_Source\PSoC5/ADC_DelSig.c **** *  Calculates a new GCOR value and writes it into the GCOR register. 
  486:Generated_Source\PSoC5/ADC_DelSig.c **** *  The GCOR value is a 16-bit value that represents a gain of 0 to 2. 
  487:Generated_Source\PSoC5/ADC_DelSig.c **** *  The ADC result is multiplied by this value before it is placed in the ADC 
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 10
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 10
 
 
  488:Generated_Source\PSoC5/ADC_DelSig.c **** *  output registers. The numerical format for the GCOR value is:
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  542:Generated_Source\PSoC5/ADC_DelSig.c **** *
  543:Generated_Source\PSoC5/ADC_DelSig.c **** * Summary:
  544:Generated_Source\PSoC5/ADC_DelSig.c **** *  This API returns the current GCOR register value, normalized based on the
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 11
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 11
 
 
  545:Generated_Source\PSoC5/ADC_DelSig.c **** *  GVAL register settings.
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  599:Generated_Source\PSoC5/ADC_DelSig.c **** * Function Name: ADC_DelSig_StopConvert
  600:Generated_Source\PSoC5/ADC_DelSig.c **** ********************************************************************************
  601:Generated_Source\PSoC5/ADC_DelSig.c **** *
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 12
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 12
 
 
  602:Generated_Source\PSoC5/ADC_DelSig.c **** * Summary:
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  656:Generated_Source\PSoC5/ADC_DelSig.c ****         *   resolution above 16 bit
  657:Generated_Source\PSoC5/ADC_DelSig.c ****         */
  658:Generated_Source\PSoC5/ADC_DelSig.c ****         if(ADC_DelSig_stopConversion != 0u)
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 13
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 13
 
 
  659:Generated_Source\PSoC5/ADC_DelSig.c ****         {
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  713:Generated_Source\PSoC5/ADC_DelSig.c ****     }
  714:Generated_Source\PSoC5/ADC_DelSig.c ****     else /*No action required for other coherency */
  715:Generated_Source\PSoC5/ADC_DelSig.c ****     {
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 14
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 14
 
 
  716:Generated_Source\PSoC5/ADC_DelSig.c ****     }
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  770:Generated_Source\PSoC5/ADC_DelSig.c ****             result = (CY_GET_REG16(ADC_DelSig_DEC_SAMP_16B_PTR));
  771:Generated_Source\PSoC5/ADC_DelSig.c ****         #else
  772:Generated_Source\PSoC5/ADC_DelSig.c ****             result = ADC_DelSig_DEC_SAMP_REG;
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 15
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 15
 
 
  773:Generated_Source\PSoC5/ADC_DelSig.c ****             result |=  (uint16)((uint16)ADC_DelSig_DEC_SAMPM_REG << 8u);
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  827:Generated_Source\PSoC5/ADC_DelSig.c ****                 result |= 0xFF00u;
  828:Generated_Source\PSoC5/ADC_DelSig.c ****             }
  829:Generated_Source\PSoC5/ADC_DelSig.c ****             result = (result << 8u) | ADC_DelSig_DEC_SAMPM_REG;
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 16
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 16
 
 
  830:Generated_Source\PSoC5/ADC_DelSig.c ****             result = (result << 8u) | ADC_DelSig_DEC_SAMP_REG;
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  884:Generated_Source\PSoC5/ADC_DelSig.c **** *  given reading before calculating the voltage conversion.
  885:Generated_Source\PSoC5/ADC_DelSig.c **** *
  886:Generated_Source\PSoC5/ADC_DelSig.c **** * Parameters:
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 17
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 17
 
 
  887:Generated_Source\PSoC5/ADC_DelSig.c **** *  int32:  This value is a measured value when the inputs are shorted or 
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  941:Generated_Source\PSoC5/ADC_DelSig.c **** }
  942:Generated_Source\PSoC5/ADC_DelSig.c **** 
  943:Generated_Source\PSoC5/ADC_DelSig.c **** 
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 18
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 18
 
 
  944:Generated_Source\PSoC5/ADC_DelSig.c **** /*******************************************************************************
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  998:Generated_Source\PSoC5/ADC_DelSig.c **** 
  999:Generated_Source\PSoC5/ADC_DelSig.c ****     mVolts = (int16)(( adcCounts * ADC_DelSig_1MV_COUNTS ) / ADC_DelSig_CountsPerVolt) ;
 1000:Generated_Source\PSoC5/ADC_DelSig.c **** 
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 19
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 19
 
 
 1001:Generated_Source\PSoC5/ADC_DelSig.c ****     return(mVolts);
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
 1055:Generated_Source\PSoC5/ADC_DelSig.c ****     #endif /* ADC_DelSig_CFG2_DEC_DIV */
 1056:Generated_Source\PSoC5/ADC_DelSig.c **** 
 1057:Generated_Source\PSoC5/ADC_DelSig.c ****     /* Subtract ADC offset */
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 20
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 20
 
 
 1058:Generated_Source\PSoC5/ADC_DelSig.c ****     adcCounts -= ADC_DelSig_Offset;
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
 1112:Generated_Source\PSoC5/ADC_DelSig.c ****         #if(ADC_DelSig_CFG2_DEC_DIV != 0)
 1113:Generated_Source\PSoC5/ADC_DelSig.c ****             adcCounts /= ADC_DelSig_CFG2_DEC_DIV;
 1114:Generated_Source\PSoC5/ADC_DelSig.c ****         #endif /* ADC_DelSig_CFG2_DEC_DIV */
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 21
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 21
 
 
 1115:Generated_Source\PSoC5/ADC_DelSig.c ****     }
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
 1169:Generated_Source\PSoC5/ADC_DelSig.c ****         #if( (ADC_DelSig_CFG1_RESOLUTION == ADC_DelSig__BITS_16) || \
 1170:Generated_Source\PSoC5/ADC_DelSig.c ****              (ADC_DelSig_CFG2_RESOLUTION == ADC_DelSig__BITS_16) || \
 1171:Generated_Source\PSoC5/ADC_DelSig.c ****              (ADC_DelSig_CFG3_RESOLUTION == ADC_DelSig__BITS_16) || \
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 22
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 22
 
 
 1172:Generated_Source\PSoC5/ADC_DelSig.c ****              (ADC_DelSig_CFG4_RESOLUTION == ADC_DelSig__BITS_16) )
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
 1226:Generated_Source\PSoC5/ADC_DelSig.c **** 
 1227:Generated_Source\PSoC5/ADC_DelSig.c **** /*******************************************************************************
 1228:Generated_Source\PSoC5/ADC_DelSig.c **** * Function Name: ADC_DelSig_InitConfig(uint8 config)
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 23
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 23
 
 
 1229:Generated_Source\PSoC5/ADC_DelSig.c **** ********************************************************************************
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
 1283:Generated_Source\PSoC5/ADC_DelSig.c ****         ADC_DelSig_DSM_BUF2_REG    = ADC_DelSig_CFG1_DSM_BUF2;
 1284:Generated_Source\PSoC5/ADC_DelSig.c ****         ADC_DelSig_DSM_BUF3_REG    = ADC_DelSig_CFG1_DSM_BUF3;
 1285:Generated_Source\PSoC5/ADC_DelSig.c **** 
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 24
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 24
 
 
 1286:Generated_Source\PSoC5/ADC_DelSig.c ****         /* To select either Vssa or Vref to -ve input of DSM depending on
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
 1340:Generated_Source\PSoC5/ADC_DelSig.c ****             ADC_DelSig_DSM_CR11_REG    = ADC_DelSig_CFG2_DSM_CR11;
 1341:Generated_Source\PSoC5/ADC_DelSig.c ****             ADC_DelSig_DSM_CR12_REG    = ADC_DelSig_CFG2_DSM_CR12;
 1342:Generated_Source\PSoC5/ADC_DelSig.c ****             ADC_DelSig_DSM_CR14_REG    = ADC_DelSig_CFG2_DSM_CR14;
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 25
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 25
 
 
 1343:Generated_Source\PSoC5/ADC_DelSig.c ****             ADC_DelSig_DSM_CR15_REG    = ADC_DelSig_CFG2_DSM_CR15;
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
 1397:Generated_Source\PSoC5/ADC_DelSig.c ****             ADC_DelSig_DEC_SHIFT1_REG  = ADC_DelSig_CFG3_DEC_SHIFT1;
 1398:Generated_Source\PSoC5/ADC_DelSig.c ****             ADC_DelSig_DEC_SHIFT2_REG  = ADC_DelSig_CFG3_DEC_SHIFT2;
 1399:Generated_Source\PSoC5/ADC_DelSig.c ****             ADC_DelSig_DEC_DR2_REG     = ADC_DelSig_CFG3_DEC_DR2;
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 26
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 26
 
 
 1400:Generated_Source\PSoC5/ADC_DelSig.c ****             ADC_DelSig_DEC_DR2H_REG    = ADC_DelSig_CFG3_DEC_DR2H;
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
 1454:Generated_Source\PSoC5/ADC_DelSig.c **** 
 1455:Generated_Source\PSoC5/ADC_DelSig.c ****             #if(ADC_DelSig_IRQ_REMOVE == 0u)
 1456:Generated_Source\PSoC5/ADC_DelSig.c ****                 /* Set interrupt vector */
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 27
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 27
 
 
 1457:Generated_Source\PSoC5/ADC_DelSig.c ****                 (void)CyIntSetVector(ADC_DelSig_INTC_NUMBER, &ADC_DelSig_ISR3);
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
 1511:Generated_Source\PSoC5/ADC_DelSig.c ****             #if(ADC_DelSig_CFG4_RESOLUTION > 16 && \
 1512:Generated_Source\PSoC5/ADC_DelSig.c ****                 ADC_DelSig_CFG4_CONV_MODE == ADC_DelSig_MODE_SINGLE_SAMPLE)
 1513:Generated_Source\PSoC5/ADC_DelSig.c ****                 ADC_DelSig_stopConversion = 1u;
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 28
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 28
 
 
 1514:Generated_Source\PSoC5/ADC_DelSig.c ****             #endif /* Single sample with resolution above 16 bits */
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
 1568:Generated_Source\PSoC5/ADC_DelSig.c **** 		*/
 1569:Generated_Source\PSoC5/ADC_DelSig.c ****         if(ADC_DelSig_initVar == 0u)
 1570:Generated_Source\PSoC5/ADC_DelSig.c ****         {
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 29
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 29
 
 
 1571:Generated_Source\PSoC5/ADC_DelSig.c ****             ADC_DelSig_started = 1u;
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
 1625:Generated_Source\PSoC5/ADC_DelSig.c **** static void ADC_DelSig_GainCompensation(uint8 inputRange, uint16 idealDecGain, uint16 idealOddDecGa
 1626:Generated_Source\PSoC5/ADC_DelSig.c ****                               uint8 resolution, uint8 config) 
 1627:Generated_Source\PSoC5/ADC_DelSig.c **** {
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 30
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 30
 
 
   27              		.loc 1 1627 0
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
   66              	.LVL2:
   67 0028 22E0     		b	.L3
   68              	.LVL3:
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 31
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 31
 
 
   69              	.L9:
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
 1666:Generated_Source\PSoC5/ADC_DelSig.c ****                     flash = ADC_DelSig_DEC_TRIM_VREF_4_DIFF_16_20;
  100              		.loc 1 1666 0
  101 004a 1F48     		ldr	r0, .L18+16
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 32
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 32
 
 
  102 004c 0078     		ldrb	r0, [r0]	@ zero_extendqisi2
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  135              		.loc 1 1687 0
  136 006e 0020     		movs	r0, #0
  137              	.L3:
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 33
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 33
 
 
  138              	.LVL18:
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  175 009a 0F49     		ldr	r1, .L18+32
  176 009c 01EB8303 		add	r3, r1, r3, lsl #2
  177 00a0 0F21     		movs	r1, #15
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 34
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 34
 
 
  178 00a2 9970     		strb	r1, [r3, #2]
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
 1720:Generated_Source\PSoC5/ADC_DelSig.c **** ******************************************************************************
 1721:Generated_Source\PSoC5/ADC_DelSig.c **** *
 1722:Generated_Source\PSoC5/ADC_DelSig.c **** * Summary:
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 35
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 35
 
 
 1723:Generated_Source\PSoC5/ADC_DelSig.c **** *  This API sets the DSM_REF0 register. This is written for internal use.
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  250 0022 0320     		movs	r0, #3
  251 0024 FFF7FEFF 		bl	CyDelayUs
  252              	.LVL38:
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 36
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 36
 
 
 1744:Generated_Source\PSoC5/ADC_DelSig.c ****     /* Enable the press circuit */
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  298              		.cfi_offset 4, -16
  299              		.cfi_offset 5, -12
  300              		.cfi_offset 6, -8
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 37
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 37
 
 
  301              		.cfi_offset 14, -4
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  343 0048 2722     		movs	r2, #39
  344 004a 0133     		adds	r3, r3, #1
  345 004c 1A70     		strb	r2, [r3]
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 38
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 38
 
 
 1267:Generated_Source\PSoC5/ADC_DelSig.c ****         ADC_DelSig_DSM_CR7_REG     = ADC_DelSig_CFG1_DSM_CR7;
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
 1279:Generated_Source\PSoC5/ADC_DelSig.c **** 
  389              		.loc 1 1279 0
  390 008c 0133     		adds	r3, r3, #1
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 39
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 39
 
 
  391 008e 1C70     		strb	r4, [r3]
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  436 00ca 7047     		bx	lr
  437              	.L29:
  438              		.align	2
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 40
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 40
 
 
  439              	.L28:
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  487 001e 1D20     		movs	r0, #29
  488 0020 FFF7FEFF 		bl	CyIntSetPriority
  489              	.LVL51:
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 41
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 41
 
 
  110:Generated_Source\PSoC5/ADC_DelSig.c ****     ADC_DelSig_DSM_DEM1_REG    = ADC_DelSig_CFG1_DSM_DEM1;
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  128:Generated_Source\PSoC5/ADC_DelSig.c **** 
  532              		.loc 1 128 0
  533 0066 0433     		adds	r3, r3, #4
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 42
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 42
 
 
  534 0068 1C70     		strb	r4, [r3]
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  582              		.section	.text.ADC_DelSig_Enable,"ax",%progbits
  583              		.align	2
  584              		.global	ADC_DelSig_Enable
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 43
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 43
 
 
  585              		.thumb
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  631 0038 2B70     		strb	r3, [r5]
  205:Generated_Source\PSoC5/ADC_DelSig.c **** 
  632              		.loc 1 205 0
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 44
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 44
 
 
  633 003a 214C     		ldr	r4, .L36+12
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  293:Generated_Source\PSoC5/ADC_DelSig.c **** 
  678              		.loc 1 293 0
  679 0092 1032     		adds	r2, r2, #16
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 45
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 45
 
 
  680 0094 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  729 0004 9B79     		ldrb	r3, [r3, #6]	@ zero_extendqisi2
  730 0006 4BB9     		cbnz	r3, .L39
  338:Generated_Source\PSoC5/ADC_DelSig.c ****         {
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 46
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 46
 
 
  731              		.loc 1 338 0
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  779              		.loc 1 373 0
  780 0008 314A     		ldr	r2, .L46
  781 000a 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 47
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 47
 
 
  782 000c 03F0FE03 		and	r3, r3, #254
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  826              		.loc 1 395 0
  827 0066 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
  828 0068 02F0FE02 		and	r2, r2, #254
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 48
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 48
 
 
  829 006c 1A70     		strb	r2, [r3]
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  874              	.LVL65:
  875 00cc 70BD     		pop	{r4, r5, r6, pc}
  876              	.LVL66:
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 49
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 49
 
 
  877              	.L47:
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  927              		.thumb_func
  928              		.type	ADC_DelSig_SetCoherency, %function
  929              	ADC_DelSig_SetCoherency:
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 50
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 50
 
 
  930              	.LFB5:
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  979 0002 0446     		mov	r4, r0
  516:Generated_Source\PSoC5/ADC_DelSig.c ****     tmpValue = ((float32)tmpReg / (float32)ADC_DelSig_IDEAL_GAIN_CONST);
  980              		.loc 1 516 0
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 51
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 51
 
 
  981 0004 184B     		ldr	r3, .L58+8
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  532:Generated_Source\PSoC5/ADC_DelSig.c **** 
  1028              		.loc 1 532 0
  1029 0054 0020     		movs	r0, #0
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 52
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 52
 
 
  1030              	.LVL88:
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  1077              		.loc 1 567 0
  1078 0010 C3F10F03 		rsb	r3, r3, #15
  1079              	.LVL94:
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 53
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 53
 
 
  1080 0014 9840     		lsls	r0, r0, r3
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  1130              		.cfi_startproc
  1131              		@ args = 0, pretend = 0, frame = 0
  1132              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 54
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 54
 
 
  1133              		@ link register save eliminated.
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  1181              		.loc 1 666 0
  1182 001a 012B     		cmp	r3, #1
  1183 001c 01D0     		beq	.L73
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 55
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 55
 
 
  666:Generated_Source\PSoC5/ADC_DelSig.c **** 
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  1231              	.LVL105:
  1232              	.L78:
  710:Generated_Source\PSoC5/ADC_DelSig.c ****     {   /* Dummy read of the MSB byte to unlock the coherency */
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 56
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 56
 
 
  1233              		.loc 1 710 0
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  1281              	.LVL107:
  758:Generated_Source\PSoC5/ADC_DelSig.c ****     {   /*  Use default method to read result registers i.e. LSB byte read at the end*/
  1282              		.loc 1 758 0
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 57
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 57
 
 
  1283 0008 012B     		cmp	r3, #1
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  1329 0044 114E0040 		.word	1073761809
  1330 0048 124E0040 		.word	1073761810
  1331 004c 00000000 		.word	.LANCHOR0
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 58
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 58
 
 
  1332              		.cfi_endproc
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  1378              		.loc 1 847 0
  1379 0024 023B     		subs	r3, r3, #2
  1380 0026 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 59
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 59
 
 
  1381 0028 43EA0043 		orr	r3, r3, r0, lsl #16
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  1429              		.thumb
  1430              		.thumb_func
  1431              		.type	ADC_DelSig_SetOffset, %function
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 60
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 60
 
 
  1432              	ADC_DelSig_SetOffset:
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  1482              	ADC_DelSig_CountsTo_mVolts:
  1483              	.LFB16:
  966:Generated_Source\PSoC5/ADC_DelSig.c **** 
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 61
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 61
 
 
  1484              		.loc 1 966 0
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  1533              		.loc 1 1058 0
  1534 0002 074B     		ldr	r3, .L107
  1535 0004 9B68     		ldr	r3, [r3, #8]
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 62
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 62
 
 
  1536              	.LVL134:
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  1585 0010 022B     		cmp	r3, #2
  1586 0012 01D0     		beq	.L110
 1116:Generated_Source\PSoC5/ADC_DelSig.c ****     {
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 63
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 63
 
 
  1587              		.loc 1 1116 0
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  1637 0000 38B5     		push	{r3, r4, r5, lr}
  1638              		.cfi_def_cfa_offset 16
  1639              		.cfi_offset 3, -16
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 64
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 64
 
 
  1640              		.cfi_offset 4, -12
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
 1593:Generated_Source\PSoC5/ADC_DelSig.c ****         }
  1684              		.loc 1 1593 0
  1685 0042 FFF7FEFF 		bl	ADC_DelSig_StartConvert
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 65
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 65
 
 
  1686              	.LVL149:
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  1716              		.cfi_startproc
  1717              		@ args = 0, pretend = 0, frame = 0
  1718              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 66
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 66
 
 
  1719 0000 10B5     		push	{r4, lr}
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
 1783:Generated_Source\PSoC5/ADC_DelSig.c **** 
 1784:Generated_Source\PSoC5/ADC_DelSig.c **** 
 1785:Generated_Source\PSoC5/ADC_DelSig.c **** /*******************************************************************************
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 67
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 67
 
 
 1786:Generated_Source\PSoC5/ADC_DelSig.c **** * Function Name: ADC_DelSig_Read16
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  1789              	.LVL163:
 1813:Generated_Source\PSoC5/ADC_DelSig.c ****     
 1814:Generated_Source\PSoC5/ADC_DelSig.c ****      return(result);
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 68
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 68
 
 
 1815:Generated_Source\PSoC5/ADC_DelSig.c **** }
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  1817              		.loc 1 1841 0
  1818 0002 084A     		ldr	r2, .L131
  1819 0004 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 69
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 69
 
 
  1820 0006 43F00403 		orr	r3, r3, #4
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  1867 0000 00000000 		.space	4
  1868              		.type	ADC_DelSig_stopConversion, %object
  1869              		.size	ADC_DelSig_stopConversion, 1
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 70
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 70
 
 
  1870              	ADC_DelSig_stopConversion:
@@ -4174,52 +4174,52 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  1900 0006 00000000 		.4byte	.Ldebug_abbrev0
  1901 000a 04       		.byte	0x4
  1902 000b 01       		.uleb128 0x1
- 1903 000c 20050000 		.4byte	.LASF101
+ 1903 000c BA040000 		.4byte	.LASF101
  1904 0010 0C       		.byte	0xc
- 1905 0011 48020000 		.4byte	.LASF102
- 1906 0015 83000000 		.4byte	.LASF103
+ 1905 0011 E2010000 		.4byte	.LASF102
+ 1906 0015 7D060000 		.4byte	.LASF103
  1907 0019 00000000 		.4byte	.Ldebug_ranges0+0
  1908 001d 00000000 		.4byte	0
  1909 0021 00000000 		.4byte	.Ldebug_line0
  1910 0025 02       		.uleb128 0x2
  1911 0026 04       		.byte	0x4
  1912 0027 04       		.byte	0x4
- 1913 0028 8B040000 		.4byte	.LASF0
+ 1913 0028 25040000 		.4byte	.LASF0
  1914 002c 02       		.uleb128 0x2
  1915 002d 01       		.byte	0x1
  1916 002e 06       		.byte	0x6
- 1917 002f 21020000 		.4byte	.LASF1
+ 1917 002f BB010000 		.4byte	.LASF1
  1918 0033 02       		.uleb128 0x2
  1919 0034 01       		.byte	0x1
  1920 0035 08       		.byte	0x8
- 1921 0036 C5040000 		.4byte	.LASF2
+ 1921 0036 5F040000 		.4byte	.LASF2
  1922 003a 02       		.uleb128 0x2
  1923 003b 02       		.byte	0x2
  1924 003c 05       		.byte	0x5
- 1925 003d D3040000 		.4byte	.LASF3
+ 1925 003d 6D040000 		.4byte	.LASF3
  1926 0041 02       		.uleb128 0x2
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 71
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 71
 
 
  1927 0042 02       		.byte	0x2
  1928 0043 07       		.byte	0x7
- 1929 0044 75030000 		.4byte	.LASF4
+ 1929 0044 0F030000 		.4byte	.LASF4
  1930 0048 02       		.uleb128 0x2
  1931 0049 04       		.byte	0x4
  1932 004a 05       		.byte	0x5
- 1933 004b 33020000 		.4byte	.LASF5
+ 1933 004b CD010000 		.4byte	.LASF5
  1934 004f 02       		.uleb128 0x2
  1935 0050 04       		.byte	0x4
  1936 0051 07       		.byte	0x7
- 1937 0052 34030000 		.4byte	.LASF6
+ 1937 0052 CE020000 		.4byte	.LASF6
  1938 0056 02       		.uleb128 0x2
  1939 0057 08       		.byte	0x8
  1940 0058 05       		.byte	0x5
- 1941 0059 13020000 		.4byte	.LASF7
+ 1941 0059 AD010000 		.4byte	.LASF7
  1942 005d 02       		.uleb128 0x2
  1943 005e 08       		.byte	0x8
  1944 005f 07       		.byte	0x7
- 1945 0060 5F010000 		.4byte	.LASF8
+ 1945 0060 F9000000 		.4byte	.LASF8
  1946 0064 03       		.uleb128 0x3
  1947 0065 04       		.byte	0x4
  1948 0066 05       		.byte	0x5
@@ -4227,9 +4227,9 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  1950 006b 02       		.uleb128 0x2
  1951 006c 04       		.byte	0x4
  1952 006d 07       		.byte	0x7
- 1953 006e 20030000 		.4byte	.LASF9
+ 1953 006e BA020000 		.4byte	.LASF9
  1954 0072 04       		.uleb128 0x4
- 1955 0073 42020000 		.4byte	.LASF10
+ 1955 0073 DC010000 		.4byte	.LASF10
  1956 0077 02       		.byte	0x2
  1957 0078 E401     		.2byte	0x1e4
  1958 007a 33000000 		.4byte	0x33
@@ -4239,57 +4239,57 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  1962 0084 E501     		.2byte	0x1e5
  1963 0086 41000000 		.4byte	0x41
  1964 008a 04       		.uleb128 0x4
- 1965 008b 96020000 		.4byte	.LASF12
+ 1965 008b 30020000 		.4byte	.LASF12
  1966 008f 02       		.byte	0x2
  1967 0090 E601     		.2byte	0x1e6
  1968 0092 4F000000 		.4byte	0x4f
  1969 0096 04       		.uleb128 0x4
- 1970 0097 B3030000 		.4byte	.LASF13
+ 1970 0097 4D030000 		.4byte	.LASF13
  1971 009b 02       		.byte	0x2
  1972 009c E701     		.2byte	0x1e7
  1973 009e 2C000000 		.4byte	0x2c
  1974 00a2 04       		.uleb128 0x4
- 1975 00a3 CB060000 		.4byte	.LASF14
+ 1975 00a3 65060000 		.4byte	.LASF14
  1976 00a7 02       		.byte	0x2
  1977 00a8 E801     		.2byte	0x1e8
  1978 00aa 3A000000 		.4byte	0x3a
  1979 00ae 04       		.uleb128 0x4
- 1980 00af 2D020000 		.4byte	.LASF15
+ 1980 00af C7010000 		.4byte	.LASF15
  1981 00b3 02       		.byte	0x2
  1982 00b4 E901     		.2byte	0x1e9
  1983 00b6 48000000 		.4byte	0x48
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 72
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 72
 
 
  1984 00ba 04       		.uleb128 0x4
- 1985 00bb 3B040000 		.4byte	.LASF16
+ 1985 00bb D5030000 		.4byte	.LASF16
  1986 00bf 02       		.byte	0x2
  1987 00c0 EA01     		.2byte	0x1ea
  1988 00c2 25000000 		.4byte	0x25
  1989 00c6 02       		.uleb128 0x2
  1990 00c7 08       		.byte	0x8
  1991 00c8 04       		.byte	0x4
- 1992 00c9 76020000 		.4byte	.LASF17
+ 1992 00c9 10020000 		.4byte	.LASF17
  1993 00cd 02       		.uleb128 0x2
  1994 00ce 01       		.byte	0x1
  1995 00cf 08       		.byte	0x8
- 1996 00d0 D5050000 		.4byte	.LASF18
+ 1996 00d0 6F050000 		.4byte	.LASF18
  1997 00d4 04       		.uleb128 0x4
- 1998 00d5 A1040000 		.4byte	.LASF19
+ 1998 00d5 3B040000 		.4byte	.LASF19
  1999 00d9 02       		.byte	0x2
  2000 00da 8E02     		.2byte	0x28e
  2001 00dc E0000000 		.4byte	0xe0
  2002 00e0 05       		.uleb128 0x5
  2003 00e1 72000000 		.4byte	0x72
  2004 00e5 04       		.uleb128 0x4
- 2005 00e6 3C020000 		.4byte	.LASF20
+ 2005 00e6 D6010000 		.4byte	.LASF20
  2006 00ea 02       		.byte	0x2
  2007 00eb 8F02     		.2byte	0x28f
  2008 00ed F1000000 		.4byte	0xf1
  2009 00f1 05       		.uleb128 0x5
  2010 00f2 7E000000 		.4byte	0x7e
  2011 00f6 04       		.uleb128 0x4
- 2012 00f7 1A040000 		.4byte	.LASF21
+ 2012 00f7 B4030000 		.4byte	.LASF21
  2013 00fb 02       		.byte	0x2
  2014 00fc 9002     		.2byte	0x290
  2015 00fe 02010000 		.4byte	0x102
@@ -4298,39 +4298,39 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  2018 0107 02       		.uleb128 0x2
  2019 0108 08       		.byte	0x8
  2020 0109 04       		.byte	0x4
- 2021 010a 4C040000 		.4byte	.LASF22
+ 2021 010a E6030000 		.4byte	.LASF22
  2022 010e 02       		.uleb128 0x2
  2023 010f 04       		.byte	0x4
  2024 0110 07       		.byte	0x7
- 2025 0111 43040000 		.4byte	.LASF23
+ 2025 0111 DD030000 		.4byte	.LASF23
  2026 0115 06       		.uleb128 0x6
  2027 0116 04       		.byte	0x4
  2028 0117 03       		.byte	0x3
  2029 0118 2F       		.byte	0x2f
  2030 0119 36010000 		.4byte	0x136
  2031 011d 07       		.uleb128 0x7
- 2032 011e 04010000 		.4byte	.LASF24
+ 2032 011e 9E000000 		.4byte	.LASF24
  2033 0122 03       		.byte	0x3
  2034 0123 31       		.byte	0x31
  2035 0124 7E000000 		.4byte	0x7e
  2036 0128 00       		.byte	0
  2037 0129 07       		.uleb128 0x7
- 2038 012a E8050000 		.4byte	.LASF25
+ 2038 012a 82050000 		.4byte	.LASF25
  2039 012e 03       		.byte	0x3
  2040 012f 32       		.byte	0x32
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 73
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 73
 
 
  2041 0130 72000000 		.4byte	0x72
  2042 0134 02       		.byte	0x2
  2043 0135 00       		.byte	0
  2044 0136 08       		.uleb128 0x8
- 2045 0137 A7010000 		.4byte	.LASF26
+ 2045 0137 41010000 		.4byte	.LASF26
  2046 013b 03       		.byte	0x3
  2047 013c 33       		.byte	0x33
  2048 013d 15010000 		.4byte	0x115
  2049 0141 09       		.uleb128 0x9
- 2050 0142 DA030000 		.4byte	.LASF36
+ 2050 0142 74030000 		.4byte	.LASF36
  2051 0146 01       		.byte	0x1
  2052 0147 5906     		.2byte	0x659
  2053 0149 00000000 		.4byte	.LFB21
@@ -4345,52 +4345,52 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  2062 015f 72000000 		.4byte	0x72
  2063 0163 00000000 		.4byte	.LLST0
  2064 0167 0A       		.uleb128 0xa
- 2065 0168 A6040000 		.4byte	.LASF28
+ 2065 0168 40040000 		.4byte	.LASF28
  2066 016c 01       		.byte	0x1
  2067 016d 5906     		.2byte	0x659
  2068 016f 7E000000 		.4byte	0x7e
  2069 0173 3A000000 		.4byte	.LLST1
  2070 0177 0A       		.uleb128 0xa
- 2071 0178 BE010000 		.4byte	.LASF29
+ 2071 0178 58010000 		.4byte	.LASF29
  2072 017c 01       		.byte	0x1
  2073 017d 5906     		.2byte	0x659
  2074 017f 7E000000 		.4byte	0x7e
  2075 0183 74000000 		.4byte	.LLST2
  2076 0187 0A       		.uleb128 0xa
- 2077 0188 AE050000 		.4byte	.LASF30
+ 2077 0188 48050000 		.4byte	.LASF30
  2078 018c 01       		.byte	0x1
  2079 018d 5A06     		.2byte	0x65a
  2080 018f 72000000 		.4byte	0x72
  2081 0193 AE000000 		.4byte	.LLST3
  2082 0197 0A       		.uleb128 0xa
- 2083 0198 E1050000 		.4byte	.LASF31
+ 2083 0198 7B050000 		.4byte	.LASF31
  2084 019c 01       		.byte	0x1
  2085 019d 5A06     		.2byte	0x65a
  2086 019f 72000000 		.4byte	0x72
  2087 01a3 01010000 		.4byte	.LLST4
  2088 01a7 0B       		.uleb128 0xb
- 2089 01a8 14040000 		.4byte	.LASF32
+ 2089 01a8 AE030000 		.4byte	.LASF32
  2090 01ac 01       		.byte	0x1
  2091 01ad 5C06     		.2byte	0x65c
  2092 01af 96000000 		.4byte	0x96
  2093 01b3 2D010000 		.4byte	.LLST5
  2094 01b7 0B       		.uleb128 0xb
- 2095 01b8 B3040000 		.4byte	.LASF33
+ 2095 01b8 4D040000 		.4byte	.LASF33
  2096 01bc 01       		.byte	0x1
  2097 01bd 5D06     		.2byte	0x65d
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 74
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 74
 
 
  2098 01bf AE000000 		.4byte	0xae
  2099 01c3 A3010000 		.4byte	.LLST6
  2100 01c7 0B       		.uleb128 0xb
- 2101 01c8 B8030000 		.4byte	.LASF34
+ 2101 01c8 52030000 		.4byte	.LASF34
  2102 01cc 01       		.byte	0x1
  2103 01cd 5E06     		.2byte	0x65e
  2104 01cf 7E000000 		.4byte	0x7e
  2105 01d3 B6010000 		.4byte	.LLST7
  2106 01d7 0B       		.uleb128 0xb
- 2107 01d8 DD040000 		.4byte	.LASF35
+ 2107 01d8 77040000 		.4byte	.LASF35
  2108 01dc 01       		.byte	0x1
  2109 01dd 5F06     		.2byte	0x65f
  2110 01df 8A000000 		.4byte	0x8a
@@ -4406,7 +4406,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  2120 01f5 00       		.byte	0
  2121 01f6 00       		.byte	0
  2122 01f7 09       		.uleb128 0x9
- 2123 01f8 75060000 		.4byte	.LASF37
+ 2123 01f8 0F060000 		.4byte	.LASF37
  2124 01fc 01       		.byte	0x1
  2125 01fd C406     		.2byte	0x6c4
  2126 01ff 00000000 		.4byte	.LFB22
@@ -4415,13 +4415,13 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  2129 0208 9C       		.byte	0x9c
  2130 0209 5A020000 		.4byte	0x25a
  2131 020d 0A       		.uleb128 0xa
- 2132 020e 12030000 		.4byte	.LASF38
+ 2132 020e AC020000 		.4byte	.LASF38
  2133 0212 01       		.byte	0x1
  2134 0213 C406     		.2byte	0x6c4
  2135 0215 72000000 		.4byte	0x72
  2136 0219 F2010000 		.4byte	.LLST9
  2137 021d 0B       		.uleb128 0xb
- 2138 021e 8E060000 		.4byte	.LASF39
+ 2138 021e 28060000 		.4byte	.LASF39
  2139 0222 01       		.byte	0x1
  2140 0223 C606     		.2byte	0x6c6
  2141 0225 72000000 		.4byte	0x72
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  2152 0245 50       		.byte	0x50
  2153 0246 01       		.uleb128 0x1
  2154 0247 33       		.byte	0x33
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 75
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 75
 
 
  2155 0248 00       		.byte	0
@@ -4454,7 +4454,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  2165 0258 00       		.byte	0
  2166 0259 00       		.byte	0
  2167 025a 09       		.uleb128 0x9
- 2168 025b 09010000 		.4byte	.LASF40
+ 2168 025b A3000000 		.4byte	.LASF40
  2169 025f 01       		.byte	0x1
  2170 0260 DF04     		.2byte	0x4df
  2171 0262 00000000 		.4byte	.LFB19
@@ -4463,7 +4463,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  2174 026b 9C       		.byte	0x9c
  2175 026c EC020000 		.4byte	0x2ec
  2176 0270 0A       		.uleb128 0xa
- 2177 0271 E1050000 		.4byte	.LASF31
+ 2177 0271 7B050000 		.4byte	.LASF31
  2178 0275 01       		.byte	0x1
  2179 0276 DF04     		.2byte	0x4df
  2180 0278 72000000 		.4byte	0x72
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  2209 02b6 01       		.uleb128 0x1
  2210 02b7 50       		.byte	0x50
  2211 02b8 02       		.uleb128 0x2
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 76
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 76
 
 
  2212 02b9 76       		.byte	0x76
@@ -4538,7 +4538,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  2246 02ea 00       		.byte	0
  2247 02eb 00       		.byte	0
  2248 02ec 10       		.uleb128 0x10
- 2249 02ed CE010000 		.4byte	.LASF41
+ 2249 02ed 68010000 		.4byte	.LASF41
  2250 02f1 01       		.byte	0x1
  2251 02f2 5B       		.byte	0x5b
  2252 02f3 00000000 		.4byte	.LFB0
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  2266 0313 00       		.byte	0
  2267 0314 0F       		.uleb128 0xf
  2268 0315 1C000000 		.4byte	.LVL50
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 77
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 77
 
 
  2269 0319 030A0000 		.4byte	0xa03
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  2323 0369 02       		.uleb128 0x2
  2324 036a 77       		.byte	0x77
  2325 036b 00       		.sleb128 0
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 78
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 78
 
 
  2326 036c 00       		.byte	0
@@ -4627,7 +4627,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  2329 0372 5A020000 		.4byte	0x25a
  2330 0376 00       		.byte	0
  2331 0377 10       		.uleb128 0x10
- 2332 0378 76010000 		.4byte	.LASF42
+ 2332 0378 10010000 		.4byte	.LASF42
  2333 037c 01       		.byte	0x1
  2334 037d BA       		.byte	0xba
  2335 037e 00000000 		.4byte	.LFB1
@@ -4636,12 +4636,12 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  2338 0387 9C       		.byte	0x9c
  2339 0388 D3030000 		.4byte	0x3d3
  2340 038c 11       		.uleb128 0x11
- 2341 038d E1050000 		.4byte	.LASF31
+ 2341 038d 7B050000 		.4byte	.LASF31
  2342 0391 01       		.byte	0x1
  2343 0392 BC       		.byte	0xbc
  2344 0393 72000000 		.4byte	0x72
  2345 0397 12       		.uleb128 0x12
- 2346 0398 8E060000 		.4byte	.LASF39
+ 2346 0398 28060000 		.4byte	.LASF39
  2347 039c 01       		.byte	0x1
  2348 039d BD       		.byte	0xbd
  2349 039e 72000000 		.4byte	0x72
@@ -4671,14 +4671,14 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  2373 03d1 00       		.byte	0
  2374 03d2 00       		.byte	0
  2375 03d3 13       		.uleb128 0x13
- 2376 03d4 88030000 		.4byte	.LASF43
+ 2376 03d4 22030000 		.4byte	.LASF43
  2377 03d8 01       		.byte	0x1
  2378 03d9 4E01     		.2byte	0x14e
  2379 03db 00000000 		.4byte	.LFB2
  2380 03df 28000000 		.4byte	.LFE2-.LFB2
  2381 03e3 01       		.uleb128 0x1
  2382 03e4 9C       		.byte	0x9c
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 79
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 79
 
 
  2383 03e5 FC030000 		.4byte	0x3fc
@@ -4690,7 +4690,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  2389 03f7 77030000 		.4byte	0x377
  2390 03fb 00       		.byte	0
  2391 03fc 13       		.uleb128 0x13
- 2392 03fd B9050000 		.4byte	.LASF44
+ 2392 03fd 53050000 		.4byte	.LASF44
  2393 0401 01       		.byte	0x1
  2394 0402 6F01     		.2byte	0x16f
  2395 0404 00000000 		.4byte	.LFB3
@@ -4699,7 +4699,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  2398 040d 9C       		.byte	0x9c
  2399 040e 4F040000 		.4byte	0x44f
  2400 0412 0B       		.uleb128 0xb
- 2401 0413 8E060000 		.4byte	.LASF39
+ 2401 0413 28060000 		.4byte	.LASF39
  2402 0417 01       		.byte	0x1
  2403 0418 7101     		.2byte	0x171
  2404 041a 72000000 		.4byte	0x72
@@ -4738,23 +4738,23 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  2437 0460 9C       		.byte	0x9c
  2438 0461 86040000 		.4byte	0x486
  2439 0465 0A       		.uleb128 0xa
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 80
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 80
 
 
- 2440 0466 86040000 		.4byte	.LASF46
+ 2440 0466 20040000 		.4byte	.LASF46
  2441 046a 01       		.byte	0x1
  2442 046b B201     		.2byte	0x1b2
  2443 046d 72000000 		.4byte	0x72
  2444 0471 78020000 		.4byte	.LLST14
  2445 0475 0B       		.uleb128 0xb
- 2446 0476 FE060000 		.4byte	.LASF47
+ 2446 0476 0A070000 		.4byte	.LASF47
  2447 047a 01       		.byte	0x1
  2448 047b B401     		.2byte	0x1b4
  2449 047d 72000000 		.4byte	0x72
  2450 0481 99020000 		.4byte	.LLST15
  2451 0485 00       		.byte	0
  2452 0486 13       		.uleb128 0x13
- 2453 0487 C2030000 		.4byte	.LASF48
+ 2453 0487 5C030000 		.4byte	.LASF48
  2454 048b 01       		.byte	0x1
  2455 048c D601     		.2byte	0x1d6
  2456 048e 00000000 		.4byte	.LFB5
@@ -4763,20 +4763,20 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  2459 0497 9C       		.byte	0x9c
  2460 0498 BD040000 		.4byte	0x4bd
  2461 049c 0A       		.uleb128 0xa
- 2462 049d 6B040000 		.4byte	.LASF49
+ 2462 049d 05040000 		.4byte	.LASF49
  2463 04a1 01       		.byte	0x1
  2464 04a2 D601     		.2byte	0x1d6
  2465 04a4 72000000 		.4byte	0x72
  2466 04a8 B7020000 		.4byte	.LLST16
  2467 04ac 0B       		.uleb128 0xb
- 2468 04ad FE060000 		.4byte	.LASF47
+ 2468 04ad 0A070000 		.4byte	.LASF47
  2469 04b1 01       		.byte	0x1
  2470 04b2 D801     		.2byte	0x1d8
  2471 04b4 72000000 		.4byte	0x72
  2472 04b8 D8020000 		.4byte	.LLST17
  2473 04bc 00       		.byte	0
  2474 04bd 14       		.uleb128 0x14
- 2475 04be 27060000 		.4byte	.LASF53
+ 2475 04be C1050000 		.4byte	.LASF53
  2476 04c2 01       		.byte	0x1
  2477 04c3 FE01     		.2byte	0x1fe
  2478 04c5 72000000 		.4byte	0x72
@@ -4786,35 +4786,35 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  2482 04d2 9C       		.byte	0x9c
  2483 04d3 18050000 		.4byte	0x518
  2484 04d7 0A       		.uleb128 0xa
- 2485 04d8 A6060000 		.4byte	.LASF50
+ 2485 04d8 40060000 		.4byte	.LASF50
  2486 04dc 01       		.byte	0x1
  2487 04dd FE01     		.2byte	0x1fe
  2488 04df BA000000 		.4byte	0xba
  2489 04e3 F6020000 		.4byte	.LLST18
  2490 04e7 0B       		.uleb128 0xb
- 2491 04e8 FE060000 		.4byte	.LASF47
+ 2491 04e8 0A070000 		.4byte	.LASF47
  2492 04ec 01       		.byte	0x1
  2493 04ed 0002     		.2byte	0x200
  2494 04ef 7E000000 		.4byte	0x7e
  2495 04f3 24030000 		.4byte	.LLST19
  2496 04f7 0B       		.uleb128 0xb
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 81
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 81
 
 
- 2497 04f8 9F060000 		.4byte	.LASF51
+ 2497 04f8 39060000 		.4byte	.LASF51
  2498 04fc 01       		.byte	0x1
  2499 04fd 0102     		.2byte	0x201
  2500 04ff 72000000 		.4byte	0x72
  2501 0503 5C030000 		.4byte	.LLST20
  2502 0507 0B       		.uleb128 0xb
- 2503 0508 42060000 		.4byte	.LASF52
+ 2503 0508 DC050000 		.4byte	.LASF52
  2504 050c 01       		.byte	0x1
  2505 050d 0202     		.2byte	0x202
  2506 050f BA000000 		.4byte	0xba
  2507 0513 7B030000 		.4byte	.LLST21
  2508 0517 00       		.byte	0
  2509 0518 15       		.uleb128 0x15
- 2510 0519 13060000 		.4byte	.LASF54
+ 2510 0519 AD050000 		.4byte	.LASF54
  2511 051d 01       		.byte	0x1
  2512 051e 2D02     		.2byte	0x22d
  2513 0520 7E000000 		.4byte	0x7e
@@ -4824,20 +4824,20 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  2517 052d 9C       		.byte	0x9c
  2518 052e 53050000 		.4byte	0x553
  2519 0532 0B       		.uleb128 0xb
- 2520 0533 DA050000 		.4byte	.LASF55
+ 2520 0533 74050000 		.4byte	.LASF55
  2521 0537 01       		.byte	0x1
  2522 0538 2F02     		.2byte	0x22f
  2523 053a 72000000 		.4byte	0x72
  2524 053e BA030000 		.4byte	.LLST22
  2525 0542 0B       		.uleb128 0xb
- 2526 0543 B8030000 		.4byte	.LASF34
+ 2526 0543 52030000 		.4byte	.LASF34
  2527 0547 01       		.byte	0x1
  2528 0548 3002     		.2byte	0x230
  2529 054a 7E000000 		.4byte	0x7e
  2530 054e CD030000 		.4byte	.LLST23
  2531 0552 00       		.byte	0
  2532 0553 16       		.uleb128 0x16
- 2533 0554 5D030000 		.4byte	.LASF56
+ 2533 0554 F7020000 		.4byte	.LASF56
  2534 0558 01       		.byte	0x1
  2535 0559 4F02     		.2byte	0x24f
  2536 055b 00000000 		.4byte	.LFB8
@@ -4845,7 +4845,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  2538 0563 01       		.uleb128 0x1
  2539 0564 9C       		.byte	0x9c
  2540 0565 16       		.uleb128 0x16
- 2541 0566 48010000 		.4byte	.LASF57
+ 2541 0566 E2000000 		.4byte	.LASF57
  2542 056a 01       		.byte	0x1
  2543 056b 6602     		.2byte	0x266
  2544 056d 00000000 		.4byte	.LFB9
@@ -4853,12 +4853,12 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  2546 0575 01       		.uleb128 0x1
  2547 0576 9C       		.byte	0x9c
  2548 0577 15       		.uleb128 0x15
- 2549 0578 E3060000 		.4byte	.LASF58
+ 2549 0578 EF060000 		.4byte	.LASF58
  2550 057c 01       		.byte	0x1
  2551 057d 8902     		.2byte	0x289
  2552 057f 72000000 		.4byte	0x72
  2553 0583 00000000 		.4byte	.LFB10
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 82
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 82
 
 
  2554 0587 30000000 		.4byte	.LFE10-.LFB10
@@ -4866,20 +4866,20 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  2556 058c 9C       		.byte	0x9c
  2557 058d B2050000 		.4byte	0x5b2
  2558 0591 0A       		.uleb128 0xa
- 2559 0592 18030000 		.4byte	.LASF59
+ 2559 0592 B2020000 		.4byte	.LASF59
  2560 0596 01       		.byte	0x1
  2561 0597 8902     		.2byte	0x289
  2562 0599 72000000 		.4byte	0x72
  2563 059d EB030000 		.4byte	.LLST24
  2564 05a1 0B       		.uleb128 0xb
- 2565 05a2 9F060000 		.4byte	.LASF51
+ 2565 05a2 39060000 		.4byte	.LASF51
  2566 05a6 01       		.byte	0x1
  2567 05a7 8B02     		.2byte	0x28b
  2568 05a9 72000000 		.4byte	0x72
  2569 05ad 0C040000 		.4byte	.LLST25
  2570 05b1 00       		.byte	0
  2571 05b2 15       		.uleb128 0x15
- 2572 05b3 1F010000 		.4byte	.LASF60
+ 2572 05b3 B9000000 		.4byte	.LASF60
  2573 05b7 01       		.byte	0x1
  2574 05b8 B802     		.2byte	0x2b8
  2575 05ba 96000000 		.4byte	0x96
@@ -4889,14 +4889,14 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  2579 05c7 9C       		.byte	0x9c
  2580 05c8 EB050000 		.4byte	0x5eb
  2581 05cc 17       		.uleb128 0x17
- 2582 05cd 05070000 		.4byte	.LASF61
+ 2582 05cd 11070000 		.4byte	.LASF61
  2583 05d1 01       		.byte	0x1
  2584 05d2 BA02     		.2byte	0x2ba
  2585 05d4 96000000 		.4byte	0x96
  2586 05d8 01       		.uleb128 0x1
  2587 05d9 50       		.byte	0x50
  2588 05da 0B       		.uleb128 0xb
- 2589 05db 6B040000 		.4byte	.LASF49
+ 2589 05db 05040000 		.4byte	.LASF49
  2590 05df 01       		.byte	0x1
  2591 05e0 BB02     		.2byte	0x2bb
  2592 05e2 72000000 		.4byte	0x72
@@ -4913,23 +4913,23 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  2603 0600 9C       		.byte	0x9c
  2604 0601 26060000 		.4byte	0x626
  2605 0605 0B       		.uleb128 0xb
- 2606 0606 05070000 		.4byte	.LASF61
+ 2606 0606 11070000 		.4byte	.LASF61
  2607 060a 01       		.byte	0x1
  2608 060b F002     		.2byte	0x2f0
  2609 060d 7E000000 		.4byte	0x7e
  2610 0611 48040000 		.4byte	.LLST27
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 83
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 83
 
 
  2611 0615 0B       		.uleb128 0xb
- 2612 0616 6B040000 		.4byte	.LASF49
+ 2612 0616 05040000 		.4byte	.LASF49
  2613 061a 01       		.byte	0x1
  2614 061b F102     		.2byte	0x2f1
  2615 061d 72000000 		.4byte	0x72
  2616 0621 71040000 		.4byte	.LLST28
  2617 0625 00       		.byte	0
  2618 0626 15       		.uleb128 0x15
- 2619 0627 AF020000 		.4byte	.LASF63
+ 2619 0627 49020000 		.4byte	.LASF63
  2620 062b 01       		.byte	0x1
  2621 062c 2A03     		.2byte	0x32a
  2622 062e AE000000 		.4byte	0xae
@@ -4939,20 +4939,20 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  2626 063b 9C       		.byte	0x9c
  2627 063c 61060000 		.4byte	0x661
  2628 0640 0B       		.uleb128 0xb
- 2629 0641 05070000 		.4byte	.LASF61
+ 2629 0641 11070000 		.4byte	.LASF61
  2630 0645 01       		.byte	0x1
  2631 0646 2C03     		.2byte	0x32c
  2632 0648 8A000000 		.4byte	0x8a
  2633 064c 8F040000 		.4byte	.LLST29
  2634 0650 0B       		.uleb128 0xb
- 2635 0651 6B040000 		.4byte	.LASF49
+ 2635 0651 05040000 		.4byte	.LASF49
  2636 0655 01       		.byte	0x1
  2637 0656 2D03     		.2byte	0x32d
  2638 0658 72000000 		.4byte	0x72
  2639 065c F0040000 		.4byte	.LLST30
  2640 0660 00       		.byte	0
  2641 0661 13       		.uleb128 0x13
- 2642 0662 E9020000 		.4byte	.LASF64
+ 2642 0662 83020000 		.4byte	.LASF64
  2643 0666 01       		.byte	0x1
  2644 0667 8703     		.2byte	0x387
  2645 0669 00000000 		.4byte	.LFB14
@@ -4961,7 +4961,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  2648 0672 9C       		.byte	0x9c
  2649 0673 86060000 		.4byte	0x686
  2650 0677 18       		.uleb128 0x18
- 2651 0678 64060000 		.4byte	.LASF65
+ 2651 0678 FE050000 		.4byte	.LASF65
  2652 067c 01       		.byte	0x1
  2653 067d 8703     		.2byte	0x387
  2654 067f AE000000 		.4byte	0xae
@@ -4969,7 +4969,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  2656 0684 50       		.byte	0x50
  2657 0685 00       		.byte	0
  2658 0686 13       		.uleb128 0x13
- 2659 0687 83020000 		.4byte	.LASF66
+ 2659 0687 1D020000 		.4byte	.LASF66
  2660 068b 01       		.byte	0x1
  2661 068c AA03     		.2byte	0x3aa
  2662 068e 00000000 		.4byte	.LFB15
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  2665 0697 9C       		.byte	0x9c
  2666 0698 AB060000 		.4byte	0x6ab
  2667 069c 18       		.uleb128 0x18
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 84
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 84
 
 
  2668 069d 43000000 		.4byte	.LASF67
@@ -4989,7 +4989,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  2673 06a9 50       		.byte	0x50
  2674 06aa 00       		.byte	0
  2675 06ab 15       		.uleb128 0x15
- 2676 06ac 20040000 		.4byte	.LASF68
+ 2676 06ac BA030000 		.4byte	.LASF68
  2677 06b0 01       		.byte	0x1
  2678 06b1 C503     		.2byte	0x3c5
  2679 06b3 A2000000 		.4byte	0xa2
@@ -4999,13 +4999,13 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  2683 06c0 9C       		.byte	0x9c
  2684 06c1 E4060000 		.4byte	0x6e4
  2685 06c5 0A       		.uleb128 0xa
- 2686 06c6 6B060000 		.4byte	.LASF69
+ 2686 06c6 05060000 		.4byte	.LASF69
  2687 06ca 01       		.byte	0x1
  2688 06cb C503     		.2byte	0x3c5
  2689 06cd AE000000 		.4byte	0xae
  2690 06d1 19050000 		.4byte	.LLST31
  2691 06d5 17       		.uleb128 0x17
- 2692 06d6 0D040000 		.4byte	.LASF70
+ 2692 06d6 A7030000 		.4byte	.LASF70
  2693 06da 01       		.byte	0x1
  2694 06db C803     		.2byte	0x3c8
  2695 06dd A2000000 		.4byte	0xa2
@@ -5013,7 +5013,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  2697 06e2 50       		.byte	0x50
  2698 06e3 00       		.byte	0
  2699 06e4 14       		.uleb128 0x14
- 2700 06e5 99030000 		.4byte	.LASF71
+ 2700 06e5 33030000 		.4byte	.LASF71
  2701 06e9 01       		.byte	0x1
  2702 06ea 0204     		.2byte	0x402
  2703 06ec BA000000 		.4byte	0xba
@@ -5023,13 +5023,13 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  2707 06f9 9C       		.byte	0x9c
  2708 06fa 1D070000 		.4byte	0x71d
  2709 06fe 0A       		.uleb128 0xa
- 2710 06ff 6B060000 		.4byte	.LASF69
+ 2710 06ff 05060000 		.4byte	.LASF69
  2711 0703 01       		.byte	0x1
  2712 0704 0204     		.2byte	0x402
  2713 0706 AE000000 		.4byte	0xae
  2714 070a 37050000 		.4byte	.LLST32
  2715 070e 17       		.uleb128 0x17
- 2716 070f 7D020000 		.4byte	.LASF72
+ 2716 070f 17020000 		.4byte	.LASF72
  2717 0713 01       		.byte	0x1
  2718 0714 0504     		.2byte	0x405
  2719 0716 BA000000 		.4byte	0xba
@@ -5037,8 +5037,8 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  2721 071b 50       		.byte	0x50
  2722 071c 00       		.byte	0
  2723 071d 15       		.uleb128 0x15
- 2724 071e E9000000 		.4byte	.LASF73
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 85
+ 2724 071e 83000000 		.4byte	.LASF73
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 85
 
 
  2725 0722 01       		.byte	0x1
@@ -5050,38 +5050,38 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  2731 0732 9C       		.byte	0x9c
  2732 0733 83070000 		.4byte	0x783
  2733 0737 0A       		.uleb128 0xa
- 2734 0738 6B060000 		.4byte	.LASF69
+ 2734 0738 05060000 		.4byte	.LASF69
  2735 073c 01       		.byte	0x1
  2736 073d 4404     		.2byte	0x444
  2737 073f AE000000 		.4byte	0xae
  2738 0743 65050000 		.4byte	.LLST33
  2739 0747 0B       		.uleb128 0xb
- 2740 0748 2D030000 		.4byte	.LASF74
+ 2740 0748 C7020000 		.4byte	.LASF74
  2741 074c 01       		.byte	0x1
  2742 074d 4704     		.2byte	0x447
  2743 074f AE000000 		.4byte	0xae
  2744 0753 86050000 		.4byte	.LLST34
  2745 0757 19       		.uleb128 0x19
- 2746 0758 C9050000 		.4byte	.LASF75
+ 2746 0758 63050000 		.4byte	.LASF75
  2747 075c 01       		.byte	0x1
  2748 075d 4804     		.2byte	0x448
  2749 075f AE000000 		.4byte	0xae
  2750 0763 127A     		.2byte	0x7a12
  2751 0765 0B       		.uleb128 0xb
- 2752 0766 CF050000 		.4byte	.LASF76
+ 2752 0766 69050000 		.4byte	.LASF76
  2753 076a 01       		.byte	0x1
  2754 076b 4904     		.2byte	0x449
  2755 076d AE000000 		.4byte	0xae
  2756 0771 A9050000 		.4byte	.LLST35
  2757 0775 1A       		.uleb128 0x1a
- 2758 0776 AE050000 		.4byte	.LASF30
+ 2758 0776 48050000 		.4byte	.LASF30
  2759 077a 01       		.byte	0x1
  2760 077b 4A04     		.2byte	0x44a
  2761 077d 72000000 		.4byte	0x72
  2762 0781 10       		.byte	0x10
  2763 0782 00       		.byte	0
  2764 0783 13       		.uleb128 0x13
- 2765 0784 88010000 		.4byte	.LASF77
+ 2765 0784 22010000 		.4byte	.LASF77
  2766 0788 01       		.byte	0x1
  2767 0789 1806     		.2byte	0x618
  2768 078b 00000000 		.4byte	.LFB20
@@ -5090,15 +5090,15 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  2771 0794 9C       		.byte	0x9c
  2772 0795 F8070000 		.4byte	0x7f8
  2773 0799 0A       		.uleb128 0xa
- 2774 079a E1050000 		.4byte	.LASF31
+ 2774 079a 7B050000 		.4byte	.LASF31
  2775 079e 01       		.byte	0x1
  2776 079f 1806     		.2byte	0x618
  2777 07a1 72000000 		.4byte	0x72
  2778 07a5 C9050000 		.4byte	.LLST36
  2779 07a9 0A       		.uleb128 0xa
- 2780 07aa 3A060000 		.4byte	.LASF78
+ 2780 07aa D4050000 		.4byte	.LASF78
  2781 07ae 01       		.byte	0x1
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 86
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 86
 
 
  2782 07af 1806     		.2byte	0x618
@@ -5145,7 +5145,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  2823 080d 9C       		.byte	0x9c
  2824 080e 51080000 		.4byte	0x851
  2825 0812 0B       		.uleb128 0xb
- 2826 0813 05070000 		.4byte	.LASF61
+ 2826 0813 11070000 		.4byte	.LASF61
  2827 0817 01       		.byte	0x1
  2828 0818 EC06     		.2byte	0x6ec
  2829 081a 96000000 		.4byte	0x96
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  2836 0830 77050000 		.4byte	0x577
  2837 0834 3E080000 		.4byte	0x83e
  2838 0838 0D       		.uleb128 0xd
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 87
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 87
 
 
  2839 0839 01       		.uleb128 0x1
@@ -5184,7 +5184,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  2859 0866 9C       		.byte	0x9c
  2860 0867 AA080000 		.4byte	0x8aa
  2861 086b 0B       		.uleb128 0xb
- 2862 086c 05070000 		.4byte	.LASF61
+ 2862 086c 11070000 		.4byte	.LASF61
  2863 0870 01       		.byte	0x1
  2864 0871 0D07     		.2byte	0x70d
  2865 0873 A2000000 		.4byte	0xa2
@@ -5210,7 +5210,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  2885 08a5 65050000 		.4byte	0x565
  2886 08a9 00       		.byte	0
  2887 08aa 15       		.uleb128 0x15
- 2888 08ab 9D020000 		.4byte	.LASF81
+ 2888 08ab 37020000 		.4byte	.LASF81
  2889 08af 01       		.byte	0x1
  2890 08b0 2C07     		.2byte	0x72c
  2891 08b2 AE000000 		.4byte	0xae
@@ -5218,12 +5218,12 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  2893 08ba 28000000 		.4byte	.LFE25-.LFB25
  2894 08be 01       		.uleb128 0x1
  2895 08bf 9C       		.byte	0x9c
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 88
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 88
 
 
  2896 08c0 03090000 		.4byte	0x903
  2897 08c4 0B       		.uleb128 0xb
- 2898 08c5 05070000 		.4byte	.LASF61
+ 2898 08c5 11070000 		.4byte	.LASF61
  2899 08c9 01       		.byte	0x1
  2900 08ca 2E07     		.2byte	0x72e
  2901 08cc AE000000 		.4byte	0xae
@@ -5256,7 +5256,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  2928 0911 00       		.byte	0
  2929 0912 00       		.byte	0
  2930 0913 1D       		.uleb128 0x1d
- 2931 0914 91040000 		.4byte	.LASF82
+ 2931 0914 2B040000 		.4byte	.LASF82
  2932 0918 01       		.byte	0x1
  2933 0919 3D       		.byte	0x3d
  2934 091a 03090000 		.4byte	0x903
@@ -5264,7 +5264,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  2936 091f 03       		.byte	0x3
  2937 0920 00000000 		.4byte	ADC_DelSig_gcor
  2938 0924 1E       		.uleb128 0x1e
- 2939 0925 58040000 		.4byte	.LASF83
+ 2939 0925 F2030000 		.4byte	.LASF83
  2940 0929 01       		.byte	0x1
  2941 092a 2C       		.byte	0x2c
  2942 092b 72000000 		.4byte	0x72
@@ -5272,18 +5272,18 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  2944 0930 03       		.byte	0x3
  2945 0931 00000000 		.4byte	ADC_DelSig_initVar
  2946 0935 1E       		.uleb128 0x1e
- 2947 0936 FE020000 		.4byte	.LASF84
+ 2947 0936 98020000 		.4byte	.LASF84
  2948 093a 01       		.byte	0x1
  2949 093b 24       		.byte	0x24
  2950 093c E0000000 		.4byte	0xe0
  2951 0940 05       		.uleb128 0x5
  2952 0941 03       		.byte	0x3
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 89
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 89
 
 
  2953 0942 00000000 		.4byte	ADC_DelSig_convDone
  2954 0946 1E       		.uleb128 0x1e
- 2955 0947 B1060000 		.4byte	.LASF85
+ 2955 0947 4B060000 		.4byte	.LASF85
  2956 094b 01       		.byte	0x1
  2957 094c 29       		.byte	0x29
  2958 094d E0000000 		.4byte	0xe0
@@ -5291,7 +5291,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  2960 0952 03       		.byte	0x3
  2961 0953 00000000 		.4byte	ADC_DelSig_stopConversion
  2962 0957 1E       		.uleb128 0x1e
- 2963 0958 35010000 		.4byte	.LASF86
+ 2963 0958 CF000000 		.4byte	.LASF86
  2964 095c 01       		.byte	0x1
  2965 095d 2F       		.byte	0x2f
  2966 095e E0000000 		.4byte	0xe0
@@ -5299,7 +5299,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  2968 0963 03       		.byte	0x3
  2969 0964 00000000 		.4byte	ADC_DelSig_started
  2970 0968 1E       		.uleb128 0x1e
- 2971 0969 D1060000 		.4byte	.LASF87
+ 2971 0969 6B060000 		.4byte	.LASF87
  2972 096d 01       		.byte	0x1
  2973 096e 32       		.byte	0x32
  2974 096f E0000000 		.4byte	0xe0
@@ -5307,7 +5307,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  2976 0974 03       		.byte	0x3
  2977 0975 00000000 		.4byte	ADC_DelSig_Config
  2978 0979 1E       		.uleb128 0x1e
- 2979 097a E5040000 		.4byte	.LASF88
+ 2979 097a 7F040000 		.4byte	.LASF88
  2980 097e 01       		.byte	0x1
  2981 097f 34       		.byte	0x34
  2982 0980 8A090000 		.4byte	0x98a
@@ -5317,7 +5317,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  2986 098a 05       		.uleb128 0x5
  2987 098b AE000000 		.4byte	0xae
  2988 098f 1E       		.uleb128 0x1e
- 2989 0990 4B060000 		.4byte	.LASF89
+ 2989 0990 E5050000 		.4byte	.LASF89
  2990 0994 01       		.byte	0x1
  2991 0995 35       		.byte	0x35
  2992 0996 8A090000 		.4byte	0x98a
@@ -5325,20 +5325,20 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  2994 099b 03       		.byte	0x3
  2995 099c 00000000 		.4byte	ADC_DelSig_CountsPerVolt
  2996 09a0 1F       		.uleb128 0x1f
- 2997 09a1 BE040000 		.4byte	.LASF90
- 2998 09a5 BE040000 		.4byte	.LASF90
+ 2997 09a1 58040000 		.4byte	.LASF90
+ 2998 09a5 58040000 		.4byte	.LASF90
  2999 09a9 04       		.byte	0x4
  3000 09aa 7F       		.byte	0x7f
  3001 09ab 1F       		.uleb128 0x1f
- 3002 09ac 46030000 		.4byte	.LASF91
- 3003 09b0 46030000 		.4byte	.LASF91
+ 3002 09ac E0020000 		.4byte	.LASF91
+ 3003 09b0 E0020000 		.4byte	.LASF91
  3004 09b4 04       		.byte	0x4
  3005 09b5 7D       		.byte	0x7d
  3006 09b6 1F       		.uleb128 0x1f
- 3007 09b7 6C020000 		.4byte	.LASF92
- 3008 09bb 6C020000 		.4byte	.LASF92
+ 3007 09b7 06020000 		.4byte	.LASF92
+ 3008 09bb 06020000 		.4byte	.LASF92
  3009 09bf 04       		.byte	0x4
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 90
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 90
 
 
  3010 09c0 77       		.byte	0x77
@@ -5348,38 +5348,38 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  3014 09ca 04       		.byte	0x4
  3015 09cb 7E       		.byte	0x7e
  3016 09cc 1F       		.uleb128 0x1f
- 3017 09cd F6030000 		.4byte	.LASF94
- 3018 09d1 F6030000 		.4byte	.LASF94
+ 3017 09cd 90030000 		.4byte	.LASF94
+ 3018 09d1 90030000 		.4byte	.LASF94
  3019 09d5 05       		.byte	0x5
  3020 09d6 57       		.byte	0x57
  3021 09d7 1F       		.uleb128 0x1f
- 3022 09d8 F7040000 		.4byte	.LASF95
- 3023 09dc F7040000 		.4byte	.LASF95
+ 3022 09d8 91040000 		.4byte	.LASF95
+ 3023 09dc 91040000 		.4byte	.LASF95
  3024 09e0 06       		.byte	0x6
  3025 09e1 2F       		.byte	0x2f
  3026 09e2 1F       		.uleb128 0x1f
- 3027 09e3 ED050000 		.4byte	.LASF96
- 3028 09e7 ED050000 		.4byte	.LASF96
+ 3027 09e3 87050000 		.4byte	.LASF96
+ 3028 09e7 87050000 		.4byte	.LASF96
  3029 09eb 07       		.byte	0x7
  3030 09ec 2F       		.byte	0x2f
  3031 09ed 1F       		.uleb128 0x1f
- 3032 09ee DE010000 		.4byte	.LASF97
- 3033 09f2 DE010000 		.4byte	.LASF97
+ 3032 09ee 78010000 		.4byte	.LASF97
+ 3033 09f2 78010000 		.4byte	.LASF97
  3034 09f6 04       		.byte	0x4
  3035 09f7 88       		.byte	0x88
  3036 09f8 1F       		.uleb128 0x1f
- 3037 09f9 ED010000 		.4byte	.LASF98
- 3038 09fd ED010000 		.4byte	.LASF98
+ 3037 09f9 87010000 		.4byte	.LASF98
+ 3038 09fd 87010000 		.4byte	.LASF98
  3039 0a01 06       		.byte	0x6
  3040 0a02 32       		.byte	0x32
  3041 0a03 1F       		.uleb128 0x1f
- 3042 0a04 C6020000 		.4byte	.LASF99
- 3043 0a08 C6020000 		.4byte	.LASF99
+ 3042 0a04 60020000 		.4byte	.LASF99
+ 3043 0a08 60020000 		.4byte	.LASF99
  3044 0a0c 07       		.byte	0x7
  3045 0a0d 32       		.byte	0x32
  3046 0a0e 1F       		.uleb128 0x1f
- 3047 0a0f 75040000 		.4byte	.LASF100
- 3048 0a13 75040000 		.4byte	.LASF100
+ 3047 0a0f 0F040000 		.4byte	.LASF100
+ 3048 0a13 0F040000 		.4byte	.LASF100
  3049 0a17 04       		.byte	0x4
  3050 0a18 8B       		.byte	0x8b
  3051 0a19 00       		.byte	0
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  3064 000a 0E       		.uleb128 0xe
  3065 000b 55       		.uleb128 0x55
  3066 000c 17       		.uleb128 0x17
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 91
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 91
 
 
  3067 000d 11       		.uleb128 0x11
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  3121 0043 0B       		.uleb128 0xb
  3122 0044 3B       		.uleb128 0x3b
  3123 0045 0B       		.uleb128 0xb
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 92
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 92
 
 
  3124 0046 01       		.uleb128 0x1
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  3178 007d 00       		.byte	0
  3179 007e 0A       		.uleb128 0xa
  3180 007f 05       		.uleb128 0x5
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 93
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 93
 
 
  3181 0080 00       		.byte	0
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  3235 00bd 00       		.byte	0
  3236 00be 0F       		.uleb128 0xf
  3237 00bf 898201   		.uleb128 0x4109
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 94
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 94
 
 
  3238 00c2 01       		.byte	0x1
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  3292 00f9 3B       		.uleb128 0x3b
  3293 00fa 0B       		.uleb128 0xb
  3294 00fb 49       		.uleb128 0x49
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 95
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 95
 
 
  3295 00fc 13       		.uleb128 0x13
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  3349 0134 13       		.uleb128 0x13
  3350 0135 00       		.byte	0
  3351 0136 00       		.byte	0
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 96
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 96
 
 
  3352 0137 15       		.uleb128 0x15
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  3406 016f 0E       		.uleb128 0xe
  3407 0170 3A       		.uleb128 0x3a
  3408 0171 0B       		.uleb128 0xb
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 97
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 97
 
 
  3409 0172 3B       		.uleb128 0x3b
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  3463 01a8 01       		.uleb128 0x1
  3464 01a9 01       		.byte	0x1
  3465 01aa 49       		.uleb128 0x49
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 98
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 98
 
 
  3466 01ab 13       		.uleb128 0x13
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  3520 01e1 0E       		.uleb128 0xe
  3521 01e2 03       		.uleb128 0x3
  3522 01e3 0E       		.uleb128 0xe
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 99
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 99
 
 
  3523 01e4 3A       		.uleb128 0x3a
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  3577 0069 01       		.uleb128 0x1
  3578 006a 51       		.byte	0x51
  3579 006b 9F       		.byte	0x9f
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 100
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 100
 
 
  3580 006c 00000000 		.4byte	0
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  3634 00eb B3000000 		.4byte	.LVL33-1
  3635 00ef DC000000 		.4byte	.LFE21
  3636 00f3 0400     		.2byte	0x4
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 101
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 101
 
 
  3637 00f5 F3       		.byte	0xf3
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  3691 017e 6E000000 		.4byte	.LVL17
  3692 0182 0100     		.2byte	0x1
  3693 0184 50       		.byte	0x50
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 102
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 102
 
 
  3694 0185 70000000 		.4byte	.LVL18
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  3748 0213 0A000000 		.4byte	.LVL37
  3749 0217 40000000 		.4byte	.LVL40
  3750 021b 0100     		.2byte	0x1
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 103
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 103
 
 
  3751 021d 56       		.byte	0x56
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  3805 02a4 10000000 		.4byte	.LVL70
  3806 02a8 18000000 		.4byte	.LFE4
  3807 02ac 0100     		.2byte	0x1
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 104
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 104
 
 
  3808 02ae 50       		.byte	0x50
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  3862 0330 32       		.byte	0x32
  3863 0331 24       		.byte	0x24
  3864 0332 03       		.byte	0x3
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 105
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 105
 
 
  3865 0333 00000000 		.4byte	.LANCHOR0
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  3919 03ba 06000000 		.4byte	.LVL92
  3920 03be 14000000 		.4byte	.LVL94
  3921 03c2 0100     		.2byte	0x1
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 106
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 106
 
 
  3922 03c4 53       		.byte	0x53
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  3976 0452 50       		.byte	0x50
  3977 0453 18000000 		.4byte	.LVL111
  3978 0457 20000000 		.4byte	.LVL112
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 107
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 107
 
 
  3979 045b 0100     		.2byte	0x1
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  4033 04dd 44000000 		.4byte	.LVL126
  4034 04e1 6C000000 		.4byte	.LFE13
  4035 04e5 0100     		.2byte	0x1
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 108
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 108
 
 
  4036 04e7 50       		.byte	0x50
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  4090 0570 2C000000 		.4byte	.LVL142
  4091 0574 4C000000 		.4byte	.LFE18
  4092 0578 0400     		.2byte	0x4
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 109
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 109
 
 
  4093 057a F3       		.byte	0xf3
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  4147 05f7 F3       		.byte	0xf3
  4148 05f8 01       		.uleb128 0x1
  4149 05f9 50       		.byte	0x50
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 110
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 110
 
 
  4150 05fa 9F       		.byte	0x9f
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  4204 0683 50       		.byte	0x50
  4205 0684 00000000 		.4byte	0
  4206 0688 00000000 		.4byte	0
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 111
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 111
 
 
  4207              		.section	.debug_aranges,"",%progbits
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  4261 00c8 00000000 		.4byte	.LFB23
  4262 00cc 28000000 		.4byte	.LFE23-.LFB23
  4263 00d0 00000000 		.4byte	.LFB24
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 112
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 112
 
 
  4264 00d4 28000000 		.4byte	.LFE24-.LFB24
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  4318 00bc 28000000 		.4byte	.LFE23
  4319 00c0 00000000 		.4byte	.LFB24
  4320 00c4 28000000 		.4byte	.LFE24
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 113
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 113
 
 
  4321 00c8 00000000 		.4byte	.LFB25
@@ -6772,493 +6772,496 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 1
  4343      69675F47 
  4343      65745265 
  4343      73756C74 
- 4344              	.LASF103:
- 4345 0083 433A5C55 		.ascii	"C:\\Users\\aless\\Documents\\PSoC Creator\\PsoC_Fin"
- 4345      73657273 
- 4345      5C616C65 
- 4345      73735C44 
- 4345      6F63756D 
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 114
+ 4344              	.LASF73:
+ 4345 0083 4144435F 		.ascii	"ADC_DelSig_CountsTo_uVolts\000"
+ 4345      44656C53 
+ 4345      69675F43 
+ 4345      6F756E74 
+ 4345      73546F5F 
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 114
 
 
- 4346 00b1 616C5F50 		.ascii	"al_Project_1_03\\FIORANI_GARGIULO_IANNUZZI_Project."
- 4346      726F6A65 
- 4346      63745F31 
- 4346      5F30335C 
- 4346      46494F52 
- 4347 00e3 63796473 		.ascii	"cydsn\000"
- 4347      6E00
- 4348              	.LASF73:
- 4349 00e9 4144435F 		.ascii	"ADC_DelSig_CountsTo_uVolts\000"
+ 4346              	.LASF24:
+ 4347 009e 67636F72 		.ascii	"gcor\000"
+ 4347      00
+ 4348              	.LASF40:
+ 4349 00a3 4144435F 		.ascii	"ADC_DelSig_InitConfig\000"
  4349      44656C53 
- 4349      69675F43 
- 4349      6F756E74 
- 4349      73546F5F 
- 4350              	.LASF24:
- 4351 0104 67636F72 		.ascii	"gcor\000"
- 4351      00
- 4352              	.LASF40:
- 4353 0109 4144435F 		.ascii	"ADC_DelSig_InitConfig\000"
+ 4349      69675F49 
+ 4349      6E697443 
+ 4349      6F6E6669 
+ 4350              	.LASF60:
+ 4351 00b9 4144435F 		.ascii	"ADC_DelSig_GetResult8\000"
+ 4351      44656C53 
+ 4351      69675F47 
+ 4351      65745265 
+ 4351      73756C74 
+ 4352              	.LASF86:
+ 4353 00cf 4144435F 		.ascii	"ADC_DelSig_started\000"
  4353      44656C53 
- 4353      69675F49 
- 4353      6E697443 
- 4353      6F6E6669 
- 4354              	.LASF60:
- 4355 011f 4144435F 		.ascii	"ADC_DelSig_GetResult8\000"
+ 4353      69675F73 
+ 4353      74617274 
+ 4353      656400
+ 4354              	.LASF57:
+ 4355 00e2 4144435F 		.ascii	"ADC_DelSig_StopConvert\000"
  4355      44656C53 
- 4355      69675F47 
- 4355      65745265 
- 4355      73756C74 
- 4356              	.LASF86:
- 4357 0135 4144435F 		.ascii	"ADC_DelSig_started\000"
- 4357      44656C53 
- 4357      69675F73 
- 4357      74617274 
- 4357      656400
- 4358              	.LASF57:
- 4359 0148 4144435F 		.ascii	"ADC_DelSig_StopConvert\000"
+ 4355      69675F53 
+ 4355      746F7043 
+ 4355      6F6E7665 
+ 4356              	.LASF8:
+ 4357 00f9 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 4357      206C6F6E 
+ 4357      6720756E 
+ 4357      7369676E 
+ 4357      65642069 
+ 4358              	.LASF42:
+ 4359 0110 4144435F 		.ascii	"ADC_DelSig_Enable\000"
  4359      44656C53 
- 4359      69675F53 
- 4359      746F7043 
- 4359      6F6E7665 
- 4360              	.LASF8:
- 4361 015f 6C6F6E67 		.ascii	"long long unsigned int\000"
- 4361      206C6F6E 
- 4361      6720756E 
- 4361      7369676E 
- 4361      65642069 
- 4362              	.LASF42:
- 4363 0176 4144435F 		.ascii	"ADC_DelSig_Enable\000"
+ 4359      69675F45 
+ 4359      6E61626C 
+ 4359      6500
+ 4360              	.LASF77:
+ 4361 0122 4144435F 		.ascii	"ADC_DelSig_SelectConfiguration\000"
+ 4361      44656C53 
+ 4361      69675F53 
+ 4361      656C6563 
+ 4361      74436F6E 
+ 4362              	.LASF26:
+ 4363 0141 4144435F 		.ascii	"ADC_DelSig_GCOR_STRUCT\000"
  4363      44656C53 
- 4363      69675F45 
- 4363      6E61626C 
- 4363      6500
- 4364              	.LASF77:
- 4365 0188 4144435F 		.ascii	"ADC_DelSig_SelectConfiguration\000"
- 4365      44656C53 
- 4365      69675F53 
- 4365      656C6563 
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 115
+ 4363      69675F47 
+ 4363      434F525F 
+ 4363      53545255 
+ 4364              	.LASF29:
+ 4365 0158 69646561 		.ascii	"idealOddDecGain\000"
+ 4365      6C4F6464 
+ 4365      44656347 
+ 4365      61696E00 
+ 4366              	.LASF41:
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 115
 
 
- 4365      74436F6E 
- 4366              	.LASF26:
- 4367 01a7 4144435F 		.ascii	"ADC_DelSig_GCOR_STRUCT\000"
+ 4367 0168 4144435F 		.ascii	"ADC_DelSig_Init\000"
  4367      44656C53 
- 4367      69675F47 
- 4367      434F525F 
- 4367      53545255 
- 4368              	.LASF29:
- 4369 01be 69646561 		.ascii	"idealOddDecGain\000"
- 4369      6C4F6464 
- 4369      44656347 
- 4369      61696E00 
- 4370              	.LASF41:
- 4371 01ce 4144435F 		.ascii	"ADC_DelSig_Init\000"
+ 4367      69675F49 
+ 4367      6E697400 
+ 4368              	.LASF97:
+ 4369 0178 4379496E 		.ascii	"CyIntSetVector\000"
+ 4369      74536574 
+ 4369      56656374 
+ 4369      6F7200
+ 4370              	.LASF98:
+ 4371 0187 4144435F 		.ascii	"ADC_DelSig_Ext_CP_Clk_SetModeRegister\000"
  4371      44656C53 
- 4371      69675F49 
- 4371      6E697400 
- 4372              	.LASF97:
- 4373 01de 4379496E 		.ascii	"CyIntSetVector\000"
- 4373      74536574 
- 4373      56656374 
- 4373      6F7200
- 4374              	.LASF98:
- 4375 01ed 4144435F 		.ascii	"ADC_DelSig_Ext_CP_Clk_SetModeRegister\000"
- 4375      44656C53 
- 4375      69675F45 
- 4375      78745F43 
- 4375      505F436C 
- 4376              	.LASF7:
- 4377 0213 6C6F6E67 		.ascii	"long long int\000"
- 4377      206C6F6E 
- 4377      6720696E 
- 4377      7400
- 4378              	.LASF1:
- 4379 0221 7369676E 		.ascii	"signed char\000"
- 4379      65642063 
- 4379      68617200 
- 4380              	.LASF15:
- 4381 022d 696E7433 		.ascii	"int32\000"
- 4381      3200
- 4382              	.LASF5:
- 4383 0233 6C6F6E67 		.ascii	"long int\000"
- 4383      20696E74 
- 4383      00
- 4384              	.LASF20:
- 4385 023c 72656731 		.ascii	"reg16\000"
- 4385      3600
- 4386              	.LASF10:
- 4387 0242 75696E74 		.ascii	"uint8\000"
- 4387      3800
- 4388              	.LASF102:
- 4389 0248 47656E65 		.ascii	"Generated_Source\\PSoC5\\ADC_DelSig.c\000"
- 4389      72617465 
- 4389      645F536F 
- 4389      75726365 
- 4389      5C50536F 
- 4390              	.LASF92:
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 116
-
-
- 4391 026c 43794465 		.ascii	"CyDelayUs\000"
- 4391      6C617955 
+ 4371      69675F45 
+ 4371      78745F43 
+ 4371      505F436C 
+ 4372              	.LASF7:
+ 4373 01ad 6C6F6E67 		.ascii	"long long int\000"
+ 4373      206C6F6E 
+ 4373      6720696E 
+ 4373      7400
+ 4374              	.LASF1:
+ 4375 01bb 7369676E 		.ascii	"signed char\000"
+ 4375      65642063 
+ 4375      68617200 
+ 4376              	.LASF15:
+ 4377 01c7 696E7433 		.ascii	"int32\000"
+ 4377      3200
+ 4378              	.LASF5:
+ 4379 01cd 6C6F6E67 		.ascii	"long int\000"
+ 4379      20696E74 
+ 4379      00
+ 4380              	.LASF20:
+ 4381 01d6 72656731 		.ascii	"reg16\000"
+ 4381      3600
+ 4382              	.LASF10:
+ 4383 01dc 75696E74 		.ascii	"uint8\000"
+ 4383      3800
+ 4384              	.LASF102:
+ 4385 01e2 47656E65 		.ascii	"Generated_Source\\PSoC5\\ADC_DelSig.c\000"
+ 4385      72617465 
+ 4385      645F536F 
+ 4385      75726365 
+ 4385      5C50536F 
+ 4386              	.LASF92:
+ 4387 0206 43794465 		.ascii	"CyDelayUs\000"
+ 4387      6C617955 
+ 4387      7300
+ 4388              	.LASF17:
+ 4389 0210 646F7562 		.ascii	"double\000"
+ 4389      6C6500
+ 4390              	.LASF72:
+ 4391 0217 566F6C74 		.ascii	"Volts\000"
  4391      7300
- 4392              	.LASF17:
- 4393 0276 646F7562 		.ascii	"double\000"
- 4393      6C6500
- 4394              	.LASF72:
- 4395 027d 566F6C74 		.ascii	"Volts\000"
- 4395      7300
- 4396              	.LASF66:
- 4397 0283 4144435F 		.ascii	"ADC_DelSig_SetGain\000"
+ 4392              	.LASF66:
+ 4393 021d 4144435F 		.ascii	"ADC_DelSig_SetGain\000"
+ 4393      44656C53 
+ 4393      69675F53 
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 116
+
+
+ 4393      65744761 
+ 4393      696E00
+ 4394              	.LASF12:
+ 4395 0230 75696E74 		.ascii	"uint32\000"
+ 4395      333200
+ 4396              	.LASF81:
+ 4397 0237 4144435F 		.ascii	"ADC_DelSig_Read32\000"
  4397      44656C53 
- 4397      69675F53 
- 4397      65744761 
- 4397      696E00
- 4398              	.LASF12:
- 4399 0296 75696E74 		.ascii	"uint32\000"
- 4399      333200
- 4400              	.LASF81:
- 4401 029d 4144435F 		.ascii	"ADC_DelSig_Read32\000"
+ 4397      69675F52 
+ 4397      65616433 
+ 4397      3200
+ 4398              	.LASF63:
+ 4399 0249 4144435F 		.ascii	"ADC_DelSig_GetResult32\000"
+ 4399      44656C53 
+ 4399      69675F47 
+ 4399      65745265 
+ 4399      73756C74 
+ 4400              	.LASF99:
+ 4401 0260 4144435F 		.ascii	"ADC_DelSig_theACLK_SetModeRegister\000"
  4401      44656C53 
- 4401      69675F52 
- 4401      65616433 
- 4401      3200
- 4402              	.LASF63:
- 4403 02af 4144435F 		.ascii	"ADC_DelSig_GetResult32\000"
+ 4401      69675F74 
+ 4401      68654143 
+ 4401      4C4B5F53 
+ 4402              	.LASF64:
+ 4403 0283 4144435F 		.ascii	"ADC_DelSig_SetOffset\000"
  4403      44656C53 
- 4403      69675F47 
- 4403      65745265 
- 4403      73756C74 
- 4404              	.LASF99:
- 4405 02c6 4144435F 		.ascii	"ADC_DelSig_theACLK_SetModeRegister\000"
+ 4403      69675F53 
+ 4403      65744F66 
+ 4403      66736574 
+ 4404              	.LASF84:
+ 4405 0298 4144435F 		.ascii	"ADC_DelSig_convDone\000"
  4405      44656C53 
- 4405      69675F74 
- 4405      68654143 
- 4405      4C4B5F53 
- 4406              	.LASF64:
- 4407 02e9 4144435F 		.ascii	"ADC_DelSig_SetOffset\000"
- 4407      44656C53 
- 4407      69675F53 
- 4407      65744F66 
- 4407      66736574 
- 4408              	.LASF84:
- 4409 02fe 4144435F 		.ascii	"ADC_DelSig_convDone\000"
- 4409      44656C53 
- 4409      69675F63 
- 4409      6F6E7644 
- 4409      6F6E6500 
- 4410              	.LASF38:
- 4411 0312 76616C75 		.ascii	"value\000"
- 4411      6500
- 4412              	.LASF59:
- 4413 0318 7265744D 		.ascii	"retMode\000"
- 4413      6F646500 
- 4414              	.LASF9:
- 4415 0320 756E7369 		.ascii	"unsigned int\000"
- 4415      676E6564 
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 117
+ 4405      69675F63 
+ 4405      6F6E7644 
+ 4405      6F6E6500 
+ 4406              	.LASF38:
+ 4407 02ac 76616C75 		.ascii	"value\000"
+ 4407      6500
+ 4408              	.LASF59:
+ 4409 02b2 7265744D 		.ascii	"retMode\000"
+ 4409      6F646500 
+ 4410              	.LASF9:
+ 4411 02ba 756E7369 		.ascii	"unsigned int\000"
+ 4411      676E6564 
+ 4411      20696E74 
+ 4411      00
+ 4412              	.LASF74:
+ 4413 02c7 75566F6C 		.ascii	"uVolts\000"
+ 4413      747300
+ 4414              	.LASF6:
+ 4415 02ce 6C6F6E67 		.ascii	"long unsigned int\000"
+ 4415      20756E73 
+ 4415      69676E65 
+ 4415      6420696E 
+ 4415      7400
+ 4416              	.LASF91:
+ 4417 02e0 4379456E 		.ascii	"CyEnterCriticalSection\000"
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 117
 
 
- 4415      20696E74 
- 4415      00
- 4416              	.LASF74:
- 4417 032d 75566F6C 		.ascii	"uVolts\000"
- 4417      747300
- 4418              	.LASF6:
- 4419 0334 6C6F6E67 		.ascii	"long unsigned int\000"
- 4419      20756E73 
- 4419      69676E65 
- 4419      6420696E 
- 4419      7400
- 4420              	.LASF91:
- 4421 0346 4379456E 		.ascii	"CyEnterCriticalSection\000"
- 4421      74657243 
- 4421      72697469 
- 4421      63616C53 
- 4421      65637469 
- 4422              	.LASF56:
- 4423 035d 4144435F 		.ascii	"ADC_DelSig_StartConvert\000"
+ 4417      74657243 
+ 4417      72697469 
+ 4417      63616C53 
+ 4417      65637469 
+ 4418              	.LASF56:
+ 4419 02f7 4144435F 		.ascii	"ADC_DelSig_StartConvert\000"
+ 4419      44656C53 
+ 4419      69675F53 
+ 4419      74617274 
+ 4419      436F6E76 
+ 4420              	.LASF4:
+ 4421 030f 73686F72 		.ascii	"short unsigned int\000"
+ 4421      7420756E 
+ 4421      7369676E 
+ 4421      65642069 
+ 4421      6E7400
+ 4422              	.LASF43:
+ 4423 0322 4144435F 		.ascii	"ADC_DelSig_Start\000"
  4423      44656C53 
  4423      69675F53 
  4423      74617274 
- 4423      436F6E76 
- 4424              	.LASF4:
- 4425 0375 73686F72 		.ascii	"short unsigned int\000"
- 4425      7420756E 
- 4425      7369676E 
- 4425      65642069 
- 4425      6E7400
- 4426              	.LASF43:
- 4427 0388 4144435F 		.ascii	"ADC_DelSig_Start\000"
- 4427      44656C53 
- 4427      69675F53 
- 4427      74617274 
+ 4423      00
+ 4424              	.LASF71:
+ 4425 0333 4144435F 		.ascii	"ADC_DelSig_CountsTo_Volts\000"
+ 4425      44656C53 
+ 4425      69675F43 
+ 4425      6F756E74 
+ 4425      73546F5F 
+ 4426              	.LASF13:
+ 4427 034d 696E7438 		.ascii	"int8\000"
  4427      00
- 4428              	.LASF71:
- 4429 0399 4144435F 		.ascii	"ADC_DelSig_CountsTo_Volts\000"
- 4429      44656C53 
- 4429      69675F43 
- 4429      6F756E74 
- 4429      73546F5F 
- 4430              	.LASF13:
- 4431 03b3 696E7438 		.ascii	"int8\000"
- 4431      00
- 4432              	.LASF34:
- 4433 03b8 67636F72 		.ascii	"gcorValue\000"
- 4433      56616C75 
- 4433      6500
- 4434              	.LASF48:
- 4435 03c2 4144435F 		.ascii	"ADC_DelSig_SetCoherency\000"
+ 4428              	.LASF34:
+ 4429 0352 67636F72 		.ascii	"gcorValue\000"
+ 4429      56616C75 
+ 4429      6500
+ 4430              	.LASF48:
+ 4431 035c 4144435F 		.ascii	"ADC_DelSig_SetCoherency\000"
+ 4431      44656C53 
+ 4431      69675F53 
+ 4431      6574436F 
+ 4431      68657265 
+ 4432              	.LASF36:
+ 4433 0374 4144435F 		.ascii	"ADC_DelSig_GainCompensation\000"
+ 4433      44656C53 
+ 4433      69675F47 
+ 4433      61696E43 
+ 4433      6F6D7065 
+ 4434              	.LASF94:
+ 4435 0390 4144435F 		.ascii	"ADC_DelSig_AMux_Select\000"
  4435      44656C53 
- 4435      69675F53 
- 4435      6574436F 
- 4435      68657265 
- 4436              	.LASF36:
- 4437 03da 4144435F 		.ascii	"ADC_DelSig_GainCompensation\000"
- 4437      44656C53 
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 118
+ 4435      69675F41 
+ 4435      4D75785F 
+ 4435      53656C65 
+ 4436              	.LASF70:
+ 4437 03a7 6D566F6C 		.ascii	"mVolts\000"
+ 4437      747300
+ 4438              	.LASF32:
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 118
 
 
- 4437      69675F47 
- 4437      61696E43 
- 4437      6F6D7065 
- 4438              	.LASF94:
- 4439 03f6 4144435F 		.ascii	"ADC_DelSig_AMux_Select\000"
- 4439      44656C53 
- 4439      69675F41 
- 4439      4D75785F 
- 4439      53656C65 
- 4440              	.LASF70:
- 4441 040d 6D566F6C 		.ascii	"mVolts\000"
- 4441      747300
- 4442              	.LASF32:
- 4443 0414 666C6173 		.ascii	"flash\000"
- 4443      6800
- 4444              	.LASF21:
- 4445 041a 72656733 		.ascii	"reg32\000"
- 4445      3200
- 4446              	.LASF68:
- 4447 0420 4144435F 		.ascii	"ADC_DelSig_CountsTo_mVolts\000"
- 4447      44656C53 
- 4447      69675F43 
- 4447      6F756E74 
- 4447      73546F5F 
- 4448              	.LASF16:
- 4449 043b 666C6F61 		.ascii	"float32\000"
- 4449      74333200 
- 4450              	.LASF23:
- 4451 0443 73697A65 		.ascii	"sizetype\000"
- 4451      74797065 
- 4451      00
- 4452              	.LASF22:
- 4453 044c 6C6F6E67 		.ascii	"long double\000"
- 4453      20646F75 
- 4453      626C6500 
- 4454              	.LASF83:
- 4455 0458 4144435F 		.ascii	"ADC_DelSig_initVar\000"
- 4455      44656C53 
- 4455      69675F69 
- 4455      6E697456 
- 4455      617200
- 4456              	.LASF49:
- 4457 046b 636F6865 		.ascii	"coherency\000"
- 4457      72656E63 
- 4457      7900
- 4458              	.LASF100:
- 4459 0475 4379496E 		.ascii	"CyIntSetPriority\000"
- 4459      74536574 
- 4459      5072696F 
- 4459      72697479 
- 4459      00
- 4460              	.LASF46:
- 4461 0486 6761696E 		.ascii	"gain\000"
- 4461      00
- 4462              	.LASF0:
- 4463 048b 666C6F61 		.ascii	"float\000"
- 4463      7400
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 119
+ 4439 03ae 666C6173 		.ascii	"flash\000"
+ 4439      6800
+ 4440              	.LASF21:
+ 4441 03b4 72656733 		.ascii	"reg32\000"
+ 4441      3200
+ 4442              	.LASF68:
+ 4443 03ba 4144435F 		.ascii	"ADC_DelSig_CountsTo_mVolts\000"
+ 4443      44656C53 
+ 4443      69675F43 
+ 4443      6F756E74 
+ 4443      73546F5F 
+ 4444              	.LASF16:
+ 4445 03d5 666C6F61 		.ascii	"float32\000"
+ 4445      74333200 
+ 4446              	.LASF23:
+ 4447 03dd 73697A65 		.ascii	"sizetype\000"
+ 4447      74797065 
+ 4447      00
+ 4448              	.LASF22:
+ 4449 03e6 6C6F6E67 		.ascii	"long double\000"
+ 4449      20646F75 
+ 4449      626C6500 
+ 4450              	.LASF83:
+ 4451 03f2 4144435F 		.ascii	"ADC_DelSig_initVar\000"
+ 4451      44656C53 
+ 4451      69675F69 
+ 4451      6E697456 
+ 4451      617200
+ 4452              	.LASF49:
+ 4453 0405 636F6865 		.ascii	"coherency\000"
+ 4453      72656E63 
+ 4453      7900
+ 4454              	.LASF100:
+ 4455 040f 4379496E 		.ascii	"CyIntSetPriority\000"
+ 4455      74536574 
+ 4455      5072696F 
+ 4455      72697479 
+ 4455      00
+ 4456              	.LASF46:
+ 4457 0420 6761696E 		.ascii	"gain\000"
+ 4457      00
+ 4458              	.LASF0:
+ 4459 0425 666C6F61 		.ascii	"float\000"
+ 4459      7400
+ 4460              	.LASF82:
+ 4461 042b 4144435F 		.ascii	"ADC_DelSig_gcor\000"
+ 4461      44656C53 
+ 4461      69675F67 
+ 4461      636F7200 
+ 4462              	.LASF19:
+ 4463 043b 72656738 		.ascii	"reg8\000"
+ 4463      00
+ 4464              	.LASF28:
+ 4465 0440 69646561 		.ascii	"idealDecGain\000"
+ 4465      6C446563 
+ 4465      4761696E 
+ 4465      00
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 119
 
 
- 4464              	.LASF82:
- 4465 0491 4144435F 		.ascii	"ADC_DelSig_gcor\000"
- 4465      44656C53 
- 4465      69675F67 
- 4465      636F7200 
- 4466              	.LASF19:
- 4467 04a1 72656738 		.ascii	"reg8\000"
- 4467      00
- 4468              	.LASF28:
- 4469 04a6 69646561 		.ascii	"idealDecGain\000"
- 4469      6C446563 
- 4469      4761696E 
- 4469      00
- 4470              	.LASF33:
- 4471 04b3 6E6F726D 		.ascii	"normalised\000"
- 4471      616C6973 
- 4471      656400
- 4472              	.LASF90:
- 4473 04be 43794861 		.ascii	"CyHalt\000"
- 4473      6C7400
- 4474              	.LASF2:
- 4475 04c5 756E7369 		.ascii	"unsigned char\000"
- 4475      676E6564 
- 4475      20636861 
- 4475      7200
- 4476              	.LASF3:
- 4477 04d3 73686F72 		.ascii	"short int\000"
- 4477      7420696E 
+ 4466              	.LASF33:
+ 4467 044d 6E6F726D 		.ascii	"normalised\000"
+ 4467      616C6973 
+ 4467      656400
+ 4468              	.LASF90:
+ 4469 0458 43794861 		.ascii	"CyHalt\000"
+ 4469      6C7400
+ 4470              	.LASF2:
+ 4471 045f 756E7369 		.ascii	"unsigned char\000"
+ 4471      676E6564 
+ 4471      20636861 
+ 4471      7200
+ 4472              	.LASF3:
+ 4473 046d 73686F72 		.ascii	"short int\000"
+ 4473      7420696E 
+ 4473      7400
+ 4474              	.LASF35:
+ 4475 0477 67636F72 		.ascii	"gcorTmp\000"
+ 4475      546D7000 
+ 4476              	.LASF88:
+ 4477 047f 4144435F 		.ascii	"ADC_DelSig_Offset\000"
+ 4477      44656C53 
+ 4477      69675F4F 
+ 4477      66667365 
  4477      7400
- 4478              	.LASF35:
- 4479 04dd 67636F72 		.ascii	"gcorTmp\000"
- 4479      546D7000 
- 4480              	.LASF88:
- 4481 04e5 4144435F 		.ascii	"ADC_DelSig_Offset\000"
- 4481      44656C53 
- 4481      69675F4F 
- 4481      66667365 
- 4481      7400
- 4482              	.LASF95:
- 4483 04f7 4144435F 		.ascii	"ADC_DelSig_Ext_CP_Clk_SetDividerRegister\000"
- 4483      44656C53 
- 4483      69675F45 
- 4483      78745F43 
- 4483      505F436C 
- 4484              	.LASF101:
- 4485 0520 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 4485      43313120 
- 4485      352E342E 
- 4485      31203230 
- 4485      31363036 
- 4486 0553 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 4486      20726576 
- 4486      6973696F 
- 4486      6E203233 
- 4486      37373135 
- 4487 0586 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 4487      66756E63 
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 120
+ 4478              	.LASF95:
+ 4479 0491 4144435F 		.ascii	"ADC_DelSig_Ext_CP_Clk_SetDividerRegister\000"
+ 4479      44656C53 
+ 4479      69675F45 
+ 4479      78745F43 
+ 4479      505F436C 
+ 4480              	.LASF101:
+ 4481 04ba 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 4481      43313120 
+ 4481      352E342E 
+ 4481      31203230 
+ 4481      31363036 
+ 4482 04ed 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 4482      20726576 
+ 4482      6973696F 
+ 4482      6E203233 
+ 4482      37373135 
+ 4483 0520 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 4483      66756E63 
+ 4483      74696F6E 
+ 4483      2D736563 
+ 4483      74696F6E 
+ 4484              	.LASF30:
+ 4485 0548 7265736F 		.ascii	"resolution\000"
+ 4485      6C757469 
+ 4485      6F6E00
+ 4486              	.LASF44:
+ 4487 0553 4144435F 		.ascii	"ADC_DelSig_Stop\000"
+ 4487      44656C53 
+ 4487      69675F53 
+ 4487      746F7000 
+ 4488              	.LASF75:
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 120
 
 
- 4487      74696F6E 
- 4487      2D736563 
- 4487      74696F6E 
- 4488              	.LASF30:
- 4489 05ae 7265736F 		.ascii	"resolution\000"
- 4489      6C757469 
- 4489      6F6E00
- 4490              	.LASF44:
- 4491 05b9 4144435F 		.ascii	"ADC_DelSig_Stop\000"
- 4491      44656C53 
- 4491      69675F53 
- 4491      746F7000 
- 4492              	.LASF75:
- 4493 05c9 636F6566 		.ascii	"coefA\000"
- 4493      4100
- 4494              	.LASF76:
- 4495 05cf 636F6566 		.ascii	"coefB\000"
- 4495      4200
- 4496              	.LASF18:
- 4497 05d5 63686172 		.ascii	"char\000"
- 4497      00
- 4498              	.LASF55:
- 4499 05da 6756616C 		.ascii	"gValue\000"
- 4499      756500
- 4500              	.LASF31:
- 4501 05e1 636F6E66 		.ascii	"config\000"
- 4501      696700
- 4502              	.LASF25:
- 4503 05e8 6776616C 		.ascii	"gval\000"
- 4503      00
- 4504              	.LASF96:
- 4505 05ed 4144435F 		.ascii	"ADC_DelSig_theACLK_SetDividerRegister\000"
+ 4489 0563 636F6566 		.ascii	"coefA\000"
+ 4489      4100
+ 4490              	.LASF76:
+ 4491 0569 636F6566 		.ascii	"coefB\000"
+ 4491      4200
+ 4492              	.LASF18:
+ 4493 056f 63686172 		.ascii	"char\000"
+ 4493      00
+ 4494              	.LASF55:
+ 4495 0574 6756616C 		.ascii	"gValue\000"
+ 4495      756500
+ 4496              	.LASF31:
+ 4497 057b 636F6E66 		.ascii	"config\000"
+ 4497      696700
+ 4498              	.LASF25:
+ 4499 0582 6776616C 		.ascii	"gval\000"
+ 4499      00
+ 4500              	.LASF96:
+ 4501 0587 4144435F 		.ascii	"ADC_DelSig_theACLK_SetDividerRegister\000"
+ 4501      44656C53 
+ 4501      69675F74 
+ 4501      68654143 
+ 4501      4C4B5F53 
+ 4502              	.LASF54:
+ 4503 05ad 4144435F 		.ascii	"ADC_DelSig_ReadGCOR\000"
+ 4503      44656C53 
+ 4503      69675F52 
+ 4503      65616447 
+ 4503      434F5200 
+ 4504              	.LASF53:
+ 4505 05c1 4144435F 		.ascii	"ADC_DelSig_SetGCOR\000"
  4505      44656C53 
- 4505      69675F74 
- 4505      68654143 
- 4505      4C4B5F53 
- 4506              	.LASF54:
- 4507 0613 4144435F 		.ascii	"ADC_DelSig_ReadGCOR\000"
- 4507      44656C53 
- 4507      69675F52 
- 4507      65616447 
- 4507      434F5200 
- 4508              	.LASF53:
- 4509 0627 4144435F 		.ascii	"ADC_DelSig_SetGCOR\000"
- 4509      44656C53 
- 4509      69675F53 
- 4509      65744743 
- 4509      4F5200
- 4510              	.LASF78:
- 4511 063a 72657374 		.ascii	"restart\000"
- 4511      61727400 
- 4512              	.LASF52:
- 4513 0642 746D7056 		.ascii	"tmpValue\000"
- 4513      616C7565 
- 4513      00
- 4514              	.LASF89:
- 4515 064b 4144435F 		.ascii	"ADC_DelSig_CountsPerVolt\000"
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 121
-
-
- 4515      44656C53 
- 4515      69675F43 
+ 4505      69675F53 
+ 4505      65744743 
+ 4505      4F5200
+ 4506              	.LASF78:
+ 4507 05d4 72657374 		.ascii	"restart\000"
+ 4507      61727400 
+ 4508              	.LASF52:
+ 4509 05dc 746D7056 		.ascii	"tmpValue\000"
+ 4509      616C7565 
+ 4509      00
+ 4510              	.LASF89:
+ 4511 05e5 4144435F 		.ascii	"ADC_DelSig_CountsPerVolt\000"
+ 4511      44656C53 
+ 4511      69675F43 
+ 4511      6F756E74 
+ 4511      73506572 
+ 4512              	.LASF65:
+ 4513 05fe 6F666673 		.ascii	"offset\000"
+ 4513      657400
+ 4514              	.LASF69:
+ 4515 0605 61646343 		.ascii	"adcCounts\000"
  4515      6F756E74 
- 4515      73506572 
- 4516              	.LASF65:
- 4517 0664 6F666673 		.ascii	"offset\000"
- 4517      657400
- 4518              	.LASF69:
- 4519 066b 61646343 		.ascii	"adcCounts\000"
- 4519      6F756E74 
- 4519      7300
- 4520              	.LASF37:
- 4521 0675 4144435F 		.ascii	"ADC_DelSig_SetDSMRef0Reg\000"
- 4521      44656C53 
- 4521      69675F53 
- 4521      65744453 
- 4521      4D526566 
- 4522              	.LASF39:
- 4523 068e 656E6162 		.ascii	"enableInterrupts\000"
- 4523      6C65496E 
- 4523      74657272 
- 4523      75707473 
- 4523      00
- 4524              	.LASF51:
- 4525 069f 73746174 		.ascii	"status\000"
- 4525      757300
- 4526              	.LASF50:
- 4527 06a6 6761696E 		.ascii	"gainAdjust\000"
- 4527      41646A75 
- 4527      737400
- 4528              	.LASF85:
- 4529 06b1 4144435F 		.ascii	"ADC_DelSig_stopConversion\000"
+ 4515      7300
+ 4516              	.LASF37:
+ 4517 060f 4144435F 		.ascii	"ADC_DelSig_SetDSMRef0Reg\000"
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 121
+
+
+ 4517      44656C53 
+ 4517      69675F53 
+ 4517      65744453 
+ 4517      4D526566 
+ 4518              	.LASF39:
+ 4519 0628 656E6162 		.ascii	"enableInterrupts\000"
+ 4519      6C65496E 
+ 4519      74657272 
+ 4519      75707473 
+ 4519      00
+ 4520              	.LASF51:
+ 4521 0639 73746174 		.ascii	"status\000"
+ 4521      757300
+ 4522              	.LASF50:
+ 4523 0640 6761696E 		.ascii	"gainAdjust\000"
+ 4523      41646A75 
+ 4523      737400
+ 4524              	.LASF85:
+ 4525 064b 4144435F 		.ascii	"ADC_DelSig_stopConversion\000"
+ 4525      44656C53 
+ 4525      69675F73 
+ 4525      746F7043 
+ 4525      6F6E7665 
+ 4526              	.LASF14:
+ 4527 0665 696E7431 		.ascii	"int16\000"
+ 4527      3600
+ 4528              	.LASF87:
+ 4529 066b 4144435F 		.ascii	"ADC_DelSig_Config\000"
  4529      44656C53 
- 4529      69675F73 
- 4529      746F7043 
- 4529      6F6E7665 
- 4530              	.LASF14:
- 4531 06cb 696E7431 		.ascii	"int16\000"
- 4531      3600
- 4532              	.LASF87:
- 4533 06d1 4144435F 		.ascii	"ADC_DelSig_Config\000"
- 4533      44656C53 
- 4533      69675F43 
- 4533      6F6E6669 
- 4533      6700
+ 4529      69675F43 
+ 4529      6F6E6669 
+ 4529      6700
+ 4530              	.LASF103:
+ 4531 067d 433A5C55 		.ascii	"C:\\Users\\simon\\Desktop\\ProgettoLTES\\Final Proj"
+ 4531      73657273 
+ 4531      5C73696D 
+ 4531      6F6E5C44 
+ 4531      65736B74 
+ 4532 06ab 6563745C 		.ascii	"ect\\PsoC_Final_Project_1_03\\FIORANI_GARGIULO_IANN"
+ 4532      50736F43 
+ 4532      5F46696E 
+ 4532      616C5F50 
+ 4532      726F6A65 
+ 4533 06dc 555A5A49 		.ascii	"UZZI_Project.cydsn\000"
+ 4533      5F50726F 
+ 4533      6A656374 
+ 4533      2E637964 
+ 4533      736E00
  4534              	.LASF58:
- 4535 06e3 4144435F 		.ascii	"ADC_DelSig_IsEndConversion\000"
+ 4535 06ef 4144435F 		.ascii	"ADC_DelSig_IsEndConversion\000"
  4535      44656C53 
  4535      69675F49 
  4535      73456E64 
  4535      436F6E76 
  4536              	.LASF47:
- 4537 06fe 746D7052 		.ascii	"tmpReg\000"
+ 4537 070a 746D7052 		.ascii	"tmpReg\000"
  4537      656700
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccWzfJQt.s 			page 122
+
+
  4538              	.LASF61:
- 4539 0705 72657375 		.ascii	"result\000"
+ 4539 0711 72657375 		.ascii	"result\000"
  4539      6C7400
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccZ0Arcw.s 			page 122
-
-
  4540              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
