@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cczbEdyG.s 			page 1
+ARM GAS  C:\Users\aless\AppData\Local\Temp\ccuOQL6A.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cczbEdyG.s 			page 1
   28:Generated_Source\PSoC5/ADC_DelSig_PM.c **** * Function Name: ADC_DelSig_SaveConfig
   29:Generated_Source\PSoC5/ADC_DelSig_PM.c **** ********************************************************************************
   30:Generated_Source\PSoC5/ADC_DelSig_PM.c **** *
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cczbEdyG.s 			page 2
+ARM GAS  C:\Users\aless\AppData\Local\Temp\ccuOQL6A.s 			page 2
 
 
   31:Generated_Source\PSoC5/ADC_DelSig_PM.c **** * Summary:
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cczbEdyG.s 			page 1
   58:Generated_Source\PSoC5/ADC_DelSig_PM.c **** *
   59:Generated_Source\PSoC5/ADC_DelSig_PM.c **** * Parameters:
   60:Generated_Source\PSoC5/ADC_DelSig_PM.c **** *  None
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cczbEdyG.s 			page 3
+ARM GAS  C:\Users\aless\AppData\Local\Temp\ccuOQL6A.s 			page 3
 
 
   61:Generated_Source\PSoC5/ADC_DelSig_PM.c **** *
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cczbEdyG.s 			page 1
   88:Generated_Source\PSoC5/ADC_DelSig_PM.c **** *  None
   89:Generated_Source\PSoC5/ADC_DelSig_PM.c **** *
   90:Generated_Source\PSoC5/ADC_DelSig_PM.c **** * Global variables:
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cczbEdyG.s 			page 4
+ARM GAS  C:\Users\aless\AppData\Local\Temp\ccuOQL6A.s 			page 4
 
 
   91:Generated_Source\PSoC5/ADC_DelSig_PM.c **** *  ADC_DelSig_backup:  The structure field 'enableState' is modified
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cczbEdyG.s 			page 1
  115              		.loc 1 110 0
  116 002c FFF7FEFF 		bl	ADC_DelSig_Stop
  117              	.LVL0:
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cczbEdyG.s 			page 5
+ARM GAS  C:\Users\aless\AppData\Local\Temp\ccuOQL6A.s 			page 5
 
 
  118 0030 02E0     		b	.L10
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cczbEdyG.s 			page 1
  137:Generated_Source\PSoC5/ADC_DelSig_PM.c **** *  ADC_DelSig_backup:  The structure field 'enableState' is used to
  138:Generated_Source\PSoC5/ADC_DelSig_PM.c **** *  restore the enable state of block after wakeup from sleep mode.
  139:Generated_Source\PSoC5/ADC_DelSig_PM.c **** *
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cczbEdyG.s 			page 6
+ARM GAS  C:\Users\aless\AppData\Local\Temp\ccuOQL6A.s 			page 6
 
 
  140:Generated_Source\PSoC5/ADC_DelSig_PM.c **** *******************************************************************************/
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cczbEdyG.s 			page 1
  187 0000 00       		.byte	0
  188 0001 38       		.byte	56
  189              		.text
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cczbEdyG.s 			page 7
+ARM GAS  C:\Users\aless\AppData\Local\Temp\ccuOQL6A.s 			page 7
 
 
  190              	.Letext0:
@@ -371,45 +371,45 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cczbEdyG.s 			page 1
  197 0006 00000000 		.4byte	.Ldebug_abbrev0
  198 000a 04       		.byte	0x4
  199 000b 01       		.uleb128 0x1
- 200 000c 0E010000 		.4byte	.LASF26
+ 200 000c CE000000 		.4byte	.LASF26
  201 0010 0C       		.byte	0xc
- 202 0011 B9010000 		.4byte	.LASF27
- 203 0015 3B000000 		.4byte	.LASF28
+ 202 0011 79010000 		.4byte	.LASF27
+ 203 0015 54000000 		.4byte	.LASF28
  204 0019 00000000 		.4byte	.Ldebug_ranges0+0
  205 001d 00000000 		.4byte	0
  206 0021 00000000 		.4byte	.Ldebug_line0
  207 0025 02       		.uleb128 0x2
  208 0026 01       		.byte	0x1
  209 0027 06       		.byte	0x6
- 210 0028 B5020000 		.4byte	.LASF0
+ 210 0028 75020000 		.4byte	.LASF0
  211 002c 02       		.uleb128 0x2
  212 002d 01       		.byte	0x1
  213 002e 08       		.byte	0x8
- 214 002f 00010000 		.4byte	.LASF1
+ 214 002f C0000000 		.4byte	.LASF1
  215 0033 02       		.uleb128 0x2
  216 0034 02       		.byte	0x2
  217 0035 05       		.byte	0x5
- 218 0036 8A020000 		.4byte	.LASF2
+ 218 0036 4A020000 		.4byte	.LASF2
  219 003a 02       		.uleb128 0x2
  220 003b 02       		.byte	0x2
  221 003c 07       		.byte	0x7
- 222 003d E1000000 		.4byte	.LASF3
+ 222 003d 3B000000 		.4byte	.LASF3
  223 0041 02       		.uleb128 0x2
  224 0042 04       		.byte	0x4
  225 0043 05       		.byte	0x5
- 226 0044 94020000 		.4byte	.LASF4
+ 226 0044 54020000 		.4byte	.LASF4
  227 0048 02       		.uleb128 0x2
  228 0049 04       		.byte	0x4
  229 004a 07       		.byte	0x7
- 230 004b A1010000 		.4byte	.LASF5
+ 230 004b 61010000 		.4byte	.LASF5
  231 004f 02       		.uleb128 0x2
  232 0050 08       		.byte	0x8
  233 0051 05       		.byte	0x5
- 234 0052 77020000 		.4byte	.LASF6
+ 234 0052 37020000 		.4byte	.LASF6
  235 0056 02       		.uleb128 0x2
  236 0057 08       		.byte	0x8
  237 0058 07       		.byte	0x7
- 238 0059 2E020000 		.4byte	.LASF7
+ 238 0059 EE010000 		.4byte	.LASF7
  239 005d 03       		.uleb128 0x3
  240 005e 04       		.byte	0x4
  241 005f 05       		.byte	0x5
@@ -417,29 +417,29 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cczbEdyG.s 			page 1
  243 0064 02       		.uleb128 0x2
  244 0065 04       		.byte	0x4
  245 0066 07       		.byte	0x7
- 246 0067 21020000 		.4byte	.LASF8
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cczbEdyG.s 			page 8
+ 246 0067 E1010000 		.4byte	.LASF8
+ARM GAS  C:\Users\aless\AppData\Local\Temp\ccuOQL6A.s 			page 8
 
 
  247 006b 04       		.uleb128 0x4
- 248 006c B3010000 		.4byte	.LASF12
+ 248 006c 73010000 		.4byte	.LASF12
  249 0070 02       		.byte	0x2
  250 0071 E401     		.2byte	0x1e4
  251 0073 2C000000 		.4byte	0x2c
  252 0077 02       		.uleb128 0x2
  253 0078 04       		.byte	0x4
  254 0079 04       		.byte	0x4
- 255 007a FA000000 		.4byte	.LASF9
+ 255 007a BA000000 		.4byte	.LASF9
  256 007e 02       		.uleb128 0x2
  257 007f 08       		.byte	0x8
  258 0080 04       		.byte	0x4
- 259 0081 F2010000 		.4byte	.LASF10
+ 259 0081 B2010000 		.4byte	.LASF10
  260 0085 02       		.uleb128 0x2
  261 0086 01       		.byte	0x1
  262 0087 08       		.byte	0x8
- 263 0088 85020000 		.4byte	.LASF11
+ 263 0088 45020000 		.4byte	.LASF11
  264 008c 04       		.uleb128 0x4
- 265 008d 9C010000 		.4byte	.LASF13
+ 265 008d 5C010000 		.4byte	.LASF13
  266 0091 02       		.byte	0x2
  267 0092 8E02     		.2byte	0x28e
  268 0094 98000000 		.4byte	0x98
@@ -448,24 +448,24 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cczbEdyG.s 			page 1
  271 009d 02       		.uleb128 0x2
  272 009e 08       		.byte	0x8
  273 009f 04       		.byte	0x4
- 274 00a0 A9020000 		.4byte	.LASF14
+ 274 00a0 69020000 		.4byte	.LASF14
  275 00a4 02       		.uleb128 0x2
  276 00a5 04       		.byte	0x4
  277 00a6 07       		.byte	0x7
- 278 00a7 6E020000 		.4byte	.LASF15
+ 278 00a7 2E020000 		.4byte	.LASF15
  279 00ab 06       		.uleb128 0x6
  280 00ac 02       		.byte	0x2
  281 00ad 03       		.byte	0x3
  282 00ae 28       		.byte	0x28
  283 00af CC000000 		.4byte	0xcc
  284 00b3 07       		.uleb128 0x7
- 285 00b4 9D020000 		.4byte	.LASF16
+ 285 00b4 5D020000 		.4byte	.LASF16
  286 00b8 03       		.byte	0x3
  287 00b9 2A       		.byte	0x2a
  288 00ba 6B000000 		.4byte	0x6b
  289 00be 00       		.byte	0
  290 00bf 07       		.uleb128 0x7
- 291 00c0 F4000000 		.4byte	.LASF17
+ 291 00c0 4E000000 		.4byte	.LASF17
  292 00c4 03       		.byte	0x3
  293 00c5 2B       		.byte	0x2b
  294 00c6 6B000000 		.4byte	0x6b
@@ -477,8 +477,8 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cczbEdyG.s 			page 1
  300 00d2 2C       		.byte	0x2c
  301 00d3 AB000000 		.4byte	0xab
  302 00d7 09       		.uleb128 0x9
- 303 00d8 F9010000 		.4byte	.LASF19
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cczbEdyG.s 			page 9
+ 303 00d8 B9010000 		.4byte	.LASF19
+ARM GAS  C:\Users\aless\AppData\Local\Temp\ccuOQL6A.s 			page 9
 
 
  304 00dc 01       		.byte	0x1
@@ -488,7 +488,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cczbEdyG.s 			page 1
  308 00e6 01       		.uleb128 0x1
  309 00e7 9C       		.byte	0x9c
  310 00e8 09       		.uleb128 0x9
- 311 00e9 C1020000 		.4byte	.LASF20
+ 311 00e9 81020000 		.4byte	.LASF20
  312 00ed 01       		.byte	0x1
  313 00ee 47       		.byte	0x47
  314 00ef 00000000 		.4byte	.LFB1
@@ -496,7 +496,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cczbEdyG.s 			page 1
  316 00f7 01       		.uleb128 0x1
  317 00f8 9C       		.byte	0x9c
  318 00f9 0A       		.uleb128 0xa
- 319 00fa 45020000 		.4byte	.LASF21
+ 319 00fa 05020000 		.4byte	.LASF21
  320 00fe 01       		.byte	0x1
  321 00ff 5F       		.byte	0x5f
  322 0100 00000000 		.4byte	.LFB2
@@ -512,7 +512,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cczbEdyG.s 			page 1
  332 011c D7000000 		.4byte	0xd7
  333 0120 00       		.byte	0
  334 0121 0A       		.uleb128 0xa
- 335 0122 0F020000 		.4byte	.LASF22
+ 335 0122 CF010000 		.4byte	.LASF22
  336 0126 01       		.byte	0x1
  337 0127 8D       		.byte	0x8d
  338 0128 00000000 		.4byte	.LFB3
@@ -531,14 +531,14 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cczbEdyG.s 			page 1
  351 014d 79010000 		.4byte	0x179
  352 0151 00       		.byte	0
  353 0152 0C       		.uleb128 0xc
- 354 0153 E0010000 		.4byte	.LASF29
+ 354 0153 A0010000 		.4byte	.LASF29
  355 0157 01       		.byte	0x1
  356 0158 14       		.byte	0x14
  357 0159 CC000000 		.4byte	0xcc
  358 015d 05       		.uleb128 0x5
  359 015e 03       		.byte	0x3
  360 015f 00000000 		.4byte	ADC_DelSig_backup
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cczbEdyG.s 			page 10
+ARM GAS  C:\Users\aless\AppData\Local\Temp\ccuOQL6A.s 			page 10
 
 
  361 0163 0D       		.uleb128 0xd
@@ -552,8 +552,8 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cczbEdyG.s 			page 1
  369 0177 03       		.byte	0x3
  370 0178 4D       		.byte	0x4d
  371 0179 0D       		.uleb128 0xd
- 372 017a 56020000 		.4byte	.LASF25
- 373 017e 56020000 		.4byte	.LASF25
+ 372 017a 16020000 		.4byte	.LASF25
+ 373 017e 16020000 		.4byte	.LASF25
  374 0182 03       		.byte	0x3
  375 0183 3D       		.byte	0x3d
  376 0184 00       		.byte	0
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cczbEdyG.s 			page 1
  415 0024 0B       		.uleb128 0xb
  416 0025 03       		.uleb128 0x3
  417 0026 08       		.uleb128 0x8
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cczbEdyG.s 			page 11
+ARM GAS  C:\Users\aless\AppData\Local\Temp\ccuOQL6A.s 			page 11
 
 
  418 0027 00       		.byte	0
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cczbEdyG.s 			page 1
  472 005d 0E       		.uleb128 0xe
  473 005e 3A       		.uleb128 0x3a
  474 005f 0B       		.uleb128 0xb
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cczbEdyG.s 			page 12
+ARM GAS  C:\Users\aless\AppData\Local\Temp\ccuOQL6A.s 			page 12
 
 
  475 0060 3B       		.uleb128 0x3b
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cczbEdyG.s 			page 1
  529 0098 0B       		.uleb128 0xb
  530 0099 898201   		.uleb128 0x4109
  531 009c 00       		.byte	0
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cczbEdyG.s 			page 13
+ARM GAS  C:\Users\aless\AppData\Local\Temp\ccuOQL6A.s 			page 13
 
 
  532 009d 11       		.uleb128 0x11
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cczbEdyG.s 			page 1
  586 002c 24000000 		.4byte	.LFE3-.LFB3
  587 0030 00000000 		.4byte	0
  588 0034 00000000 		.4byte	0
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cczbEdyG.s 			page 14
+ARM GAS  C:\Users\aless\AppData\Local\Temp\ccuOQL6A.s 			page 14
 
 
  589              		.section	.debug_ranges,"",%progbits
@@ -817,167 +817,159 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cczbEdyG.s 			page 1
  609      69675F42 
  609      41434B55 
  609      505F5354 
- 610              	.LASF28:
- 611 003b 433A5C55 		.ascii	"C:\\Users\\gaeta\\Documents\\POLIMI\\Electronic Tec"
- 611      73657273 
- 611      5C676165 
- 611      74615C44 
- 611      6F63756D 
- 612 0069 686E6F6C 		.ascii	"hnologies and Biosensors Laboratory\\Assignment\\As"
- 612      6F676965 
- 612      7320616E 
- 612      64204269 
- 612      6F73656E 
- 613 009a 7369676E 		.ascii	"signment_06\\Final_Project_1_03\\FIORANI_GARGIULO_I"
- 613      6D656E74 
- 613      5F30365C 
- 613      46696E61 
- 613      6C5F5072 
- 614 00cb 414E4E55 		.ascii	"ANNUZZI_Project.cydsn\000"
- 614      5A5A495F 
- 614      50726F6A 
- 614      6563742E 
- 614      63796473 
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cczbEdyG.s 			page 15
+ 610              	.LASF3:
+ 611 003b 73686F72 		.ascii	"short unsigned int\000"
+ 611      7420756E 
+ 611      7369676E 
+ 611      65642069 
+ 611      6E7400
+ 612              	.LASF17:
+ 613 004e 64656363 		.ascii	"deccr\000"
+ 613      7200
+ 614              	.LASF28:
+ 615 0054 433A5C55 		.ascii	"C:\\Users\\aless\\Documents\\PSoC Creator\\PsoC_Fin"
+ 615      73657273 
+ 615      5C616C65 
+ 615      73735C44 
+ 615      6F63756D 
+ 616 0082 616C5F50 		.ascii	"al_Project_1_03\\FIORANI_GARGIULO_IANNUZZI_Project."
+ 616      726F6A65 
+ 616      63745F31 
+ 616      5F30335C 
+ 616      46494F52 
+ 617 00b4 63796473 		.ascii	"cydsn\000"
+ARM GAS  C:\Users\aless\AppData\Local\Temp\ccuOQL6A.s 			page 15
 
 
- 615              	.LASF3:
- 616 00e1 73686F72 		.ascii	"short unsigned int\000"
- 616      7420756E 
- 616      7369676E 
- 616      65642069 
- 616      6E7400
- 617              	.LASF17:
- 618 00f4 64656363 		.ascii	"deccr\000"
- 618      7200
- 619              	.LASF9:
- 620 00fa 666C6F61 		.ascii	"float\000"
- 620      7400
- 621              	.LASF1:
- 622 0100 756E7369 		.ascii	"unsigned char\000"
- 622      676E6564 
- 622      20636861 
- 622      7200
- 623              	.LASF26:
- 624 010e 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 624      43313120 
- 624      352E342E 
- 624      31203230 
- 624      31363036 
- 625 0141 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 625      20726576 
- 625      6973696F 
- 625      6E203233 
- 625      37373135 
- 626 0174 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 626      66756E63 
- 626      74696F6E 
- 626      2D736563 
- 626      74696F6E 
- 627              	.LASF13:
- 628 019c 72656738 		.ascii	"reg8\000"
- 628      00
- 629              	.LASF5:
- 630 01a1 6C6F6E67 		.ascii	"long unsigned int\000"
- 630      20756E73 
- 630      69676E65 
- 630      6420696E 
- 630      7400
- 631              	.LASF12:
- 632 01b3 75696E74 		.ascii	"uint8\000"
- 632      3800
- 633              	.LASF27:
- 634 01b9 47656E65 		.ascii	"Generated_Source\\PSoC5\\ADC_DelSig_PM.c\000"
- 634      72617465 
- 634      645F536F 
- 634      75726365 
- 634      5C50536F 
- 635              	.LASF29:
- 636 01e0 4144435F 		.ascii	"ADC_DelSig_backup\000"
- 636      44656C53 
- 636      69675F62 
- 636      61636B75 
- 636      7000
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cczbEdyG.s 			page 16
+ 617      6E00
+ 618              	.LASF9:
+ 619 00ba 666C6F61 		.ascii	"float\000"
+ 619      7400
+ 620              	.LASF1:
+ 621 00c0 756E7369 		.ascii	"unsigned char\000"
+ 621      676E6564 
+ 621      20636861 
+ 621      7200
+ 622              	.LASF26:
+ 623 00ce 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 623      43313120 
+ 623      352E342E 
+ 623      31203230 
+ 623      31363036 
+ 624 0101 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 624      20726576 
+ 624      6973696F 
+ 624      6E203233 
+ 624      37373135 
+ 625 0134 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 625      66756E63 
+ 625      74696F6E 
+ 625      2D736563 
+ 625      74696F6E 
+ 626              	.LASF13:
+ 627 015c 72656738 		.ascii	"reg8\000"
+ 627      00
+ 628              	.LASF5:
+ 629 0161 6C6F6E67 		.ascii	"long unsigned int\000"
+ 629      20756E73 
+ 629      69676E65 
+ 629      6420696E 
+ 629      7400
+ 630              	.LASF12:
+ 631 0173 75696E74 		.ascii	"uint8\000"
+ 631      3800
+ 632              	.LASF27:
+ 633 0179 47656E65 		.ascii	"Generated_Source\\PSoC5\\ADC_DelSig_PM.c\000"
+ 633      72617465 
+ 633      645F536F 
+ 633      75726365 
+ 633      5C50536F 
+ 634              	.LASF29:
+ 635 01a0 4144435F 		.ascii	"ADC_DelSig_backup\000"
+ 635      44656C53 
+ 635      69675F62 
+ 635      61636B75 
+ 635      7000
+ 636              	.LASF10:
+ 637 01b2 646F7562 		.ascii	"double\000"
+ 637      6C6500
+ 638              	.LASF19:
+ 639 01b9 4144435F 		.ascii	"ADC_DelSig_SaveConfig\000"
+ 639      44656C53 
+ 639      69675F53 
+ 639      61766543 
+ARM GAS  C:\Users\aless\AppData\Local\Temp\ccuOQL6A.s 			page 16
 
 
- 637              	.LASF10:
- 638 01f2 646F7562 		.ascii	"double\000"
- 638      6C6500
- 639              	.LASF19:
- 640 01f9 4144435F 		.ascii	"ADC_DelSig_SaveConfig\000"
- 640      44656C53 
- 640      69675F53 
- 640      61766543 
- 640      6F6E6669 
- 641              	.LASF22:
- 642 020f 4144435F 		.ascii	"ADC_DelSig_Wakeup\000"
- 642      44656C53 
- 642      69675F57 
- 642      616B6575 
- 642      7000
- 643              	.LASF8:
- 644 0221 756E7369 		.ascii	"unsigned int\000"
- 644      676E6564 
- 644      20696E74 
- 644      00
- 645              	.LASF7:
- 646 022e 6C6F6E67 		.ascii	"long long unsigned int\000"
- 646      206C6F6E 
- 646      6720756E 
- 646      7369676E 
- 646      65642069 
- 647              	.LASF21:
- 648 0245 4144435F 		.ascii	"ADC_DelSig_Sleep\000"
- 648      44656C53 
- 648      69675F53 
- 648      6C656570 
- 648      00
- 649              	.LASF25:
- 650 0256 4144435F 		.ascii	"ADC_DelSig_StartConvert\000"
- 650      44656C53 
- 650      69675F53 
- 650      74617274 
- 650      436F6E76 
- 651              	.LASF15:
- 652 026e 73697A65 		.ascii	"sizetype\000"
- 652      74797065 
- 652      00
- 653              	.LASF6:
- 654 0277 6C6F6E67 		.ascii	"long long int\000"
- 654      206C6F6E 
- 654      6720696E 
- 654      7400
- 655              	.LASF11:
- 656 0285 63686172 		.ascii	"char\000"
- 656      00
- 657              	.LASF2:
- 658 028a 73686F72 		.ascii	"short int\000"
- 658      7420696E 
- 658      7400
- 659              	.LASF4:
- 660 0294 6C6F6E67 		.ascii	"long int\000"
- 660      20696E74 
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cczbEdyG.s 			page 17
+ 639      6F6E6669 
+ 640              	.LASF22:
+ 641 01cf 4144435F 		.ascii	"ADC_DelSig_Wakeup\000"
+ 641      44656C53 
+ 641      69675F57 
+ 641      616B6575 
+ 641      7000
+ 642              	.LASF8:
+ 643 01e1 756E7369 		.ascii	"unsigned int\000"
+ 643      676E6564 
+ 643      20696E74 
+ 643      00
+ 644              	.LASF7:
+ 645 01ee 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 645      206C6F6E 
+ 645      6720756E 
+ 645      7369676E 
+ 645      65642069 
+ 646              	.LASF21:
+ 647 0205 4144435F 		.ascii	"ADC_DelSig_Sleep\000"
+ 647      44656C53 
+ 647      69675F53 
+ 647      6C656570 
+ 647      00
+ 648              	.LASF25:
+ 649 0216 4144435F 		.ascii	"ADC_DelSig_StartConvert\000"
+ 649      44656C53 
+ 649      69675F53 
+ 649      74617274 
+ 649      436F6E76 
+ 650              	.LASF15:
+ 651 022e 73697A65 		.ascii	"sizetype\000"
+ 651      74797065 
+ 651      00
+ 652              	.LASF6:
+ 653 0237 6C6F6E67 		.ascii	"long long int\000"
+ 653      206C6F6E 
+ 653      6720696E 
+ 653      7400
+ 654              	.LASF11:
+ 655 0245 63686172 		.ascii	"char\000"
+ 655      00
+ 656              	.LASF2:
+ 657 024a 73686F72 		.ascii	"short int\000"
+ 657      7420696E 
+ 657      7400
+ 658              	.LASF4:
+ 659 0254 6C6F6E67 		.ascii	"long int\000"
+ 659      20696E74 
+ 659      00
+ 660              	.LASF16:
+ 661 025d 656E6162 		.ascii	"enableState\000"
+ 661      6C655374 
+ 661      61746500 
+ 662              	.LASF14:
+ 663 0269 6C6F6E67 		.ascii	"long double\000"
+ 663      20646F75 
+ARM GAS  C:\Users\aless\AppData\Local\Temp\ccuOQL6A.s 			page 17
 
 
- 660      00
- 661              	.LASF16:
- 662 029d 656E6162 		.ascii	"enableState\000"
- 662      6C655374 
- 662      61746500 
- 663              	.LASF14:
- 664 02a9 6C6F6E67 		.ascii	"long double\000"
- 664      20646F75 
- 664      626C6500 
- 665              	.LASF0:
- 666 02b5 7369676E 		.ascii	"signed char\000"
- 666      65642063 
- 666      68617200 
- 667              	.LASF20:
- 668 02c1 4144435F 		.ascii	"ADC_DelSig_RestoreConfig\000"
- 668      44656C53 
- 668      69675F52 
- 668      6573746F 
- 668      7265436F 
- 669              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 663      626C6500 
+ 664              	.LASF0:
+ 665 0275 7369676E 		.ascii	"signed char\000"
+ 665      65642063 
+ 665      68617200 
+ 666              	.LASF20:
+ 667 0281 4144435F 		.ascii	"ADC_DelSig_RestoreConfig\000"
+ 667      44656C53 
+ 667      69675F52 
+ 667      6573746F 
+ 667      7265436F 
+ 668              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
