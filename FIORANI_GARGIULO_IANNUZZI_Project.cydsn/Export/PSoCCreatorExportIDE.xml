@@ -171,6 +171,9 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Clock_Button.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\isr_Button.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\isr_Button.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\SCLK_2_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\SCLK_2.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\SCLK_2.h</File>
         </Files>
       </Folder>
       <Folder BuildType="STRICT" Path="C:\Users\gaeta\Documents\POLIMI\Electronic Technologies and Biosensors Laboratory\Assignment\Assignment_06\Final_Project_1_03\FIORANI_GARGIULO_IANNUZZI_Project.cydsn\Export\ARM_GCC_Generic">
