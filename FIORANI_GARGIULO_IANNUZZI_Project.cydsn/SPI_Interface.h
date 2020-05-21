@@ -19,6 +19,7 @@
 
 #include <cytypes.h>
 #include "CS_1.h"
+#include "CS_2.h"
 #include "SPIM_1.h"
 
 #define SPI_DUMMY_BYTE  0x00
