@@ -68,6 +68,11 @@
 #define LIS3DH_16G_CTRL_REG4          0xB0
 
 //FIFO mode
+#define LIS3DH_FIFO_ENABLE_CTRL_REG5  0x40
+#define LIS3DH_OVRN_FIFO
+#define LIS3DH_BYPASS_MODE_CTRL_REG   0x00
+#define LIS3DH_I1_OVERRUN             0x02
 #define LIS3DH_FIFO_MODE_CTRL_REG     0x40
+
 
 /* [] END OF FILE */
