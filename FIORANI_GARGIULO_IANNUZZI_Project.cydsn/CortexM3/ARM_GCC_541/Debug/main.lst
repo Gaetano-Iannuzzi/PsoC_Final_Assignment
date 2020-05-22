@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccnaqtbs.s 			page 1
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccJAkVsb.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccnaqtbs.s 			page 1
   31              		@ frame_needed = 0, uses_anonymous_args = 0
   32 0000 38B5     		push	{r3, r4, r5, lr}
   33              		.cfi_def_cfa_offset 16
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccnaqtbs.s 			page 2
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccJAkVsb.s 			page 2
 
 
   34              		.cfi_offset 3, -16
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccnaqtbs.s 			page 1
   65 0020 FFF7FEFF 		bl	EEPROM_writeByte
   66              	.LVL5:
   48:main.c        ****     EEPROM_waitForWriteComplete();
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccnaqtbs.s 			page 3
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccJAkVsb.s 			page 3
 
 
   67              		.loc 1 48 0
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccnaqtbs.s 			page 1
  106              	.LVL15:
   64:main.c        ****     UART_PutBuffer;
  107              		.loc 1 64 0
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccnaqtbs.s 			page 4
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccJAkVsb.s 			page 4
 
 
  108 0060 2046     		mov	r0, r4
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccnaqtbs.s 			page 1
  141      54202A2A 
  142 008a 0000     		.space	2
  143              	.LC4:
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccnaqtbs.s 			page 5
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccJAkVsb.s 			page 5
 
 
  144 008c 2A2A2041 		.ascii	"** ACCE Read = (%d)\015\012\000"
@@ -267,15 +267,15 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccnaqtbs.s 			page 1
  163 000b 01       		.uleb128 0x1
  164 000c 8C000000 		.4byte	.LASF33
  165 0010 0C       		.byte	0xc
- 166 0011 22020000 		.4byte	.LASF34
- 167 0015 6A010000 		.4byte	.LASF35
+ 166 0011 2F020000 		.4byte	.LASF34
+ 167 0015 96010000 		.4byte	.LASF35
  168 0019 00000000 		.4byte	.Ldebug_ranges0+0
  169 001d 00000000 		.4byte	0
  170 0021 00000000 		.4byte	.Ldebug_line0
  171 0025 02       		.uleb128 0x2
  172 0026 01       		.byte	0x1
  173 0027 06       		.byte	0x6
- 174 0028 4D020000 		.4byte	.LASF0
+ 174 0028 5A020000 		.4byte	.LASF0
  175 002c 03       		.uleb128 0x3
  176 002d 11000000 		.4byte	.LASF4
  177 0031 02       		.byte	0x2
@@ -288,7 +288,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccnaqtbs.s 			page 1
  184 003e 02       		.uleb128 0x2
  185 003f 02       		.byte	0x2
  186 0040 05       		.byte	0x5
- 187 0041 2E020000 		.4byte	.LASF2
+ 187 0041 3B020000 		.4byte	.LASF2
  188 0045 02       		.uleb128 0x2
  189 0046 02       		.byte	0x2
  190 0047 07       		.byte	0x7
@@ -298,13 +298,13 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccnaqtbs.s 			page 1
  194 0051 02       		.byte	0x2
  195 0052 3F       		.byte	0x3f
  196 0053 57000000 		.4byte	0x57
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccnaqtbs.s 			page 6
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccJAkVsb.s 			page 6
 
 
  197 0057 02       		.uleb128 0x2
  198 0058 04       		.byte	0x4
  199 0059 05       		.byte	0x5
- 200 005a 38020000 		.4byte	.LASF6
+ 200 005a 45020000 		.4byte	.LASF6
  201 005e 02       		.uleb128 0x2
  202 005f 04       		.byte	0x4
  203 0060 07       		.byte	0x7
@@ -312,11 +312,11 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccnaqtbs.s 			page 1
  205 0065 02       		.uleb128 0x2
  206 0066 08       		.byte	0x8
  207 0067 05       		.byte	0x5
- 208 0068 14020000 		.4byte	.LASF8
+ 208 0068 21020000 		.4byte	.LASF8
  209 006c 02       		.uleb128 0x2
  210 006d 08       		.byte	0x8
  211 006e 07       		.byte	0x7
- 212 006f D0010000 		.4byte	.LASF9
+ 212 006f 77010000 		.4byte	.LASF9
  213 0073 04       		.uleb128 0x4
  214 0074 04       		.byte	0x4
  215 0075 05       		.byte	0x5
@@ -324,9 +324,9 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccnaqtbs.s 			page 1
  217 007a 02       		.uleb128 0x2
  218 007b 04       		.byte	0x4
  219 007c 07       		.byte	0x7
- 220 007d C3010000 		.4byte	.LASF10
+ 220 007d 6A010000 		.4byte	.LASF10
  221 0081 03       		.uleb128 0x3
- 222 0082 E7010000 		.4byte	.LASF11
+ 222 0082 8E010000 		.4byte	.LASF11
  223 0086 03       		.byte	0x3
  224 0087 18       		.byte	0x18
  225 0088 2C000000 		.4byte	0x2c
@@ -346,19 +346,19 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccnaqtbs.s 			page 1
  239 00a5 02       		.uleb128 0x2
  240 00a6 01       		.byte	0x1
  241 00a7 08       		.byte	0x8
- 242 00a8 29020000 		.4byte	.LASF15
+ 242 00a8 36020000 		.4byte	.LASF15
  243 00ac 02       		.uleb128 0x2
  244 00ad 08       		.byte	0x8
  245 00ae 04       		.byte	0x4
- 246 00af 41020000 		.4byte	.LASF16
+ 246 00af 4E020000 		.4byte	.LASF16
  247 00b3 02       		.uleb128 0x2
  248 00b4 04       		.byte	0x4
  249 00b5 07       		.byte	0x7
- 250 00b6 0B020000 		.4byte	.LASF17
+ 250 00b6 18020000 		.4byte	.LASF17
  251 00ba 05       		.uleb128 0x5
  252 00bb 65010000 		.4byte	.LASF36
  253 00bf 01       		.byte	0x1
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccnaqtbs.s 			page 7
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccJAkVsb.s 			page 7
 
 
  254 00c0 18       		.byte	0x18
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccnaqtbs.s 			page 1
  308 0141 00       		.byte	0
  309 0142 09       		.uleb128 0x9
  310 0143 24000000 		.4byte	.LVL5
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccnaqtbs.s 			page 8
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccJAkVsb.s 			page 8
 
 
  311 0147 98020000 		.4byte	0x298
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccnaqtbs.s 			page 1
  365 01a7 0A       		.uleb128 0xa
  366 01a8 01       		.uleb128 0x1
  367 01a9 50       		.byte	0x50
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccnaqtbs.s 			page 9
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccJAkVsb.s 			page 9
 
 
  368 01aa 02       		.uleb128 0x2
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccnaqtbs.s 			page 1
  422 020a 09       		.uleb128 0x9
  423 020b 66000000 		.4byte	.LVL16
  424 020f 8D020000 		.4byte	0x28d
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccnaqtbs.s 			page 10
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccJAkVsb.s 			page 10
 
 
  425 0213 1E020000 		.4byte	0x21e
@@ -575,7 +575,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccnaqtbs.s 			page 1
  456 024e 63       		.byte	0x63
  457 024f 00       		.byte	0
  458 0250 10       		.uleb128 0x10
- 459 0251 78020000 		.4byte	.LASF22
+ 459 0251 85020000 		.4byte	.LASF22
  460 0255 01       		.byte	0x1
  461 0256 13       		.byte	0x13
  462 0257 40020000 		.4byte	0x240
@@ -598,16 +598,16 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccnaqtbs.s 			page 1
  479 0280 07       		.byte	0x7
  480 0281 4D       		.byte	0x4d
  481 0282 11       		.uleb128 0x11
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccnaqtbs.s 			page 11
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccJAkVsb.s 			page 11
 
 
- 482 0283 70020000 		.4byte	.LASF26
- 483 0287 70020000 		.4byte	.LASF26
+ 482 0283 7D020000 		.4byte	.LASF26
+ 483 0287 7D020000 		.4byte	.LASF26
  484 028b 08       		.byte	0x8
  485 028c 76       		.byte	0x76
  486 028d 11       		.uleb128 0x11
- 487 028e 59020000 		.4byte	.LASF27
- 488 0292 59020000 		.4byte	.LASF27
+ 487 028e 66020000 		.4byte	.LASF27
+ 488 0292 66020000 		.4byte	.LASF27
  489 0296 05       		.byte	0x5
  490 0297 8B       		.byte	0x8b
  491 0298 11       		.uleb128 0x11
@@ -616,8 +616,8 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccnaqtbs.s 			page 1
  494 02a1 09       		.byte	0x9
  495 02a2 52       		.byte	0x52
  496 02a3 11       		.uleb128 0x11
- 497 02a4 EF010000 		.4byte	.LASF29
- 498 02a8 EF010000 		.4byte	.LASF29
+ 497 02a4 FC010000 		.4byte	.LASF29
+ 498 02a8 FC010000 		.4byte	.LASF29
  499 02ac 09       		.byte	0x9
  500 02ad 6B       		.byte	0x6b
  501 02ae 11       		.uleb128 0x11
@@ -626,8 +626,8 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccnaqtbs.s 			page 1
  504 02b7 09       		.byte	0x9
  505 02b8 4A       		.byte	0x4a
  506 02b9 11       		.uleb128 0x11
- 507 02ba 68020000 		.4byte	.LASF31
- 508 02be 68020000 		.4byte	.LASF31
+ 507 02ba 75020000 		.4byte	.LASF31
+ 508 02be 75020000 		.4byte	.LASF31
  509 02c2 0A       		.byte	0xa
  510 02c3 E7       		.byte	0xe7
  511 02c4 11       		.uleb128 0x11
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccnaqtbs.s 			page 1
  536 0011 00       		.byte	0
  537 0012 00       		.byte	0
  538 0013 02       		.uleb128 0x2
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccnaqtbs.s 			page 12
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccJAkVsb.s 			page 12
 
 
  539 0014 24       		.uleb128 0x24
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccnaqtbs.s 			page 1
  593 004a 18       		.uleb128 0x18
  594 004b 9742     		.uleb128 0x2117
  595 004d 19       		.uleb128 0x19
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccnaqtbs.s 			page 13
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccJAkVsb.s 			page 13
 
 
  596 004e 01       		.uleb128 0x1
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccnaqtbs.s 			page 1
  650 0088 0A       		.uleb128 0xa
  651 0089 8A8201   		.uleb128 0x410a
  652 008c 00       		.byte	0
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccnaqtbs.s 			page 14
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccJAkVsb.s 			page 14
 
 
  653 008d 02       		.uleb128 0x2
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccnaqtbs.s 			page 1
  707 00c6 0B       		.uleb128 0xb
  708 00c7 00       		.byte	0
  709 00c8 00       		.byte	0
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccnaqtbs.s 			page 15
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccJAkVsb.s 			page 15
 
 
  710 00c9 10       		.uleb128 0x10
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccnaqtbs.s 			page 1
  764 002a 00000000 		.4byte	0
  765 002e 00000000 		.4byte	0
  766              		.section	.debug_aranges,"",%progbits
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccnaqtbs.s 			page 16
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccJAkVsb.s 			page 16
 
 
  767 0000 1C000000 		.4byte	0x1c
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccnaqtbs.s 			page 1
  799              	.LASF32:
  800 0052 4143435F 		.ascii	"ACC_readByte\000"
  800      72656164 
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccnaqtbs.s 			page 17
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccJAkVsb.s 			page 17
 
 
  800      42797465 
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccnaqtbs.s 			page 1
  822      79746500 
  823              	.LASF21:
  824 0151 49544D5F 		.ascii	"ITM_RxBuffer\000"
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccnaqtbs.s 			page 18
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccJAkVsb.s 			page 18
 
 
  824      52784275 
@@ -1030,84 +1030,86 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccnaqtbs.s 			page 1
  827              	.LASF36:
  828 0165 6D61696E 		.ascii	"main\000"
  828      00
- 829              	.LASF35:
- 830 016a 433A5C55 		.ascii	"C:\\Users\\gaeta\\Downloads\\PsoC_Final_Project_1_0"
- 830      73657273 
- 830      5C676165 
- 830      74615C44 
- 830      6F776E6C 
- 831 0199 335C4649 		.ascii	"3\\FIORANI_GARGIULO_IANNUZZI_Project.cydsn\000"
- 831      4F52414E 
- 831      495F4741 
- 831      52474955 
- 831      4C4F5F49 
- 832              	.LASF10:
- 833 01c3 756E7369 		.ascii	"unsigned int\000"
- 833      676E6564 
- 833      20696E74 
- 833      00
- 834              	.LASF9:
- 835 01d0 6C6F6E67 		.ascii	"long long unsigned int\000"
- 835      206C6F6E 
- 835      6720756E 
- 835      7369676E 
- 835      65642069 
- 836              	.LASF11:
- 837 01e7 75696E74 		.ascii	"uint8_t\000"
- 837      385F7400 
- 838              	.LASF29:
- 839 01ef 45455052 		.ascii	"EEPROM_waitForWriteComplete\000"
- 839      4F4D5F77 
- 839      61697446 
- 839      6F725772 
- 839      69746543 
- 840              	.LASF17:
- 841 020b 73697A65 		.ascii	"sizetype\000"
- 841      74797065 
- 841      00
- 842              	.LASF8:
- 843 0214 6C6F6E67 		.ascii	"long long int\000"
- 843      206C6F6E 
- 843      6720696E 
- 843      7400
- 844              	.LASF34:
- 845 0222 6D61696E 		.ascii	"main.c\000"
- 845      2E6300
- 846              	.LASF15:
- 847 0229 63686172 		.ascii	"char\000"
- 847      00
- 848              	.LASF2:
- 849 022e 73686F72 		.ascii	"short int\000"
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccnaqtbs.s 			page 19
+ 829              	.LASF10:
+ 830 016a 756E7369 		.ascii	"unsigned int\000"
+ 830      676E6564 
+ 830      20696E74 
+ 830      00
+ 831              	.LASF9:
+ 832 0177 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 832      206C6F6E 
+ 832      6720756E 
+ 832      7369676E 
+ 832      65642069 
+ 833              	.LASF11:
+ 834 018e 75696E74 		.ascii	"uint8_t\000"
+ 834      385F7400 
+ 835              	.LASF35:
+ 836 0196 433A5C55 		.ascii	"C:\\Users\\gaeta\\Documents\\PSoC Creator\\PsoC_Fin"
+ 836      73657273 
+ 836      5C676165 
+ 836      74615C44 
+ 836      6F63756D 
+ 837 01c4 616C5F50 		.ascii	"al_Project_1_03\\FIORANI_GARGIULO_IANNUZZI_Project."
+ 837      726F6A65 
+ 837      63745F31 
+ 837      5F30335C 
+ 837      46494F52 
+ 838 01f6 63796473 		.ascii	"cydsn\000"
+ 838      6E00
+ 839              	.LASF29:
+ 840 01fc 45455052 		.ascii	"EEPROM_waitForWriteComplete\000"
+ 840      4F4D5F77 
+ 840      61697446 
+ 840      6F725772 
+ 840      69746543 
+ 841              	.LASF17:
+ 842 0218 73697A65 		.ascii	"sizetype\000"
+ 842      74797065 
+ 842      00
+ 843              	.LASF8:
+ 844 0221 6C6F6E67 		.ascii	"long long int\000"
+ 844      206C6F6E 
+ 844      6720696E 
+ 844      7400
+ 845              	.LASF34:
+ 846 022f 6D61696E 		.ascii	"main.c\000"
+ 846      2E6300
+ 847              	.LASF15:
+ 848 0236 63686172 		.ascii	"char\000"
+ 848      00
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccJAkVsb.s 			page 19
 
 
- 849      7420696E 
- 849      7400
- 850              	.LASF6:
- 851 0238 6C6F6E67 		.ascii	"long int\000"
- 851      20696E74 
- 851      00
- 852              	.LASF16:
- 853 0241 6C6F6E67 		.ascii	"long double\000"
- 853      20646F75 
- 853      626C6500 
- 854              	.LASF0:
- 855 024d 7369676E 		.ascii	"signed char\000"
- 855      65642063 
- 855      68617200 
- 856              	.LASF27:
- 857 0259 55415254 		.ascii	"UART_PutString\000"
- 857      5F507574 
- 857      53747269 
- 857      6E6700
- 858              	.LASF31:
- 859 0268 73707269 		.ascii	"sprintf\000"
- 859      6E746600 
- 860              	.LASF26:
- 861 0270 43794465 		.ascii	"CyDelay\000"
- 861      6C617900 
- 862              	.LASF22:
- 863 0278 62756666 		.ascii	"bufferUART\000"
- 863      65725541 
- 863      525400
- 864              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 849              	.LASF2:
+ 850 023b 73686F72 		.ascii	"short int\000"
+ 850      7420696E 
+ 850      7400
+ 851              	.LASF6:
+ 852 0245 6C6F6E67 		.ascii	"long int\000"
+ 852      20696E74 
+ 852      00
+ 853              	.LASF16:
+ 854 024e 6C6F6E67 		.ascii	"long double\000"
+ 854      20646F75 
+ 854      626C6500 
+ 855              	.LASF0:
+ 856 025a 7369676E 		.ascii	"signed char\000"
+ 856      65642063 
+ 856      68617200 
+ 857              	.LASF27:
+ 858 0266 55415254 		.ascii	"UART_PutString\000"
+ 858      5F507574 
+ 858      53747269 
+ 858      6E6700
+ 859              	.LASF31:
+ 860 0275 73707269 		.ascii	"sprintf\000"
+ 860      6E746600 
+ 861              	.LASF26:
+ 862 027d 43794465 		.ascii	"CyDelay\000"
+ 862      6C617900 
+ 863              	.LASF22:
+ 864 0285 62756666 		.ascii	"bufferUART\000"
+ 864      65725541 
+ 864      525400
+ 865              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccTvZHwR.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
   28:SPI_Interface.c **** * @brief Full-Duplex, Single-Operation 1-Byte Trade
   29:SPI_Interface.c **** */
   30:SPI_Interface.c **** uint8_t SPI_Interface_tradeByte(uint8_t byte) {
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 2
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccTvZHwR.s 			page 2
 
 
   28              		.loc 1 30 0
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
   63 0026 2046     		mov	r0, r4
   64 0028 10BD     		pop	{r4, pc}
   65              		.cfi_endproc
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 3
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccTvZHwR.s 			page 3
 
 
   66              	.LFE0:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  102              	.LVL13:
  103 001a 10F0010F 		tst	r0, #1
  104 001e FAD0     		beq	.L5
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 4
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccTvZHwR.s 			page 4
 
 
   68:SPI_Interface.c **** 	
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  142              		.align	2
  143              		.global	SPI_Interface_Multi_RW
  144              		.thumb
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 5
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccTvZHwR.s 			page 5
 
 
  145              		.thumb_func
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  182              	.L11:
  102:SPI_Interface.c ****             
  103:SPI_Interface.c ****     	/* Load the TX buffer with Data*/
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 6
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccTvZHwR.s 			page 6
 
 
  104:SPI_Interface.c ****         SPIM_1_PutArray(&dataTX[index*SPI_TxBufferSize], (count > SPI_TxBufferSize ? SPI_TxBufferSi
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  219 004a 0026     		movs	r6, #0
  220              	.LVL32:
  221 004c 0096     		str	r6, [sp]
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 7
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccTvZHwR.s 			page 7
 
 
  222 004e 0196     		str	r6, [sp, #4]
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  260              	.L14:
  134:SPI_Interface.c ****             dataRX[j + index*SPI_RxBufferSize] = SPIM_1_ReadRxData();   
  261              		.loc 1 134 0 is_stmt 0 discriminator 1
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 8
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccTvZHwR.s 			page 8
 
 
  262 0088 4C45     		cmp	r4, r9
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  299              		.size	SPI_Interface_Multi_RW, .-SPI_Interface_Multi_RW
  300 00b6 00BF     		.section	.text.ACC_SPI_Interface_tradeByte,"ax",%progbits
  301              		.align	2
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 9
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccTvZHwR.s 			page 9
 
 
  302              		.global	ACC_SPI_Interface_tradeByte
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  170:SPI_Interface.c **** 	SLAVE_CS_Write_2(1);
  338              		.loc 1 170 0
  339 0020 0120     		movs	r0, #1
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 10
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccTvZHwR.s 			page 10
 
 
  340 0022 FFF7FEFF 		bl	CS_2_Write
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  379              	.L22:
  186:SPI_Interface.c **** 	
  187:SPI_Interface.c **** 	/* Wait for TX/RX */
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 11
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccTvZHwR.s 			page 11
 
 
  188:SPI_Interface.c ****     while(!(SPIM_2_ReadTxStatus() & SPIM_2_STS_SPI_DONE));
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  420              		.cfi_offset 6, -20
  421              		.cfi_offset 7, -16
  422              		.cfi_offset 8, -12
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 12
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccTvZHwR.s 			page 12
 
 
  423              		.cfi_offset 9, -8
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  461              	.LVL74:
  462 0038 64B2     		sxtb	r4, r4
  463              	.LVL75:
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 13
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccTvZHwR.s 			page 13
 
 
  218:SPI_Interface.c ****         index++;
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  496 0062 5FFA89F1 		uxtb	r1, r9
  497 0066 6846     		mov	r0, sp
  498 0068 FFF7FEFF 		bl	SPIM_2_PutArray
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 14
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccTvZHwR.s 			page 14
 
 
  499              	.LVL83:
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  249:SPI_Interface.c ****     }
  250:SPI_Interface.c ****         
  251:SPI_Interface.c ****     /* Disable the Slave */
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 15
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccTvZHwR.s 			page 15
 
 
  252:SPI_Interface.c ****     SLAVE_CS_Write_2(1);
@@ -886,10 +886,10 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  574 0006 00000000 		.4byte	.Ldebug_abbrev0
  575 000a 04       		.byte	0x4
  576 000b 01       		.uleb128 0x1
- 577 000c EC000000 		.4byte	.LASF54
+ 577 000c F4000000 		.4byte	.LASF54
  578 0010 0C       		.byte	0xc
- 579 0011 7A010000 		.4byte	.LASF55
- 580 0015 13020000 		.4byte	.LASF56
+ 579 0011 82010000 		.4byte	.LASF55
+ 580 0015 75020000 		.4byte	.LASF56
  581 0019 00000000 		.4byte	.Ldebug_ranges0+0
  582 001d 00000000 		.4byte	0
  583 0021 00000000 		.4byte	.Ldebug_line0
@@ -898,13 +898,13 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  586 002a 02       		.byte	0x2
  587 002b 1B       		.byte	0x1b
  588 002c 30000000 		.4byte	0x30
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 16
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccTvZHwR.s 			page 16
 
 
  589 0030 03       		.uleb128 0x3
  590 0031 01       		.byte	0x1
  591 0032 06       		.byte	0x6
- 592 0033 A6030000 		.4byte	.LASF2
+ 592 0033 B3030000 		.4byte	.LASF2
  593 0037 02       		.uleb128 0x2
  594 0038 24000000 		.4byte	.LASF1
  595 003c 02       		.byte	0x2
@@ -913,11 +913,11 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  598 0042 03       		.uleb128 0x3
  599 0043 01       		.byte	0x1
  600 0044 08       		.byte	0x8
- 601 0045 DE000000 		.4byte	.LASF3
+ 601 0045 E6000000 		.4byte	.LASF3
  602 0049 03       		.uleb128 0x3
  603 004a 02       		.byte	0x2
  604 004b 05       		.byte	0x5
- 605 004c 45030000 		.4byte	.LASF4
+ 605 004c 52030000 		.4byte	.LASF4
  606 0050 03       		.uleb128 0x3
  607 0051 02       		.byte	0x2
  608 0052 07       		.byte	0x7
@@ -925,19 +925,19 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  610 0057 03       		.uleb128 0x3
  611 0058 04       		.byte	0x4
  612 0059 05       		.byte	0x5
- 613 005a 91030000 		.4byte	.LASF6
+ 613 005a 9E030000 		.4byte	.LASF6
  614 005e 03       		.uleb128 0x3
  615 005f 04       		.byte	0x4
  616 0060 07       		.byte	0x7
- 617 0061 8A010000 		.4byte	.LASF7
+ 617 0061 92010000 		.4byte	.LASF7
  618 0065 03       		.uleb128 0x3
  619 0066 08       		.byte	0x8
  620 0067 05       		.byte	0x5
- 621 0068 0C030000 		.4byte	.LASF8
+ 621 0068 19030000 		.4byte	.LASF8
  622 006c 03       		.uleb128 0x3
  623 006d 08       		.byte	0x8
  624 006e 07       		.byte	0x7
- 625 006f A7020000 		.4byte	.LASF9
+ 625 006f 56020000 		.4byte	.LASF9
  626 0073 04       		.uleb128 0x4
  627 0074 04       		.byte	0x4
  628 0075 05       		.byte	0x5
@@ -945,20 +945,20 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  630 007a 03       		.uleb128 0x3
  631 007b 04       		.byte	0x4
  632 007c 07       		.byte	0x7
- 633 007d 8F020000 		.4byte	.LASF10
+ 633 007d 3E020000 		.4byte	.LASF10
  634 0081 02       		.uleb128 0x2
- 635 0082 9A000000 		.4byte	.LASF11
+ 635 0082 A2000000 		.4byte	.LASF11
  636 0086 03       		.byte	0x3
  637 0087 14       		.byte	0x14
  638 0088 25000000 		.4byte	0x25
  639 008c 02       		.uleb128 0x2
- 640 008d BE020000 		.4byte	.LASF12
+ 640 008d 6D020000 		.4byte	.LASF12
  641 0091 03       		.byte	0x3
  642 0092 18       		.byte	0x18
  643 0093 37000000 		.4byte	0x37
  644 0097 05       		.uleb128 0x5
- 645 0098 9C010000 		.4byte	.LASF13
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 17
+ 645 0098 A4010000 		.4byte	.LASF13
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccTvZHwR.s 			page 17
 
 
  646 009c 04       		.byte	0x4
@@ -967,25 +967,25 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  649 00a3 03       		.uleb128 0x3
  650 00a4 04       		.byte	0x4
  651 00a5 04       		.byte	0x4
- 652 00a6 BC000000 		.4byte	.LASF14
+ 652 00a6 C4000000 		.4byte	.LASF14
  653 00aa 03       		.uleb128 0x3
  654 00ab 08       		.byte	0x8
  655 00ac 04       		.byte	0x4
- 656 00ad DC010000 		.4byte	.LASF15
+ 656 00ad E4010000 		.4byte	.LASF15
  657 00b1 03       		.uleb128 0x3
  658 00b2 01       		.byte	0x1
  659 00b3 08       		.byte	0x8
- 660 00b4 1A030000 		.4byte	.LASF16
+ 660 00b4 27030000 		.4byte	.LASF16
  661 00b8 03       		.uleb128 0x3
  662 00b9 08       		.byte	0x8
  663 00ba 04       		.byte	0x4
- 664 00bb 9A030000 		.4byte	.LASF17
+ 664 00bb A7030000 		.4byte	.LASF17
  665 00bf 03       		.uleb128 0x3
  666 00c0 04       		.byte	0x4
  667 00c1 07       		.byte	0x7
- 668 00c2 03030000 		.4byte	.LASF18
+ 668 00c2 10030000 		.4byte	.LASF18
  669 00c6 06       		.uleb128 0x6
- 670 00c7 E3010000 		.4byte	.LASF19
+ 670 00c7 EB010000 		.4byte	.LASF19
  671 00cb 01       		.byte	0x1
  672 00cc 1E       		.byte	0x1e
  673 00cd 8C000000 		.4byte	0x8c
@@ -995,13 +995,13 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  677 00da 9C       		.byte	0x9c
  678 00db 44010000 		.4byte	0x144
  679 00df 07       		.uleb128 0x7
- 680 00e0 6A000000 		.4byte	.LASF21
+ 680 00e0 72000000 		.4byte	.LASF21
  681 00e4 01       		.byte	0x1
  682 00e5 1E       		.byte	0x1e
  683 00e6 8C000000 		.4byte	0x8c
  684 00ea 00000000 		.4byte	.LLST0
  685 00ee 08       		.uleb128 0x8
- 686 00ef C2000000 		.4byte	.LASF23
+ 686 00ef CA000000 		.4byte	.LASF23
  687 00f3 01       		.byte	0x1
  688 00f4 2A       		.byte	0x2a
  689 00f5 8C000000 		.4byte	0x8c
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  700 010c 30       		.byte	0x30
  701 010d 00       		.byte	0
  702 010e 09       		.uleb128 0x9
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 18
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccTvZHwR.s 			page 18
 
 
  703 010f 10000000 		.4byte	.LVL3
@@ -1048,7 +1048,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  727 0142 00       		.byte	0
  728 0143 00       		.byte	0
  729 0144 06       		.uleb128 0x6
- 730 0145 C7000000 		.4byte	.LASF20
+ 730 0145 CF000000 		.4byte	.LASF20
  731 0149 01       		.byte	0x1
  732 014a 37       		.byte	0x37
  733 014b 8C000000 		.4byte	0x8c
@@ -1058,13 +1058,13 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  737 0158 9C       		.byte	0x9c
  738 0159 DE010000 		.4byte	0x1de
  739 015d 07       		.uleb128 0x7
- 740 015e B5000000 		.4byte	.LASF22
+ 740 015e BD000000 		.4byte	.LASF22
  741 0162 01       		.byte	0x1
  742 0163 37       		.byte	0x37
  743 0164 8C000000 		.4byte	0x8c
  744 0168 21000000 		.4byte	.LLST1
  745 016c 08       		.uleb128 0x8
- 746 016d 0C020000 		.4byte	.LASF24
+ 746 016d 14020000 		.4byte	.LASF24
  747 0171 01       		.byte	0x1
  748 0172 47       		.byte	0x47
  749 0173 8C000000 		.4byte	0x8c
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  757 0187 01       		.uleb128 0x1
  758 0188 50       		.byte	0x50
  759 0189 01       		.uleb128 0x1
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 19
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccTvZHwR.s 			page 19
 
 
  760 018a 30       		.byte	0x30
@@ -1124,7 +1124,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  800 01dc 00       		.byte	0
  801 01dd 00       		.byte	0
  802 01de 0D       		.uleb128 0xd
- 803 01df 6F000000 		.4byte	.LASF28
+ 803 01df 77000000 		.4byte	.LASF28
  804 01e3 01       		.byte	0x1
  805 01e4 54       		.byte	0x54
  806 01e5 00000000 		.4byte	.LFB2
@@ -1133,17 +1133,17 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  809 01ee 9C       		.byte	0x9c
  810 01ef 1B020000 		.4byte	0x21b
  811 01f3 0E       		.uleb128 0xe
- 812 01f4 B2030000 		.4byte	.LASF25
+ 812 01f4 BF030000 		.4byte	.LASF25
  813 01f8 01       		.byte	0x1
  814 01f9 54       		.byte	0x54
  815 01fa 1B020000 		.4byte	0x21b
  816 01fe 01       		.uleb128 0x1
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 20
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccTvZHwR.s 			page 20
 
 
  817 01ff 50       		.byte	0x50
  818 0200 0E       		.uleb128 0xe
- 819 0201 E9020000 		.4byte	.LASF26
+ 819 0201 F6020000 		.4byte	.LASF26
  820 0205 01       		.byte	0x1
  821 0206 54       		.byte	0x54
  822 0207 1B020000 		.4byte	0x21b
@@ -1161,7 +1161,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  834 021c 04       		.byte	0x4
  835 021d 8C000000 		.4byte	0x8c
  836 0221 0D       		.uleb128 0xd
- 837 0222 B9030000 		.4byte	.LASF29
+ 837 0222 C6030000 		.4byte	.LASF29
  838 0226 01       		.byte	0x1
  839 0227 5D       		.byte	0x5d
  840 0228 00000000 		.4byte	.LFB3
@@ -1170,25 +1170,25 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  843 0231 9C       		.byte	0x9c
  844 0232 6B030000 		.4byte	0x36b
  845 0236 07       		.uleb128 0x7
- 846 0237 B2030000 		.4byte	.LASF25
+ 846 0237 BF030000 		.4byte	.LASF25
  847 023b 01       		.byte	0x1
  848 023c 5D       		.byte	0x5d
  849 023d 1B020000 		.4byte	0x21b
  850 0241 42000000 		.4byte	.LLST2
  851 0245 07       		.uleb128 0x7
- 852 0246 F0020000 		.4byte	.LASF30
+ 852 0246 FD020000 		.4byte	.LASF30
  853 024a 01       		.byte	0x1
  854 024b 5D       		.byte	0x5d
  855 024c 8C000000 		.4byte	0x8c
  856 0250 6E000000 		.4byte	.LLST3
  857 0254 07       		.uleb128 0x7
- 858 0255 E9020000 		.4byte	.LASF26
+ 858 0255 F6020000 		.4byte	.LASF26
  859 0259 01       		.byte	0x1
  860 025a 5D       		.byte	0x5d
  861 025b 1B020000 		.4byte	0x21b
  862 025f 8F000000 		.4byte	.LLST4
  863 0263 07       		.uleb128 0x7
- 864 0264 C6020000 		.4byte	.LASF31
+ 864 0264 6A000000 		.4byte	.LASF31
  865 0268 01       		.byte	0x1
  866 0269 5D       		.byte	0x5d
  867 026a 8C000000 		.4byte	0x8c
@@ -1198,18 +1198,18 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  871 0277 01       		.byte	0x1
  872 0278 62       		.byte	0x62
  873 0279 81000000 		.4byte	0x81
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 21
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccTvZHwR.s 			page 21
 
 
  874 027d CE000000 		.4byte	.LLST6
  875 0281 10       		.uleb128 0x10
- 876 0282 76030000 		.4byte	.LASF33
+ 876 0282 83030000 		.4byte	.LASF33
  877 0286 01       		.byte	0x1
  878 0287 62       		.byte	0x62
  879 0288 81000000 		.4byte	0x81
  880 028c 02010000 		.4byte	.LLST7
  881 0290 08       		.uleb128 0x8
- 882 0291 CE020000 		.4byte	.LASF34
+ 882 0291 DB020000 		.4byte	.LASF34
  883 0295 01       		.byte	0x1
  884 0296 77       		.byte	0x77
  885 0297 6B030000 		.4byte	0x36b
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  928 02ed 0A       		.uleb128 0xa
  929 02ee 01       		.uleb128 0x1
  930 02ef 51       		.byte	0x51
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 22
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccTvZHwR.s 			page 22
 
 
  931 02f0 0C       		.uleb128 0xc
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  985 0354 14060000 		.4byte	0x614
  986 0358 0B       		.uleb128 0xb
  987 0359 AC000000 		.4byte	.LVL47
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 23
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccTvZHwR.s 			page 23
 
 
  988 035d 1F060000 		.4byte	0x61f
@@ -1344,13 +1344,13 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  1008 038f 9C       		.byte	0x9c
  1009 0390 F9030000 		.4byte	0x3f9
  1010 0394 07       		.uleb128 0x7
- 1011 0395 6A000000 		.4byte	.LASF21
+ 1011 0395 72000000 		.4byte	.LASF21
  1012 0399 01       		.byte	0x1
  1013 039a 9B       		.byte	0x9b
  1014 039b 8C000000 		.4byte	0x8c
  1015 039f 6C010000 		.4byte	.LLST9
  1016 03a3 08       		.uleb128 0x8
- 1017 03a4 C2000000 		.4byte	.LASF23
+ 1017 03a4 CA000000 		.4byte	.LASF23
  1018 03a8 01       		.byte	0x1
  1019 03a9 A7       		.byte	0xa7
  1020 03aa 8C000000 		.4byte	0x8c
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  1042 03d5 00       		.sleb128 0
  1043 03d6 00       		.byte	0
  1044 03d7 0B       		.uleb128 0xb
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 24
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccTvZHwR.s 			page 24
 
 
  1045 03d8 14000000 		.4byte	.LVL53
@@ -1407,13 +1407,13 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  1068 040d 9C       		.byte	0x9c
  1069 040e 93040000 		.4byte	0x493
  1070 0412 07       		.uleb128 0x7
- 1071 0413 B5000000 		.4byte	.LASF22
+ 1071 0413 BD000000 		.4byte	.LASF22
  1072 0417 01       		.byte	0x1
  1073 0418 B0       		.byte	0xb0
  1074 0419 8C000000 		.4byte	0x8c
  1075 041d 8D010000 		.4byte	.LLST10
  1076 0421 08       		.uleb128 0x8
- 1077 0422 0C020000 		.4byte	.LASF24
+ 1077 0422 14020000 		.4byte	.LASF24
  1078 0426 01       		.byte	0x1
  1079 0427 C0       		.byte	0xc0
  1080 0428 8C000000 		.4byte	0x8c
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  1099 0450 50       		.byte	0x50
  1100 0451 02       		.uleb128 0x2
  1101 0452 74       		.byte	0x74
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 25
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccTvZHwR.s 			page 25
 
 
  1102 0453 00       		.sleb128 0
@@ -1473,7 +1473,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  1131 0491 00       		.byte	0
  1132 0492 00       		.byte	0
  1133 0493 0D       		.uleb128 0xd
- 1134 0494 D0030000 		.4byte	.LASF37
+ 1134 0494 DD030000 		.4byte	.LASF37
  1135 0498 01       		.byte	0x1
  1136 0499 C9       		.byte	0xc9
  1137 049a 00000000 		.4byte	.LFB6
@@ -1482,28 +1482,28 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  1140 04a3 9C       		.byte	0x9c
  1141 04a4 DD050000 		.4byte	0x5dd
  1142 04a8 07       		.uleb128 0x7
- 1143 04a9 B2030000 		.4byte	.LASF25
+ 1143 04a9 BF030000 		.4byte	.LASF25
  1144 04ad 01       		.byte	0x1
  1145 04ae C9       		.byte	0xc9
  1146 04af 1B020000 		.4byte	0x21b
  1147 04b3 AE010000 		.4byte	.LLST11
  1148 04b7 07       		.uleb128 0x7
- 1149 04b8 F0020000 		.4byte	.LASF30
+ 1149 04b8 FD020000 		.4byte	.LASF30
  1150 04bc 01       		.byte	0x1
  1151 04bd C9       		.byte	0xc9
  1152 04be 8C000000 		.4byte	0x8c
  1153 04c2 DA010000 		.4byte	.LLST12
  1154 04c6 07       		.uleb128 0x7
- 1155 04c7 E9020000 		.4byte	.LASF26
+ 1155 04c7 F6020000 		.4byte	.LASF26
  1156 04cb 01       		.byte	0x1
  1157 04cc C9       		.byte	0xc9
  1158 04cd 1B020000 		.4byte	0x21b
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 26
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccTvZHwR.s 			page 26
 
 
  1159 04d1 FB010000 		.4byte	.LLST13
  1160 04d5 07       		.uleb128 0x7
- 1161 04d6 C6020000 		.4byte	.LASF31
+ 1161 04d6 6A000000 		.4byte	.LASF31
  1162 04da 01       		.byte	0x1
  1163 04db C9       		.byte	0xc9
  1164 04dc 8C000000 		.4byte	0x8c
@@ -1515,13 +1515,13 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  1170 04eb 81000000 		.4byte	0x81
  1171 04ef 3A020000 		.4byte	.LLST15
  1172 04f3 10       		.uleb128 0x10
- 1173 04f4 76030000 		.4byte	.LASF33
+ 1173 04f4 83030000 		.4byte	.LASF33
  1174 04f8 01       		.byte	0x1
  1175 04f9 CE       		.byte	0xce
  1176 04fa 81000000 		.4byte	0x81
  1177 04fe 6E020000 		.4byte	.LLST16
  1178 0502 08       		.uleb128 0x8
- 1179 0503 CE020000 		.4byte	.LASF34
+ 1179 0503 DB020000 		.4byte	.LASF34
  1180 0507 01       		.byte	0x1
  1181 0508 E3       		.byte	0xe3
  1182 0509 6B030000 		.4byte	0x36b
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  1213 0550 70050000 		.4byte	0x570
  1214 0554 0A       		.uleb128 0xa
  1215 0555 01       		.uleb128 0x1
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 27
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccTvZHwR.s 			page 27
 
 
  1216 0556 50       		.byte	0x50
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  1270 05ae 09       		.uleb128 0x9
  1271 05af A4000000 		.4byte	.LVL93
  1272 05b3 35060000 		.4byte	0x635
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 28
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccTvZHwR.s 			page 28
 
 
  1273 05b7 C1050000 		.4byte	0x5c1
@@ -1639,86 +1639,86 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  1288 05d8 82060000 		.4byte	0x682
  1289 05dc 00       		.byte	0
  1290 05dd 15       		.uleb128 0x15
- 1291 05de 9C020000 		.4byte	.LASF38
- 1292 05e2 9C020000 		.4byte	.LASF38
+ 1291 05de 4B020000 		.4byte	.LASF38
+ 1292 05e2 4B020000 		.4byte	.LASF38
  1293 05e6 05       		.byte	0x5
  1294 05e7 26       		.byte	0x26
  1295 05e8 15       		.uleb128 0x15
- 1296 05e9 D6020000 		.4byte	.LASF39
- 1297 05ed D6020000 		.4byte	.LASF39
+ 1296 05e9 E3020000 		.4byte	.LASF39
+ 1297 05ed E3020000 		.4byte	.LASF39
  1298 05f1 06       		.byte	0x6
  1299 05f2 5E       		.byte	0x5e
  1300 05f3 15       		.uleb128 0x15
- 1301 05f4 A1000000 		.4byte	.LASF40
- 1302 05f8 A1000000 		.4byte	.LASF40
+ 1301 05f4 A9000000 		.4byte	.LASF40
+ 1302 05f8 A9000000 		.4byte	.LASF40
  1303 05fc 06       		.byte	0x6
  1304 05fd 5C       		.byte	0x5c
  1305 05fe 15       		.uleb128 0x15
- 1306 05ff 33030000 		.4byte	.LASF41
- 1307 0603 33030000 		.4byte	.LASF41
+ 1306 05ff 40030000 		.4byte	.LASF41
+ 1307 0603 40030000 		.4byte	.LASF41
  1308 0607 06       		.byte	0x6
  1309 0608 60       		.byte	0x60
  1310 0609 15       		.uleb128 0x15
- 1311 060a 7F020000 		.4byte	.LASF42
- 1312 060e 7F020000 		.4byte	.LASF42
+ 1311 060a 2E020000 		.4byte	.LASF42
+ 1312 060e 2E020000 		.4byte	.LASF42
  1313 0612 06       		.byte	0x6
  1314 0613 67       		.byte	0x67
  1315 0614 15       		.uleb128 0x15
- 1316 0615 FB010000 		.4byte	.LASF43
- 1317 0619 FB010000 		.4byte	.LASF43
+ 1316 0615 03020000 		.4byte	.LASF43
+ 1317 0619 03020000 		.4byte	.LASF43
  1318 061d 06       		.byte	0x6
  1319 061e 66       		.byte	0x66
  1320 061f 15       		.uleb128 0x15
- 1321 0620 4F030000 		.4byte	.LASF44
- 1322 0624 4F030000 		.4byte	.LASF44
+ 1321 0620 5C030000 		.4byte	.LASF44
+ 1322 0624 5C030000 		.4byte	.LASF44
  1323 0628 06       		.byte	0x6
  1324 0629 64       		.byte	0x64
  1325 062a 15       		.uleb128 0x15
- 1326 062b C7010000 		.4byte	.LASF45
- 1327 062f C7010000 		.4byte	.LASF45
+ 1326 062b CF010000 		.4byte	.LASF45
+ 1327 062f CF010000 		.4byte	.LASF45
  1328 0633 06       		.byte	0x6
  1329 0634 65       		.byte	0x65
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 29
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccTvZHwR.s 			page 29
 
 
  1330 0635 15       		.uleb128 0x15
- 1331 0636 F8020000 		.4byte	.LASF46
- 1332 063a F8020000 		.4byte	.LASF46
+ 1331 0636 05030000 		.4byte	.LASF46
+ 1332 063a 05030000 		.4byte	.LASF46
  1333 063e 07       		.byte	0x7
  1334 063f 26       		.byte	0x26
  1335 0640 15       		.uleb128 0x15
- 1336 0641 6C020000 		.4byte	.LASF47
- 1337 0645 6C020000 		.4byte	.LASF47
+ 1336 0641 1B020000 		.4byte	.LASF47
+ 1337 0645 1B020000 		.4byte	.LASF47
  1338 0649 08       		.byte	0x8
  1339 064a 5E       		.byte	0x5e
  1340 064b 15       		.uleb128 0x15
- 1341 064c 1F030000 		.4byte	.LASF48
- 1342 0650 1F030000 		.4byte	.LASF48
+ 1341 064c 2C030000 		.4byte	.LASF48
+ 1342 0650 2C030000 		.4byte	.LASF48
  1343 0654 08       		.byte	0x8
  1344 0655 5C       		.byte	0x5c
  1345 0656 15       		.uleb128 0x15
- 1346 0657 64030000 		.4byte	.LASF49
- 1347 065b 64030000 		.4byte	.LASF49
+ 1346 0657 71030000 		.4byte	.LASF49
+ 1347 065b 71030000 		.4byte	.LASF49
  1348 065f 08       		.byte	0x8
  1349 0660 60       		.byte	0x60
  1350 0661 15       		.uleb128 0x15
- 1351 0662 B7010000 		.4byte	.LASF50
- 1352 0666 B7010000 		.4byte	.LASF50
+ 1351 0662 BF010000 		.4byte	.LASF50
+ 1352 0666 BF010000 		.4byte	.LASF50
  1353 066a 08       		.byte	0x8
  1354 066b 67       		.byte	0x67
  1355 066c 15       		.uleb128 0x15
- 1356 066d 89000000 		.4byte	.LASF51
- 1357 0671 89000000 		.4byte	.LASF51
+ 1356 066d 91000000 		.4byte	.LASF51
+ 1357 0671 91000000 		.4byte	.LASF51
  1358 0675 08       		.byte	0x8
  1359 0676 66       		.byte	0x66
  1360 0677 15       		.uleb128 0x15
- 1361 0678 7C030000 		.4byte	.LASF52
- 1362 067c 7C030000 		.4byte	.LASF52
+ 1361 0678 89030000 		.4byte	.LASF52
+ 1362 067c 89030000 		.4byte	.LASF52
  1363 0680 08       		.byte	0x8
  1364 0681 64       		.byte	0x64
  1365 0682 15       		.uleb128 0x15
- 1366 0683 A2010000 		.4byte	.LASF53
- 1367 0687 A2010000 		.4byte	.LASF53
+ 1366 0683 AA010000 		.4byte	.LASF53
+ 1367 0687 AA010000 		.4byte	.LASF53
  1368 068b 08       		.byte	0x8
  1369 068c 65       		.byte	0x65
  1370 068d 00       		.byte	0
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  1384 000b 55       		.uleb128 0x55
  1385 000c 17       		.uleb128 0x17
  1386 000d 11       		.uleb128 0x11
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 30
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccTvZHwR.s 			page 30
 
 
  1387 000e 01       		.uleb128 0x1
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  1441 0044 2E       		.uleb128 0x2e
  1442 0045 01       		.byte	0x1
  1443 0046 3F       		.uleb128 0x3f
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 31
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccTvZHwR.s 			page 31
 
 
  1444 0047 19       		.uleb128 0x19
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  1498 007e 898201   		.uleb128 0x4109
  1499 0081 01       		.byte	0x1
  1500 0082 11       		.uleb128 0x11
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 32
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccTvZHwR.s 			page 32
 
 
  1501 0083 01       		.uleb128 0x1
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  1555 00c1 19       		.uleb128 0x19
  1556 00c2 01       		.uleb128 0x1
  1557 00c3 13       		.uleb128 0x13
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 33
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccTvZHwR.s 			page 33
 
 
  1558 00c4 00       		.byte	0
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  1612 00fa 00       		.byte	0
  1613 00fb 03       		.uleb128 0x3
  1614 00fc 08       		.uleb128 0x8
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 34
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccTvZHwR.s 			page 34
 
 
  1615 00fd 3A       		.uleb128 0x3a
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  1669 000f 2A000000 		.4byte	.LFE0
  1670 0013 0400     		.2byte	0x4
  1671 0015 F3       		.byte	0xf3
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 35
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccTvZHwR.s 			page 35
 
 
  1672 0016 01       		.uleb128 0x1
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  1726 0097 0100     		.2byte	0x1
  1727 0099 52       		.byte	0x52
  1728 009a 13000000 		.4byte	.LVL21-1
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 36
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccTvZHwR.s 			page 36
 
 
  1729 009e B6000000 		.4byte	.LFE3
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  1783 012c 0200     		.2byte	0x2
  1784 012e 30       		.byte	0x30
  1785 012f 9F       		.byte	0x9f
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 37
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccTvZHwR.s 			page 37
 
 
  1786 0130 56000000 		.4byte	.LVL34
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  1840 01b9 10000000 		.4byte	.LVL68
  1841 01bd 4C000000 		.4byte	.LVL80
  1842 01c1 0100     		.2byte	0x1
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 38
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccTvZHwR.s 			page 38
 
 
  1843 01c3 56       		.byte	0x56
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  1897 0245 3A000000 		.4byte	.LVL75
  1898 0249 54000000 		.4byte	.LVL81
  1899 024d 0100     		.2byte	0x1
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 39
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccTvZHwR.s 			page 39
 
 
  1900 024f 54       		.byte	0x54
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  1954 0006 00000000 		.4byte	.Ldebug_info0
  1955 000a 04       		.byte	0x4
  1956 000b 00       		.byte	0
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 40
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccTvZHwR.s 			page 40
 
 
  1957 000c 0000     		.2byte	0
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  2001 0024 5F5F7569 		.ascii	"__uint8_t\000"
  2001      6E74385F 
  2001      7400
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 41
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccTvZHwR.s 			page 41
 
 
  2002              	.LASF35:
@@ -2419,263 +2419,265 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 1
  2009      7369676E 
  2009      65642069 
  2009      6E7400
- 2010              	.LASF21:
- 2011 006a 62797465 		.ascii	"byte\000"
- 2011      00
- 2012              	.LASF28:
- 2013 006f 5350495F 		.ascii	"SPI_Interface_Multi_Trade\000"
- 2013      496E7465 
- 2013      72666163 
- 2013      655F4D75 
- 2013      6C74695F 
- 2014              	.LASF51:
- 2015 0089 5350494D 		.ascii	"SPIM_2_ClearFIFO\000"
- 2015      5F325F43 
- 2015      6C656172 
- 2015      4649464F 
- 2015      00
- 2016              	.LASF11:
- 2017 009a 696E7438 		.ascii	"int8_t\000"
- 2017      5F7400
- 2018              	.LASF40:
- 2019 00a1 5350494D 		.ascii	"SPIM_1_ReadTxStatus\000"
- 2019      5F315F52 
- 2019      65616454 
- 2019      78537461 
- 2019      74757300 
- 2020              	.LASF22:
- 2021 00b5 62797465 		.ascii	"byteTX\000"
- 2021      545800
- 2022              	.LASF14:
- 2023 00bc 666C6F61 		.ascii	"float\000"
- 2023      7400
- 2024              	.LASF23:
- 2025 00c2 64617461 		.ascii	"data\000"
- 2025      00
- 2026              	.LASF20:
- 2027 00c7 5350495F 		.ascii	"SPI_Interface_ReadByte\000"
- 2027      496E7465 
- 2027      72666163 
- 2027      655F5265 
- 2027      61644279 
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 42
+ 2010              	.LASF31:
+ 2011 006a 62797465 		.ascii	"bytesRX\000"
+ 2011      73525800 
+ 2012              	.LASF21:
+ 2013 0072 62797465 		.ascii	"byte\000"
+ 2013      00
+ 2014              	.LASF28:
+ 2015 0077 5350495F 		.ascii	"SPI_Interface_Multi_Trade\000"
+ 2015      496E7465 
+ 2015      72666163 
+ 2015      655F4D75 
+ 2015      6C74695F 
+ 2016              	.LASF51:
+ 2017 0091 5350494D 		.ascii	"SPIM_2_ClearFIFO\000"
+ 2017      5F325F43 
+ 2017      6C656172 
+ 2017      4649464F 
+ 2017      00
+ 2018              	.LASF11:
+ 2019 00a2 696E7438 		.ascii	"int8_t\000"
+ 2019      5F7400
+ 2020              	.LASF40:
+ 2021 00a9 5350494D 		.ascii	"SPIM_1_ReadTxStatus\000"
+ 2021      5F315F52 
+ 2021      65616454 
+ 2021      78537461 
+ 2021      74757300 
+ 2022              	.LASF22:
+ 2023 00bd 62797465 		.ascii	"byteTX\000"
+ 2023      545800
+ 2024              	.LASF14:
+ 2025 00c4 666C6F61 		.ascii	"float\000"
+ 2025      7400
+ 2026              	.LASF23:
+ 2027 00ca 64617461 		.ascii	"data\000"
+ 2027      00
+ 2028              	.LASF20:
+ 2029 00cf 5350495F 		.ascii	"SPI_Interface_ReadByte\000"
+ 2029      496E7465 
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccTvZHwR.s 			page 42
 
 
- 2028              	.LASF3:
- 2029 00de 756E7369 		.ascii	"unsigned char\000"
- 2029      676E6564 
- 2029      20636861 
- 2029      7200
- 2030              	.LASF54:
- 2031 00ec 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 2031      43313120 
- 2031      352E342E 
- 2031      31203230 
- 2031      31363036 
- 2032 011f 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 2032      20726576 
- 2032      6973696F 
- 2032      6E203233 
- 2032      37373135 
- 2033 0152 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 2033      66756E63 
- 2033      74696F6E 
- 2033      2D736563 
- 2033      74696F6E 
- 2034              	.LASF55:
- 2035 017a 5350495F 		.ascii	"SPI_Interface.c\000"
- 2035      496E7465 
- 2035      72666163 
- 2035      652E6300 
- 2036              	.LASF7:
- 2037 018a 6C6F6E67 		.ascii	"long unsigned int\000"
- 2037      20756E73 
- 2037      69676E65 
- 2037      6420696E 
- 2037      7400
- 2038              	.LASF13:
- 2039 019c 75696E74 		.ascii	"uint8\000"
- 2039      3800
- 2040              	.LASF53:
- 2041 01a2 5350494D 		.ascii	"SPIM_2_ClearTxBuffer\000"
- 2041      5F325F43 
- 2041      6C656172 
- 2041      54784275 
- 2041      66666572 
- 2042              	.LASF50:
- 2043 01b7 5350494D 		.ascii	"SPIM_2_PutArray\000"
- 2043      5F325F50 
- 2043      75744172 
- 2043      72617900 
- 2044              	.LASF45:
- 2045 01c7 5350494D 		.ascii	"SPIM_1_ClearTxBuffer\000"
- 2045      5F315F43 
- 2045      6C656172 
- 2045      54784275 
- 2045      66666572 
- 2046              	.LASF15:
- 2047 01dc 646F7562 		.ascii	"double\000"
- 2047      6C6500
- 2048              	.LASF19:
- 2049 01e3 5350495F 		.ascii	"SPI_Interface_tradeByte\000"
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 43
+ 2029      72666163 
+ 2029      655F5265 
+ 2029      61644279 
+ 2030              	.LASF3:
+ 2031 00e6 756E7369 		.ascii	"unsigned char\000"
+ 2031      676E6564 
+ 2031      20636861 
+ 2031      7200
+ 2032              	.LASF54:
+ 2033 00f4 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 2033      43313120 
+ 2033      352E342E 
+ 2033      31203230 
+ 2033      31363036 
+ 2034 0127 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 2034      20726576 
+ 2034      6973696F 
+ 2034      6E203233 
+ 2034      37373135 
+ 2035 015a 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 2035      66756E63 
+ 2035      74696F6E 
+ 2035      2D736563 
+ 2035      74696F6E 
+ 2036              	.LASF55:
+ 2037 0182 5350495F 		.ascii	"SPI_Interface.c\000"
+ 2037      496E7465 
+ 2037      72666163 
+ 2037      652E6300 
+ 2038              	.LASF7:
+ 2039 0192 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2039      20756E73 
+ 2039      69676E65 
+ 2039      6420696E 
+ 2039      7400
+ 2040              	.LASF13:
+ 2041 01a4 75696E74 		.ascii	"uint8\000"
+ 2041      3800
+ 2042              	.LASF53:
+ 2043 01aa 5350494D 		.ascii	"SPIM_2_ClearTxBuffer\000"
+ 2043      5F325F43 
+ 2043      6C656172 
+ 2043      54784275 
+ 2043      66666572 
+ 2044              	.LASF50:
+ 2045 01bf 5350494D 		.ascii	"SPIM_2_PutArray\000"
+ 2045      5F325F50 
+ 2045      75744172 
+ 2045      72617900 
+ 2046              	.LASF45:
+ 2047 01cf 5350494D 		.ascii	"SPIM_1_ClearTxBuffer\000"
+ 2047      5F315F43 
+ 2047      6C656172 
+ 2047      54784275 
+ 2047      66666572 
+ 2048              	.LASF15:
+ 2049 01e4 646F7562 		.ascii	"double\000"
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccTvZHwR.s 			page 43
 
 
- 2049      496E7465 
- 2049      72666163 
- 2049      655F7472 
- 2049      61646542 
- 2050              	.LASF43:
- 2051 01fb 5350494D 		.ascii	"SPIM_1_ClearFIFO\000"
- 2051      5F315F43 
- 2051      6C656172 
- 2051      4649464F 
- 2051      00
- 2052              	.LASF24:
- 2053 020c 62797465 		.ascii	"byteRX\000"
- 2053      525800
- 2054              	.LASF56:
- 2055 0213 433A5C55 		.ascii	"C:\\Users\\gaeta\\Downloads\\PsoC_Final_Project_1_0"
- 2055      73657273 
- 2055      5C676165 
- 2055      74615C44 
- 2055      6F776E6C 
- 2056 0242 335C4649 		.ascii	"3\\FIORANI_GARGIULO_IANNUZZI_Project.cydsn\000"
- 2056      4F52414E 
- 2056      495F4741 
- 2056      52474955 
- 2056      4C4F5F49 
- 2057              	.LASF47:
- 2058 026c 5350494D 		.ascii	"SPIM_2_WriteTxData\000"
- 2058      5F325F57 
- 2058      72697465 
- 2058      54784461 
- 2058      746100
- 2059              	.LASF42:
- 2060 027f 5350494D 		.ascii	"SPIM_1_PutArray\000"
- 2060      5F315F50 
- 2060      75744172 
- 2060      72617900 
- 2061              	.LASF10:
- 2062 028f 756E7369 		.ascii	"unsigned int\000"
- 2062      676E6564 
- 2062      20696E74 
- 2062      00
- 2063              	.LASF38:
- 2064 029c 43535F31 		.ascii	"CS_1_Write\000"
- 2064      5F577269 
- 2064      746500
- 2065              	.LASF9:
- 2066 02a7 6C6F6E67 		.ascii	"long long unsigned int\000"
- 2066      206C6F6E 
- 2066      6720756E 
- 2066      7369676E 
- 2066      65642069 
- 2067              	.LASF12:
- 2068 02be 75696E74 		.ascii	"uint8_t\000"
- 2068      385F7400 
- 2069              	.LASF31:
- 2070 02c6 62797465 		.ascii	"bytesRX\000"
- 2070      73525800 
- 2071              	.LASF34:
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 44
+ 2049      6C6500
+ 2050              	.LASF19:
+ 2051 01eb 5350495F 		.ascii	"SPI_Interface_tradeByte\000"
+ 2051      496E7465 
+ 2051      72666163 
+ 2051      655F7472 
+ 2051      61646542 
+ 2052              	.LASF43:
+ 2053 0203 5350494D 		.ascii	"SPIM_1_ClearFIFO\000"
+ 2053      5F315F43 
+ 2053      6C656172 
+ 2053      4649464F 
+ 2053      00
+ 2054              	.LASF24:
+ 2055 0214 62797465 		.ascii	"byteRX\000"
+ 2055      525800
+ 2056              	.LASF47:
+ 2057 021b 5350494D 		.ascii	"SPIM_2_WriteTxData\000"
+ 2057      5F325F57 
+ 2057      72697465 
+ 2057      54784461 
+ 2057      746100
+ 2058              	.LASF42:
+ 2059 022e 5350494D 		.ascii	"SPIM_1_PutArray\000"
+ 2059      5F315F50 
+ 2059      75744172 
+ 2059      72617900 
+ 2060              	.LASF10:
+ 2061 023e 756E7369 		.ascii	"unsigned int\000"
+ 2061      676E6564 
+ 2061      20696E74 
+ 2061      00
+ 2062              	.LASF38:
+ 2063 024b 43535F31 		.ascii	"CS_1_Write\000"
+ 2063      5F577269 
+ 2063      746500
+ 2064              	.LASF9:
+ 2065 0256 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2065      206C6F6E 
+ 2065      6720756E 
+ 2065      7369676E 
+ 2065      65642069 
+ 2066              	.LASF12:
+ 2067 026d 75696E74 		.ascii	"uint8_t\000"
+ 2067      385F7400 
+ 2068              	.LASF56:
+ 2069 0275 433A5C55 		.ascii	"C:\\Users\\gaeta\\Documents\\PSoC Creator\\PsoC_Fin"
+ 2069      73657273 
+ 2069      5C676165 
+ 2069      74615C44 
+ 2069      6F63756D 
+ 2070 02a3 616C5F50 		.ascii	"al_Project_1_03\\FIORANI_GARGIULO_IANNUZZI_Project."
+ 2070      726F6A65 
+ 2070      63745F31 
+ 2070      5F30335C 
+ 2070      46494F52 
+ 2071 02d5 63796473 		.ascii	"cydsn\000"
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccTvZHwR.s 			page 44
 
 
- 2072 02ce 64756D6D 		.ascii	"dummyTX\000"
- 2072      79545800 
- 2073              	.LASF39:
- 2074 02d6 5350494D 		.ascii	"SPIM_1_WriteTxData\000"
- 2074      5F315F57 
- 2074      72697465 
- 2074      54784461 
- 2074      746100
- 2075              	.LASF26:
- 2076 02e9 64617461 		.ascii	"dataRX\000"
- 2076      525800
- 2077              	.LASF30:
- 2078 02f0 62797465 		.ascii	"bytesTX\000"
- 2078      73545800 
- 2079              	.LASF46:
- 2080 02f8 43535F32 		.ascii	"CS_2_Write\000"
- 2080      5F577269 
- 2080      746500
- 2081              	.LASF18:
- 2082 0303 73697A65 		.ascii	"sizetype\000"
- 2082      74797065 
- 2082      00
- 2083              	.LASF8:
- 2084 030c 6C6F6E67 		.ascii	"long long int\000"
- 2084      206C6F6E 
- 2084      6720696E 
- 2084      7400
- 2085              	.LASF16:
- 2086 031a 63686172 		.ascii	"char\000"
- 2086      00
- 2087              	.LASF48:
- 2088 031f 5350494D 		.ascii	"SPIM_2_ReadTxStatus\000"
- 2088      5F325F52 
- 2088      65616454 
- 2088      78537461 
- 2088      74757300 
- 2089              	.LASF41:
- 2090 0333 5350494D 		.ascii	"SPIM_1_ReadRxData\000"
- 2090      5F315F52 
- 2090      65616452 
- 2090      78446174 
- 2090      6100
- 2091              	.LASF4:
- 2092 0345 73686F72 		.ascii	"short int\000"
- 2092      7420696E 
- 2092      7400
- 2093              	.LASF44:
- 2094 034f 5350494D 		.ascii	"SPIM_1_ClearRxBuffer\000"
- 2094      5F315F43 
- 2094      6C656172 
- 2094      52784275 
- 2094      66666572 
- 2095              	.LASF49:
- 2096 0364 5350494D 		.ascii	"SPIM_2_ReadRxData\000"
- 2096      5F325F52 
- 2096      65616452 
- 2096      78446174 
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBsZuHu.s 			page 45
+ 2071      6E00
+ 2072              	.LASF34:
+ 2073 02db 64756D6D 		.ascii	"dummyTX\000"
+ 2073      79545800 
+ 2074              	.LASF39:
+ 2075 02e3 5350494D 		.ascii	"SPIM_1_WriteTxData\000"
+ 2075      5F315F57 
+ 2075      72697465 
+ 2075      54784461 
+ 2075      746100
+ 2076              	.LASF26:
+ 2077 02f6 64617461 		.ascii	"dataRX\000"
+ 2077      525800
+ 2078              	.LASF30:
+ 2079 02fd 62797465 		.ascii	"bytesTX\000"
+ 2079      73545800 
+ 2080              	.LASF46:
+ 2081 0305 43535F32 		.ascii	"CS_2_Write\000"
+ 2081      5F577269 
+ 2081      746500
+ 2082              	.LASF18:
+ 2083 0310 73697A65 		.ascii	"sizetype\000"
+ 2083      74797065 
+ 2083      00
+ 2084              	.LASF8:
+ 2085 0319 6C6F6E67 		.ascii	"long long int\000"
+ 2085      206C6F6E 
+ 2085      6720696E 
+ 2085      7400
+ 2086              	.LASF16:
+ 2087 0327 63686172 		.ascii	"char\000"
+ 2087      00
+ 2088              	.LASF48:
+ 2089 032c 5350494D 		.ascii	"SPIM_2_ReadTxStatus\000"
+ 2089      5F325F52 
+ 2089      65616454 
+ 2089      78537461 
+ 2089      74757300 
+ 2090              	.LASF41:
+ 2091 0340 5350494D 		.ascii	"SPIM_1_ReadRxData\000"
+ 2091      5F315F52 
+ 2091      65616452 
+ 2091      78446174 
+ 2091      6100
+ 2092              	.LASF4:
+ 2093 0352 73686F72 		.ascii	"short int\000"
+ 2093      7420696E 
+ 2093      7400
+ 2094              	.LASF44:
+ 2095 035c 5350494D 		.ascii	"SPIM_1_ClearRxBuffer\000"
+ 2095      5F315F43 
+ 2095      6C656172 
+ 2095      52784275 
+ 2095      66666572 
+ 2096              	.LASF49:
+ 2097 0371 5350494D 		.ascii	"SPIM_2_ReadRxData\000"
+ 2097      5F325F52 
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccTvZHwR.s 			page 45
 
 
- 2096      6100
- 2097              	.LASF33:
- 2098 0376 696E6465 		.ascii	"index\000"
- 2098      7800
- 2099              	.LASF52:
- 2100 037c 5350494D 		.ascii	"SPIM_2_ClearRxBuffer\000"
- 2100      5F325F43 
- 2100      6C656172 
- 2100      52784275 
- 2100      66666572 
- 2101              	.LASF6:
- 2102 0391 6C6F6E67 		.ascii	"long int\000"
- 2102      20696E74 
- 2102      00
- 2103              	.LASF17:
- 2104 039a 6C6F6E67 		.ascii	"long double\000"
- 2104      20646F75 
- 2104      626C6500 
- 2105              	.LASF2:
- 2106 03a6 7369676E 		.ascii	"signed char\000"
- 2106      65642063 
- 2106      68617200 
- 2107              	.LASF25:
- 2108 03b2 64617461 		.ascii	"dataTX\000"
- 2108      545800
- 2109              	.LASF29:
- 2110 03b9 5350495F 		.ascii	"SPI_Interface_Multi_RW\000"
- 2110      496E7465 
- 2110      72666163 
- 2110      655F4D75 
- 2110      6C74695F 
- 2111              	.LASF37:
- 2112 03d0 4143435F 		.ascii	"ACC_SPI_Interface_Multi_RW\000"
- 2112      5350495F 
- 2112      496E7465 
- 2112      72666163 
- 2112      655F4D75 
- 2113              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 2097      65616452 
+ 2097      78446174 
+ 2097      6100
+ 2098              	.LASF33:
+ 2099 0383 696E6465 		.ascii	"index\000"
+ 2099      7800
+ 2100              	.LASF52:
+ 2101 0389 5350494D 		.ascii	"SPIM_2_ClearRxBuffer\000"
+ 2101      5F325F43 
+ 2101      6C656172 
+ 2101      52784275 
+ 2101      66666572 
+ 2102              	.LASF6:
+ 2103 039e 6C6F6E67 		.ascii	"long int\000"
+ 2103      20696E74 
+ 2103      00
+ 2104              	.LASF17:
+ 2105 03a7 6C6F6E67 		.ascii	"long double\000"
+ 2105      20646F75 
+ 2105      626C6500 
+ 2106              	.LASF2:
+ 2107 03b3 7369676E 		.ascii	"signed char\000"
+ 2107      65642063 
+ 2107      68617200 
+ 2108              	.LASF25:
+ 2109 03bf 64617461 		.ascii	"dataTX\000"
+ 2109      545800
+ 2110              	.LASF29:
+ 2111 03c6 5350495F 		.ascii	"SPI_Interface_Multi_RW\000"
+ 2111      496E7465 
+ 2111      72666163 
+ 2111      655F4D75 
+ 2111      6C74695F 
+ 2112              	.LASF37:
+ 2113 03dd 4143435F 		.ascii	"ACC_SPI_Interface_Multi_RW\000"
+ 2113      5350495F 
+ 2113      496E7465 
+ 2113      72666163 
+ 2113      655F4D75 
+ 2114              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

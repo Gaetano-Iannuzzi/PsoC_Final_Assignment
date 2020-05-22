@@ -88,7 +88,8 @@
 
 uint8_t     ACC_readByte(uint8_t addr);
 void        ACC_writeByte(uint8_t addr, uint8_t dataByte);
-
+void        ACC_readMultibytes(uint8_t addr, uint8_t* data, uint8_t nBytes);
+void        ACC_writeMultibytes(uint8_t addr, uint8_t* data, uint8_t nBytes);
 
 
 
