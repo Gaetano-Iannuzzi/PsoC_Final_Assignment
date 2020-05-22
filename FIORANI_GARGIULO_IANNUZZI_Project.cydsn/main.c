@@ -1,39 +1,71 @@
-/* ========================================
+/**
+ * @file main.c
+ * @brief Main file of the EEPROM 25LC256 Project.
+ * 
+ * This file implements a functionality test of the 25LC256 SPI EEPROM
+ * interfaced using the library hereby implemented.
  *
- * Copyright YOUR COMPANY, THE YEAR
- * All Rights Reserved
- * UNPUBLISHED, LICENSED SOFTWARE.
- *
- * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF your company.
- *
- * ========================================
+ * @author Mattia Pesenti
+ * @date 13-May-2020
 */
-#include "LIS3DH_Registers.h"
-#include "SPI_Interface.h"
-#include "25LC256.h"
-#include "Menu_Functions.h"
+
 #include "project.h"
+#include <stdio.h>
+#include <string.h>
+#include "SPI_Interface.h"
+#include "LIS3DH_Registers.h"
 
-int TurnedON;
+#define UART_PutBuffer UART_PutString(bufferUART)
+char bufferUART[100];
 
-int main(void)
-{
-    CyGlobalIntEnable; /* Enable global interrupts. */
-    TurnedON = 1;
+/* EEPROM 25LC256 Library */
+#include "25LC256.h"
+
+int main(void) {
+    
+    /* Enable global interrupts. */
+    CyGlobalIntEnable; 
+    
+    /* Start UART */
     UART_Start();
-    ADC_DelSig_Start();    //Start the Delta Sigma ADC
-    isr_ADC_StartEx(Custom_ISR_ADC);   //Start the ADC ISR
-    isr_Button_StartEx(Custom_Button_ISR);   // Start of ISR
-    isr_MENU_StartEx(Custom_ISR_MENU);
-    Custom_ISR_MENU();
-    /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+    
+    /* Start SPI Master */
+    SPIM_1_Start();
+    SPIM_2_Start();
+    
+    CyDelay(10);
+    
+    UART_PutString("*********    EEPROM TEST    *********\r\n");
+    
+    /* Definition of the extern from 25LC256.c */
+    //uint8_t eeprom_Status = 0;
+    
+    /* Value to Write */
+    uint8_t data = 55;
+    
+    /* Write */
+    EEPROM_writeByte(0x0000, data);
+    EEPROM_waitForWriteComplete();
+    
+    /* Read */
+    uint8_t data_read = EEPROM_readByte(0x0000);
+    
+    sprintf(bufferUART, "** EEPROM Read = %d (%d)\r\n", data_read, data);
+    UART_PutBuffer;
+    
+    UART_PutString("*************************************\r\n");
+    
    
     
-    for(;;)
-    {
-        /* Place your application code here. */
-    }
+    UART_PutString("******* ACCE TEST *********\r\n");
+    uint8_t status_read = 0;
+    status_read = ACC_readByte(LIS3DH_CTRL_REG1);
+    sprintf(bufferUART, "** ACCE Read = (%d)\r\n", status_read);
+    UART_PutBuffer;
+    
+    UART_PutString("*************************************\r\n");
+    
+    return 0;
 }
 
 /* [] END OF FILE */

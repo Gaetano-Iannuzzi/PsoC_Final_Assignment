@@ -5,6 +5,8 @@
  * This header file contains macros and function prototypes to interface
  * with the SPI Master (SPIM) of the PSoC.
  *
+ * @author Mattia Pesenti
+ * @date 9 April, 2020
 */
 
 /*											 
@@ -19,8 +21,9 @@
 
 #include <cytypes.h>
 #include "CS_1.h"
-#include "CS_2.h"
 #include "SPIM_1.h"
+#include "CS_2.h"
+#include "SPIM_2.h"
 
 #define SPI_DUMMY_BYTE  0x00
 
@@ -40,6 +43,7 @@
 * @return: uint8_t > received 1-byte word 
 */
 uint8_t SPI_Interface_tradeByte(uint8_t byte);
+uint8_t ACC_SPI_Interface_tradeByte(uint8_t byte);
 
 /*
 * @brief RX-only, Dual-Operation 1-Byte READ
@@ -56,6 +60,7 @@ uint8_t SPI_Interface_tradeByte(uint8_t byte);
 * @return: uint8_t > received 1-byte word 
 */
 uint8_t SPI_Interface_ReadByte(uint8_t addr);
+uint8_t ACC_SPI_Interface_ReadByte(uint8_t addr);
 
 /*
 * @brief Full-Duplex, Multi-Byte Trade (RX/TX)
@@ -68,6 +73,7 @@ uint8_t SPI_Interface_ReadByte(uint8_t addr);
 * @param[in]:  uint8_t nBytes  > Number of bytes to TX/RX
 */
 void SPI_Interface_Multi_Trade(uint8_t* dataTX, uint8_t* dataRX, uint8_t nBytes);
+void ACC_SPI_Interface_Multi_Trade(uint8_t* dataTX, uint8_t* dataRX, uint8_t nBytes);
 
 /*
 * @brief RX-only, Dual-Operation Multi-Byte READ/WRITE
@@ -84,5 +90,6 @@ void SPI_Interface_Multi_Trade(uint8_t* dataTX, uint8_t* dataRX, uint8_t nBytes)
 * @param[in]:  uint8_t bytesRX  > Number of bytes to receive
 */
 void SPI_Interface_Multi_RW(uint8_t* dataTX, uint8_t bytesTX, uint8_t* dataRX, uint8_t bytesRX);
+void ACC_SPI_Interface_Multi_RW(uint8_t* dataTX, uint8_t bytesTX, uint8_t* dataRX, uint8_t bytesRX);
 
 /* [] END OF FILE */

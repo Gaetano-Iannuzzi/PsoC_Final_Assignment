@@ -74,5 +74,22 @@
 #define LIS3DH_I1_OVERRUN             0x02
 #define LIS3DH_FIFO_MODE_CTRL_REG     0x40
 
+// Command for R/W
+#define ACC_SINGLE_READ     0b10000000
+#define ACC_MULTI_READ      0b11000000
+#define ACC_SINGLE_WRITE    0b00000000
+#define ACC_MULTI_WRITE     0b01000000
+
+#include "SPI_Interface.h"
+#define SLAVE_CS_Write CS_1_Write
+#define SLAVE_CS_Write_2 CS_2_Write
+
+#define SPIM_2           SPIM_2
+
+uint8_t     ACC_readByte(uint8_t addr);
+void        ACC_writeByte(uint8_t addr, uint8_t dataByte);
+
+
+
 
 /* [] END OF FILE */
