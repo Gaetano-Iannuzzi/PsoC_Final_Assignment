@@ -71,8 +71,13 @@
 #define LIS3DH_FIFO_ENABLE_CTRL_REG5  0x40
 #define LIS3DH_OVRN_FIFO               
 #define LIS3DH_BYPASS_MODE_CTRL_REG   0x00
-#define LIS3DH_I1_OVERRUN             0x02
 #define LIS3DH_FIFO_MODE_CTRL_REG     0x40
+#define LIS3DH_WTM10_MODE_CTRL_REG5   0x4A
+
+//Enable Interrupt on INT1
+#define LIS3DH_I1_OVERRUN_CTRL_REG3   0x02
+#define LIS3DH_I1_WTM_CTRL_REG3       0x04
+#define LIS3DH_I1_WTM_OVR_CTRL_REG3   0x06
 
 // Command for R/W
 #define ACC_SINGLE_READ     0b10000000

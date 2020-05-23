@@ -36,6 +36,8 @@ Archive member included to satisfy reference by file (symbol)
                               .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o (CyHalt)
 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(cyPm.o)
                               .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyLib.o) (CyPmReadStatus)
+.\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(INT_1.o)
+                              .\CortexM3\ARM_GCC_541\Debug\main.o (INT_1_Read)
 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyBootAsmGnu.o)
                               .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o (CyDelayCycles)
 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyFlash.o)
@@ -142,8 +144,6 @@ Discarded input sections
  .text          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\LIS3DH_Registers.o
  .data          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\LIS3DH_Registers.o
  .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\LIS3DH_Registers.o
- .text.ACC_readMultibytes
-                0x00000000       0x20 .\CortexM3\ARM_GCC_541\Debug\LIS3DH_Registers.o
  .text.ACC_writeMultibytes
                 0x00000000       0x4c .\CortexM3\ARM_GCC_541\Debug\LIS3DH_Registers.o
  .text          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\SPI_Interface.o
@@ -253,7 +253,7 @@ Discarded input sections
  .text          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1.o)
  .data          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1.o)
  .text.SPIM_1_Stop
-                0x00000000       0x34 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1.o)
+                0x00000000       0x30 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1.o)
  .text.SPIM_1_SetTxInterruptMode
                 0x00000000        0xc .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1.o)
  .text.SPIM_1_SetRxInterruptMode
@@ -404,7 +404,7 @@ Discarded input sections
  .text          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2.o)
  .data          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2.o)
  .text.SPIM_2_Stop
-                0x00000000       0x30 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2.o)
+                0x00000000       0x34 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2.o)
  .text.SPIM_2_SetTxInterruptMode
                 0x00000000        0xc .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2.o)
  .text.SPIM_2_SetRxInterruptMode
@@ -748,6 +748,15 @@ Discarded input sections
  .text.CyPmFtwSetInterval
                 0x00000000       0x5c .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(cyPm.o)
  .rodata        0x00000000        0xf .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(cyPm.o)
+ .text          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(INT_1.o)
+ .data          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(INT_1.o)
+ .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(INT_1.o)
+ .text.INT_1_Write
+                0x00000000       0x18 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(INT_1.o)
+ .text.INT_1_SetDriveMode
+                0x00000000       0x18 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(INT_1.o)
+ .text.INT_1_ReadDataReg
+                0x00000000       0x10 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(INT_1.o)
  .data          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyBootAsmGnu.o)
  .bss           0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyBootAsmGnu.o)
  .text          0x00000000        0x0 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyFlash.o)
@@ -921,7 +930,7 @@ END GROUP
                 0x00000800                ee_size = (CY_APPL_LOADABLE && ! (CY_EE_IN_BTLDR))?(CY_EE_SIZE / CY_APPL_MAX):CY_EE_SIZE
                 [!provide]                PROVIDE (CY_ECC_OFFSET, ecc_offset)
 
-.text           0x00000000      0xf46
+.text           0x00000000     0x1016
  CREATE_OBJECT_SYMBOLS
                 0x00000000                PROVIDE (__cy_interrupt_vector, RomVectors)
  *(.romvectors)
@@ -944,252 +953,260 @@ END GROUP
  .text.ACC_writeByte
                 0x000000ac       0x24 .\CortexM3\ARM_GCC_541\Debug\LIS3DH_Registers.o
                 0x000000ac                ACC_writeByte
+ .text.ACC_readMultibytes
+                0x000000d0       0x20 .\CortexM3\ARM_GCC_541\Debug\LIS3DH_Registers.o
+                0x000000d0                ACC_readMultibytes
  .text.ACC_SPI_Interface_Multi_RW
-                0x000000d0       0xb8 .\CortexM3\ARM_GCC_541\Debug\SPI_Interface.o
-                0x000000d0                ACC_SPI_Interface_Multi_RW
- .text.main     0x00000188       0x3c .\CortexM3\ARM_GCC_541\Debug\main.o
-                0x00000188                main
+                0x000000f0       0xb8 .\CortexM3\ARM_GCC_541\Debug\SPI_Interface.o
+                0x000000f0                ACC_SPI_Interface_Multi_RW
+ .text.main     0x000001a8       0xe0 .\CortexM3\ARM_GCC_541\Debug\main.o
+                0x000001a8                main
  .text.CyClockStartupError
-                0x000001c4        0x4 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x00000288        0x4 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
  .text.cfg_write_bytes32
-                0x000001c8       0x34 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x0000028c       0x34 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
  .text.AnalogSetDefault
-                0x000001fc       0x3c .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x000002c0       0x3c .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
  .text.CYMEMZERO
-                0x00000238        0xc .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x000002fc        0xc .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
  .text.CYCONFIGCPY
-                0x00000244        0x8 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x00000308        0x8 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
  .text.ClockSetup
-                0x0000024c      0x134 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x00000310      0x134 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
  .text.cyfitter_cfg
-                0x00000380      0x13c .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
-                0x00000380                cyfitter_cfg
+                0x00000444      0x13c .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x00000444                cyfitter_cfg
  .text.IntDefaultHandler
-                0x000004bc       0x10 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
-                0x000004bc                IntDefaultHandler
- .text.Start_c  0x000004cc       0x4c .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
-                0x000004cc                Start_c
+                0x00000580       0x10 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+                0x00000580                IntDefaultHandler
+ .text.Start_c  0x00000590       0x4c .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+                0x00000590                Start_c
  .text.initialize_psoc
-                0x00000518       0x68 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
-                0x00000518                initialize_psoc
+                0x000005dc       0x68 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+                0x000005dc                initialize_psoc
  .text.UART_Init
-                0x00000580       0x28 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(UART.o)
-                0x00000580                UART_Init
+                0x00000644       0x24 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(UART.o)
+                0x00000644                UART_Init
  .text.UART_Enable
-                0x000005a8       0x38 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(UART.o)
-                0x000005a8                UART_Enable
+                0x00000668       0x38 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(UART.o)
+                0x00000668                UART_Enable
  .text.UART_Start
-                0x000005e0       0x1c .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(UART.o)
-                0x000005e0                UART_Start
+                0x000006a0       0x1c .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(UART.o)
+                0x000006a0                UART_Start
  .text.SPIM_1_EnableTxInt
-                0x000005fc        0xc .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1.o)
-                0x000005fc                SPIM_1_EnableTxInt
+                0x000006bc        0xc .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1.o)
+                0x000006bc                SPIM_1_EnableTxInt
  .text.SPIM_1_EnableRxInt
-                0x00000608        0xc .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1.o)
-                0x00000608                SPIM_1_EnableRxInt
+                0x000006c8        0xc .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1.o)
+                0x000006c8                SPIM_1_EnableRxInt
  .text.SPIM_1_Enable
-                0x00000614       0x3c .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1.o)
-                0x00000614                SPIM_1_Enable
+                0x000006d4       0x3c .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1.o)
+                0x000006d4                SPIM_1_Enable
  .text.SPIM_1_DisableTxInt
-                0x00000650        0xc .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1.o)
-                0x00000650                SPIM_1_DisableTxInt
+                0x00000710        0xc .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1.o)
+                0x00000710                SPIM_1_DisableTxInt
  .text.SPIM_1_DisableRxInt
-                0x0000065c        0xc .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1.o)
-                0x0000065c                SPIM_1_DisableRxInt
+                0x0000071c        0xc .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1.o)
+                0x0000071c                SPIM_1_DisableRxInt
  .text.SPIM_1_ReadTxStatus
-                0x00000668       0x28 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1.o)
-                0x00000668                SPIM_1_ReadTxStatus
+                0x00000728       0x28 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1.o)
+                0x00000728                SPIM_1_ReadTxStatus
  .text.SPIM_1_ReadRxStatus
-                0x00000690       0x28 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1.o)
-                0x00000690                SPIM_1_ReadRxStatus
+                0x00000750       0x28 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1.o)
+                0x00000750                SPIM_1_ReadRxStatus
  .text.SPIM_1_ClearFIFO
-                0x000006b8       0x3c .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1.o)
-                0x000006b8                SPIM_1_ClearFIFO
+                0x00000778       0x3c .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1.o)
+                0x00000778                SPIM_1_ClearFIFO
  .text.SPIM_1_Init
-                0x000006f4       0x94 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1.o)
-                0x000006f4                SPIM_1_Init
+                0x000007b4       0x90 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1.o)
+                0x000007b4                SPIM_1_Init
  .text.SPIM_1_Start
-                0x00000788       0x1c .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1.o)
-                0x00000788                SPIM_1_Start
+                0x00000844       0x1c .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1.o)
+                0x00000844                SPIM_1_Start
  .text.SPIM_1_TX_ISR
-                0x000007a4       0xa0 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1_INT.o)
-                0x000007a4                SPIM_1_TX_ISR
+                0x00000860       0xa0 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1_INT.o)
+                0x00000860                SPIM_1_TX_ISR
  .text.SPIM_1_RX_ISR
-                0x00000844       0xa0 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1_INT.o)
-                0x00000844                SPIM_1_RX_ISR
+                0x00000900       0xa0 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1_INT.o)
+                0x00000900                SPIM_1_RX_ISR
  .text.CS_2_Write
-                0x000008e4       0x18 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CS_2.o)
-                0x000008e4                CS_2_Write
+                0x000009a0       0x18 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CS_2.o)
+                0x000009a0                CS_2_Write
  .text.SPIM_2_EnableTxInt
-                0x000008fc        0xc .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2.o)
-                0x000008fc                SPIM_2_EnableTxInt
+                0x000009b8        0xc .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2.o)
+                0x000009b8                SPIM_2_EnableTxInt
  .text.SPIM_2_EnableRxInt
-                0x00000908        0xc .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2.o)
-                0x00000908                SPIM_2_EnableRxInt
+                0x000009c4        0xc .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2.o)
+                0x000009c4                SPIM_2_EnableRxInt
  .text.SPIM_2_Enable
-                0x00000914       0x3c .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2.o)
-                0x00000914                SPIM_2_Enable
+                0x000009d0       0x3c .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2.o)
+                0x000009d0                SPIM_2_Enable
  .text.SPIM_2_DisableTxInt
-                0x00000950        0xc .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2.o)
-                0x00000950                SPIM_2_DisableTxInt
+                0x00000a0c        0xc .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2.o)
+                0x00000a0c                SPIM_2_DisableTxInt
  .text.SPIM_2_DisableRxInt
-                0x0000095c        0xc .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2.o)
-                0x0000095c                SPIM_2_DisableRxInt
+                0x00000a18        0xc .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2.o)
+                0x00000a18                SPIM_2_DisableRxInt
  .text.SPIM_2_ReadTxStatus
-                0x00000968       0x28 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2.o)
-                0x00000968                SPIM_2_ReadTxStatus
+                0x00000a24       0x28 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2.o)
+                0x00000a24                SPIM_2_ReadTxStatus
  .text.SPIM_2_ReadRxStatus
-                0x00000990       0x28 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2.o)
-                0x00000990                SPIM_2_ReadRxStatus
+                0x00000a4c       0x28 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2.o)
+                0x00000a4c                SPIM_2_ReadRxStatus
  .text.SPIM_2_WriteTxData
-                0x000009b8       0xd4 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2.o)
-                0x000009b8                SPIM_2_WriteTxData
+                0x00000a74       0xd4 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2.o)
+                0x00000a74                SPIM_2_WriteTxData
  .text.SPIM_2_ReadRxData
-                0x00000a8c       0x64 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2.o)
-                0x00000a8c                SPIM_2_ReadRxData
+                0x00000b48       0x64 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2.o)
+                0x00000b48                SPIM_2_ReadRxData
  .text.SPIM_2_ClearRxBuffer
-                0x00000af0       0x40 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2.o)
-                0x00000af0                SPIM_2_ClearRxBuffer
+                0x00000bac       0x40 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2.o)
+                0x00000bac                SPIM_2_ClearRxBuffer
  .text.SPIM_2_ClearTxBuffer
-                0x00000b30       0x54 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2.o)
-                0x00000b30                SPIM_2_ClearTxBuffer
+                0x00000bec       0x54 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2.o)
+                0x00000bec                SPIM_2_ClearTxBuffer
  .text.SPIM_2_PutArray
-                0x00000b84       0x20 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2.o)
-                0x00000b84                SPIM_2_PutArray
+                0x00000c40       0x20 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2.o)
+                0x00000c40                SPIM_2_PutArray
  .text.SPIM_2_ClearFIFO
-                0x00000ba4       0x3c .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2.o)
-                0x00000ba4                SPIM_2_ClearFIFO
+                0x00000c60       0x3c .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2.o)
+                0x00000c60                SPIM_2_ClearFIFO
  .text.SPIM_2_Init
-                0x00000be0       0x90 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2.o)
-                0x00000be0                SPIM_2_Init
+                0x00000c9c       0x94 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2.o)
+                0x00000c9c                SPIM_2_Init
  .text.SPIM_2_Start
-                0x00000c70       0x1c .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2.o)
-                0x00000c70                SPIM_2_Start
+                0x00000d30       0x1c .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2.o)
+                0x00000d30                SPIM_2_Start
  .text.SPIM_2_TX_ISR
-                0x00000c8c       0xa0 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2_INT.o)
-                0x00000c8c                SPIM_2_TX_ISR
+                0x00000d4c       0xa0 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2_INT.o)
+                0x00000d4c                SPIM_2_TX_ISR
  .text.SPIM_2_RX_ISR
-                0x00000d2c       0xa0 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2_INT.o)
-                0x00000d2c                SPIM_2_RX_ISR
+                0x00000dec       0xa0 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2_INT.o)
+                0x00000dec                SPIM_2_RX_ISR
  .text.UART_IntClock_Start
-                0x00000dcc       0x1c .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(UART_IntClock.o)
-                0x00000dcc                UART_IntClock_Start
+                0x00000e8c       0x1c .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(UART_IntClock.o)
+                0x00000e8c                UART_IntClock_Start
  .text.SPIM_1_IntClock_Start
-                0x00000de8       0x1c .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1_IntClock.o)
-                0x00000de8                SPIM_1_IntClock_Start
+                0x00000ea8       0x1c .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1_IntClock.o)
+                0x00000ea8                SPIM_1_IntClock_Start
  .text.SPIM_2_IntClock_Start
-                0x00000e04       0x1c .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2_IntClock.o)
-                0x00000e04                SPIM_2_IntClock_Start
- .text.CyHalt   0x00000e20        0x4 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyLib.o)
-                0x00000e20                CyHalt
- .text.CyDelay  0x00000e24       0x2c .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyLib.o)
-                0x00000e24                CyDelay
+                0x00000ec4       0x1c .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2_IntClock.o)
+                0x00000ec4                SPIM_2_IntClock_Start
+ .text.CyHalt   0x00000ee0        0x4 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyLib.o)
+                0x00000ee0                CyHalt
+ .text.CyDelay  0x00000ee4       0x2c .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyLib.o)
+                0x00000ee4                CyDelay
  .text.CyIntSetVector
-                0x00000e50       0x28 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyLib.o)
-                0x00000e50                CyIntSetVector
+                0x00000f10       0x28 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyLib.o)
+                0x00000f10                CyIntSetVector
  .text.CyIntSetPriority
-                0x00000e78       0x30 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyLib.o)
-                0x00000e78                CyIntSetPriority
- .text          0x00000ea8       0x20 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyBootAsmGnu.o)
-                0x00000ea8                CyDelayCycles
-                0x00000eb8                CyEnterCriticalSection
-                0x00000ec0                CyExitCriticalSection
- .text.__errno  0x00000ec8        0xc c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
-                0x00000ec8                __errno
+                0x00000f38       0x30 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyLib.o)
+                0x00000f38                CyIntSetPriority
+ .text.INT_1_Read
+                0x00000f68       0x10 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(INT_1.o)
+                0x00000f68                INT_1_Read
+ .text          0x00000f78       0x20 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyBootAsmGnu.o)
+                0x00000f78                CyDelayCycles
+                0x00000f88                CyEnterCriticalSection
+                0x00000f90                CyExitCriticalSection
+ .text.__errno  0x00000f98        0xc c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
+                0x00000f98                __errno
  .text.__libc_init_array
-                0x00000ed4       0x4c c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
-                0x00000ed4                __libc_init_array
- .text.memcpy   0x00000f20       0x16 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy-stub.o)
-                0x00000f20                memcpy
- .text.memset   0x00000f36       0x10 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
-                0x00000f36                memset
+                0x00000fa4       0x4c c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
+                0x00000fa4                __libc_init_array
+ .text.memcpy   0x00000ff0       0x16 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy-stub.o)
+                0x00000ff0                memcpy
+ .text.memset   0x00001006       0x10 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+                0x00001006                memset
  *(.plt)
  *(.gnu.warning)
  *(.glue_7t)
- .glue_7t       0x00000f46        0x0 linker stubs
+ .glue_7t       0x00001016        0x0 linker stubs
  *(.glue_7)
- .glue_7        0x00000f46        0x0 linker stubs
+ .glue_7        0x00001016        0x0 linker stubs
  *(.vfp11_veneer)
- .vfp11_veneer  0x00000f46        0x0 linker stubs
+ .vfp11_veneer  0x00001016        0x0 linker stubs
  *(.bootloader)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
  *(.gcc_except_table)
 
-.v4_bx          0x00000f48        0x0
- .v4_bx         0x00000f48        0x0 linker stubs
+.v4_bx          0x00001018        0x0
+ .v4_bx         0x00001018        0x0 linker stubs
 
-.iplt           0x00000f48        0x0
- .iplt          0x00000f48        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+.iplt           0x00001018        0x0
+ .iplt          0x00001018        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
 
 .eh_frame_hdr
  *(.eh_frame_hdr)
 
-.eh_frame       0x00000f48        0x4
+.eh_frame       0x00001018        0x4
  *(.eh_frame)
- .eh_frame      0x00000f48        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
- .eh_frame      0x00000f48        0x4 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtend.o
+ .eh_frame      0x00001018        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+ .eh_frame      0x00001018        0x4 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtend.o
                 [!provide]                PROVIDE (__exidx_start, .)
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x00000f4c                __exidx_end = .
+                0x0000101c                __exidx_end = .
 
-.rodata         0x00000f4c       0x9c
+.rodata         0x0000101c       0x94
  *(.rodata .rodata.* .gnu.linkonce.r.*)
- .rodata        0x00000f4c       0x66 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
-                0x00000f4c                ADC_DelSig_AMux__addrTable
-                0x00000f54                ADC_DelSig_AMux__maskTable
+ .rodata        0x0000101c       0x58 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x0000101c                ADC_DelSig_AMux__addrTable
+                0x00001024                ADC_DelSig_AMux__maskTable
  .rodata.str1.1
-                0x00000fb2        0x2 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
-                0x00000fb4                . = ALIGN (0x4)
+                0x00001074        0x2 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+                0x00001078                . = ALIGN (0x4)
+ *fill*         0x00001076        0x2 
  *(.init)
- .init          0x00000fb4        0x4 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crti.o
-                0x00000fb4                _init
- .init          0x00000fb8        0x8 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtn.o
-                0x00000fc0                . = ALIGN (0x4)
-                0x00000fc0                __preinit_array_start = .
+ .init          0x00001078        0x4 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crti.o
+                0x00001078                _init
+ .init          0x0000107c        0x8 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtn.o
+                0x00001084                . = ALIGN (0x4)
+                0x00001084                __preinit_array_start = .
  *(.preinit_array)
-                0x00000fc0                __preinit_array_end = .
-                0x00000fc0                . = ALIGN (0x4)
-                0x00000fc0                __init_array_start = .
+                0x00001084                __preinit_array_end = .
+                0x00001084                . = ALIGN (0x4)
+                0x00001084                __init_array_start = .
  *(SORT(.init_array.*))
  *(.init_array)
- .init_array    0x00000fc0        0x4 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
- .init_array    0x00000fc4        0x4 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
-                0x00000fc8                __init_array_end = .
-                0x00000fc8                . = ALIGN (0x4)
+ .init_array    0x00001084        0x4 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+ .init_array    0x00001088        0x4 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+                0x0000108c                __init_array_end = .
+                0x0000108c                . = ALIGN (0x4)
  *(.fini)
- .fini          0x00000fc8        0x4 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crti.o
-                0x00000fc8                _fini
- .fini          0x00000fcc        0x8 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtn.o
-                0x00000fd4                . = ALIGN (0x4)
-                0x00000fd4                __fini_array_start = .
+ .fini          0x0000108c        0x4 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crti.o
+                0x0000108c                _fini
+ .fini          0x00001090        0x8 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtn.o
+                0x00001098                . = ALIGN (0x4)
+                0x00001098                __fini_array_start = .
  *(.fini_array)
- .fini_array    0x00000fd4        0x4 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+ .fini_array    0x00001098        0x4 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
  *(SORT(.fini_array.*))
-                0x00000fd8                __fini_array_end = .
-                0x00000fd8                . = ALIGN (0x4)
+                0x0000109c                __fini_array_end = .
+                0x0000109c                . = ALIGN (0x4)
  *crtbegin.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o) .ctors)
  *(SORT(.ctors.*))
  *crtend.o(.ctors)
-                0x00000fd8                . = ALIGN (0x4)
+                0x0000109c                . = ALIGN (0x4)
  *crtbegin.o(.dtors)
  *(EXCLUDE_FILE(*crtend.o) .dtors)
  *(SORT(.dtors.*))
  *crtend.o(.dtors)
-                0x00000fd8                . = ALIGN (0x4)
-                0x00000fd8                __cy_regions = .
-                0x00000fd8        0x4 LONG 0xfe8 __cy_region_init_ram
-                0x00000fdc        0x4 LONG 0x1fff80c8 __cy_region_start_data
-                0x00000fe0        0x4 LONG 0x78 __cy_region_init_size_ram
-                0x00000fe4        0x4 LONG 0x58 __cy_region_zero_size_ram
-                0x00000fe8                __cy_regions_end = .
-                0x00000fe8                . = ALIGN (0x8)
-                0x00000fe8                _etext = .
+                0x0000109c                . = ALIGN (0x4)
+                0x0000109c                __cy_regions = .
+                0x0000109c        0x4 LONG 0x10b0 __cy_region_init_ram
+                0x000010a0        0x4 LONG 0x1fff80c8 __cy_region_start_data
+                0x000010a4        0x4 LONG 0x78 __cy_region_init_size_ram
+                0x000010a8        0x4 LONG 0x58 __cy_region_zero_size_ram
+                0x000010ac                __cy_regions_end = .
+                0x000010b0                . = ALIGN (0x8)
+ *fill*         0x000010ac        0x4 
+                0x000010b0                _etext = .
 
 .cy_checksum_exclude
-                0x00000fe8        0x0
+                0x000010b0        0x0
  *(.cy_checksum_exclude)
 
 .ramvectors     0x1fff8000       0xc0
@@ -1203,7 +1220,7 @@ END GROUP
  .noinit        0x1fff80c0        0x1 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyLib.o)
                 0x1fff80c0                CyResetStatus
 
-.data           0x1fff80c8       0x78 load address 0x00000fe8
+.data           0x1fff80c8       0x78 load address 0x000010b0
                 0x1fff80c8                __cy_region_start_data = .
  *(.jcr)
  .jcr           0x1fff80c8        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
@@ -1226,10 +1243,10 @@ END GROUP
  *(.ram)
                 0x1fff8140                _edata = .
 
-.igot.plt       0x1fff8140        0x0 load address 0x00001060
+.igot.plt       0x1fff8140        0x0 load address 0x00001128
  .igot.plt      0x1fff8140        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
 
-.bss            0x1fff8140       0x58 load address 0x00001060
+.bss            0x1fff8140       0x58 load address 0x00001128
                 0x1fff8140                PROVIDE (__bss_start__, .)
  *(.shbss)
  *(.bss .bss.* .gnu.linkonce.b.*)
@@ -1270,11 +1287,11 @@ END GROUP
                 0x1fff8198                __end = .
                 0x1fff8198                PROVIDE (end, .)
                 0x1fff8198                PROVIDE (__bss_end__, .)
-                0x00000fe8                __cy_region_init_ram = LOADADDR (.data)
+                0x000010b0                __cy_region_init_ram = LOADADDR (.data)
                 0x00000078                __cy_region_init_size_ram = (_edata - ADDR (.data))
                 0x00000058                __cy_region_zero_size_ram = (_end - _edata)
 
-.heap           0x1fff8198       0x80 load address 0x00001060
+.heap           0x1fff8198       0x80 load address 0x00001128
                 0x1fff8198                . = _end
                 0x1fff8218                . = (. + 0x80)
  *fill*         0x1fff8198       0x80 
@@ -1294,9 +1311,9 @@ END GROUP
 .cyloadablemeta
  *(.cyloadablemeta)
 
-.cyconfigecc    0x80000000      0x980
+.cyconfigecc    0x80000000      0x948
  *(.cyconfigecc)
- .cyconfigecc   0x80000000      0x980 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
+ .cyconfigecc   0x80000000      0x948 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
                 0x80000000                cy_meta_configecc
 
 .cycustnvl      0x90000000        0x4
@@ -1325,8 +1342,8 @@ END GROUP
  .cymeta        0x90500000        0xc .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
                 0x90500000                cy_metadata
 
-.rel.dyn        0x00001060        0x0 load address 0x9050000c
- .rel.iplt      0x00001060        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
+.rel.dyn        0x00001128        0x0 load address 0x9050000c
+ .rel.iplt      0x00001128        0x0 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtbegin.o
 
 .stab
  *(.stab)
@@ -1346,7 +1363,7 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x00000000      0xde0
+.debug_aranges  0x00000000      0xe18
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0x20 .\CortexM3\ARM_GCC_541\Debug\Menu_Functions.o
@@ -1403,115 +1420,120 @@ END GROUP
  .debug_aranges
                 0x00000c20       0x98 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(cyPm.o)
  .debug_aranges
-                0x00000cb8       0x20 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyBootAsmGnu.o)
+                0x00000cb8       0x38 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(INT_1.o)
  .debug_aranges
-                0x00000cd8       0x88 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyFlash.o)
+                0x00000cf0       0x20 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyBootAsmGnu.o)
  .debug_aranges
-                0x00000d60       0x80 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CySpc.o)
+                0x00000d10       0x88 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyFlash.o)
+ .debug_aranges
+                0x00000d98       0x80 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CySpc.o)
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x7fa7
+.debug_info     0x00000000     0x830b
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x3df .\CortexM3\ARM_GCC_541\Debug\Menu_Functions.o
  .debug_info    0x000003df      0x1c4 .\CortexM3\ARM_GCC_541\Debug\InterruptRoutines.o
  .debug_info    0x000005a3      0x300 .\CortexM3\ARM_GCC_541\Debug\LIS3DH_Registers.o
  .debug_info    0x000008a3      0x68e .\CortexM3\ARM_GCC_541\Debug\SPI_Interface.o
  .debug_info    0x00000f31      0x3b4 .\CortexM3\ARM_GCC_541\Debug\25LC256.o
- .debug_info    0x000012e5      0x1ed .\CortexM3\ARM_GCC_541\Debug\main.o
- .debug_info    0x000014d2      0x6c7 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
- .debug_info    0x00001b99      0x139 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
- .debug_info    0x00001cd2      0x3bb .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
- .debug_info    0x0000208d      0x60c .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(UART.o)
- .debug_info    0x00002699      0x709 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1.o)
- .debug_info    0x00002da2      0x18d .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1_INT.o)
- .debug_info    0x00002f2f      0x11f .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CS_2.o)
- .debug_info    0x0000304e      0x11f .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CS_1.o)
- .debug_info    0x0000316d      0xa1a .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(ADC_DelSig.o)
- .debug_info    0x00003b87       0xd3 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(ADC_DelSig_INT.o)
- .debug_info    0x00003c5a      0x293 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(Timer.o)
- .debug_info    0x00003eed      0x709 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2.o)
- .debug_info    0x000045f6      0x18d .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2_INT.o)
- .debug_info    0x00004783      0x283 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(UART_IntClock.o)
- .debug_info    0x00004a06      0x283 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1_IntClock.o)
- .debug_info    0x00004c89      0x165 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(ADC_DelSig_AMux.o)
- .debug_info    0x00004dee      0x283 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(ADC_DelSig_Ext_CP_Clk.o)
- .debug_info    0x00005071      0x2c4 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(ADC_DelSig_theACLK.o)
- .debug_info    0x00005335      0x283 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2_IntClock.o)
- .debug_info    0x000055b8     0x1374 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyLib.o)
- .debug_info    0x0000692c      0xa2a .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(cyPm.o)
- .debug_info    0x00007356       0xb4 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyBootAsmGnu.o)
- .debug_info    0x0000740a      0x64d .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyFlash.o)
- .debug_info    0x00007a57      0x550 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CySpc.o)
+ .debug_info    0x000012e5      0x432 .\CortexM3\ARM_GCC_541\Debug\main.o
+ .debug_info    0x00001717      0x6c7 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_info    0x00001dde      0x139 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
+ .debug_info    0x00001f17      0x3bb .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+ .debug_info    0x000022d2      0x60c .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(UART.o)
+ .debug_info    0x000028de      0x709 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1.o)
+ .debug_info    0x00002fe7      0x18d .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1_INT.o)
+ .debug_info    0x00003174      0x11f .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CS_2.o)
+ .debug_info    0x00003293      0x11f .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CS_1.o)
+ .debug_info    0x000033b2      0xa1a .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(ADC_DelSig.o)
+ .debug_info    0x00003dcc       0xd3 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(ADC_DelSig_INT.o)
+ .debug_info    0x00003e9f      0x293 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(Timer.o)
+ .debug_info    0x00004132      0x709 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2.o)
+ .debug_info    0x0000483b      0x18d .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2_INT.o)
+ .debug_info    0x000049c8      0x283 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(UART_IntClock.o)
+ .debug_info    0x00004c4b      0x283 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1_IntClock.o)
+ .debug_info    0x00004ece      0x165 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(ADC_DelSig_AMux.o)
+ .debug_info    0x00005033      0x283 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(ADC_DelSig_Ext_CP_Clk.o)
+ .debug_info    0x000052b6      0x2c4 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(ADC_DelSig_theACLK.o)
+ .debug_info    0x0000557a      0x283 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2_IntClock.o)
+ .debug_info    0x000057fd     0x1374 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyLib.o)
+ .debug_info    0x00006b71      0xa2a .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(cyPm.o)
+ .debug_info    0x0000759b      0x11f .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(INT_1.o)
+ .debug_info    0x000076ba       0xb4 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyBootAsmGnu.o)
+ .debug_info    0x0000776e      0x64d .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyFlash.o)
+ .debug_info    0x00007dbb      0x550 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CySpc.o)
 
-.debug_abbrev   0x00000000     0x2222
+.debug_abbrev   0x00000000     0x22db
  *(.debug_abbrev)
  .debug_abbrev  0x00000000       0xea .\CortexM3\ARM_GCC_541\Debug\Menu_Functions.o
  .debug_abbrev  0x000000ea       0xcd .\CortexM3\ARM_GCC_541\Debug\InterruptRoutines.o
  .debug_abbrev  0x000001b7      0x100 .\CortexM3\ARM_GCC_541\Debug\LIS3DH_Registers.o
  .debug_abbrev  0x000002b7      0x12b .\CortexM3\ARM_GCC_541\Debug\SPI_Interface.o
  .debug_abbrev  0x000003e2      0x11c .\CortexM3\ARM_GCC_541\Debug\25LC256.o
- .debug_abbrev  0x000004fe       0xe0 .\CortexM3\ARM_GCC_541\Debug\main.o
- .debug_abbrev  0x000005de      0x22d .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
- .debug_abbrev  0x0000080b       0x77 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
- .debug_abbrev  0x00000882      0x1e8 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
- .debug_abbrev  0x00000a6a      0x175 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(UART.o)
- .debug_abbrev  0x00000bdf      0x162 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1.o)
- .debug_abbrev  0x00000d41       0x8a .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1_INT.o)
- .debug_abbrev  0x00000dcb       0x90 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CS_2.o)
- .debug_abbrev  0x00000e5b       0x90 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CS_1.o)
- .debug_abbrev  0x00000eeb      0x1eb .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(ADC_DelSig.o)
- .debug_abbrev  0x000010d6       0x42 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(ADC_DelSig_INT.o)
- .debug_abbrev  0x00001118      0x11a .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(Timer.o)
- .debug_abbrev  0x00001232      0x162 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2.o)
- .debug_abbrev  0x00001394       0x8a .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2_INT.o)
- .debug_abbrev  0x0000141e      0x139 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(UART_IntClock.o)
- .debug_abbrev  0x00001557      0x139 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1_IntClock.o)
- .debug_abbrev  0x00001690       0xb1 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(ADC_DelSig_AMux.o)
- .debug_abbrev  0x00001741      0x139 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(ADC_DelSig_Ext_CP_Clk.o)
- .debug_abbrev  0x0000187a      0x121 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(ADC_DelSig_theACLK.o)
- .debug_abbrev  0x0000199b      0x139 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2_IntClock.o)
- .debug_abbrev  0x00001ad4      0x254 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyLib.o)
- .debug_abbrev  0x00001d28      0x1ab .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(cyPm.o)
- .debug_abbrev  0x00001ed3       0x14 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyBootAsmGnu.o)
- .debug_abbrev  0x00001ee7      0x1a7 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyFlash.o)
- .debug_abbrev  0x0000208e      0x194 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CySpc.o)
+ .debug_abbrev  0x000004fe      0x109 .\CortexM3\ARM_GCC_541\Debug\main.o
+ .debug_abbrev  0x00000607      0x22d .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_abbrev  0x00000834       0x77 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
+ .debug_abbrev  0x000008ab      0x1e8 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+ .debug_abbrev  0x00000a93      0x175 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(UART.o)
+ .debug_abbrev  0x00000c08      0x162 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1.o)
+ .debug_abbrev  0x00000d6a       0x8a .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1_INT.o)
+ .debug_abbrev  0x00000df4       0x90 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CS_2.o)
+ .debug_abbrev  0x00000e84       0x90 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CS_1.o)
+ .debug_abbrev  0x00000f14      0x1eb .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(ADC_DelSig.o)
+ .debug_abbrev  0x000010ff       0x42 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(ADC_DelSig_INT.o)
+ .debug_abbrev  0x00001141      0x11a .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(Timer.o)
+ .debug_abbrev  0x0000125b      0x162 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2.o)
+ .debug_abbrev  0x000013bd       0x8a .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2_INT.o)
+ .debug_abbrev  0x00001447      0x139 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(UART_IntClock.o)
+ .debug_abbrev  0x00001580      0x139 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1_IntClock.o)
+ .debug_abbrev  0x000016b9       0xb1 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(ADC_DelSig_AMux.o)
+ .debug_abbrev  0x0000176a      0x139 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(ADC_DelSig_Ext_CP_Clk.o)
+ .debug_abbrev  0x000018a3      0x121 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(ADC_DelSig_theACLK.o)
+ .debug_abbrev  0x000019c4      0x139 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2_IntClock.o)
+ .debug_abbrev  0x00001afd      0x254 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyLib.o)
+ .debug_abbrev  0x00001d51      0x1ab .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(cyPm.o)
+ .debug_abbrev  0x00001efc       0x90 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(INT_1.o)
+ .debug_abbrev  0x00001f8c       0x14 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyBootAsmGnu.o)
+ .debug_abbrev  0x00001fa0      0x1a7 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyFlash.o)
+ .debug_abbrev  0x00002147      0x194 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CySpc.o)
 
-.debug_line     0x00000000     0x39a6
+.debug_line     0x00000000     0x3a61
  *(.debug_line)
  .debug_line    0x00000000      0x200 .\CortexM3\ARM_GCC_541\Debug\Menu_Functions.o
  .debug_line    0x00000200      0x1d1 .\CortexM3\ARM_GCC_541\Debug\InterruptRoutines.o
  .debug_line    0x000003d1      0x1b3 .\CortexM3\ARM_GCC_541\Debug\LIS3DH_Registers.o
  .debug_line    0x00000584      0x288 .\CortexM3\ARM_GCC_541\Debug\SPI_Interface.o
  .debug_line    0x0000080c      0x1e7 .\CortexM3\ARM_GCC_541\Debug\25LC256.o
- .debug_line    0x000009f3      0x1a6 .\CortexM3\ARM_GCC_541\Debug\main.o
- .debug_line    0x00000b99      0x22d .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
- .debug_line    0x00000dc6      0x141 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
- .debug_line    0x00000f07      0x234 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
- .debug_line    0x0000113b      0x2bc .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(UART.o)
- .debug_line    0x000013f7      0x29e .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1.o)
- .debug_line    0x00001695       0xaa .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1_INT.o)
- .debug_line    0x0000173f       0x91 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CS_2.o)
- .debug_line    0x000017d0       0x91 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CS_1.o)
- .debug_line    0x00001861      0x373 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(ADC_DelSig.o)
- .debug_line    0x00001bd4       0x87 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(ADC_DelSig_INT.o)
- .debug_line    0x00001c5b      0x153 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(Timer.o)
- .debug_line    0x00001dae      0x29e .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2.o)
- .debug_line    0x0000204c       0xaa .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2_INT.o)
- .debug_line    0x000020f6      0x17c .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(UART_IntClock.o)
- .debug_line    0x00002272      0x17e .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1_IntClock.o)
- .debug_line    0x000023f0       0xb3 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(ADC_DelSig_AMux.o)
- .debug_line    0x000024a3      0x184 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(ADC_DelSig_Ext_CP_Clk.o)
- .debug_line    0x00002627      0x1a4 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(ADC_DelSig_theACLK.o)
- .debug_line    0x000027cb      0x17e .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2_IntClock.o)
- .debug_line    0x00002949      0x816 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyLib.o)
- .debug_line    0x0000315f      0x367 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(cyPm.o)
- .debug_line    0x000034c6       0x66 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyBootAsmGnu.o)
- .debug_line    0x0000352c      0x21a .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyFlash.o)
- .debug_line    0x00003746      0x260 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CySpc.o)
+ .debug_line    0x000009f3      0x1cf .\CortexM3\ARM_GCC_541\Debug\main.o
+ .debug_line    0x00000bc2      0x22d .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_line    0x00000def      0x141 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
+ .debug_line    0x00000f30      0x234 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+ .debug_line    0x00001164      0x2bc .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(UART.o)
+ .debug_line    0x00001420      0x29e .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1.o)
+ .debug_line    0x000016be       0xaa .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1_INT.o)
+ .debug_line    0x00001768       0x91 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CS_2.o)
+ .debug_line    0x000017f9       0x91 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CS_1.o)
+ .debug_line    0x0000188a      0x373 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(ADC_DelSig.o)
+ .debug_line    0x00001bfd       0x87 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(ADC_DelSig_INT.o)
+ .debug_line    0x00001c84      0x153 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(Timer.o)
+ .debug_line    0x00001dd7      0x29e .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2.o)
+ .debug_line    0x00002075       0xaa .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2_INT.o)
+ .debug_line    0x0000211f      0x17c .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(UART_IntClock.o)
+ .debug_line    0x0000229b      0x17e .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1_IntClock.o)
+ .debug_line    0x00002419       0xb3 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(ADC_DelSig_AMux.o)
+ .debug_line    0x000024cc      0x184 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(ADC_DelSig_Ext_CP_Clk.o)
+ .debug_line    0x00002650      0x1a4 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(ADC_DelSig_theACLK.o)
+ .debug_line    0x000027f4      0x17e .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2_IntClock.o)
+ .debug_line    0x00002972      0x816 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyLib.o)
+ .debug_line    0x00003188      0x367 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(cyPm.o)
+ .debug_line    0x000034ef       0x92 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(INT_1.o)
+ .debug_line    0x00003581       0x66 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyBootAsmGnu.o)
+ .debug_line    0x000035e7      0x21a .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyFlash.o)
+ .debug_line    0x00003801      0x260 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CySpc.o)
 
-.debug_frame    0x00000000     0x229c
+.debug_frame    0x00000000     0x22ec
  *(.debug_frame)
  .debug_frame   0x00000000       0x2c .\CortexM3\ARM_GCC_541\Debug\Menu_Functions.o
  .debug_frame   0x0000002c       0x3c .\CortexM3\ARM_GCC_541\Debug\InterruptRoutines.o
@@ -1539,15 +1561,16 @@ END GROUP
  .debug_frame   0x000014bc       0xe0 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2_IntClock.o)
  .debug_frame   0x0000159c      0x738 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyLib.o)
  .debug_frame   0x00001cd4      0x1f8 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(cyPm.o)
- .debug_frame   0x00001ecc      0x194 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyFlash.o)
- .debug_frame   0x00002060      0x180 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CySpc.o)
- .debug_frame   0x000021e0       0x20 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
- .debug_frame   0x00002200       0x28 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o)
- .debug_frame   0x00002228       0x2c c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
- .debug_frame   0x00002254       0x28 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy-stub.o)
- .debug_frame   0x0000227c       0x20 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+ .debug_frame   0x00001ecc       0x50 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(INT_1.o)
+ .debug_frame   0x00001f1c      0x194 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyFlash.o)
+ .debug_frame   0x000020b0      0x180 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CySpc.o)
+ .debug_frame   0x00002230       0x20 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
+ .debug_frame   0x00002250       0x28 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o)
+ .debug_frame   0x00002278       0x2c c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
+ .debug_frame   0x000022a4       0x28 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy-stub.o)
+ .debug_frame   0x000022cc       0x20 c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
 
-.debug_str      0x00000000     0x2dff
+.debug_str      0x00000000     0x2e94
  *(.debug_str)
  .debug_str     0x00000000      0x233 .\CortexM3\ARM_GCC_541\Debug\Menu_Functions.o
                                 0x283 (size before relaxing)
@@ -1559,86 +1582,89 @@ END GROUP
                                 0x3f8 (size before relaxing)
  .debug_str     0x00000538       0x9b .\CortexM3\ARM_GCC_541\Debug\25LC256.o
                                 0x2e4 (size before relaxing)
- .debug_str     0x000005d3       0x57 .\CortexM3\ARM_GCC_541\Debug\main.o
-                                0x242 (size before relaxing)
- .debug_str     0x0000062a      0x211 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_str     0x000005d3       0x9c .\CortexM3\ARM_GCC_541\Debug\main.o
+                                0x2ab (size before relaxing)
+ .debug_str     0x0000066f      0x211 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
                                 0x3d0 (size before relaxing)
- .debug_str     0x0000083b       0x75 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
+ .debug_str     0x00000880       0x75 .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
                                 0x208 (size before relaxing)
- .debug_str     0x000008b0      0x144 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+ .debug_str     0x000008f5      0x144 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
                                 0x32e (size before relaxing)
- .debug_str     0x000009f4      0x285 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(UART.o)
+ .debug_str     0x00000a39      0x285 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(UART.o)
                                 0x499 (size before relaxing)
- .debug_str     0x00000c79      0x2a2 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1.o)
+ .debug_str     0x00000cbe      0x2a2 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1.o)
                                 0x54e (size before relaxing)
- .debug_str     0x00000f1b       0x40 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1_INT.o)
+ .debug_str     0x00000f60       0x40 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1_INT.o)
                                 0x2b9 (size before relaxing)
- .debug_str     0x00000f5b       0x5b .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CS_2.o)
+ .debug_str     0x00000fa0       0x5b .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CS_2.o)
                                 0x201 (size before relaxing)
- .debug_str     0x00000fb6       0x4b .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CS_1.o)
+ .debug_str     0x00000ffb       0x4b .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CS_1.o)
                                 0x201 (size before relaxing)
- .debug_str     0x00001001      0x47a .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(ADC_DelSig.o)
+ .debug_str     0x00001046      0x47a .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(ADC_DelSig.o)
                                 0x70c (size before relaxing)
- .debug_str     0x0000147b       0x68 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(ADC_DelSig_INT.o)
+ .debug_str     0x000014c0       0x68 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(ADC_DelSig_INT.o)
                                 0x207 (size before relaxing)
- .debug_str     0x000014e3      0x141 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(Timer.o)
+ .debug_str     0x00001528      0x141 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(Timer.o)
                                 0x319 (size before relaxing)
- .debug_str     0x00001624      0x24f .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2.o)
+ .debug_str     0x00001669      0x24f .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2.o)
                                 0x54e (size before relaxing)
- .debug_str     0x00001873       0x40 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2_INT.o)
+ .debug_str     0x000018b8       0x40 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2_INT.o)
                                 0x2b9 (size before relaxing)
- .debug_str     0x000018b3      0x181 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(UART_IntClock.o)
+ .debug_str     0x000018f8      0x181 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(UART_IntClock.o)
                                 0x35a (size before relaxing)
- .debug_str     0x00001a34      0x14c .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1_IntClock.o)
+ .debug_str     0x00001a79      0x14c .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1_IntClock.o)
                                 0x372 (size before relaxing)
- .debug_str     0x00001b80       0x7b .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(ADC_DelSig_AMux.o)
+ .debug_str     0x00001bc5       0x7b .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(ADC_DelSig_AMux.o)
                                 0x254 (size before relaxing)
- .debug_str     0x00001bfb      0x170 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(ADC_DelSig_Ext_CP_Clk.o)
+ .debug_str     0x00001c40      0x170 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(ADC_DelSig_Ext_CP_Clk.o)
                                 0x3ba (size before relaxing)
- .debug_str     0x00001d6b      0x1a3 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(ADC_DelSig_theACLK.o)
+ .debug_str     0x00001db0      0x1a3 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(ADC_DelSig_theACLK.o)
                                 0x3e7 (size before relaxing)
- .debug_str     0x00001f0e      0x14c .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2_IntClock.o)
+ .debug_str     0x00001f53      0x14c .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2_IntClock.o)
                                 0x372 (size before relaxing)
- .debug_str     0x0000205a      0x7e0 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyLib.o)
+ .debug_str     0x0000209f      0x7e0 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyLib.o)
                                 0xa6b (size before relaxing)
- .debug_str     0x0000283a      0x365 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(cyPm.o)
+ .debug_str     0x0000287f      0x365 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(cyPm.o)
                                 0x757 (size before relaxing)
- .debug_str     0x00002b9f      0x1b4 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyFlash.o)
+ .debug_str     0x00002be4       0x50 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(INT_1.o)
+                                0x206 (size before relaxing)
+ .debug_str     0x00002c34      0x1b4 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyFlash.o)
                                 0x3e4 (size before relaxing)
- .debug_str     0x00002d53       0xac .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CySpc.o)
+ .debug_str     0x00002de8       0xac .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CySpc.o)
                                 0x35c (size before relaxing)
 
-.debug_loc      0x00000000     0x3566
+.debug_loc      0x00000000     0x3699
  *(.debug_loc)
  .debug_loc     0x00000000      0x172 .\CortexM3\ARM_GCC_541\Debug\LIS3DH_Registers.o
  .debug_loc     0x00000172      0x2d8 .\CortexM3\ARM_GCC_541\Debug\SPI_Interface.o
  .debug_loc     0x0000044a      0x15a .\CortexM3\ARM_GCC_541\Debug\25LC256.o
- .debug_loc     0x000005a4       0x40 .\CortexM3\ARM_GCC_541\Debug\main.o
- .debug_loc     0x000005e4      0x2cb .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
- .debug_loc     0x000008af      0x144 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
- .debug_loc     0x000009f3      0x258 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(UART.o)
- .debug_loc     0x00000c4b      0x20d .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1.o)
- .debug_loc     0x00000e58       0x74 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1_INT.o)
- .debug_loc     0x00000ecc       0x42 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CS_2.o)
- .debug_loc     0x00000f0e       0x42 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CS_1.o)
- .debug_loc     0x00000f50      0x68c .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(ADC_DelSig.o)
- .debug_loc     0x000015dc      0x20d .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2.o)
- .debug_loc     0x000017e9       0x74 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2_INT.o)
- .debug_loc     0x0000185d      0x128 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(UART_IntClock.o)
- .debug_loc     0x00001985      0x128 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1_IntClock.o)
- .debug_loc     0x00001aad       0x6c .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(ADC_DelSig_AMux.o)
- .debug_loc     0x00001b19      0x12c .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(ADC_DelSig_Ext_CP_Clk.o)
- .debug_loc     0x00001c45      0x14d .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(ADC_DelSig_theACLK.o)
- .debug_loc     0x00001d92      0x128 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2_IntClock.o)
- .debug_loc     0x00001eba      0xa11 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyLib.o)
- .debug_loc     0x000028cb      0x1e4 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(cyPm.o)
- .debug_loc     0x00002aaf      0x3b2 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyFlash.o)
- .debug_loc     0x00002e61      0x705 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CySpc.o)
+ .debug_loc     0x000005a4      0x131 .\CortexM3\ARM_GCC_541\Debug\main.o
+ .debug_loc     0x000006d5      0x2cb .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+ .debug_loc     0x000009a0      0x144 .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
+ .debug_loc     0x00000ae4      0x258 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(UART.o)
+ .debug_loc     0x00000d3c      0x20d .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1.o)
+ .debug_loc     0x00000f49       0x74 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1_INT.o)
+ .debug_loc     0x00000fbd       0x42 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CS_2.o)
+ .debug_loc     0x00000fff       0x42 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CS_1.o)
+ .debug_loc     0x00001041      0x68c .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(ADC_DelSig.o)
+ .debug_loc     0x000016cd      0x20d .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2.o)
+ .debug_loc     0x000018da       0x74 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2_INT.o)
+ .debug_loc     0x0000194e      0x128 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(UART_IntClock.o)
+ .debug_loc     0x00001a76      0x128 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_1_IntClock.o)
+ .debug_loc     0x00001b9e       0x6c .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(ADC_DelSig_AMux.o)
+ .debug_loc     0x00001c0a      0x12c .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(ADC_DelSig_Ext_CP_Clk.o)
+ .debug_loc     0x00001d36      0x14d .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(ADC_DelSig_theACLK.o)
+ .debug_loc     0x00001e83      0x128 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2_IntClock.o)
+ .debug_loc     0x00001fab      0xa11 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyLib.o)
+ .debug_loc     0x000029bc      0x1e4 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(cyPm.o)
+ .debug_loc     0x00002ba0       0x42 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(INT_1.o)
+ .debug_loc     0x00002be2      0x3b2 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyFlash.o)
+ .debug_loc     0x00002f94      0x705 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CySpc.o)
 
 .debug_macinfo
  *(.debug_macinfo)
 
-.debug_ranges   0x00000000      0xbe8
+.debug_ranges   0x00000000      0xc10
  *(.debug_ranges)
  .debug_ranges  0x00000000       0x10 .\CortexM3\ARM_GCC_541\Debug\Menu_Functions.o
  .debug_ranges  0x00000010       0x18 .\CortexM3\ARM_GCC_541\Debug\InterruptRoutines.o
@@ -1666,8 +1692,9 @@ END GROUP
  .debug_ranges  0x00000788       0x60 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2_IntClock.o)
  .debug_ranges  0x000007e8      0x290 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyLib.o)
  .debug_ranges  0x00000a78       0x88 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(cyPm.o)
- .debug_ranges  0x00000b00       0x78 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyFlash.o)
- .debug_ranges  0x00000b78       0x70 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CySpc.o)
+ .debug_ranges  0x00000b00       0x28 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(INT_1.o)
+ .debug_ranges  0x00000b28       0x78 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyFlash.o)
+ .debug_ranges  0x00000ba0       0x70 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CySpc.o)
 
 .comment        0x00000000       0x6e
  .comment       0x00000000       0x6e .\CortexM3\ARM_GCC_541\Debug\Menu_Functions.o
@@ -1698,6 +1725,7 @@ END GROUP
  .comment       0x0000006e       0x6f .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(SPIM_2_IntClock.o)
  .comment       0x0000006e       0x6f .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyLib.o)
  .comment       0x0000006e       0x6f .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(cyPm.o)
+ .comment       0x0000006e       0x6f .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(INT_1.o)
  .comment       0x0000006e       0x6f .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyFlash.o)
  .comment       0x0000006e       0x6f .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CySpc.o)
 
@@ -1780,37 +1808,39 @@ END GROUP
  .ARM.attributes
                 0x00000593       0x33 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(cyPm.o)
  .ARM.attributes
-                0x000005c6       0x21 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyBootAsmGnu.o)
+                0x000005c6       0x33 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(INT_1.o)
  .ARM.attributes
-                0x000005e7       0x33 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyFlash.o)
+                0x000005f9       0x21 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyBootAsmGnu.o)
  .ARM.attributes
-                0x0000061a       0x33 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CySpc.o)
+                0x0000061a       0x33 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CyFlash.o)
  .ARM.attributes
-                0x0000064d       0x1d c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_addsubdf3.o)
+                0x0000064d       0x33 .\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.a(CySpc.o)
  .ARM.attributes
-                0x0000066a       0x1d c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_cmpdf2.o)
+                0x00000680       0x1d c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_addsubdf3.o)
  .ARM.attributes
-                0x00000687       0x1d c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_addsubsf3.o)
+                0x0000069d       0x1d c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_cmpdf2.o)
  .ARM.attributes
-                0x000006a4       0x1d c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_muldivsf3.o)
+                0x000006ba       0x1d c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_addsubsf3.o)
  .ARM.attributes
-                0x000006c1       0x1d c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_fixunssfsi.o)
+                0x000006d7       0x1d c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_muldivsf3.o)
  .ARM.attributes
-                0x000006de       0x2d c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
+                0x000006f4       0x1d c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m\libgcc.a(_arm_fixunssfsi.o)
  .ARM.attributes
-                0x0000070b       0x2d c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o)
+                0x00000711       0x2d c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-errno.o)
  .ARM.attributes
-                0x00000738       0x2d c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+                0x0000073e       0x2d c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-exit.o)
  .ARM.attributes
-                0x00000765       0x2d c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
+                0x0000076b       0x2d c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
  .ARM.attributes
-                0x00000792       0x2d c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy-stub.o)
+                0x00000798       0x2d c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-init.o)
  .ARM.attributes
-                0x000007bf       0x2d c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
+                0x000007c5       0x2d c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memcpy-stub.o)
  .ARM.attributes
-                0x000007ec       0x2d c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtend.o
+                0x000007f2       0x2d c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-memset.o)
  .ARM.attributes
-                0x00000819       0x1d c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtn.o
+                0x0000081f       0x2d c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtend.o
+ .ARM.attributes
+                0x0000084c       0x1d c:/program files (x86)/cypress/psoc creator/4.3/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/armv7-m/crtn.o
 
 /DISCARD/
  *(.note.GNU-stack)
