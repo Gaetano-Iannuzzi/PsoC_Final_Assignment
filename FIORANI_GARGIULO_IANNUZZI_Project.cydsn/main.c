@@ -1,12 +1,10 @@
 /**
  * @file main.c
- * @brief Main file of the EEPROM 25LC256 Project.
- * 
- * This file implements a functionality test of the 25LC256 SPI EEPROM
- * interfaced using the library hereby implemented.
  *
- * @author Mattia Pesenti
- * @date 13-May-2020
+ * 
+ *
+ *@authors Simone Fiorani, Alessandra Gargiulo, Gaetano Iannuzzi
+ *@date 2020
 */
 
 #include "project.h"
@@ -14,12 +12,14 @@
 #include <string.h>
 #include "SPI_Interface.h"
 #include "LIS3DH_Registers.h"
+/* EEPROM 25LC256 Library */
+#include "25LC256.h"
+#include "ErrorCodes.h"
 
 #define UART_PutBuffer UART_PutString(bufferUART)
 char bufferUART[100];
 
-/* EEPROM 25LC256 Library */
-#include "25LC256.h"
+
 
 int main(void) {
     
@@ -35,37 +35,25 @@ int main(void) {
     
     CyDelay(10);
     
-    UART_PutString("*********    EEPROM TEST    *********\r\n");
+    /*Enable FIFO Mode */
+    uint8_t ctrl_reg5 = ACC_readByte(LIS3DH_CTRL_REG5);
+    if (ctrl_reg5 != LIS3DH_FIFO_ENABLE_CTRL_REG5){
+        ctrl_reg5 = LIS3DH_FIFO_ENABLE_CTRL_REG5;
+        ACC_writeByte(LIS3DH_CTRL_REG5,ctrl_reg5);
+    }
     
-    /* Definition of the extern from 25LC256.c */
-    //uint8_t eeprom_Status = 0;
+    uint8_t fifo_reg = ACC_readByte(LIS3DH_FIFO_CTRL_REG);
+    if( fifo_reg != LIS3DH_FIFO_MODE_CTRL_REG) {
+        fifo_reg = LIS3DH_FIFO_MODE_CTRL_REG;
+        ACC_writeByte(LIS3DH_FIFO_CTRL_REG,fifo_reg);
+    }
+
     
-    /* Value to Write */
-    uint8_t data = 55;
-    
-    /* Write */
-    EEPROM_writeByte(0x0000, data);
-    EEPROM_waitForWriteComplete();
-    
-    /* Read */
-    uint8_t data_read = EEPROM_readByte(0x0000);
-    
-    sprintf(bufferUART, "** EEPROM Read = %d (%d)\r\n", data_read, data);
-    UART_PutBuffer;
-    
-    UART_PutString("*************************************\r\n");
-    
+    for(;;){
    
     
-    UART_PutString("******* ACCE TEST *********\r\n");
-    uint8_t status_read = 0;
-    status_read = ACC_readByte(LIS3DH_CTRL_REG1);
-    sprintf(bufferUART, "** ACCE Read = (%d)\r\n", status_read);
-    UART_PutBuffer;
+    }
     
-    UART_PutString("*************************************\r\n");
-    
-    return 0;
 }
 
 /* [] END OF FILE */

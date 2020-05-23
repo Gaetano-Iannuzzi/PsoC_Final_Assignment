@@ -19,7 +19,7 @@
 #define LIS3DH_OUT_ADC3_L             0x0C
 #define LIS3DH_OUT_ADC3_H             0x0D
 #define LIS3DH_WHO_AM_I               0x0F
-#define LIS3DG_CTRL_REG0              0x1E
+#define LIS3DH_CTRL_REG0              0x1E
 #define LIS3DH_TEMP_CFG_REG           0x1F
 #define LIS3DH_CTRL_REG1              0x20
 #define LIS3DH_CTRL_REG2              0x21
@@ -69,7 +69,7 @@
 
 //FIFO mode
 #define LIS3DH_FIFO_ENABLE_CTRL_REG5  0x40
-#define LIS3DH_OVRN_FIFO
+#define LIS3DH_OVRN_FIFO               
 #define LIS3DH_BYPASS_MODE_CTRL_REG   0x00
 #define LIS3DH_I1_OVERRUN             0x02
 #define LIS3DH_FIFO_MODE_CTRL_REG     0x40
