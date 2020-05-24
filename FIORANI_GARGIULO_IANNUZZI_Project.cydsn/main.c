@@ -11,7 +11,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "SPI_Interface.h"
-#include "LIS3DH_Registers.h"
+#include "LIS3DH.h"
 
 /* EEPROM 25LC256 Library */
 #include "25LC256.h"
@@ -90,28 +90,28 @@ int main(void) {
     {
         ctrl_reg4 = LIS3DH_2G_CTRL_REG4;
         ACC_writeByte(LIS3DH_CTRL_REG4,ctrl_reg4);
-        s=2;
+        s=4;
     }
     
     if(ctrl_reg4 != LIS3DH_4G_CTRL_REG4)
     {
         ctrl_reg4 = LIS3DH_4G_CTRL_REG4;
         ACC_writeByte(LIS3DH_CTRL_REG4,ctrl_reg4);
-        s=4;
+        s=8;
     }
     
      if(ctrl_reg4 != LIS3DH_8G_CTRL_REG4)
     {
         ctrl_reg4 = LIS3DH_8G_CTRL_REG4;
         ACC_writeByte(LIS3DH_CTRL_REG4,ctrl_reg4);
-        s=8;
+        s=16;
     }
     
      if(ctrl_reg4 != LIS3DH_16G_CTRL_REG4)
     {
         ctrl_reg4 = LIS3DH_16G_CTRL_REG4;
         ACC_writeByte(LIS3DH_CTRL_REG4,ctrl_reg4);
-        s=16;
+        s=48;
     }
     
     
@@ -146,8 +146,7 @@ int main(void) {
     uint8_t TransferData[3];
     int i=0;
     int16_t OutX,OutY,OutZ;
-    
-    
+
     for(;;)
     {
         if( INT_1_Read() == 1)

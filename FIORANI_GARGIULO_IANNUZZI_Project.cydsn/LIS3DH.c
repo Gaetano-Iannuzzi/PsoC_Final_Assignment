@@ -8,9 +8,11 @@
  * WHICH IS THE PROPERTY OF your company.
  *
  * ========================================
+ *@authors Simone Fiorani, Alessandra Gargiulo, Gaetano Iannuzzi
+ *@date 2020
 */
 
-#include    "LIS3DH_Registers.h"
+#include    "LIS3DH.h"
 
 uint8_t ACC_readByte(uint8_t addr) {
 
@@ -54,7 +56,7 @@ void ACC_writeMultibytes(uint8_t addr, uint8_t* data, uint8_t nBytes) {
     CyDelayUs(1);
     
 	/* Prepare the TX packet of size nBytes+1 
-       [ Write Instruction - Address MSB - Address LSB - +++data+++ ]
+       [ Instruction - Address - +++data+++ ]
     */
 	uint8_t dataTX[1+nBytes];
     dataTX[0] = (ACC_MULTI_WRITE | addr);

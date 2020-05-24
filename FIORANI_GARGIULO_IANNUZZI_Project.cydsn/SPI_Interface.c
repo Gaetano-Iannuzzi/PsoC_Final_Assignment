@@ -5,17 +5,8 @@
  * This source code file contains macros and functions to interface
  * with the SPI Master (SPIM) of the PSoC.
  *
- * @author Mattia Pesenti
- * @date April 9, 2020
 */
 
-/*											 
- * NOTE: in the .h Lib of the SPI Slave     		   *
- *       you need to define SLAVE_CS_Write  		   *
- *       with the name of the Chip Select    		   * 
- *       pin (as defined in the Top Design)  		   *
- * E.g.: #define SLAVE_CS_Write CS_1_Write (default)   *
-*/
 
 #include "SPI_Interface.h"
 
@@ -150,7 +141,7 @@ void SPI_Interface_Multi_RW(uint8_t* dataTX, uint8_t bytesTX, uint8_t* dataRX, u
 
 }
 
-//////////////////////////////////////////////////////////
+/********** ACCELEROMETER SPI FUNCTION **********/
 
 uint8_t ACC_SPI_Interface_tradeByte(uint8_t byte) {
 	

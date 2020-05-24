@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 1
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccE3Adp6.s 			page 1
 
 
    1              		.syntax unified
@@ -15,7 +15,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 1
   12              		.eabi_attribute 18, 4
   13              		.thumb
   14              		.syntax unified
-  15              		.file	"LIS3DH_Registers.c"
+  15              		.file	"LIS3DH.c"
   16              		.text
   17              	.Ltext0:
   18              		.cfi_sections	.debug_frame
@@ -27,23 +27,25 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 1
   24              		.type	ACC_readByte, %function
   25              	ACC_readByte:
   26              	.LFB0:
-  27              		.file 1 "LIS3DH_Registers.c"
-   1:LIS3DH_Registers.c **** /* ========================================
-   2:LIS3DH_Registers.c ****  *
-   3:LIS3DH_Registers.c ****  * Copyright YOUR COMPANY, THE YEAR
-   4:LIS3DH_Registers.c ****  * All Rights Reserved
-   5:LIS3DH_Registers.c ****  * UNPUBLISHED, LICENSED SOFTWARE.
-   6:LIS3DH_Registers.c ****  *
-   7:LIS3DH_Registers.c ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
-   8:LIS3DH_Registers.c ****  * WHICH IS THE PROPERTY OF your company.
-   9:LIS3DH_Registers.c ****  *
-  10:LIS3DH_Registers.c ****  * ========================================
-  11:LIS3DH_Registers.c **** */
-  12:LIS3DH_Registers.c **** 
-  13:LIS3DH_Registers.c **** #include    "LIS3DH_Registers.h"
-  14:LIS3DH_Registers.c **** 
-  15:LIS3DH_Registers.c **** uint8_t ACC_readByte(uint8_t addr) {
-  28              		.loc 1 15 0
+  27              		.file 1 "LIS3DH.c"
+   1:LIS3DH.c      **** /* ========================================
+   2:LIS3DH.c      ****  *
+   3:LIS3DH.c      ****  * Copyright YOUR COMPANY, THE YEAR
+   4:LIS3DH.c      ****  * All Rights Reserved
+   5:LIS3DH.c      ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:LIS3DH.c      ****  *
+   7:LIS3DH.c      ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:LIS3DH.c      ****  * WHICH IS THE PROPERTY OF your company.
+   9:LIS3DH.c      ****  *
+  10:LIS3DH.c      ****  * ========================================
+  11:LIS3DH.c      ****  *@authors Simone Fiorani, Alessandra Gargiulo, Gaetano Iannuzzi
+  12:LIS3DH.c      ****  *@date 2020
+  13:LIS3DH.c      **** */
+  14:LIS3DH.c      **** 
+  15:LIS3DH.c      **** #include    "LIS3DH.h"
+  16:LIS3DH.c      **** 
+  17:LIS3DH.c      **** uint8_t ACC_readByte(uint8_t addr) {
+  28              		.loc 1 17 0
   29              		.cfi_startproc
   30              		@ args = 0, pretend = 0, frame = 8
   31              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -53,37 +55,37 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 1
   35              		.cfi_offset 14, -4
   36 0002 83B0     		sub	sp, sp, #12
   37              		.cfi_def_cfa_offset 16
-  16:LIS3DH_Registers.c **** 
-  17:LIS3DH_Registers.c **** 	/* Prepare the TX data packet: instruction + address */
-  18:LIS3DH_Registers.c **** 	uint8_t dataTX[1] = { (ACC_SINGLE_READ  | addr) };
-  38              		.loc 1 18 0
+  18:LIS3DH.c      **** 
+  19:LIS3DH.c      **** 	/* Prepare the TX data packet: instruction + address */
+  20:LIS3DH.c      **** 	uint8_t dataTX[1] = { (ACC_SINGLE_READ  | addr) };
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccE3Adp6.s 			page 2
+
+
+  38              		.loc 1 20 0
   39 0004 60F07F00 		orn	r0, r0, #127
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 2
-
-
   40              	.LVL1:
   41 0008 8DF80400 		strb	r0, [sp, #4]
-  19:LIS3DH_Registers.c **** 	
-  20:LIS3DH_Registers.c **** 	/* Prepare the RX byte */
-  21:LIS3DH_Registers.c **** 	uint8_t dataRX = 0;
-  42              		.loc 1 21 0
+  21:LIS3DH.c      **** 	
+  22:LIS3DH.c      **** 	/* Prepare the RX byte */
+  23:LIS3DH.c      **** 	uint8_t dataRX = 0;
+  42              		.loc 1 23 0
   43 000c 02AA     		add	r2, sp, #8
   44 000e 0023     		movs	r3, #0
   45 0010 02F8053D 		strb	r3, [r2, #-5]!
-  22:LIS3DH_Registers.c **** 	
-  23:LIS3DH_Registers.c **** 	/* Read 1 byte from addr */
-  24:LIS3DH_Registers.c **** 	ACC_SPI_Interface_Multi_RW(dataTX, 1, &dataRX, 1);
-  46              		.loc 1 24 0
+  24:LIS3DH.c      **** 	
+  25:LIS3DH.c      **** 	/* Read 1 byte from addr */
+  26:LIS3DH.c      **** 	ACC_SPI_Interface_Multi_RW(dataTX, 1, &dataRX, 1);
+  46              		.loc 1 26 0
   47 0014 0123     		movs	r3, #1
   48 0016 1946     		mov	r1, r3
   49 0018 01A8     		add	r0, sp, #4
   50 001a FFF7FEFF 		bl	ACC_SPI_Interface_Multi_RW
   51              	.LVL2:
-  25:LIS3DH_Registers.c **** 	
-  26:LIS3DH_Registers.c **** 	return dataRX;
-  27:LIS3DH_Registers.c ****     
-  28:LIS3DH_Registers.c **** }
-  52              		.loc 1 28 0
+  27:LIS3DH.c      **** 	
+  28:LIS3DH.c      **** 	return dataRX;
+  29:LIS3DH.c      ****     
+  30:LIS3DH.c      **** }
+  52              		.loc 1 30 0
   53 001e 9DF80300 		ldrb	r0, [sp, #3]	@ zero_extendqisi2
   54 0022 03B0     		add	sp, sp, #12
   55              		.cfi_def_cfa_offset 4
@@ -100,9 +102,9 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 1
   66              		.type	ACC_writeByte, %function
   67              	ACC_writeByte:
   68              	.LFB1:
-  29:LIS3DH_Registers.c **** 
-  30:LIS3DH_Registers.c **** void ACC_writeByte(uint8_t addr, uint8_t dataByte) {
-  69              		.loc 1 30 0
+  31:LIS3DH.c      **** 
+  32:LIS3DH.c      **** void ACC_writeByte(uint8_t addr, uint8_t dataByte) {
+  69              		.loc 1 32 0
   70              		.cfi_startproc
   71              		@ args = 0, pretend = 0, frame = 8
   72              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -112,34 +114,34 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 1
   76              		.cfi_offset 14, -4
   77 0002 83B0     		sub	sp, sp, #12
   78              		.cfi_def_cfa_offset 16
-  31:LIS3DH_Registers.c ****     
-  32:LIS3DH_Registers.c **** 	/* Prepare the TX packet */
-  33:LIS3DH_Registers.c ****     uint8_t dataTX[2] = { (ACC_SINGLE_WRITE | addr) , dataByte};
-  79              		.loc 1 33 0
+  33:LIS3DH.c      ****     
+  34:LIS3DH.c      **** 	/* Prepare the TX packet */
+  35:LIS3DH.c      ****     uint8_t dataTX[2] = { (ACC_SINGLE_WRITE | addr) , dataByte};
+  79              		.loc 1 35 0
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccE3Adp6.s 			page 3
+
+
   80 0004 8DF80400 		strb	r0, [sp, #4]
   81 0008 8DF80510 		strb	r1, [sp, #5]
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 3
-
-
-  34:LIS3DH_Registers.c **** 	/* Nothing to RX... */
-  35:LIS3DH_Registers.c **** 	uint8_t temp = 0;
-  82              		.loc 1 35 0
+  36:LIS3DH.c      **** 	/* Nothing to RX... */
+  37:LIS3DH.c      **** 	uint8_t temp = 0;
+  82              		.loc 1 37 0
   83 000c 0023     		movs	r3, #0
   84 000e 02AA     		add	r2, sp, #8
   85 0010 02F8053D 		strb	r3, [r2, #-5]!
-  36:LIS3DH_Registers.c **** 	
-  37:LIS3DH_Registers.c **** 	/* Write 1 byte to addr */
-  38:LIS3DH_Registers.c **** 	ACC_SPI_Interface_Multi_RW(dataTX, 2, &temp, 0);
-  86              		.loc 1 38 0
+  38:LIS3DH.c      **** 	
+  39:LIS3DH.c      **** 	/* Write 1 byte to addr */
+  40:LIS3DH.c      **** 	ACC_SPI_Interface_Multi_RW(dataTX, 2, &temp, 0);
+  86              		.loc 1 40 0
   87 0014 0221     		movs	r1, #2
   88              	.LVL4:
   89 0016 01A8     		add	r0, sp, #4
   90              	.LVL5:
   91 0018 FFF7FEFF 		bl	ACC_SPI_Interface_Multi_RW
   92              	.LVL6:
-  39:LIS3DH_Registers.c ****     
-  40:LIS3DH_Registers.c **** 	    }
-  93              		.loc 1 40 0
+  41:LIS3DH.c      ****     
+  42:LIS3DH.c      **** 	    }
+  93              		.loc 1 42 0
   94 001c 03B0     		add	sp, sp, #12
   95              		.cfi_def_cfa_offset 4
   96              		@ sp needed
@@ -155,9 +157,9 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 1
  106              		.type	ACC_readMultibytes, %function
  107              	ACC_readMultibytes:
  108              	.LFB2:
-  41:LIS3DH_Registers.c **** 
-  42:LIS3DH_Registers.c **** void  ACC_readMultibytes(uint8_t addr, uint8_t* dataRX, uint8_t nBytes) {
- 109              		.loc 1 42 0
+  43:LIS3DH.c      **** 
+  44:LIS3DH.c      **** void  ACC_readMultibytes(uint8_t addr, uint8_t* dataRX, uint8_t nBytes) {
+ 109              		.loc 1 44 0
  110              		.cfi_startproc
  111              		@ args = 0, pretend = 0, frame = 8
  112              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -167,21 +169,21 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 1
  116              		.cfi_offset 14, -4
  117 0002 83B0     		sub	sp, sp, #12
  118              		.cfi_def_cfa_offset 16
-  43:LIS3DH_Registers.c **** 
-  44:LIS3DH_Registers.c ****     /* Prepare the TX data packet: instruction + address */
-  45:LIS3DH_Registers.c **** 	uint8_t dataTX[1] =  {(ACC_MULTI_READ  | addr)};
- 119              		.loc 1 45 0
+  45:LIS3DH.c      **** 
+  46:LIS3DH.c      ****     /* Prepare the TX data packet: instruction + address */
+  47:LIS3DH.c      **** 	uint8_t dataTX[1] =  {(ACC_MULTI_READ  | addr)};
+ 119              		.loc 1 47 0
  120 0004 60F03F03 		orn	r3, r0, #63
  121 0008 02A8     		add	r0, sp, #8
  122              	.LVL8:
  123 000a 00F8043D 		strb	r3, [r0, #-4]!
-  46:LIS3DH_Registers.c **** 	/* Prepare the RX byte */
-  47:LIS3DH_Registers.c **** 	/* Read the nBytes */
-  48:LIS3DH_Registers.c **** 	ACC_SPI_Interface_Multi_RW(dataTX,1 , dataRX, nBytes);
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 4
+  48:LIS3DH.c      **** 	/* Prepare the RX byte */
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccE3Adp6.s 			page 4
 
 
- 124              		.loc 1 48 0
+  49:LIS3DH.c      **** 	/* Read the nBytes */
+  50:LIS3DH.c      **** 	ACC_SPI_Interface_Multi_RW(dataTX,1 , dataRX, nBytes);
+ 124              		.loc 1 50 0
  125 000e 1346     		mov	r3, r2
  126 0010 0A46     		mov	r2, r1
  127              	.LVL9:
@@ -189,9 +191,9 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 1
  129              	.LVL10:
  130 0014 FFF7FEFF 		bl	ACC_SPI_Interface_Multi_RW
  131              	.LVL11:
-  49:LIS3DH_Registers.c **** 
-  50:LIS3DH_Registers.c **** }
- 132              		.loc 1 50 0
+  51:LIS3DH.c      **** 
+  52:LIS3DH.c      **** }
+ 132              		.loc 1 52 0
  133 0018 03B0     		add	sp, sp, #12
  134              		.cfi_def_cfa_offset 4
  135              		@ sp needed
@@ -207,8 +209,8 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 1
  145              		.type	ACC_writeMultibytes, %function
  146              	ACC_writeMultibytes:
  147              	.LFB3:
-  51:LIS3DH_Registers.c **** void ACC_writeMultibytes(uint8_t addr, uint8_t* data, uint8_t nBytes) {
- 148              		.loc 1 51 0
+  53:LIS3DH.c      **** void ACC_writeMultibytes(uint8_t addr, uint8_t* data, uint8_t nBytes) {
+ 148              		.loc 1 53 0
  149              		.cfi_startproc
  150              		@ args = 0, pretend = 0, frame = 8
  151              		@ frame_needed = 1, uses_anonymous_args = 0
@@ -227,57 +229,57 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 1
  164 0006 0546     		mov	r5, r0
  165 0008 0E46     		mov	r6, r1
  166 000a 1446     		mov	r4, r2
-  52:LIS3DH_Registers.c **** 	    
-  53:LIS3DH_Registers.c **** 	
-  54:LIS3DH_Registers.c ****     CyDelayUs(1);
- 167              		.loc 1 54 0
+  54:LIS3DH.c      **** 	    
+  55:LIS3DH.c      **** 	
+  56:LIS3DH.c      ****     CyDelayUs(1);
+ 167              		.loc 1 56 0
  168 000c 0120     		movs	r0, #1
  169              	.LVL13:
  170 000e FFF7FEFF 		bl	CyDelayUs
  171              	.LVL14:
-  55:LIS3DH_Registers.c ****     
-  56:LIS3DH_Registers.c **** 	/* Prepare the TX packet of size nBytes+1 
-  57:LIS3DH_Registers.c ****        [ Write Instruction - Address MSB - Address LSB - +++data+++ ]
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 5
+  57:LIS3DH.c      ****     
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccE3Adp6.s 			page 5
 
 
-  58:LIS3DH_Registers.c ****     */
-  59:LIS3DH_Registers.c **** 	uint8_t dataTX[1+nBytes];
- 172              		.loc 1 59 0
+  58:LIS3DH.c      **** 	/* Prepare the TX packet of size nBytes+1 
+  59:LIS3DH.c      ****        [ Instruction - Address - +++data+++ ]
+  60:LIS3DH.c      ****     */
+  61:LIS3DH.c      **** 	uint8_t dataTX[1+nBytes];
+ 172              		.loc 1 61 0
  173 0012 04F10803 		add	r3, r4, #8
  174 0016 23F00703 		bic	r3, r3, #7
  175 001a ADEB030D 		sub	sp, sp, r3
  176              	.LVL15:
-  60:LIS3DH_Registers.c ****     dataTX[0] = (ACC_MULTI_WRITE | addr);
- 177              		.loc 1 60 0
+  62:LIS3DH.c      ****     dataTX[0] = (ACC_MULTI_WRITE | addr);
+ 177              		.loc 1 62 0
  178 001e 45F04005 		orr	r5, r5, #64
  179 0022 8DF80050 		strb	r5, [sp]
-  61:LIS3DH_Registers.c ****     /* Copy the input data in the memory */
-  62:LIS3DH_Registers.c **** 	memcpy(&dataTX[0], data, nBytes);
- 180              		.loc 1 62 0
+  63:LIS3DH.c      ****     /* Copy the input data in the memory */
+  64:LIS3DH.c      **** 	memcpy(&dataTX[0], data, nBytes);
+ 180              		.loc 1 64 0
  181 0026 2246     		mov	r2, r4
  182 0028 3146     		mov	r1, r6
  183 002a 6846     		mov	r0, sp
  184 002c FFF7FEFF 		bl	memcpy
  185              	.LVL16:
-  63:LIS3DH_Registers.c **** 	
-  64:LIS3DH_Registers.c **** 	/* Nothing to RX: point to a dummy variable */
-  65:LIS3DH_Registers.c **** 	uint8_t temp = 0;
- 186              		.loc 1 65 0
+  65:LIS3DH.c      **** 	
+  66:LIS3DH.c      **** 	/* Nothing to RX: point to a dummy variable */
+  67:LIS3DH.c      **** 	uint8_t temp = 0;
+ 186              		.loc 1 67 0
  187 0030 0023     		movs	r3, #0
  188 0032 07F10802 		add	r2, r7, #8
  189 0036 02F8013D 		strb	r3, [r2, #-1]!
-  66:LIS3DH_Registers.c **** 	
-  67:LIS3DH_Registers.c **** 	SPI_Interface_Multi_RW(dataTX, 3+nBytes, &temp, 0);
- 190              		.loc 1 67 0
+  68:LIS3DH.c      **** 	
+  69:LIS3DH.c      **** 	SPI_Interface_Multi_RW(dataTX, 3+nBytes, &temp, 0);
+ 190              		.loc 1 69 0
  191 003a E11C     		adds	r1, r4, #3
  192 003c C9B2     		uxtb	r1, r1
  193 003e 6846     		mov	r0, sp
  194 0040 FFF7FEFF 		bl	SPI_Interface_Multi_RW
  195              	.LVL17:
-  68:LIS3DH_Registers.c **** 	
-  69:LIS3DH_Registers.c **** }
- 196              		.loc 1 69 0
+  70:LIS3DH.c      **** 	
+  71:LIS3DH.c      **** }
+ 196              		.loc 1 71 0
  197 0044 0C37     		adds	r7, r7, #12
  198              		.cfi_def_cfa_offset 20
  199 0046 BD46     		mov	sp, r7
@@ -296,25 +298,25 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 1
  212              		.file 5 "Generated_Source\\PSoC5/CyLib.h"
  213              		.section	.debug_info,"",%progbits
  214              	.Ldebug_info0:
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccE3Adp6.s 			page 6
+
+
  215 0000 FC020000 		.4byte	0x2fc
  216 0004 0400     		.2byte	0x4
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 6
-
-
  217 0006 00000000 		.4byte	.Ldebug_abbrev0
  218 000a 04       		.byte	0x4
  219 000b 01       		.uleb128 0x1
  220 000c 61000000 		.4byte	.LASF29
  221 0010 0C       		.byte	0xc
- 222 0011 29010000 		.4byte	.LASF30
- 223 0015 72010000 		.4byte	.LASF31
+ 222 0011 EA010000 		.4byte	.LASF30
+ 223 0015 5F010000 		.4byte	.LASF31
  224 0019 00000000 		.4byte	.Ldebug_ranges0+0
  225 001d 00000000 		.4byte	0
  226 0021 00000000 		.4byte	.Ldebug_line0
  227 0025 02       		.uleb128 0x2
  228 0026 01       		.byte	0x1
  229 0027 06       		.byte	0x6
- 230 0028 48020000 		.4byte	.LASF0
+ 230 0028 3E020000 		.4byte	.LASF0
  231 002c 03       		.uleb128 0x3
  232 002d 00000000 		.4byte	.LASF9
  233 0031 02       		.byte	0x2
@@ -327,7 +329,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 1
  240 003e 02       		.uleb128 0x2
  241 003f 02       		.byte	0x2
  242 0040 05       		.byte	0x5
- 243 0041 FD010000 		.4byte	.LASF2
+ 243 0041 F3010000 		.4byte	.LASF2
  244 0045 02       		.uleb128 0x2
  245 0046 02       		.byte	0x2
  246 0047 07       		.byte	0x7
@@ -335,7 +337,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 1
  248 004c 02       		.uleb128 0x2
  249 004d 04       		.byte	0x4
  250 004e 05       		.byte	0x5
- 251 004f 2E020000 		.4byte	.LASF4
+ 251 004f 24020000 		.4byte	.LASF4
  252 0053 02       		.uleb128 0x2
  253 0054 04       		.byte	0x4
  254 0055 07       		.byte	0x7
@@ -343,11 +345,11 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 1
  256 005a 02       		.uleb128 0x2
  257 005b 08       		.byte	0x8
  258 005c 05       		.byte	0x5
- 259 005d E8010000 		.4byte	.LASF6
+ 259 005d D5010000 		.4byte	.LASF6
  260 0061 02       		.uleb128 0x2
  261 0062 08       		.byte	0x8
  262 0063 07       		.byte	0x7
- 263 0064 53010000 		.4byte	.LASF7
+ 263 0064 40010000 		.4byte	.LASF7
  264 0068 04       		.uleb128 0x4
  265 0069 04       		.byte	0x4
  266 006a 05       		.byte	0x5
@@ -355,12 +357,12 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 1
  268 006f 02       		.uleb128 0x2
  269 0070 04       		.byte	0x4
  270 0071 07       		.byte	0x7
- 271 0072 46010000 		.4byte	.LASF8
+ 271 0072 33010000 		.4byte	.LASF8
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccE3Adp6.s 			page 7
+
+
  272 0076 03       		.uleb128 0x3
- 273 0077 6A010000 		.4byte	.LASF10
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 7
-
-
+ 273 0077 57010000 		.4byte	.LASF10
  274 007b 03       		.byte	0x3
  275 007c 18       		.byte	0x18
  276 007d 2C000000 		.4byte	0x2c
@@ -375,19 +377,19 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 1
  285 008f 02       		.uleb128 0x2
  286 0090 01       		.byte	0x1
  287 0091 08       		.byte	0x8
- 288 0092 37020000 		.4byte	.LASF13
+ 288 0092 2D020000 		.4byte	.LASF13
  289 0096 02       		.uleb128 0x2
  290 0097 08       		.byte	0x8
  291 0098 04       		.byte	0x4
- 292 0099 3C020000 		.4byte	.LASF14
+ 292 0099 32020000 		.4byte	.LASF14
  293 009d 02       		.uleb128 0x2
  294 009e 04       		.byte	0x4
  295 009f 07       		.byte	0x7
- 296 00a0 DF010000 		.4byte	.LASF15
+ 296 00a0 CC010000 		.4byte	.LASF15
  297 00a4 05       		.uleb128 0x5
  298 00a5 3B000000 		.4byte	.LASF32
  299 00a9 01       		.byte	0x1
- 300 00aa 0F       		.byte	0xf
+ 300 00aa 11       		.byte	0x11
  301 00ab 76000000 		.4byte	0x76
  302 00af 00000000 		.4byte	.LFB0
  303 00b3 28000000 		.4byte	.LFE0-.LFB0
@@ -397,30 +399,30 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 1
  307 00bd 06       		.uleb128 0x6
  308 00be 14010000 		.4byte	.LASF18
  309 00c2 01       		.byte	0x1
- 310 00c3 0F       		.byte	0xf
+ 310 00c3 11       		.byte	0x11
  311 00c4 76000000 		.4byte	0x76
  312 00c8 00000000 		.4byte	.LLST0
  313 00cc 07       		.uleb128 0x7
- 314 00cd 54020000 		.4byte	.LASF16
+ 314 00cd 4A020000 		.4byte	.LASF16
  315 00d1 01       		.byte	0x1
- 316 00d2 12       		.byte	0x12
+ 316 00d2 14       		.byte	0x14
  317 00d3 09010000 		.4byte	0x109
  318 00d7 02       		.uleb128 0x2
  319 00d8 91       		.byte	0x91
  320 00d9 74       		.sleb128 -12
  321 00da 07       		.uleb128 0x7
- 322 00db D8010000 		.4byte	.LASF17
+ 322 00db C5010000 		.4byte	.LASF17
  323 00df 01       		.byte	0x1
- 324 00e0 15       		.byte	0x15
+ 324 00e0 17       		.byte	0x17
  325 00e1 76000000 		.4byte	0x76
  326 00e5 02       		.uleb128 0x2
  327 00e6 91       		.byte	0x91
  328 00e7 73       		.sleb128 -13
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccE3Adp6.s 			page 8
+
+
  329 00e8 08       		.uleb128 0x8
  330 00e9 1E000000 		.4byte	.LVL2
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 8
-
-
  331 00ed D5020000 		.4byte	0x2d5
  332 00f1 09       		.uleb128 0x9
  333 00f2 01       		.uleb128 0x1
@@ -456,7 +458,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 1
  363 0119 0C       		.uleb128 0xc
  364 011a EF000000 		.4byte	.LASF21
  365 011e 01       		.byte	0x1
- 366 011f 1E       		.byte	0x1e
+ 366 011f 20       		.byte	0x20
  367 0120 00000000 		.4byte	.LFB1
  368 0124 22000000 		.4byte	.LFE1-.LFB1
  369 0128 01       		.uleb128 0x1
@@ -465,22 +467,22 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 1
  372 012e 06       		.uleb128 0x6
  373 012f 14010000 		.4byte	.LASF18
  374 0133 01       		.byte	0x1
- 375 0134 1E       		.byte	0x1e
+ 375 0134 20       		.byte	0x20
  376 0135 76000000 		.4byte	0x76
  377 0139 21000000 		.4byte	.LLST1
  378 013d 06       		.uleb128 0x6
  379 013e 19010000 		.4byte	.LASF19
  380 0142 01       		.byte	0x1
- 381 0143 1E       		.byte	0x1e
+ 381 0143 20       		.byte	0x20
  382 0144 76000000 		.4byte	0x76
  383 0148 4E000000 		.4byte	.LLST2
  384 014c 07       		.uleb128 0x7
- 385 014d 54020000 		.4byte	.LASF16
+ 385 014d 4A020000 		.4byte	.LASF16
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccE3Adp6.s 			page 9
+
+
  386 0151 01       		.byte	0x1
- 387 0152 21       		.byte	0x21
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 9
-
-
+ 387 0152 23       		.byte	0x23
  388 0153 89010000 		.4byte	0x189
  389 0157 02       		.uleb128 0x2
  390 0158 91       		.byte	0x91
@@ -488,7 +490,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 1
  392 015a 07       		.uleb128 0x7
  393 015b 0F010000 		.4byte	.LASF20
  394 015f 01       		.byte	0x1
- 395 0160 23       		.byte	0x23
+ 395 0160 25       		.byte	0x25
  396 0161 76000000 		.4byte	0x76
  397 0165 02       		.uleb128 0x2
  398 0166 91       		.byte	0x91
@@ -528,39 +530,39 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 1
  432 0197 01       		.byte	0x1
  433 0198 00       		.byte	0
  434 0199 0C       		.uleb128 0xc
- 435 019a 1B020000 		.4byte	.LASF22
+ 435 019a 11020000 		.4byte	.LASF22
  436 019e 01       		.byte	0x1
- 437 019f 2A       		.byte	0x2a
+ 437 019f 2C       		.byte	0x2c
  438 01a0 00000000 		.4byte	.LFB2
  439 01a4 1E000000 		.4byte	.LFE2-.LFB2
  440 01a8 01       		.uleb128 0x1
  441 01a9 9C       		.byte	0x9c
  442 01aa 06020000 		.4byte	0x206
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccE3Adp6.s 			page 10
+
+
  443 01ae 06       		.uleb128 0x6
  444 01af 14010000 		.4byte	.LASF18
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 10
-
-
  445 01b3 01       		.byte	0x1
- 446 01b4 2A       		.byte	0x2a
+ 446 01b4 2C       		.byte	0x2c
  447 01b5 76000000 		.4byte	0x76
  448 01b9 7B000000 		.4byte	.LLST3
  449 01bd 06       		.uleb128 0x6
- 450 01be D8010000 		.4byte	.LASF17
+ 450 01be C5010000 		.4byte	.LASF17
  451 01c2 01       		.byte	0x1
- 452 01c3 2A       		.byte	0x2a
+ 452 01c3 2C       		.byte	0x2c
  453 01c4 06020000 		.4byte	0x206
  454 01c8 9C000000 		.4byte	.LLST4
  455 01cc 06       		.uleb128 0x6
  456 01cd 0A000000 		.4byte	.LASF23
  457 01d1 01       		.byte	0x1
- 458 01d2 2A       		.byte	0x2a
+ 458 01d2 2C       		.byte	0x2c
  459 01d3 76000000 		.4byte	0x76
  460 01d7 C8000000 		.4byte	.LLST5
  461 01db 07       		.uleb128 0x7
- 462 01dc 54020000 		.4byte	.LASF16
+ 462 01dc 4A020000 		.4byte	.LASF16
  463 01e0 01       		.byte	0x1
- 464 01e1 2D       		.byte	0x2d
+ 464 01e1 2F       		.byte	0x2f
  465 01e2 09010000 		.4byte	0x109
  466 01e6 02       		.uleb128 0x2
  467 01e7 91       		.byte	0x91
@@ -592,45 +594,45 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 1
  493 0207 04       		.byte	0x4
  494 0208 76000000 		.4byte	0x76
  495 020c 0C       		.uleb128 0xc
- 496 020d 07020000 		.4byte	.LASF24
+ 496 020d FD010000 		.4byte	.LASF24
  497 0211 01       		.byte	0x1
- 498 0212 33       		.byte	0x33
+ 498 0212 35       		.byte	0x35
  499 0213 00000000 		.4byte	.LFB3
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccE3Adp6.s 			page 11
+
+
  500 0217 4A000000 		.4byte	.LFE3-.LFB3
  501 021b 01       		.uleb128 0x1
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 11
-
-
  502 021c 9C       		.byte	0x9c
  503 021d C0020000 		.4byte	0x2c0
  504 0221 06       		.uleb128 0x6
  505 0222 14010000 		.4byte	.LASF18
  506 0226 01       		.byte	0x1
- 507 0227 33       		.byte	0x33
+ 507 0227 35       		.byte	0x35
  508 0228 76000000 		.4byte	0x76
  509 022c E9000000 		.4byte	.LLST6
  510 0230 06       		.uleb128 0x6
  511 0231 4E000000 		.4byte	.LASF25
  512 0235 01       		.byte	0x1
- 513 0236 33       		.byte	0x33
+ 513 0236 35       		.byte	0x35
  514 0237 06020000 		.4byte	0x206
  515 023b 0A010000 		.4byte	.LLST7
  516 023f 06       		.uleb128 0x6
  517 0240 0A000000 		.4byte	.LASF23
  518 0244 01       		.byte	0x1
- 519 0245 33       		.byte	0x33
+ 519 0245 35       		.byte	0x35
  520 0246 76000000 		.4byte	0x76
  521 024a 28010000 		.4byte	.LLST8
  522 024e 0E       		.uleb128 0xe
- 523 024f 54020000 		.4byte	.LASF16
+ 523 024f 4A020000 		.4byte	.LASF16
  524 0253 01       		.byte	0x1
- 525 0254 3B       		.byte	0x3b
+ 525 0254 3D       		.byte	0x3d
  526 0255 C0020000 		.4byte	0x2c0
  527 0259 49010000 		.4byte	.LLST9
  528 025d 07       		.uleb128 0x7
  529 025e 0F010000 		.4byte	.LASF20
  530 0262 01       		.byte	0x1
- 531 0263 41       		.byte	0x41
+ 531 0263 43       		.byte	0x43
  532 0264 76000000 		.4byte	0x76
  533 0268 02       		.uleb128 0x2
  534 0269 91       		.byte	0x91
@@ -656,11 +658,11 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 1
  554 028f 7D       		.byte	0x7d
  555 0290 00       		.sleb128 0
  556 0291 09       		.uleb128 0x9
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccE3Adp6.s 			page 12
+
+
  557 0292 01       		.uleb128 0x1
  558 0293 51       		.byte	0x51
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 12
-
-
  559 0294 02       		.uleb128 0x2
  560 0295 76       		.byte	0x76
  561 0296 00       		.sleb128 0
@@ -712,21 +714,21 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 1
  607 02d3 1A       		.byte	0x1a
  608 02d4 00       		.byte	0
  609 02d5 11       		.uleb128 0x11
- 610 02d6 5B020000 		.4byte	.LASF26
- 611 02da 5B020000 		.4byte	.LASF26
+ 610 02d6 51020000 		.4byte	.LASF26
+ 611 02da 51020000 		.4byte	.LASF26
  612 02de 04       		.byte	0x4
  613 02df 5D       		.byte	0x5d
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccE3Adp6.s 			page 13
+
+
  614 02e0 11       		.uleb128 0x11
- 615 02e1 3C010000 		.4byte	.LASF27
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 13
-
-
- 616 02e5 3C010000 		.4byte	.LASF27
+ 615 02e1 29010000 		.4byte	.LASF27
+ 616 02e5 29010000 		.4byte	.LASF27
  617 02e9 05       		.byte	0x5
  618 02ea 77       		.byte	0x77
  619 02eb 12       		.uleb128 0x12
- 620 02ec F6010000 		.4byte	.LASF33
- 621 02f0 F6010000 		.4byte	.LASF33
+ 620 02ec E3010000 		.4byte	.LASF33
+ 621 02f0 E3010000 		.4byte	.LASF33
  622 02f4 11       		.uleb128 0x11
  623 02f5 24000000 		.4byte	.LASF28
  624 02f9 24000000 		.4byte	.LASF28
@@ -776,11 +778,11 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 1
  668 0026 0B       		.uleb128 0xb
  669 0027 49       		.uleb128 0x49
  670 0028 13       		.uleb128 0x13
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccE3Adp6.s 			page 14
+
+
  671 0029 00       		.byte	0
  672 002a 00       		.byte	0
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 14
-
-
  673 002b 04       		.uleb128 0x4
  674 002c 24       		.uleb128 0x24
  675 002d 00       		.byte	0
@@ -836,11 +838,11 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 1
  725 0060 00       		.byte	0
  726 0061 07       		.uleb128 0x7
  727 0062 34       		.uleb128 0x34
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccE3Adp6.s 			page 15
+
+
  728 0063 00       		.byte	0
  729 0064 03       		.uleb128 0x3
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 15
-
-
  730 0065 0E       		.uleb128 0xe
  731 0066 3A       		.uleb128 0x3a
  732 0067 0B       		.uleb128 0xb
@@ -896,11 +898,11 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 1
  782 009e 03       		.uleb128 0x3
  783 009f 0E       		.uleb128 0xe
  784 00a0 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccE3Adp6.s 			page 16
+
+
  785 00a1 0B       		.uleb128 0xb
  786 00a2 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 16
-
-
  787 00a3 0B       		.uleb128 0xb
  788 00a4 27       		.uleb128 0x27
  789 00a5 19       		.uleb128 0x19
@@ -956,11 +958,11 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 1
  839 00da 00       		.byte	0
  840 00db 49       		.uleb128 0x49
  841 00dc 13       		.uleb128 0x13
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccE3Adp6.s 			page 17
+
+
  842 00dd 2F       		.uleb128 0x2f
  843 00de 18       		.uleb128 0x18
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 17
-
-
  844 00df 00       		.byte	0
  845 00e0 00       		.byte	0
  846 00e1 11       		.uleb128 0x11
@@ -1016,11 +1018,11 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 1
  896 0029 0100     		.2byte	0x1
  897 002b 50       		.byte	0x50
  898 002c 18000000 		.4byte	.LVL5
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccE3Adp6.s 			page 18
+
+
  899 0030 1B000000 		.4byte	.LVL6-1
  900 0034 0200     		.2byte	0x2
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 18
-
-
  901 0036 70       		.byte	0x70
  902 0037 00       		.sleb128 0
  903 0038 1B000000 		.4byte	.LVL6-1
@@ -1076,11 +1078,11 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 1
  953 00b1 52       		.byte	0x52
  954 00b2 17000000 		.4byte	.LVL11-1
  955 00b6 1E000000 		.4byte	.LFE2
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccE3Adp6.s 			page 19
+
+
  956 00ba 0400     		.2byte	0x4
  957 00bc F3       		.byte	0xf3
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 19
-
-
  958 00bd 01       		.uleb128 0x1
  959 00be 51       		.byte	0x51
  960 00bf 9F       		.byte	0x9f
@@ -1136,11 +1138,11 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 1
  1010 013d F3       		.byte	0xf3
  1011 013e 01       		.uleb128 0x1
  1012 013f 52       		.byte	0x52
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccE3Adp6.s 			page 20
+
+
  1013 0140 9F       		.byte	0x9f
  1014 0141 00000000 		.4byte	0
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 20
-
-
  1015 0145 00000000 		.4byte	0
  1016              	.LLST9:
  1017 0149 1E000000 		.4byte	.LVL15
@@ -1196,11 +1198,11 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 1
  1067 0024 00000000 		.4byte	0
  1068              		.section	.debug_line,"",%progbits
  1069              	.Ldebug_line0:
- 1070 0000 AF010000 		.section	.debug_str,"MS",%progbits,1
- 1070      02005B01 
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 21
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccE3Adp6.s 			page 21
 
 
+ 1070 0000 A5010000 		.section	.debug_str,"MS",%progbits,1
+ 1070      02005101 
  1070      00000201 
  1070      FB0E0D00 
  1070      01010101 
@@ -1256,11 +1258,11 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 1
  1090      2D736563 
  1090      74696F6E 
  1091              	.LASF21:
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccE3Adp6.s 			page 22
+
+
  1092 00ef 4143435F 		.ascii	"ACC_writeByte\000"
  1092      77726974 
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 22
-
-
  1092      65427974 
  1092      6500
  1093              	.LASF5:
@@ -1282,102 +1284,100 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 1
  1101              	.LASF12:
  1102 0122 646F7562 		.ascii	"double\000"
  1102      6C6500
- 1103              	.LASF30:
- 1104 0129 4C495333 		.ascii	"LIS3DH_Registers.c\000"
- 1104      44485F52 
- 1104      65676973 
- 1104      74657273 
- 1104      2E6300
- 1105              	.LASF27:
- 1106 013c 43794465 		.ascii	"CyDelayUs\000"
- 1106      6C617955 
- 1106      7300
- 1107              	.LASF8:
- 1108 0146 756E7369 		.ascii	"unsigned int\000"
- 1108      676E6564 
- 1108      20696E74 
- 1108      00
- 1109              	.LASF7:
- 1110 0153 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1110      206C6F6E 
- 1110      6720756E 
- 1110      7369676E 
- 1110      65642069 
- 1111              	.LASF10:
- 1112 016a 75696E74 		.ascii	"uint8_t\000"
- 1112      385F7400 
- 1113              	.LASF31:
- 1114 0172 433A5C55 		.ascii	"C:\\Users\\gaeta\\Documents\\PSoC Creator\\PsoC_Fin"
- 1114      73657273 
- 1114      5C676165 
- 1114      74615C44 
- 1114      6F63756D 
- 1115 01a0 616C5F50 		.ascii	"al_Project_1_03\\FIORANI_GARGIULO_IANNUZZI_Project."
- 1115      726F6A65 
- 1115      63745F31 
- 1115      5F30335C 
- 1115      46494F52 
- 1116 01d2 63796473 		.ascii	"cydsn\000"
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 23
+ 1103              	.LASF27:
+ 1104 0129 43794465 		.ascii	"CyDelayUs\000"
+ 1104      6C617955 
+ 1104      7300
+ 1105              	.LASF8:
+ 1106 0133 756E7369 		.ascii	"unsigned int\000"
+ 1106      676E6564 
+ 1106      20696E74 
+ 1106      00
+ 1107              	.LASF7:
+ 1108 0140 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1108      206C6F6E 
+ 1108      6720756E 
+ 1108      7369676E 
+ 1108      65642069 
+ 1109              	.LASF10:
+ 1110 0157 75696E74 		.ascii	"uint8_t\000"
+ 1110      385F7400 
+ 1111              	.LASF31:
+ 1112 015f 433A5C55 		.ascii	"C:\\Users\\gaeta\\Documents\\PSoC Creator\\PsoC_Fin"
+ 1112      73657273 
+ 1112      5C676165 
+ 1112      74615C44 
+ 1112      6F63756D 
+ 1113 018d 616C5F50 		.ascii	"al_Project_1_03\\FIORANI_GARGIULO_IANNUZZI_Project."
+ 1113      726F6A65 
+ 1113      63745F31 
+ 1113      5F30335C 
+ 1113      46494F52 
+ 1114 01bf 63796473 		.ascii	"cydsn\000"
+ 1114      6E00
+ 1115              	.LASF17:
+ 1116 01c5 64617461 		.ascii	"dataRX\000"
+ 1116      525800
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccE3Adp6.s 			page 23
 
 
- 1116      6E00
- 1117              	.LASF17:
- 1118 01d8 64617461 		.ascii	"dataRX\000"
- 1118      525800
- 1119              	.LASF15:
- 1120 01df 73697A65 		.ascii	"sizetype\000"
- 1120      74797065 
- 1120      00
- 1121              	.LASF6:
- 1122 01e8 6C6F6E67 		.ascii	"long long int\000"
- 1122      206C6F6E 
- 1122      6720696E 
- 1122      7400
- 1123              	.LASF33:
- 1124 01f6 6D656D63 		.ascii	"memcpy\000"
- 1124      707900
+ 1117              	.LASF15:
+ 1118 01cc 73697A65 		.ascii	"sizetype\000"
+ 1118      74797065 
+ 1118      00
+ 1119              	.LASF6:
+ 1120 01d5 6C6F6E67 		.ascii	"long long int\000"
+ 1120      206C6F6E 
+ 1120      6720696E 
+ 1120      7400
+ 1121              	.LASF33:
+ 1122 01e3 6D656D63 		.ascii	"memcpy\000"
+ 1122      707900
+ 1123              	.LASF30:
+ 1124 01ea 4C495333 		.ascii	"LIS3DH.c\000"
+ 1124      44482E63 
+ 1124      00
  1125              	.LASF2:
- 1126 01fd 73686F72 		.ascii	"short int\000"
+ 1126 01f3 73686F72 		.ascii	"short int\000"
  1126      7420696E 
  1126      7400
  1127              	.LASF24:
- 1128 0207 4143435F 		.ascii	"ACC_writeMultibytes\000"
+ 1128 01fd 4143435F 		.ascii	"ACC_writeMultibytes\000"
  1128      77726974 
  1128      654D756C 
  1128      74696279 
  1128      74657300 
  1129              	.LASF22:
- 1130 021b 4143435F 		.ascii	"ACC_readMultibytes\000"
+ 1130 0211 4143435F 		.ascii	"ACC_readMultibytes\000"
  1130      72656164 
  1130      4D756C74 
  1130      69627974 
  1130      657300
  1131              	.LASF4:
- 1132 022e 6C6F6E67 		.ascii	"long int\000"
+ 1132 0224 6C6F6E67 		.ascii	"long int\000"
  1132      20696E74 
  1132      00
  1133              	.LASF13:
- 1134 0237 63686172 		.ascii	"char\000"
+ 1134 022d 63686172 		.ascii	"char\000"
  1134      00
  1135              	.LASF14:
- 1136 023c 6C6F6E67 		.ascii	"long double\000"
+ 1136 0232 6C6F6E67 		.ascii	"long double\000"
  1136      20646F75 
  1136      626C6500 
  1137              	.LASF0:
- 1138 0248 7369676E 		.ascii	"signed char\000"
+ 1138 023e 7369676E 		.ascii	"signed char\000"
  1138      65642063 
  1138      68617200 
  1139              	.LASF16:
- 1140 0254 64617461 		.ascii	"dataTX\000"
+ 1140 024a 64617461 		.ascii	"dataTX\000"
  1140      545800
  1141              	.LASF26:
- 1142 025b 4143435F 		.ascii	"ACC_SPI_Interface_Multi_RW\000"
+ 1142 0251 4143435F 		.ascii	"ACC_SPI_Interface_Multi_RW\000"
  1142      5350495F 
  1142      496E7465 
  1142      72666163 
  1142      655F4D75 
  1143              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccL4BfKw.s 			page 24
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccE3Adp6.s 			page 24
 
 

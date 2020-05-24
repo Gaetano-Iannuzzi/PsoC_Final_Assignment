@@ -8,7 +8,13 @@
  * WHICH IS THE PROPERTY OF your company.
  *
  * ========================================
+ *@authors Simone Fiorani, Alessandra Gargiulo, Gaetano Iannuzzi
+ *@date 2020
 */
+#include "SPI_Interface.h"
+#define SLAVE_CS_Write_2 CS_2_Write
+
+#define SPIM_2           SPIM_2
 
 //Device Registers
 #define LIS3DH_STATUS_REG_AUX         0x07
@@ -85,11 +91,7 @@
 #define ACC_SINGLE_WRITE    0b00000000
 #define ACC_MULTI_WRITE     0b01000000
 
-#include "SPI_Interface.h"
-#define SLAVE_CS_Write CS_1_Write
-#define SLAVE_CS_Write_2 CS_2_Write
-
-#define SPIM_2           SPIM_2
+/*** ========= FUNCTION DECLARATIONS ========= ***/
 
 uint8_t     ACC_readByte(uint8_t addr);
 void        ACC_writeByte(uint8_t addr, uint8_t dataByte);

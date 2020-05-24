@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccMG9QHe.s 			page 1
 
 
    1              		.syntax unified
@@ -35,33 +35,21 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
    5:SPI_Interface.c ****  * This source code file contains macros and functions to interface
    6:SPI_Interface.c ****  * with the SPI Master (SPIM) of the PSoC.
    7:SPI_Interface.c ****  *
-   8:SPI_Interface.c ****  * @author Mattia Pesenti
-   9:SPI_Interface.c ****  * @date April 9, 2020
-  10:SPI_Interface.c **** */
-  11:SPI_Interface.c **** 
-  12:SPI_Interface.c **** /*											 
-  13:SPI_Interface.c ****  * NOTE: in the .h Lib of the SPI Slave     		   *
-  14:SPI_Interface.c ****  *       you need to define SLAVE_CS_Write  		   *
-  15:SPI_Interface.c ****  *       with the name of the Chip Select    		   * 
-  16:SPI_Interface.c ****  *       pin (as defined in the Top Design)  		   *
-  17:SPI_Interface.c ****  * E.g.: #define SLAVE_CS_Write CS_1_Write (default)   *
-  18:SPI_Interface.c **** */
-  19:SPI_Interface.c **** 
-  20:SPI_Interface.c **** #include "SPI_Interface.h"
-  21:SPI_Interface.c **** 
-  22:SPI_Interface.c **** #ifndef SLAVE_CS_Write
-  23:SPI_Interface.c ****     #define SLAVE_CS_Write      CS_1_Write
-  24:SPI_Interface.c ****     #define SLAVE_CS_Write_2    CS_2_Write
-  25:SPI_Interface.c **** #endif
-  26:SPI_Interface.c **** 
-  27:SPI_Interface.c **** /*
-  28:SPI_Interface.c **** * @brief Full-Duplex, Single-Operation 1-Byte Trade
-  29:SPI_Interface.c **** */
-  30:SPI_Interface.c **** uint8_t SPI_Interface_tradeByte(uint8_t byte) {
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 2
-
-
-  28              		.loc 1 30 0
+   8:SPI_Interface.c **** */
+   9:SPI_Interface.c **** 
+  10:SPI_Interface.c **** 
+  11:SPI_Interface.c **** #include "SPI_Interface.h"
+  12:SPI_Interface.c **** 
+  13:SPI_Interface.c **** #ifndef SLAVE_CS_Write
+  14:SPI_Interface.c ****     #define SLAVE_CS_Write      CS_1_Write
+  15:SPI_Interface.c ****     #define SLAVE_CS_Write_2    CS_2_Write
+  16:SPI_Interface.c **** #endif
+  17:SPI_Interface.c **** 
+  18:SPI_Interface.c **** /*
+  19:SPI_Interface.c **** * @brief Full-Duplex, Single-Operation 1-Byte Trade
+  20:SPI_Interface.c **** */
+  21:SPI_Interface.c **** uint8_t SPI_Interface_tradeByte(uint8_t byte) {
+  28              		.loc 1 21 0
   29              		.cfi_startproc
   30              		@ args = 0, pretend = 0, frame = 0
   31              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -70,57 +58,57 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
   34              		.cfi_def_cfa_offset 8
   35              		.cfi_offset 4, -8
   36              		.cfi_offset 14, -4
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccMG9QHe.s 			page 2
+
+
   37 0002 0446     		mov	r4, r0
-  31:SPI_Interface.c **** 	
-  32:SPI_Interface.c **** 	/* Enable the Slave */
-  33:SPI_Interface.c **** 	SLAVE_CS_Write(0);
-  38              		.loc 1 33 0
+  22:SPI_Interface.c **** 	
+  23:SPI_Interface.c **** 	/* Enable the Slave */
+  24:SPI_Interface.c **** 	SLAVE_CS_Write(0);
+  38              		.loc 1 24 0
   39 0004 0020     		movs	r0, #0
   40              	.LVL1:
   41 0006 FFF7FEFF 		bl	CS_1_Write
   42              	.LVL2:
-  34:SPI_Interface.c **** 	
-  35:SPI_Interface.c **** 	/* Load the TX Buffer */
-  36:SPI_Interface.c **** 	SPIM_1_WriteTxData(byte);
-  43              		.loc 1 36 0
+  25:SPI_Interface.c **** 	
+  26:SPI_Interface.c **** 	/* Load the TX Buffer */
+  27:SPI_Interface.c **** 	SPIM_1_WriteTxData(byte);
+  43              		.loc 1 27 0
   44 000a 2046     		mov	r0, r4
   45 000c FFF7FEFF 		bl	SPIM_1_WriteTxData
   46              	.LVL3:
   47              	.L2:
-  37:SPI_Interface.c **** 	
-  38:SPI_Interface.c **** 	/* Wait for TX */
-  39:SPI_Interface.c ****     while( !(SPIM_1_ReadTxStatus() & SPIM_1_STS_BYTE_COMPLETE) );
-  48              		.loc 1 39 0 discriminator 1
+  28:SPI_Interface.c **** 	
+  29:SPI_Interface.c **** 	/* Wait for TX */
+  30:SPI_Interface.c ****     while( !(SPIM_1_ReadTxStatus() & SPIM_1_STS_BYTE_COMPLETE) );
+  48              		.loc 1 30 0 discriminator 1
   49 0010 FFF7FEFF 		bl	SPIM_1_ReadTxStatus
   50              	.LVL4:
   51 0014 10F0080F 		tst	r0, #8
   52 0018 FAD0     		beq	.L2
-  40:SPI_Interface.c **** 	
-  41:SPI_Interface.c **** 	/* Read the RX Buffer */
-  42:SPI_Interface.c **** 	uint8_t data = SPIM_1_ReadRxData();
-  53              		.loc 1 42 0
+  31:SPI_Interface.c **** 	
+  32:SPI_Interface.c **** 	/* Read the RX Buffer */
+  33:SPI_Interface.c **** 	uint8_t data = SPIM_1_ReadRxData();
+  53              		.loc 1 33 0
   54 001a FFF7FEFF 		bl	SPIM_1_ReadRxData
   55              	.LVL5:
   56 001e 0446     		mov	r4, r0
   57              	.LVL6:
-  43:SPI_Interface.c **** 	
-  44:SPI_Interface.c **** 	/* Disable the Slave */
-  45:SPI_Interface.c **** 	SLAVE_CS_Write(1);
-  58              		.loc 1 45 0
+  34:SPI_Interface.c **** 	
+  35:SPI_Interface.c **** 	/* Disable the Slave */
+  36:SPI_Interface.c **** 	SLAVE_CS_Write(1);
+  58              		.loc 1 36 0
   59 0020 0120     		movs	r0, #1
   60 0022 FFF7FEFF 		bl	CS_1_Write
   61              	.LVL7:
-  46:SPI_Interface.c **** 	
-  47:SPI_Interface.c **** 	return data;
-  48:SPI_Interface.c ****     
-  49:SPI_Interface.c **** }
-  62              		.loc 1 49 0
+  37:SPI_Interface.c **** 	
+  38:SPI_Interface.c **** 	return data;
+  39:SPI_Interface.c ****     
+  40:SPI_Interface.c **** }
+  62              		.loc 1 40 0
   63 0026 2046     		mov	r0, r4
   64 0028 10BD     		pop	{r4, pc}
   65              		.cfi_endproc
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 3
-
-
   66              	.LFE0:
   67              		.size	SPI_Interface_tradeByte, .-SPI_Interface_tradeByte
   68              		.section	.text.SPI_Interface_ReadByte,"ax",%progbits
@@ -130,14 +118,17 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
   72              		.thumb_func
   73              		.type	SPI_Interface_ReadByte, %function
   74              	SPI_Interface_ReadByte:
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccMG9QHe.s 			page 3
+
+
   75              	.LFB1:
-  50:SPI_Interface.c **** 
-  51:SPI_Interface.c **** 
-  52:SPI_Interface.c **** /*
-  53:SPI_Interface.c **** * @brief RX-only, Dual-Operation 1-Byte READ
-  54:SPI_Interface.c **** */
-  55:SPI_Interface.c **** uint8_t SPI_Interface_ReadByte(uint8_t byteTX) {
-  76              		.loc 1 55 0
+  41:SPI_Interface.c **** 
+  42:SPI_Interface.c **** 
+  43:SPI_Interface.c **** /*
+  44:SPI_Interface.c **** * @brief RX-only, Dual-Operation 1-Byte READ
+  45:SPI_Interface.c **** */
+  46:SPI_Interface.c **** uint8_t SPI_Interface_ReadByte(uint8_t byteTX) {
+  76              		.loc 1 46 0
   77              		.cfi_startproc
   78              		@ args = 0, pretend = 0, frame = 0
   79              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -147,64 +138,64 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
   83              		.cfi_offset 4, -8
   84              		.cfi_offset 14, -4
   85 0002 0446     		mov	r4, r0
-  56:SPI_Interface.c **** 	
-  57:SPI_Interface.c **** 	/* Enable the Slave */
-  58:SPI_Interface.c **** 	SLAVE_CS_Write(0);
-  86              		.loc 1 58 0
+  47:SPI_Interface.c **** 	
+  48:SPI_Interface.c **** 	/* Enable the Slave */
+  49:SPI_Interface.c **** 	SLAVE_CS_Write(0);
+  86              		.loc 1 49 0
   87 0004 0020     		movs	r0, #0
   88              	.LVL9:
   89 0006 FFF7FEFF 		bl	CS_1_Write
   90              	.LVL10:
-  59:SPI_Interface.c **** 	
-  60:SPI_Interface.c **** 	/* Load the TX Buffer */
-  61:SPI_Interface.c **** 	SPIM_1_WriteTxData(byteTX);
-  91              		.loc 1 61 0
+  50:SPI_Interface.c **** 	
+  51:SPI_Interface.c **** 	/* Load the TX Buffer */
+  52:SPI_Interface.c **** 	SPIM_1_WriteTxData(byteTX);
+  91              		.loc 1 52 0
   92 000a 2046     		mov	r0, r4
   93 000c FFF7FEFF 		bl	SPIM_1_WriteTxData
   94              	.LVL11:
-  62:SPI_Interface.c **** 	
-  63:SPI_Interface.c **** 	/* SPI Dummy Byte */
-  64:SPI_Interface.c **** 	SPIM_1_WriteTxData(SPI_DUMMY_BYTE);
-  95              		.loc 1 64 0
+  53:SPI_Interface.c **** 	
+  54:SPI_Interface.c **** 	/* SPI Dummy Byte */
+  55:SPI_Interface.c **** 	SPIM_1_WriteTxData(SPI_DUMMY_BYTE);
+  95              		.loc 1 55 0
   96 0010 0020     		movs	r0, #0
   97 0012 FFF7FEFF 		bl	SPIM_1_WriteTxData
   98              	.LVL12:
   99              	.L5:
-  65:SPI_Interface.c **** 	
-  66:SPI_Interface.c **** 	/* Wait for TX/RX */
-  67:SPI_Interface.c ****     while(!(SPIM_1_ReadTxStatus() & SPIM_1_STS_SPI_DONE));
- 100              		.loc 1 67 0 discriminator 1
+  56:SPI_Interface.c **** 	
+  57:SPI_Interface.c **** 	/* Wait for TX/RX */
+  58:SPI_Interface.c ****     while(!(SPIM_1_ReadTxStatus() & SPIM_1_STS_SPI_DONE));
+ 100              		.loc 1 58 0 discriminator 1
  101 0016 FFF7FEFF 		bl	SPIM_1_ReadTxStatus
  102              	.LVL13:
  103 001a 10F0010F 		tst	r0, #1
  104 001e FAD0     		beq	.L5
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 4
-
-
-  68:SPI_Interface.c **** 	
-  69:SPI_Interface.c **** 	/* Read the RX Buffer */
-  70:SPI_Interface.c **** 	SPIM_1_ReadRxData();
- 105              		.loc 1 70 0
+  59:SPI_Interface.c **** 	
+  60:SPI_Interface.c **** 	/* Read the RX Buffer */
+  61:SPI_Interface.c **** 	SPIM_1_ReadRxData();
+ 105              		.loc 1 61 0
  106 0020 FFF7FEFF 		bl	SPIM_1_ReadRxData
  107              	.LVL14:
-  71:SPI_Interface.c **** 	uint8_t byteRX = SPIM_1_ReadRxData();
- 108              		.loc 1 71 0
+  62:SPI_Interface.c **** 	uint8_t byteRX = SPIM_1_ReadRxData();
+ 108              		.loc 1 62 0
  109 0024 FFF7FEFF 		bl	SPIM_1_ReadRxData
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccMG9QHe.s 			page 4
+
+
  110              	.LVL15:
  111 0028 0446     		mov	r4, r0
  112              	.LVL16:
-  72:SPI_Interface.c **** 	
-  73:SPI_Interface.c **** 	/* Disable the Slave */
-  74:SPI_Interface.c **** 	SLAVE_CS_Write(1);
- 113              		.loc 1 74 0
+  63:SPI_Interface.c **** 	
+  64:SPI_Interface.c **** 	/* Disable the Slave */
+  65:SPI_Interface.c **** 	SLAVE_CS_Write(1);
+ 113              		.loc 1 65 0
  114 002a 0120     		movs	r0, #1
  115 002c FFF7FEFF 		bl	CS_1_Write
  116              	.LVL17:
-  75:SPI_Interface.c **** 	
-  76:SPI_Interface.c **** 	return byteRX;	
-  77:SPI_Interface.c **** 	
-  78:SPI_Interface.c **** }
- 117              		.loc 1 78 0
+  66:SPI_Interface.c **** 	
+  67:SPI_Interface.c **** 	return byteRX;	
+  68:SPI_Interface.c **** 	
+  69:SPI_Interface.c **** }
+ 117              		.loc 1 69 0
  118 0030 2046     		mov	r0, r4
  119 0032 10BD     		pop	{r4, pc}
  120              		.cfi_endproc
@@ -218,13 +209,13 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  128              		.type	SPI_Interface_Multi_Trade, %function
  129              	SPI_Interface_Multi_Trade:
  130              	.LFB2:
-  79:SPI_Interface.c **** 
-  80:SPI_Interface.c **** 
-  81:SPI_Interface.c **** /*
-  82:SPI_Interface.c **** * @brief Full-Duplex, Multi-Byte Trade (RX/TX)
-  83:SPI_Interface.c **** */
-  84:SPI_Interface.c **** void SPI_Interface_Multi_Trade(uint8_t* dataTX, uint8_t* dataRX, uint8_t nBytes) {
- 131              		.loc 1 84 0
+  70:SPI_Interface.c **** 
+  71:SPI_Interface.c **** 
+  72:SPI_Interface.c **** /*
+  73:SPI_Interface.c **** * @brief Full-Duplex, Multi-Byte Trade (RX/TX)
+  74:SPI_Interface.c **** */
+  75:SPI_Interface.c **** void SPI_Interface_Multi_Trade(uint8_t* dataTX, uint8_t* dataRX, uint8_t nBytes) {
+ 131              		.loc 1 75 0
  132              		.cfi_startproc
  133              		@ args = 0, pretend = 0, frame = 0
  134              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -238,28 +229,28 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  142              		.align	2
  143              		.global	SPI_Interface_Multi_RW
  144              		.thumb
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 5
-
-
  145              		.thumb_func
  146              		.type	SPI_Interface_Multi_RW, %function
  147              	SPI_Interface_Multi_RW:
  148              	.LFB3:
-  85:SPI_Interface.c **** 	
-  86:SPI_Interface.c ****     
-  87:SPI_Interface.c **** 	
-  88:SPI_Interface.c **** }
-  89:SPI_Interface.c **** 
-  90:SPI_Interface.c **** /*
-  91:SPI_Interface.c **** * @brief RX-only, Dual-Operation Multi-Byte READ/WRITE
-  92:SPI_Interface.c **** */
-  93:SPI_Interface.c **** void SPI_Interface_Multi_RW(uint8_t* dataTX, uint8_t bytesTX, uint8_t* dataRX, uint8_t bytesRX) {
- 149              		.loc 1 93 0
+  76:SPI_Interface.c **** 	
+  77:SPI_Interface.c ****     
+  78:SPI_Interface.c **** 	
+  79:SPI_Interface.c **** }
+  80:SPI_Interface.c **** 
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccMG9QHe.s 			page 5
+
+
+  81:SPI_Interface.c **** /*
+  82:SPI_Interface.c **** * @brief RX-only, Dual-Operation Multi-Byte READ/WRITE
+  83:SPI_Interface.c **** */
+  84:SPI_Interface.c **** void SPI_Interface_Multi_RW(uint8_t* dataTX, uint8_t bytesTX, uint8_t* dataRX, uint8_t bytesRX) {
+ 149              		.loc 1 84 0
  150              		.cfi_startproc
  151              		@ args = 0, pretend = 0, frame = 8
  152              		@ frame_needed = 0, uses_anonymous_args = 0
  153              	.LVL19:
- 154              		.loc 1 93 0
+ 154              		.loc 1 84 0
  155 0000 2DE9F043 		push	{r4, r5, r6, r7, r8, r9, lr}
  156              		.cfi_def_cfa_offset 28
  157              		.cfi_offset 4, -28
@@ -275,34 +266,31 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  167 0008 0C46     		mov	r4, r1
  168 000a 1746     		mov	r7, r2
  169 000c 9846     		mov	r8, r3
-  94:SPI_Interface.c **** 	
-  95:SPI_Interface.c **** 	/* Enable the Slave */
-  96:SPI_Interface.c ****     SLAVE_CS_Write(0);
- 170              		.loc 1 96 0
+  85:SPI_Interface.c **** 	
+  86:SPI_Interface.c **** 	/* Enable the Slave */
+  87:SPI_Interface.c ****     SLAVE_CS_Write(0);
+ 170              		.loc 1 87 0
  171 000e 0020     		movs	r0, #0
  172              	.LVL20:
  173 0010 FFF7FEFF 		bl	CS_1_Write
  174              	.LVL21:
-  97:SPI_Interface.c ****         
-  98:SPI_Interface.c ****     int8_t count = bytesTX, index = 0;
- 175              		.loc 1 98 0
+  88:SPI_Interface.c ****         
+  89:SPI_Interface.c ****     int8_t count = bytesTX, index = 0;
+ 175              		.loc 1 89 0
  176 0014 64B2     		sxtb	r4, r4
  177              	.LVL22:
  178 0016 0025     		movs	r5, #0
-  99:SPI_Interface.c ****     	
- 100:SPI_Interface.c ****     /* Transmit Data */
- 101:SPI_Interface.c ****     while ( count > 0 ) {
- 179              		.loc 1 101 0
+  90:SPI_Interface.c ****     	
+  91:SPI_Interface.c ****     /* Transmit Data */
+  92:SPI_Interface.c ****     while ( count > 0 ) {
+ 179              		.loc 1 92 0
  180 0018 11E0     		b	.L9
  181              	.LVL23:
  182              	.L11:
- 102:SPI_Interface.c ****             
- 103:SPI_Interface.c ****     	/* Load the TX buffer with Data*/
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 6
-
-
- 104:SPI_Interface.c ****         SPIM_1_PutArray(&dataTX[index*SPI_TxBufferSize], (count > SPI_TxBufferSize ? SPI_TxBufferSi
- 183              		.loc 1 104 0
+  93:SPI_Interface.c ****             
+  94:SPI_Interface.c ****     	/* Load the TX buffer with Data*/
+  95:SPI_Interface.c ****         SPIM_1_PutArray(&dataTX[index*SPI_TxBufferSize], (count > SPI_TxBufferSize ? SPI_TxBufferSi
+ 183              		.loc 1 95 0
  184 001a 2146     		mov	r1, r4
  185 001c 082C     		cmp	r4, #8
  186 001e A8BF     		it	ge
@@ -310,76 +298,79 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  188 0022 C9B2     		uxtb	r1, r1
  189 0024 06EBC500 		add	r0, r6, r5, lsl #3
  190 0028 FFF7FEFF 		bl	SPIM_1_PutArray
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccMG9QHe.s 			page 6
+
+
  191              	.LVL24:
  192              	.L10:
- 105:SPI_Interface.c ****         /* Wait for TX */
- 106:SPI_Interface.c ****         while( !(SPIM_1_ReadTxStatus() & SPIM_1_STS_SPI_DONE) );
- 193              		.loc 1 106 0 discriminator 1
+  96:SPI_Interface.c ****         /* Wait for TX */
+  97:SPI_Interface.c ****         while( !(SPIM_1_ReadTxStatus() & SPIM_1_STS_SPI_DONE) );
+ 193              		.loc 1 97 0 discriminator 1
  194 002c FFF7FEFF 		bl	SPIM_1_ReadTxStatus
  195              	.LVL25:
  196 0030 10F0010F 		tst	r0, #1
  197 0034 FAD0     		beq	.L10
- 107:SPI_Interface.c ****         
- 108:SPI_Interface.c ****         /* Update count */
- 109:SPI_Interface.c ****         count -= SPI_TxBufferSize;
- 198              		.loc 1 109 0
+  98:SPI_Interface.c ****         
+  99:SPI_Interface.c ****         /* Update count */
+ 100:SPI_Interface.c ****         count -= SPI_TxBufferSize;
+ 198              		.loc 1 100 0
  199 0036 083C     		subs	r4, r4, #8
  200              	.LVL26:
  201 0038 64B2     		sxtb	r4, r4
  202              	.LVL27:
- 110:SPI_Interface.c ****         index++;
- 203              		.loc 1 110 0
+ 101:SPI_Interface.c ****         index++;
+ 203              		.loc 1 101 0
  204 003a 0135     		adds	r5, r5, #1
  205              	.LVL28:
  206 003c 6DB2     		sxtb	r5, r5
  207              	.LVL29:
  208              	.L9:
- 101:SPI_Interface.c ****             
- 209              		.loc 1 101 0
+  92:SPI_Interface.c ****             
+ 209              		.loc 1 92 0
  210 003e 002C     		cmp	r4, #0
  211 0040 EBDC     		bgt	.L11
- 111:SPI_Interface.c ****            
- 112:SPI_Interface.c ****     }
- 113:SPI_Interface.c ****         
- 114:SPI_Interface.c ****     /* Clear the RX Buffer */
- 115:SPI_Interface.c ****     SPIM_1_ClearFIFO();
- 212              		.loc 1 115 0
+ 102:SPI_Interface.c ****            
+ 103:SPI_Interface.c ****     }
+ 104:SPI_Interface.c ****         
+ 105:SPI_Interface.c ****     /* Clear the RX Buffer */
+ 106:SPI_Interface.c ****     SPIM_1_ClearFIFO();
+ 212              		.loc 1 106 0
  213 0042 FFF7FEFF 		bl	SPIM_1_ClearFIFO
  214              	.LVL30:
- 116:SPI_Interface.c ****     SPIM_1_ClearRxBuffer();
- 215              		.loc 1 116 0
+ 107:SPI_Interface.c ****     SPIM_1_ClearRxBuffer();
+ 215              		.loc 1 107 0
  216 0046 FFF7FEFF 		bl	SPIM_1_ClearRxBuffer
  217              	.LVL31:
- 117:SPI_Interface.c ****         
- 118:SPI_Interface.c ****     /* Init the Dummy TX Buffer */
- 119:SPI_Interface.c ****     uint8_t dummyTX[SPI_RxBufferSize];
- 120:SPI_Interface.c ****     memset(dummyTX, SPI_DUMMY_BYTE, SPI_RxBufferSize);
- 218              		.loc 1 120 0
+ 108:SPI_Interface.c ****         
+ 109:SPI_Interface.c ****     /* Init the Dummy TX Buffer */
+ 110:SPI_Interface.c ****     uint8_t dummyTX[SPI_RxBufferSize];
+ 111:SPI_Interface.c ****     memset(dummyTX, SPI_DUMMY_BYTE, SPI_RxBufferSize);
+ 218              		.loc 1 111 0
  219 004a 0026     		movs	r6, #0
  220              	.LVL32:
  221 004c 0096     		str	r6, [sp]
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 7
-
-
  222 004e 0196     		str	r6, [sp, #4]
- 121:SPI_Interface.c ****         
- 122:SPI_Interface.c ****     /* Update count for RX */
- 123:SPI_Interface.c ****     count = bytesRX;
- 223              		.loc 1 123 0
+ 112:SPI_Interface.c ****         
+ 113:SPI_Interface.c ****     /* Update count for RX */
+ 114:SPI_Interface.c ****     count = bytesRX;
+ 223              		.loc 1 114 0
  224 0050 4FFA88F8 		sxtb	r8, r8
  225              	.LVL33:
- 124:SPI_Interface.c ****     index = 0;
- 125:SPI_Interface.c ****         
- 126:SPI_Interface.c ****     /* Get the RX Data */
- 127:SPI_Interface.c ****     while ( count > 0 ) {
- 226              		.loc 1 127 0
+ 115:SPI_Interface.c ****     index = 0;
+ 116:SPI_Interface.c ****         
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccMG9QHe.s 			page 7
+
+
+ 117:SPI_Interface.c ****     /* Get the RX Data */
+ 118:SPI_Interface.c ****     while ( count > 0 ) {
+ 226              		.loc 1 118 0
  227 0054 20E0     		b	.L12
  228              	.LVL34:
  229              	.L16:
- 128:SPI_Interface.c ****          
- 129:SPI_Interface.c ****         /* Load the TX buffer with Dummy Bytes*/
- 130:SPI_Interface.c ****         SPIM_1_PutArray(dummyTX, (count > SPI_TxBufferSize ? SPI_TxBufferSize : count));
- 230              		.loc 1 130 0
+ 119:SPI_Interface.c ****          
+ 120:SPI_Interface.c ****         /* Load the TX buffer with Dummy Bytes*/
+ 121:SPI_Interface.c ****         SPIM_1_PutArray(dummyTX, (count > SPI_TxBufferSize ? SPI_TxBufferSize : count));
+ 230              		.loc 1 121 0
  231 0056 C146     		mov	r9, r8
  232 0058 B8F1080F 		cmp	r8, #8
  233 005c A8BF     		it	ge
@@ -389,9 +380,9 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  237 0068 FFF7FEFF 		bl	SPIM_1_PutArray
  238              	.LVL35:
  239              	.L13:
- 131:SPI_Interface.c ****         /* Wait for TX */
- 132:SPI_Interface.c ****         while( !(SPIM_1_ReadTxStatus() & SPIM_1_STS_SPI_DONE) );
- 240              		.loc 1 132 0 discriminator 1
+ 122:SPI_Interface.c ****         /* Wait for TX */
+ 123:SPI_Interface.c ****         while( !(SPIM_1_ReadTxStatus() & SPIM_1_STS_SPI_DONE) );
+ 240              		.loc 1 123 0 discriminator 1
  241 006c FFF7FEFF 		bl	SPIM_1_ReadTxStatus
  242              	.LVL36:
  243 0070 10F0010F 		tst	r0, #1
@@ -401,74 +392,74 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  247              	.LVL37:
  248              	.L15:
  249              	.LBB2:
- 133:SPI_Interface.c ****         /* Read the RX Buffer */
- 134:SPI_Interface.c ****         for( uint8_t j = 0; j < (count > SPI_TxBufferSize ? SPI_TxBufferSize : count); j++ ) {
- 135:SPI_Interface.c ****             dataRX[j + index*SPI_RxBufferSize] = SPIM_1_ReadRxData();   
- 250              		.loc 1 135 0 discriminator 3
+ 124:SPI_Interface.c ****         /* Read the RX Buffer */
+ 125:SPI_Interface.c ****         for( uint8_t j = 0; j < (count > SPI_TxBufferSize ? SPI_TxBufferSize : count); j++ ) {
+ 126:SPI_Interface.c ****             dataRX[j + index*SPI_RxBufferSize] = SPIM_1_ReadRxData();   
+ 250              		.loc 1 126 0 discriminator 3
  251 007a 04EBC605 		add	r5, r4, r6, lsl #3
  252 007e FFF7FEFF 		bl	SPIM_1_ReadRxData
  253              	.LVL38:
  254 0082 7855     		strb	r0, [r7, r5]
- 134:SPI_Interface.c ****             dataRX[j + index*SPI_RxBufferSize] = SPIM_1_ReadRxData();   
- 255              		.loc 1 134 0 discriminator 3
+ 125:SPI_Interface.c ****             dataRX[j + index*SPI_RxBufferSize] = SPIM_1_ReadRxData();   
+ 255              		.loc 1 125 0 discriminator 3
  256 0084 0134     		adds	r4, r4, #1
  257              	.LVL39:
  258 0086 E4B2     		uxtb	r4, r4
  259              	.LVL40:
  260              	.L14:
- 134:SPI_Interface.c ****             dataRX[j + index*SPI_RxBufferSize] = SPIM_1_ReadRxData();   
- 261              		.loc 1 134 0 is_stmt 0 discriminator 1
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 8
-
-
+ 125:SPI_Interface.c ****             dataRX[j + index*SPI_RxBufferSize] = SPIM_1_ReadRxData();   
+ 261              		.loc 1 125 0 is_stmt 0 discriminator 1
  262 0088 4C45     		cmp	r4, r9
  263 008a F6DB     		blt	.L15
  264              	.LBE2:
- 136:SPI_Interface.c ****         }
- 137:SPI_Interface.c ****         
- 138:SPI_Interface.c ****         count -= SPI_RxBufferSize;
- 265              		.loc 1 138 0 is_stmt 1
+ 127:SPI_Interface.c ****         }
+ 128:SPI_Interface.c ****         
+ 129:SPI_Interface.c ****         count -= SPI_RxBufferSize;
+ 265              		.loc 1 129 0 is_stmt 1
  266 008c A8F10808 		sub	r8, r8, #8
  267              	.LVL41:
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccMG9QHe.s 			page 8
+
+
  268 0090 4FFA88F8 		sxtb	r8, r8
  269              	.LVL42:
- 139:SPI_Interface.c ****         index++;
- 270              		.loc 1 139 0
+ 130:SPI_Interface.c ****         index++;
+ 270              		.loc 1 130 0
  271 0094 0136     		adds	r6, r6, #1
  272              	.LVL43:
  273 0096 76B2     		sxtb	r6, r6
  274              	.LVL44:
  275              	.L12:
- 127:SPI_Interface.c ****          
- 276              		.loc 1 127 0
+ 118:SPI_Interface.c ****          
+ 276              		.loc 1 118 0
  277 0098 B8F1000F 		cmp	r8, #0
  278 009c DBDC     		bgt	.L16
- 140:SPI_Interface.c ****         
- 141:SPI_Interface.c ****     }
- 142:SPI_Interface.c ****         
- 143:SPI_Interface.c ****     /* Disable the Slave */
- 144:SPI_Interface.c ****     SLAVE_CS_Write(1);
- 279              		.loc 1 144 0
+ 131:SPI_Interface.c ****         
+ 132:SPI_Interface.c ****     }
+ 133:SPI_Interface.c ****         
+ 134:SPI_Interface.c ****     /* Disable the Slave */
+ 135:SPI_Interface.c ****     SLAVE_CS_Write(1);
+ 279              		.loc 1 135 0
  280 009e 0120     		movs	r0, #1
  281 00a0 FFF7FEFF 		bl	CS_1_Write
  282              	.LVL45:
- 145:SPI_Interface.c ****     	
- 146:SPI_Interface.c ****     /* Clear */
- 147:SPI_Interface.c ****     SPIM_1_ClearFIFO();
- 283              		.loc 1 147 0
+ 136:SPI_Interface.c ****     	
+ 137:SPI_Interface.c ****     /* Clear */
+ 138:SPI_Interface.c ****     SPIM_1_ClearFIFO();
+ 283              		.loc 1 138 0
  284 00a4 FFF7FEFF 		bl	SPIM_1_ClearFIFO
  285              	.LVL46:
- 148:SPI_Interface.c ****     SPIM_1_ClearRxBuffer();
- 286              		.loc 1 148 0
+ 139:SPI_Interface.c ****     SPIM_1_ClearRxBuffer();
+ 286              		.loc 1 139 0
  287 00a8 FFF7FEFF 		bl	SPIM_1_ClearRxBuffer
  288              	.LVL47:
- 149:SPI_Interface.c ****     SPIM_1_ClearTxBuffer();
- 289              		.loc 1 149 0
+ 140:SPI_Interface.c ****     SPIM_1_ClearTxBuffer();
+ 289              		.loc 1 140 0
  290 00ac FFF7FEFF 		bl	SPIM_1_ClearTxBuffer
  291              	.LVL48:
- 150:SPI_Interface.c **** 
- 151:SPI_Interface.c **** }
- 292              		.loc 1 151 0
+ 141:SPI_Interface.c **** 
+ 142:SPI_Interface.c **** }
+ 292              		.loc 1 142 0
  293 00b0 03B0     		add	sp, sp, #12
  294              		.cfi_def_cfa_offset 28
  295              		@ sp needed
@@ -478,20 +469,20 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  299              		.size	SPI_Interface_Multi_RW, .-SPI_Interface_Multi_RW
  300 00b6 00BF     		.section	.text.ACC_SPI_Interface_tradeByte,"ax",%progbits
  301              		.align	2
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 9
-
-
  302              		.global	ACC_SPI_Interface_tradeByte
  303              		.thumb
  304              		.thumb_func
  305              		.type	ACC_SPI_Interface_tradeByte, %function
  306              	ACC_SPI_Interface_tradeByte:
  307              	.LFB4:
- 152:SPI_Interface.c **** 
- 153:SPI_Interface.c **** //////////////////////////////////////////////////////////
- 154:SPI_Interface.c **** 
- 155:SPI_Interface.c **** uint8_t ACC_SPI_Interface_tradeByte(uint8_t byte) {
- 308              		.loc 1 155 0
+ 143:SPI_Interface.c **** 
+ 144:SPI_Interface.c **** /********** ACCELEROMETER SPI FUNCTION **********/
+ 145:SPI_Interface.c **** 
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccMG9QHe.s 			page 9
+
+
+ 146:SPI_Interface.c **** uint8_t ACC_SPI_Interface_tradeByte(uint8_t byte) {
+ 308              		.loc 1 146 0
  309              		.cfi_startproc
  310              		@ args = 0, pretend = 0, frame = 0
  311              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -501,55 +492,55 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  315              		.cfi_offset 4, -8
  316              		.cfi_offset 14, -4
  317 0002 0446     		mov	r4, r0
- 156:SPI_Interface.c **** 	
- 157:SPI_Interface.c **** 	/* Enable the Slave */
- 158:SPI_Interface.c **** 	SLAVE_CS_Write_2(0);
- 318              		.loc 1 158 0
+ 147:SPI_Interface.c **** 	
+ 148:SPI_Interface.c **** 	/* Enable the Slave */
+ 149:SPI_Interface.c **** 	SLAVE_CS_Write_2(0);
+ 318              		.loc 1 149 0
  319 0004 0020     		movs	r0, #0
  320              	.LVL50:
  321 0006 FFF7FEFF 		bl	CS_2_Write
  322              	.LVL51:
- 159:SPI_Interface.c **** 	
- 160:SPI_Interface.c **** 	/* Load the TX Buffer */
- 161:SPI_Interface.c **** 	SPIM_2_WriteTxData(byte);
- 323              		.loc 1 161 0
+ 150:SPI_Interface.c **** 	
+ 151:SPI_Interface.c **** 	/* Load the TX Buffer */
+ 152:SPI_Interface.c **** 	SPIM_2_WriteTxData(byte);
+ 323              		.loc 1 152 0
  324 000a 2046     		mov	r0, r4
  325 000c FFF7FEFF 		bl	SPIM_2_WriteTxData
  326              	.LVL52:
  327              	.L19:
- 162:SPI_Interface.c **** 	
- 163:SPI_Interface.c **** 	/* Wait for TX */
- 164:SPI_Interface.c ****     while( !(SPIM_2_ReadTxStatus() & SPIM_1_STS_BYTE_COMPLETE) );
- 328              		.loc 1 164 0 discriminator 1
+ 153:SPI_Interface.c **** 	
+ 154:SPI_Interface.c **** 	/* Wait for TX */
+ 155:SPI_Interface.c ****     while( !(SPIM_2_ReadTxStatus() & SPIM_1_STS_BYTE_COMPLETE) );
+ 328              		.loc 1 155 0 discriminator 1
  329 0010 FFF7FEFF 		bl	SPIM_2_ReadTxStatus
  330              	.LVL53:
  331 0014 10F0080F 		tst	r0, #8
  332 0018 FAD0     		beq	.L19
- 165:SPI_Interface.c **** 	
- 166:SPI_Interface.c **** 	/* Read the RX Buffer */
- 167:SPI_Interface.c **** 	uint8_t data = SPIM_2_ReadRxData();
- 333              		.loc 1 167 0
+ 156:SPI_Interface.c **** 	
+ 157:SPI_Interface.c **** 	/* Read the RX Buffer */
+ 158:SPI_Interface.c **** 	uint8_t data = SPIM_2_ReadRxData();
+ 333              		.loc 1 158 0
  334 001a FFF7FEFF 		bl	SPIM_2_ReadRxData
  335              	.LVL54:
  336 001e 0446     		mov	r4, r0
  337              	.LVL55:
- 168:SPI_Interface.c **** 	
- 169:SPI_Interface.c **** 	/* Disable the Slave */
- 170:SPI_Interface.c **** 	SLAVE_CS_Write_2(1);
- 338              		.loc 1 170 0
+ 159:SPI_Interface.c **** 	
+ 160:SPI_Interface.c **** 	/* Disable the Slave */
+ 161:SPI_Interface.c **** 	SLAVE_CS_Write_2(1);
+ 338              		.loc 1 161 0
  339 0020 0120     		movs	r0, #1
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 10
-
-
  340 0022 FFF7FEFF 		bl	CS_2_Write
  341              	.LVL56:
- 171:SPI_Interface.c **** 	
- 172:SPI_Interface.c **** 	return data;
- 173:SPI_Interface.c ****     
- 174:SPI_Interface.c **** }
- 342              		.loc 1 174 0
+ 162:SPI_Interface.c **** 	
+ 163:SPI_Interface.c **** 	return data;
+ 164:SPI_Interface.c ****     
+ 165:SPI_Interface.c **** }
+ 342              		.loc 1 165 0
  343 0026 2046     		mov	r0, r4
  344 0028 10BD     		pop	{r4, pc}
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccMG9QHe.s 			page 10
+
+
  345              		.cfi_endproc
  346              	.LFE4:
  347              		.size	ACC_SPI_Interface_tradeByte, .-ACC_SPI_Interface_tradeByte
@@ -561,9 +552,9 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  353              		.type	ACC_SPI_Interface_ReadByte, %function
  354              	ACC_SPI_Interface_ReadByte:
  355              	.LFB5:
- 175:SPI_Interface.c **** 
- 176:SPI_Interface.c **** uint8_t ACC_SPI_Interface_ReadByte(uint8_t byteTX) {
- 356              		.loc 1 176 0
+ 166:SPI_Interface.c **** 
+ 167:SPI_Interface.c **** uint8_t ACC_SPI_Interface_ReadByte(uint8_t byteTX) {
+ 356              		.loc 1 167 0
  357              		.cfi_startproc
  358              		@ args = 0, pretend = 0, frame = 0
  359              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -573,64 +564,64 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  363              		.cfi_offset 4, -8
  364              		.cfi_offset 14, -4
  365 0002 0446     		mov	r4, r0
- 177:SPI_Interface.c **** 	
- 178:SPI_Interface.c **** 	/* Enable the Slave */
- 179:SPI_Interface.c **** 	SLAVE_CS_Write_2(0);
- 366              		.loc 1 179 0
+ 168:SPI_Interface.c **** 	
+ 169:SPI_Interface.c **** 	/* Enable the Slave */
+ 170:SPI_Interface.c **** 	SLAVE_CS_Write_2(0);
+ 366              		.loc 1 170 0
  367 0004 0020     		movs	r0, #0
  368              	.LVL58:
  369 0006 FFF7FEFF 		bl	CS_2_Write
  370              	.LVL59:
- 180:SPI_Interface.c **** 	
- 181:SPI_Interface.c **** 	/* Load the TX Buffer */
- 182:SPI_Interface.c **** 	SPIM_2_WriteTxData(byteTX);
- 371              		.loc 1 182 0
+ 171:SPI_Interface.c **** 	
+ 172:SPI_Interface.c **** 	/* Load the TX Buffer */
+ 173:SPI_Interface.c **** 	SPIM_2_WriteTxData(byteTX);
+ 371              		.loc 1 173 0
  372 000a 2046     		mov	r0, r4
  373 000c FFF7FEFF 		bl	SPIM_2_WriteTxData
  374              	.LVL60:
- 183:SPI_Interface.c **** 	
- 184:SPI_Interface.c **** 	/* SPI Dummy Byte */
- 185:SPI_Interface.c **** 	SPIM_2_WriteTxData(SPI_DUMMY_BYTE);
- 375              		.loc 1 185 0
+ 174:SPI_Interface.c **** 	
+ 175:SPI_Interface.c **** 	/* SPI Dummy Byte */
+ 176:SPI_Interface.c **** 	SPIM_2_WriteTxData(SPI_DUMMY_BYTE);
+ 375              		.loc 1 176 0
  376 0010 0020     		movs	r0, #0
  377 0012 FFF7FEFF 		bl	SPIM_2_WriteTxData
  378              	.LVL61:
  379              	.L22:
- 186:SPI_Interface.c **** 	
- 187:SPI_Interface.c **** 	/* Wait for TX/RX */
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 11
-
-
- 188:SPI_Interface.c ****     while(!(SPIM_2_ReadTxStatus() & SPIM_2_STS_SPI_DONE));
- 380              		.loc 1 188 0 discriminator 1
+ 177:SPI_Interface.c **** 	
+ 178:SPI_Interface.c **** 	/* Wait for TX/RX */
+ 179:SPI_Interface.c ****     while(!(SPIM_2_ReadTxStatus() & SPIM_2_STS_SPI_DONE));
+ 380              		.loc 1 179 0 discriminator 1
  381 0016 FFF7FEFF 		bl	SPIM_2_ReadTxStatus
  382              	.LVL62:
  383 001a 10F0010F 		tst	r0, #1
  384 001e FAD0     		beq	.L22
- 189:SPI_Interface.c **** 	
- 190:SPI_Interface.c **** 	/* Read the RX Buffer */
- 191:SPI_Interface.c **** 	SPIM_2_ReadRxData();
- 385              		.loc 1 191 0
+ 180:SPI_Interface.c **** 	
+ 181:SPI_Interface.c **** 	/* Read the RX Buffer */
+ 182:SPI_Interface.c **** 	SPIM_2_ReadRxData();
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccMG9QHe.s 			page 11
+
+
+ 385              		.loc 1 182 0
  386 0020 FFF7FEFF 		bl	SPIM_2_ReadRxData
  387              	.LVL63:
- 192:SPI_Interface.c **** 	uint8_t byteRX = SPIM_2_ReadRxData();
- 388              		.loc 1 192 0
+ 183:SPI_Interface.c **** 	uint8_t byteRX = SPIM_2_ReadRxData();
+ 388              		.loc 1 183 0
  389 0024 FFF7FEFF 		bl	SPIM_2_ReadRxData
  390              	.LVL64:
  391 0028 0446     		mov	r4, r0
  392              	.LVL65:
- 193:SPI_Interface.c **** 	
- 194:SPI_Interface.c **** 	/* Disable the Slave */
- 195:SPI_Interface.c **** 	SLAVE_CS_Write_2(1);
- 393              		.loc 1 195 0
+ 184:SPI_Interface.c **** 	
+ 185:SPI_Interface.c **** 	/* Disable the Slave */
+ 186:SPI_Interface.c **** 	SLAVE_CS_Write_2(1);
+ 393              		.loc 1 186 0
  394 002a 0120     		movs	r0, #1
  395 002c FFF7FEFF 		bl	CS_2_Write
  396              	.LVL66:
- 196:SPI_Interface.c **** 	
- 197:SPI_Interface.c **** 	return byteRX;	
- 198:SPI_Interface.c **** 	
- 199:SPI_Interface.c **** }
- 397              		.loc 1 199 0
+ 187:SPI_Interface.c **** 	
+ 188:SPI_Interface.c **** 	return byteRX;	
+ 189:SPI_Interface.c **** 	
+ 190:SPI_Interface.c **** }
+ 397              		.loc 1 190 0
  398 0030 2046     		mov	r0, r4
  399 0032 10BD     		pop	{r4, pc}
  400              		.cfi_endproc
@@ -644,9 +635,9 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  408              		.type	ACC_SPI_Interface_Multi_RW, %function
  409              	ACC_SPI_Interface_Multi_RW:
  410              	.LFB6:
- 200:SPI_Interface.c **** 
- 201:SPI_Interface.c **** void ACC_SPI_Interface_Multi_RW(uint8_t* dataTX, uint8_t bytesTX, uint8_t* dataRX, uint8_t bytesRX)
- 411              		.loc 1 201 0
+ 191:SPI_Interface.c **** 
+ 192:SPI_Interface.c **** void ACC_SPI_Interface_Multi_RW(uint8_t* dataTX, uint8_t bytesTX, uint8_t* dataRX, uint8_t bytesRX)
+ 411              		.loc 1 192 0
  412              		.cfi_startproc
  413              		@ args = 0, pretend = 0, frame = 8
  414              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -658,9 +649,6 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  420              		.cfi_offset 6, -20
  421              		.cfi_offset 7, -16
  422              		.cfi_offset 8, -12
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 12
-
-
  423              		.cfi_offset 9, -8
  424              		.cfi_offset 14, -4
  425 0004 83B0     		sub	sp, sp, #12
@@ -669,31 +657,34 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  428 0008 0C46     		mov	r4, r1
  429 000a 1746     		mov	r7, r2
  430 000c 9846     		mov	r8, r3
- 202:SPI_Interface.c **** 	
- 203:SPI_Interface.c **** 	/* Enable the Slave */
- 204:SPI_Interface.c ****     SLAVE_CS_Write_2(0);
- 431              		.loc 1 204 0
+ 193:SPI_Interface.c **** 	
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccMG9QHe.s 			page 12
+
+
+ 194:SPI_Interface.c **** 	/* Enable the Slave */
+ 195:SPI_Interface.c ****     SLAVE_CS_Write_2(0);
+ 431              		.loc 1 195 0
  432 000e 0020     		movs	r0, #0
  433              	.LVL68:
  434 0010 FFF7FEFF 		bl	CS_2_Write
  435              	.LVL69:
- 205:SPI_Interface.c ****         
- 206:SPI_Interface.c ****     int8_t count = bytesTX, index = 0;
- 436              		.loc 1 206 0
+ 196:SPI_Interface.c ****         
+ 197:SPI_Interface.c ****     int8_t count = bytesTX, index = 0;
+ 436              		.loc 1 197 0
  437 0014 64B2     		sxtb	r4, r4
  438              	.LVL70:
  439 0016 0025     		movs	r5, #0
- 207:SPI_Interface.c ****     	
- 208:SPI_Interface.c ****     /* Transmit Data */
- 209:SPI_Interface.c ****     while ( count > 0 ) {
- 440              		.loc 1 209 0
+ 198:SPI_Interface.c ****     	
+ 199:SPI_Interface.c ****     /* Transmit Data */
+ 200:SPI_Interface.c ****     while ( count > 0 ) {
+ 440              		.loc 1 200 0
  441 0018 11E0     		b	.L25
  442              	.LVL71:
  443              	.L27:
- 210:SPI_Interface.c ****             
- 211:SPI_Interface.c ****     	/* Load the TX buffer with Data*/
- 212:SPI_Interface.c ****         SPIM_2_PutArray(&dataTX[index*SPI_TxBufferSize], (count > SPI_TxBufferSize ? SPI_TxBufferSi
- 444              		.loc 1 212 0
+ 201:SPI_Interface.c ****             
+ 202:SPI_Interface.c ****     	/* Load the TX buffer with Data*/
+ 203:SPI_Interface.c ****         SPIM_2_PutArray(&dataTX[index*SPI_TxBufferSize], (count > SPI_TxBufferSize ? SPI_TxBufferSi
+ 444              		.loc 1 203 0
  445 001a 2146     		mov	r1, r4
  446 001c 082C     		cmp	r4, #8
  447 001e A8BF     		it	ge
@@ -703,74 +694,74 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  451 0028 FFF7FEFF 		bl	SPIM_2_PutArray
  452              	.LVL72:
  453              	.L26:
- 213:SPI_Interface.c ****         /* Wait for TX */
- 214:SPI_Interface.c ****         while( !(SPIM_2_ReadTxStatus() & SPIM_2_STS_SPI_DONE) );
- 454              		.loc 1 214 0 discriminator 1
+ 204:SPI_Interface.c ****         /* Wait for TX */
+ 205:SPI_Interface.c ****         while( !(SPIM_2_ReadTxStatus() & SPIM_2_STS_SPI_DONE) );
+ 454              		.loc 1 205 0 discriminator 1
  455 002c FFF7FEFF 		bl	SPIM_2_ReadTxStatus
  456              	.LVL73:
  457 0030 10F0010F 		tst	r0, #1
  458 0034 FAD0     		beq	.L26
- 215:SPI_Interface.c ****         
- 216:SPI_Interface.c ****         /* Update count */
- 217:SPI_Interface.c ****         count -= SPI_TxBufferSize;
- 459              		.loc 1 217 0
+ 206:SPI_Interface.c ****         
+ 207:SPI_Interface.c ****         /* Update count */
+ 208:SPI_Interface.c ****         count -= SPI_TxBufferSize;
+ 459              		.loc 1 208 0
  460 0036 083C     		subs	r4, r4, #8
  461              	.LVL74:
  462 0038 64B2     		sxtb	r4, r4
  463              	.LVL75:
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 13
-
-
- 218:SPI_Interface.c ****         index++;
- 464              		.loc 1 218 0
+ 209:SPI_Interface.c ****         index++;
+ 464              		.loc 1 209 0
  465 003a 0135     		adds	r5, r5, #1
  466              	.LVL76:
  467 003c 6DB2     		sxtb	r5, r5
  468              	.LVL77:
  469              	.L25:
- 209:SPI_Interface.c ****             
- 470              		.loc 1 209 0
+ 200:SPI_Interface.c ****             
+ 470              		.loc 1 200 0
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccMG9QHe.s 			page 13
+
+
  471 003e 002C     		cmp	r4, #0
  472 0040 EBDC     		bgt	.L27
- 219:SPI_Interface.c ****            
- 220:SPI_Interface.c ****     }
- 221:SPI_Interface.c ****         
- 222:SPI_Interface.c ****     /* Clear the RX Buffer */
- 223:SPI_Interface.c ****     SPIM_2_ClearFIFO();
- 473              		.loc 1 223 0
+ 210:SPI_Interface.c ****            
+ 211:SPI_Interface.c ****     }
+ 212:SPI_Interface.c ****         
+ 213:SPI_Interface.c ****     /* Clear the RX Buffer */
+ 214:SPI_Interface.c ****     SPIM_2_ClearFIFO();
+ 473              		.loc 1 214 0
  474 0042 FFF7FEFF 		bl	SPIM_2_ClearFIFO
  475              	.LVL78:
- 224:SPI_Interface.c ****     SPIM_2_ClearRxBuffer();
- 476              		.loc 1 224 0
+ 215:SPI_Interface.c ****     SPIM_2_ClearRxBuffer();
+ 476              		.loc 1 215 0
  477 0046 FFF7FEFF 		bl	SPIM_2_ClearRxBuffer
  478              	.LVL79:
- 225:SPI_Interface.c ****         
- 226:SPI_Interface.c ****     /* Init the Dummy TX Buffer */
- 227:SPI_Interface.c ****     uint8_t dummyTX[SPI_RxBufferSize];
- 228:SPI_Interface.c ****     memset(dummyTX, SPI_DUMMY_BYTE, SPI_RxBufferSize);
- 479              		.loc 1 228 0
+ 216:SPI_Interface.c ****         
+ 217:SPI_Interface.c ****     /* Init the Dummy TX Buffer */
+ 218:SPI_Interface.c ****     uint8_t dummyTX[SPI_RxBufferSize];
+ 219:SPI_Interface.c ****     memset(dummyTX, SPI_DUMMY_BYTE, SPI_RxBufferSize);
+ 479              		.loc 1 219 0
  480 004a 0026     		movs	r6, #0
  481              	.LVL80:
  482 004c 0096     		str	r6, [sp]
  483 004e 0196     		str	r6, [sp, #4]
- 229:SPI_Interface.c ****         
- 230:SPI_Interface.c ****     /* Update count for RX */
- 231:SPI_Interface.c ****     count = bytesRX;
- 484              		.loc 1 231 0
+ 220:SPI_Interface.c ****         
+ 221:SPI_Interface.c ****     /* Update count for RX */
+ 222:SPI_Interface.c ****     count = bytesRX;
+ 484              		.loc 1 222 0
  485 0050 4FFA88F8 		sxtb	r8, r8
  486              	.LVL81:
- 232:SPI_Interface.c ****     index = 0;
- 233:SPI_Interface.c ****         
- 234:SPI_Interface.c ****     /* Get the RX Data */
- 235:SPI_Interface.c ****     while ( count > 0 ) {
- 487              		.loc 1 235 0
+ 223:SPI_Interface.c ****     index = 0;
+ 224:SPI_Interface.c ****         
+ 225:SPI_Interface.c ****     /* Get the RX Data */
+ 226:SPI_Interface.c ****     while ( count > 0 ) {
+ 487              		.loc 1 226 0
  488 0054 20E0     		b	.L28
  489              	.LVL82:
  490              	.L32:
- 236:SPI_Interface.c ****          
- 237:SPI_Interface.c ****         /* Load the TX buffer with Dummy Bytes*/
- 238:SPI_Interface.c ****         SPIM_2_PutArray(dummyTX, (count > SPI_TxBufferSize ? SPI_TxBufferSize : count));
- 491              		.loc 1 238 0
+ 227:SPI_Interface.c ****          
+ 228:SPI_Interface.c ****         /* Load the TX buffer with Dummy Bytes*/
+ 229:SPI_Interface.c ****         SPIM_2_PutArray(dummyTX, (count > SPI_TxBufferSize ? SPI_TxBufferSize : count));
+ 491              		.loc 1 229 0
  492 0056 C146     		mov	r9, r8
  493 0058 B8F1080F 		cmp	r8, #8
  494 005c A8BF     		it	ge
@@ -778,91 +769,91 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  496 0062 5FFA89F1 		uxtb	r1, r9
  497 0066 6846     		mov	r0, sp
  498 0068 FFF7FEFF 		bl	SPIM_2_PutArray
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 14
-
-
  499              	.LVL83:
  500              	.L29:
- 239:SPI_Interface.c ****         /* Wait for TX */
- 240:SPI_Interface.c ****         while( !(SPIM_2_ReadTxStatus() & SPIM_2_STS_SPI_DONE) );
- 501              		.loc 1 240 0 discriminator 1
+ 230:SPI_Interface.c ****         /* Wait for TX */
+ 231:SPI_Interface.c ****         while( !(SPIM_2_ReadTxStatus() & SPIM_2_STS_SPI_DONE) );
+ 501              		.loc 1 231 0 discriminator 1
  502 006c FFF7FEFF 		bl	SPIM_2_ReadTxStatus
  503              	.LVL84:
  504 0070 10F0010F 		tst	r0, #1
  505 0074 FAD0     		beq	.L29
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccMG9QHe.s 			page 14
+
+
  506 0076 0024     		movs	r4, #0
  507 0078 06E0     		b	.L30
  508              	.LVL85:
  509              	.L31:
  510              	.LBB3:
- 241:SPI_Interface.c ****         /* Read the RX Buffer */
- 242:SPI_Interface.c ****         for( uint8_t j = 0; j < (count > SPI_TxBufferSize ? SPI_TxBufferSize : count); j++ ) {
- 243:SPI_Interface.c ****             dataRX[j + index*SPI_RxBufferSize] = SPIM_2_ReadRxData();   
- 511              		.loc 1 243 0 discriminator 3
+ 232:SPI_Interface.c ****         /* Read the RX Buffer */
+ 233:SPI_Interface.c ****         for( uint8_t j = 0; j < (count > SPI_TxBufferSize ? SPI_TxBufferSize : count); j++ ) {
+ 234:SPI_Interface.c ****             dataRX[j + index*SPI_RxBufferSize] = SPIM_2_ReadRxData();   
+ 511              		.loc 1 234 0 discriminator 3
  512 007a 04EBC605 		add	r5, r4, r6, lsl #3
  513 007e FFF7FEFF 		bl	SPIM_2_ReadRxData
  514              	.LVL86:
  515 0082 7855     		strb	r0, [r7, r5]
- 242:SPI_Interface.c ****             dataRX[j + index*SPI_RxBufferSize] = SPIM_2_ReadRxData();   
- 516              		.loc 1 242 0 discriminator 3
+ 233:SPI_Interface.c ****             dataRX[j + index*SPI_RxBufferSize] = SPIM_2_ReadRxData();   
+ 516              		.loc 1 233 0 discriminator 3
  517 0084 0134     		adds	r4, r4, #1
  518              	.LVL87:
  519 0086 E4B2     		uxtb	r4, r4
  520              	.LVL88:
  521              	.L30:
- 242:SPI_Interface.c ****             dataRX[j + index*SPI_RxBufferSize] = SPIM_2_ReadRxData();   
- 522              		.loc 1 242 0 is_stmt 0 discriminator 1
+ 233:SPI_Interface.c ****             dataRX[j + index*SPI_RxBufferSize] = SPIM_2_ReadRxData();   
+ 522              		.loc 1 233 0 is_stmt 0 discriminator 1
  523 0088 4C45     		cmp	r4, r9
  524 008a F6DB     		blt	.L31
  525              	.LBE3:
- 244:SPI_Interface.c ****         }
- 245:SPI_Interface.c ****         
- 246:SPI_Interface.c ****         count -= SPI_RxBufferSize;
- 526              		.loc 1 246 0 is_stmt 1
+ 235:SPI_Interface.c ****         }
+ 236:SPI_Interface.c ****         
+ 237:SPI_Interface.c ****         count -= SPI_RxBufferSize;
+ 526              		.loc 1 237 0 is_stmt 1
  527 008c A8F10808 		sub	r8, r8, #8
  528              	.LVL89:
  529 0090 4FFA88F8 		sxtb	r8, r8
  530              	.LVL90:
- 247:SPI_Interface.c ****         index++;
- 531              		.loc 1 247 0
+ 238:SPI_Interface.c ****         index++;
+ 531              		.loc 1 238 0
  532 0094 0136     		adds	r6, r6, #1
  533              	.LVL91:
  534 0096 76B2     		sxtb	r6, r6
  535              	.LVL92:
  536              	.L28:
- 235:SPI_Interface.c ****          
- 537              		.loc 1 235 0
+ 226:SPI_Interface.c ****          
+ 537              		.loc 1 226 0
  538 0098 B8F1000F 		cmp	r8, #0
  539 009c DBDC     		bgt	.L32
- 248:SPI_Interface.c ****         
- 249:SPI_Interface.c ****     }
- 250:SPI_Interface.c ****         
- 251:SPI_Interface.c ****     /* Disable the Slave */
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 15
-
-
- 252:SPI_Interface.c ****     SLAVE_CS_Write_2(1);
- 540              		.loc 1 252 0
+ 239:SPI_Interface.c ****         
+ 240:SPI_Interface.c ****     }
+ 241:SPI_Interface.c ****         
+ 242:SPI_Interface.c ****     /* Disable the Slave */
+ 243:SPI_Interface.c ****     SLAVE_CS_Write_2(1);
+ 540              		.loc 1 243 0
  541 009e 0120     		movs	r0, #1
  542 00a0 FFF7FEFF 		bl	CS_2_Write
  543              	.LVL93:
- 253:SPI_Interface.c ****     	
- 254:SPI_Interface.c ****     /* Clear */
- 255:SPI_Interface.c ****     SPIM_2_ClearFIFO();
- 544              		.loc 1 255 0
+ 244:SPI_Interface.c ****     	
+ 245:SPI_Interface.c ****     /* Clear */
+ 246:SPI_Interface.c ****     SPIM_2_ClearFIFO();
+ 544              		.loc 1 246 0
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccMG9QHe.s 			page 15
+
+
  545 00a4 FFF7FEFF 		bl	SPIM_2_ClearFIFO
  546              	.LVL94:
- 256:SPI_Interface.c ****     SPIM_2_ClearRxBuffer();
- 547              		.loc 1 256 0
+ 247:SPI_Interface.c ****     SPIM_2_ClearRxBuffer();
+ 547              		.loc 1 247 0
  548 00a8 FFF7FEFF 		bl	SPIM_2_ClearRxBuffer
  549              	.LVL95:
- 257:SPI_Interface.c ****     SPIM_2_ClearTxBuffer();
- 550              		.loc 1 257 0
+ 248:SPI_Interface.c ****     SPIM_2_ClearTxBuffer();
+ 550              		.loc 1 248 0
  551 00ac FFF7FEFF 		bl	SPIM_2_ClearTxBuffer
  552              	.LVL96:
- 258:SPI_Interface.c **** 
- 259:SPI_Interface.c **** }
- 553              		.loc 1 259 0
+ 249:SPI_Interface.c **** 
+ 250:SPI_Interface.c **** }
+ 553              		.loc 1 250 0
  554 00b0 03B0     		add	sp, sp, #12
  555              		.cfi_def_cfa_offset 28
  556              		@ sp needed
@@ -898,9 +889,6 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  586 002a 02       		.byte	0x2
  587 002b 1B       		.byte	0x1b
  588 002c 30000000 		.4byte	0x30
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 16
-
-
  589 0030 03       		.uleb128 0x3
  590 0031 01       		.byte	0x1
  591 0032 06       		.byte	0x6
@@ -910,6 +898,9 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  595 003c 02       		.byte	0x2
  596 003d 1D       		.byte	0x1d
  597 003e 42000000 		.4byte	0x42
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccMG9QHe.s 			page 16
+
+
  598 0042 03       		.uleb128 0x3
  599 0043 01       		.byte	0x1
  600 0044 08       		.byte	0x8
@@ -958,9 +949,6 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  643 0093 37000000 		.4byte	0x37
  644 0097 05       		.uleb128 0x5
  645 0098 A4010000 		.4byte	.LASF13
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 17
-
-
  646 009c 04       		.byte	0x4
  647 009d E401     		.2byte	0x1e4
  648 009f 42000000 		.4byte	0x42
@@ -970,6 +958,9 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  652 00a6 C4000000 		.4byte	.LASF14
  653 00aa 03       		.uleb128 0x3
  654 00ab 08       		.byte	0x8
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccMG9QHe.s 			page 17
+
+
  655 00ac 04       		.byte	0x4
  656 00ad E4010000 		.4byte	.LASF15
  657 00b1 03       		.uleb128 0x3
@@ -987,7 +978,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  669 00c6 06       		.uleb128 0x6
  670 00c7 EB010000 		.4byte	.LASF19
  671 00cb 01       		.byte	0x1
- 672 00cc 1E       		.byte	0x1e
+ 672 00cc 15       		.byte	0x15
  673 00cd 8C000000 		.4byte	0x8c
  674 00d1 00000000 		.4byte	.LFB0
  675 00d5 2A000000 		.4byte	.LFE0-.LFB0
@@ -997,13 +988,13 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  679 00df 07       		.uleb128 0x7
  680 00e0 72000000 		.4byte	.LASF21
  681 00e4 01       		.byte	0x1
- 682 00e5 1E       		.byte	0x1e
+ 682 00e5 15       		.byte	0x15
  683 00e6 8C000000 		.4byte	0x8c
  684 00ea 00000000 		.4byte	.LLST0
  685 00ee 08       		.uleb128 0x8
  686 00ef CA000000 		.4byte	.LASF23
  687 00f3 01       		.byte	0x1
- 688 00f4 2A       		.byte	0x2a
+ 688 00f4 21       		.byte	0x21
  689 00f5 8C000000 		.4byte	0x8c
  690 00f9 01       		.uleb128 0x1
  691 00fa 54       		.byte	0x54
@@ -1018,9 +1009,6 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  700 010c 30       		.byte	0x30
  701 010d 00       		.byte	0
  702 010e 09       		.uleb128 0x9
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 18
-
-
  703 010f 10000000 		.4byte	.LVL3
  704 0113 E8050000 		.4byte	0x5e8
  705 0117 22010000 		.4byte	0x122
@@ -1030,6 +1018,9 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  709 011e 02       		.uleb128 0x2
  710 011f 74       		.byte	0x74
  711 0120 00       		.sleb128 0
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccMG9QHe.s 			page 18
+
+
  712 0121 00       		.byte	0
  713 0122 0B       		.uleb128 0xb
  714 0123 14000000 		.4byte	.LVL4
@@ -1050,7 +1041,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  729 0144 06       		.uleb128 0x6
  730 0145 CF000000 		.4byte	.LASF20
  731 0149 01       		.byte	0x1
- 732 014a 37       		.byte	0x37
+ 732 014a 2E       		.byte	0x2e
  733 014b 8C000000 		.4byte	0x8c
  734 014f 00000000 		.4byte	.LFB1
  735 0153 34000000 		.4byte	.LFE1-.LFB1
@@ -1060,13 +1051,13 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  739 015d 07       		.uleb128 0x7
  740 015e BD000000 		.4byte	.LASF22
  741 0162 01       		.byte	0x1
- 742 0163 37       		.byte	0x37
+ 742 0163 2E       		.byte	0x2e
  743 0164 8C000000 		.4byte	0x8c
  744 0168 21000000 		.4byte	.LLST1
  745 016c 08       		.uleb128 0x8
  746 016d 14020000 		.4byte	.LASF24
  747 0171 01       		.byte	0x1
- 748 0172 47       		.byte	0x47
+ 748 0172 3E       		.byte	0x3e
  749 0173 8C000000 		.4byte	0x8c
  750 0177 01       		.uleb128 0x1
  751 0178 54       		.byte	0x54
@@ -1078,9 +1069,6 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  757 0187 01       		.uleb128 0x1
  758 0188 50       		.byte	0x50
  759 0189 01       		.uleb128 0x1
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 19
-
-
  760 018a 30       		.byte	0x30
  761 018b 00       		.byte	0
  762 018c 09       		.uleb128 0x9
@@ -1090,6 +1078,9 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  766 0199 0A       		.uleb128 0xa
  767 019a 01       		.uleb128 0x1
  768 019b 50       		.byte	0x50
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccMG9QHe.s 			page 19
+
+
  769 019c 02       		.uleb128 0x2
  770 019d 74       		.byte	0x74
  771 019e 00       		.sleb128 0
@@ -1126,7 +1117,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  802 01de 0D       		.uleb128 0xd
  803 01df 77000000 		.4byte	.LASF28
  804 01e3 01       		.byte	0x1
- 805 01e4 54       		.byte	0x54
+ 805 01e4 4B       		.byte	0x4b
  806 01e5 00000000 		.4byte	.LFB2
  807 01e9 02000000 		.4byte	.LFE2-.LFB2
  808 01ed 01       		.uleb128 0x1
@@ -1135,24 +1126,24 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  811 01f3 0E       		.uleb128 0xe
  812 01f4 BF030000 		.4byte	.LASF25
  813 01f8 01       		.byte	0x1
- 814 01f9 54       		.byte	0x54
+ 814 01f9 4B       		.byte	0x4b
  815 01fa 1B020000 		.4byte	0x21b
  816 01fe 01       		.uleb128 0x1
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 20
-
-
  817 01ff 50       		.byte	0x50
  818 0200 0E       		.uleb128 0xe
  819 0201 F6020000 		.4byte	.LASF26
  820 0205 01       		.byte	0x1
- 821 0206 54       		.byte	0x54
+ 821 0206 4B       		.byte	0x4b
  822 0207 1B020000 		.4byte	0x21b
  823 020b 01       		.uleb128 0x1
  824 020c 51       		.byte	0x51
  825 020d 0E       		.uleb128 0xe
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccMG9QHe.s 			page 20
+
+
  826 020e 50000000 		.4byte	.LASF27
  827 0212 01       		.byte	0x1
- 828 0213 54       		.byte	0x54
+ 828 0213 4B       		.byte	0x4b
  829 0214 8C000000 		.4byte	0x8c
  830 0218 01       		.uleb128 0x1
  831 0219 52       		.byte	0x52
@@ -1163,7 +1154,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  836 0221 0D       		.uleb128 0xd
  837 0222 C6030000 		.4byte	.LASF29
  838 0226 01       		.byte	0x1
- 839 0227 5D       		.byte	0x5d
+ 839 0227 54       		.byte	0x54
  840 0228 00000000 		.4byte	.LFB3
  841 022c B6000000 		.4byte	.LFE3-.LFB3
  842 0230 01       		.uleb128 0x1
@@ -1172,46 +1163,46 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  845 0236 07       		.uleb128 0x7
  846 0237 BF030000 		.4byte	.LASF25
  847 023b 01       		.byte	0x1
- 848 023c 5D       		.byte	0x5d
+ 848 023c 54       		.byte	0x54
  849 023d 1B020000 		.4byte	0x21b
  850 0241 42000000 		.4byte	.LLST2
  851 0245 07       		.uleb128 0x7
  852 0246 FD020000 		.4byte	.LASF30
  853 024a 01       		.byte	0x1
- 854 024b 5D       		.byte	0x5d
+ 854 024b 54       		.byte	0x54
  855 024c 8C000000 		.4byte	0x8c
  856 0250 6E000000 		.4byte	.LLST3
  857 0254 07       		.uleb128 0x7
  858 0255 F6020000 		.4byte	.LASF26
  859 0259 01       		.byte	0x1
- 860 025a 5D       		.byte	0x5d
+ 860 025a 54       		.byte	0x54
  861 025b 1B020000 		.4byte	0x21b
  862 025f 8F000000 		.4byte	.LLST4
  863 0263 07       		.uleb128 0x7
  864 0264 6A000000 		.4byte	.LASF31
  865 0268 01       		.byte	0x1
- 866 0269 5D       		.byte	0x5d
+ 866 0269 54       		.byte	0x54
  867 026a 8C000000 		.4byte	0x8c
  868 026e AD000000 		.4byte	.LLST5
  869 0272 10       		.uleb128 0x10
  870 0273 4A000000 		.4byte	.LASF32
  871 0277 01       		.byte	0x1
- 872 0278 62       		.byte	0x62
+ 872 0278 59       		.byte	0x59
  873 0279 81000000 		.4byte	0x81
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 21
-
-
  874 027d CE000000 		.4byte	.LLST6
  875 0281 10       		.uleb128 0x10
  876 0282 83030000 		.4byte	.LASF33
  877 0286 01       		.byte	0x1
- 878 0287 62       		.byte	0x62
+ 878 0287 59       		.byte	0x59
  879 0288 81000000 		.4byte	0x81
  880 028c 02010000 		.4byte	.LLST7
  881 0290 08       		.uleb128 0x8
  882 0291 DB020000 		.4byte	.LASF34
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccMG9QHe.s 			page 21
+
+
  883 0295 01       		.byte	0x1
- 884 0296 77       		.byte	0x77
+ 884 0296 6E       		.byte	0x6e
  885 0297 6B030000 		.4byte	0x36b
  886 029b 02       		.uleb128 0x2
  887 029c 91       		.byte	0x91
@@ -1223,7 +1214,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  893 02ab 12       		.uleb128 0x12
  894 02ac 6A00     		.ascii	"j\000"
  895 02ae 01       		.byte	0x1
- 896 02af 86       		.byte	0x86
+ 896 02af 7D       		.byte	0x7d
  897 02b0 8C000000 		.4byte	0x8c
  898 02b4 4E010000 		.4byte	.LLST8
  899 02b8 0B       		.uleb128 0xb
@@ -1258,9 +1249,6 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  928 02ed 0A       		.uleb128 0xa
  929 02ee 01       		.uleb128 0x1
  930 02ef 51       		.byte	0x51
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 22
-
-
  931 02f0 0C       		.uleb128 0xc
  932 02f1 38       		.byte	0x38
  933 02f2 74       		.byte	0x74
@@ -1270,6 +1258,9 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  937 02f6 38       		.byte	0x38
  938 02f7 2A       		.byte	0x2a
  939 02f8 28       		.byte	0x28
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccMG9QHe.s 			page 22
+
+
  940 02f9 0100     		.2byte	0x1
  941 02fb 16       		.byte	0x16
  942 02fc 13       		.byte	0x13
@@ -1318,9 +1309,6 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  985 0354 14060000 		.4byte	0x614
  986 0358 0B       		.uleb128 0xb
  987 0359 AC000000 		.4byte	.LVL47
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 23
-
-
  988 035d 1F060000 		.4byte	0x61f
  989 0361 0B       		.uleb128 0xb
  990 0362 B0000000 		.4byte	.LVL48
@@ -1330,13 +1318,16 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  994 036c 8C000000 		.4byte	0x8c
  995 0370 7B030000 		.4byte	0x37b
  996 0374 14       		.uleb128 0x14
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccMG9QHe.s 			page 23
+
+
  997 0375 BF000000 		.4byte	0xbf
  998 0379 07       		.byte	0x7
  999 037a 00       		.byte	0
  1000 037b 06       		.uleb128 0x6
  1001 037c 2E000000 		.4byte	.LASF35
  1002 0380 01       		.byte	0x1
- 1003 0381 9B       		.byte	0x9b
+ 1003 0381 92       		.byte	0x92
  1004 0382 8C000000 		.4byte	0x8c
  1005 0386 00000000 		.4byte	.LFB4
  1006 038a 2A000000 		.4byte	.LFE4-.LFB4
@@ -1346,13 +1337,13 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  1010 0394 07       		.uleb128 0x7
  1011 0395 72000000 		.4byte	.LASF21
  1012 0399 01       		.byte	0x1
- 1013 039a 9B       		.byte	0x9b
+ 1013 039a 92       		.byte	0x92
  1014 039b 8C000000 		.4byte	0x8c
  1015 039f 6C010000 		.4byte	.LLST9
  1016 03a3 08       		.uleb128 0x8
  1017 03a4 CA000000 		.4byte	.LASF23
  1018 03a8 01       		.byte	0x1
- 1019 03a9 A7       		.byte	0xa7
+ 1019 03a9 9E       		.byte	0x9e
  1020 03aa 8C000000 		.4byte	0x8c
  1021 03ae 01       		.uleb128 0x1
  1022 03af 54       		.byte	0x54
@@ -1378,9 +1369,6 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  1042 03d5 00       		.sleb128 0
  1043 03d6 00       		.byte	0
  1044 03d7 0B       		.uleb128 0xb
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 24
-
-
  1045 03d8 14000000 		.4byte	.LVL53
  1046 03dc 4B060000 		.4byte	0x64b
  1047 03e0 0B       		.uleb128 0xb
@@ -1390,6 +1378,9 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  1051 03ea 26000000 		.4byte	.LVL56
  1052 03ee 35060000 		.4byte	0x635
  1053 03f2 0A       		.uleb128 0xa
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccMG9QHe.s 			page 24
+
+
  1054 03f3 01       		.uleb128 0x1
  1055 03f4 50       		.byte	0x50
  1056 03f5 01       		.uleb128 0x1
@@ -1399,7 +1390,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  1060 03f9 06       		.uleb128 0x6
  1061 03fa 00000000 		.4byte	.LASF36
  1062 03fe 01       		.byte	0x1
- 1063 03ff B0       		.byte	0xb0
+ 1063 03ff A7       		.byte	0xa7
  1064 0400 8C000000 		.4byte	0x8c
  1065 0404 00000000 		.4byte	.LFB5
  1066 0408 34000000 		.4byte	.LFE5-.LFB5
@@ -1409,13 +1400,13 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  1070 0412 07       		.uleb128 0x7
  1071 0413 BD000000 		.4byte	.LASF22
  1072 0417 01       		.byte	0x1
- 1073 0418 B0       		.byte	0xb0
+ 1073 0418 A7       		.byte	0xa7
  1074 0419 8C000000 		.4byte	0x8c
  1075 041d 8D010000 		.4byte	.LLST10
  1076 0421 08       		.uleb128 0x8
  1077 0422 14020000 		.4byte	.LASF24
  1078 0426 01       		.byte	0x1
- 1079 0427 C0       		.byte	0xc0
+ 1079 0427 B7       		.byte	0xb7
  1080 0428 8C000000 		.4byte	0x8c
  1081 042c 01       		.uleb128 0x1
  1082 042d 54       		.byte	0x54
@@ -1438,9 +1429,6 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  1099 0450 50       		.byte	0x50
  1100 0451 02       		.uleb128 0x2
  1101 0452 74       		.byte	0x74
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 25
-
-
  1102 0453 00       		.sleb128 0
  1103 0454 00       		.byte	0
  1104 0455 09       		.uleb128 0x9
@@ -1450,6 +1438,9 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  1108 0462 0A       		.uleb128 0xa
  1109 0463 01       		.uleb128 0x1
  1110 0464 50       		.byte	0x50
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccMG9QHe.s 			page 25
+
+
  1111 0465 01       		.uleb128 0x1
  1112 0466 30       		.byte	0x30
  1113 0467 00       		.byte	0
@@ -1475,7 +1466,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  1133 0493 0D       		.uleb128 0xd
  1134 0494 DD030000 		.4byte	.LASF37
  1135 0498 01       		.byte	0x1
- 1136 0499 C9       		.byte	0xc9
+ 1136 0499 C0       		.byte	0xc0
  1137 049a 00000000 		.4byte	.LFB6
  1138 049e B6000000 		.4byte	.LFE6-.LFB6
  1139 04a2 01       		.uleb128 0x1
@@ -1484,46 +1475,46 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  1142 04a8 07       		.uleb128 0x7
  1143 04a9 BF030000 		.4byte	.LASF25
  1144 04ad 01       		.byte	0x1
- 1145 04ae C9       		.byte	0xc9
+ 1145 04ae C0       		.byte	0xc0
  1146 04af 1B020000 		.4byte	0x21b
  1147 04b3 AE010000 		.4byte	.LLST11
  1148 04b7 07       		.uleb128 0x7
  1149 04b8 FD020000 		.4byte	.LASF30
  1150 04bc 01       		.byte	0x1
- 1151 04bd C9       		.byte	0xc9
+ 1151 04bd C0       		.byte	0xc0
  1152 04be 8C000000 		.4byte	0x8c
  1153 04c2 DA010000 		.4byte	.LLST12
  1154 04c6 07       		.uleb128 0x7
  1155 04c7 F6020000 		.4byte	.LASF26
  1156 04cb 01       		.byte	0x1
- 1157 04cc C9       		.byte	0xc9
+ 1157 04cc C0       		.byte	0xc0
  1158 04cd 1B020000 		.4byte	0x21b
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 26
-
-
  1159 04d1 FB010000 		.4byte	.LLST13
  1160 04d5 07       		.uleb128 0x7
  1161 04d6 6A000000 		.4byte	.LASF31
  1162 04da 01       		.byte	0x1
- 1163 04db C9       		.byte	0xc9
+ 1163 04db C0       		.byte	0xc0
  1164 04dc 8C000000 		.4byte	0x8c
  1165 04e0 19020000 		.4byte	.LLST14
  1166 04e4 10       		.uleb128 0x10
  1167 04e5 4A000000 		.4byte	.LASF32
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccMG9QHe.s 			page 26
+
+
  1168 04e9 01       		.byte	0x1
- 1169 04ea CE       		.byte	0xce
+ 1169 04ea C5       		.byte	0xc5
  1170 04eb 81000000 		.4byte	0x81
  1171 04ef 3A020000 		.4byte	.LLST15
  1172 04f3 10       		.uleb128 0x10
  1173 04f4 83030000 		.4byte	.LASF33
  1174 04f8 01       		.byte	0x1
- 1175 04f9 CE       		.byte	0xce
+ 1175 04f9 C5       		.byte	0xc5
  1176 04fa 81000000 		.4byte	0x81
  1177 04fe 6E020000 		.4byte	.LLST16
  1178 0502 08       		.uleb128 0x8
  1179 0503 DB020000 		.4byte	.LASF34
  1180 0507 01       		.byte	0x1
- 1181 0508 E3       		.byte	0xe3
+ 1181 0508 DA       		.byte	0xda
  1182 0509 6B030000 		.4byte	0x36b
  1183 050d 02       		.uleb128 0x2
  1184 050e 91       		.byte	0x91
@@ -1535,7 +1526,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  1190 051d 12       		.uleb128 0x12
  1191 051e 6A00     		.ascii	"j\000"
  1192 0520 01       		.byte	0x1
- 1193 0521 F2       		.byte	0xf2
+ 1193 0521 E9       		.byte	0xe9
  1194 0522 8C000000 		.4byte	0x8c
  1195 0526 BA020000 		.4byte	.LLST17
  1196 052a 0B       		.uleb128 0xb
@@ -1558,9 +1549,6 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  1213 0550 70050000 		.4byte	0x570
  1214 0554 0A       		.uleb128 0xa
  1215 0555 01       		.uleb128 0x1
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 27
-
-
  1216 0556 50       		.byte	0x50
  1217 0557 07       		.uleb128 0x7
  1218 0558 75       		.byte	0x75
@@ -1570,6 +1558,9 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  1222 055c 76       		.byte	0x76
  1223 055d 00       		.sleb128 0
  1224 055e 22       		.byte	0x22
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccMG9QHe.s 			page 27
+
+
  1225 055f 0A       		.uleb128 0xa
  1226 0560 01       		.uleb128 0x1
  1227 0561 51       		.byte	0x51
@@ -1618,9 +1609,6 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  1270 05ae 09       		.uleb128 0x9
  1271 05af A4000000 		.4byte	.LVL93
  1272 05b3 35060000 		.4byte	0x635
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 28
-
-
  1273 05b7 C1050000 		.4byte	0x5c1
  1274 05bb 0A       		.uleb128 0xa
  1275 05bc 01       		.uleb128 0x1
@@ -1630,6 +1618,9 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  1279 05c0 00       		.byte	0
  1280 05c1 0B       		.uleb128 0xb
  1281 05c2 A8000000 		.4byte	.LVL94
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccMG9QHe.s 			page 28
+
+
  1282 05c6 6C060000 		.4byte	0x66c
  1283 05ca 0B       		.uleb128 0xb
  1284 05cb AC000000 		.4byte	.LVL95
@@ -1678,9 +1669,6 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  1327 062f CF010000 		.4byte	.LASF45
  1328 0633 06       		.byte	0x6
  1329 0634 65       		.byte	0x65
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 29
-
-
  1330 0635 15       		.uleb128 0x15
  1331 0636 05030000 		.4byte	.LASF46
  1332 063a 05030000 		.4byte	.LASF46
@@ -1690,6 +1678,9 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  1336 0641 1B020000 		.4byte	.LASF47
  1337 0645 1B020000 		.4byte	.LASF47
  1338 0649 08       		.byte	0x8
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccMG9QHe.s 			page 29
+
+
  1339 064a 5E       		.byte	0x5e
  1340 064b 15       		.uleb128 0x15
  1341 064c 2C030000 		.4byte	.LASF48
@@ -1738,9 +1729,6 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  1384 000b 55       		.uleb128 0x55
  1385 000c 17       		.uleb128 0x17
  1386 000d 11       		.uleb128 0x11
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 30
-
-
  1387 000e 01       		.uleb128 0x1
  1388 000f 10       		.uleb128 0x10
  1389 0010 17       		.uleb128 0x17
@@ -1750,6 +1738,9 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  1393 0014 16       		.uleb128 0x16
  1394 0015 00       		.byte	0
  1395 0016 03       		.uleb128 0x3
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccMG9QHe.s 			page 30
+
+
  1396 0017 0E       		.uleb128 0xe
  1397 0018 3A       		.uleb128 0x3a
  1398 0019 0B       		.uleb128 0xb
@@ -1798,9 +1789,6 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  1441 0044 2E       		.uleb128 0x2e
  1442 0045 01       		.byte	0x1
  1443 0046 3F       		.uleb128 0x3f
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 31
-
-
  1444 0047 19       		.uleb128 0x19
  1445 0048 03       		.uleb128 0x3
  1446 0049 0E       		.uleb128 0xe
@@ -1810,6 +1798,9 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  1450 004d 0B       		.uleb128 0xb
  1451 004e 27       		.uleb128 0x27
  1452 004f 19       		.uleb128 0x19
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccMG9QHe.s 			page 31
+
+
  1453 0050 49       		.uleb128 0x49
  1454 0051 13       		.uleb128 0x13
  1455 0052 11       		.uleb128 0x11
@@ -1858,9 +1849,6 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  1498 007e 898201   		.uleb128 0x4109
  1499 0081 01       		.byte	0x1
  1500 0082 11       		.uleb128 0x11
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 32
-
-
  1501 0083 01       		.uleb128 0x1
  1502 0084 31       		.uleb128 0x31
  1503 0085 13       		.uleb128 0x13
@@ -1870,6 +1858,9 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  1507 0089 00       		.byte	0
  1508 008a 0A       		.uleb128 0xa
  1509 008b 8A8201   		.uleb128 0x410a
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccMG9QHe.s 			page 32
+
+
  1510 008e 00       		.byte	0
  1511 008f 02       		.uleb128 0x2
  1512 0090 18       		.uleb128 0x18
@@ -1918,9 +1909,6 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  1555 00c1 19       		.uleb128 0x19
  1556 00c2 01       		.uleb128 0x1
  1557 00c3 13       		.uleb128 0x13
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 33
-
-
  1558 00c4 00       		.byte	0
  1559 00c5 00       		.byte	0
  1560 00c6 0E       		.uleb128 0xe
@@ -1930,6 +1918,9 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  1564 00ca 0E       		.uleb128 0xe
  1565 00cb 3A       		.uleb128 0x3a
  1566 00cc 0B       		.uleb128 0xb
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccMG9QHe.s 			page 33
+
+
  1567 00cd 3B       		.uleb128 0x3b
  1568 00ce 0B       		.uleb128 0xb
  1569 00cf 49       		.uleb128 0x49
@@ -1978,9 +1969,6 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  1612 00fa 00       		.byte	0
  1613 00fb 03       		.uleb128 0x3
  1614 00fc 08       		.uleb128 0x8
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 34
-
-
  1615 00fd 3A       		.uleb128 0x3a
  1616 00fe 0B       		.uleb128 0xb
  1617 00ff 3B       		.uleb128 0x3b
@@ -1990,6 +1978,9 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  1621 0103 02       		.uleb128 0x2
  1622 0104 17       		.uleb128 0x17
  1623 0105 00       		.byte	0
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccMG9QHe.s 			page 34
+
+
  1624 0106 00       		.byte	0
  1625 0107 13       		.uleb128 0x13
  1626 0108 01       		.uleb128 0x1
@@ -2038,9 +2029,6 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  1669 000f 2A000000 		.4byte	.LFE0
  1670 0013 0400     		.2byte	0x4
  1671 0015 F3       		.byte	0xf3
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 35
-
-
  1672 0016 01       		.uleb128 0x1
  1673 0017 50       		.byte	0x50
  1674 0018 9F       		.byte	0x9f
@@ -2050,6 +2038,9 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  1678 0021 00000000 		.4byte	.LVL8
  1679 0025 06000000 		.4byte	.LVL9
  1680 0029 0100     		.2byte	0x1
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccMG9QHe.s 			page 35
+
+
  1681 002b 50       		.byte	0x50
  1682 002c 06000000 		.4byte	.LVL9
  1683 0030 34000000 		.4byte	.LFE1
@@ -2098,9 +2089,6 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  1726 0097 0100     		.2byte	0x1
  1727 0099 52       		.byte	0x52
  1728 009a 13000000 		.4byte	.LVL21-1
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 36
-
-
  1729 009e B6000000 		.4byte	.LFE3
  1730 00a2 0100     		.2byte	0x1
  1731 00a4 57       		.byte	0x57
@@ -2110,6 +2098,9 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  1735 00ad 00000000 		.4byte	.LVL19
  1736 00b1 13000000 		.4byte	.LVL21-1
  1737 00b5 0100     		.2byte	0x1
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccMG9QHe.s 			page 36
+
+
  1738 00b7 53       		.byte	0x53
  1739 00b8 13000000 		.4byte	.LVL21-1
  1740 00bc B6000000 		.4byte	.LFE3
@@ -2158,9 +2149,6 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  1783 012c 0200     		.2byte	0x2
  1784 012e 30       		.byte	0x30
  1785 012f 9F       		.byte	0x9f
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 37
-
-
  1786 0130 56000000 		.4byte	.LVL34
  1787 0134 96000000 		.4byte	.LVL43
  1788 0138 0100     		.2byte	0x1
@@ -2170,6 +2158,9 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  1792 0143 0100     		.2byte	0x1
  1793 0145 56       		.byte	0x56
  1794 0146 00000000 		.4byte	0
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccMG9QHe.s 			page 37
+
+
  1795 014a 00000000 		.4byte	0
  1796              	.LLST8:
  1797 014e 7A000000 		.4byte	.LVL37
@@ -2218,9 +2209,6 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  1840 01b9 10000000 		.4byte	.LVL68
  1841 01bd 4C000000 		.4byte	.LVL80
  1842 01c1 0100     		.2byte	0x1
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 38
-
-
  1843 01c3 56       		.byte	0x56
  1844 01c4 4C000000 		.4byte	.LVL80
  1845 01c8 B6000000 		.4byte	.LFE6
@@ -2230,6 +2218,9 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  1849 01d0 50       		.byte	0x50
  1850 01d1 9F       		.byte	0x9f
  1851 01d2 00000000 		.4byte	0
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccMG9QHe.s 			page 38
+
+
  1852 01d6 00000000 		.4byte	0
  1853              	.LLST12:
  1854 01da 00000000 		.4byte	.LVL67
@@ -2278,9 +2269,6 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  1897 0245 3A000000 		.4byte	.LVL75
  1898 0249 54000000 		.4byte	.LVL81
  1899 024d 0100     		.2byte	0x1
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 39
-
-
  1900 024f 54       		.byte	0x54
  1901 0250 54000000 		.4byte	.LVL81
  1902 0254 90000000 		.4byte	.LVL89
@@ -2290,6 +2278,9 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  1906 025f B6000000 		.4byte	.LFE6
  1907 0263 0100     		.2byte	0x1
  1908 0265 58       		.byte	0x58
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccMG9QHe.s 			page 39
+
+
  1909 0266 00000000 		.4byte	0
  1910 026a 00000000 		.4byte	0
  1911              	.LLST16:
@@ -2338,9 +2329,6 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  1954 0006 00000000 		.4byte	.Ldebug_info0
  1955 000a 04       		.byte	0x4
  1956 000b 00       		.byte	0
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 40
-
-
  1957 000c 0000     		.2byte	0
  1958 000e 0000     		.2byte	0
  1959 0010 00000000 		.4byte	.LFB0
@@ -2350,6 +2338,9 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  1963 0020 00000000 		.4byte	.LFB2
  1964 0024 02000000 		.4byte	.LFE2-.LFB2
  1965 0028 00000000 		.4byte	.LFB3
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccMG9QHe.s 			page 40
+
+
  1966 002c B6000000 		.4byte	.LFE3-.LFB3
  1967 0030 00000000 		.4byte	.LFB4
  1968 0034 2A000000 		.4byte	.LFE4-.LFB4
@@ -2398,9 +2389,6 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  2001 0024 5F5F7569 		.ascii	"__uint8_t\000"
  2001      6E74385F 
  2001      7400
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 41
-
-
  2002              	.LASF35:
  2003 002e 4143435F 		.ascii	"ACC_SPI_Interface_tradeByte\000"
  2003      5350495F 
@@ -2410,6 +2398,9 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  2004              	.LASF32:
  2005 004a 636F756E 		.ascii	"count\000"
  2005      7400
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccMG9QHe.s 			page 41
+
+
  2006              	.LASF27:
  2007 0050 6E427974 		.ascii	"nBytes\000"
  2007      657300
@@ -2458,9 +2449,6 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  2028              	.LASF20:
  2029 00cf 5350495F 		.ascii	"SPI_Interface_ReadByte\000"
  2029      496E7465 
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 42
-
-
  2029      72666163 
  2029      655F5265 
  2029      61644279 
@@ -2470,6 +2458,9 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  2031      20636861 
  2031      7200
  2032              	.LASF54:
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccMG9QHe.s 			page 42
+
+
  2033 00f4 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
  2033      43313120 
  2033      352E342E 
@@ -2518,9 +2509,6 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  2047      66666572 
  2048              	.LASF15:
  2049 01e4 646F7562 		.ascii	"double\000"
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 43
-
-
  2049      6C6500
  2050              	.LASF19:
  2051 01eb 5350495F 		.ascii	"SPI_Interface_tradeByte\000"
@@ -2530,6 +2518,9 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  2051      61646542 
  2052              	.LASF43:
  2053 0203 5350494D 		.ascii	"SPIM_1_ClearFIFO\000"
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccMG9QHe.s 			page 43
+
+
  2053      5F315F43 
  2053      6C656172 
  2053      4649464F 
@@ -2578,9 +2569,6 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  2070      5F30335C 
  2070      46494F52 
  2071 02d5 63796473 		.ascii	"cydsn\000"
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 44
-
-
  2071      6E00
  2072              	.LASF34:
  2073 02db 64756D6D 		.ascii	"dummyTX\000"
@@ -2590,6 +2578,9 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  2075      5F315F57 
  2075      72697465 
  2075      54784461 
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccMG9QHe.s 			page 44
+
+
  2075      746100
  2076              	.LASF26:
  2077 02f6 64617461 		.ascii	"dataRX\000"
@@ -2638,9 +2629,6 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  2096              	.LASF49:
  2097 0371 5350494D 		.ascii	"SPIM_2_ReadRxData\000"
  2097      5F325F52 
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 45
-
-
  2097      65616452 
  2097      78446174 
  2097      6100
@@ -2650,6 +2638,9 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccHOmlUb.s 			page 1
  2100              	.LASF52:
  2101 0389 5350494D 		.ascii	"SPIM_2_ClearRxBuffer\000"
  2101      5F325F43 
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccMG9QHe.s 			page 45
+
+
  2101      6C656172 
  2101      52784275 
  2101      66666572 
