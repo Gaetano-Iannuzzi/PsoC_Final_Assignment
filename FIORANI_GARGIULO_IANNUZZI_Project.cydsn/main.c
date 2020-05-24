@@ -84,13 +84,13 @@ int main(void) {
     uint8_t ctrl_reg4 = ACC_readByte(LIS3DH_CTRL_REG4);
     
     /*Defining sensitivity*/
-    int s =0; 
+    int s; 
     
     if(ctrl_reg4 != LIS3DH_2G_CTRL_REG4)
     {
         ctrl_reg4 = LIS3DH_2G_CTRL_REG4;
         ACC_writeByte(LIS3DH_CTRL_REG4,ctrl_reg4);
-        s=4;
+        s =4;
     }
     
 //    if(ctrl_reg4 != LIS3DH_4G_CTRL_REG4)
@@ -163,23 +163,20 @@ int main(void) {
         {
             ACC_readMultibytes(LIS3DH_OUT_X_L, &ReadData[0],60);
            
-            for ( i=0; i<60; i++)
+            for ( i=0; i<60; i+=6)
             {
-                for(j=0; j<40; j++) 
-                {
-                    
-                    OutX = (int16)((ReadData[i] | (ReadData[i+1]<<8)))>>6;
-                    OutY = (int16)((ReadData[i+2] | (ReadData[i+3]<<8)))>>6;
-                    OutZ = (int16)((ReadData[i+4] | (ReadData[i+5]<<8)))>>6;
-                    i+=5;                
-                    Packet[j]= OutX>>4;
-                    Packet[j+1] = (OutX<<6 | OutY>>6);
-                    Packet[j+2] = (OutY<<4 | OutZ>>8);
-                    Packet[j+3] = (OutZ);
-                    EEPROM_writePage((0x0001+j+samples),(uint8_t*) Packet,4);
-                    EEPROM_waitForWriteComplete();
-                    j+=3;
-                }
+                  
+                OutX = (int16)((ReadData[i] | (ReadData[i+1]<<8)))>>6;
+                OutY = (int16)((ReadData[i+2] | (ReadData[i+3]<<8)))>>6;
+                OutZ = (int16)((ReadData[i+4] | (ReadData[i+5]<<8)))>>6;               
+                Packet[j]= OutX>>4;
+                Packet[j+1] = (OutX<<6 | OutY>>6);
+                Packet[j+2] = (OutY<<4 | OutZ>>8);
+                Packet[j+3] = (OutZ);
+                EEPROM_writePage((0x0001+j+samples),& Packet[j],4);
+                EEPROM_waitForWriteComplete();
+                j+=4;
+            
             }
             
             j=0;
@@ -205,27 +202,28 @@ int main(void) {
         
         if(flag==1)
             {
-                EEPROM_readPage(0x0001,(uint8_t*) Packet_Read,4);
+                EEPROM_readPage(0x0001,& Packet_Read[1],4);
                
             X= (((Packet_Read[2] & 0xF0)>>4)| Packet_Read[1]>>4);
-            X = X*s;// Multiply the value for 4 because the sensitivity is 4 mg/digit
+            X = X*4;// Multiply the value for 4 because the sensitivity is 4 mg/digit
             OutArray[1] = (uint8_t)(X & 0xFF);
             OutArray[2] = (uint8_t)(X >> 8);
             
             Y= ((Packet_Read[3]>>2)|(((Packet_Read[2]& 0x0F))>>2));
-            Y= Y*s;
+            Y= Y*4;
             OutArray[3] = (uint8_t)(Y & 0xFF);
             OutArray[4] = (uint8_t)(Y >> 8);
              
             Z= (((Packet_Read[3]& 0x03)<<8)|Packet_Read[4]);
-            Z= Z*s;
+            Z= Z*4;
             OutArray[5] = (uint8_t)(Z & 0xFF);
             OutArray[6] = (uint8_t)(Z >> 8);
-            sprintf(bufferUART, "** EEPROM Read = %d %d %d %d %d %d  \r\n", OutArray[1], OutArray[2], OutArray[3],OutArray[4],OutArray[5],OutArray[6]);
-    UART_PutBuffer;
-    
-    UART_PutString("*************************************\r\n");
-    return 0;
+            
+            sprintf(bufferUART, "** EEPROM Read = %d %d %d \r\n", X,Y,Z);
+            UART_PutBuffer;
+            
+            UART_PutString("*************************************\r\n");
+            return 0;
         }
     }
     
