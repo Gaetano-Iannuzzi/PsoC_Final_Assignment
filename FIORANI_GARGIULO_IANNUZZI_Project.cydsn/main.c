@@ -146,7 +146,7 @@ int main(void) {
     uint8_t TransferData[3];
     int16_t i=0,j=0;
     int16_t OutX,OutY,OutZ;
-    uint8_t Packet[40];
+    uint8_t Packet[40],Packet_Read[40];
     int16_t samples=0;
     int16_t X,Y,Z;
     uint8_t header = 0xA0;
@@ -162,11 +162,7 @@ int main(void) {
         if( INT_1_Read() == 1)
         {
             ACC_readMultibytes(LIS3DH_OUT_X_L, &ReadData[0],60);
-            
-             
-                   EEPROM_writePage((0x0000),(uint8_t*)ReadData ,4); 
            
-            
             for ( i=0; i<60; i++)
             {
                 for(j=0; j<40; j++) 
@@ -209,25 +205,27 @@ int main(void) {
         
         if(flag==1)
             {
-                EEPROM_readPage(0x0001,(uint8_t*) Packet,4);
+                EEPROM_readPage(0x0001,(uint8_t*) Packet_Read,4);
                
-            X= (((Packet[2] & 0xF0)>>4)| Packet[1]>>4);
+            X= (((Packet_Read[2] & 0xF0)>>4)| Packet_Read[1]>>4);
             X = X*s;// Multiply the value for 4 because the sensitivity is 4 mg/digit
             OutArray[1] = (uint8_t)(X & 0xFF);
             OutArray[2] = (uint8_t)(X >> 8);
             
-            Y= ((Packet[3]>>2)|(((Packet[2]& 0x0F))>>2));
+            Y= ((Packet_Read[3]>>2)|(((Packet_Read[2]& 0x0F))>>2));
             Y= Y*s;
             OutArray[3] = (uint8_t)(Y & 0xFF);
             OutArray[4] = (uint8_t)(Y >> 8);
              
-            Z= (((Packet[3]& 0x03)<<8)|Packet[4]);
+            Z= (((Packet_Read[3]& 0x03)<<8)|Packet_Read[4]);
             Z= Z*s;
             OutArray[5] = (uint8_t)(Z & 0xFF);
             OutArray[6] = (uint8_t)(Z >> 8);
-          
+            sprintf(bufferUART, "** EEPROM Read = %d %d %d %d %d %d  \r\n", OutArray[1], OutArray[2], OutArray[3],OutArray[4],OutArray[5],OutArray[6]);
+    UART_PutBuffer;
     
-  
+    UART_PutString("*************************************\r\n");
+    return 0;
         }
     }
     
