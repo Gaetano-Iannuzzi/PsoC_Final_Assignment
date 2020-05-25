@@ -20,6 +20,7 @@ int32 value_digit;
 uint8 SendBytesFlag=0;
 uint16_t PushButtonCounter = 0;  // Initialitazion of the variable
 int Reset_Flag = 0;
+int giro=0;
 
 CY_ISR(Custom_ISR_ADC)
 {
@@ -49,5 +50,8 @@ CY_ISR(Custom_Button_ISR)
      PushButtonCounter ++;  // increment of the variable
     if(PushButtonCounter > 499) Reset_Flag = 1;
 }
-
+CY_ISR(Custom_isr_1)
+{
+    giro=1;
+}
 /* [] END OF FILE */

@@ -20,9 +20,10 @@
     
     CY_ISR_PROTO (Custom_ISR_ADC);
     CY_ISR_PROTO(Custom_Button_ISR);
-    
+    CY_ISR_PROTO(Custom_isr_1);
     uint8_t DataBuffer[TRANSMIT_BUFFER_SIZE];
     volatile uint8 PacketReadyFlag;
+    extern int giro;
 #endif
 
 /* [] END OF FILE */

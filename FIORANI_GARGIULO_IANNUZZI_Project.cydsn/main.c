@@ -12,10 +12,11 @@
 #include <string.h>
 #include "SPI_Interface.h"
 #include "LIS3DH.h"
-
+#include "InterruptRoutines.h"
 /* EEPROM 25LC256 Library */
 #include "25LC256.h"
 #include "ErrorCodes.h"
+#include "Menu_Functions.h"
 
 #define UART_PutBuffer UART_PutString(bufferUART)
 char bufferUART[100];
@@ -29,13 +30,13 @@ int main(void) {
     
     /* Start UART */
     UART_Start();
-    
+//    int TurnedON=0;
     /* Start SPI Master */
     SPIM_1_Start();
     SPIM_2_Start();
-    
+    isr_1_StartEx(Custom_isr_1);
     CyDelay(5); //"The boot procedure is complete about 5 milliseconds after device power-up."
-    
+//    isr_MENU_StartEx(Custom_ISR_MENU);
     /*Selection of the sampling frequency in Normal Mode*/
     uint8_t ctrl_reg1 =0;
     /* 1Hz */
@@ -144,22 +145,23 @@ int main(void) {
     
     uint8_t ReadData[60];
     uint8_t TransferData[3];
-    int16_t i=0,j=0;
+    int16_t i=0,j=0,k=0,m=0;
     int16_t OutX,OutY,OutZ;
     uint8_t Packet[40],Packet_Read[40];
     int16_t samples=0;
     int16_t X,Y,Z;
     uint8_t header = 0xA0;
     uint8_t footer = 0xC0;
-    
-    uint8_t OutArray[8]; // 6 bytes for the Output data + 1 byte for Header + 1 for the footer
+    int32_t OutX32,OutY32,OutZ32; //int32 values of acceleration after the cast of the floating point
+    float32 AccX,AccY,AccZ; //floating point values in m/s^2
+    uint8_t OutArray[14]; // 6 bytes for the Output data + 1 byte for Header + 1 for the footer
     OutArray[0] = header;
     OutArray[7] = footer;
     int flag=0;
     for(;;)
     {
-        if(flag==0){
-        if( INT_1_Read() == 1)
+        if(flag<2){
+        if( giro==1)
         {
             ACC_readMultibytes(LIS3DH_OUT_X_L, &ReadData[0],60);
            
@@ -195,38 +197,58 @@ int main(void) {
                 fifo_reg = LIS3DH_FIFO_MODE_CTRL_REG;
                 ACC_writeByte(LIS3DH_FIFO_CTRL_REG,fifo_reg);
             }
-            samples +=1;
-            flag=1;
+            samples +=10;
+            flag+=1;
+            giro = 0;
         }
         }
         
-        if(flag==1)
+        if(flag==2)
             {
-                EEPROM_readPage(0x0001,& Packet_Read[1],4);
-               
-            X= (((Packet_Read[2] & 0xF0)>>4)| Packet_Read[1]>>4);
-            X = X*4;// Multiply the value for 4 because the sensitivity is 4 mg/digit
-            OutArray[1] = (uint8_t)(X & 0xFF);
-            OutArray[2] = (uint8_t)(X >> 8);
             
-            Y= ((Packet_Read[3]>>2)|(((Packet_Read[2]& 0x0F))>>2));
-            Y= Y*4;
-            OutArray[3] = (uint8_t)(Y & 0xFF);
-            OutArray[4] = (uint8_t)(Y >> 8);
-             
-            Z= (((Packet_Read[3]& 0x03)<<8)|Packet_Read[4]);
-            Z= Z*4;
-            OutArray[5] = (uint8_t)(Z & 0xFF);
-            OutArray[6] = (uint8_t)(Z >> 8);
+                EEPROM_readPage(0x0001,&Packet_Read[0],80);
+               
+            for(k=0;k<80;k+=4){
+                
+                X= (((Packet_Read[k+1] & 0xF0)>>4)| Packet_Read[k]<<4);
+                AccX=  X*2*9.806*0.001; // Multiply the value for 2 because the sensitivity is 2 mg/digit and 9.806*0.001 m/s^2
+                        OutX32 =  AccX*1000; //Cast the floating point value to an int32 
+                                                   //without loosing information of 3 decimals using the multiplication by 1000
+                    OutArray[1] = (uint8_t)(OutX32 & 0xFF);
+                    OutArray[2] = (uint8_t)(OutX32 >>8);
+                    OutArray[3] = (uint8_t)(OutX32 >>16);
+                    OutArray[4] = (uint8_t)(OutX32 >>24);
+                Y= ((Packet_Read[k+2]>>2)|(((Packet_Read[k+1]& 0x0F))<<6));
+                AccY = Y*2*9.806*0.001; // Multiply the value for  2 because the sensitivity is 2 mg/digit and 9.806*0.001 m/s^2
+                        OutY32 = AccY*1000; //Cast the floating point value to an int32 
+                                                  //without loosing information of 3 decimals using the multiplication by 1000  
+                        OutArray[5] = (uint8_t)(OutY32 & 0xFF);
+                        OutArray[6] = (uint8_t)(OutY32 >> 8);
+                        OutArray[7] = (uint8_t)(OutY32 >>16);
+                        OutArray[8] = (uint8_t)(OutY32 >>24);
+                        
+            Z= ((Packet_Read[k+3]|(Packet_Read[k+2]& 0x03)<<8));
+             AccZ = Z*2*9.806*0.001; // Multiply the value for 2 because the sensitivity is 2 mg/digit and 9.806*0.001 m/s^2
+                        OutZ32 = AccZ*1000;//Cast the floating point value to an int32 
+                                               //without loosing information of 3 decimals using the multiplication by 1000  
+                        OutArray[9] = (uint8_t)(OutZ32 & 0xFF);
+                        OutArray[10] =(uint8_t)(OutZ32 >> 8);
+                        OutArray[11] = (uint8_t)(OutZ32 >>16);
+                        OutArray[12] = (uint8_t)(OutZ32 >>24);
+         
             
             sprintf(bufferUART, "** EEPROM Read = %d %d %d \r\n", X,Y,Z);
             UART_PutBuffer;
             
             UART_PutString("*************************************\r\n");
-            return 0;
+            
+//            return 0;
+//            UART_PutArray(OutArray, 8); //Send data to Uart (values in [mg])
+                   
         }
+            return 0;
     }
-    
+    }
 }
 
 /* [] END OF FILE */

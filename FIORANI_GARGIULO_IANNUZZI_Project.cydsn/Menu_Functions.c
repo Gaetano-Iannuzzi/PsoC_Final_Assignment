@@ -2,11 +2,16 @@
 
 #include "Menu_Functions.h"
 #include "project.h"
+#include "LIS3DH.h"
+uint8_t ctrl_reg10;
+
+#define UART_PutBuffer1 UART_PutString(bufferUART)
+char bufferUART[100];
 
 CY_ISR (Custom_ISR_MENU)
 {
-    if (TurnedON == 1)  ch_received = '?';
-    else ch_received = UART_GetChar(); // Leggo il dato ricevuto dall'UART.
+//    if (TurnedON == 1)  ch_received = '?';
+     ch_received = UART_GetChar(); // Leggo il dato ricevuto dall'UART.
     
     if (ch_received == '?')
     {
@@ -41,6 +46,7 @@ CY_ISR (Custom_ISR_MENU)
                         {
                              case '1':
                                     UART_PutString("YOU CHOOSE +-2g\r\r");
+                                   
                                         break;
                                 case '2':
                                     UART_PutString("YOU CHOOSE +-4g\r\r");
@@ -77,6 +83,18 @@ CY_ISR (Custom_ISR_MENU)
                                 break;
                             case '2':
                                 UART_PutString("YOU CHOOSE 10 Hz\r\r");
+                                    
+                                /* 10Hz */
+                                ctrl_reg10 = ACC_readByte(LIS3DH_CTRL_REG1);
+                                if (ctrl_reg10 != LIS3DH_10HZ_CTRL_REG1) 
+                                {
+                                    ctrl_reg10 = LIS3DH_10HZ_CTRL_REG1;
+                                    ACC_writeByte(LIS3DH_CTRL_REG1,ctrl_reg10);
+                                }
+                                
+                                uint8_t letto = ACC_readByte(LIS3DH_CTRL_REG1);
+                                sprintf(bufferUART,"YOU CHOOSE : %d \r\r",letto);
+                                UART_PutBuffer1;
                                 break;
                             case '3':
                                 UART_PutString("YOU CHOOSE 25 Hz\r\r");
@@ -97,7 +115,7 @@ CY_ISR (Custom_ISR_MENU)
                         UART_PutString("*****************************************************************\r\r\r\n");
                         LoopContinue = 0;
                         MenuActive = 0;
-                        if (TurnedON == 1) TurnedON = 0;
+//                        if (TurnedON == 1) TurnedON = 0;
                     }
                     else
                     {
