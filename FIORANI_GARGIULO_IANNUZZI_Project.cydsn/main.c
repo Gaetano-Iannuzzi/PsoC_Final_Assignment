@@ -15,9 +15,8 @@
 #include "InterruptRoutines.h"
 /* EEPROM 25LC256 Library */
 #include "25LC256.h"
-#include "ErrorCodes.h"
 #include "Menu_Functions.h"
-
+#include "OnBoardLed.h"
 #define UART_PutBuffer UART_PutString(bufferUART)
 char bufferUART[100];
 
@@ -34,6 +33,7 @@ int main(void) {
     /* Start SPI Master */
     SPIM_1_Start();
     SPIM_2_Start();
+    Led_Start();
     isr_1_StartEx(Custom_isr_1);
     CyDelay(5); //"The boot procedure is complete about 5 milliseconds after device power-up."
 //    isr_MENU_StartEx(Custom_ISR_MENU);
@@ -142,7 +142,6 @@ int main(void) {
         fifo_reg = LIS3DH_WTM10_MODE_CTRL_REG5;
         ACC_writeByte(LIS3DH_FIFO_CTRL_REG,fifo_reg);
     }
-    
     uint8_t ReadData[60];
     uint8_t TransferData[3];
     int16_t i=0,j=0,k=0,m=0;
@@ -162,7 +161,8 @@ int main(void) {
     {
         if(flag<2){
         if( giro==1)
-        {
+        { 
+           Led_Update(999,499);
             ACC_readMultibytes(LIS3DH_OUT_X_L, &ReadData[0],60);
            
             for ( i=0; i<60; i+=6)
@@ -207,11 +207,11 @@ int main(void) {
             {
             
                 EEPROM_readPage(0x0001,&Packet_Read[0],80);
-               
+               Pin_ExternalLED_Write(1);
             for(k=0;k<80;k+=4){
                 
                 X= (((Packet_Read[k+1] & 0xF0)>>4)| Packet_Read[k]<<4);
-                AccX=  X*2*9.806*0.001; // Multiply the value for 2 because the sensitivity is 2 mg/digit and 9.806*0.001 m/s^2
+                AccX=  X*4*9.806*0.001; // Multiply the value for 2 because the sensitivity is 2 mg/digit and 9.806*0.001 m/s^2
                         OutX32 =  AccX*1000; //Cast the floating point value to an int32 
                                                    //without loosing information of 3 decimals using the multiplication by 1000
                     OutArray[1] = (uint8_t)(OutX32 & 0xFF);
@@ -219,7 +219,7 @@ int main(void) {
                     OutArray[3] = (uint8_t)(OutX32 >>16);
                     OutArray[4] = (uint8_t)(OutX32 >>24);
                 Y= ((Packet_Read[k+2]>>2)|(((Packet_Read[k+1]& 0x0F))<<6));
-                AccY = Y*2*9.806*0.001; // Multiply the value for  2 because the sensitivity is 2 mg/digit and 9.806*0.001 m/s^2
+                AccY = Y*4*9.806*0.001; // Multiply the value for  2 because the sensitivity is 2 mg/digit and 9.806*0.001 m/s^2
                         OutY32 = AccY*1000; //Cast the floating point value to an int32 
                                                   //without loosing information of 3 decimals using the multiplication by 1000  
                         OutArray[5] = (uint8_t)(OutY32 & 0xFF);
@@ -228,7 +228,7 @@ int main(void) {
                         OutArray[8] = (uint8_t)(OutY32 >>24);
                         
             Z= ((Packet_Read[k+3]|(Packet_Read[k+2]& 0x03)<<8));
-             AccZ = Z*2*9.806*0.001; // Multiply the value for 2 because the sensitivity is 2 mg/digit and 9.806*0.001 m/s^2
+             AccZ = Z*4*9.806*0.001; // Multiply the value for 2 because the sensitivity is 2 mg/digit and 9.806*0.001 m/s^2
                         OutZ32 = AccZ*1000;//Cast the floating point value to an int32 
                                                //without loosing information of 3 decimals using the multiplication by 1000  
                         OutArray[9] = (uint8_t)(OutZ32 & 0xFF);

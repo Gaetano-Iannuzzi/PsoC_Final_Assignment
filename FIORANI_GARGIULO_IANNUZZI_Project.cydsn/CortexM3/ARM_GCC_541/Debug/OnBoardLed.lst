@@ -1,0 +1,737 @@
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccVixtA1.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"OnBoardLed.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.Led_Start,"ax",%progbits
+  20              		.align	2
+  21              		.global	Led_Start
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	Led_Start, %function
+  25              	Led_Start:
+  26              	.LFB63:
+  27              		.file 1 "OnBoardLed.c"
+   1:OnBoardLed.c  **** /* ========================================
+   2:OnBoardLed.c  ****  *
+   3:OnBoardLed.c  ****  * Copyright YOUR COMPANY, THE YEAR
+   4:OnBoardLed.c  ****  * All Rights Reserved
+   5:OnBoardLed.c  ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:OnBoardLed.c  ****  *
+   7:OnBoardLed.c  ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:OnBoardLed.c  ****  * WHICH IS THE PROPERTY OF your company.
+   9:OnBoardLed.c  ****  *
+  10:OnBoardLed.c  ****  * ========================================
+  11:OnBoardLed.c  **** */
+  12:OnBoardLed.c  **** #include "OnBoardLed.h"
+  13:OnBoardLed.c  **** 
+  14:OnBoardLed.c  **** void Led_Start(void)
+  15:OnBoardLed.c  **** {
+  28              		.loc 1 15 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 08B5     		push	{r3, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 3, -8
+  35              		.cfi_offset 14, -4
+  16:OnBoardLed.c  ****     // Start PWM connected to Led Channel
+  17:OnBoardLed.c  ****     PWM_Led_Start();
+  36              		.loc 1 17 0
+  37 0002 FFF7FEFF 		bl	PWM_Led_Start
+  38              	.LVL0:
+  39 0006 08BD     		pop	{r3, pc}
+  40              		.cfi_endproc
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccVixtA1.s 			page 2
+
+
+  41              	.LFE63:
+  42              		.size	Led_Start, .-Led_Start
+  43              		.section	.text.Led_Stop,"ax",%progbits
+  44              		.align	2
+  45              		.global	Led_Stop
+  46              		.thumb
+  47              		.thumb_func
+  48              		.type	Led_Stop, %function
+  49              	Led_Stop:
+  50              	.LFB64:
+  18:OnBoardLed.c  **** }
+  19:OnBoardLed.c  **** 
+  20:OnBoardLed.c  **** void Led_Stop(void)
+  21:OnBoardLed.c  **** {
+  51              		.loc 1 21 0
+  52              		.cfi_startproc
+  53              		@ args = 0, pretend = 0, frame = 0
+  54              		@ frame_needed = 0, uses_anonymous_args = 0
+  55 0000 08B5     		push	{r3, lr}
+  56              		.cfi_def_cfa_offset 8
+  57              		.cfi_offset 3, -8
+  58              		.cfi_offset 14, -4
+  22:OnBoardLed.c  ****     // Stop PWM connected to Led Channel
+  23:OnBoardLed.c  ****     PWM_Led_Stop();
+  59              		.loc 1 23 0
+  60 0002 FFF7FEFF 		bl	PWM_Led_Stop
+  61              	.LVL1:
+  62 0006 08BD     		pop	{r3, pc}
+  63              		.cfi_endproc
+  64              	.LFE64:
+  65              		.size	Led_Stop, .-Led_Stop
+  66              		.section	.text.Led_Update,"ax",%progbits
+  67              		.align	2
+  68              		.global	Led_Update
+  69              		.thumb
+  70              		.thumb_func
+  71              		.type	Led_Update, %function
+  72              	Led_Update:
+  73              	.LFB65:
+  24:OnBoardLed.c  **** }
+  25:OnBoardLed.c  **** 
+  26:OnBoardLed.c  **** void Led_Update(uint16_t period, uint16_t compare)
+  27:OnBoardLed.c  **** {
+  74              		.loc 1 27 0
+  75              		.cfi_startproc
+  76              		@ args = 0, pretend = 0, frame = 0
+  77              		@ frame_needed = 0, uses_anonymous_args = 0
+  78              	.LVL2:
+  79 0000 10B5     		push	{r4, lr}
+  80              		.cfi_def_cfa_offset 8
+  81              		.cfi_offset 4, -8
+  82              		.cfi_offset 14, -4
+  83 0002 0C46     		mov	r4, r1
+  28:OnBoardLed.c  ****     // Update the new state of blinking of the Led channel
+  29:OnBoardLed.c  ****     PWM_Led_WritePeriod(period);  // New period of the PWM
+  84              		.loc 1 29 0
+  85 0004 FFF7FEFF 		bl	PWM_Led_WritePeriod
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccVixtA1.s 			page 3
+
+
+  86              	.LVL3:
+  30:OnBoardLed.c  ****     PWM_Led_WriteCompare(compare);  // New compare value
+  87              		.loc 1 30 0
+  88 0008 2046     		mov	r0, r4
+  89 000a FFF7FEFF 		bl	PWM_Led_WriteCompare
+  90              	.LVL4:
+  91 000e 10BD     		pop	{r4, pc}
+  92              		.cfi_endproc
+  93              	.LFE65:
+  94              		.size	Led_Update, .-Led_Update
+  95              		.text
+  96              	.Letext0:
+  97              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
+  98              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
+  99              		.file 4 "Generated_Source\\PSoC5/PWM_Led.h"
+ 100              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+ 101              		.section	.debug_info,"",%progbits
+ 102              	.Ldebug_info0:
+ 103 0000 7F010000 		.4byte	0x17f
+ 104 0004 0400     		.2byte	0x4
+ 105 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 106 000a 04       		.byte	0x4
+ 107 000b 01       		.uleb128 0x1
+ 108 000c 68000000 		.4byte	.LASF27
+ 109 0010 0C       		.byte	0xc
+ 110 0011 39000000 		.4byte	.LASF28
+ 111 0015 8A010000 		.4byte	.LASF29
+ 112 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 113 001d 00000000 		.4byte	0
+ 114 0021 00000000 		.4byte	.Ldebug_line0
+ 115 0025 02       		.uleb128 0x2
+ 116 0026 01       		.byte	0x1
+ 117 0027 06       		.byte	0x6
+ 118 0028 3C020000 		.4byte	.LASF0
+ 119 002c 02       		.uleb128 0x2
+ 120 002d 01       		.byte	0x1
+ 121 002e 08       		.byte	0x8
+ 122 002f 5A000000 		.4byte	.LASF1
+ 123 0033 02       		.uleb128 0x2
+ 124 0034 02       		.byte	0x2
+ 125 0035 05       		.byte	0x5
+ 126 0036 14020000 		.4byte	.LASF2
+ 127 003a 03       		.uleb128 0x3
+ 128 003b 28010000 		.4byte	.LASF4
+ 129 003f 02       		.byte	0x2
+ 130 0040 2B       		.byte	0x2b
+ 131 0041 45000000 		.4byte	0x45
+ 132 0045 02       		.uleb128 0x2
+ 133 0046 02       		.byte	0x2
+ 134 0047 07       		.byte	0x7
+ 135 0048 08010000 		.4byte	.LASF3
+ 136 004c 03       		.uleb128 0x3
+ 137 004d 15000000 		.4byte	.LASF5
+ 138 0051 02       		.byte	0x2
+ 139 0052 3F       		.byte	0x3f
+ 140 0053 57000000 		.4byte	0x57
+ 141 0057 02       		.uleb128 0x2
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccVixtA1.s 			page 4
+
+
+ 142 0058 04       		.byte	0x4
+ 143 0059 05       		.byte	0x5
+ 144 005a 27020000 		.4byte	.LASF6
+ 145 005e 02       		.uleb128 0x2
+ 146 005f 04       		.byte	0x4
+ 147 0060 07       		.byte	0x7
+ 148 0061 F6000000 		.4byte	.LASF7
+ 149 0065 02       		.uleb128 0x2
+ 150 0066 08       		.byte	0x8
+ 151 0067 05       		.byte	0x5
+ 152 0068 01020000 		.4byte	.LASF8
+ 153 006c 02       		.uleb128 0x2
+ 154 006d 08       		.byte	0x8
+ 155 006e 07       		.byte	0x7
+ 156 006f 68010000 		.4byte	.LASF9
+ 157 0073 04       		.uleb128 0x4
+ 158 0074 04       		.byte	0x4
+ 159 0075 05       		.byte	0x5
+ 160 0076 696E7400 		.ascii	"int\000"
+ 161 007a 02       		.uleb128 0x2
+ 162 007b 04       		.byte	0x4
+ 163 007c 07       		.byte	0x7
+ 164 007d 5B010000 		.4byte	.LASF10
+ 165 0081 03       		.uleb128 0x3
+ 166 0082 1E020000 		.4byte	.LASF11
+ 167 0086 03       		.byte	0x3
+ 168 0087 24       		.byte	0x24
+ 169 0088 3A000000 		.4byte	0x3a
+ 170 008c 03       		.uleb128 0x3
+ 171 008d F0010000 		.4byte	.LASF12
+ 172 0091 03       		.byte	0x3
+ 173 0092 2C       		.byte	0x2c
+ 174 0093 4C000000 		.4byte	0x4c
+ 175 0097 02       		.uleb128 0x2
+ 176 0098 04       		.byte	0x4
+ 177 0099 04       		.byte	0x4
+ 178 009a 54000000 		.4byte	.LASF13
+ 179 009e 02       		.uleb128 0x2
+ 180 009f 08       		.byte	0x8
+ 181 00a0 04       		.byte	0x4
+ 182 00a1 33010000 		.4byte	.LASF14
+ 183 00a5 02       		.uleb128 0x2
+ 184 00a6 01       		.byte	0x1
+ 185 00a7 08       		.byte	0x8
+ 186 00a8 0F020000 		.4byte	.LASF15
+ 187 00ac 02       		.uleb128 0x2
+ 188 00ad 08       		.byte	0x8
+ 189 00ae 04       		.byte	0x4
+ 190 00af 30020000 		.4byte	.LASF16
+ 191 00b3 02       		.uleb128 0x2
+ 192 00b4 04       		.byte	0x4
+ 193 00b5 07       		.byte	0x7
+ 194 00b6 F8010000 		.4byte	.LASF17
+ 195 00ba 05       		.uleb128 0x5
+ 196 00bb 2F000000 		.4byte	.LASF18
+ 197 00bf 01       		.byte	0x1
+ 198 00c0 0E       		.byte	0xe
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccVixtA1.s 			page 5
+
+
+ 199 00c1 00000000 		.4byte	.LFB63
+ 200 00c5 08000000 		.4byte	.LFE63-.LFB63
+ 201 00c9 01       		.uleb128 0x1
+ 202 00ca 9C       		.byte	0x9c
+ 203 00cb D9000000 		.4byte	0xd9
+ 204 00cf 06       		.uleb128 0x6
+ 205 00d0 06000000 		.4byte	.LVL0
+ 206 00d4 56010000 		.4byte	0x156
+ 207 00d8 00       		.byte	0
+ 208 00d9 05       		.uleb128 0x5
+ 209 00da 26000000 		.4byte	.LASF19
+ 210 00de 01       		.byte	0x1
+ 211 00df 14       		.byte	0x14
+ 212 00e0 00000000 		.4byte	.LFB64
+ 213 00e4 08000000 		.4byte	.LFE64-.LFB64
+ 214 00e8 01       		.uleb128 0x1
+ 215 00e9 9C       		.byte	0x9c
+ 216 00ea F8000000 		.4byte	0xf8
+ 217 00ee 06       		.uleb128 0x6
+ 218 00ef 06000000 		.4byte	.LVL1
+ 219 00f3 61010000 		.4byte	0x161
+ 220 00f7 00       		.byte	0
+ 221 00f8 05       		.uleb128 0x5
+ 222 00f9 7F010000 		.4byte	.LASF20
+ 223 00fd 01       		.byte	0x1
+ 224 00fe 1A       		.byte	0x1a
+ 225 00ff 00000000 		.4byte	.LFB65
+ 226 0103 10000000 		.4byte	.LFE65-.LFB65
+ 227 0107 01       		.uleb128 0x1
+ 228 0108 9C       		.byte	0x9c
+ 229 0109 45010000 		.4byte	0x145
+ 230 010d 07       		.uleb128 0x7
+ 231 010e 1F000000 		.4byte	.LASF21
+ 232 0112 01       		.byte	0x1
+ 233 0113 1A       		.byte	0x1a
+ 234 0114 81000000 		.4byte	0x81
+ 235 0118 00000000 		.4byte	.LLST0
+ 236 011c 07       		.uleb128 0x7
+ 237 011d 48020000 		.4byte	.LASF22
+ 238 0121 01       		.byte	0x1
+ 239 0122 1A       		.byte	0x1a
+ 240 0123 81000000 		.4byte	0x81
+ 241 0127 21000000 		.4byte	.LLST1
+ 242 012b 06       		.uleb128 0x6
+ 243 012c 08000000 		.4byte	.LVL3
+ 244 0130 6C010000 		.4byte	0x16c
+ 245 0134 08       		.uleb128 0x8
+ 246 0135 0E000000 		.4byte	.LVL4
+ 247 0139 77010000 		.4byte	0x177
+ 248 013d 09       		.uleb128 0x9
+ 249 013e 01       		.uleb128 0x1
+ 250 013f 50       		.byte	0x50
+ 251 0140 02       		.uleb128 0x2
+ 252 0141 74       		.byte	0x74
+ 253 0142 00       		.sleb128 0
+ 254 0143 00       		.byte	0
+ 255 0144 00       		.byte	0
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccVixtA1.s 			page 6
+
+
+ 256 0145 0A       		.uleb128 0xa
+ 257 0146 1B010000 		.4byte	.LASF30
+ 258 014a 05       		.byte	0x5
+ 259 014b 1207     		.2byte	0x712
+ 260 014d 51010000 		.4byte	0x151
+ 261 0151 0B       		.uleb128 0xb
+ 262 0152 8C000000 		.4byte	0x8c
+ 263 0156 0C       		.uleb128 0xc
+ 264 0157 46000000 		.4byte	.LASF23
+ 265 015b 46000000 		.4byte	.LASF23
+ 266 015f 04       		.byte	0x4
+ 267 0160 92       		.byte	0x92
+ 268 0161 0C       		.uleb128 0xc
+ 269 0162 3A010000 		.4byte	.LASF24
+ 270 0166 3A010000 		.4byte	.LASF24
+ 271 016a 04       		.byte	0x4
+ 272 016b 93       		.byte	0x93
+ 273 016c 0C       		.uleb128 0xc
+ 274 016d 47010000 		.4byte	.LASF25
+ 275 0171 47010000 		.4byte	.LASF25
+ 276 0175 04       		.byte	0x4
+ 277 0176 BE       		.byte	0xbe
+ 278 0177 0C       		.uleb128 0xc
+ 279 0178 00000000 		.4byte	.LASF26
+ 280 017c 00000000 		.4byte	.LASF26
+ 281 0180 04       		.byte	0x4
+ 282 0181 C3       		.byte	0xc3
+ 283 0182 00       		.byte	0
+ 284              		.section	.debug_abbrev,"",%progbits
+ 285              	.Ldebug_abbrev0:
+ 286 0000 01       		.uleb128 0x1
+ 287 0001 11       		.uleb128 0x11
+ 288 0002 01       		.byte	0x1
+ 289 0003 25       		.uleb128 0x25
+ 290 0004 0E       		.uleb128 0xe
+ 291 0005 13       		.uleb128 0x13
+ 292 0006 0B       		.uleb128 0xb
+ 293 0007 03       		.uleb128 0x3
+ 294 0008 0E       		.uleb128 0xe
+ 295 0009 1B       		.uleb128 0x1b
+ 296 000a 0E       		.uleb128 0xe
+ 297 000b 55       		.uleb128 0x55
+ 298 000c 17       		.uleb128 0x17
+ 299 000d 11       		.uleb128 0x11
+ 300 000e 01       		.uleb128 0x1
+ 301 000f 10       		.uleb128 0x10
+ 302 0010 17       		.uleb128 0x17
+ 303 0011 00       		.byte	0
+ 304 0012 00       		.byte	0
+ 305 0013 02       		.uleb128 0x2
+ 306 0014 24       		.uleb128 0x24
+ 307 0015 00       		.byte	0
+ 308 0016 0B       		.uleb128 0xb
+ 309 0017 0B       		.uleb128 0xb
+ 310 0018 3E       		.uleb128 0x3e
+ 311 0019 0B       		.uleb128 0xb
+ 312 001a 03       		.uleb128 0x3
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccVixtA1.s 			page 7
+
+
+ 313 001b 0E       		.uleb128 0xe
+ 314 001c 00       		.byte	0
+ 315 001d 00       		.byte	0
+ 316 001e 03       		.uleb128 0x3
+ 317 001f 16       		.uleb128 0x16
+ 318 0020 00       		.byte	0
+ 319 0021 03       		.uleb128 0x3
+ 320 0022 0E       		.uleb128 0xe
+ 321 0023 3A       		.uleb128 0x3a
+ 322 0024 0B       		.uleb128 0xb
+ 323 0025 3B       		.uleb128 0x3b
+ 324 0026 0B       		.uleb128 0xb
+ 325 0027 49       		.uleb128 0x49
+ 326 0028 13       		.uleb128 0x13
+ 327 0029 00       		.byte	0
+ 328 002a 00       		.byte	0
+ 329 002b 04       		.uleb128 0x4
+ 330 002c 24       		.uleb128 0x24
+ 331 002d 00       		.byte	0
+ 332 002e 0B       		.uleb128 0xb
+ 333 002f 0B       		.uleb128 0xb
+ 334 0030 3E       		.uleb128 0x3e
+ 335 0031 0B       		.uleb128 0xb
+ 336 0032 03       		.uleb128 0x3
+ 337 0033 08       		.uleb128 0x8
+ 338 0034 00       		.byte	0
+ 339 0035 00       		.byte	0
+ 340 0036 05       		.uleb128 0x5
+ 341 0037 2E       		.uleb128 0x2e
+ 342 0038 01       		.byte	0x1
+ 343 0039 3F       		.uleb128 0x3f
+ 344 003a 19       		.uleb128 0x19
+ 345 003b 03       		.uleb128 0x3
+ 346 003c 0E       		.uleb128 0xe
+ 347 003d 3A       		.uleb128 0x3a
+ 348 003e 0B       		.uleb128 0xb
+ 349 003f 3B       		.uleb128 0x3b
+ 350 0040 0B       		.uleb128 0xb
+ 351 0041 27       		.uleb128 0x27
+ 352 0042 19       		.uleb128 0x19
+ 353 0043 11       		.uleb128 0x11
+ 354 0044 01       		.uleb128 0x1
+ 355 0045 12       		.uleb128 0x12
+ 356 0046 06       		.uleb128 0x6
+ 357 0047 40       		.uleb128 0x40
+ 358 0048 18       		.uleb128 0x18
+ 359 0049 9742     		.uleb128 0x2117
+ 360 004b 19       		.uleb128 0x19
+ 361 004c 01       		.uleb128 0x1
+ 362 004d 13       		.uleb128 0x13
+ 363 004e 00       		.byte	0
+ 364 004f 00       		.byte	0
+ 365 0050 06       		.uleb128 0x6
+ 366 0051 898201   		.uleb128 0x4109
+ 367 0054 00       		.byte	0
+ 368 0055 11       		.uleb128 0x11
+ 369 0056 01       		.uleb128 0x1
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccVixtA1.s 			page 8
+
+
+ 370 0057 31       		.uleb128 0x31
+ 371 0058 13       		.uleb128 0x13
+ 372 0059 00       		.byte	0
+ 373 005a 00       		.byte	0
+ 374 005b 07       		.uleb128 0x7
+ 375 005c 05       		.uleb128 0x5
+ 376 005d 00       		.byte	0
+ 377 005e 03       		.uleb128 0x3
+ 378 005f 0E       		.uleb128 0xe
+ 379 0060 3A       		.uleb128 0x3a
+ 380 0061 0B       		.uleb128 0xb
+ 381 0062 3B       		.uleb128 0x3b
+ 382 0063 0B       		.uleb128 0xb
+ 383 0064 49       		.uleb128 0x49
+ 384 0065 13       		.uleb128 0x13
+ 385 0066 02       		.uleb128 0x2
+ 386 0067 17       		.uleb128 0x17
+ 387 0068 00       		.byte	0
+ 388 0069 00       		.byte	0
+ 389 006a 08       		.uleb128 0x8
+ 390 006b 898201   		.uleb128 0x4109
+ 391 006e 01       		.byte	0x1
+ 392 006f 11       		.uleb128 0x11
+ 393 0070 01       		.uleb128 0x1
+ 394 0071 31       		.uleb128 0x31
+ 395 0072 13       		.uleb128 0x13
+ 396 0073 00       		.byte	0
+ 397 0074 00       		.byte	0
+ 398 0075 09       		.uleb128 0x9
+ 399 0076 8A8201   		.uleb128 0x410a
+ 400 0079 00       		.byte	0
+ 401 007a 02       		.uleb128 0x2
+ 402 007b 18       		.uleb128 0x18
+ 403 007c 9142     		.uleb128 0x2111
+ 404 007e 18       		.uleb128 0x18
+ 405 007f 00       		.byte	0
+ 406 0080 00       		.byte	0
+ 407 0081 0A       		.uleb128 0xa
+ 408 0082 34       		.uleb128 0x34
+ 409 0083 00       		.byte	0
+ 410 0084 03       		.uleb128 0x3
+ 411 0085 0E       		.uleb128 0xe
+ 412 0086 3A       		.uleb128 0x3a
+ 413 0087 0B       		.uleb128 0xb
+ 414 0088 3B       		.uleb128 0x3b
+ 415 0089 05       		.uleb128 0x5
+ 416 008a 49       		.uleb128 0x49
+ 417 008b 13       		.uleb128 0x13
+ 418 008c 3F       		.uleb128 0x3f
+ 419 008d 19       		.uleb128 0x19
+ 420 008e 3C       		.uleb128 0x3c
+ 421 008f 19       		.uleb128 0x19
+ 422 0090 00       		.byte	0
+ 423 0091 00       		.byte	0
+ 424 0092 0B       		.uleb128 0xb
+ 425 0093 35       		.uleb128 0x35
+ 426 0094 00       		.byte	0
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccVixtA1.s 			page 9
+
+
+ 427 0095 49       		.uleb128 0x49
+ 428 0096 13       		.uleb128 0x13
+ 429 0097 00       		.byte	0
+ 430 0098 00       		.byte	0
+ 431 0099 0C       		.uleb128 0xc
+ 432 009a 2E       		.uleb128 0x2e
+ 433 009b 00       		.byte	0
+ 434 009c 3F       		.uleb128 0x3f
+ 435 009d 19       		.uleb128 0x19
+ 436 009e 3C       		.uleb128 0x3c
+ 437 009f 19       		.uleb128 0x19
+ 438 00a0 6E       		.uleb128 0x6e
+ 439 00a1 0E       		.uleb128 0xe
+ 440 00a2 03       		.uleb128 0x3
+ 441 00a3 0E       		.uleb128 0xe
+ 442 00a4 3A       		.uleb128 0x3a
+ 443 00a5 0B       		.uleb128 0xb
+ 444 00a6 3B       		.uleb128 0x3b
+ 445 00a7 0B       		.uleb128 0xb
+ 446 00a8 00       		.byte	0
+ 447 00a9 00       		.byte	0
+ 448 00aa 00       		.byte	0
+ 449              		.section	.debug_loc,"",%progbits
+ 450              	.Ldebug_loc0:
+ 451              	.LLST0:
+ 452 0000 00000000 		.4byte	.LVL2
+ 453 0004 07000000 		.4byte	.LVL3-1
+ 454 0008 0100     		.2byte	0x1
+ 455 000a 50       		.byte	0x50
+ 456 000b 07000000 		.4byte	.LVL3-1
+ 457 000f 10000000 		.4byte	.LFE65
+ 458 0013 0400     		.2byte	0x4
+ 459 0015 F3       		.byte	0xf3
+ 460 0016 01       		.uleb128 0x1
+ 461 0017 50       		.byte	0x50
+ 462 0018 9F       		.byte	0x9f
+ 463 0019 00000000 		.4byte	0
+ 464 001d 00000000 		.4byte	0
+ 465              	.LLST1:
+ 466 0021 00000000 		.4byte	.LVL2
+ 467 0025 07000000 		.4byte	.LVL3-1
+ 468 0029 0100     		.2byte	0x1
+ 469 002b 51       		.byte	0x51
+ 470 002c 07000000 		.4byte	.LVL3-1
+ 471 0030 10000000 		.4byte	.LFE65
+ 472 0034 0400     		.2byte	0x4
+ 473 0036 F3       		.byte	0xf3
+ 474 0037 01       		.uleb128 0x1
+ 475 0038 51       		.byte	0x51
+ 476 0039 9F       		.byte	0x9f
+ 477 003a 00000000 		.4byte	0
+ 478 003e 00000000 		.4byte	0
+ 479              		.section	.debug_aranges,"",%progbits
+ 480 0000 2C000000 		.4byte	0x2c
+ 481 0004 0200     		.2byte	0x2
+ 482 0006 00000000 		.4byte	.Ldebug_info0
+ 483 000a 04       		.byte	0x4
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccVixtA1.s 			page 10
+
+
+ 484 000b 00       		.byte	0
+ 485 000c 0000     		.2byte	0
+ 486 000e 0000     		.2byte	0
+ 487 0010 00000000 		.4byte	.LFB63
+ 488 0014 08000000 		.4byte	.LFE63-.LFB63
+ 489 0018 00000000 		.4byte	.LFB64
+ 490 001c 08000000 		.4byte	.LFE64-.LFB64
+ 491 0020 00000000 		.4byte	.LFB65
+ 492 0024 10000000 		.4byte	.LFE65-.LFB65
+ 493 0028 00000000 		.4byte	0
+ 494 002c 00000000 		.4byte	0
+ 495              		.section	.debug_ranges,"",%progbits
+ 496              	.Ldebug_ranges0:
+ 497 0000 00000000 		.4byte	.LFB63
+ 498 0004 08000000 		.4byte	.LFE63
+ 499 0008 00000000 		.4byte	.LFB64
+ 500 000c 08000000 		.4byte	.LFE64
+ 501 0010 00000000 		.4byte	.LFB65
+ 502 0014 10000000 		.4byte	.LFE65
+ 503 0018 00000000 		.4byte	0
+ 504 001c 00000000 		.4byte	0
+ 505              		.section	.debug_line,"",%progbits
+ 506              	.Ldebug_line0:
+ 507 0000 89010000 		.section	.debug_str,"MS",%progbits,1
+ 507      02005201 
+ 507      00000201 
+ 507      FB0E0D00 
+ 507      01010101 
+ 508              	.LASF26:
+ 509 0000 50574D5F 		.ascii	"PWM_Led_WriteCompare\000"
+ 509      4C65645F 
+ 509      57726974 
+ 509      65436F6D 
+ 509      70617265 
+ 510              	.LASF5:
+ 511 0015 5F5F696E 		.ascii	"__int32_t\000"
+ 511      7433325F 
+ 511      7400
+ 512              	.LASF21:
+ 513 001f 70657269 		.ascii	"period\000"
+ 513      6F6400
+ 514              	.LASF19:
+ 515 0026 4C65645F 		.ascii	"Led_Stop\000"
+ 515      53746F70 
+ 515      00
+ 516              	.LASF18:
+ 517 002f 4C65645F 		.ascii	"Led_Start\000"
+ 517      53746172 
+ 517      7400
+ 518              	.LASF28:
+ 519 0039 4F6E426F 		.ascii	"OnBoardLed.c\000"
+ 519      6172644C 
+ 519      65642E63 
+ 519      00
+ 520              	.LASF23:
+ 521 0046 50574D5F 		.ascii	"PWM_Led_Start\000"
+ 521      4C65645F 
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccVixtA1.s 			page 11
+
+
+ 521      53746172 
+ 521      7400
+ 522              	.LASF13:
+ 523 0054 666C6F61 		.ascii	"float\000"
+ 523      7400
+ 524              	.LASF1:
+ 525 005a 756E7369 		.ascii	"unsigned char\000"
+ 525      676E6564 
+ 525      20636861 
+ 525      7200
+ 526              	.LASF27:
+ 527 0068 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 527      43313120 
+ 527      352E342E 
+ 527      31203230 
+ 527      31363036 
+ 528 009b 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 528      20726576 
+ 528      6973696F 
+ 528      6E203233 
+ 528      37373135 
+ 529 00ce 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 529      66756E63 
+ 529      74696F6E 
+ 529      2D736563 
+ 529      74696F6E 
+ 530              	.LASF7:
+ 531 00f6 6C6F6E67 		.ascii	"long unsigned int\000"
+ 531      20756E73 
+ 531      69676E65 
+ 531      6420696E 
+ 531      7400
+ 532              	.LASF3:
+ 533 0108 73686F72 		.ascii	"short unsigned int\000"
+ 533      7420756E 
+ 533      7369676E 
+ 533      65642069 
+ 533      6E7400
+ 534              	.LASF30:
+ 535 011b 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 535      52784275 
+ 535      66666572 
+ 535      00
+ 536              	.LASF4:
+ 537 0128 5F5F7569 		.ascii	"__uint16_t\000"
+ 537      6E743136 
+ 537      5F7400
+ 538              	.LASF14:
+ 539 0133 646F7562 		.ascii	"double\000"
+ 539      6C6500
+ 540              	.LASF24:
+ 541 013a 50574D5F 		.ascii	"PWM_Led_Stop\000"
+ 541      4C65645F 
+ 541      53746F70 
+ 541      00
+ 542              	.LASF25:
+ 543 0147 50574D5F 		.ascii	"PWM_Led_WritePeriod\000"
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccVixtA1.s 			page 12
+
+
+ 543      4C65645F 
+ 543      57726974 
+ 543      65506572 
+ 543      696F6400 
+ 544              	.LASF10:
+ 545 015b 756E7369 		.ascii	"unsigned int\000"
+ 545      676E6564 
+ 545      20696E74 
+ 545      00
+ 546              	.LASF9:
+ 547 0168 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 547      206C6F6E 
+ 547      6720756E 
+ 547      7369676E 
+ 547      65642069 
+ 548              	.LASF20:
+ 549 017f 4C65645F 		.ascii	"Led_Update\000"
+ 549      55706461 
+ 549      746500
+ 550              	.LASF29:
+ 551 018a 433A5C55 		.ascii	"C:\\Users\\gaeta\\Documents\\PSoC Creator\\PsoC_Fin"
+ 551      73657273 
+ 551      5C676165 
+ 551      74615C44 
+ 551      6F63756D 
+ 552 01b8 616C5F50 		.ascii	"al_Project_1_03\\FIORANI_GARGIULO_IANNUZZI_Project."
+ 552      726F6A65 
+ 552      63745F31 
+ 552      5F30335C 
+ 552      46494F52 
+ 553 01ea 63796473 		.ascii	"cydsn\000"
+ 553      6E00
+ 554              	.LASF12:
+ 555 01f0 696E7433 		.ascii	"int32_t\000"
+ 555      325F7400 
+ 556              	.LASF17:
+ 557 01f8 73697A65 		.ascii	"sizetype\000"
+ 557      74797065 
+ 557      00
+ 558              	.LASF8:
+ 559 0201 6C6F6E67 		.ascii	"long long int\000"
+ 559      206C6F6E 
+ 559      6720696E 
+ 559      7400
+ 560              	.LASF15:
+ 561 020f 63686172 		.ascii	"char\000"
+ 561      00
+ 562              	.LASF2:
+ 563 0214 73686F72 		.ascii	"short int\000"
+ 563      7420696E 
+ 563      7400
+ 564              	.LASF11:
+ 565 021e 75696E74 		.ascii	"uint16_t\000"
+ 565      31365F74 
+ 565      00
+ 566              	.LASF6:
+ 567 0227 6C6F6E67 		.ascii	"long int\000"
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccVixtA1.s 			page 13
+
+
+ 567      20696E74 
+ 567      00
+ 568              	.LASF16:
+ 569 0230 6C6F6E67 		.ascii	"long double\000"
+ 569      20646F75 
+ 569      626C6500 
+ 570              	.LASF0:
+ 571 023c 7369676E 		.ascii	"signed char\000"
+ 571      65642063 
+ 571      68617200 
+ 572              	.LASF22:
+ 573 0248 636F6D70 		.ascii	"compare\000"
+ 573      61726500 
+ 574              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
