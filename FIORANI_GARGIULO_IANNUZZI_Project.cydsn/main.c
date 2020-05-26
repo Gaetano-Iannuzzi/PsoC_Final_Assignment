@@ -144,10 +144,11 @@ int main(void) {
     }
     uint8_t ReadData[600];
     uint8_t TransferData[3];
-    int16_t i=0,j=0,k=0,m=0;
+    int16_t i=0,j=0,k=0;
     int16_t OutX,OutY,OutZ;
     uint8_t Packet[80],Packet_Read[80];
-    int16_t samples=0;
+    uint16_t samples=0x00;
+    uint16_t m=0x00;
     int16_t X,Y,Z;
     uint8_t header = 0xA0;
     uint8_t footer = 0xC0;
@@ -160,7 +161,7 @@ int main(void) {
     for(;;)
     {
         if(flag<2){
-        if( giro==1)
+        if( giro == 1)
         { 
            Led_Update(999,499);
             ACC_readMultibytes(LIS3DH_OUT_X_L, &ReadData[0],60);
@@ -175,9 +176,11 @@ int main(void) {
                 Packet[j+1] = ((OutX<<4) | (OutY>>6));
                 Packet[j+2] = ((OutY<<2) | (OutZ>>8));
                 Packet[j+3] = (OutZ);
-                EEPROM_writePage((0x0010+j+samples),& Packet[j],4);
+                EEPROM_writePage((0x0010+m+samples),& Packet[j],4);
                 EEPROM_waitForWriteComplete();
                 j+=4;
+                m+=0x04;
+                
             
             }
             
@@ -192,12 +195,13 @@ int main(void) {
             }
             /*FIFO */
             fifo_reg = ACC_readByte(LIS3DH_FIFO_CTRL_REG);
-            if( fifo_reg != LIS3DH_FIFO_MODE_CTRL_REG) 
+            if( fifo_reg != LIS3DH_WTM10_MODE_CTRL_REG5) 
             {
-                fifo_reg = LIS3DH_FIFO_MODE_CTRL_REG;
+                fifo_reg = LIS3DH_WTM10_MODE_CTRL_REG5;
                 ACC_writeByte(LIS3DH_FIFO_CTRL_REG,fifo_reg);
             }
-            samples +=10;
+            samples +=0x40;
+            m= 0x00;
             flag+=1;
             giro = 0;
         }
@@ -206,52 +210,53 @@ int main(void) {
         if(flag==2)
             {
             
-                EEPROM_readPage(0x0010,&Packet_Read[0],80);
+               EEPROM_readPage(0x0010,&Packet_Read[0],80);
                Pin_ExternalLED_Write(1);
-            for(k=0;k<80;k+=4){
+               for(k=0;k<80;k+=4){
+                    
                 
-                X= (((Packet_Read[k+1] & 0xF0)>>4)| Packet_Read[k]<<4);
-                
-                AccX=  X*4*9.806*0.001; // Multiply the value for 2 because the sensitivity is 2 mg/digit and 9.806*0.001 m/s^2
-                        OutX32 =  AccX*1000; //Cast the floating point value to an int32 
-                                                   //without loosing information of 3 decimals using the multiplication by 1000
+                    X= (((Packet_Read[k+1] & 0xF0)>>4)| Packet_Read[k]<<4);
+                    
+                    AccX=  X*4*9.806*0.001; // Multiply the value for 2 because the sensitivity is 2 mg/digit and 9.806*0.001 m/s^2
+                            OutX32 =  AccX*1000; //Cast the floating point value to an int32 
+                                                       //without loosing information of 3 decimals using the multiplication by 1000
                     OutArray[1] = (uint8_t)(OutX32 & 0xFF);
                     OutArray[2] = (uint8_t)(OutX32 >>8);
                     OutArray[3] = (uint8_t)(OutX32 >>16);
                     OutArray[4] = (uint8_t)(OutX32 >>24);
-                Y= ((Packet_Read[k+2]>>2)|(((Packet_Read[k+1]& 0x0F))<<6));
+                    
+                    Y= ((Packet_Read[k+2]>>2)|(((Packet_Read[k+1]& 0x0F))<<6));
                
-                AccY = Y*4*9.806*0.001; // Multiply the value for  2 because the sensitivity is 2 mg/digit and 9.806*0.001 m/s^2
-                        OutY32 = AccY*1000; //Cast the floating point value to an int32 
-                                                  //without loosing information of 3 decimals using the multiplication by 1000  
-                        OutArray[5] = (uint8_t)(OutY32 & 0xFF);
-                        OutArray[6] = (uint8_t)(OutY32 >> 8);
-                        OutArray[7] = (uint8_t)(OutY32 >>16);
-                        OutArray[8] = (uint8_t)(OutY32 >>24);
+                    AccY = Y*4*9.806*0.001; // Multiply the value for  2 because the sensitivity is 2 mg/digit and 9.806*0.001 m/s^2
+                    OutY32 = AccY*1000; //Cast the floating point value to an int32 
+                                              //without loosing information of 3 decimals using the multiplication by 1000  
+                    OutArray[5] = (uint8_t)(OutY32 & 0xFF);
+                    OutArray[6] = (uint8_t)(OutY32 >> 8);
+                    OutArray[7] = (uint8_t)(OutY32 >>16);
+                    OutArray[8] = (uint8_t)(OutY32 >>24);
                         
-            Z= ((Packet_Read[k+3]|(Packet_Read[k+2]& 0x03)<<8));
+                    Z= ((Packet_Read[k+3]|(Packet_Read[k+2]& 0x03)<<8));
             
-             AccZ = Z*4*9.806*0.001; // Multiply the value for 2 because the sensitivity is 2 mg/digit and 9.806*0.001 m/s^2
-                        OutZ32 = AccZ*1000;//Cast the floating point value to an int32 
-                                               //without loosing information of 3 decimals using the multiplication by 1000  
-                        OutArray[9] = (uint8_t)(OutZ32 & 0xFF);
-                        OutArray[10] =(uint8_t)(OutZ32 >> 8);
-                        OutArray[11] = (uint8_t)(OutZ32 >>16);
-                        OutArray[12] = (uint8_t)(OutZ32 >>24);
+                     AccZ = Z*4*9.806*0.001; // Multiply the value for 2 because the sensitivity is 2 mg/digit and 9.806*0.001 m/s^2
+                    OutZ32 = AccZ*1000;//Cast the floating point value to an int32 
+                                           //without loosing information of 3 decimals using the multiplication by 1000  
+                    OutArray[9] = (uint8_t)(OutZ32 & 0xFF);
+                    OutArray[10] =(uint8_t)(OutZ32 >> 8);
+                    OutArray[11] = (uint8_t)(OutZ32 >>16);
+                    OutArray[12] = (uint8_t)(OutZ32 >>24);
          
             
-            sprintf(bufferUART, "** EEPROM Read = %d %d %d \r\n", (uint8_t) X,(uint8_t)Y,(uint8_t)Z);
-            UART_PutBuffer;
+//                    sprintf(bufferUART, "** EEPROM Read = %d %d %d \r\n", (uint8_t) X*4,(uint8_t)Y*4,(uint8_t)Z*4);
+//                    UART_PutBuffer;
+//            
+//                    UART_PutString("*************************************\r\n");
+
+                    UART_PutArray(OutArray, 14); //Send data to Uart (values in [mg])
+                }
             
-            UART_PutString("*************************************\r\n");
-////            
-//////            return 0;
-//            UART_PutArray(OutArray, 14); //Send data to Uart (values in [mg])
-                   
-        }
             Pin_ExternalLED_Write(0);
-                     return 0;  
-    }
+            return 0;  
+            }
     }
 }
 

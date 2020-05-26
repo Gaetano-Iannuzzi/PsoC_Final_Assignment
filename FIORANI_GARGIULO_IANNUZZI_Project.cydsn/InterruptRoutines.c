@@ -21,7 +21,10 @@ uint8 SendBytesFlag=0;
 uint16_t PushButtonCounter = 0;  // Initialitazion of the variable
 int Reset_Flag = 0;
 int giro=0;
-
+uint8_t TempData[2];
+int j=0,temperature;
+char F;
+int32 value_temp;
 CY_ISR(Custom_ISR_ADC)
 {
     // Read Timer status register to bring interrupt line low
@@ -37,9 +40,11 @@ CY_ISR(Custom_ISR_ADC)
         if (value_digit > 65535)    value_digit = 65535;
         
         // Write bytes in buffer
-        DataBuffer[1] = value_digit >> 8;
-        DataBuffer[2] = value_digit & 0xFF;
-            
+        TempData[j+4] = value_digit >> 8;
+        TempData[j+5] = value_digit & 0xFF;
+        if( temperature == F){
+         value_temp = (value_temp*9/5)+32;   
+        }
         PacketReadyFlag=1;
     }
 }
