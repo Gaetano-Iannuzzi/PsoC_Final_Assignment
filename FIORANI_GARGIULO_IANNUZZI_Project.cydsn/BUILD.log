@@ -1,8 +1,8 @@
---------------- Build Started: 05/26/2020 10:11:51 Project: FIORANI_GARGIULO_IANNUZZI_Project, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+--------------- Build Started: 05/26/2020 10:28:22 Project: FIORANI_GARGIULO_IANNUZZI_Project, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
 The code generation step is up to date.
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/main.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c main.c -o .\CortexM3\ARM_GCC_541\Debug\main.o
 main.c: In function 'main':
-main.c:146:13: warning: unused variable 'TransferData' [-Wunused-variable]
+main.c:145:13: warning: unused variable 'TransferData' [-Wunused-variable]
      uint8_t TransferData[3];
              ^
 main.c:88:9: warning: variable 's' set but not used [-Wunused-but-set-variable]
@@ -18,4 +18,4 @@ Checksum calculated and stored in ELF section .cymeta
 cyelftool.exe -S "C:\Users\gaeta\Documents\PSoC Creator\PsoC_Final_Project_1_03\FIORANI_GARGIULO_IANNUZZI_Project.cydsn\CortexM3\ARM_GCC_541\Debug\FIORANI_GARGIULO_IANNUZZI_Project.elf"
 Flash used: 9134 of 262144 bytes (3,5%).
 SRAM used: 2601 of 65536 bytes (4,0%). Stack: 2048 bytes. Heap: 128 bytes.
---------------- Build Succeeded: 05/26/2020 10:11:53 ---------------
+--------------- Build Succeeded: 05/26/2020 10:28:23 ---------------

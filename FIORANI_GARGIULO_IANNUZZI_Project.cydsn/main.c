@@ -134,7 +134,6 @@ int main(void) {
         ACC_writeByte(LIS3DH_FIFO_CTRL_REG,fifo_reg);
     }
     
-    
      /*WTM 10 */
     fifo_reg = ACC_readByte(LIS3DH_FIFO_CTRL_REG);
     if( fifo_reg != LIS3DH_WTM10_MODE_CTRL_REG5) 
