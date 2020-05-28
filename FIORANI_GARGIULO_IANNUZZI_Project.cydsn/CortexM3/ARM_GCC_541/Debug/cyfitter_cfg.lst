@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
   29:Generated_Source\PSoC5/cyfitter_cfg.c **** 
   30:Generated_Source\PSoC5/cyfitter_cfg.c **** #if defined(__GNUC__) || defined(__ARMCC_VERSION)
   31:Generated_Source\PSoC5/cyfitter_cfg.c ****     #define CYPACKED 
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 2
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 2
 
 
   32:Generated_Source\PSoC5/cyfitter_cfg.c ****     #define CYPACKED_ATTR __attribute__ ((packed))
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
   86:Generated_Source\PSoC5/cyfitter_cfg.c **** 	(void)memcpy(dest, src, n);
   87:Generated_Source\PSoC5/cyfitter_cfg.c **** }
   88:Generated_Source\PSoC5/cyfitter_cfg.c **** CY_CFG_UNUSED
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 3
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 3
 
 
   89:Generated_Source\PSoC5/cyfitter_cfg.c **** static void CYCONFIGCPYCODE(void *dest, const void *src, size_t n);
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
   41              		.thumb
   42              		.thumb_func
   43              		.type	cfg_write_bytes32, %function
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 4
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 4
 
 
   44              	cfg_write_bytes32:
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  181:Generated_Source\PSoC5/cyfitter_cfg.c **** 
  182:Generated_Source\PSoC5/cyfitter_cfg.c **** /* IOPINS0_3 Address: CYREG_PRT3_DM0 Size (bytes): 8 */
  183:Generated_Source\PSoC5/cyfitter_cfg.c **** #define BS_IOPINS0_3_VAL ((const uint8 CYFAR *)0x48000944u)
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 5
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 5
 
 
  184:Generated_Source\PSoC5/cyfitter_cfg.c **** 
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
   72 000c F3B2     		uxtb	r3, r6
   73              	.LVL5:
  212:Generated_Source\PSoC5/cyfitter_cfg.c **** 		baseAddr &= 0xFFFFFF00u;
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 6
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 6
 
 
   74              		.loc 1 212 0
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  117              		.section	.text.AnalogSetDefault,"ax",%progbits
  118              		.align	2
  119              		.thumb
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 7
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 7
 
 
  120              		.thumb_func
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  271:Generated_Source\PSoC5/cyfitter_cfg.c **** 
  272:Generated_Source\PSoC5/cyfitter_cfg.c **** 	/* Configure PLL based on settings from Clock DWR */
  273:Generated_Source\PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG16((void CYFAR *)(CYREG_FASTCLK_PLL_P), 0x0008u);
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 8
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 8
 
 
  274:Generated_Source\PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG16((void CYFAR *)(CYREG_FASTCLK_PLL_CFG0), 0x1251u);
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  128              		@ link register save eliminated.
  324:Generated_Source\PSoC5/cyfitter_cfg.c **** 	uint8 bg_xover_inl_trim = CY_GET_XTND_REG8((void CYFAR *)(CYREG_FLSHID_MFG_CFG_BG_XOVER_INL_TRIM +
  129              		.loc 1 324 0
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 9
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 9
 
 
  130 0000 0B4B     		ldr	r3, .L10
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  177              		@ frame_needed = 0, uses_anonymous_args = 0
  178              	.LVL14:
  179 0000 08B5     		push	{r3, lr}
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 10
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 10
 
 
  180              		.cfi_def_cfa_offset 8
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  230              		.cfi_offset 4, -12
  231              		.cfi_offset 5, -8
  232              		.cfi_offset 14, -4
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 11
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 11
 
 
  246:Generated_Source\PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG8((void CYFAR *)(CYREG_CLKDIST_DCFG0_CFG0 + 0x2u), 0x50u);
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  258:Generated_Source\PSoC5/cyfitter_cfg.c **** 	CY_SET_XTND_REG8((void CYFAR *)(CYREG_CLKDIST_DCFG6_CFG0 + 0x2u), 0x19u);
  275              		.loc 1 258 0
  276 0040 47F22F52 		movw	r2, #29999
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 12
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 12
 
 
  277 0044 304B     		ldr	r3, .L22+20
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  321 0088 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
  322 008a 03F00103 		and	r3, r3, #1
  323 008e 43EA4404 		orr	r4, r3, r4, lsl #1
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 13
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 13
 
 
  324              	.LVL22:
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  366 00c8 0222     		movs	r2, #2
  367 00ca 033B     		subs	r3, r3, #3
  368 00cc 1A70     		strb	r2, [r3]
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 14
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 14
 
 
  295:Generated_Source\PSoC5/cyfitter_cfg.c **** 
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  419              	.LFB7:
  331:Generated_Source\PSoC5/cyfitter_cfg.c **** }
  332:Generated_Source\PSoC5/cyfitter_cfg.c **** 
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 15
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 15
 
 
  333:Generated_Source\PSoC5/cyfitter_cfg.c **** 
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  444 0014 1370     		strb	r3, [r2]
  445 0016 7047     		bx	lr
  446              	.L28:
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 16
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 16
 
 
  447              		.align	2
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  467              		.loc 1 396 0
  468 0000 0128     		cmp	r0, #1
  469 0002 07D8     		bhi	.L29
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 17
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 17
 
 
  397:Generated_Source\PSoC5/cyfitter_cfg.c **** 	{
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  502              		.loc 1 418 0
  503 0000 0128     		cmp	r0, #1
  504 0002 08D8     		bhi	.L33
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 18
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 18
 
 
  419:Generated_Source\PSoC5/cyfitter_cfg.c **** 	{
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  533              		@ args = 0, pretend = 0, frame = 0
  534              		@ frame_needed = 0, uses_anonymous_args = 0
  535 0000 38B5     		push	{r3, r4, r5, lr}
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 19
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 19
 
 
  536              		.cfi_def_cfa_offset 16
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  480:Generated_Source\PSoC5/cyfitter_cfg.c **** 
  481:Generated_Source\PSoC5/cyfitter_cfg.c **** 		static const cfg_memcpy_t CYCODE cfg_memcpy_list [] = {
  482:Generated_Source\PSoC5/cyfitter_cfg.c **** 			/* dest, src, size */
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 20
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 20
 
 
  483:Generated_Source\PSoC5/cyfitter_cfg.c **** 			{(void CYFAR *)(CYDEV_PRTDSI_PRT12_BASE), BS_IOPORT_7_VAL, 6u},
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  588              		.loc 1 501 0 is_stmt 1 discriminator 3
  589 0032 2F48     		ldr	r0, .L43+4
  590 0034 A200     		lsls	r2, r4, #2
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 21
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 21
 
 
  591 0036 1119     		adds	r1, r2, r4
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  630 006c 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
  631 006e 43F00203 		orr	r3, r3, #2
  632 0072 1370     		strb	r3, [r2]
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 22
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 22
 
 
  515:Generated_Source\PSoC5/cyfitter_cfg.c **** 
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  674              	.LVL55:
  528:Generated_Source\PSoC5/cyfitter_cfg.c **** 	/* Switch Boost to the precision bandgap reference from its internal reference */
  529:Generated_Source\PSoC5/cyfitter_cfg.c **** 	CY_SET_REG8((void CYXDATA *)CYREG_BOOST_CR2, (CY_GET_REG8((void CYXDATA *)CYREG_BOOST_CR2) | 0x08u
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 23
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 23
 
 
  675              		.loc 1 529 0
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  715 010c 20090048 		.word	1207961888
  716 0110 C0510040 		.word	1073762752
  717 0114 2C090048 		.word	1207961900
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 24
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 24
 
 
  718 0118 10510040 		.word	1073762576
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  772 0048 60520040 		.word	1073762912
  773 004c 10080048 		.word	1207961616
  774 0050 0600     		.short	6
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 25
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 25
 
 
  775 0052 000A0140 		.4byte	1073809920
@@ -1459,10 +1459,10 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  790 0006 00000000 		.4byte	.Ldebug_abbrev0
  791 000a 04       		.byte	0x4
  792 000b 01       		.uleb128 0x1
- 793 000c 7C020000 		.4byte	.LASF57
+ 793 000c 16020000 		.4byte	.LASF57
  794 0010 0C       		.byte	0xc
- 795 0011 71030000 		.4byte	.LASF58
- 796 0015 FA000000 		.4byte	.LASF59
+ 795 0011 0B030000 		.4byte	.LASF58
+ 796 0015 4D030000 		.4byte	.LASF59
  797 0019 00000000 		.4byte	.Ldebug_ranges0+0
  798 001d 00000000 		.4byte	0
  799 0021 00000000 		.4byte	.Ldebug_line0
@@ -1478,7 +1478,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  809 0037 04       		.uleb128 0x4
  810 0038 04       		.byte	0x4
  811 0039 07       		.byte	0x7
- 812 003a A5010000 		.4byte	.LASF0
+ 812 003a 3F010000 		.4byte	.LASF0
  813 003e 04       		.uleb128 0x4
  814 003f 08       		.byte	0x8
  815 0040 05       		.byte	0x5
@@ -1486,7 +1486,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  817 0045 04       		.uleb128 0x4
  818 0046 08       		.byte	0x8
  819 0047 04       		.byte	0x4
- 820 0048 03020000 		.4byte	.LASF2
+ 820 0048 9D010000 		.4byte	.LASF2
  821 004c 04       		.uleb128 0x4
  822 004d 01       		.byte	0x1
  823 004e 06       		.byte	0x6
@@ -1494,18 +1494,18 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  825 0053 04       		.uleb128 0x4
  826 0054 01       		.byte	0x1
  827 0055 08       		.byte	0x8
- 828 0056 64020000 		.4byte	.LASF4
+ 828 0056 FE010000 		.4byte	.LASF4
  829 005a 04       		.uleb128 0x4
  830 005b 02       		.byte	0x2
  831 005c 05       		.byte	0x5
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 26
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 26
 
 
- 832 005d 72020000 		.4byte	.LASF5
+ 832 005d 0C020000 		.4byte	.LASF5
  833 0061 04       		.uleb128 0x4
  834 0062 02       		.byte	0x2
  835 0063 07       		.byte	0x7
- 836 0064 E7010000 		.4byte	.LASF6
+ 836 0064 81010000 		.4byte	.LASF6
  837 0068 04       		.uleb128 0x4
  838 0069 04       		.byte	0x4
  839 006a 05       		.byte	0x5
@@ -1513,7 +1513,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  841 006f 04       		.uleb128 0x4
  842 0070 04       		.byte	0x4
  843 0071 07       		.byte	0x7
- 844 0072 BB010000 		.4byte	.LASF8
+ 844 0072 55010000 		.4byte	.LASF8
  845 0076 04       		.uleb128 0x4
  846 0077 08       		.byte	0x8
  847 0078 07       		.byte	0x7
@@ -1521,13 +1521,13 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  849 007d 04       		.uleb128 0x4
  850 007e 04       		.byte	0x4
  851 007f 07       		.byte	0x7
- 852 0080 FA010000 		.4byte	.LASF10
+ 852 0080 94010000 		.4byte	.LASF10
  853 0084 05       		.uleb128 0x5
  854 0085 04       		.byte	0x4
  855 0086 04       		.uleb128 0x4
  856 0087 01       		.byte	0x1
  857 0088 08       		.byte	0x8
- 858 0089 2D030000 		.4byte	.LASF11
+ 858 0089 C7020000 		.4byte	.LASF11
  859 008d 06       		.uleb128 0x6
  860 008e DC000000 		.4byte	.LASF13
  861 0092 03       		.byte	0x3
@@ -1546,19 +1546,19 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  874 00b1 04       		.uleb128 0x4
  875 00b2 04       		.byte	0x4
  876 00b3 04       		.byte	0x4
- 877 00b4 43020000 		.4byte	.LASF16
+ 877 00b4 DD010000 		.4byte	.LASF16
  878 00b8 04       		.uleb128 0x4
  879 00b9 08       		.byte	0x8
  880 00ba 04       		.byte	0x4
  881 00bb E2000000 		.4byte	.LASF17
  882 00bf 06       		.uleb128 0x6
- 883 00c0 5F020000 		.4byte	.LASF18
+ 883 00c0 F9010000 		.4byte	.LASF18
  884 00c4 03       		.byte	0x3
  885 00c5 8E02     		.2byte	0x28e
  886 00c7 CB000000 		.4byte	0xcb
  887 00cb 07       		.uleb128 0x7
  888 00cc 8D000000 		.4byte	0x8d
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 27
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 27
 
 
  889 00d0 06       		.uleb128 0x6
@@ -1574,20 +1574,20 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  899 00e4 98       		.byte	0x98
  900 00e5 02010000 		.4byte	0x102
  901 00e9 09       		.uleb128 0x9
- 902 00ea 4F030000 		.4byte	.LASF20
+ 902 00ea E9020000 		.4byte	.LASF20
  903 00ee 01       		.byte	0x1
  904 00ef 9A       		.byte	0x9a
  905 00f0 8D000000 		.4byte	0x8d
  906 00f4 00       		.byte	0
  907 00f5 09       		.uleb128 0x9
- 908 00f6 84010000 		.4byte	.LASF21
+ 908 00f6 1E010000 		.4byte	.LASF21
  909 00fa 01       		.byte	0x1
  910 00fb 9B       		.byte	0x9b
  911 00fc 8D000000 		.4byte	0x8d
  912 0100 01       		.byte	0x1
  913 0101 00       		.byte	0
  914 0102 03       		.uleb128 0x3
- 915 0103 1A030000 		.4byte	.LASF22
+ 915 0103 B4020000 		.4byte	.LASF22
  916 0107 01       		.byte	0x1
  917 0108 9C       		.byte	0x9c
  918 0109 E1000000 		.4byte	0xe1
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  943 0140 9C       		.byte	0x9c
  944 0141 A2010000 		.4byte	0x1a2
  945 0145 0B       		.uleb128 0xb
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 28
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 28
 
 
  946 0146 69000000 		.4byte	.LASF24
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  1000 01bd 01       		.byte	0x1
  1001 01be 4201     		.2byte	0x142
  1002 01c0 00000000 		.4byte	.LFB6
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 29
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 29
 
 
  1003 01c4 3C000000 		.4byte	.LFE6-.LFB6
@@ -1686,7 +1686,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  1005 01c9 9C       		.byte	0x9c
  1006 01ca DF010000 		.4byte	0x1df
  1007 01ce 13       		.uleb128 0x13
- 1008 01cf 0F020000 		.4byte	.LASF30
+ 1008 01cf A9010000 		.4byte	.LASF30
  1009 01d3 01       		.byte	0x1
  1010 01d4 4401     		.2byte	0x144
  1011 01d6 8D000000 		.4byte	0x8d
@@ -1738,10 +1738,10 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  1057 022a 00       		.byte	0
  1058 022b 00       		.byte	0
  1059 022c 0C       		.uleb128 0xc
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 30
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 30
 
 
- 1060 022d 65030000 		.4byte	.LASF32
+ 1060 022d FF020000 		.4byte	.LASF32
  1061 0231 01       		.byte	0x1
  1062 0232 54       		.byte	0x54
  1063 0233 00000000 		.4byte	.LFB1
@@ -1750,7 +1750,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  1066 023c 9C       		.byte	0x9c
  1067 023d 8C020000 		.4byte	0x28c
  1068 0241 17       		.uleb128 0x17
- 1069 0242 3E020000 		.4byte	.LASF33
+ 1069 0242 D8010000 		.4byte	.LASF33
  1070 0246 01       		.byte	0x1
  1071 0247 54       		.byte	0x54
  1072 0248 84000000 		.4byte	0x84
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  1114 028e 92020000 		.4byte	0x292
  1115 0292 18       		.uleb128 0x18
  1116 0293 0C       		.uleb128 0xc
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 31
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 31
 
 
  1117 0294 B1000000 		.4byte	.LASF34
@@ -1810,13 +1810,13 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  1123 02a3 9C       		.byte	0x9c
  1124 02a4 10030000 		.4byte	0x310
  1125 02a8 0F       		.uleb128 0xf
- 1126 02a9 CD010000 		.4byte	.LASF35
+ 1126 02a9 67010000 		.4byte	.LASF35
  1127 02ad 01       		.byte	0x1
  1128 02ae F1       		.byte	0xf1
  1129 02af A5000000 		.4byte	0xa5
  1130 02b3 32010000 		.4byte	.LLST10
  1131 02b7 0F       		.uleb128 0xf
- 1132 02b8 0A030000 		.4byte	.LASF36
+ 1132 02b8 A4020000 		.4byte	.LASF36
  1133 02bc 01       		.byte	0x1
  1134 02bd F2       		.byte	0xf2
  1135 02be 8D000000 		.4byte	0x8d
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  1171 0301 AE000000 		.4byte	.LVL26
  1172 0305 0D010000 		.4byte	0x10d
  1173 0309 16       		.uleb128 0x16
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 32
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 32
 
 
  1174 030a 01       		.uleb128 0x1
@@ -1868,7 +1868,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  1178 030e 00       		.byte	0
  1179 030f 00       		.byte	0
  1180 0310 1A       		.uleb128 0x1a
- 1181 0311 39030000 		.4byte	.LASF39
+ 1181 0311 D3020000 		.4byte	.LASF39
  1182 0315 01       		.byte	0x1
  1183 0316 5F01     		.2byte	0x15f
  1184 0318 00000000 		.4byte	.LFB7
@@ -1877,14 +1877,14 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  1187 0321 9C       		.byte	0x9c
  1188 0322 43030000 		.4byte	0x343
  1189 0326 1B       		.uleb128 0x1b
- 1190 0327 56030000 		.4byte	.LASF37
+ 1190 0327 F0020000 		.4byte	.LASF37
  1191 032b 01       		.byte	0x1
  1192 032c 5F01     		.2byte	0x15f
  1193 032e 8D000000 		.4byte	0x8d
  1194 0332 01       		.uleb128 0x1
  1195 0333 50       		.byte	0x50
  1196 0334 1C       		.uleb128 0x1c
- 1197 0335 7B010000 		.4byte	.LASF38
+ 1197 0335 15010000 		.4byte	.LASF38
  1198 0339 01       		.byte	0x1
  1199 033a 6101     		.2byte	0x161
  1200 033c 8D000000 		.4byte	0x8d
@@ -1892,7 +1892,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  1202 0341 53       		.byte	0x53
  1203 0342 00       		.byte	0
  1204 0343 1A       		.uleb128 0x1a
- 1205 0344 9F030000 		.4byte	.LASF40
+ 1205 0344 39030000 		.4byte	.LASF40
  1206 0348 01       		.byte	0x1
  1207 0349 8A01     		.2byte	0x18a
  1208 034b 00000000 		.4byte	.LFB8
@@ -1901,7 +1901,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  1211 0354 9C       		.byte	0x9c
  1212 0355 6A030000 		.4byte	0x36a
  1213 0359 1D       		.uleb128 0x1d
- 1214 035a 12030000 		.4byte	.LASF41
+ 1214 035a AC020000 		.4byte	.LASF41
  1215 035e 01       		.byte	0x1
  1216 035f 8A01     		.2byte	0x18a
  1217 0361 8D000000 		.4byte	0x8d
@@ -1917,8 +1917,8 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  1227 037b 9C       		.byte	0x9c
  1228 037c 91030000 		.4byte	0x391
  1229 0380 1D       		.uleb128 0x1d
- 1230 0381 12030000 		.4byte	.LASF41
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 33
+ 1230 0381 AC020000 		.4byte	.LASF41
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 33
 
 
  1231 0385 01       		.byte	0x1
@@ -1927,7 +1927,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  1234 038c 9C010000 		.4byte	.LLST13
  1235 0390 00       		.byte	0
  1236 0391 1A       		.uleb128 0x1a
- 1237 0392 C3030000 		.4byte	.LASF43
+ 1237 0392 CF030000 		.4byte	.LASF43
  1238 0396 01       		.byte	0x1
  1239 0397 BB01     		.2byte	0x1bb
  1240 0399 00000000 		.4byte	.LFB10
@@ -1945,20 +1945,20 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  1252 03b7 C701     		.2byte	0x1c7
  1253 03b9 D8030000 		.4byte	0x3d8
  1254 03bd 20       		.uleb128 0x20
- 1255 03be 97030000 		.4byte	.LASF44
+ 1255 03be 31030000 		.4byte	.LASF44
  1256 03c2 01       		.byte	0x1
  1257 03c3 C801     		.2byte	0x1c8
  1258 03c5 84000000 		.4byte	0x84
  1259 03c9 00       		.byte	0
  1260 03ca 20       		.uleb128 0x20
- 1261 03cb E2010000 		.4byte	.LASF45
+ 1261 03cb 7C010000 		.4byte	.LASF45
  1262 03cf 01       		.byte	0x1
  1263 03d0 C901     		.2byte	0x1c9
  1264 03d2 99000000 		.4byte	0x99
  1265 03d6 04       		.byte	0x4
  1266 03d7 00       		.byte	0
  1267 03d8 06       		.uleb128 0x6
- 1268 03d9 21020000 		.4byte	.LASF46
+ 1268 03d9 BB010000 		.4byte	.LASF46
  1269 03dd 01       		.byte	0x1
  1270 03de CA01     		.2byte	0x1ca
  1271 03e0 B4030000 		.4byte	0x3b4
@@ -1968,7 +1968,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  1275 03e7 CD01     		.2byte	0x1cd
  1276 03e9 15040000 		.4byte	0x415
  1277 03ed 20       		.uleb128 0x20
- 1278 03ee 3E020000 		.4byte	.LASF33
+ 1278 03ee D8010000 		.4byte	.LASF33
  1279 03f2 01       		.byte	0x1
  1280 03f3 CE01     		.2byte	0x1ce
  1281 03f5 84000000 		.4byte	0x84
@@ -1978,19 +1978,19 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  1285 03ff 01       		.byte	0x1
  1286 0400 CF01     		.2byte	0x1cf
  1287 0402 8C020000 		.4byte	0x28c
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 34
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 34
 
 
  1288 0406 04       		.byte	0x4
  1289 0407 20       		.uleb128 0x20
- 1290 0408 E2010000 		.4byte	.LASF45
+ 1290 0408 7C010000 		.4byte	.LASF45
  1291 040c 01       		.byte	0x1
  1292 040d D001     		.2byte	0x1d0
  1293 040f 99000000 		.4byte	0x99
  1294 0413 08       		.byte	0x8
  1295 0414 00       		.byte	0
  1296 0415 06       		.uleb128 0x6
- 1297 0416 D5010000 		.4byte	.LASF47
+ 1297 0416 6F010000 		.4byte	.LASF47
  1298 041a 01       		.byte	0x1
  1299 041b D101     		.2byte	0x1d1
  1300 041d E4030000 		.4byte	0x3e4
@@ -2004,7 +2004,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  1308 0431 11       		.uleb128 0x11
  1309 0432 D8030000 		.4byte	0x3d8
  1310 0436 1C       		.uleb128 0x1c
- 1311 0437 2E020000 		.4byte	.LASF48
+ 1311 0437 C8010000 		.4byte	.LASF48
  1312 043b 01       		.byte	0x1
  1313 043c D301     		.2byte	0x1d3
  1314 043e 48040000 		.4byte	0x448
@@ -2023,7 +2023,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  1327 045d 11       		.uleb128 0x11
  1328 045e 15040000 		.4byte	0x415
  1329 0462 1C       		.uleb128 0x1c
- 1330 0463 B3030000 		.4byte	.LASF49
+ 1330 0463 BF030000 		.4byte	.LASF49
  1331 0467 01       		.byte	0x1
  1332 0468 E101     		.2byte	0x1e1
  1333 046a 74040000 		.4byte	0x474
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  1342 047d E801     		.2byte	0x1e8
  1343 047f 8D000000 		.4byte	0x8d
  1344 0483 BD010000 		.4byte	.LLST14
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 35
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 35
 
 
  1345 0487 1E       		.uleb128 0x1e
@@ -2094,22 +2094,22 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  1395 04ea 04       		.byte	0x4
  1396 04eb 5D040000 		.4byte	0x45d
  1397 04ef 13       		.uleb128 0x13
- 1398 04f0 57020000 		.4byte	.LASF50
+ 1398 04f0 F1010000 		.4byte	.LASF50
  1399 04f4 01       		.byte	0x1
  1400 04f5 F501     		.2byte	0x1f5
  1401 04f7 84000000 		.4byte	0x84
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 36
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 36
 
 
  1402 04fb 61020000 		.4byte	.LLST17
  1403 04ff 13       		.uleb128 0x13
- 1404 0500 32030000 		.4byte	.LASF51
+ 1404 0500 CC020000 		.4byte	.LASF51
  1405 0504 01       		.byte	0x1
  1406 0505 F601     		.2byte	0x1f6
  1407 0507 8C020000 		.4byte	0x28c
  1408 050b 74020000 		.4byte	.LLST18
  1409 050f 13       		.uleb128 0x13
- 1410 0510 B2010000 		.4byte	.LASF52
+ 1410 0510 4C010000 		.4byte	.LASF52
  1411 0514 01       		.byte	0x1
  1412 0515 F701     		.2byte	0x1f7
  1413 0517 99000000 		.4byte	0x99
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  1456 0558 90000048 		.4byte	0x48000090
  1457 055c 00       		.byte	0
  1458 055d 00       		.byte	0
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 37
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 37
 
 
  1459 055e 19       		.uleb128 0x19
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  1513 05bb 10510040 		.4byte	0x40005110
  1514 05bf 16       		.uleb128 0x16
  1515 05c0 01       		.uleb128 0x1
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 38
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 38
 
 
  1516 05c1 51       		.byte	0x51
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  1570 0618 38       		.byte	0x38
  1571 0619 00       		.byte	0
  1572 061a 25       		.uleb128 0x25
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 39
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 39
 
 
  1573 061b D2000000 		.4byte	.LVL56
@@ -2321,7 +2321,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  1610 0661 11       		.uleb128 0x11
  1611 0662 5B060000 		.4byte	0x65b
  1612 0666 26       		.uleb128 0x26
- 1613 0667 8A010000 		.4byte	.LASF53
+ 1613 0667 24010000 		.4byte	.LASF53
  1614 066b 01       		.byte	0x1
  1615 066c 7101     		.2byte	0x171
  1616 066e 78060000 		.4byte	0x678
@@ -2338,12 +2338,12 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  1627 068b 01       		.byte	0x1
  1628 068c 00       		.byte	0
  1629 068d 11       		.uleb128 0x11
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 40
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 40
 
 
  1630 068e 8D000000 		.4byte	0x8d
  1631 0692 26       		.uleb128 0x26
- 1632 0693 60010000 		.4byte	.LASF54
+ 1632 0693 FA000000 		.4byte	.LASF54
  1633 0697 01       		.byte	0x1
  1634 0698 7801     		.2byte	0x178
  1635 069a A4060000 		.4byte	0x6a4
@@ -2353,14 +2353,14 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  1639 06a4 11       		.uleb128 0x11
  1640 06a5 7D060000 		.4byte	0x67d
  1641 06a9 27       		.uleb128 0x27
- 1642 06aa 5E030000 		.4byte	.LASF55
- 1643 06ae 5E030000 		.4byte	.LASF55
+ 1642 06aa F8020000 		.4byte	.LASF55
+ 1643 06ae F8020000 		.4byte	.LASF55
  1644 06b2 27       		.uleb128 0x27
  1645 06b3 D5000000 		.4byte	.LASF56
  1646 06b7 D5000000 		.4byte	.LASF56
  1647 06bb 28       		.uleb128 0x28
- 1648 06bc 49020000 		.4byte	.LASF61
- 1649 06c0 49020000 		.4byte	.LASF61
+ 1648 06bc E3010000 		.4byte	.LASF61
+ 1649 06c0 E3010000 		.4byte	.LASF61
  1650 06c4 04       		.byte	0x4
  1651 06c5 79       		.byte	0x79
  1652 06c6 00       		.byte	0
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  1684 001d 00       		.byte	0
  1685 001e 03       		.uleb128 0x3
  1686 001f 16       		.uleb128 0x16
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 41
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 41
 
 
  1687 0020 00       		.byte	0
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  1741 0056 3A       		.uleb128 0x3a
  1742 0057 0B       		.uleb128 0xb
  1743 0058 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 42
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 42
 
 
  1744 0059 0B       		.uleb128 0xb
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  1798 0091 49       		.uleb128 0x49
  1799 0092 13       		.uleb128 0x13
  1800 0093 02       		.uleb128 0x2
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 43
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 43
 
 
  1801 0094 18       		.uleb128 0x18
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  1855 00cb 0E       		.uleb128 0xe
  1856 00cc 3A       		.uleb128 0x3a
  1857 00cd 0B       		.uleb128 0xb
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 44
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 44
 
 
  1858 00ce 3B       		.uleb128 0x3b
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  1912 0105 3B       		.uleb128 0x3b
  1913 0106 05       		.uleb128 0x5
  1914 0107 49       		.uleb128 0x49
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 45
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 45
 
 
  1915 0108 13       		.uleb128 0x13
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  1969 0143 26       		.uleb128 0x26
  1970 0144 00       		.byte	0
  1971 0145 00       		.byte	0
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 46
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 46
 
 
  1972 0146 00       		.byte	0
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  2026 017f 00       		.byte	0
  2027 0180 03       		.uleb128 0x3
  2028 0181 0E       		.uleb128 0xe
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 47
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 47
 
 
  2029 0182 3A       		.uleb128 0x3a
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  2083 01b8 3A       		.uleb128 0x3a
  2084 01b9 0B       		.uleb128 0xb
  2085 01ba 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 48
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 48
 
 
  2086 01bb 05       		.uleb128 0x5
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  2140 01f1 00       		.byte	0
  2141 01f2 25       		.uleb128 0x25
  2142 01f3 898201   		.uleb128 0x4109
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 49
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 49
 
 
  2143 01f6 00       		.byte	0
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  2197 022c 00       		.byte	0
  2198              		.section	.debug_loc,"",%progbits
  2199              	.Ldebug_loc0:
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 50
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 50
 
 
  2200              	.LLST0:
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  2254 008d 09000000 		.4byte	.LVL16-1
  2255 0091 0C000000 		.4byte	.LFE0
  2256 0095 0400     		.2byte	0x4
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 51
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 51
 
 
  2257 0097 F3       		.byte	0xf3
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  2311 0115 05000000 		.4byte	.LVL18-1
  2312 0119 0100     		.2byte	0x1
  2313 011b 52       		.byte	0x52
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 52
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 52
 
 
  2314 011c 05000000 		.4byte	.LVL18-1
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  2368 01a4 0100     		.2byte	0x1
  2369 01a6 50       		.byte	0x50
  2370 01a7 0C000000 		.4byte	.LVL35
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 53
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 53
 
 
  2371 01ab 1C000000 		.4byte	.LFE9
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  2425 0226 9F       		.byte	0x9f
  2426 0227 00000000 		.4byte	0
  2427 022b 00000000 		.4byte	0
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 54
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 54
 
 
  2428              	.LLST16:
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  2482 02a4 22       		.byte	0x22
  2483 02a5 31       		.byte	0x31
  2484 02a6 24       		.byte	0x24
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 55
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 55
 
 
  2485 02a7 03       		.byte	0x3
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  2539 0014 3C000000 		.4byte	.LFE6
  2540 0018 00000000 		.4byte	.LFB0
  2541 001c 0C000000 		.4byte	.LFE0
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 56
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 56
 
 
  2542 0020 00000000 		.4byte	.LFB1
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  2574      7369676E 
  2574      65642069 
  2575              	.LASF24:
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 57
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 57
 
 
  2576 0069 61646472 		.ascii	"addr_table\000"
@@ -3416,207 +3416,210 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 1
  2601              	.LASF15:
  2602 00f3 75696E74 		.ascii	"uint32\000"
  2602      333200
- 2603              	.LASF59:
- 2604 00fa 433A5C55 		.ascii	"C:\\Users\\gaeta\\Documents\\PSoC Creator\\PsoC_Fin"
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 58
+ 2603              	.LASF54:
+ 2604 00fa 4144435F 		.ascii	"ADC_DelSig_AMux__maskTable\000"
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 58
 
 
- 2604      73657273 
- 2604      5C676165 
- 2604      74615C44 
- 2604      6F63756D 
- 2605 0128 616C5F50 		.ascii	"al_Project_1_03\\FIORANI_GARGIULO_IANNUZZI_Project."
- 2605      726F6A65 
- 2605      63745F31 
- 2605      5F30335C 
- 2605      46494F52 
- 2606 015a 63796473 		.ascii	"cydsn\000"
- 2606      6E00
- 2607              	.LASF54:
- 2608 0160 4144435F 		.ascii	"ADC_DelSig_AMux__maskTable\000"
- 2608      44656C53 
- 2608      69675F41 
- 2608      4D75785F 
- 2608      5F6D6173 
- 2609              	.LASF38:
- 2610 017b 72656756 		.ascii	"regValue\000"
- 2610      616C7565 
- 2610      00
- 2611              	.LASF21:
- 2612 0184 76616C75 		.ascii	"value\000"
- 2612      6500
- 2613              	.LASF53:
- 2614 018a 4144435F 		.ascii	"ADC_DelSig_AMux__addrTable\000"
- 2614      44656C53 
- 2614      69675F41 
- 2614      4D75785F 
- 2614      5F616464 
- 2615              	.LASF0:
- 2616 01a5 756E7369 		.ascii	"unsigned int\000"
- 2616      676E6564 
- 2616      20696E74 
- 2616      00
- 2617              	.LASF52:
- 2618 01b2 6E756D42 		.ascii	"numBytes\000"
- 2618      79746573 
- 2618      00
- 2619              	.LASF8:
- 2620 01bb 6C6F6E67 		.ascii	"long unsigned int\000"
- 2620      20756E73 
- 2620      69676E65 
- 2620      6420696E 
- 2620      7400
- 2621              	.LASF35:
- 2622 01cd 74696D65 		.ascii	"timeout\000"
- 2622      6F757400 
- 2623              	.LASF47:
- 2624 01d5 6366675F 		.ascii	"cfg_memcpy_t\000"
- 2624      6D656D63 
- 2624      70795F74 
- 2624      00
- 2625              	.LASF45:
- 2626 01e2 73697A65 		.ascii	"size\000"
+ 2604      44656C53 
+ 2604      69675F41 
+ 2604      4D75785F 
+ 2604      5F6D6173 
+ 2605              	.LASF38:
+ 2606 0115 72656756 		.ascii	"regValue\000"
+ 2606      616C7565 
+ 2606      00
+ 2607              	.LASF21:
+ 2608 011e 76616C75 		.ascii	"value\000"
+ 2608      6500
+ 2609              	.LASF53:
+ 2610 0124 4144435F 		.ascii	"ADC_DelSig_AMux__addrTable\000"
+ 2610      44656C53 
+ 2610      69675F41 
+ 2610      4D75785F 
+ 2610      5F616464 
+ 2611              	.LASF0:
+ 2612 013f 756E7369 		.ascii	"unsigned int\000"
+ 2612      676E6564 
+ 2612      20696E74 
+ 2612      00
+ 2613              	.LASF52:
+ 2614 014c 6E756D42 		.ascii	"numBytes\000"
+ 2614      79746573 
+ 2614      00
+ 2615              	.LASF8:
+ 2616 0155 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2616      20756E73 
+ 2616      69676E65 
+ 2616      6420696E 
+ 2616      7400
+ 2617              	.LASF35:
+ 2618 0167 74696D65 		.ascii	"timeout\000"
+ 2618      6F757400 
+ 2619              	.LASF47:
+ 2620 016f 6366675F 		.ascii	"cfg_memcpy_t\000"
+ 2620      6D656D63 
+ 2620      70795F74 
+ 2620      00
+ 2621              	.LASF45:
+ 2622 017c 73697A65 		.ascii	"size\000"
+ 2622      00
+ 2623              	.LASF6:
+ 2624 0181 73686F72 		.ascii	"short unsigned int\000"
+ 2624      7420756E 
+ 2624      7369676E 
+ 2624      65642069 
+ 2624      6E7400
+ 2625              	.LASF10:
+ 2626 0194 73697A65 		.ascii	"sizetype\000"
+ 2626      74797065 
  2626      00
- 2627              	.LASF6:
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 59
+ 2627              	.LASF2:
+ 2628 019d 6C6F6E67 		.ascii	"long double\000"
+ 2628      20646F75 
+ 2628      626C6500 
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 59
 
 
- 2628 01e7 73686F72 		.ascii	"short unsigned int\000"
- 2628      7420756E 
- 2628      7369676E 
- 2628      65642069 
- 2628      6E7400
- 2629              	.LASF10:
- 2630 01fa 73697A65 		.ascii	"sizetype\000"
- 2630      74797065 
- 2630      00
- 2631              	.LASF2:
- 2632 0203 6C6F6E67 		.ascii	"long double\000"
- 2632      20646F75 
- 2632      626C6500 
- 2633              	.LASF30:
- 2634 020f 62675F78 		.ascii	"bg_xover_inl_trim\000"
- 2634      6F766572 
- 2634      5F696E6C 
- 2634      5F747269 
- 2634      6D00
- 2635              	.LASF46:
- 2636 0221 6366675F 		.ascii	"cfg_memset_t\000"
- 2636      6D656D73 
- 2636      65745F74 
+ 2629              	.LASF30:
+ 2630 01a9 62675F78 		.ascii	"bg_xover_inl_trim\000"
+ 2630      6F766572 
+ 2630      5F696E6C 
+ 2630      5F747269 
+ 2630      6D00
+ 2631              	.LASF46:
+ 2632 01bb 6366675F 		.ascii	"cfg_memset_t\000"
+ 2632      6D656D73 
+ 2632      65745F74 
+ 2632      00
+ 2633              	.LASF48:
+ 2634 01c8 6366675F 		.ascii	"cfg_memset_list\000"
+ 2634      6D656D73 
+ 2634      65745F6C 
+ 2634      69737400 
+ 2635              	.LASF33:
+ 2636 01d8 64657374 		.ascii	"dest\000"
  2636      00
- 2637              	.LASF48:
- 2638 022e 6366675F 		.ascii	"cfg_memset_list\000"
- 2638      6D656D73 
- 2638      65745F6C 
- 2638      69737400 
- 2639              	.LASF33:
- 2640 023e 64657374 		.ascii	"dest\000"
- 2640      00
- 2641              	.LASF16:
- 2642 0243 666C6F61 		.ascii	"float\000"
- 2642      7400
- 2643              	.LASF61:
- 2644 0249 43794465 		.ascii	"CyDelayCycles\000"
- 2644      6C617943 
- 2644      79636C65 
- 2644      7300
- 2645              	.LASF50:
- 2646 0257 64657374 		.ascii	"destPtr\000"
- 2646      50747200 
- 2647              	.LASF18:
- 2648 025f 72656738 		.ascii	"reg8\000"
- 2648      00
- 2649              	.LASF4:
- 2650 0264 756E7369 		.ascii	"unsigned char\000"
- 2650      676E6564 
- 2650      20636861 
- 2650      7200
- 2651              	.LASF5:
- 2652 0272 73686F72 		.ascii	"short int\000"
- 2652      7420696E 
- 2652      7400
- 2653              	.LASF57:
- 2654 027c 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 60
+ 2637              	.LASF16:
+ 2638 01dd 666C6F61 		.ascii	"float\000"
+ 2638      7400
+ 2639              	.LASF61:
+ 2640 01e3 43794465 		.ascii	"CyDelayCycles\000"
+ 2640      6C617943 
+ 2640      79636C65 
+ 2640      7300
+ 2641              	.LASF50:
+ 2642 01f1 64657374 		.ascii	"destPtr\000"
+ 2642      50747200 
+ 2643              	.LASF18:
+ 2644 01f9 72656738 		.ascii	"reg8\000"
+ 2644      00
+ 2645              	.LASF4:
+ 2646 01fe 756E7369 		.ascii	"unsigned char\000"
+ 2646      676E6564 
+ 2646      20636861 
+ 2646      7200
+ 2647              	.LASF5:
+ 2648 020c 73686F72 		.ascii	"short int\000"
+ 2648      7420696E 
+ 2648      7400
+ 2649              	.LASF57:
+ 2650 0216 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 2650      43313120 
+ 2650      352E342E 
+ 2650      31203230 
+ 2650      31363036 
+ 2651 0249 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 2651      20726576 
+ 2651      6973696F 
+ 2651      6E203233 
+ 2651      37373135 
+ 2652 027c 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 2652      66756E63 
+ 2652      74696F6E 
+ 2652      2D736563 
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 60
 
 
- 2654      43313120 
- 2654      352E342E 
- 2654      31203230 
- 2654      31363036 
- 2655 02af 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 2655      20726576 
- 2655      6973696F 
- 2655      6E203233 
- 2655      37373135 
- 2656 02e2 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 2656      66756E63 
- 2656      74696F6E 
- 2656      2D736563 
- 2656      74696F6E 
- 2657              	.LASF36:
- 2658 030a 706C6C4C 		.ascii	"pllLock\000"
- 2658      6F636B00 
- 2659              	.LASF41:
- 2660 0312 6368616E 		.ascii	"channel\000"
- 2660      6E656C00 
- 2661              	.LASF22:
- 2662 031a 63795F63 		.ascii	"cy_cfg_addrvalue_t\000"
- 2662      66675F61 
- 2662      64647276 
- 2662      616C7565 
- 2662      5F7400
- 2663              	.LASF11:
- 2664 032d 63686172 		.ascii	"char\000"
- 2664      00
- 2665              	.LASF51:
- 2666 0332 73726350 		.ascii	"srcPtr\000"
- 2666      747200
- 2667              	.LASF39:
- 2668 0339 53657441 		.ascii	"SetAnalogRoutingPumps\000"
- 2668      6E616C6F 
- 2668      67526F75 
- 2668      74696E67 
- 2668      50756D70 
- 2669              	.LASF20:
- 2670 034f 6F666673 		.ascii	"offset\000"
+ 2652      74696F6E 
+ 2653              	.LASF36:
+ 2654 02a4 706C6C4C 		.ascii	"pllLock\000"
+ 2654      6F636B00 
+ 2655              	.LASF41:
+ 2656 02ac 6368616E 		.ascii	"channel\000"
+ 2656      6E656C00 
+ 2657              	.LASF22:
+ 2658 02b4 63795F63 		.ascii	"cy_cfg_addrvalue_t\000"
+ 2658      66675F61 
+ 2658      64647276 
+ 2658      616C7565 
+ 2658      5F7400
+ 2659              	.LASF11:
+ 2660 02c7 63686172 		.ascii	"char\000"
+ 2660      00
+ 2661              	.LASF51:
+ 2662 02cc 73726350 		.ascii	"srcPtr\000"
+ 2662      747200
+ 2663              	.LASF39:
+ 2664 02d3 53657441 		.ascii	"SetAnalogRoutingPumps\000"
+ 2664      6E616C6F 
+ 2664      67526F75 
+ 2664      74696E67 
+ 2664      50756D70 
+ 2665              	.LASF20:
+ 2666 02e9 6F666673 		.ascii	"offset\000"
+ 2666      657400
+ 2667              	.LASF37:
+ 2668 02f0 656E6162 		.ascii	"enabled\000"
+ 2668      6C656400 
+ 2669              	.LASF55:
+ 2670 02f8 6D656D73 		.ascii	"memset\000"
  2670      657400
- 2671              	.LASF37:
- 2672 0356 656E6162 		.ascii	"enabled\000"
- 2672      6C656400 
- 2673              	.LASF55:
- 2674 035e 6D656D73 		.ascii	"memset\000"
- 2674      657400
- 2675              	.LASF32:
- 2676 0365 4359434F 		.ascii	"CYCONFIGCPY\000"
- 2676      4E464947 
- 2676      43505900 
- 2677              	.LASF58:
- 2678 0371 47656E65 		.ascii	"Generated_Source\\PSoC5\\cyfitter_cfg.c\000"
- 2678      72617465 
- 2678      645F536F 
- 2678      75726365 
- 2678      5C50536F 
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccBQJ9pA.s 			page 61
+ 2671              	.LASF32:
+ 2672 02ff 4359434F 		.ascii	"CYCONFIGCPY\000"
+ 2672      4E464947 
+ 2672      43505900 
+ 2673              	.LASF58:
+ 2674 030b 47656E65 		.ascii	"Generated_Source\\PSoC5\\cyfitter_cfg.c\000"
+ 2674      72617465 
+ 2674      645F536F 
+ 2674      75726365 
+ 2674      5C50536F 
+ 2675              	.LASF44:
+ 2676 0331 61646472 		.ascii	"address\000"
+ 2676      65737300 
+ 2677              	.LASF40:
+ 2678 0339 4144435F 		.ascii	"ADC_DelSig_AMux_Set\000"
+ 2678      44656C53 
+ 2678      69675F41 
+ 2678      4D75785F 
+ 2678      53657400 
+ 2679              	.LASF59:
+ 2680 034d 433A5C55 		.ascii	"C:\\Users\\simon\\Desktop\\ProgettoLTES\\Final Proj"
+ 2680      73657273 
+ 2680      5C73696D 
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccjRoDyc.s 			page 61
 
 
- 2679              	.LASF44:
- 2680 0397 61646472 		.ascii	"address\000"
- 2680      65737300 
- 2681              	.LASF40:
- 2682 039f 4144435F 		.ascii	"ADC_DelSig_AMux_Set\000"
- 2682      44656C53 
- 2682      69675F41 
- 2682      4D75785F 
- 2682      53657400 
+ 2680      6F6E5C44 
+ 2680      65736B74 
+ 2681 037b 6563745C 		.ascii	"ect\\PsoC_Final_Project_1_03\\FIORANI_GARGIULO_IANN"
+ 2681      50736F43 
+ 2681      5F46696E 
+ 2681      616C5F50 
+ 2681      726F6A65 
+ 2682 03ac 555A5A49 		.ascii	"UZZI_Project.cydsn\000"
+ 2682      5F50726F 
+ 2682      6A656374 
+ 2682      2E637964 
+ 2682      736E00
  2683              	.LASF49:
- 2684 03b3 6366675F 		.ascii	"cfg_memcpy_list\000"
+ 2684 03bf 6366675F 		.ascii	"cfg_memcpy_list\000"
  2684      6D656D63 
  2684      70795F6C 
  2684      69737400 
  2685              	.LASF43:
- 2686 03c3 63796669 		.ascii	"cyfitter_cfg\000"
+ 2686 03cf 63796669 		.ascii	"cyfitter_cfg\000"
  2686      74746572 
  2686      5F636667 
  2686      00

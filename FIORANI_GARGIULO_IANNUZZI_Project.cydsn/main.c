@@ -36,7 +36,7 @@ int main(void) {
     Led_Start();
     isr_1_StartEx(Custom_isr_1);
     CyDelay(5); //"The boot procedure is complete about 5 milliseconds after device power-up."
-//    isr_MENU_StartEx(Custom_ISR_MENU);
+    isr_MENU_StartEx(Custom_ISR_MENU);
     /*Selection of the sampling frequency in Normal Mode*/
     uint8_t ctrl_reg1 =0;
     /* 1Hz */
@@ -47,30 +47,7 @@ int main(void) {
         ctrl_reg1 = LIS3DH_1HZ_CTRL_REG1;
         ACC_writeByte(LIS3DH_CTRL_REG1,ctrl_reg1);
     }
-    
-//    /* 10Hz */
-//    ctrl_reg1 = ACC_readByte(LIS3DH_CTRL_REG1);
-//    if (ctrl_reg1 != LIS3DH_10HZ_CTRL_REG1) 
-//    {
-//        ctrl_reg1 = LIS3DH_10HZ_CTRL_REG1;
-//        ACC_writeByte(LIS3DH_CTRL_REG1,ctrl_reg1);
-//    }
-//    
-//    /* 25Hz */
-//    ctrl_reg1 = ACC_readByte(LIS3DH_CTRL_REG1);
-//    if (ctrl_reg1 != LIS3DH_25HZ_CTRL_REG1) 
-//    {
-//        ctrl_reg1 = LIS3DH_25HZ_CTRL_REG1;
-//        ACC_writeByte(LIS3DH_CTRL_REG1,ctrl_reg1);
-//    }
-//    
-//    /* 50Hz */
-//    ctrl_reg1 = ACC_readByte(LIS3DH_CTRL_REG1);
-//    if (ctrl_reg1 != LIS3DH_50HZ_CTRL_REG1) 
-//    {
-//        ctrl_reg1 = LIS3DH_50HZ_CTRL_REG1;
-//        ACC_writeByte(LIS3DH_CTRL_REG1,ctrl_reg1);
-//    }
+
     
      /* FIFO overrun interrupt on INT1 */
     uint8_t ctrl_reg3 = 0;
@@ -93,27 +70,6 @@ int main(void) {
         ACC_writeByte(LIS3DH_CTRL_REG4,ctrl_reg4);
         s =4;
     }
-    
-//    if(ctrl_reg4 != LIS3DH_4G_CTRL_REG4)
-//    {
-//        ctrl_reg4 = LIS3DH_4G_CTRL_REG4;
-//        ACC_writeByte(LIS3DH_CTRL_REG4,ctrl_reg4);
-//        s=8;
-//    }
-//    
-//     if(ctrl_reg4 != LIS3DH_8G_CTRL_REG4)
-//    {
-//        ctrl_reg4 = LIS3DH_8G_CTRL_REG4;
-//        ACC_writeByte(LIS3DH_CTRL_REG4,ctrl_reg4);
-//        s=16;
-//    }
-//    
-//     if(ctrl_reg4 != LIS3DH_16G_CTRL_REG4)
-//    {
-//        ctrl_reg4 = LIS3DH_16G_CTRL_REG4;
-//        ACC_writeByte(LIS3DH_CTRL_REG4,ctrl_reg4);
-//        s=48;
-//    }
     
     
     /*Enable FIFO Mode */
@@ -158,6 +114,11 @@ int main(void) {
     OutArray[0] = header;
     OutArray[13] = footer;
     int flag=0;
+    
+    UART_PutString("*********    HELP: POSSIBLE SETTINGS    *********\r\r");
+    UART_PutString("f. Full Scale\r\np. Sampling Freq\r\nt. Set Temperature Unit\r\nv. Print Data on BCP\r\nb. Start Registration\r\ns. Stop Registration\r\n\r");        
+    UART_PutString("***********************************************\r\n");
+    
     for(;;)
     {
         if(flag<2){
