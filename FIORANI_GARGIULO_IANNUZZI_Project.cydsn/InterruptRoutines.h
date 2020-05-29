@@ -10,6 +10,7 @@
  * ========================================
 */
 #ifndef __INTERRUPT_ROUTINES_H
+    
     #define __INTERRUPT_ROUTINES_H
     
     #include "cytypes.h"
@@ -20,10 +21,16 @@
     
     CY_ISR_PROTO (Custom_ISR_ADC);
     CY_ISR_PROTO(Custom_Button_ISR);
-    CY_ISR_PROTO(Custom_isr_1);
-    uint8_t DataBuffer[TRANSMIT_BUFFER_SIZE];
+    CY_ISR_PROTO(Custom_isr_ACC);
+    
+    char DataBuffer[TRANSMIT_BUFFER_SIZE];
+    
     volatile uint8 PacketReadyFlag;
-    extern int giro;
+    
+    extern int value_temp;
+    
+    extern int WTM_Full;
+    
 #endif
 
 /* [] END OF FILE */

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 1
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccssO6hC.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 1
   20:25LC256.c     **** 	return SPI_Interface_ReadByte(SPI_EEPROM_RDSR);
   36              		.loc 1 20 0
   37 0002 0520     		movs	r0, #5
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 2
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccssO6hC.s 			page 2
 
 
   38 0004 FFF7FEFF 		bl	SPI_Interface_ReadByte
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 1
   79              		@ args = 0, pretend = 0, frame = 8
   80              		@ frame_needed = 0, uses_anonymous_args = 0
   81              	.LVL2:
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 3
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccssO6hC.s 			page 3
 
 
   82 0000 00B5     		push	{lr}
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 1
   50:25LC256.c     **** 
   51:25LC256.c     **** void EEPROM_writeByte(uint16_t addr, uint8_t dataByte) {
  120              		.loc 1 51 0
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 4
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccssO6hC.s 			page 4
 
 
  121              		.cfi_startproc
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 1
  162              		.align	2
  163              		.global	EEPROM_readPage
  164              		.thumb
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 5
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccssO6hC.s 			page 5
 
 
  165              		.thumb_func
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 1
  209              		.type	EEPROM_writePage, %function
  210              	EEPROM_writePage:
  211              	.LFB5:
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 6
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccssO6hC.s 			page 6
 
 
   75:25LC256.c     **** 
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 1
   89:25LC256.c     ****     dataTX[2] = addr & 0x00FF;
  252              		.loc 1 89 0
  253 0032 8DF80250 		strb	r5, [sp, #2]
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 7
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccssO6hC.s 			page 7
 
 
   90:25LC256.c     ****     /* Copy the input data in the memory */
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 1
  101:25LC256.c     ****     
  102:25LC256.c     ****     while( EEPROM_readStatus() & SPI_EEPROM_WRITE_IN_PROGRESS );
  297              		.loc 1 102 0 discriminator 1
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 8
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccssO6hC.s 			page 8
 
 
  298 0002 FFF7FEFF 		bl	EEPROM_readStatus
@@ -449,14 +449,14 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 1
  321 000c 9A000000 		.4byte	.LASF36
  322 0010 0C       		.byte	0xc
  323 0011 54010000 		.4byte	.LASF37
- 324 0015 3E020000 		.4byte	.LASF38
+ 324 0015 E0010000 		.4byte	.LASF38
  325 0019 00000000 		.4byte	.Ldebug_ranges0+0
  326 001d 00000000 		.4byte	0
  327 0021 00000000 		.4byte	.Ldebug_line0
  328 0025 02       		.uleb128 0x2
  329 0026 01       		.byte	0x1
  330 0027 06       		.byte	0x6
- 331 0028 CA020000 		.4byte	.LASF0
+ 331 0028 AF020000 		.4byte	.LASF0
  332 002c 03       		.uleb128 0x3
  333 002d 11000000 		.4byte	.LASF3
  334 0031 02       		.byte	0x2
@@ -469,7 +469,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 1
  341 003e 02       		.uleb128 0x2
  342 003f 02       		.byte	0x2
  343 0040 05       		.byte	0x5
- 344 0041 1A020000 		.4byte	.LASF2
+ 344 0041 71020000 		.4byte	.LASF2
  345 0045 03       		.uleb128 0x3
  346 0046 67010000 		.4byte	.LASF4
  347 004a 02       		.byte	0x2
@@ -478,14 +478,14 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 1
  350 0050 02       		.uleb128 0x2
  351 0051 02       		.byte	0x2
  352 0052 07       		.byte	0x7
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 9
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccssO6hC.s 			page 9
 
 
  353 0053 28000000 		.4byte	.LASF5
  354 0057 02       		.uleb128 0x2
  355 0058 04       		.byte	0x4
  356 0059 05       		.byte	0x5
- 357 005a B0020000 		.4byte	.LASF6
+ 357 005a 95020000 		.4byte	.LASF6
  358 005e 02       		.uleb128 0x2
  359 005f 04       		.byte	0x4
  360 0060 07       		.byte	0x7
@@ -493,7 +493,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 1
  362 0065 02       		.uleb128 0x2
  363 0066 08       		.byte	0x8
  364 0067 05       		.byte	0x5
- 365 0068 05020000 		.4byte	.LASF8
+ 365 0068 5C020000 		.4byte	.LASF8
  366 006c 02       		.uleb128 0x2
  367 006d 08       		.byte	0x8
  368 006e 07       		.byte	0x7
@@ -512,7 +512,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 1
  381 0087 18       		.byte	0x18
  382 0088 2C000000 		.4byte	0x2c
  383 008c 03       		.uleb128 0x3
- 384 008d 35020000 		.4byte	.LASF12
+ 384 008d 8C020000 		.4byte	.LASF12
  385 0091 03       		.byte	0x3
  386 0092 24       		.byte	0x24
  387 0093 45000000 		.4byte	0x45
@@ -527,18 +527,18 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 1
  396 00a5 02       		.uleb128 0x2
  397 00a6 01       		.byte	0x1
  398 00a7 08       		.byte	0x8
- 399 00a8 B9020000 		.4byte	.LASF15
+ 399 00a8 9E020000 		.4byte	.LASF15
  400 00ac 02       		.uleb128 0x2
  401 00ad 08       		.byte	0x8
  402 00ae 04       		.byte	0x4
- 403 00af BE020000 		.4byte	.LASF16
+ 403 00af A3020000 		.4byte	.LASF16
  404 00b3 02       		.uleb128 0x2
  405 00b4 04       		.byte	0x4
  406 00b5 07       		.byte	0x7
- 407 00b6 FC010000 		.4byte	.LASF17
+ 407 00b6 53020000 		.4byte	.LASF17
  408 00ba 05       		.uleb128 0x5
  409 00bb 9B010000 		.4byte	.LASF18
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 10
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccssO6hC.s 			page 10
 
 
  410 00bf 01       		.byte	0x1
@@ -560,7 +560,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 1
  426 00e1 00       		.byte	0
  427 00e2 00       		.byte	0
  428 00e3 08       		.uleb128 0x8
- 429 00e4 DD020000 		.4byte	.LASF22
+ 429 00e4 C2020000 		.4byte	.LASF22
  430 00e8 01       		.byte	0x1
  431 00e9 18       		.byte	0x18
  432 00ea 00000000 		.4byte	.LFB1
@@ -595,10 +595,10 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 1
  461 0128 8C000000 		.4byte	0x8c
  462 012c 00000000 		.4byte	.LLST0
  463 0130 0A       		.uleb128 0xa
- 464 0131 D6020000 		.4byte	.LASF20
+ 464 0131 BB020000 		.4byte	.LASF20
  465 0135 01       		.byte	0x1
  466 0136 24       		.byte	0x24
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 11
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccssO6hC.s 			page 11
 
 
  467 0137 6D010000 		.4byte	0x16d
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 1
  521 018e F6010000 		.4byte	0x1f6
  522 0192 09       		.uleb128 0x9
  523 0193 3F010000 		.4byte	.LASF24
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 12
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccssO6hC.s 			page 12
 
 
  524 0197 01       		.byte	0x1
@@ -672,7 +672,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 1
  532 01a8 81000000 		.4byte	0x81
  533 01ac 42000000 		.4byte	.LLST2
  534 01b0 0A       		.uleb128 0xa
- 535 01b1 D6020000 		.4byte	.LASF20
+ 535 01b1 BB020000 		.4byte	.LASF20
  536 01b5 01       		.byte	0x1
  537 01b6 39       		.byte	0x39
  538 01b7 F6010000 		.4byte	0x1f6
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 1
  578 01f4 00       		.byte	0
  579 01f5 00       		.byte	0
  580 01f6 0B       		.uleb128 0xb
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 13
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccssO6hC.s 			page 13
 
 
  581 01f7 81000000 		.4byte	0x81
@@ -755,7 +755,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 1
  612 0240 81000000 		.4byte	0x81
  613 0244 B0000000 		.4byte	.LLST5
  614 0248 0A       		.uleb128 0xa
- 615 0249 D6020000 		.4byte	.LASF20
+ 615 0249 BB020000 		.4byte	.LASF20
  616 024d 01       		.byte	0x1
  617 024e 45       		.byte	0x45
  618 024f 6D010000 		.4byte	0x16d
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 1
  635 0269 74       		.byte	0x74
  636 026a 00       		.sleb128 0
  637 026b 07       		.uleb128 0x7
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 14
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccssO6hC.s 			page 14
 
 
  638 026c 01       		.uleb128 0x1
@@ -793,7 +793,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 1
  647 0275 04       		.byte	0x4
  648 0276 81000000 		.4byte	0x81
  649 027a 08       		.uleb128 0x8
- 650 027b 24020000 		.4byte	.LASF29
+ 650 027b 7B020000 		.4byte	.LASF29
  651 027f 01       		.byte	0x1
  652 0280 4C       		.byte	0x4c
  653 0281 00000000 		.4byte	.LFB5
@@ -820,7 +820,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 1
  674 02b4 81000000 		.4byte	0x81
  675 02b8 10010000 		.4byte	.LLST8
  676 02bc 0F       		.uleb128 0xf
- 677 02bd D6020000 		.4byte	.LASF20
+ 677 02bd BB020000 		.4byte	.LASF20
  678 02c1 01       		.byte	0x1
  679 02c2 56       		.byte	0x56
  680 02c3 37030000 		.4byte	0x337
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 1
  692 02de E3000000 		.4byte	0xe3
  693 02e2 10       		.uleb128 0x10
  694 02e3 18000000 		.4byte	.LVL15
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 15
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccssO6hC.s 			page 15
 
 
  695 02e7 9F030000 		.4byte	0x39f
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 1
  749 0332 53       		.byte	0x53
  750 0333 01       		.uleb128 0x1
  751 0334 30       		.byte	0x30
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 16
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccssO6hC.s 			page 16
 
 
  752 0335 00       		.byte	0
@@ -918,7 +918,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 1
  766 034c 02       		.uleb128 0x2
  767 034d 00       		.byte	0
  768 034e 08       		.uleb128 0x8
- 769 034f E0010000 		.4byte	.LASF31
+ 769 034f 37020000 		.4byte	.LASF31
  770 0353 01       		.byte	0x1
  771 0354 64       		.byte	0x64
  772 0355 00000000 		.4byte	.LFB6
@@ -958,12 +958,12 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 1
  806 03a4 91010000 		.4byte	.LASF35
  807 03a8 05       		.byte	0x5
  808 03a9 77       		.byte	0x77
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 17
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccssO6hC.s 			page 17
 
 
  809 03aa 14       		.uleb128 0x14
- 810 03ab 13020000 		.4byte	.LASF40
- 811 03af 13020000 		.4byte	.LASF40
+ 810 03ab 6A020000 		.4byte	.LASF40
+ 811 03af 6A020000 		.4byte	.LASF40
  812 03b3 00       		.byte	0
  813              		.section	.debug_abbrev,"",%progbits
  814              	.Ldebug_abbrev0:
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 1
  863 0030 3E       		.uleb128 0x3e
  864 0031 0B       		.uleb128 0xb
  865 0032 03       		.uleb128 0x3
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 18
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccssO6hC.s 			page 18
 
 
  866 0033 08       		.uleb128 0x8
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 1
  920 006f 0E       		.uleb128 0xe
  921 0070 3A       		.uleb128 0x3a
  922 0071 0B       		.uleb128 0xb
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 19
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccssO6hC.s 			page 19
 
 
  923 0072 3B       		.uleb128 0x3b
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 1
  977 00a9 00       		.byte	0
  978 00aa 0C       		.uleb128 0xc
  979 00ab 21       		.uleb128 0x21
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 20
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccssO6hC.s 			page 20
 
 
  980 00ac 00       		.byte	0
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 1
  1034 00e6 49       		.uleb128 0x49
  1035 00e7 13       		.uleb128 0x13
  1036 00e8 2F       		.uleb128 0x2f
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 21
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccssO6hC.s 			page 21
 
 
  1037 00e9 18       		.uleb128 0x18
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 1
  1091 0000 00000000 		.4byte	.LVL2
  1092 0004 20000000 		.4byte	.LVL3
  1093 0008 0100     		.2byte	0x1
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 22
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccssO6hC.s 			page 22
 
 
  1094 000a 50       		.byte	0x50
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 1
  1148 0088 1A000000 		.4byte	.LVL10
  1149 008c 0100     		.2byte	0x1
  1150 008e 51       		.byte	0x51
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 23
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccssO6hC.s 			page 23
 
 
  1151 008f 1A000000 		.4byte	.LVL10
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 1
  1205 0114 11000000 		.4byte	.LVL14-1
  1206 0118 0100     		.2byte	0x1
  1207 011a 52       		.byte	0x52
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 24
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccssO6hC.s 			page 24
 
 
  1208 011b 11000000 		.4byte	.LVL14-1
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 1
  1262 004c 00000000 		.4byte	0
  1263              		.section	.debug_ranges,"",%progbits
  1264              	.Ldebug_ranges0:
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 25
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccssO6hC.s 			page 25
 
 
  1265 0000 00000000 		.4byte	.LFB0
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 1
  1297      65616450 
  1297      61676500 
  1298              	.LASF39:
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 26
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccssO6hC.s 			page 26
 
 
  1299 0062 65657072 		.ascii	"eeprom_Status\000"
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 1
  1319      6300
  1320              	.LASF25:
  1321 015e 64617461 		.ascii	"dataByte\000"
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 27
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccssO6hC.s 			page 27
 
 
  1321      42797465 
@@ -1603,82 +1603,74 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 1
  1338              	.LASF21:
  1339 01d9 64617461 		.ascii	"dataRX\000"
  1339      525800
- 1340              	.LASF31:
- 1341 01e0 45455052 		.ascii	"EEPROM_waitForWriteComplete\000"
- 1341      4F4D5F77 
- 1341      61697446 
- 1341      6F725772 
- 1341      69746543 
- 1342              	.LASF17:
- 1343 01fc 73697A65 		.ascii	"sizetype\000"
- 1343      74797065 
- 1343      00
- 1344              	.LASF8:
- 1345 0205 6C6F6E67 		.ascii	"long long int\000"
- 1345      206C6F6E 
- 1345      6720696E 
- 1345      7400
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 28
+ 1340              	.LASF38:
+ 1341 01e0 433A5C55 		.ascii	"C:\\Users\\simon\\Desktop\\PsoC_Final_Project_1_03\\"
+ 1341      73657273 
+ 1341      5C73696D 
+ 1341      6F6E5C44 
+ 1341      65736B74 
+ 1342 020f 46494F52 		.ascii	"FIORANI_GARGIULO_IANNUZZI_Project.cydsn\000"
+ 1342      414E495F 
+ 1342      47415247 
+ 1342      49554C4F 
+ 1342      5F49414E 
+ 1343              	.LASF31:
+ 1344 0237 45455052 		.ascii	"EEPROM_waitForWriteComplete\000"
+ 1344      4F4D5F77 
+ 1344      61697446 
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccssO6hC.s 			page 28
 
 
- 1346              	.LASF40:
- 1347 0213 6D656D63 		.ascii	"memcpy\000"
- 1347      707900
- 1348              	.LASF2:
- 1349 021a 73686F72 		.ascii	"short int\000"
- 1349      7420696E 
- 1349      7400
- 1350              	.LASF29:
- 1351 0224 45455052 		.ascii	"EEPROM_writePage\000"
- 1351      4F4D5F77 
- 1351      72697465 
- 1351      50616765 
- 1351      00
- 1352              	.LASF12:
- 1353 0235 75696E74 		.ascii	"uint16_t\000"
- 1353      31365F74 
- 1353      00
- 1354              	.LASF38:
- 1355 023e 433A5C55 		.ascii	"C:\\Users\\simon\\Desktop\\ProgettoLTES\\Final Proj"
- 1355      73657273 
- 1355      5C73696D 
- 1355      6F6E5C44 
- 1355      65736B74 
- 1356 026c 6563745C 		.ascii	"ect\\PsoC_Final_Project_1_03\\FIORANI_GARGIULO_IANN"
- 1356      50736F43 
- 1356      5F46696E 
- 1356      616C5F50 
- 1356      726F6A65 
- 1357 029d 555A5A49 		.ascii	"UZZI_Project.cydsn\000"
- 1357      5F50726F 
- 1357      6A656374 
- 1357      2E637964 
- 1357      736E00
- 1358              	.LASF6:
- 1359 02b0 6C6F6E67 		.ascii	"long int\000"
- 1359      20696E74 
- 1359      00
- 1360              	.LASF15:
- 1361 02b9 63686172 		.ascii	"char\000"
- 1361      00
- 1362              	.LASF16:
- 1363 02be 6C6F6E67 		.ascii	"long double\000"
- 1363      20646F75 
- 1363      626C6500 
- 1364              	.LASF0:
- 1365 02ca 7369676E 		.ascii	"signed char\000"
- 1365      65642063 
- 1365      68617200 
- 1366              	.LASF20:
- 1367 02d6 64617461 		.ascii	"dataTX\000"
- 1367      545800
- 1368              	.LASF22:
- 1369 02dd 45455052 		.ascii	"EEPROM_writeEnable\000"
- 1369      4F4D5F77 
- 1369      72697465 
- 1369      456E6162 
- 1369      6C6500
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccN6acXs.s 			page 29
-
-
- 1370              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 1344      6F725772 
+ 1344      69746543 
+ 1345              	.LASF17:
+ 1346 0253 73697A65 		.ascii	"sizetype\000"
+ 1346      74797065 
+ 1346      00
+ 1347              	.LASF8:
+ 1348 025c 6C6F6E67 		.ascii	"long long int\000"
+ 1348      206C6F6E 
+ 1348      6720696E 
+ 1348      7400
+ 1349              	.LASF40:
+ 1350 026a 6D656D63 		.ascii	"memcpy\000"
+ 1350      707900
+ 1351              	.LASF2:
+ 1352 0271 73686F72 		.ascii	"short int\000"
+ 1352      7420696E 
+ 1352      7400
+ 1353              	.LASF29:
+ 1354 027b 45455052 		.ascii	"EEPROM_writePage\000"
+ 1354      4F4D5F77 
+ 1354      72697465 
+ 1354      50616765 
+ 1354      00
+ 1355              	.LASF12:
+ 1356 028c 75696E74 		.ascii	"uint16_t\000"
+ 1356      31365F74 
+ 1356      00
+ 1357              	.LASF6:
+ 1358 0295 6C6F6E67 		.ascii	"long int\000"
+ 1358      20696E74 
+ 1358      00
+ 1359              	.LASF15:
+ 1360 029e 63686172 		.ascii	"char\000"
+ 1360      00
+ 1361              	.LASF16:
+ 1362 02a3 6C6F6E67 		.ascii	"long double\000"
+ 1362      20646F75 
+ 1362      626C6500 
+ 1363              	.LASF0:
+ 1364 02af 7369676E 		.ascii	"signed char\000"
+ 1364      65642063 
+ 1364      68617200 
+ 1365              	.LASF20:
+ 1366 02bb 64617461 		.ascii	"dataTX\000"
+ 1366      545800
+ 1367              	.LASF22:
+ 1368 02c2 45455052 		.ascii	"EEPROM_writeEnable\000"
+ 1368      4F4D5F77 
+ 1368      72697465 
+ 1368      456E6162 
+ 1368      6C6500
+ 1369              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

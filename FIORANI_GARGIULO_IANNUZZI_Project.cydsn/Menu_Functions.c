@@ -1,9 +1,8 @@
-#include    "Menu_Functions.h"
 #include    "project.h"
-#include    "LIS3DH.h"
-#include    "OnBoardLed.h"
+#include    "Menu_Functions.h"
 
 uint8_t     reg_menu;
+uint8_t     Sensitivity;
 int         WaitTime;
 int         ActiveRegistration;
 
@@ -47,10 +46,16 @@ CY_ISR (Custom_ISR_MENU)
                         ACC_writeByte(LIS3DH_CTRL_REG4,reg_menu);
                     }
                     
+                    Sensitivity = 4;
+                    
                     EEPROM_writeByte(EEPROM_FULLSCALE_CONFIG, reg_menu);
+                    EEPROM_waitForWriteComplete();
+                    EEPROM_writeByte(EEPROM_SENSITIVITY_VALUE, Sensitivity);
                     EEPROM_waitForWriteComplete();
                     
                     UART_PutString("YOU CHOOSE +-2g\r\r");
+                    
+                    FIFO_Reset ();
                     
                     break;
                 
@@ -63,10 +68,16 @@ CY_ISR (Custom_ISR_MENU)
                         ACC_writeByte(LIS3DH_CTRL_REG4,reg_menu);
                     }
                     
+                    Sensitivity = 8;
+                    
                     EEPROM_writeByte(EEPROM_FULLSCALE_CONFIG, reg_menu);
+                    EEPROM_waitForWriteComplete();
+                    EEPROM_writeByte(EEPROM_SENSITIVITY_VALUE, Sensitivity);
                     EEPROM_waitForWriteComplete();
                     
                     UART_PutString("YOU CHOOSE +-4g\r\r");
+                    
+                    FIFO_Reset ();
                     
                     break;
                 
@@ -79,10 +90,16 @@ CY_ISR (Custom_ISR_MENU)
                         ACC_writeByte(LIS3DH_CTRL_REG4,reg_menu);
                     }
                     
+                    Sensitivity = 16;
+                    
                     EEPROM_writeByte(EEPROM_FULLSCALE_CONFIG, reg_menu);
+                    EEPROM_waitForWriteComplete();
+                    EEPROM_writeByte(EEPROM_SENSITIVITY_VALUE, Sensitivity);
                     EEPROM_waitForWriteComplete();
                     
                     UART_PutString("YOU CHOOSE +-8g\r\r");
+                    
+                    FIFO_Reset ();
                     
                     break;
                 
@@ -95,10 +112,16 @@ CY_ISR (Custom_ISR_MENU)
                         ACC_writeByte(LIS3DH_CTRL_REG4,reg_menu);
                     }
                     
+                    Sensitivity = 48;
+                    
                     EEPROM_writeByte(EEPROM_FULLSCALE_CONFIG, reg_menu);
+                    EEPROM_waitForWriteComplete();
+                    EEPROM_writeByte(EEPROM_SENSITIVITY_VALUE, Sensitivity);
                     EEPROM_waitForWriteComplete();
                     
                     UART_PutString("YOU CHOOSE +-16g\r\r");
+                    
+                    FIFO_Reset ();
                     
                     break;
                 
@@ -145,7 +168,11 @@ CY_ISR (Custom_ISR_MENU)
                 EEPROM_writeByte(EEPROM_FREQ_CONFIG, reg_menu);
                 EEPROM_waitForWriteComplete();
                 
+                Timer_WritePeriod(1000);
+                
                 UART_PutString("YOU CHOOSE 1 Hz\r\r");
+                
+                FIFO_Reset ();
                 
                 break;
                 
@@ -161,7 +188,11 @@ CY_ISR (Custom_ISR_MENU)
                 EEPROM_writeByte(EEPROM_FREQ_CONFIG, reg_menu);
                 EEPROM_waitForWriteComplete();
                 
+                Timer_WritePeriod(100);
+                
                 UART_PutString("YOU CHOOSE 10 Hz\r\r");
+                
+                FIFO_Reset ();
                 
                 break;
                 
@@ -179,6 +210,10 @@ CY_ISR (Custom_ISR_MENU)
                 
                 UART_PutString("YOU CHOOSE 25 Hz\r\r");
                 
+                Timer_WritePeriod(40);
+                
+                FIFO_Reset ();
+                
                 break;
                 
             case '4':
@@ -194,6 +229,10 @@ CY_ISR (Custom_ISR_MENU)
                 EEPROM_waitForWriteComplete();
                 
                 UART_PutString("YOU CHOOSE 50 Hz\r\r");
+                
+                Timer_WritePeriod(20);
+                
+                FIFO_Reset ();
                 
                 break;
                                             
@@ -236,6 +275,8 @@ CY_ISR (Custom_ISR_MENU)
                 
                 UART_PutString("YOU CHOOSE CELSIUS UNIT\r\r");
                 
+                FIFO_Reset ();
+                
                 break;
             
             case '2':
@@ -245,6 +286,8 @@ CY_ISR (Custom_ISR_MENU)
                 EEPROM_waitForWriteComplete();
                 
                 UART_PutString("YOU CHOOSE FAHRENHEIT UNIT\r\r");
+                
+                FIFO_Reset ();
                 
                 break;
             
@@ -289,6 +332,41 @@ CY_ISR (Custom_ISR_MENU)
             UART_PutString("*****************************************************************\r\n");
             EEPROM_writeByte(EEPROM_START_STOP_CONFIG, STOP);
             EEPROM_waitForWriteComplete();
+        }
+    }
+    else if (ch_received == 'v')
+    {
+        if (ActiveRegistration == 0)
+        {
+            UART_PutString ("*********    VISUALIZATION STARTED    *********\r");
+            UART_PutString("*****************************************************************\r\n");
+            ActiveVisualization = 1;
+        }
+        else if ( ActiveRegistration == 1)
+        {
+            ActiveRegistration = 0;
+            UART_PutString ("*********    VISUALIZATION STARTED    *********\r");
+            UART_PutString("*****************************************************************\r\n");
+            ActiveVisualization = 1;
+        }
+        else if (ActiveVisualization == 1)
+        {
+            UART_PutString ("*********    VISUALIZATION ALREADY STARTED    *********\r");
+            UART_PutString("*****************************************************************\r\n");
+        }
+    }
+    else if (ch_received == 'u')
+    {
+        if (ActiveVisualization == 1)
+        {
+            ActiveVisualization = 0;
+            Pin_ExternalLED_Write(0);
+            UART_PutString ("*********    VISUALIZATION STOPPED    *********\r");
+            UART_PutString("*****************************************************************\r\n");
+        }
+        else if (ActiveVisualization == 0)
+        {
+            UART_PutString("INVALID INPUT....\r\r\r\r\r\r");
         }
     }
 }

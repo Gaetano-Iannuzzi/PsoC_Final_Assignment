@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc7sU1h0.s 			page 1
+ARM GAS  C:\Users\simon\AppData\Local\Temp\cccG9oS9.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cc7sU1h0.s 			page 1
   38              	.LVL0:
   39 0006 08BD     		pop	{r3, pc}
   40              		.cfi_endproc
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc7sU1h0.s 			page 2
+ARM GAS  C:\Users\simon\AppData\Local\Temp\cccG9oS9.s 			page 2
 
 
   41              	.LFE63:
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cc7sU1h0.s 			page 1
   29:OnBoardLed.c  ****     PWM_Led_WritePeriod(period);  // New period of the PWM
   84              		.loc 1 29 0
   85 0004 FFF7FEFF 		bl	PWM_Led_WritePeriod
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc7sU1h0.s 			page 3
+ARM GAS  C:\Users\simon\AppData\Local\Temp\cccG9oS9.s 			page 3
 
 
   86              	.LVL3:
@@ -147,14 +147,14 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cc7sU1h0.s 			page 1
  108 000c 68000000 		.4byte	.LASF27
  109 0010 0C       		.byte	0xc
  110 0011 39000000 		.4byte	.LASF28
- 111 0015 B8010000 		.4byte	.LASF29
+ 111 0015 8A010000 		.4byte	.LASF29
  112 0019 00000000 		.4byte	.Ldebug_ranges0+0
  113 001d 00000000 		.4byte	0
  114 0021 00000000 		.4byte	.Ldebug_line0
  115 0025 02       		.uleb128 0x2
  116 0026 01       		.byte	0x1
  117 0027 06       		.byte	0x6
- 118 0028 48020000 		.4byte	.LASF0
+ 118 0028 2D020000 		.4byte	.LASF0
  119 002c 02       		.uleb128 0x2
  120 002d 01       		.byte	0x1
  121 002e 08       		.byte	0x8
@@ -162,7 +162,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cc7sU1h0.s 			page 1
  123 0033 02       		.uleb128 0x2
  124 0034 02       		.byte	0x2
  125 0035 05       		.byte	0x5
- 126 0036 AE010000 		.4byte	.LASF2
+ 126 0036 05020000 		.4byte	.LASF2
  127 003a 03       		.uleb128 0x3
  128 003b 28010000 		.4byte	.LASF4
  129 003f 02       		.byte	0x2
@@ -178,12 +178,12 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cc7sU1h0.s 			page 1
  139 0052 3F       		.byte	0x3f
  140 0053 57000000 		.4byte	0x57
  141 0057 02       		.uleb128 0x2
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc7sU1h0.s 			page 4
+ARM GAS  C:\Users\simon\AppData\Local\Temp\cccG9oS9.s 			page 4
 
 
  142 0058 04       		.byte	0x4
  143 0059 05       		.byte	0x5
- 144 005a 33020000 		.4byte	.LASF6
+ 144 005a 18020000 		.4byte	.LASF6
  145 005e 02       		.uleb128 0x2
  146 005f 04       		.byte	0x4
  147 0060 07       		.byte	0x7
@@ -191,7 +191,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cc7sU1h0.s 			page 1
  149 0065 02       		.uleb128 0x2
  150 0066 08       		.byte	0x8
  151 0067 05       		.byte	0x5
- 152 0068 9B010000 		.4byte	.LASF8
+ 152 0068 F2010000 		.4byte	.LASF8
  153 006c 02       		.uleb128 0x2
  154 006d 08       		.byte	0x8
  155 006e 07       		.byte	0x7
@@ -205,12 +205,12 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cc7sU1h0.s 			page 1
  163 007c 07       		.byte	0x7
  164 007d 5B010000 		.4byte	.LASF10
  165 0081 03       		.uleb128 0x3
- 166 0082 2A020000 		.4byte	.LASF11
+ 166 0082 0F020000 		.4byte	.LASF11
  167 0086 03       		.byte	0x3
  168 0087 24       		.byte	0x24
  169 0088 3A000000 		.4byte	0x3a
  170 008c 03       		.uleb128 0x3
- 171 008d 8A010000 		.4byte	.LASF12
+ 171 008d E1010000 		.4byte	.LASF12
  172 0091 03       		.byte	0x3
  173 0092 2C       		.byte	0x2c
  174 0093 4C000000 		.4byte	0x4c
@@ -225,20 +225,20 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cc7sU1h0.s 			page 1
  183 00a5 02       		.uleb128 0x2
  184 00a6 01       		.byte	0x1
  185 00a7 08       		.byte	0x8
- 186 00a8 A9010000 		.4byte	.LASF15
+ 186 00a8 00020000 		.4byte	.LASF15
  187 00ac 02       		.uleb128 0x2
  188 00ad 08       		.byte	0x8
  189 00ae 04       		.byte	0x4
- 190 00af 3C020000 		.4byte	.LASF16
+ 190 00af 21020000 		.4byte	.LASF16
  191 00b3 02       		.uleb128 0x2
  192 00b4 04       		.byte	0x4
  193 00b5 07       		.byte	0x7
- 194 00b6 92010000 		.4byte	.LASF17
+ 194 00b6 E9010000 		.4byte	.LASF17
  195 00ba 05       		.uleb128 0x5
  196 00bb 2F000000 		.4byte	.LASF18
  197 00bf 01       		.byte	0x1
  198 00c0 0E       		.byte	0xe
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc7sU1h0.s 			page 5
+ARM GAS  C:\Users\simon\AppData\Local\Temp\cccG9oS9.s 			page 5
 
 
  199 00c1 00000000 		.4byte	.LFB63
@@ -279,7 +279,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cc7sU1h0.s 			page 1
  234 0114 81000000 		.4byte	0x81
  235 0118 00000000 		.4byte	.LLST0
  236 011c 07       		.uleb128 0x7
- 237 011d 54020000 		.4byte	.LASF22
+ 237 011d 39020000 		.4byte	.LASF22
  238 0121 01       		.byte	0x1
  239 0122 1A       		.byte	0x1a
  240 0123 81000000 		.4byte	0x81
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cc7sU1h0.s 			page 1
  253 0142 00       		.sleb128 0
  254 0143 00       		.byte	0
  255 0144 00       		.byte	0
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc7sU1h0.s 			page 6
+ARM GAS  C:\Users\simon\AppData\Local\Temp\cccG9oS9.s 			page 6
 
 
  256 0145 0A       		.uleb128 0xa
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cc7sU1h0.s 			page 1
  310 0018 3E       		.uleb128 0x3e
  311 0019 0B       		.uleb128 0xb
  312 001a 03       		.uleb128 0x3
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc7sU1h0.s 			page 7
+ARM GAS  C:\Users\simon\AppData\Local\Temp\cccG9oS9.s 			page 7
 
 
  313 001b 0E       		.uleb128 0xe
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cc7sU1h0.s 			page 1
  367 0054 00       		.byte	0
  368 0055 11       		.uleb128 0x11
  369 0056 01       		.uleb128 0x1
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc7sU1h0.s 			page 8
+ARM GAS  C:\Users\simon\AppData\Local\Temp\cccG9oS9.s 			page 8
 
 
  370 0057 31       		.uleb128 0x31
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cc7sU1h0.s 			page 1
  424 0092 0B       		.uleb128 0xb
  425 0093 35       		.uleb128 0x35
  426 0094 00       		.byte	0
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc7sU1h0.s 			page 9
+ARM GAS  C:\Users\simon\AppData\Local\Temp\cccG9oS9.s 			page 9
 
 
  427 0095 49       		.uleb128 0x49
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cc7sU1h0.s 			page 1
  481 0004 0200     		.2byte	0x2
  482 0006 00000000 		.4byte	.Ldebug_info0
  483 000a 04       		.byte	0x4
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc7sU1h0.s 			page 10
+ARM GAS  C:\Users\simon\AppData\Local\Temp\cccG9oS9.s 			page 10
 
 
  484 000b 00       		.byte	0
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cc7sU1h0.s 			page 1
  520              	.LASF23:
  521 0046 50574D5F 		.ascii	"PWM_Led_Start\000"
  521      4C65645F 
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc7sU1h0.s 			page 11
+ARM GAS  C:\Users\simon\AppData\Local\Temp\cccG9oS9.s 			page 11
 
 
  521      53746172 
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cc7sU1h0.s 			page 1
  541      00
  542              	.LASF25:
  543 0147 50574D5F 		.ascii	"PWM_Led_WritePeriod\000"
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc7sU1h0.s 			page 12
+ARM GAS  C:\Users\simon\AppData\Local\Temp\cccG9oS9.s 			page 12
 
 
  543      4C65645F 
@@ -680,61 +680,56 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cc7sU1h0.s 			page 1
  549 017f 4C65645F 		.ascii	"Led_Update\000"
  549      55706461 
  549      746500
- 550              	.LASF12:
- 551 018a 696E7433 		.ascii	"int32_t\000"
- 551      325F7400 
- 552              	.LASF17:
- 553 0192 73697A65 		.ascii	"sizetype\000"
- 553      74797065 
- 553      00
- 554              	.LASF8:
- 555 019b 6C6F6E67 		.ascii	"long long int\000"
- 555      206C6F6E 
- 555      6720696E 
- 555      7400
- 556              	.LASF15:
- 557 01a9 63686172 		.ascii	"char\000"
- 557      00
- 558              	.LASF2:
- 559 01ae 73686F72 		.ascii	"short int\000"
- 559      7420696E 
- 559      7400
- 560              	.LASF29:
- 561 01b8 433A5C55 		.ascii	"C:\\Users\\simon\\Desktop\\ProgettoLTES\\Final Proj"
- 561      73657273 
- 561      5C73696D 
- 561      6F6E5C44 
- 561      65736B74 
- 562 01e6 6563745C 		.ascii	"ect\\PsoC_Final_Project_1_03\\FIORANI_GARGIULO_IANN"
- 562      50736F43 
- 562      5F46696E 
- 562      616C5F50 
- 562      726F6A65 
- 563 0217 555A5A49 		.ascii	"UZZI_Project.cydsn\000"
- 563      5F50726F 
- 563      6A656374 
- 563      2E637964 
- 563      736E00
- 564              	.LASF11:
- 565 022a 75696E74 		.ascii	"uint16_t\000"
- 565      31365F74 
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc7sU1h0.s 			page 13
+ 550              	.LASF29:
+ 551 018a 433A5C55 		.ascii	"C:\\Users\\simon\\Desktop\\PsoC_Final_Project_1_03\\"
+ 551      73657273 
+ 551      5C73696D 
+ 551      6F6E5C44 
+ 551      65736B74 
+ 552 01b9 46494F52 		.ascii	"FIORANI_GARGIULO_IANNUZZI_Project.cydsn\000"
+ 552      414E495F 
+ 552      47415247 
+ 552      49554C4F 
+ 552      5F49414E 
+ 553              	.LASF12:
+ 554 01e1 696E7433 		.ascii	"int32_t\000"
+ 554      325F7400 
+ 555              	.LASF17:
+ 556 01e9 73697A65 		.ascii	"sizetype\000"
+ 556      74797065 
+ 556      00
+ 557              	.LASF8:
+ 558 01f2 6C6F6E67 		.ascii	"long long int\000"
+ 558      206C6F6E 
+ 558      6720696E 
+ 558      7400
+ 559              	.LASF15:
+ 560 0200 63686172 		.ascii	"char\000"
+ 560      00
+ 561              	.LASF2:
+ 562 0205 73686F72 		.ascii	"short int\000"
+ 562      7420696E 
+ 562      7400
+ 563              	.LASF11:
+ 564 020f 75696E74 		.ascii	"uint16_t\000"
+ 564      31365F74 
+ 564      00
+ 565              	.LASF6:
+ 566 0218 6C6F6E67 		.ascii	"long int\000"
+ 566      20696E74 
+ 566      00
+ARM GAS  C:\Users\simon\AppData\Local\Temp\cccG9oS9.s 			page 13
 
 
- 565      00
- 566              	.LASF6:
- 567 0233 6C6F6E67 		.ascii	"long int\000"
- 567      20696E74 
- 567      00
- 568              	.LASF16:
- 569 023c 6C6F6E67 		.ascii	"long double\000"
- 569      20646F75 
- 569      626C6500 
- 570              	.LASF0:
- 571 0248 7369676E 		.ascii	"signed char\000"
- 571      65642063 
- 571      68617200 
- 572              	.LASF22:
- 573 0254 636F6D70 		.ascii	"compare\000"
- 573      61726500 
- 574              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 567              	.LASF16:
+ 568 0221 6C6F6E67 		.ascii	"long double\000"
+ 568      20646F75 
+ 568      626C6500 
+ 569              	.LASF0:
+ 570 022d 7369676E 		.ascii	"signed char\000"
+ 570      65642063 
+ 570      68617200 
+ 571              	.LASF22:
+ 572 0239 636F6D70 		.ascii	"compare\000"
+ 572      61726500 
+ 573              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

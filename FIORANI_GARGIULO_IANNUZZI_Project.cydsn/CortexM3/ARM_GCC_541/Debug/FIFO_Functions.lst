@@ -1,0 +1,1058 @@
+ARM GAS  C:\Users\simon\AppData\Local\Temp\cchYLTbe.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"FIFO_Functions.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.FIFO_Enable,"ax",%progbits
+  20              		.align	2
+  21              		.global	FIFO_Enable
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	FIFO_Enable, %function
+  25              	FIFO_Enable:
+  26              	.LFB64:
+  27              		.file 1 "FIFO_Functions.c"
+   1:FIFO_Functions.c **** /* ========================================
+   2:FIFO_Functions.c ****  *
+   3:FIFO_Functions.c ****  * Copyright YOUR COMPANY, THE YEAR
+   4:FIFO_Functions.c ****  * All Rights Reserved
+   5:FIFO_Functions.c ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:FIFO_Functions.c ****  *
+   7:FIFO_Functions.c ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:FIFO_Functions.c ****  * WHICH IS THE PROPERTY OF your company.
+   9:FIFO_Functions.c ****  *
+  10:FIFO_Functions.c ****  * ========================================
+  11:FIFO_Functions.c ****  *@authors Simone Fiorani, Alessandra Gargiulo, Gaetano Iannuzzi
+  12:FIFO_Functions.c ****  *@date 2020
+  13:FIFO_Functions.c **** */
+  14:FIFO_Functions.c **** 
+  15:FIFO_Functions.c **** #include "FIFO_Functions.h"
+  16:FIFO_Functions.c **** #include "Menu_Functions.h"
+  17:FIFO_Functions.c **** 
+  18:FIFO_Functions.c **** void FIFO_Enable ()
+  19:FIFO_Functions.c **** {
+  28              		.loc 1 19 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 08B5     		push	{r3, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 3, -8
+  35              		.cfi_offset 14, -4
+  20:FIFO_Functions.c ****             /*Bypass Mode */                                    // Necessary to restart the FIFO ac
+  21:FIFO_Functions.c ****             fifo_reg = ACC_readByte(LIS3DH_FIFO_CTRL_REG);
+  36              		.loc 1 21 0
+ARM GAS  C:\Users\simon\AppData\Local\Temp\cchYLTbe.s 			page 2
+
+
+  37 0002 2E20     		movs	r0, #46
+  38 0004 FFF7FEFF 		bl	ACC_readByte
+  39              	.LVL0:
+  40 0008 0A4B     		ldr	r3, .L5
+  41 000a 1870     		strb	r0, [r3]
+  22:FIFO_Functions.c ****             if( fifo_reg != LIS3DH_BYPASS_MODE_CTRL_REG) 
+  42              		.loc 1 22 0
+  43 000c 20B1     		cbz	r0, .L2
+  23:FIFO_Functions.c ****             {
+  24:FIFO_Functions.c ****                 fifo_reg = LIS3DH_BYPASS_MODE_CTRL_REG;
+  44              		.loc 1 24 0
+  45 000e 0021     		movs	r1, #0
+  46 0010 1970     		strb	r1, [r3]
+  25:FIFO_Functions.c ****                 ACC_writeByte(LIS3DH_FIFO_CTRL_REG,fifo_reg);
+  47              		.loc 1 25 0
+  48 0012 2E20     		movs	r0, #46
+  49 0014 FFF7FEFF 		bl	ACC_writeByte
+  50              	.LVL1:
+  51              	.L2:
+  26:FIFO_Functions.c ****             }
+  27:FIFO_Functions.c ****             
+  28:FIFO_Functions.c ****             /*FIFO */
+  29:FIFO_Functions.c ****             fifo_reg = ACC_readByte(LIS3DH_FIFO_CTRL_REG);
+  52              		.loc 1 29 0
+  53 0018 2E20     		movs	r0, #46
+  54 001a FFF7FEFF 		bl	ACC_readByte
+  55              	.LVL2:
+  56 001e 054B     		ldr	r3, .L5
+  57 0020 1870     		strb	r0, [r3]
+  30:FIFO_Functions.c ****             if( fifo_reg != LIS3DH_WTM10_MODE_CTRL_REG5) 
+  58              		.loc 1 30 0
+  59 0022 4A28     		cmp	r0, #74
+  60 0024 04D0     		beq	.L1
+  31:FIFO_Functions.c ****             {
+  32:FIFO_Functions.c ****                 fifo_reg = LIS3DH_WTM10_MODE_CTRL_REG5;
+  61              		.loc 1 32 0
+  62 0026 4A21     		movs	r1, #74
+  63 0028 1970     		strb	r1, [r3]
+  33:FIFO_Functions.c ****                 ACC_writeByte(LIS3DH_FIFO_CTRL_REG,fifo_reg);
+  64              		.loc 1 33 0
+  65 002a 2E20     		movs	r0, #46
+  66 002c FFF7FEFF 		bl	ACC_writeByte
+  67              	.LVL3:
+  68              	.L1:
+  69 0030 08BD     		pop	{r3, pc}
+  70              	.L6:
+  71 0032 00BF     		.align	2
+  72              	.L5:
+  73 0034 00000000 		.word	fifo_reg
+  74              		.cfi_endproc
+  75              	.LFE64:
+  76              		.size	FIFO_Enable, .-FIFO_Enable
+  77              		.section	.text.FIFO_Reset,"ax",%progbits
+  78              		.align	2
+  79              		.global	FIFO_Reset
+  80              		.thumb
+  81              		.thumb_func
+ARM GAS  C:\Users\simon\AppData\Local\Temp\cchYLTbe.s 			page 3
+
+
+  82              		.type	FIFO_Reset, %function
+  83              	FIFO_Reset:
+  84              	.LFB65:
+  34:FIFO_Functions.c ****             }
+  35:FIFO_Functions.c **** }
+  36:FIFO_Functions.c **** 
+  37:FIFO_Functions.c **** 
+  38:FIFO_Functions.c **** 
+  39:FIFO_Functions.c **** void FIFO_Reset ()
+  40:FIFO_Functions.c **** {
+  85              		.loc 1 40 0
+  86              		.cfi_startproc
+  87              		@ args = 0, pretend = 0, frame = 0
+  88              		@ frame_needed = 0, uses_anonymous_args = 0
+  89 0000 08B5     		push	{r3, lr}
+  90              		.cfi_def_cfa_offset 8
+  91              		.cfi_offset 3, -8
+  92              		.cfi_offset 14, -4
+  41:FIFO_Functions.c ****     samples = 0x0000;
+  93              		.loc 1 41 0
+  94 0002 0023     		movs	r3, #0
+  95 0004 074A     		ldr	r2, .L10
+  96 0006 1380     		strh	r3, [r2]	@ movhi
+  42:FIFO_Functions.c ****     j = 0;
+  97              		.loc 1 42 0
+  98 0008 074A     		ldr	r2, .L10+4
+  99 000a 1380     		strh	r3, [r2]	@ movhi
+  43:FIFO_Functions.c ****     m = 0;
+ 100              		.loc 1 43 0
+ 101 000c 074A     		ldr	r2, .L10+8
+ 102 000e 1380     		strh	r3, [r2]	@ movhi
+  44:FIFO_Functions.c ****     
+  45:FIFO_Functions.c ****     if (ActiveVisualization == 1)   ActiveVisualization = 0;
+ 103              		.loc 1 45 0
+ 104 0010 074B     		ldr	r3, .L10+12
+ 105 0012 1B68     		ldr	r3, [r3]
+ 106 0014 012B     		cmp	r3, #1
+ 107 0016 02D1     		bne	.L8
+ 108              		.loc 1 45 0 is_stmt 0 discriminator 1
+ 109 0018 0022     		movs	r2, #0
+ 110 001a 054B     		ldr	r3, .L10+12
+ 111 001c 1A60     		str	r2, [r3]
+ 112              	.L8:
+  46:FIFO_Functions.c ****     
+  47:FIFO_Functions.c ****     FIFO_Enable();
+ 113              		.loc 1 47 0 is_stmt 1
+ 114 001e FFF7FEFF 		bl	FIFO_Enable
+ 115              	.LVL4:
+ 116 0022 08BD     		pop	{r3, pc}
+ 117              	.L11:
+ 118              		.align	2
+ 119              	.L10:
+ 120 0024 00000000 		.word	samples
+ 121 0028 00000000 		.word	j
+ 122 002c 00000000 		.word	m
+ 123 0030 00000000 		.word	ActiveVisualization
+ 124              		.cfi_endproc
+ARM GAS  C:\Users\simon\AppData\Local\Temp\cchYLTbe.s 			page 4
+
+
+ 125              	.LFE65:
+ 126              		.size	FIFO_Reset, .-FIFO_Reset
+ 127              		.comm	TempUnit,1,1
+ 128              		.comm	Sensitivity,1,1
+ 129              		.comm	Registration_Active,4,4
+ 130              		.comm	MenuActive,4,4
+ 131              		.comm	LoopContinue,4,4
+ 132              		.comm	ch_received,1,1
+ 133              		.comm	ActiveVisualization,4,4
+ 134              		.comm	ActiveRegistration,4,4
+ 135              		.comm	j,2,2
+ 136              		.comm	m,2,2
+ 137              		.comm	samples,2,2
+ 138              		.comm	ctrl_reg5,1,1
+ 139              		.comm	fifo_reg,1,1
+ 140              		.comm	PacketReadyFlag,1,1
+ 141              		.comm	DataBuffer,4,4
+ 142              		.text
+ 143              	.Letext0:
+ 144              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
+ 145              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
+ 146              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 147              		.file 5 "InterruptRoutines.h"
+ 148              		.file 6 "Generated_Source\\PSoC5/core_cm3.h"
+ 149              		.file 7 "FIFO_Functions.h"
+ 150              		.file 8 "Menu_Functions.h"
+ 151              		.file 9 "LIS3DH.h"
+ 152              		.section	.debug_info,"",%progbits
+ 153              	.Ldebug_info0:
+ 154 0000 B2020000 		.4byte	0x2b2
+ 155 0004 0400     		.2byte	0x4
+ 156 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 157 000a 04       		.byte	0x4
+ 158 000b 01       		.uleb128 0x1
+ 159 000c 8E000000 		.4byte	.LASF41
+ 160 0010 0C       		.byte	0xc
+ 161 0011 DE010000 		.4byte	.LASF42
+ 162 0015 EF010000 		.4byte	.LASF43
+ 163 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 164 001d 00000000 		.4byte	0
+ 165 0021 00000000 		.4byte	.Ldebug_line0
+ 166 0025 02       		.uleb128 0x2
+ 167 0026 01       		.byte	0x1
+ 168 0027 06       		.byte	0x6
+ 169 0028 74000000 		.4byte	.LASF0
+ 170 002c 03       		.uleb128 0x3
+ 171 002d 00000000 		.4byte	.LASF2
+ 172 0031 02       		.byte	0x2
+ 173 0032 1D       		.byte	0x1d
+ 174 0033 37000000 		.4byte	0x37
+ 175 0037 02       		.uleb128 0x2
+ 176 0038 01       		.byte	0x1
+ 177 0039 08       		.byte	0x8
+ 178 003a 80000000 		.4byte	.LASF1
+ 179 003e 03       		.uleb128 0x3
+ 180 003f 8E010000 		.4byte	.LASF3
+ 181 0043 02       		.byte	0x2
+ARM GAS  C:\Users\simon\AppData\Local\Temp\cchYLTbe.s 			page 5
+
+
+ 182 0044 29       		.byte	0x29
+ 183 0045 49000000 		.4byte	0x49
+ 184 0049 02       		.uleb128 0x2
+ 185 004a 02       		.byte	0x2
+ 186 004b 05       		.byte	0x5
+ 187 004c 7B020000 		.4byte	.LASF4
+ 188 0050 03       		.uleb128 0x3
+ 189 0051 67010000 		.4byte	.LASF5
+ 190 0055 02       		.byte	0x2
+ 191 0056 2B       		.byte	0x2b
+ 192 0057 5B000000 		.4byte	0x5b
+ 193 005b 02       		.uleb128 0x2
+ 194 005c 02       		.byte	0x2
+ 195 005d 07       		.byte	0x7
+ 196 005e 3C010000 		.4byte	.LASF6
+ 197 0062 03       		.uleb128 0x3
+ 198 0063 28000000 		.4byte	.LASF7
+ 199 0067 02       		.byte	0x2
+ 200 0068 3F       		.byte	0x3f
+ 201 0069 6D000000 		.4byte	0x6d
+ 202 006d 02       		.uleb128 0x2
+ 203 006e 04       		.byte	0x4
+ 204 006f 05       		.byte	0x5
+ 205 0070 9E020000 		.4byte	.LASF8
+ 206 0074 02       		.uleb128 0x2
+ 207 0075 04       		.byte	0x4
+ 208 0076 07       		.byte	0x7
+ 209 0077 2A010000 		.4byte	.LASF9
+ 210 007b 02       		.uleb128 0x2
+ 211 007c 08       		.byte	0x8
+ 212 007d 05       		.byte	0x5
+ 213 007e 5B020000 		.4byte	.LASF10
+ 214 0082 02       		.uleb128 0x2
+ 215 0083 08       		.byte	0x8
+ 216 0084 07       		.byte	0x7
+ 217 0085 A2010000 		.4byte	.LASF11
+ 218 0089 04       		.uleb128 0x4
+ 219 008a 04       		.byte	0x4
+ 220 008b 05       		.byte	0x5
+ 221 008c 696E7400 		.ascii	"int\000"
+ 222 0090 02       		.uleb128 0x2
+ 223 0091 04       		.byte	0x4
+ 224 0092 07       		.byte	0x7
+ 225 0093 32000000 		.4byte	.LASF12
+ 226 0097 03       		.uleb128 0x3
+ 227 0098 B9010000 		.4byte	.LASF13
+ 228 009c 03       		.byte	0x3
+ 229 009d 18       		.byte	0x18
+ 230 009e 2C000000 		.4byte	0x2c
+ 231 00a2 03       		.uleb128 0x3
+ 232 00a3 D6010000 		.4byte	.LASF14
+ 233 00a7 03       		.byte	0x3
+ 234 00a8 20       		.byte	0x20
+ 235 00a9 3E000000 		.4byte	0x3e
+ 236 00ad 03       		.uleb128 0x3
+ 237 00ae 95020000 		.4byte	.LASF15
+ 238 00b2 03       		.byte	0x3
+ARM GAS  C:\Users\simon\AppData\Local\Temp\cchYLTbe.s 			page 6
+
+
+ 239 00b3 24       		.byte	0x24
+ 240 00b4 50000000 		.4byte	0x50
+ 241 00b8 03       		.uleb128 0x3
+ 242 00b9 52000000 		.4byte	.LASF16
+ 243 00bd 03       		.byte	0x3
+ 244 00be 2C       		.byte	0x2c
+ 245 00bf 62000000 		.4byte	0x62
+ 246 00c3 05       		.uleb128 0x5
+ 247 00c4 3F000000 		.4byte	.LASF17
+ 248 00c8 04       		.byte	0x4
+ 249 00c9 E401     		.2byte	0x1e4
+ 250 00cb 37000000 		.4byte	0x37
+ 251 00cf 02       		.uleb128 0x2
+ 252 00d0 04       		.byte	0x4
+ 253 00d1 04       		.byte	0x4
+ 254 00d2 5A000000 		.4byte	.LASF18
+ 255 00d6 02       		.uleb128 0x2
+ 256 00d7 08       		.byte	0x8
+ 257 00d8 04       		.byte	0x4
+ 258 00d9 72010000 		.4byte	.LASF19
+ 259 00dd 02       		.uleb128 0x2
+ 260 00de 01       		.byte	0x1
+ 261 00df 08       		.byte	0x8
+ 262 00e0 76020000 		.4byte	.LASF20
+ 263 00e4 06       		.uleb128 0x6
+ 264 00e5 C3000000 		.4byte	0xc3
+ 265 00e9 02       		.uleb128 0x2
+ 266 00ea 08       		.byte	0x8
+ 267 00eb 04       		.byte	0x4
+ 268 00ec B2020000 		.4byte	.LASF21
+ 269 00f0 02       		.uleb128 0x2
+ 270 00f1 04       		.byte	0x4
+ 271 00f2 07       		.byte	0x7
+ 272 00f3 52020000 		.4byte	.LASF22
+ 273 00f7 07       		.uleb128 0x7
+ 274 00f8 82010000 		.4byte	.LASF23
+ 275 00fc 01       		.byte	0x1
+ 276 00fd 12       		.byte	0x12
+ 277 00fe 00000000 		.4byte	.LFB64
+ 278 0102 38000000 		.4byte	.LFE64-.LFB64
+ 279 0106 01       		.uleb128 0x1
+ 280 0107 9C       		.byte	0x9c
+ 281 0108 64010000 		.4byte	0x164
+ 282 010c 08       		.uleb128 0x8
+ 283 010d 08000000 		.4byte	.LVL0
+ 284 0111 9F020000 		.4byte	0x29f
+ 285 0115 20010000 		.4byte	0x120
+ 286 0119 09       		.uleb128 0x9
+ 287 011a 01       		.uleb128 0x1
+ 288 011b 50       		.byte	0x50
+ 289 011c 02       		.uleb128 0x2
+ 290 011d 08       		.byte	0x8
+ 291 011e 2E       		.byte	0x2e
+ 292 011f 00       		.byte	0
+ 293 0120 08       		.uleb128 0x8
+ 294 0121 18000000 		.4byte	.LVL1
+ 295 0125 AA020000 		.4byte	0x2aa
+ARM GAS  C:\Users\simon\AppData\Local\Temp\cchYLTbe.s 			page 7
+
+
+ 296 0129 39010000 		.4byte	0x139
+ 297 012d 09       		.uleb128 0x9
+ 298 012e 01       		.uleb128 0x1
+ 299 012f 50       		.byte	0x50
+ 300 0130 02       		.uleb128 0x2
+ 301 0131 08       		.byte	0x8
+ 302 0132 2E       		.byte	0x2e
+ 303 0133 09       		.uleb128 0x9
+ 304 0134 01       		.uleb128 0x1
+ 305 0135 51       		.byte	0x51
+ 306 0136 01       		.uleb128 0x1
+ 307 0137 30       		.byte	0x30
+ 308 0138 00       		.byte	0
+ 309 0139 08       		.uleb128 0x8
+ 310 013a 1E000000 		.4byte	.LVL2
+ 311 013e 9F020000 		.4byte	0x29f
+ 312 0142 4D010000 		.4byte	0x14d
+ 313 0146 09       		.uleb128 0x9
+ 314 0147 01       		.uleb128 0x1
+ 315 0148 50       		.byte	0x50
+ 316 0149 02       		.uleb128 0x2
+ 317 014a 08       		.byte	0x8
+ 318 014b 2E       		.byte	0x2e
+ 319 014c 00       		.byte	0
+ 320 014d 0A       		.uleb128 0xa
+ 321 014e 30000000 		.4byte	.LVL3
+ 322 0152 AA020000 		.4byte	0x2aa
+ 323 0156 09       		.uleb128 0x9
+ 324 0157 01       		.uleb128 0x1
+ 325 0158 50       		.byte	0x50
+ 326 0159 02       		.uleb128 0x2
+ 327 015a 08       		.byte	0x8
+ 328 015b 2E       		.byte	0x2e
+ 329 015c 09       		.uleb128 0x9
+ 330 015d 01       		.uleb128 0x1
+ 331 015e 51       		.byte	0x51
+ 332 015f 02       		.uleb128 0x2
+ 333 0160 08       		.byte	0x8
+ 334 0161 4A       		.byte	0x4a
+ 335 0162 00       		.byte	0
+ 336 0163 00       		.byte	0
+ 337 0164 07       		.uleb128 0x7
+ 338 0165 4F010000 		.4byte	.LASF24
+ 339 0169 01       		.byte	0x1
+ 340 016a 27       		.byte	0x27
+ 341 016b 00000000 		.4byte	.LFB65
+ 342 016f 34000000 		.4byte	.LFE65-.LFB65
+ 343 0173 01       		.uleb128 0x1
+ 344 0174 9C       		.byte	0x9c
+ 345 0175 83010000 		.4byte	0x183
+ 346 0179 0B       		.uleb128 0xb
+ 347 017a 22000000 		.4byte	.LVL4
+ 348 017e F7000000 		.4byte	0xf7
+ 349 0182 00       		.byte	0
+ 350 0183 0C       		.uleb128 0xc
+ 351 0184 DD000000 		.4byte	0xdd
+ 352 0188 93010000 		.4byte	0x193
+ARM GAS  C:\Users\simon\AppData\Local\Temp\cchYLTbe.s 			page 8
+
+
+ 353 018c 0D       		.uleb128 0xd
+ 354 018d F0000000 		.4byte	0xf0
+ 355 0191 03       		.byte	0x3
+ 356 0192 00       		.byte	0
+ 357 0193 0E       		.uleb128 0xe
+ 358 0194 A7020000 		.4byte	.LASF25
+ 359 0198 05       		.byte	0x5
+ 360 0199 1A       		.byte	0x1a
+ 361 019a 83010000 		.4byte	0x183
+ 362 019e 05       		.uleb128 0x5
+ 363 019f 03       		.byte	0x3
+ 364 01a0 00000000 		.4byte	DataBuffer
+ 365 01a4 0E       		.uleb128 0xe
+ 366 01a5 85020000 		.4byte	.LASF26
+ 367 01a9 05       		.byte	0x5
+ 368 01aa 1C       		.byte	0x1c
+ 369 01ab E4000000 		.4byte	0xe4
+ 370 01af 05       		.uleb128 0x5
+ 371 01b0 03       		.byte	0x3
+ 372 01b1 00000000 		.4byte	PacketReadyFlag
+ 373 01b5 0F       		.uleb128 0xf
+ 374 01b6 5A010000 		.4byte	.LASF27
+ 375 01ba 06       		.byte	0x6
+ 376 01bb 1207     		.2byte	0x712
+ 377 01bd C1010000 		.4byte	0x1c1
+ 378 01c1 06       		.uleb128 0x6
+ 379 01c2 B8000000 		.4byte	0xb8
+ 380 01c6 0E       		.uleb128 0xe
+ 381 01c7 CD010000 		.4byte	.LASF28
+ 382 01cb 07       		.byte	0x7
+ 383 01cc 1A       		.byte	0x1a
+ 384 01cd 97000000 		.4byte	0x97
+ 385 01d1 05       		.uleb128 0x5
+ 386 01d2 03       		.byte	0x3
+ 387 01d3 00000000 		.4byte	fifo_reg
+ 388 01d7 0E       		.uleb128 0xe
+ 389 01d8 98010000 		.4byte	.LASF29
+ 390 01dc 07       		.byte	0x7
+ 391 01dd 1B       		.byte	0x1b
+ 392 01de 97000000 		.4byte	0x97
+ 393 01e2 05       		.uleb128 0x5
+ 394 01e3 03       		.byte	0x3
+ 395 01e4 00000000 		.4byte	ctrl_reg5
+ 396 01e8 0E       		.uleb128 0xe
+ 397 01e9 BE020000 		.4byte	.LASF30
+ 398 01ed 07       		.byte	0x7
+ 399 01ee 1C       		.byte	0x1c
+ 400 01ef AD000000 		.4byte	0xad
+ 401 01f3 05       		.uleb128 0x5
+ 402 01f4 03       		.byte	0x3
+ 403 01f5 00000000 		.4byte	samples
+ 404 01f9 10       		.uleb128 0x10
+ 405 01fa 6D00     		.ascii	"m\000"
+ 406 01fc 07       		.byte	0x7
+ 407 01fd 1D       		.byte	0x1d
+ 408 01fe AD000000 		.4byte	0xad
+ 409 0202 05       		.uleb128 0x5
+ARM GAS  C:\Users\simon\AppData\Local\Temp\cchYLTbe.s 			page 9
+
+
+ 410 0203 03       		.byte	0x3
+ 411 0204 00000000 		.4byte	m
+ 412 0208 10       		.uleb128 0x10
+ 413 0209 6A00     		.ascii	"j\000"
+ 414 020b 07       		.byte	0x7
+ 415 020c 1E       		.byte	0x1e
+ 416 020d A2000000 		.4byte	0xa2
+ 417 0211 05       		.uleb128 0x5
+ 418 0212 03       		.byte	0x3
+ 419 0213 00000000 		.4byte	j
+ 420 0217 0E       		.uleb128 0xe
+ 421 0218 0A000000 		.4byte	.LASF31
+ 422 021c 08       		.byte	0x8
+ 423 021d 2D       		.byte	0x2d
+ 424 021e 89000000 		.4byte	0x89
+ 425 0222 05       		.uleb128 0x5
+ 426 0223 03       		.byte	0x3
+ 427 0224 00000000 		.4byte	ActiveRegistration
+ 428 0228 0E       		.uleb128 0xe
+ 429 0229 60000000 		.4byte	.LASF32
+ 430 022d 08       		.byte	0x8
+ 431 022e 2E       		.byte	0x2e
+ 432 022f 89000000 		.4byte	0x89
+ 433 0233 05       		.uleb128 0x5
+ 434 0234 03       		.byte	0x3
+ 435 0235 00000000 		.4byte	ActiveVisualization
+ 436 0239 0E       		.uleb128 0xe
+ 437 023a 46020000 		.4byte	.LASF33
+ 438 023e 08       		.byte	0x8
+ 439 023f 30       		.byte	0x30
+ 440 0240 DD000000 		.4byte	0xdd
+ 441 0244 05       		.uleb128 0x5
+ 442 0245 03       		.byte	0x3
+ 443 0246 00000000 		.4byte	ch_received
+ 444 024a 0E       		.uleb128 0xe
+ 445 024b 69020000 		.4byte	.LASF34
+ 446 024f 08       		.byte	0x8
+ 447 0250 31       		.byte	0x31
+ 448 0251 89000000 		.4byte	0x89
+ 449 0255 05       		.uleb128 0x5
+ 450 0256 03       		.byte	0x3
+ 451 0257 00000000 		.4byte	LoopContinue
+ 452 025b 0E       		.uleb128 0xe
+ 453 025c 1D000000 		.4byte	.LASF35
+ 454 0260 08       		.byte	0x8
+ 455 0261 32       		.byte	0x32
+ 456 0262 89000000 		.4byte	0x89
+ 457 0266 05       		.uleb128 0x5
+ 458 0267 03       		.byte	0x3
+ 459 0268 00000000 		.4byte	MenuActive
+ 460 026c 0E       		.uleb128 0xe
+ 461 026d C6020000 		.4byte	.LASF36
+ 462 0271 08       		.byte	0x8
+ 463 0272 33       		.byte	0x33
+ 464 0273 89000000 		.4byte	0x89
+ 465 0277 05       		.uleb128 0x5
+ 466 0278 03       		.byte	0x3
+ARM GAS  C:\Users\simon\AppData\Local\Temp\cchYLTbe.s 			page 10
+
+
+ 467 0279 00000000 		.4byte	Registration_Active
+ 468 027d 0E       		.uleb128 0xe
+ 469 027e C1010000 		.4byte	.LASF37
+ 470 0282 08       		.byte	0x8
+ 471 0283 34       		.byte	0x34
+ 472 0284 97000000 		.4byte	0x97
+ 473 0288 05       		.uleb128 0x5
+ 474 0289 03       		.byte	0x3
+ 475 028a 00000000 		.4byte	Sensitivity
+ 476 028e 0E       		.uleb128 0xe
+ 477 028f 79010000 		.4byte	.LASF38
+ 478 0293 08       		.byte	0x8
+ 479 0294 35       		.byte	0x35
+ 480 0295 97000000 		.4byte	0x97
+ 481 0299 05       		.uleb128 0x5
+ 482 029a 03       		.byte	0x3
+ 483 029b 00000000 		.4byte	TempUnit
+ 484 029f 11       		.uleb128 0x11
+ 485 02a0 45000000 		.4byte	.LASF39
+ 486 02a4 45000000 		.4byte	.LASF39
+ 487 02a8 09       		.byte	0x9
+ 488 02a9 60       		.byte	0x60
+ 489 02aa 11       		.uleb128 0x11
+ 490 02ab 1C010000 		.4byte	.LASF40
+ 491 02af 1C010000 		.4byte	.LASF40
+ 492 02b3 09       		.byte	0x9
+ 493 02b4 61       		.byte	0x61
+ 494 02b5 00       		.byte	0
+ 495              		.section	.debug_abbrev,"",%progbits
+ 496              	.Ldebug_abbrev0:
+ 497 0000 01       		.uleb128 0x1
+ 498 0001 11       		.uleb128 0x11
+ 499 0002 01       		.byte	0x1
+ 500 0003 25       		.uleb128 0x25
+ 501 0004 0E       		.uleb128 0xe
+ 502 0005 13       		.uleb128 0x13
+ 503 0006 0B       		.uleb128 0xb
+ 504 0007 03       		.uleb128 0x3
+ 505 0008 0E       		.uleb128 0xe
+ 506 0009 1B       		.uleb128 0x1b
+ 507 000a 0E       		.uleb128 0xe
+ 508 000b 55       		.uleb128 0x55
+ 509 000c 17       		.uleb128 0x17
+ 510 000d 11       		.uleb128 0x11
+ 511 000e 01       		.uleb128 0x1
+ 512 000f 10       		.uleb128 0x10
+ 513 0010 17       		.uleb128 0x17
+ 514 0011 00       		.byte	0
+ 515 0012 00       		.byte	0
+ 516 0013 02       		.uleb128 0x2
+ 517 0014 24       		.uleb128 0x24
+ 518 0015 00       		.byte	0
+ 519 0016 0B       		.uleb128 0xb
+ 520 0017 0B       		.uleb128 0xb
+ 521 0018 3E       		.uleb128 0x3e
+ 522 0019 0B       		.uleb128 0xb
+ 523 001a 03       		.uleb128 0x3
+ARM GAS  C:\Users\simon\AppData\Local\Temp\cchYLTbe.s 			page 11
+
+
+ 524 001b 0E       		.uleb128 0xe
+ 525 001c 00       		.byte	0
+ 526 001d 00       		.byte	0
+ 527 001e 03       		.uleb128 0x3
+ 528 001f 16       		.uleb128 0x16
+ 529 0020 00       		.byte	0
+ 530 0021 03       		.uleb128 0x3
+ 531 0022 0E       		.uleb128 0xe
+ 532 0023 3A       		.uleb128 0x3a
+ 533 0024 0B       		.uleb128 0xb
+ 534 0025 3B       		.uleb128 0x3b
+ 535 0026 0B       		.uleb128 0xb
+ 536 0027 49       		.uleb128 0x49
+ 537 0028 13       		.uleb128 0x13
+ 538 0029 00       		.byte	0
+ 539 002a 00       		.byte	0
+ 540 002b 04       		.uleb128 0x4
+ 541 002c 24       		.uleb128 0x24
+ 542 002d 00       		.byte	0
+ 543 002e 0B       		.uleb128 0xb
+ 544 002f 0B       		.uleb128 0xb
+ 545 0030 3E       		.uleb128 0x3e
+ 546 0031 0B       		.uleb128 0xb
+ 547 0032 03       		.uleb128 0x3
+ 548 0033 08       		.uleb128 0x8
+ 549 0034 00       		.byte	0
+ 550 0035 00       		.byte	0
+ 551 0036 05       		.uleb128 0x5
+ 552 0037 16       		.uleb128 0x16
+ 553 0038 00       		.byte	0
+ 554 0039 03       		.uleb128 0x3
+ 555 003a 0E       		.uleb128 0xe
+ 556 003b 3A       		.uleb128 0x3a
+ 557 003c 0B       		.uleb128 0xb
+ 558 003d 3B       		.uleb128 0x3b
+ 559 003e 05       		.uleb128 0x5
+ 560 003f 49       		.uleb128 0x49
+ 561 0040 13       		.uleb128 0x13
+ 562 0041 00       		.byte	0
+ 563 0042 00       		.byte	0
+ 564 0043 06       		.uleb128 0x6
+ 565 0044 35       		.uleb128 0x35
+ 566 0045 00       		.byte	0
+ 567 0046 49       		.uleb128 0x49
+ 568 0047 13       		.uleb128 0x13
+ 569 0048 00       		.byte	0
+ 570 0049 00       		.byte	0
+ 571 004a 07       		.uleb128 0x7
+ 572 004b 2E       		.uleb128 0x2e
+ 573 004c 01       		.byte	0x1
+ 574 004d 3F       		.uleb128 0x3f
+ 575 004e 19       		.uleb128 0x19
+ 576 004f 03       		.uleb128 0x3
+ 577 0050 0E       		.uleb128 0xe
+ 578 0051 3A       		.uleb128 0x3a
+ 579 0052 0B       		.uleb128 0xb
+ 580 0053 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\simon\AppData\Local\Temp\cchYLTbe.s 			page 12
+
+
+ 581 0054 0B       		.uleb128 0xb
+ 582 0055 11       		.uleb128 0x11
+ 583 0056 01       		.uleb128 0x1
+ 584 0057 12       		.uleb128 0x12
+ 585 0058 06       		.uleb128 0x6
+ 586 0059 40       		.uleb128 0x40
+ 587 005a 18       		.uleb128 0x18
+ 588 005b 9742     		.uleb128 0x2117
+ 589 005d 19       		.uleb128 0x19
+ 590 005e 01       		.uleb128 0x1
+ 591 005f 13       		.uleb128 0x13
+ 592 0060 00       		.byte	0
+ 593 0061 00       		.byte	0
+ 594 0062 08       		.uleb128 0x8
+ 595 0063 898201   		.uleb128 0x4109
+ 596 0066 01       		.byte	0x1
+ 597 0067 11       		.uleb128 0x11
+ 598 0068 01       		.uleb128 0x1
+ 599 0069 31       		.uleb128 0x31
+ 600 006a 13       		.uleb128 0x13
+ 601 006b 01       		.uleb128 0x1
+ 602 006c 13       		.uleb128 0x13
+ 603 006d 00       		.byte	0
+ 604 006e 00       		.byte	0
+ 605 006f 09       		.uleb128 0x9
+ 606 0070 8A8201   		.uleb128 0x410a
+ 607 0073 00       		.byte	0
+ 608 0074 02       		.uleb128 0x2
+ 609 0075 18       		.uleb128 0x18
+ 610 0076 9142     		.uleb128 0x2111
+ 611 0078 18       		.uleb128 0x18
+ 612 0079 00       		.byte	0
+ 613 007a 00       		.byte	0
+ 614 007b 0A       		.uleb128 0xa
+ 615 007c 898201   		.uleb128 0x4109
+ 616 007f 01       		.byte	0x1
+ 617 0080 11       		.uleb128 0x11
+ 618 0081 01       		.uleb128 0x1
+ 619 0082 31       		.uleb128 0x31
+ 620 0083 13       		.uleb128 0x13
+ 621 0084 00       		.byte	0
+ 622 0085 00       		.byte	0
+ 623 0086 0B       		.uleb128 0xb
+ 624 0087 898201   		.uleb128 0x4109
+ 625 008a 00       		.byte	0
+ 626 008b 11       		.uleb128 0x11
+ 627 008c 01       		.uleb128 0x1
+ 628 008d 31       		.uleb128 0x31
+ 629 008e 13       		.uleb128 0x13
+ 630 008f 00       		.byte	0
+ 631 0090 00       		.byte	0
+ 632 0091 0C       		.uleb128 0xc
+ 633 0092 01       		.uleb128 0x1
+ 634 0093 01       		.byte	0x1
+ 635 0094 49       		.uleb128 0x49
+ 636 0095 13       		.uleb128 0x13
+ 637 0096 01       		.uleb128 0x1
+ARM GAS  C:\Users\simon\AppData\Local\Temp\cchYLTbe.s 			page 13
+
+
+ 638 0097 13       		.uleb128 0x13
+ 639 0098 00       		.byte	0
+ 640 0099 00       		.byte	0
+ 641 009a 0D       		.uleb128 0xd
+ 642 009b 21       		.uleb128 0x21
+ 643 009c 00       		.byte	0
+ 644 009d 49       		.uleb128 0x49
+ 645 009e 13       		.uleb128 0x13
+ 646 009f 2F       		.uleb128 0x2f
+ 647 00a0 0B       		.uleb128 0xb
+ 648 00a1 00       		.byte	0
+ 649 00a2 00       		.byte	0
+ 650 00a3 0E       		.uleb128 0xe
+ 651 00a4 34       		.uleb128 0x34
+ 652 00a5 00       		.byte	0
+ 653 00a6 03       		.uleb128 0x3
+ 654 00a7 0E       		.uleb128 0xe
+ 655 00a8 3A       		.uleb128 0x3a
+ 656 00a9 0B       		.uleb128 0xb
+ 657 00aa 3B       		.uleb128 0x3b
+ 658 00ab 0B       		.uleb128 0xb
+ 659 00ac 49       		.uleb128 0x49
+ 660 00ad 13       		.uleb128 0x13
+ 661 00ae 3F       		.uleb128 0x3f
+ 662 00af 19       		.uleb128 0x19
+ 663 00b0 02       		.uleb128 0x2
+ 664 00b1 18       		.uleb128 0x18
+ 665 00b2 00       		.byte	0
+ 666 00b3 00       		.byte	0
+ 667 00b4 0F       		.uleb128 0xf
+ 668 00b5 34       		.uleb128 0x34
+ 669 00b6 00       		.byte	0
+ 670 00b7 03       		.uleb128 0x3
+ 671 00b8 0E       		.uleb128 0xe
+ 672 00b9 3A       		.uleb128 0x3a
+ 673 00ba 0B       		.uleb128 0xb
+ 674 00bb 3B       		.uleb128 0x3b
+ 675 00bc 05       		.uleb128 0x5
+ 676 00bd 49       		.uleb128 0x49
+ 677 00be 13       		.uleb128 0x13
+ 678 00bf 3F       		.uleb128 0x3f
+ 679 00c0 19       		.uleb128 0x19
+ 680 00c1 3C       		.uleb128 0x3c
+ 681 00c2 19       		.uleb128 0x19
+ 682 00c3 00       		.byte	0
+ 683 00c4 00       		.byte	0
+ 684 00c5 10       		.uleb128 0x10
+ 685 00c6 34       		.uleb128 0x34
+ 686 00c7 00       		.byte	0
+ 687 00c8 03       		.uleb128 0x3
+ 688 00c9 08       		.uleb128 0x8
+ 689 00ca 3A       		.uleb128 0x3a
+ 690 00cb 0B       		.uleb128 0xb
+ 691 00cc 3B       		.uleb128 0x3b
+ 692 00cd 0B       		.uleb128 0xb
+ 693 00ce 49       		.uleb128 0x49
+ 694 00cf 13       		.uleb128 0x13
+ARM GAS  C:\Users\simon\AppData\Local\Temp\cchYLTbe.s 			page 14
+
+
+ 695 00d0 3F       		.uleb128 0x3f
+ 696 00d1 19       		.uleb128 0x19
+ 697 00d2 02       		.uleb128 0x2
+ 698 00d3 18       		.uleb128 0x18
+ 699 00d4 00       		.byte	0
+ 700 00d5 00       		.byte	0
+ 701 00d6 11       		.uleb128 0x11
+ 702 00d7 2E       		.uleb128 0x2e
+ 703 00d8 00       		.byte	0
+ 704 00d9 3F       		.uleb128 0x3f
+ 705 00da 19       		.uleb128 0x19
+ 706 00db 3C       		.uleb128 0x3c
+ 707 00dc 19       		.uleb128 0x19
+ 708 00dd 6E       		.uleb128 0x6e
+ 709 00de 0E       		.uleb128 0xe
+ 710 00df 03       		.uleb128 0x3
+ 711 00e0 0E       		.uleb128 0xe
+ 712 00e1 3A       		.uleb128 0x3a
+ 713 00e2 0B       		.uleb128 0xb
+ 714 00e3 3B       		.uleb128 0x3b
+ 715 00e4 0B       		.uleb128 0xb
+ 716 00e5 00       		.byte	0
+ 717 00e6 00       		.byte	0
+ 718 00e7 00       		.byte	0
+ 719              		.section	.debug_aranges,"",%progbits
+ 720 0000 24000000 		.4byte	0x24
+ 721 0004 0200     		.2byte	0x2
+ 722 0006 00000000 		.4byte	.Ldebug_info0
+ 723 000a 04       		.byte	0x4
+ 724 000b 00       		.byte	0
+ 725 000c 0000     		.2byte	0
+ 726 000e 0000     		.2byte	0
+ 727 0010 00000000 		.4byte	.LFB64
+ 728 0014 38000000 		.4byte	.LFE64-.LFB64
+ 729 0018 00000000 		.4byte	.LFB65
+ 730 001c 34000000 		.4byte	.LFE65-.LFB65
+ 731 0020 00000000 		.4byte	0
+ 732 0024 00000000 		.4byte	0
+ 733              		.section	.debug_ranges,"",%progbits
+ 734              	.Ldebug_ranges0:
+ 735 0000 00000000 		.4byte	.LFB64
+ 736 0004 38000000 		.4byte	.LFE64
+ 737 0008 00000000 		.4byte	.LFB65
+ 738 000c 34000000 		.4byte	.LFE65
+ 739 0010 00000000 		.4byte	0
+ 740 0014 00000000 		.4byte	0
+ 741              		.section	.debug_line,"",%progbits
+ 742              	.Ldebug_line0:
+ 743 0000 D9010000 		.section	.debug_str,"MS",%progbits,1
+ 743      0200A101 
+ 743      00000201 
+ 743      FB0E0D00 
+ 743      01010101 
+ 744              	.LASF2:
+ 745 0000 5F5F7569 		.ascii	"__uint8_t\000"
+ 745      6E74385F 
+ 745      7400
+ARM GAS  C:\Users\simon\AppData\Local\Temp\cchYLTbe.s 			page 15
+
+
+ 746              	.LASF31:
+ 747 000a 41637469 		.ascii	"ActiveRegistration\000"
+ 747      76655265 
+ 747      67697374 
+ 747      72617469 
+ 747      6F6E00
+ 748              	.LASF35:
+ 749 001d 4D656E75 		.ascii	"MenuActive\000"
+ 749      41637469 
+ 749      766500
+ 750              	.LASF7:
+ 751 0028 5F5F696E 		.ascii	"__int32_t\000"
+ 751      7433325F 
+ 751      7400
+ 752              	.LASF12:
+ 753 0032 756E7369 		.ascii	"unsigned int\000"
+ 753      676E6564 
+ 753      20696E74 
+ 753      00
+ 754              	.LASF17:
+ 755 003f 75696E74 		.ascii	"uint8\000"
+ 755      3800
+ 756              	.LASF39:
+ 757 0045 4143435F 		.ascii	"ACC_readByte\000"
+ 757      72656164 
+ 757      42797465 
+ 757      00
+ 758              	.LASF16:
+ 759 0052 696E7433 		.ascii	"int32_t\000"
+ 759      325F7400 
+ 760              	.LASF18:
+ 761 005a 666C6F61 		.ascii	"float\000"
+ 761      7400
+ 762              	.LASF32:
+ 763 0060 41637469 		.ascii	"ActiveVisualization\000"
+ 763      76655669 
+ 763      7375616C 
+ 763      697A6174 
+ 763      696F6E00 
+ 764              	.LASF0:
+ 765 0074 7369676E 		.ascii	"signed char\000"
+ 765      65642063 
+ 765      68617200 
+ 766              	.LASF1:
+ 767 0080 756E7369 		.ascii	"unsigned char\000"
+ 767      676E6564 
+ 767      20636861 
+ 767      7200
+ 768              	.LASF41:
+ 769 008e 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 769      43313120 
+ 769      352E342E 
+ 769      31203230 
+ 769      31363036 
+ 770 00c1 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 770      20726576 
+ 770      6973696F 
+ARM GAS  C:\Users\simon\AppData\Local\Temp\cchYLTbe.s 			page 16
+
+
+ 770      6E203233 
+ 770      37373135 
+ 771 00f4 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 771      66756E63 
+ 771      74696F6E 
+ 771      2D736563 
+ 771      74696F6E 
+ 772              	.LASF40:
+ 773 011c 4143435F 		.ascii	"ACC_writeByte\000"
+ 773      77726974 
+ 773      65427974 
+ 773      6500
+ 774              	.LASF9:
+ 775 012a 6C6F6E67 		.ascii	"long unsigned int\000"
+ 775      20756E73 
+ 775      69676E65 
+ 775      6420696E 
+ 775      7400
+ 776              	.LASF6:
+ 777 013c 73686F72 		.ascii	"short unsigned int\000"
+ 777      7420756E 
+ 777      7369676E 
+ 777      65642069 
+ 777      6E7400
+ 778              	.LASF24:
+ 779 014f 4649464F 		.ascii	"FIFO_Reset\000"
+ 779      5F526573 
+ 779      657400
+ 780              	.LASF27:
+ 781 015a 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 781      52784275 
+ 781      66666572 
+ 781      00
+ 782              	.LASF5:
+ 783 0167 5F5F7569 		.ascii	"__uint16_t\000"
+ 783      6E743136 
+ 783      5F7400
+ 784              	.LASF19:
+ 785 0172 646F7562 		.ascii	"double\000"
+ 785      6C6500
+ 786              	.LASF38:
+ 787 0179 54656D70 		.ascii	"TempUnit\000"
+ 787      556E6974 
+ 787      00
+ 788              	.LASF23:
+ 789 0182 4649464F 		.ascii	"FIFO_Enable\000"
+ 789      5F456E61 
+ 789      626C6500 
+ 790              	.LASF3:
+ 791 018e 5F5F696E 		.ascii	"__int16_t\000"
+ 791      7431365F 
+ 791      7400
+ 792              	.LASF29:
+ 793 0198 6374726C 		.ascii	"ctrl_reg5\000"
+ 793      5F726567 
+ 793      3500
+ 794              	.LASF11:
+ARM GAS  C:\Users\simon\AppData\Local\Temp\cchYLTbe.s 			page 17
+
+
+ 795 01a2 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 795      206C6F6E 
+ 795      6720756E 
+ 795      7369676E 
+ 795      65642069 
+ 796              	.LASF13:
+ 797 01b9 75696E74 		.ascii	"uint8_t\000"
+ 797      385F7400 
+ 798              	.LASF37:
+ 799 01c1 53656E73 		.ascii	"Sensitivity\000"
+ 799      69746976 
+ 799      69747900 
+ 800              	.LASF28:
+ 801 01cd 6669666F 		.ascii	"fifo_reg\000"
+ 801      5F726567 
+ 801      00
+ 802              	.LASF14:
+ 803 01d6 696E7431 		.ascii	"int16_t\000"
+ 803      365F7400 
+ 804              	.LASF42:
+ 805 01de 4649464F 		.ascii	"FIFO_Functions.c\000"
+ 805      5F46756E 
+ 805      6374696F 
+ 805      6E732E63 
+ 805      00
+ 806              	.LASF43:
+ 807 01ef 433A5C55 		.ascii	"C:\\Users\\simon\\Desktop\\PsoC_Final_Project_1_03\\"
+ 807      73657273 
+ 807      5C73696D 
+ 807      6F6E5C44 
+ 807      65736B74 
+ 808 021e 46494F52 		.ascii	"FIORANI_GARGIULO_IANNUZZI_Project.cydsn\000"
+ 808      414E495F 
+ 808      47415247 
+ 808      49554C4F 
+ 808      5F49414E 
+ 809              	.LASF33:
+ 810 0246 63685F72 		.ascii	"ch_received\000"
+ 810      65636569 
+ 810      76656400 
+ 811              	.LASF22:
+ 812 0252 73697A65 		.ascii	"sizetype\000"
+ 812      74797065 
+ 812      00
+ 813              	.LASF10:
+ 814 025b 6C6F6E67 		.ascii	"long long int\000"
+ 814      206C6F6E 
+ 814      6720696E 
+ 814      7400
+ 815              	.LASF34:
+ 816 0269 4C6F6F70 		.ascii	"LoopContinue\000"
+ 816      436F6E74 
+ 816      696E7565 
+ 816      00
+ 817              	.LASF20:
+ 818 0276 63686172 		.ascii	"char\000"
+ 818      00
+ARM GAS  C:\Users\simon\AppData\Local\Temp\cchYLTbe.s 			page 18
+
+
+ 819              	.LASF4:
+ 820 027b 73686F72 		.ascii	"short int\000"
+ 820      7420696E 
+ 820      7400
+ 821              	.LASF26:
+ 822 0285 5061636B 		.ascii	"PacketReadyFlag\000"
+ 822      65745265 
+ 822      61647946 
+ 822      6C616700 
+ 823              	.LASF15:
+ 824 0295 75696E74 		.ascii	"uint16_t\000"
+ 824      31365F74 
+ 824      00
+ 825              	.LASF8:
+ 826 029e 6C6F6E67 		.ascii	"long int\000"
+ 826      20696E74 
+ 826      00
+ 827              	.LASF25:
+ 828 02a7 44617461 		.ascii	"DataBuffer\000"
+ 828      42756666 
+ 828      657200
+ 829              	.LASF21:
+ 830 02b2 6C6F6E67 		.ascii	"long double\000"
+ 830      20646F75 
+ 830      626C6500 
+ 831              	.LASF30:
+ 832 02be 73616D70 		.ascii	"samples\000"
+ 832      6C657300 
+ 833              	.LASF36:
+ 834 02c6 52656769 		.ascii	"Registration_Active\000"
+ 834      73747261 
+ 834      74696F6E 
+ 834      5F416374 
+ 834      69766500 
+ 835              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
