@@ -1,10 +1,9 @@
 #include    "project.h"
 #include    "Menu_Functions.h"
 
-uint8_t     reg_menu;
-uint8_t     Sensitivity;
-int         WaitTime;
-int         ActiveRegistration;
+uint8_t     reg_menu=0;
+uint8_t     Sensitivity=0;
+int         WaitTime=0;
 
 CY_ISR (Custom_ISR_MENU)
 {
@@ -16,7 +15,7 @@ CY_ISR (Custom_ISR_MENU)
         UART_PutString("f. Full Scale\r\np. Sampling Freq\r\nt. Set Temperature Unit\r\nv. Print Data on BCP\r\nb. Start Registration\r\ns. Stop Registration\r\n\r");        
         UART_PutString("***********************************************\r\n");
     }
-    else if (ch_received == 'f')
+    else if (ch_received == 'f' || ch_received == 'F')
     {
         UART_PutString("*********    CHOOSE ACCELEROMETER FULL SCALE    *********\r\r1. +-2g\r\n2. +-4g\r\n3. +-8g\r\n4. +-16g\r\n5. Go back\r\n\r");
         UART_PutString("*********************************************************\r\n");
@@ -135,7 +134,7 @@ CY_ISR (Custom_ISR_MENU)
                     UART_PutString("INVALID INPUT, EXIT....\r\r\r\r\r\r");
             }
     }
-    else if (ch_received == 'p')
+    else if (ch_received == 'p' || ch_received == 'P')
     {
         UART_PutString("*********    CHOOSE ACCELEROMETER SAMPLING FREQUENCY    *********\r\r1. 1 Hz\r\n2. 10 Hz\r\n3. 25 Hz\r\n4. 50 Hz\r\n5. Go back\r");
         UART_PutString("*****************************************************************\r\n");
@@ -246,7 +245,7 @@ CY_ISR (Custom_ISR_MENU)
                 UART_PutString("INVALID INPUT, EXIT....\r\r\r\r\r\r");
         }
     }
-    else if (ch_received == 't')
+    else if (ch_received == 't' || ch_received == 'T')
     {
         UART_PutString("*********    CHOOSE TEMPERATURE UNIT    *********\r\r1. Celsius\r\n2. Fahrenheit\r\n3. Go Back\r");
         UART_PutString("*****************************************************************\r\n");
@@ -301,50 +300,56 @@ CY_ISR (Custom_ISR_MENU)
                 UART_PutString("INVALID INPUT, EXIT....\r\r\r\r\r\r");
         }
     }
-    else if (ch_received == 'b')
+    else if (ch_received == 'b' || ch_received == 'B')
     {
-        if (ActiveRegistration == 1)
+        if (Registration_Active == 1)
         {
             UART_PutString ("*********    REGISTRATION ALREADY STARTED    *********\r");
             UART_PutString("*****************************************************************\r\n");
         }
-        else
+        else if (Registration_Active == 0)
         {
-            ActiveRegistration = 1;
+            Registration_Active = 1;
             UART_PutString ("*********    REGISTRATION STARTED    *********\r");
             UART_PutString("*****************************************************************\r\n");
             EEPROM_writeByte(EEPROM_START_STOP_CONFIG, START);
             EEPROM_waitForWriteComplete();
+            
         }
+        
+        UART_ClearRxBuffer();
     }
-    else if (ch_received == 's')
+    else if (ch_received == 's' || ch_received == 'S')
     {
-        if (ActiveRegistration == 0)
+        if (Registration_Active == 0)
         {
             UART_PutString ("*********    REGISTRATION ALREADY STOPPED    *********\r");
             UART_PutString("*****************************************************************\r\n");
         }
-        else
+        else if (Registration_Active == 1)
         {
-            ActiveRegistration = 0;
-            Led_Update(999,0);
+            Registration_Active = 0;
+            Led_Update(999,999);
             UART_PutString ("*********    REGISTRATION STOPPED    *********\r");
             UART_PutString("*****************************************************************\r\n");
             EEPROM_writeByte(EEPROM_START_STOP_CONFIG, STOP);
             EEPROM_waitForWriteComplete();
+            
         }
+        
+        UART_ClearRxBuffer();
     }
-    else if (ch_received == 'v')
+    else if (ch_received == 'v' || ch_received == 'V')
     {
-        if (ActiveRegistration == 0)
+        if (Registration_Active == 0)
         {
             UART_PutString ("*********    VISUALIZATION STARTED    *********\r");
             UART_PutString("*****************************************************************\r\n");
             ActiveVisualization = 1;
         }
-        else if ( ActiveRegistration == 1)
+        else if ( Registration_Active == 1)
         {
-            ActiveRegistration = 0;
+            Registration_Active = 0;
             UART_PutString ("*********    VISUALIZATION STARTED    *********\r");
             UART_PutString("*****************************************************************\r\n");
             ActiveVisualization = 1;
@@ -354,8 +359,10 @@ CY_ISR (Custom_ISR_MENU)
             UART_PutString ("*********    VISUALIZATION ALREADY STARTED    *********\r");
             UART_PutString("*****************************************************************\r\n");
         }
+        
+        UART_ClearRxBuffer();
     }
-    else if (ch_received == 'u')
+    else if (ch_received == 'u' || ch_received == 'U')
     {
         if (ActiveVisualization == 1)
         {
@@ -368,6 +375,8 @@ CY_ISR (Custom_ISR_MENU)
         {
             UART_PutString("INVALID INPUT....\r\r\r\r\r\r");
         }
+        
+        UART_ClearRxBuffer();
     }
 }
                 

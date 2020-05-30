@@ -16,18 +16,15 @@
     #include "cytypes.h"
     #include "stdio.h"
     
-    #define BYTE_TO_SEND 2
-    #define TRANSMIT_BUFFER_SIZE 1+BYTE_TO_SEND+1
     
     CY_ISR_PROTO (Custom_ISR_ADC);
     CY_ISR_PROTO(Custom_Button_ISR);
     CY_ISR_PROTO(Custom_isr_ACC);
     
-    char DataBuffer[TRANSMIT_BUFFER_SIZE];
     
     volatile uint8 PacketReadyFlag;
     
-    extern int value_temp;
+    extern int16_t value_temp[10];
     
     extern int WTM_Full;
     

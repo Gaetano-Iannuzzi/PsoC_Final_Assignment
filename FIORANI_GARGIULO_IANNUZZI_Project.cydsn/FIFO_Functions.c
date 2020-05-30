@@ -44,6 +44,8 @@ void FIFO_Reset ()
     
     if (ActiveVisualization == 1)   ActiveVisualization = 0;
     
+    
+    
     FIFO_Enable();
 }
             

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccvVu3DK.s 			page 1
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccPiW3bK.s 			page 1
 
 
    1              		.syntax unified
@@ -56,21 +56,20 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccvVu3DK.s 			page 1
   21:InterruptRoutines.c **** int32 value_mv;
   22:InterruptRoutines.c **** uint8 SendBytesFlag=0;
   23:InterruptRoutines.c **** uint16_t PushButtonCounter = 0;  // Initialitazion of the variable
-  24:InterruptRoutines.c **** int Reset_Flag = 0;
-  25:InterruptRoutines.c **** int giro=0;
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccvVu3DK.s 			page 2
+  24:InterruptRoutines.c **** int Reset_Flag = 0,p;
+  25:InterruptRoutines.c **** uint8_t TempData[2];
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccPiW3bK.s 			page 2
 
 
-  26:InterruptRoutines.c **** uint8_t TempData[2];
-  27:InterruptRoutines.c **** char F;
-  28:InterruptRoutines.c **** int     value_temp = 0;
-  29:InterruptRoutines.c **** float   value_temp_float = 0;
-  30:InterruptRoutines.c **** 
-  31:InterruptRoutines.c **** int WTM_Full;
-  32:InterruptRoutines.c **** 
-  33:InterruptRoutines.c **** CY_ISR(Custom_ISR_ADC)
-  34:InterruptRoutines.c **** {
-  33              		.loc 1 34 0
+  26:InterruptRoutines.c **** char F;
+  27:InterruptRoutines.c **** int16_t  value_temp[10];
+  28:InterruptRoutines.c **** float32   value_temp_float = 0;
+  29:InterruptRoutines.c **** 
+  30:InterruptRoutines.c **** int WTM_Full;
+  31:InterruptRoutines.c **** 
+  32:InterruptRoutines.c **** CY_ISR(Custom_ISR_ADC)
+  33:InterruptRoutines.c **** {
+  33              		.loc 1 33 0
   34              		.cfi_startproc
   35              		@ args = 0, pretend = 0, frame = 0
   36              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -78,60 +77,60 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccvVu3DK.s 			page 1
   38              		.cfi_def_cfa_offset 8
   39              		.cfi_offset 4, -8
   40              		.cfi_offset 14, -4
-  35:InterruptRoutines.c ****     // Read Timer status register to bring interrupt line low
-  36:InterruptRoutines.c ****     Timer_ReadStatusRegister();
-  41              		.loc 1 36 0
+  34:InterruptRoutines.c ****     // Read Timer status register to bring interrupt line low
+  35:InterruptRoutines.c ****     Timer_ReadStatusRegister();
+  41              		.loc 1 35 0
   42 0002 FFF7FEFF 		bl	Timer_ReadStatusRegister
   43              	.LVL0:
+  36:InterruptRoutines.c ****     
   37:InterruptRoutines.c ****     
-  38:InterruptRoutines.c ****     
-  39:InterruptRoutines.c ****     value_digit = ADC_DelSig_Read32();
-  44              		.loc 1 39 0
+  38:InterruptRoutines.c ****     value_digit = ADC_DelSig_Read32();
+  44              		.loc 1 38 0
   45 0006 FFF7FEFF 		bl	ADC_DelSig_Read32
   46              	.LVL1:
-  47 000a 284B     		ldr	r3, .L7
+  47 000a 304B     		ldr	r3, .L8
   48 000c 1860     		str	r0, [r3]
-  40:InterruptRoutines.c ****         
-  41:InterruptRoutines.c ****     if (value_digit < 0)        value_digit = 0;
-  49              		.loc 1 41 0
+  39:InterruptRoutines.c ****         
+  40:InterruptRoutines.c ****     if (value_digit < 0)        value_digit = 0;
+  49              		.loc 1 40 0
   50 000e 0028     		cmp	r0, #0
   51 0010 01DA     		bge	.L2
-  52              		.loc 1 41 0 is_stmt 0 discriminator 1
+  52              		.loc 1 40 0 is_stmt 0 discriminator 1
   53 0012 0022     		movs	r2, #0
   54 0014 1A60     		str	r2, [r3]
   55              	.L2:
-  42:InterruptRoutines.c ****     if (value_digit > 65535)    value_digit = 65535;
-  56              		.loc 1 42 0 is_stmt 1
-  57 0016 254B     		ldr	r3, .L7
+  41:InterruptRoutines.c ****     if (value_digit > 65535)    value_digit = 65535;
+  56              		.loc 1 41 0 is_stmt 1
+  57 0016 2D4B     		ldr	r3, .L8
   58 0018 1B68     		ldr	r3, [r3]
   59 001a B3F5803F 		cmp	r3, #65536
   60 001e 03DB     		blt	.L3
-  61              		.loc 1 42 0 is_stmt 0 discriminator 1
+  61              		.loc 1 41 0 is_stmt 0 discriminator 1
   62 0020 4FF6FF72 		movw	r2, #65535
-  63 0024 214B     		ldr	r3, .L7
+  63 0024 294B     		ldr	r3, .L8
   64 0026 1A60     		str	r2, [r3]
   65              	.L3:
-  43:InterruptRoutines.c ****     
-  44:InterruptRoutines.c ****     value_mv = ADC_DelSig_CountsTo_mVolts(value_digit);
-  66              		.loc 1 44 0 is_stmt 1
-  67 0028 204B     		ldr	r3, .L7
+  42:InterruptRoutines.c ****     
+  43:InterruptRoutines.c ****     value_mv = ADC_DelSig_CountsTo_mVolts(value_digit);
+  66              		.loc 1 43 0 is_stmt 1
+  67 0028 284B     		ldr	r3, .L8
   68 002a 1868     		ldr	r0, [r3]
   69 002c FFF7FEFF 		bl	ADC_DelSig_CountsTo_mVolts
   70              	.LVL2:
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccvVu3DK.s 			page 3
+  71 0030 274B     		ldr	r3, .L8+4
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccPiW3bK.s 			page 3
 
 
-  71 0030 1F4B     		ldr	r3, .L7+4
   72 0032 1860     		str	r0, [r3]
-  45:InterruptRoutines.c **** 
-  46:InterruptRoutines.c ****     if      (TempUnit == CELSIUS)           
-  73              		.loc 1 46 0
-  74 0034 1F4B     		ldr	r3, .L7+8
+  44:InterruptRoutines.c **** 
+  45:InterruptRoutines.c ****     if      (TempUnit == CELSIUS)           
+  73              		.loc 1 45 0
+  74 0034 274B     		ldr	r3, .L8+8
   75 0036 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
-  76 0038 A3B9     		cbnz	r3, .L4
-  47:InterruptRoutines.c ****     {
-  48:InterruptRoutines.c ****     value_temp_float = (value_mv-500)/10;
-  77              		.loc 1 48 0
+  76 0038 BBB9     		cbnz	r3, .L4
+  46:InterruptRoutines.c ****     {
+  47:InterruptRoutines.c ****     value_temp_float = (value_mv-500)/10;
+  77              		.loc 1 47 0
   78 003a A0F5FA70 		sub	r0, r0, #500
   79 003e A3F19933 		sub	r3, r3, #-1717986919
   80 0042 83FB0023 		smull	r2, r3, r3, r0
@@ -139,1258 +138,1287 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccvVu3DK.s 			page 1
   82 0048 C0EBA300 		rsb	r0, r0, r3, asr #2
   83 004c FFF7FEFF 		bl	__aeabi_i2f
   84              	.LVL3:
-  85 0050 194C     		ldr	r4, .L7+12
-  86 0052 2060     		str	r0, [r4]	@ float
-  49:InterruptRoutines.c ****     value_temp = (int16)(value_temp_float * 100);
-  87              		.loc 1 49 0
-  88 0054 1949     		ldr	r1, .L7+16
-  89 0056 FFF7FEFF 		bl	__aeabi_fmul
-  90              	.LVL4:
-  91 005a FFF7FEFF 		bl	__aeabi_f2iz
-  92              	.LVL5:
-  93 005e 00B2     		sxth	r0, r0
-  94 0060 6060     		str	r0, [r4, #4]
-  95 0062 1FE0     		b	.L5
-  96              	.L4:
-  50:InterruptRoutines.c ****     }
-  51:InterruptRoutines.c ****     else if (TempUnit == FAHRENHEIT)
-  97              		.loc 1 51 0
-  98 0064 012B     		cmp	r3, #1
-  99 0066 1DD1     		bne	.L5
-  52:InterruptRoutines.c ****     {
-  53:InterruptRoutines.c ****         value_temp_float = (value_mv-500)/10;
- 100              		.loc 1 53 0
- 101 0068 A0F5FA70 		sub	r0, r0, #500
- 102 006c 03F16633 		add	r3, r3, #1717986918
- 103 0070 83FB0023 		smull	r2, r3, r3, r0
- 104 0074 C017     		asrs	r0, r0, #31
- 105 0076 C0EBA300 		rsb	r0, r0, r3, asr #2
- 106 007a FFF7FEFF 		bl	__aeabi_i2f
- 107              	.LVL6:
- 108 007e 0E4C     		ldr	r4, .L7+12
-  54:InterruptRoutines.c ****         value_temp_float = (value_temp_float*9/5)+32;
- 109              		.loc 1 54 0
- 110 0080 0F49     		ldr	r1, .L7+20
- 111 0082 FFF7FEFF 		bl	__aeabi_fmul
- 112              	.LVL7:
- 113 0086 0F49     		ldr	r1, .L7+24
- 114 0088 FFF7FEFF 		bl	__aeabi_fdiv
- 115              	.LVL8:
- 116 008c 4FF08441 		mov	r1, #1107296256
- 117 0090 FFF7FEFF 		bl	__aeabi_fadd
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccvVu3DK.s 			page 4
+  85 0050 214B     		ldr	r3, .L8+12
+  86 0052 1860     		str	r0, [r3]	@ float
+  48:InterruptRoutines.c ****     value_temp[p] = (int16)(value_temp_float * 100);
+  87              		.loc 1 48 0
+  88 0054 214B     		ldr	r3, .L8+16
+  89 0056 1C68     		ldr	r4, [r3]
+  90 0058 2149     		ldr	r1, .L8+20
+  91 005a FFF7FEFF 		bl	__aeabi_fmul
+  92              	.LVL4:
+  93 005e FFF7FEFF 		bl	__aeabi_f2iz
+  94              	.LVL5:
+  95 0062 204B     		ldr	r3, .L8+24
+  96 0064 23F81400 		strh	r0, [r3, r4, lsl #1]	@ movhi
+  97 0068 22E0     		b	.L5
+  98              	.L4:
+  49:InterruptRoutines.c ****     }
+  50:InterruptRoutines.c ****     else if (TempUnit == FAHRENHEIT)
+  99              		.loc 1 50 0
+ 100 006a 012B     		cmp	r3, #1
+ 101 006c 20D1     		bne	.L5
+  51:InterruptRoutines.c ****     {
+  52:InterruptRoutines.c ****         value_temp_float = (value_mv-500)/10;
+ 102              		.loc 1 52 0
+ 103 006e A0F5FA70 		sub	r0, r0, #500
+ 104 0072 03F16633 		add	r3, r3, #1717986918
+ 105 0076 83FB0023 		smull	r2, r3, r3, r0
+ 106 007a C017     		asrs	r0, r0, #31
+ 107 007c C0EBA300 		rsb	r0, r0, r3, asr #2
+ 108 0080 FFF7FEFF 		bl	__aeabi_i2f
+ 109              	.LVL6:
+  53:InterruptRoutines.c ****         value_temp_float = (value_temp_float*9/5)+32;
+ 110              		.loc 1 53 0
+ 111 0084 1849     		ldr	r1, .L8+28
+ 112 0086 FFF7FEFF 		bl	__aeabi_fmul
+ 113              	.LVL7:
+ 114 008a 1849     		ldr	r1, .L8+32
+ 115 008c FFF7FEFF 		bl	__aeabi_fdiv
+ 116              	.LVL8:
+ 117 0090 4FF08441 		mov	r1, #1107296256
+ 118 0094 FFF7FEFF 		bl	__aeabi_fadd
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccPiW3bK.s 			page 4
 
 
- 118              	.LVL9:
- 119 0094 2060     		str	r0, [r4]	@ float
-  55:InterruptRoutines.c ****         value_temp = (int16)(value_temp_float * 100); 
- 120              		.loc 1 55 0
- 121 0096 0949     		ldr	r1, .L7+16
- 122 0098 FFF7FEFF 		bl	__aeabi_fmul
- 123              	.LVL10:
- 124 009c FFF7FEFF 		bl	__aeabi_f2iz
- 125              	.LVL11:
- 126 00a0 00B2     		sxth	r0, r0
- 127 00a2 6060     		str	r0, [r4, #4]
- 128              	.L5:
-  56:InterruptRoutines.c ****     }
-  57:InterruptRoutines.c ****     
+ 119              	.LVL9:
+ 120 0098 0F4B     		ldr	r3, .L8+12
+ 121 009a 1860     		str	r0, [r3]	@ float
+  54:InterruptRoutines.c ****         value_temp[p] = (int16)(value_temp_float * 100); 
+ 122              		.loc 1 54 0
+ 123 009c 0F4B     		ldr	r3, .L8+16
+ 124 009e 1C68     		ldr	r4, [r3]
+ 125 00a0 0F49     		ldr	r1, .L8+20
+ 126 00a2 FFF7FEFF 		bl	__aeabi_fmul
+ 127              	.LVL10:
+ 128 00a6 FFF7FEFF 		bl	__aeabi_f2iz
+ 129              	.LVL11:
+ 130 00aa 0E4B     		ldr	r3, .L8+24
+ 131 00ac 23F81400 		strh	r0, [r3, r4, lsl #1]	@ movhi
+ 132              	.L5:
+  55:InterruptRoutines.c ****     }
+  56:InterruptRoutines.c ****      p++;
+ 133              		.loc 1 56 0
+ 134 00b0 0A4A     		ldr	r2, .L8+16
+ 135 00b2 1368     		ldr	r3, [r2]
+ 136 00b4 0133     		adds	r3, r3, #1
+ 137 00b6 1360     		str	r3, [r2]
+  57:InterruptRoutines.c ****     if(p ==10){
+ 138              		.loc 1 57 0
+ 139 00b8 0A2B     		cmp	r3, #10
+ 140 00ba 05D1     		bne	.L1
   58:InterruptRoutines.c ****     PacketReadyFlag=1;
- 129              		.loc 1 58 0
- 130 00a4 0122     		movs	r2, #1
- 131 00a6 084B     		ldr	r3, .L7+28
- 132 00a8 1A70     		strb	r2, [r3]
- 133 00aa 10BD     		pop	{r4, pc}
- 134              	.L8:
- 135              		.align	2
- 136              	.L7:
- 137 00ac 00000000 		.word	value_digit
- 138 00b0 00000000 		.word	value_mv
- 139 00b4 00000000 		.word	TempUnit
- 140 00b8 00000000 		.word	.LANCHOR0
- 141 00bc 0000C842 		.word	1120403456
- 142 00c0 00001041 		.word	1091567616
- 143 00c4 0000A040 		.word	1084227584
- 144 00c8 00000000 		.word	PacketReadyFlag
- 145              		.cfi_endproc
- 146              	.LFE64:
- 147              		.size	Custom_ISR_ADC, .-Custom_ISR_ADC
- 148              		.section	.text.Custom_Button_ISR,"ax",%progbits
- 149              		.align	2
- 150              		.global	Custom_Button_ISR
- 151              		.thumb
- 152              		.thumb_func
- 153              		.type	Custom_Button_ISR, %function
- 154              	Custom_Button_ISR:
- 155              	.LFB65:
-  59:InterruptRoutines.c ****     }
-  60:InterruptRoutines.c **** 
-  61:InterruptRoutines.c **** 
+ 141              		.loc 1 58 0
+ 142 00bc 0122     		movs	r2, #1
+ 143 00be 0C4B     		ldr	r3, .L8+36
+ 144 00c0 1A70     		strb	r2, [r3]
+  59:InterruptRoutines.c ****         p=0;
+ 145              		.loc 1 59 0
+ 146 00c2 0022     		movs	r2, #0
+ 147 00c4 054B     		ldr	r3, .L8+16
+ 148 00c6 1A60     		str	r2, [r3]
+ 149              	.L1:
+ 150 00c8 10BD     		pop	{r4, pc}
+ 151              	.L9:
+ 152 00ca 00BF     		.align	2
+ 153              	.L8:
+ 154 00cc 00000000 		.word	value_digit
+ 155 00d0 00000000 		.word	value_mv
+ 156 00d4 00000000 		.word	TempUnit
+ 157 00d8 00000000 		.word	.LANCHOR0
+ 158 00dc 00000000 		.word	p
+ 159 00e0 0000C842 		.word	1120403456
+ 160 00e4 00000000 		.word	value_temp
+ 161 00e8 00001041 		.word	1091567616
+ 162 00ec 0000A040 		.word	1084227584
+ 163 00f0 00000000 		.word	PacketReadyFlag
+ 164              		.cfi_endproc
+ 165              	.LFE64:
+ 166              		.size	Custom_ISR_ADC, .-Custom_ISR_ADC
+ 167              		.section	.text.Custom_Button_ISR,"ax",%progbits
+ 168              		.align	2
+ 169              		.global	Custom_Button_ISR
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccPiW3bK.s 			page 5
+
+
+ 170              		.thumb
+ 171              		.thumb_func
+ 172              		.type	Custom_Button_ISR, %function
+ 173              	Custom_Button_ISR:
+ 174              	.LFB65:
+  60:InterruptRoutines.c ****     }
+  61:InterruptRoutines.c ****     }
   62:InterruptRoutines.c **** 
-  63:InterruptRoutines.c **** CY_ISR(Custom_Button_ISR)
-  64:InterruptRoutines.c **** {  
- 156              		.loc 1 64 0
- 157              		.cfi_startproc
- 158              		@ args = 0, pretend = 0, frame = 0
- 159              		@ frame_needed = 0, uses_anonymous_args = 0
- 160 0000 08B5     		push	{r3, lr}
- 161              		.cfi_def_cfa_offset 8
- 162              		.cfi_offset 3, -8
- 163              		.cfi_offset 14, -4
-  65:InterruptRoutines.c ****     PushButtonCounter ++;  // increment of the variable
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccvVu3DK.s 			page 5
+  63:InterruptRoutines.c **** 
+  64:InterruptRoutines.c **** 
+  65:InterruptRoutines.c **** CY_ISR(Custom_Button_ISR)
+  66:InterruptRoutines.c **** {  
+ 175              		.loc 1 66 0
+ 176              		.cfi_startproc
+ 177              		@ args = 0, pretend = 0, frame = 0
+ 178              		@ frame_needed = 0, uses_anonymous_args = 0
+ 179 0000 08B5     		push	{r3, lr}
+ 180              		.cfi_def_cfa_offset 8
+ 181              		.cfi_offset 3, -8
+ 182              		.cfi_offset 14, -4
+  67:InterruptRoutines.c ****     
+  68:InterruptRoutines.c ****     PushButtonCounter ++;  // increment of the variable
+ 183              		.loc 1 68 0
+ 184 0002 054A     		ldr	r2, .L13
+ 185 0004 9388     		ldrh	r3, [r2, #4]
+ 186 0006 0133     		adds	r3, r3, #1
+ 187 0008 9BB2     		uxth	r3, r3
+ 188 000a 9380     		strh	r3, [r2, #4]	@ movhi
+  69:InterruptRoutines.c ****     if(PushButtonCounter > 1)
+ 189              		.loc 1 69 0
+ 190 000c 012B     		cmp	r3, #1
+ 191 000e 02D9     		bls	.L10
+  70:InterruptRoutines.c ****     {
+  71:InterruptRoutines.c ****         UART_PutString("RESET");
+ 192              		.loc 1 71 0
+ 193 0010 0248     		ldr	r0, .L13+4
+ 194 0012 FFF7FEFF 		bl	UART_PutString
+ 195              	.LVL12:
+ 196              	.L10:
+ 197 0016 08BD     		pop	{r3, pc}
+ 198              	.L14:
+ 199              		.align	2
+ 200              	.L13:
+ 201 0018 00000000 		.word	.LANCHOR0
+ 202 001c 00000000 		.word	.LC0
+ 203              		.cfi_endproc
+ 204              	.LFE65:
+ 205              		.size	Custom_Button_ISR, .-Custom_Button_ISR
+ 206              		.section	.text.Custom_isr_ACC,"ax",%progbits
+ 207              		.align	2
+ 208              		.global	Custom_isr_ACC
+ 209              		.thumb
+ 210              		.thumb_func
+ 211              		.type	Custom_isr_ACC, %function
+ 212              	Custom_isr_ACC:
+ 213              	.LFB66:
+  72:InterruptRoutines.c ****     }
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccPiW3bK.s 			page 6
 
 
- 164              		.loc 1 65 0
- 165 0002 054A     		ldr	r2, .L12
- 166 0004 1389     		ldrh	r3, [r2, #8]
- 167 0006 0133     		adds	r3, r3, #1
- 168 0008 9BB2     		uxth	r3, r3
- 169 000a 1381     		strh	r3, [r2, #8]	@ movhi
-  66:InterruptRoutines.c ****     if(PushButtonCounter > 499) FIFO_Reset();
- 170              		.loc 1 66 0
- 171 000c B3F5FA7F 		cmp	r3, #500
- 172 0010 01D3     		bcc	.L9
- 173              		.loc 1 66 0 is_stmt 0 discriminator 1
- 174 0012 FFF7FEFF 		bl	FIFO_Reset
- 175              	.LVL12:
- 176              	.L9:
- 177 0016 08BD     		pop	{r3, pc}
- 178              	.L13:
- 179              		.align	2
- 180              	.L12:
- 181 0018 00000000 		.word	.LANCHOR0
- 182              		.cfi_endproc
- 183              	.LFE65:
- 184              		.size	Custom_Button_ISR, .-Custom_Button_ISR
- 185              		.section	.text.Custom_isr_ACC,"ax",%progbits
- 186              		.align	2
- 187              		.global	Custom_isr_ACC
- 188              		.thumb
- 189              		.thumb_func
- 190              		.type	Custom_isr_ACC, %function
- 191              	Custom_isr_ACC:
- 192              	.LFB66:
-  67:InterruptRoutines.c **** }
-  68:InterruptRoutines.c **** 
-  69:InterruptRoutines.c **** CY_ISR(Custom_isr_ACC)
-  70:InterruptRoutines.c **** {
- 193              		.loc 1 70 0 is_stmt 1
- 194              		.cfi_startproc
- 195              		@ args = 0, pretend = 0, frame = 0
- 196              		@ frame_needed = 0, uses_anonymous_args = 0
- 197              		@ link register save eliminated.
-  71:InterruptRoutines.c ****     WTM_Full=1;
- 198              		.loc 1 71 0
- 199 0000 0122     		movs	r2, #1
- 200 0002 014B     		ldr	r3, .L15
- 201 0004 1A60     		str	r2, [r3]
- 202 0006 7047     		bx	lr
- 203              	.L16:
- 204              		.align	2
- 205              	.L15:
- 206 0008 00000000 		.word	WTM_Full
- 207              		.cfi_endproc
- 208              	.LFE66:
- 209              		.size	Custom_isr_ACC, .-Custom_isr_ACC
- 210              		.comm	WTM_Full,4,4
- 211              		.global	value_temp_float
- 212              		.global	value_temp
- 213              		.comm	F,1,1
- 214              		.comm	TempData,2,4
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccvVu3DK.s 			page 6
+  73:InterruptRoutines.c **** }
+  74:InterruptRoutines.c **** 
+  75:InterruptRoutines.c **** CY_ISR(Custom_isr_ACC)
+  76:InterruptRoutines.c **** {
+ 214              		.loc 1 76 0
+ 215              		.cfi_startproc
+ 216              		@ args = 0, pretend = 0, frame = 0
+ 217              		@ frame_needed = 0, uses_anonymous_args = 0
+ 218              		@ link register save eliminated.
+  77:InterruptRoutines.c ****     WTM_Full=1;
+ 219              		.loc 1 77 0
+ 220 0000 0122     		movs	r2, #1
+ 221 0002 014B     		ldr	r3, .L16
+ 222 0004 1A60     		str	r2, [r3]
+ 223 0006 7047     		bx	lr
+ 224              	.L17:
+ 225              		.align	2
+ 226              	.L16:
+ 227 0008 00000000 		.word	WTM_Full
+ 228              		.cfi_endproc
+ 229              	.LFE66:
+ 230              		.size	Custom_isr_ACC, .-Custom_isr_ACC
+ 231              		.comm	WTM_Full,4,4
+ 232              		.global	value_temp_float
+ 233              		.comm	value_temp,20,4
+ 234              		.comm	F,1,1
+ 235              		.comm	TempData,2,4
+ 236              		.comm	p,4,4
+ 237              		.global	Reset_Flag
+ 238              		.global	PushButtonCounter
+ 239              		.global	SendBytesFlag
+ 240              		.comm	value_mv,4,4
+ 241              		.comm	value_digit,4,4
+ 242              		.comm	TempUnit,1,1
+ 243              		.comm	Sensitivity,1,1
+ 244              		.comm	Registration_Active,4,4
+ 245              		.comm	MenuActive,4,4
+ 246              		.comm	LoopContinue,4,4
+ 247              		.comm	ch_received,1,1
+ 248              		.comm	ActiveVisualization,4,4
+ 249              		.comm	j,2,2
+ 250              		.comm	m,2,2
+ 251              		.comm	samples,2,2
+ 252              		.comm	ctrl_reg5,1,1
+ 253              		.comm	fifo_reg,1,1
+ 254              		.comm	PacketReadyFlag,1,1
+ 255              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 256              		.align	2
+ 257              	.LC0:
+ 258 0000 52455345 		.ascii	"RESET\000"
+ 258      5400
+ 259              		.bss
+ 260              		.align	2
+ 261              		.set	.LANCHOR0,. + 0
+ 262              		.type	value_temp_float, %object
+ 263              		.size	value_temp_float, 4
+ 264              	value_temp_float:
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccPiW3bK.s 			page 7
 
 
- 215              		.global	giro
- 216              		.global	Reset_Flag
- 217              		.global	PushButtonCounter
- 218              		.global	SendBytesFlag
- 219              		.comm	value_mv,4,4
- 220              		.comm	value_digit,4,4
- 221              		.comm	TempUnit,1,1
- 222              		.comm	Sensitivity,1,1
- 223              		.comm	Registration_Active,4,4
- 224              		.comm	MenuActive,4,4
- 225              		.comm	LoopContinue,4,4
- 226              		.comm	ch_received,1,1
- 227              		.comm	ActiveVisualization,4,4
- 228              		.comm	ActiveRegistration,4,4
- 229              		.comm	j,2,2
- 230              		.comm	m,2,2
- 231              		.comm	samples,2,2
- 232              		.comm	ctrl_reg5,1,1
- 233              		.comm	fifo_reg,1,1
- 234              		.comm	PacketReadyFlag,1,1
- 235              		.comm	DataBuffer,4,4
- 236              		.bss
- 237              		.align	2
- 238              		.set	.LANCHOR0,. + 0
- 239              		.type	value_temp_float, %object
- 240              		.size	value_temp_float, 4
- 241              	value_temp_float:
- 242 0000 00000000 		.space	4
- 243              		.type	value_temp, %object
- 244              		.size	value_temp, 4
- 245              	value_temp:
- 246 0004 00000000 		.space	4
- 247              		.type	PushButtonCounter, %object
- 248              		.size	PushButtonCounter, 2
- 249              	PushButtonCounter:
- 250 0008 0000     		.space	2
- 251 000a 0000     		.space	2
- 252              		.type	giro, %object
- 253              		.size	giro, 4
- 254              	giro:
- 255 000c 00000000 		.space	4
- 256              		.type	Reset_Flag, %object
- 257              		.size	Reset_Flag, 4
- 258              	Reset_Flag:
- 259 0010 00000000 		.space	4
- 260              		.type	SendBytesFlag, %object
- 261              		.size	SendBytesFlag, 1
- 262              	SendBytesFlag:
- 263 0014 00       		.space	1
- 264              		.text
- 265              	.Letext0:
- 266              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
- 267              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
- 268              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
- 269              		.file 5 "InterruptRoutines.h"
- 270              		.file 6 "Generated_Source\\PSoC5/core_cm3.h"
- 271              		.file 7 "FIFO_Functions.h"
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccvVu3DK.s 			page 7
+ 265 0000 00000000 		.space	4
+ 266              		.type	PushButtonCounter, %object
+ 267              		.size	PushButtonCounter, 2
+ 268              	PushButtonCounter:
+ 269 0004 0000     		.space	2
+ 270 0006 0000     		.space	2
+ 271              		.type	Reset_Flag, %object
+ 272              		.size	Reset_Flag, 4
+ 273              	Reset_Flag:
+ 274 0008 00000000 		.space	4
+ 275              		.type	SendBytesFlag, %object
+ 276              		.size	SendBytesFlag, 1
+ 277              	SendBytesFlag:
+ 278 000c 00       		.space	1
+ 279              		.text
+ 280              	.Letext0:
+ 281              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
+ 282              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
+ 283              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 284              		.file 5 "InterruptRoutines.h"
+ 285              		.file 6 "Generated_Source\\PSoC5/core_cm3.h"
+ 286              		.file 7 "FIFO_Functions.h"
+ 287              		.file 8 "Menu_Functions.h"
+ 288              		.file 9 "Generated_Source\\PSoC5/Timer.h"
+ 289              		.file 10 "Generated_Source\\PSoC5/ADC_DelSig.h"
+ 290              		.file 11 "Generated_Source\\PSoC5/UART.h"
+ 291              		.section	.debug_info,"",%progbits
+ 292              	.Ldebug_info0:
+ 293 0000 70030000 		.4byte	0x370
+ 294 0004 0400     		.2byte	0x4
+ 295 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 296 000a 04       		.byte	0x4
+ 297 000b 01       		.uleb128 0x1
+ 298 000c EB000000 		.4byte	.LASF53
+ 299 0010 0C       		.byte	0xc
+ 300 0011 80030000 		.4byte	.LASF54
+ 301 0015 87020000 		.4byte	.LASF55
+ 302 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 303 001d 00000000 		.4byte	0
+ 304 0021 00000000 		.4byte	.Ldebug_line0
+ 305 0025 02       		.uleb128 0x2
+ 306 0026 01       		.byte	0x1
+ 307 0027 06       		.byte	0x6
+ 308 0028 D1000000 		.4byte	.LASF0
+ 309 002c 03       		.uleb128 0x3
+ 310 002d 20000000 		.4byte	.LASF2
+ 311 0031 02       		.byte	0x2
+ 312 0032 1D       		.byte	0x1d
+ 313 0033 37000000 		.4byte	0x37
+ 314 0037 02       		.uleb128 0x2
+ 315 0038 01       		.byte	0x1
+ 316 0039 08       		.byte	0x8
+ 317 003a DD000000 		.4byte	.LASF1
+ 318 003e 03       		.uleb128 0x3
+ 319 003f 2C020000 		.4byte	.LASF3
+ 320 0043 02       		.byte	0x2
+ 321 0044 29       		.byte	0x29
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccPiW3bK.s 			page 8
 
 
- 272              		.file 8 "Menu_Functions.h"
- 273              		.file 9 "Generated_Source\\PSoC5/Timer.h"
- 274              		.file 10 "Generated_Source\\PSoC5/ADC_DelSig.h"
- 275              		.section	.debug_info,"",%progbits
- 276              	.Ldebug_info0:
- 277 0000 7E030000 		.4byte	0x37e
- 278 0004 0400     		.2byte	0x4
- 279 0006 00000000 		.4byte	.Ldebug_abbrev0
- 280 000a 04       		.byte	0x4
- 281 000b 01       		.uleb128 0x1
- 282 000c FE000000 		.4byte	.LASF55
- 283 0010 0C       		.byte	0xc
- 284 0011 97030000 		.4byte	.LASF56
- 285 0015 9D020000 		.4byte	.LASF57
- 286 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 287 001d 00000000 		.4byte	0
- 288 0021 00000000 		.4byte	.Ldebug_line0
- 289 0025 02       		.uleb128 0x2
- 290 0026 01       		.byte	0x1
- 291 0027 06       		.byte	0x6
- 292 0028 E4000000 		.4byte	.LASF0
- 293 002c 03       		.uleb128 0x3
- 294 002d 20000000 		.4byte	.LASF2
- 295 0031 02       		.byte	0x2
- 296 0032 1D       		.byte	0x1d
- 297 0033 37000000 		.4byte	0x37
- 298 0037 02       		.uleb128 0x2
- 299 0038 01       		.byte	0x1
- 300 0039 08       		.byte	0x8
- 301 003a F0000000 		.4byte	.LASF1
- 302 003e 03       		.uleb128 0x3
- 303 003f 42020000 		.4byte	.LASF3
- 304 0043 02       		.byte	0x2
- 305 0044 29       		.byte	0x29
- 306 0045 49000000 		.4byte	0x49
- 307 0049 02       		.uleb128 0x2
- 308 004a 02       		.byte	0x2
- 309 004b 05       		.byte	0x5
- 310 004c 46030000 		.4byte	.LASF4
- 311 0050 03       		.uleb128 0x3
- 312 0051 16020000 		.4byte	.LASF5
- 313 0055 02       		.byte	0x2
- 314 0056 2B       		.byte	0x2b
- 315 0057 5B000000 		.4byte	0x5b
- 316 005b 02       		.uleb128 0x2
- 317 005c 02       		.byte	0x2
- 318 005d 07       		.byte	0x7
- 319 005e 7A000000 		.4byte	.LASF6
- 320 0062 03       		.uleb128 0x3
- 321 0063 57000000 		.4byte	.LASF7
- 322 0067 02       		.byte	0x2
- 323 0068 3F       		.byte	0x3f
- 324 0069 6D000000 		.4byte	0x6d
- 325 006d 02       		.uleb128 0x2
- 326 006e 04       		.byte	0x4
- 327 006f 05       		.byte	0x5
- 328 0070 69030000 		.4byte	.LASF8
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccvVu3DK.s 			page 8
+ 322 0045 49000000 		.4byte	0x49
+ 323 0049 02       		.uleb128 0x2
+ 324 004a 02       		.byte	0x2
+ 325 004b 05       		.byte	0x5
+ 326 004c 25030000 		.4byte	.LASF4
+ 327 0050 03       		.uleb128 0x3
+ 328 0051 F8010000 		.4byte	.LASF5
+ 329 0055 02       		.byte	0x2
+ 330 0056 2B       		.byte	0x2b
+ 331 0057 5B000000 		.4byte	0x5b
+ 332 005b 02       		.uleb128 0x2
+ 333 005c 02       		.byte	0x2
+ 334 005d 07       		.byte	0x7
+ 335 005e 67000000 		.4byte	.LASF6
+ 336 0062 03       		.uleb128 0x3
+ 337 0063 44000000 		.4byte	.LASF7
+ 338 0067 02       		.byte	0x2
+ 339 0068 3F       		.byte	0x3f
+ 340 0069 6D000000 		.4byte	0x6d
+ 341 006d 02       		.uleb128 0x2
+ 342 006e 04       		.byte	0x4
+ 343 006f 05       		.byte	0x5
+ 344 0070 48030000 		.4byte	.LASF8
+ 345 0074 02       		.uleb128 0x2
+ 346 0075 04       		.byte	0x4
+ 347 0076 07       		.byte	0x7
+ 348 0077 99010000 		.4byte	.LASF9
+ 349 007b 02       		.uleb128 0x2
+ 350 007c 08       		.byte	0x8
+ 351 007d 05       		.byte	0x5
+ 352 007e 05030000 		.4byte	.LASF10
+ 353 0082 02       		.uleb128 0x2
+ 354 0083 08       		.byte	0x8
+ 355 0084 07       		.byte	0x7
+ 356 0085 40020000 		.4byte	.LASF11
+ 357 0089 04       		.uleb128 0x4
+ 358 008a 04       		.byte	0x4
+ 359 008b 05       		.byte	0x5
+ 360 008c 696E7400 		.ascii	"int\000"
+ 361 0090 02       		.uleb128 0x2
+ 362 0091 04       		.byte	0x4
+ 363 0092 07       		.byte	0x7
+ 364 0093 7A000000 		.4byte	.LASF12
+ 365 0097 03       		.uleb128 0x3
+ 366 0098 57020000 		.4byte	.LASF13
+ 367 009c 03       		.byte	0x3
+ 368 009d 18       		.byte	0x18
+ 369 009e 2C000000 		.4byte	0x2c
+ 370 00a2 03       		.uleb128 0x3
+ 371 00a3 74020000 		.4byte	.LASF14
+ 372 00a7 03       		.byte	0x3
+ 373 00a8 20       		.byte	0x20
+ 374 00a9 3E000000 		.4byte	0x3e
+ 375 00ad 03       		.uleb128 0x3
+ 376 00ae 3F030000 		.4byte	.LASF15
+ 377 00b2 03       		.byte	0x3
+ 378 00b3 24       		.byte	0x24
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccPiW3bK.s 			page 9
 
 
- 329 0074 02       		.uleb128 0x2
- 330 0075 04       		.byte	0x4
- 331 0076 07       		.byte	0x7
- 332 0077 AC010000 		.4byte	.LASF9
- 333 007b 02       		.uleb128 0x2
- 334 007c 08       		.byte	0x8
- 335 007d 05       		.byte	0x5
- 336 007e 1B030000 		.4byte	.LASF10
- 337 0082 02       		.uleb128 0x2
- 338 0083 08       		.byte	0x8
- 339 0084 07       		.byte	0x7
- 340 0085 56020000 		.4byte	.LASF11
- 341 0089 04       		.uleb128 0x4
- 342 008a 04       		.byte	0x4
- 343 008b 05       		.byte	0x5
- 344 008c 696E7400 		.ascii	"int\000"
- 345 0090 02       		.uleb128 0x2
- 346 0091 04       		.byte	0x4
- 347 0092 07       		.byte	0x7
- 348 0093 8D000000 		.4byte	.LASF12
- 349 0097 03       		.uleb128 0x3
- 350 0098 6D020000 		.4byte	.LASF13
- 351 009c 03       		.byte	0x3
- 352 009d 18       		.byte	0x18
- 353 009e 2C000000 		.4byte	0x2c
- 354 00a2 03       		.uleb128 0x3
- 355 00a3 8A020000 		.4byte	.LASF14
- 356 00a7 03       		.byte	0x3
- 357 00a8 20       		.byte	0x20
- 358 00a9 3E000000 		.4byte	0x3e
- 359 00ad 03       		.uleb128 0x3
- 360 00ae 60030000 		.4byte	.LASF15
- 361 00b2 03       		.byte	0x3
- 362 00b3 24       		.byte	0x24
- 363 00b4 50000000 		.4byte	0x50
- 364 00b8 03       		.uleb128 0x3
- 365 00b9 9E010000 		.4byte	.LASF16
- 366 00bd 03       		.byte	0x3
- 367 00be 2C       		.byte	0x2c
- 368 00bf 62000000 		.4byte	0x62
- 369 00c3 05       		.uleb128 0x5
- 370 00c4 9A000000 		.4byte	.LASF17
- 371 00c8 04       		.byte	0x4
- 372 00c9 E401     		.2byte	0x1e4
- 373 00cb 37000000 		.4byte	0x37
- 374 00cf 05       		.uleb128 0x5
- 375 00d0 A6010000 		.4byte	.LASF18
- 376 00d4 04       		.byte	0x4
- 377 00d5 E801     		.2byte	0x1e8
- 378 00d7 49000000 		.4byte	0x49
- 379 00db 05       		.uleb128 0x5
- 380 00dc BE010000 		.4byte	.LASF19
- 381 00e0 04       		.byte	0x4
- 382 00e1 E901     		.2byte	0x1e9
- 383 00e3 6D000000 		.4byte	0x6d
- 384 00e7 02       		.uleb128 0x2
- 385 00e8 04       		.byte	0x4
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccvVu3DK.s 			page 9
+ 379 00b4 50000000 		.4byte	0x50
+ 380 00b8 03       		.uleb128 0x3
+ 381 00b9 8B010000 		.4byte	.LASF16
+ 382 00bd 03       		.byte	0x3
+ 383 00be 2C       		.byte	0x2c
+ 384 00bf 62000000 		.4byte	0x62
+ 385 00c3 05       		.uleb128 0x5
+ 386 00c4 87000000 		.4byte	.LASF17
+ 387 00c8 04       		.byte	0x4
+ 388 00c9 E401     		.2byte	0x1e4
+ 389 00cb 37000000 		.4byte	0x37
+ 390 00cf 05       		.uleb128 0x5
+ 391 00d0 93010000 		.4byte	.LASF18
+ 392 00d4 04       		.byte	0x4
+ 393 00d5 E801     		.2byte	0x1e8
+ 394 00d7 49000000 		.4byte	0x49
+ 395 00db 05       		.uleb128 0x5
+ 396 00dc AB010000 		.4byte	.LASF19
+ 397 00e0 04       		.byte	0x4
+ 398 00e1 E901     		.2byte	0x1e9
+ 399 00e3 6D000000 		.4byte	0x6d
+ 400 00e7 05       		.uleb128 0x5
+ 401 00e8 13020000 		.4byte	.LASF20
+ 402 00ec 04       		.byte	0x4
+ 403 00ed EA01     		.2byte	0x1ea
+ 404 00ef F3000000 		.4byte	0xf3
+ 405 00f3 02       		.uleb128 0x2
+ 406 00f4 04       		.byte	0x4
+ 407 00f5 04       		.byte	0x4
+ 408 00f6 B7000000 		.4byte	.LASF21
+ 409 00fa 02       		.uleb128 0x2
+ 410 00fb 08       		.byte	0x8
+ 411 00fc 04       		.byte	0x4
+ 412 00fd 03020000 		.4byte	.LASF22
+ 413 0101 02       		.uleb128 0x2
+ 414 0102 01       		.byte	0x1
+ 415 0103 08       		.byte	0x8
+ 416 0104 20030000 		.4byte	.LASF23
+ 417 0108 06       		.uleb128 0x6
+ 418 0109 C3000000 		.4byte	0xc3
+ 419 010d 02       		.uleb128 0x2
+ 420 010e 08       		.byte	0x8
+ 421 010f 04       		.byte	0x4
+ 422 0110 5D030000 		.4byte	.LASF24
+ 423 0114 02       		.uleb128 0x2
+ 424 0115 04       		.byte	0x4
+ 425 0116 07       		.byte	0x7
+ 426 0117 EA020000 		.4byte	.LASF25
+ 427 011b 07       		.uleb128 0x7
+ 428 011c 35000000 		.4byte	.LASF26
+ 429 0120 01       		.byte	0x1
+ 430 0121 20       		.byte	0x20
+ 431 0122 00000000 		.4byte	.LFB64
+ 432 0126 F4000000 		.4byte	.LFE64-.LFB64
+ 433 012a 01       		.uleb128 0x1
+ 434 012b 9C       		.byte	0x9c
+ 435 012c 4C010000 		.4byte	0x14c
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccPiW3bK.s 			page 10
 
 
- 386 00e9 04       		.byte	0x4
- 387 00ea CA000000 		.4byte	.LASF20
- 388 00ee 02       		.uleb128 0x2
- 389 00ef 08       		.byte	0x8
- 390 00f0 04       		.byte	0x4
- 391 00f1 21020000 		.4byte	.LASF21
- 392 00f5 02       		.uleb128 0x2
- 393 00f6 01       		.byte	0x1
- 394 00f7 08       		.byte	0x8
- 395 00f8 72030000 		.4byte	.LASF22
- 396 00fc 06       		.uleb128 0x6
- 397 00fd C3000000 		.4byte	0xc3
- 398 0101 02       		.uleb128 0x2
- 399 0102 08       		.byte	0x8
- 400 0103 04       		.byte	0x4
- 401 0104 83030000 		.4byte	.LASF23
- 402 0108 02       		.uleb128 0x2
- 403 0109 04       		.byte	0x4
- 404 010a 07       		.byte	0x7
- 405 010b 00030000 		.4byte	.LASF24
- 406 010f 07       		.uleb128 0x7
- 407 0110 48000000 		.4byte	.LASF25
- 408 0114 01       		.byte	0x1
- 409 0115 21       		.byte	0x21
- 410 0116 00000000 		.4byte	.LFB64
- 411 011a CC000000 		.4byte	.LFE64-.LFB64
- 412 011e 01       		.uleb128 0x1
- 413 011f 9C       		.byte	0x9c
- 414 0120 40010000 		.4byte	0x140
- 415 0124 08       		.uleb128 0x8
- 416 0125 06000000 		.4byte	.LVL0
- 417 0129 55030000 		.4byte	0x355
- 418 012d 08       		.uleb128 0x8
- 419 012e 0A000000 		.4byte	.LVL1
- 420 0132 60030000 		.4byte	0x360
- 421 0136 08       		.uleb128 0x8
- 422 0137 30000000 		.4byte	.LVL2
- 423 013b 6B030000 		.4byte	0x36b
- 424 013f 00       		.byte	0
- 425 0140 09       		.uleb128 0x9
- 426 0141 B8000000 		.4byte	.LASF26
- 427 0145 01       		.byte	0x1
- 428 0146 3F       		.byte	0x3f
- 429 0147 00000000 		.4byte	.LFB65
- 430 014b 1C000000 		.4byte	.LFE65-.LFB65
- 431 014f 01       		.uleb128 0x1
- 432 0150 9C       		.byte	0x9c
- 433 0151 5F010000 		.4byte	0x15f
- 434 0155 08       		.uleb128 0x8
- 435 0156 16000000 		.4byte	.LVL12
- 436 015a 76030000 		.4byte	0x376
- 437 015e 00       		.byte	0
- 438 015f 0A       		.uleb128 0xa
- 439 0160 A9000000 		.4byte	.LASF58
- 440 0164 01       		.byte	0x1
- 441 0165 45       		.byte	0x45
- 442 0166 00000000 		.4byte	.LFB66
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccvVu3DK.s 			page 10
+ 436 0130 08       		.uleb128 0x8
+ 437 0131 06000000 		.4byte	.LVL0
+ 438 0135 47030000 		.4byte	0x347
+ 439 0139 08       		.uleb128 0x8
+ 440 013a 0A000000 		.4byte	.LVL1
+ 441 013e 52030000 		.4byte	0x352
+ 442 0142 08       		.uleb128 0x8
+ 443 0143 30000000 		.4byte	.LVL2
+ 444 0147 5D030000 		.4byte	0x35d
+ 445 014b 00       		.byte	0
+ 446 014c 09       		.uleb128 0x9
+ 447 014d A5000000 		.4byte	.LASF27
+ 448 0151 01       		.byte	0x1
+ 449 0152 41       		.byte	0x41
+ 450 0153 00000000 		.4byte	.LFB65
+ 451 0157 20000000 		.4byte	.LFE65-.LFB65
+ 452 015b 01       		.uleb128 0x1
+ 453 015c 9C       		.byte	0x9c
+ 454 015d 75010000 		.4byte	0x175
+ 455 0161 0A       		.uleb128 0xa
+ 456 0162 16000000 		.4byte	.LVL12
+ 457 0166 68030000 		.4byte	0x368
+ 458 016a 0B       		.uleb128 0xb
+ 459 016b 01       		.uleb128 0x1
+ 460 016c 50       		.byte	0x50
+ 461 016d 05       		.uleb128 0x5
+ 462 016e 03       		.byte	0x3
+ 463 016f 00000000 		.4byte	.LC0
+ 464 0173 00       		.byte	0
+ 465 0174 00       		.byte	0
+ 466 0175 0C       		.uleb128 0xc
+ 467 0176 96000000 		.4byte	.LASF56
+ 468 017a 01       		.byte	0x1
+ 469 017b 4B       		.byte	0x4b
+ 470 017c 00000000 		.4byte	.LFB66
+ 471 0180 0C000000 		.4byte	.LFE66-.LFB66
+ 472 0184 01       		.uleb128 0x1
+ 473 0185 9C       		.byte	0x9c
+ 474 0186 0D       		.uleb128 0xd
+ 475 0187 2F030000 		.4byte	.LASF28
+ 476 018b 05       		.byte	0x5
+ 477 018c 19       		.byte	0x19
+ 478 018d 08010000 		.4byte	0x108
+ 479 0191 05       		.uleb128 0x5
+ 480 0192 03       		.byte	0x3
+ 481 0193 00000000 		.4byte	PacketReadyFlag
+ 482 0197 0E       		.uleb128 0xe
+ 483 0198 A2000000 		.4byte	0xa2
+ 484 019c A7010000 		.4byte	0x1a7
+ 485 01a0 0F       		.uleb128 0xf
+ 486 01a1 14010000 		.4byte	0x114
+ 487 01a5 09       		.byte	0x9
+ 488 01a6 00       		.byte	0
+ 489 01a7 0D       		.uleb128 0xd
+ 490 01a8 7C020000 		.4byte	.LASF29
+ 491 01ac 01       		.byte	0x1
+ 492 01ad 1B       		.byte	0x1b
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccPiW3bK.s 			page 11
 
 
- 443 016a 0C000000 		.4byte	.LFE66-.LFB66
- 444 016e 01       		.uleb128 0x1
- 445 016f 9C       		.byte	0x9c
- 446 0170 0B       		.uleb128 0xb
- 447 0171 F5000000 		.4byte	0xf5
- 448 0175 80010000 		.4byte	0x180
- 449 0179 0C       		.uleb128 0xc
- 450 017a 08010000 		.4byte	0x108
- 451 017e 03       		.byte	0x3
- 452 017f 00       		.byte	0
- 453 0180 0D       		.uleb128 0xd
- 454 0181 3B030000 		.4byte	.LASF27
- 455 0185 05       		.byte	0x5
- 456 0186 1A       		.byte	0x1a
- 457 0187 70010000 		.4byte	0x170
- 458 018b 05       		.uleb128 0x5
- 459 018c 03       		.byte	0x3
- 460 018d 00000000 		.4byte	DataBuffer
- 461 0191 0D       		.uleb128 0xd
- 462 0192 50030000 		.4byte	.LASF28
- 463 0196 05       		.byte	0x5
- 464 0197 1C       		.byte	0x1c
- 465 0198 FC000000 		.4byte	0xfc
- 466 019c 05       		.uleb128 0x5
- 467 019d 03       		.byte	0x3
- 468 019e 00000000 		.4byte	PacketReadyFlag
- 469 01a2 0D       		.uleb128 0xd
- 470 01a3 92020000 		.4byte	.LASF29
- 471 01a7 01       		.byte	0x1
- 472 01a8 1C       		.byte	0x1c
- 473 01a9 89000000 		.4byte	0x89
- 474 01ad 05       		.uleb128 0x5
- 475 01ae 03       		.byte	0x3
- 476 01af 00000000 		.4byte	value_temp
- 477 01b3 0D       		.uleb128 0xd
- 478 01b4 8C010000 		.4byte	.LASF30
- 479 01b8 01       		.byte	0x1
- 480 01b9 1F       		.byte	0x1f
- 481 01ba 89000000 		.4byte	0x89
- 482 01be 05       		.uleb128 0x5
- 483 01bf 03       		.byte	0x3
- 484 01c0 00000000 		.4byte	WTM_Full
- 485 01c4 0E       		.uleb128 0xe
- 486 01c5 FE010000 		.4byte	.LASF31
- 487 01c9 06       		.byte	0x6
- 488 01ca 1207     		.2byte	0x712
- 489 01cc D0010000 		.4byte	0x1d0
- 490 01d0 06       		.uleb128 0x6
- 491 01d1 B8000000 		.4byte	0xb8
- 492 01d5 0D       		.uleb128 0xd
- 493 01d6 81020000 		.4byte	.LASF32
- 494 01da 07       		.byte	0x7
- 495 01db 1A       		.byte	0x1a
- 496 01dc 97000000 		.4byte	0x97
- 497 01e0 05       		.uleb128 0x5
- 498 01e1 03       		.byte	0x3
- 499 01e2 00000000 		.4byte	fifo_reg
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccvVu3DK.s 			page 11
+ 493 01ae 97010000 		.4byte	0x197
+ 494 01b2 05       		.uleb128 0x5
+ 495 01b3 03       		.byte	0x3
+ 496 01b4 00000000 		.4byte	value_temp
+ 497 01b8 0D       		.uleb128 0xd
+ 498 01b9 79010000 		.4byte	.LASF30
+ 499 01bd 01       		.byte	0x1
+ 500 01be 1E       		.byte	0x1e
+ 501 01bf 89000000 		.4byte	0x89
+ 502 01c3 05       		.uleb128 0x5
+ 503 01c4 03       		.byte	0x3
+ 504 01c5 00000000 		.4byte	WTM_Full
+ 505 01c9 10       		.uleb128 0x10
+ 506 01ca E0010000 		.4byte	.LASF31
+ 507 01ce 06       		.byte	0x6
+ 508 01cf 1207     		.2byte	0x712
+ 509 01d1 D5010000 		.4byte	0x1d5
+ 510 01d5 06       		.uleb128 0x6
+ 511 01d6 B8000000 		.4byte	0xb8
+ 512 01da 0D       		.uleb128 0xd
+ 513 01db 6B020000 		.4byte	.LASF32
+ 514 01df 07       		.byte	0x7
+ 515 01e0 1A       		.byte	0x1a
+ 516 01e1 97000000 		.4byte	0x97
+ 517 01e5 05       		.uleb128 0x5
+ 518 01e6 03       		.byte	0x3
+ 519 01e7 00000000 		.4byte	fifo_reg
+ 520 01eb 0D       		.uleb128 0xd
+ 521 01ec 36020000 		.4byte	.LASF33
+ 522 01f0 07       		.byte	0x7
+ 523 01f1 1B       		.byte	0x1b
+ 524 01f2 97000000 		.4byte	0x97
+ 525 01f6 05       		.uleb128 0x5
+ 526 01f7 03       		.byte	0x3
+ 527 01f8 00000000 		.4byte	ctrl_reg5
+ 528 01fc 0D       		.uleb128 0xd
+ 529 01fd 69030000 		.4byte	.LASF34
+ 530 0201 07       		.byte	0x7
+ 531 0202 1C       		.byte	0x1c
+ 532 0203 AD000000 		.4byte	0xad
+ 533 0207 05       		.uleb128 0x5
+ 534 0208 03       		.byte	0x3
+ 535 0209 00000000 		.4byte	samples
+ 536 020d 11       		.uleb128 0x11
+ 537 020e 6D00     		.ascii	"m\000"
+ 538 0210 07       		.byte	0x7
+ 539 0211 1D       		.byte	0x1d
+ 540 0212 AD000000 		.4byte	0xad
+ 541 0216 05       		.uleb128 0x5
+ 542 0217 03       		.byte	0x3
+ 543 0218 00000000 		.4byte	m
+ 544 021c 11       		.uleb128 0x11
+ 545 021d 6A00     		.ascii	"j\000"
+ 546 021f 07       		.byte	0x7
+ 547 0220 1E       		.byte	0x1e
+ 548 0221 A2000000 		.4byte	0xa2
+ 549 0225 05       		.uleb128 0x5
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccPiW3bK.s 			page 12
 
 
- 500 01e6 0D       		.uleb128 0xd
- 501 01e7 4C020000 		.4byte	.LASF33
- 502 01eb 07       		.byte	0x7
- 503 01ec 1B       		.byte	0x1b
- 504 01ed 97000000 		.4byte	0x97
- 505 01f1 05       		.uleb128 0x5
- 506 01f2 03       		.byte	0x3
- 507 01f3 00000000 		.4byte	ctrl_reg5
- 508 01f7 0D       		.uleb128 0xd
- 509 01f8 8F030000 		.4byte	.LASF34
- 510 01fc 07       		.byte	0x7
- 511 01fd 1C       		.byte	0x1c
- 512 01fe AD000000 		.4byte	0xad
- 513 0202 05       		.uleb128 0x5
- 514 0203 03       		.byte	0x3
- 515 0204 00000000 		.4byte	samples
- 516 0208 0F       		.uleb128 0xf
- 517 0209 6D00     		.ascii	"m\000"
- 518 020b 07       		.byte	0x7
- 519 020c 1D       		.byte	0x1d
- 520 020d AD000000 		.4byte	0xad
- 521 0211 05       		.uleb128 0x5
- 522 0212 03       		.byte	0x3
- 523 0213 00000000 		.4byte	m
- 524 0217 0F       		.uleb128 0xf
- 525 0218 6A00     		.ascii	"j\000"
- 526 021a 07       		.byte	0x7
- 527 021b 1E       		.byte	0x1e
- 528 021c A2000000 		.4byte	0xa2
- 529 0220 05       		.uleb128 0x5
- 530 0221 03       		.byte	0x3
- 531 0222 00000000 		.4byte	j
- 532 0226 0D       		.uleb128 0xd
- 533 0227 2A000000 		.4byte	.LASF35
- 534 022b 08       		.byte	0x8
- 535 022c 2D       		.byte	0x2d
- 536 022d 89000000 		.4byte	0x89
- 537 0231 05       		.uleb128 0x5
- 538 0232 03       		.byte	0x3
- 539 0233 00000000 		.4byte	ActiveRegistration
- 540 0237 0D       		.uleb128 0xd
- 541 0238 D0000000 		.4byte	.LASF36
- 542 023c 08       		.byte	0x8
- 543 023d 2E       		.byte	0x2e
- 544 023e 89000000 		.4byte	0x89
- 545 0242 05       		.uleb128 0x5
- 546 0243 03       		.byte	0x3
- 547 0244 00000000 		.4byte	ActiveVisualization
- 548 0248 0D       		.uleb128 0xd
- 549 0249 F4020000 		.4byte	.LASF37
- 550 024d 08       		.byte	0x8
- 551 024e 30       		.byte	0x30
- 552 024f F5000000 		.4byte	0xf5
- 553 0253 05       		.uleb128 0x5
- 554 0254 03       		.byte	0x3
- 555 0255 00000000 		.4byte	ch_received
- 556 0259 0D       		.uleb128 0xd
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccvVu3DK.s 			page 12
+ 550 0226 03       		.byte	0x3
+ 551 0227 00000000 		.4byte	j
+ 552 022b 0D       		.uleb128 0xd
+ 553 022c BD000000 		.4byte	.LASF35
+ 554 0230 08       		.byte	0x8
+ 555 0231 2D       		.byte	0x2d
+ 556 0232 89000000 		.4byte	0x89
+ 557 0236 05       		.uleb128 0x5
+ 558 0237 03       		.byte	0x3
+ 559 0238 00000000 		.4byte	ActiveVisualization
+ 560 023c 0D       		.uleb128 0xd
+ 561 023d DE020000 		.4byte	.LASF36
+ 562 0241 08       		.byte	0x8
+ 563 0242 2F       		.byte	0x2f
+ 564 0243 01010000 		.4byte	0x101
+ 565 0247 05       		.uleb128 0x5
+ 566 0248 03       		.byte	0x3
+ 567 0249 00000000 		.4byte	ch_received
+ 568 024d 0D       		.uleb128 0xd
+ 569 024e 13030000 		.4byte	.LASF37
+ 570 0252 08       		.byte	0x8
+ 571 0253 30       		.byte	0x30
+ 572 0254 89000000 		.4byte	0x89
+ 573 0258 05       		.uleb128 0x5
+ 574 0259 03       		.byte	0x3
+ 575 025a 00000000 		.4byte	LoopContinue
+ 576 025e 0D       		.uleb128 0xd
+ 577 025f 2A000000 		.4byte	.LASF38
+ 578 0263 08       		.byte	0x8
+ 579 0264 31       		.byte	0x31
+ 580 0265 89000000 		.4byte	0x89
+ 581 0269 05       		.uleb128 0x5
+ 582 026a 03       		.byte	0x3
+ 583 026b 00000000 		.4byte	MenuActive
+ 584 026f 0D       		.uleb128 0xd
+ 585 0270 B1010000 		.4byte	.LASF39
+ 586 0274 08       		.byte	0x8
+ 587 0275 32       		.byte	0x32
+ 588 0276 89000000 		.4byte	0x89
+ 589 027a 05       		.uleb128 0x5
+ 590 027b 03       		.byte	0x3
+ 591 027c 00000000 		.4byte	Registration_Active
+ 592 0280 0D       		.uleb128 0xd
+ 593 0281 5F020000 		.4byte	.LASF40
+ 594 0285 08       		.byte	0x8
+ 595 0286 34       		.byte	0x34
+ 596 0287 97000000 		.4byte	0x97
+ 597 028b 05       		.uleb128 0x5
+ 598 028c 03       		.byte	0x3
+ 599 028d 00000000 		.4byte	Sensitivity
+ 600 0291 0D       		.uleb128 0xd
+ 601 0292 0A020000 		.4byte	.LASF41
+ 602 0296 08       		.byte	0x8
+ 603 0297 35       		.byte	0x35
+ 604 0298 97000000 		.4byte	0x97
+ 605 029c 05       		.uleb128 0x5
+ 606 029d 03       		.byte	0x3
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccPiW3bK.s 			page 13
 
 
- 557 025a 29030000 		.4byte	.LASF38
- 558 025e 08       		.byte	0x8
- 559 025f 31       		.byte	0x31
- 560 0260 89000000 		.4byte	0x89
- 561 0264 05       		.uleb128 0x5
- 562 0265 03       		.byte	0x3
- 563 0266 00000000 		.4byte	LoopContinue
- 564 026a 0D       		.uleb128 0xd
- 565 026b 3D000000 		.4byte	.LASF39
- 566 026f 08       		.byte	0x8
- 567 0270 32       		.byte	0x32
- 568 0271 89000000 		.4byte	0x89
- 569 0275 05       		.uleb128 0x5
- 570 0276 03       		.byte	0x3
- 571 0277 00000000 		.4byte	MenuActive
- 572 027b 0D       		.uleb128 0xd
- 573 027c C4010000 		.4byte	.LASF40
- 574 0280 08       		.byte	0x8
- 575 0281 33       		.byte	0x33
- 576 0282 89000000 		.4byte	0x89
- 577 0286 05       		.uleb128 0x5
- 578 0287 03       		.byte	0x3
- 579 0288 00000000 		.4byte	Registration_Active
- 580 028c 0D       		.uleb128 0xd
- 581 028d 75020000 		.4byte	.LASF41
- 582 0291 08       		.byte	0x8
- 583 0292 34       		.byte	0x34
- 584 0293 97000000 		.4byte	0x97
- 585 0297 05       		.uleb128 0x5
- 586 0298 03       		.byte	0x3
- 587 0299 00000000 		.4byte	Sensitivity
- 588 029d 0D       		.uleb128 0xd
- 589 029e 28020000 		.4byte	.LASF42
- 590 02a2 08       		.byte	0x8
- 591 02a3 35       		.byte	0x35
- 592 02a4 97000000 		.4byte	0x97
- 593 02a8 05       		.uleb128 0x5
- 594 02a9 03       		.byte	0x3
- 595 02aa 00000000 		.4byte	TempUnit
- 596 02ae 0D       		.uleb128 0xd
- 597 02af 77030000 		.4byte	.LASF43
- 598 02b3 01       		.byte	0x1
- 599 02b4 14       		.byte	0x14
- 600 02b5 DB000000 		.4byte	0xdb
- 601 02b9 05       		.uleb128 0x5
- 602 02ba 03       		.byte	0x3
- 603 02bb 00000000 		.4byte	value_digit
- 604 02bf 0D       		.uleb128 0xd
- 605 02c0 A0000000 		.4byte	.LASF44
- 606 02c4 01       		.byte	0x1
- 607 02c5 15       		.byte	0x15
- 608 02c6 DB000000 		.4byte	0xdb
- 609 02ca 05       		.uleb128 0x5
- 610 02cb 03       		.byte	0x3
- 611 02cc 00000000 		.4byte	value_mv
- 612 02d0 0D       		.uleb128 0xd
- 613 02d1 00000000 		.4byte	.LASF45
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccvVu3DK.s 			page 13
+ 607 029e 00000000 		.4byte	TempUnit
+ 608 02a2 0D       		.uleb128 0xd
+ 609 02a3 51030000 		.4byte	.LASF42
+ 610 02a7 01       		.byte	0x1
+ 611 02a8 14       		.byte	0x14
+ 612 02a9 DB000000 		.4byte	0xdb
+ 613 02ad 05       		.uleb128 0x5
+ 614 02ae 03       		.byte	0x3
+ 615 02af 00000000 		.4byte	value_digit
+ 616 02b3 0D       		.uleb128 0xd
+ 617 02b4 8D000000 		.4byte	.LASF43
+ 618 02b8 01       		.byte	0x1
+ 619 02b9 15       		.byte	0x15
+ 620 02ba DB000000 		.4byte	0xdb
+ 621 02be 05       		.uleb128 0x5
+ 622 02bf 03       		.byte	0x3
+ 623 02c0 00000000 		.4byte	value_mv
+ 624 02c4 0D       		.uleb128 0xd
+ 625 02c5 00000000 		.4byte	.LASF44
+ 626 02c9 01       		.byte	0x1
+ 627 02ca 16       		.byte	0x16
+ 628 02cb C3000000 		.4byte	0xc3
+ 629 02cf 05       		.uleb128 0x5
+ 630 02d0 03       		.byte	0x3
+ 631 02d1 00000000 		.4byte	SendBytesFlag
+ 632 02d5 0D       		.uleb128 0xd
+ 633 02d6 0E000000 		.4byte	.LASF45
+ 634 02da 01       		.byte	0x1
+ 635 02db 17       		.byte	0x17
+ 636 02dc AD000000 		.4byte	0xad
+ 637 02e0 05       		.uleb128 0x5
+ 638 02e1 03       		.byte	0x3
+ 639 02e2 00000000 		.4byte	PushButtonCounter
+ 640 02e6 0D       		.uleb128 0xd
+ 641 02e7 ED010000 		.4byte	.LASF46
+ 642 02eb 01       		.byte	0x1
+ 643 02ec 18       		.byte	0x18
+ 644 02ed 89000000 		.4byte	0x89
+ 645 02f1 05       		.uleb128 0x5
+ 646 02f2 03       		.byte	0x3
+ 647 02f3 00000000 		.4byte	Reset_Flag
+ 648 02f7 11       		.uleb128 0x11
+ 649 02f8 7000     		.ascii	"p\000"
+ 650 02fa 01       		.byte	0x1
+ 651 02fb 18       		.byte	0x18
+ 652 02fc 89000000 		.4byte	0x89
+ 653 0300 05       		.uleb128 0x5
+ 654 0301 03       		.byte	0x3
+ 655 0302 00000000 		.4byte	p
+ 656 0306 0E       		.uleb128 0xe
+ 657 0307 97000000 		.4byte	0x97
+ 658 030b 16030000 		.4byte	0x316
+ 659 030f 0F       		.uleb128 0xf
+ 660 0310 14010000 		.4byte	0x114
+ 661 0314 01       		.byte	0x1
+ 662 0315 00       		.byte	0
+ 663 0316 0D       		.uleb128 0xd
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccPiW3bK.s 			page 14
 
 
- 614 02d5 01       		.byte	0x1
- 615 02d6 16       		.byte	0x16
- 616 02d7 C3000000 		.4byte	0xc3
- 617 02db 05       		.uleb128 0x5
- 618 02dc 03       		.byte	0x3
- 619 02dd 00000000 		.4byte	SendBytesFlag
- 620 02e1 0D       		.uleb128 0xd
- 621 02e2 0E000000 		.4byte	.LASF46
- 622 02e6 01       		.byte	0x1
- 623 02e7 17       		.byte	0x17
- 624 02e8 AD000000 		.4byte	0xad
- 625 02ec 05       		.uleb128 0x5
- 626 02ed 03       		.byte	0x3
- 627 02ee 00000000 		.4byte	PushButtonCounter
- 628 02f2 0D       		.uleb128 0xd
- 629 02f3 0B020000 		.4byte	.LASF47
- 630 02f7 01       		.byte	0x1
- 631 02f8 18       		.byte	0x18
- 632 02f9 89000000 		.4byte	0x89
- 633 02fd 05       		.uleb128 0x5
- 634 02fe 03       		.byte	0x3
- 635 02ff 00000000 		.4byte	Reset_Flag
- 636 0303 0D       		.uleb128 0xd
- 637 0304 36030000 		.4byte	.LASF48
- 638 0308 01       		.byte	0x1
- 639 0309 19       		.byte	0x19
- 640 030a 89000000 		.4byte	0x89
- 641 030e 05       		.uleb128 0x5
- 642 030f 03       		.byte	0x3
- 643 0310 00000000 		.4byte	giro
- 644 0314 0B       		.uleb128 0xb
- 645 0315 97000000 		.4byte	0x97
- 646 0319 24030000 		.4byte	0x324
- 647 031d 0C       		.uleb128 0xc
- 648 031e 08010000 		.4byte	0x108
- 649 0322 01       		.byte	0x1
- 650 0323 00       		.byte	0
- 651 0324 0D       		.uleb128 0xd
- 652 0325 95010000 		.4byte	.LASF49
- 653 0329 01       		.byte	0x1
- 654 032a 1A       		.byte	0x1a
- 655 032b 14030000 		.4byte	0x314
- 656 032f 05       		.uleb128 0x5
- 657 0330 03       		.byte	0x3
- 658 0331 00000000 		.4byte	TempData
- 659 0335 0F       		.uleb128 0xf
- 660 0336 4600     		.ascii	"F\000"
- 661 0338 01       		.byte	0x1
- 662 0339 1B       		.byte	0x1b
- 663 033a F5000000 		.4byte	0xf5
- 664 033e 05       		.uleb128 0x5
- 665 033f 03       		.byte	0x3
- 666 0340 00000000 		.4byte	F
- 667 0344 0D       		.uleb128 0xd
- 668 0345 31020000 		.4byte	.LASF50
- 669 0349 01       		.byte	0x1
- 670 034a 1D       		.byte	0x1d
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccvVu3DK.s 			page 14
+ 664 0317 82010000 		.4byte	.LASF47
+ 665 031b 01       		.byte	0x1
+ 666 031c 19       		.byte	0x19
+ 667 031d 06030000 		.4byte	0x306
+ 668 0321 05       		.uleb128 0x5
+ 669 0322 03       		.byte	0x3
+ 670 0323 00000000 		.4byte	TempData
+ 671 0327 11       		.uleb128 0x11
+ 672 0328 4600     		.ascii	"F\000"
+ 673 032a 01       		.byte	0x1
+ 674 032b 1A       		.byte	0x1a
+ 675 032c 01010000 		.4byte	0x101
+ 676 0330 05       		.uleb128 0x5
+ 677 0331 03       		.byte	0x3
+ 678 0332 00000000 		.4byte	F
+ 679 0336 0D       		.uleb128 0xd
+ 680 0337 1B020000 		.4byte	.LASF48
+ 681 033b 01       		.byte	0x1
+ 682 033c 1C       		.byte	0x1c
+ 683 033d E7000000 		.4byte	0xe7
+ 684 0341 05       		.uleb128 0x5
+ 685 0342 03       		.byte	0x3
+ 686 0343 00000000 		.4byte	value_temp_float
+ 687 0347 12       		.uleb128 0x12
+ 688 0348 4E000000 		.4byte	.LASF49
+ 689 034c 4E000000 		.4byte	.LASF49
+ 690 0350 09       		.byte	0x9
+ 691 0351 5E       		.byte	0x5e
+ 692 0352 12       		.uleb128 0x12
+ 693 0353 F3020000 		.4byte	.LASF50
+ 694 0357 F3020000 		.4byte	.LASF50
+ 695 035b 0A       		.byte	0xa
+ 696 035c 56       		.byte	0x56
+ 697 035d 12       		.uleb128 0x12
+ 698 035e C5010000 		.4byte	.LASF51
+ 699 0362 C5010000 		.4byte	.LASF51
+ 700 0366 0A       		.byte	0xa
+ 701 0367 47       		.byte	0x47
+ 702 0368 12       		.uleb128 0x12
+ 703 0369 71030000 		.4byte	.LASF52
+ 704 036d 71030000 		.4byte	.LASF52
+ 705 0371 0B       		.byte	0xb
+ 706 0372 8B       		.byte	0x8b
+ 707 0373 00       		.byte	0
+ 708              		.section	.debug_abbrev,"",%progbits
+ 709              	.Ldebug_abbrev0:
+ 710 0000 01       		.uleb128 0x1
+ 711 0001 11       		.uleb128 0x11
+ 712 0002 01       		.byte	0x1
+ 713 0003 25       		.uleb128 0x25
+ 714 0004 0E       		.uleb128 0xe
+ 715 0005 13       		.uleb128 0x13
+ 716 0006 0B       		.uleb128 0xb
+ 717 0007 03       		.uleb128 0x3
+ 718 0008 0E       		.uleb128 0xe
+ 719 0009 1B       		.uleb128 0x1b
+ 720 000a 0E       		.uleb128 0xe
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccPiW3bK.s 			page 15
 
 
- 671 034b E7000000 		.4byte	0xe7
- 672 034f 05       		.uleb128 0x5
- 673 0350 03       		.byte	0x3
- 674 0351 00000000 		.4byte	value_temp_float
- 675 0355 10       		.uleb128 0x10
- 676 0356 61000000 		.4byte	.LASF51
- 677 035a 61000000 		.4byte	.LASF51
- 678 035e 09       		.byte	0x9
- 679 035f 5E       		.byte	0x5e
- 680 0360 10       		.uleb128 0x10
- 681 0361 09030000 		.4byte	.LASF52
- 682 0365 09030000 		.4byte	.LASF52
- 683 0369 0A       		.byte	0xa
- 684 036a 56       		.byte	0x56
- 685 036b 10       		.uleb128 0x10
- 686 036c E3010000 		.4byte	.LASF53
- 687 0370 E3010000 		.4byte	.LASF53
- 688 0374 0A       		.byte	0xa
- 689 0375 47       		.byte	0x47
- 690 0376 10       		.uleb128 0x10
- 691 0377 D8010000 		.4byte	.LASF54
- 692 037b D8010000 		.4byte	.LASF54
- 693 037f 07       		.byte	0x7
- 694 0380 21       		.byte	0x21
- 695 0381 00       		.byte	0
- 696              		.section	.debug_abbrev,"",%progbits
- 697              	.Ldebug_abbrev0:
- 698 0000 01       		.uleb128 0x1
- 699 0001 11       		.uleb128 0x11
- 700 0002 01       		.byte	0x1
- 701 0003 25       		.uleb128 0x25
- 702 0004 0E       		.uleb128 0xe
- 703 0005 13       		.uleb128 0x13
- 704 0006 0B       		.uleb128 0xb
- 705 0007 03       		.uleb128 0x3
- 706 0008 0E       		.uleb128 0xe
- 707 0009 1B       		.uleb128 0x1b
- 708 000a 0E       		.uleb128 0xe
- 709 000b 55       		.uleb128 0x55
- 710 000c 17       		.uleb128 0x17
- 711 000d 11       		.uleb128 0x11
- 712 000e 01       		.uleb128 0x1
- 713 000f 10       		.uleb128 0x10
- 714 0010 17       		.uleb128 0x17
- 715 0011 00       		.byte	0
- 716 0012 00       		.byte	0
- 717 0013 02       		.uleb128 0x2
- 718 0014 24       		.uleb128 0x24
- 719 0015 00       		.byte	0
- 720 0016 0B       		.uleb128 0xb
- 721 0017 0B       		.uleb128 0xb
- 722 0018 3E       		.uleb128 0x3e
- 723 0019 0B       		.uleb128 0xb
- 724 001a 03       		.uleb128 0x3
- 725 001b 0E       		.uleb128 0xe
- 726 001c 00       		.byte	0
- 727 001d 00       		.byte	0
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccvVu3DK.s 			page 15
+ 721 000b 55       		.uleb128 0x55
+ 722 000c 17       		.uleb128 0x17
+ 723 000d 11       		.uleb128 0x11
+ 724 000e 01       		.uleb128 0x1
+ 725 000f 10       		.uleb128 0x10
+ 726 0010 17       		.uleb128 0x17
+ 727 0011 00       		.byte	0
+ 728 0012 00       		.byte	0
+ 729 0013 02       		.uleb128 0x2
+ 730 0014 24       		.uleb128 0x24
+ 731 0015 00       		.byte	0
+ 732 0016 0B       		.uleb128 0xb
+ 733 0017 0B       		.uleb128 0xb
+ 734 0018 3E       		.uleb128 0x3e
+ 735 0019 0B       		.uleb128 0xb
+ 736 001a 03       		.uleb128 0x3
+ 737 001b 0E       		.uleb128 0xe
+ 738 001c 00       		.byte	0
+ 739 001d 00       		.byte	0
+ 740 001e 03       		.uleb128 0x3
+ 741 001f 16       		.uleb128 0x16
+ 742 0020 00       		.byte	0
+ 743 0021 03       		.uleb128 0x3
+ 744 0022 0E       		.uleb128 0xe
+ 745 0023 3A       		.uleb128 0x3a
+ 746 0024 0B       		.uleb128 0xb
+ 747 0025 3B       		.uleb128 0x3b
+ 748 0026 0B       		.uleb128 0xb
+ 749 0027 49       		.uleb128 0x49
+ 750 0028 13       		.uleb128 0x13
+ 751 0029 00       		.byte	0
+ 752 002a 00       		.byte	0
+ 753 002b 04       		.uleb128 0x4
+ 754 002c 24       		.uleb128 0x24
+ 755 002d 00       		.byte	0
+ 756 002e 0B       		.uleb128 0xb
+ 757 002f 0B       		.uleb128 0xb
+ 758 0030 3E       		.uleb128 0x3e
+ 759 0031 0B       		.uleb128 0xb
+ 760 0032 03       		.uleb128 0x3
+ 761 0033 08       		.uleb128 0x8
+ 762 0034 00       		.byte	0
+ 763 0035 00       		.byte	0
+ 764 0036 05       		.uleb128 0x5
+ 765 0037 16       		.uleb128 0x16
+ 766 0038 00       		.byte	0
+ 767 0039 03       		.uleb128 0x3
+ 768 003a 0E       		.uleb128 0xe
+ 769 003b 3A       		.uleb128 0x3a
+ 770 003c 0B       		.uleb128 0xb
+ 771 003d 3B       		.uleb128 0x3b
+ 772 003e 05       		.uleb128 0x5
+ 773 003f 49       		.uleb128 0x49
+ 774 0040 13       		.uleb128 0x13
+ 775 0041 00       		.byte	0
+ 776 0042 00       		.byte	0
+ 777 0043 06       		.uleb128 0x6
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccPiW3bK.s 			page 16
 
 
- 728 001e 03       		.uleb128 0x3
- 729 001f 16       		.uleb128 0x16
- 730 0020 00       		.byte	0
- 731 0021 03       		.uleb128 0x3
- 732 0022 0E       		.uleb128 0xe
- 733 0023 3A       		.uleb128 0x3a
- 734 0024 0B       		.uleb128 0xb
- 735 0025 3B       		.uleb128 0x3b
- 736 0026 0B       		.uleb128 0xb
- 737 0027 49       		.uleb128 0x49
- 738 0028 13       		.uleb128 0x13
- 739 0029 00       		.byte	0
- 740 002a 00       		.byte	0
- 741 002b 04       		.uleb128 0x4
- 742 002c 24       		.uleb128 0x24
- 743 002d 00       		.byte	0
- 744 002e 0B       		.uleb128 0xb
- 745 002f 0B       		.uleb128 0xb
- 746 0030 3E       		.uleb128 0x3e
- 747 0031 0B       		.uleb128 0xb
- 748 0032 03       		.uleb128 0x3
- 749 0033 08       		.uleb128 0x8
- 750 0034 00       		.byte	0
- 751 0035 00       		.byte	0
- 752 0036 05       		.uleb128 0x5
- 753 0037 16       		.uleb128 0x16
- 754 0038 00       		.byte	0
- 755 0039 03       		.uleb128 0x3
- 756 003a 0E       		.uleb128 0xe
- 757 003b 3A       		.uleb128 0x3a
- 758 003c 0B       		.uleb128 0xb
- 759 003d 3B       		.uleb128 0x3b
- 760 003e 05       		.uleb128 0x5
- 761 003f 49       		.uleb128 0x49
- 762 0040 13       		.uleb128 0x13
- 763 0041 00       		.byte	0
- 764 0042 00       		.byte	0
- 765 0043 06       		.uleb128 0x6
- 766 0044 35       		.uleb128 0x35
- 767 0045 00       		.byte	0
- 768 0046 49       		.uleb128 0x49
- 769 0047 13       		.uleb128 0x13
- 770 0048 00       		.byte	0
- 771 0049 00       		.byte	0
- 772 004a 07       		.uleb128 0x7
- 773 004b 2E       		.uleb128 0x2e
- 774 004c 01       		.byte	0x1
- 775 004d 3F       		.uleb128 0x3f
- 776 004e 19       		.uleb128 0x19
- 777 004f 03       		.uleb128 0x3
- 778 0050 0E       		.uleb128 0xe
- 779 0051 3A       		.uleb128 0x3a
- 780 0052 0B       		.uleb128 0xb
- 781 0053 3B       		.uleb128 0x3b
- 782 0054 0B       		.uleb128 0xb
- 783 0055 27       		.uleb128 0x27
- 784 0056 19       		.uleb128 0x19
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccvVu3DK.s 			page 16
+ 778 0044 35       		.uleb128 0x35
+ 779 0045 00       		.byte	0
+ 780 0046 49       		.uleb128 0x49
+ 781 0047 13       		.uleb128 0x13
+ 782 0048 00       		.byte	0
+ 783 0049 00       		.byte	0
+ 784 004a 07       		.uleb128 0x7
+ 785 004b 2E       		.uleb128 0x2e
+ 786 004c 01       		.byte	0x1
+ 787 004d 3F       		.uleb128 0x3f
+ 788 004e 19       		.uleb128 0x19
+ 789 004f 03       		.uleb128 0x3
+ 790 0050 0E       		.uleb128 0xe
+ 791 0051 3A       		.uleb128 0x3a
+ 792 0052 0B       		.uleb128 0xb
+ 793 0053 3B       		.uleb128 0x3b
+ 794 0054 0B       		.uleb128 0xb
+ 795 0055 27       		.uleb128 0x27
+ 796 0056 19       		.uleb128 0x19
+ 797 0057 11       		.uleb128 0x11
+ 798 0058 01       		.uleb128 0x1
+ 799 0059 12       		.uleb128 0x12
+ 800 005a 06       		.uleb128 0x6
+ 801 005b 40       		.uleb128 0x40
+ 802 005c 18       		.uleb128 0x18
+ 803 005d 9642     		.uleb128 0x2116
+ 804 005f 19       		.uleb128 0x19
+ 805 0060 01       		.uleb128 0x1
+ 806 0061 13       		.uleb128 0x13
+ 807 0062 00       		.byte	0
+ 808 0063 00       		.byte	0
+ 809 0064 08       		.uleb128 0x8
+ 810 0065 898201   		.uleb128 0x4109
+ 811 0068 00       		.byte	0
+ 812 0069 11       		.uleb128 0x11
+ 813 006a 01       		.uleb128 0x1
+ 814 006b 31       		.uleb128 0x31
+ 815 006c 13       		.uleb128 0x13
+ 816 006d 00       		.byte	0
+ 817 006e 00       		.byte	0
+ 818 006f 09       		.uleb128 0x9
+ 819 0070 2E       		.uleb128 0x2e
+ 820 0071 01       		.byte	0x1
+ 821 0072 3F       		.uleb128 0x3f
+ 822 0073 19       		.uleb128 0x19
+ 823 0074 03       		.uleb128 0x3
+ 824 0075 0E       		.uleb128 0xe
+ 825 0076 3A       		.uleb128 0x3a
+ 826 0077 0B       		.uleb128 0xb
+ 827 0078 3B       		.uleb128 0x3b
+ 828 0079 0B       		.uleb128 0xb
+ 829 007a 27       		.uleb128 0x27
+ 830 007b 19       		.uleb128 0x19
+ 831 007c 11       		.uleb128 0x11
+ 832 007d 01       		.uleb128 0x1
+ 833 007e 12       		.uleb128 0x12
+ 834 007f 06       		.uleb128 0x6
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccPiW3bK.s 			page 17
 
 
- 785 0057 11       		.uleb128 0x11
- 786 0058 01       		.uleb128 0x1
- 787 0059 12       		.uleb128 0x12
- 788 005a 06       		.uleb128 0x6
- 789 005b 40       		.uleb128 0x40
- 790 005c 18       		.uleb128 0x18
- 791 005d 9642     		.uleb128 0x2116
- 792 005f 19       		.uleb128 0x19
- 793 0060 01       		.uleb128 0x1
- 794 0061 13       		.uleb128 0x13
- 795 0062 00       		.byte	0
- 796 0063 00       		.byte	0
- 797 0064 08       		.uleb128 0x8
- 798 0065 898201   		.uleb128 0x4109
- 799 0068 00       		.byte	0
- 800 0069 11       		.uleb128 0x11
- 801 006a 01       		.uleb128 0x1
- 802 006b 31       		.uleb128 0x31
- 803 006c 13       		.uleb128 0x13
- 804 006d 00       		.byte	0
- 805 006e 00       		.byte	0
- 806 006f 09       		.uleb128 0x9
- 807 0070 2E       		.uleb128 0x2e
- 808 0071 01       		.byte	0x1
- 809 0072 3F       		.uleb128 0x3f
- 810 0073 19       		.uleb128 0x19
- 811 0074 03       		.uleb128 0x3
- 812 0075 0E       		.uleb128 0xe
- 813 0076 3A       		.uleb128 0x3a
- 814 0077 0B       		.uleb128 0xb
- 815 0078 3B       		.uleb128 0x3b
- 816 0079 0B       		.uleb128 0xb
- 817 007a 27       		.uleb128 0x27
- 818 007b 19       		.uleb128 0x19
- 819 007c 11       		.uleb128 0x11
- 820 007d 01       		.uleb128 0x1
- 821 007e 12       		.uleb128 0x12
- 822 007f 06       		.uleb128 0x6
- 823 0080 40       		.uleb128 0x40
- 824 0081 18       		.uleb128 0x18
- 825 0082 9742     		.uleb128 0x2117
- 826 0084 19       		.uleb128 0x19
- 827 0085 01       		.uleb128 0x1
- 828 0086 13       		.uleb128 0x13
- 829 0087 00       		.byte	0
- 830 0088 00       		.byte	0
- 831 0089 0A       		.uleb128 0xa
- 832 008a 2E       		.uleb128 0x2e
- 833 008b 00       		.byte	0
- 834 008c 3F       		.uleb128 0x3f
- 835 008d 19       		.uleb128 0x19
- 836 008e 03       		.uleb128 0x3
- 837 008f 0E       		.uleb128 0xe
- 838 0090 3A       		.uleb128 0x3a
- 839 0091 0B       		.uleb128 0xb
- 840 0092 3B       		.uleb128 0x3b
- 841 0093 0B       		.uleb128 0xb
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccvVu3DK.s 			page 17
+ 835 0080 40       		.uleb128 0x40
+ 836 0081 18       		.uleb128 0x18
+ 837 0082 9742     		.uleb128 0x2117
+ 838 0084 19       		.uleb128 0x19
+ 839 0085 01       		.uleb128 0x1
+ 840 0086 13       		.uleb128 0x13
+ 841 0087 00       		.byte	0
+ 842 0088 00       		.byte	0
+ 843 0089 0A       		.uleb128 0xa
+ 844 008a 898201   		.uleb128 0x4109
+ 845 008d 01       		.byte	0x1
+ 846 008e 11       		.uleb128 0x11
+ 847 008f 01       		.uleb128 0x1
+ 848 0090 31       		.uleb128 0x31
+ 849 0091 13       		.uleb128 0x13
+ 850 0092 00       		.byte	0
+ 851 0093 00       		.byte	0
+ 852 0094 0B       		.uleb128 0xb
+ 853 0095 8A8201   		.uleb128 0x410a
+ 854 0098 00       		.byte	0
+ 855 0099 02       		.uleb128 0x2
+ 856 009a 18       		.uleb128 0x18
+ 857 009b 9142     		.uleb128 0x2111
+ 858 009d 18       		.uleb128 0x18
+ 859 009e 00       		.byte	0
+ 860 009f 00       		.byte	0
+ 861 00a0 0C       		.uleb128 0xc
+ 862 00a1 2E       		.uleb128 0x2e
+ 863 00a2 00       		.byte	0
+ 864 00a3 3F       		.uleb128 0x3f
+ 865 00a4 19       		.uleb128 0x19
+ 866 00a5 03       		.uleb128 0x3
+ 867 00a6 0E       		.uleb128 0xe
+ 868 00a7 3A       		.uleb128 0x3a
+ 869 00a8 0B       		.uleb128 0xb
+ 870 00a9 3B       		.uleb128 0x3b
+ 871 00aa 0B       		.uleb128 0xb
+ 872 00ab 27       		.uleb128 0x27
+ 873 00ac 19       		.uleb128 0x19
+ 874 00ad 11       		.uleb128 0x11
+ 875 00ae 01       		.uleb128 0x1
+ 876 00af 12       		.uleb128 0x12
+ 877 00b0 06       		.uleb128 0x6
+ 878 00b1 40       		.uleb128 0x40
+ 879 00b2 18       		.uleb128 0x18
+ 880 00b3 9742     		.uleb128 0x2117
+ 881 00b5 19       		.uleb128 0x19
+ 882 00b6 00       		.byte	0
+ 883 00b7 00       		.byte	0
+ 884 00b8 0D       		.uleb128 0xd
+ 885 00b9 34       		.uleb128 0x34
+ 886 00ba 00       		.byte	0
+ 887 00bb 03       		.uleb128 0x3
+ 888 00bc 0E       		.uleb128 0xe
+ 889 00bd 3A       		.uleb128 0x3a
+ 890 00be 0B       		.uleb128 0xb
+ 891 00bf 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccPiW3bK.s 			page 18
 
 
- 842 0094 27       		.uleb128 0x27
- 843 0095 19       		.uleb128 0x19
- 844 0096 11       		.uleb128 0x11
- 845 0097 01       		.uleb128 0x1
- 846 0098 12       		.uleb128 0x12
- 847 0099 06       		.uleb128 0x6
- 848 009a 40       		.uleb128 0x40
- 849 009b 18       		.uleb128 0x18
- 850 009c 9742     		.uleb128 0x2117
- 851 009e 19       		.uleb128 0x19
- 852 009f 00       		.byte	0
- 853 00a0 00       		.byte	0
- 854 00a1 0B       		.uleb128 0xb
- 855 00a2 01       		.uleb128 0x1
- 856 00a3 01       		.byte	0x1
- 857 00a4 49       		.uleb128 0x49
- 858 00a5 13       		.uleb128 0x13
- 859 00a6 01       		.uleb128 0x1
- 860 00a7 13       		.uleb128 0x13
- 861 00a8 00       		.byte	0
- 862 00a9 00       		.byte	0
- 863 00aa 0C       		.uleb128 0xc
- 864 00ab 21       		.uleb128 0x21
- 865 00ac 00       		.byte	0
- 866 00ad 49       		.uleb128 0x49
- 867 00ae 13       		.uleb128 0x13
- 868 00af 2F       		.uleb128 0x2f
- 869 00b0 0B       		.uleb128 0xb
- 870 00b1 00       		.byte	0
- 871 00b2 00       		.byte	0
- 872 00b3 0D       		.uleb128 0xd
- 873 00b4 34       		.uleb128 0x34
- 874 00b5 00       		.byte	0
- 875 00b6 03       		.uleb128 0x3
- 876 00b7 0E       		.uleb128 0xe
- 877 00b8 3A       		.uleb128 0x3a
- 878 00b9 0B       		.uleb128 0xb
- 879 00ba 3B       		.uleb128 0x3b
- 880 00bb 0B       		.uleb128 0xb
- 881 00bc 49       		.uleb128 0x49
- 882 00bd 13       		.uleb128 0x13
- 883 00be 3F       		.uleb128 0x3f
- 884 00bf 19       		.uleb128 0x19
- 885 00c0 02       		.uleb128 0x2
- 886 00c1 18       		.uleb128 0x18
- 887 00c2 00       		.byte	0
- 888 00c3 00       		.byte	0
- 889 00c4 0E       		.uleb128 0xe
- 890 00c5 34       		.uleb128 0x34
- 891 00c6 00       		.byte	0
- 892 00c7 03       		.uleb128 0x3
- 893 00c8 0E       		.uleb128 0xe
- 894 00c9 3A       		.uleb128 0x3a
- 895 00ca 0B       		.uleb128 0xb
- 896 00cb 3B       		.uleb128 0x3b
- 897 00cc 05       		.uleb128 0x5
- 898 00cd 49       		.uleb128 0x49
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccvVu3DK.s 			page 18
+ 892 00c0 0B       		.uleb128 0xb
+ 893 00c1 49       		.uleb128 0x49
+ 894 00c2 13       		.uleb128 0x13
+ 895 00c3 3F       		.uleb128 0x3f
+ 896 00c4 19       		.uleb128 0x19
+ 897 00c5 02       		.uleb128 0x2
+ 898 00c6 18       		.uleb128 0x18
+ 899 00c7 00       		.byte	0
+ 900 00c8 00       		.byte	0
+ 901 00c9 0E       		.uleb128 0xe
+ 902 00ca 01       		.uleb128 0x1
+ 903 00cb 01       		.byte	0x1
+ 904 00cc 49       		.uleb128 0x49
+ 905 00cd 13       		.uleb128 0x13
+ 906 00ce 01       		.uleb128 0x1
+ 907 00cf 13       		.uleb128 0x13
+ 908 00d0 00       		.byte	0
+ 909 00d1 00       		.byte	0
+ 910 00d2 0F       		.uleb128 0xf
+ 911 00d3 21       		.uleb128 0x21
+ 912 00d4 00       		.byte	0
+ 913 00d5 49       		.uleb128 0x49
+ 914 00d6 13       		.uleb128 0x13
+ 915 00d7 2F       		.uleb128 0x2f
+ 916 00d8 0B       		.uleb128 0xb
+ 917 00d9 00       		.byte	0
+ 918 00da 00       		.byte	0
+ 919 00db 10       		.uleb128 0x10
+ 920 00dc 34       		.uleb128 0x34
+ 921 00dd 00       		.byte	0
+ 922 00de 03       		.uleb128 0x3
+ 923 00df 0E       		.uleb128 0xe
+ 924 00e0 3A       		.uleb128 0x3a
+ 925 00e1 0B       		.uleb128 0xb
+ 926 00e2 3B       		.uleb128 0x3b
+ 927 00e3 05       		.uleb128 0x5
+ 928 00e4 49       		.uleb128 0x49
+ 929 00e5 13       		.uleb128 0x13
+ 930 00e6 3F       		.uleb128 0x3f
+ 931 00e7 19       		.uleb128 0x19
+ 932 00e8 3C       		.uleb128 0x3c
+ 933 00e9 19       		.uleb128 0x19
+ 934 00ea 00       		.byte	0
+ 935 00eb 00       		.byte	0
+ 936 00ec 11       		.uleb128 0x11
+ 937 00ed 34       		.uleb128 0x34
+ 938 00ee 00       		.byte	0
+ 939 00ef 03       		.uleb128 0x3
+ 940 00f0 08       		.uleb128 0x8
+ 941 00f1 3A       		.uleb128 0x3a
+ 942 00f2 0B       		.uleb128 0xb
+ 943 00f3 3B       		.uleb128 0x3b
+ 944 00f4 0B       		.uleb128 0xb
+ 945 00f5 49       		.uleb128 0x49
+ 946 00f6 13       		.uleb128 0x13
+ 947 00f7 3F       		.uleb128 0x3f
+ 948 00f8 19       		.uleb128 0x19
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccPiW3bK.s 			page 19
 
 
- 899 00ce 13       		.uleb128 0x13
- 900 00cf 3F       		.uleb128 0x3f
- 901 00d0 19       		.uleb128 0x19
- 902 00d1 3C       		.uleb128 0x3c
- 903 00d2 19       		.uleb128 0x19
- 904 00d3 00       		.byte	0
- 905 00d4 00       		.byte	0
- 906 00d5 0F       		.uleb128 0xf
- 907 00d6 34       		.uleb128 0x34
- 908 00d7 00       		.byte	0
- 909 00d8 03       		.uleb128 0x3
- 910 00d9 08       		.uleb128 0x8
- 911 00da 3A       		.uleb128 0x3a
- 912 00db 0B       		.uleb128 0xb
- 913 00dc 3B       		.uleb128 0x3b
- 914 00dd 0B       		.uleb128 0xb
- 915 00de 49       		.uleb128 0x49
- 916 00df 13       		.uleb128 0x13
- 917 00e0 3F       		.uleb128 0x3f
- 918 00e1 19       		.uleb128 0x19
- 919 00e2 02       		.uleb128 0x2
- 920 00e3 18       		.uleb128 0x18
- 921 00e4 00       		.byte	0
- 922 00e5 00       		.byte	0
- 923 00e6 10       		.uleb128 0x10
- 924 00e7 2E       		.uleb128 0x2e
- 925 00e8 00       		.byte	0
- 926 00e9 3F       		.uleb128 0x3f
- 927 00ea 19       		.uleb128 0x19
- 928 00eb 3C       		.uleb128 0x3c
- 929 00ec 19       		.uleb128 0x19
- 930 00ed 6E       		.uleb128 0x6e
- 931 00ee 0E       		.uleb128 0xe
- 932 00ef 03       		.uleb128 0x3
- 933 00f0 0E       		.uleb128 0xe
- 934 00f1 3A       		.uleb128 0x3a
- 935 00f2 0B       		.uleb128 0xb
- 936 00f3 3B       		.uleb128 0x3b
- 937 00f4 0B       		.uleb128 0xb
- 938 00f5 00       		.byte	0
- 939 00f6 00       		.byte	0
- 940 00f7 00       		.byte	0
- 941              		.section	.debug_aranges,"",%progbits
- 942 0000 2C000000 		.4byte	0x2c
- 943 0004 0200     		.2byte	0x2
- 944 0006 00000000 		.4byte	.Ldebug_info0
- 945 000a 04       		.byte	0x4
- 946 000b 00       		.byte	0
- 947 000c 0000     		.2byte	0
- 948 000e 0000     		.2byte	0
- 949 0010 00000000 		.4byte	.LFB64
- 950 0014 CC000000 		.4byte	.LFE64-.LFB64
- 951 0018 00000000 		.4byte	.LFB65
- 952 001c 1C000000 		.4byte	.LFE65-.LFB65
- 953 0020 00000000 		.4byte	.LFB66
- 954 0024 0C000000 		.4byte	.LFE66-.LFB66
- 955 0028 00000000 		.4byte	0
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccvVu3DK.s 			page 19
+ 949 00f9 02       		.uleb128 0x2
+ 950 00fa 18       		.uleb128 0x18
+ 951 00fb 00       		.byte	0
+ 952 00fc 00       		.byte	0
+ 953 00fd 12       		.uleb128 0x12
+ 954 00fe 2E       		.uleb128 0x2e
+ 955 00ff 00       		.byte	0
+ 956 0100 3F       		.uleb128 0x3f
+ 957 0101 19       		.uleb128 0x19
+ 958 0102 3C       		.uleb128 0x3c
+ 959 0103 19       		.uleb128 0x19
+ 960 0104 6E       		.uleb128 0x6e
+ 961 0105 0E       		.uleb128 0xe
+ 962 0106 03       		.uleb128 0x3
+ 963 0107 0E       		.uleb128 0xe
+ 964 0108 3A       		.uleb128 0x3a
+ 965 0109 0B       		.uleb128 0xb
+ 966 010a 3B       		.uleb128 0x3b
+ 967 010b 0B       		.uleb128 0xb
+ 968 010c 00       		.byte	0
+ 969 010d 00       		.byte	0
+ 970 010e 00       		.byte	0
+ 971              		.section	.debug_aranges,"",%progbits
+ 972 0000 2C000000 		.4byte	0x2c
+ 973 0004 0200     		.2byte	0x2
+ 974 0006 00000000 		.4byte	.Ldebug_info0
+ 975 000a 04       		.byte	0x4
+ 976 000b 00       		.byte	0
+ 977 000c 0000     		.2byte	0
+ 978 000e 0000     		.2byte	0
+ 979 0010 00000000 		.4byte	.LFB64
+ 980 0014 F4000000 		.4byte	.LFE64-.LFB64
+ 981 0018 00000000 		.4byte	.LFB65
+ 982 001c 20000000 		.4byte	.LFE65-.LFB65
+ 983 0020 00000000 		.4byte	.LFB66
+ 984 0024 0C000000 		.4byte	.LFE66-.LFB66
+ 985 0028 00000000 		.4byte	0
+ 986 002c 00000000 		.4byte	0
+ 987              		.section	.debug_ranges,"",%progbits
+ 988              	.Ldebug_ranges0:
+ 989 0000 00000000 		.4byte	.LFB64
+ 990 0004 F4000000 		.4byte	.LFE64
+ 991 0008 00000000 		.4byte	.LFB65
+ 992 000c 20000000 		.4byte	.LFE65
+ 993 0010 00000000 		.4byte	.LFB66
+ 994 0014 0C000000 		.4byte	.LFE66
+ 995 0018 00000000 		.4byte	0
+ 996 001c 00000000 		.4byte	0
+ 997              		.section	.debug_line,"",%progbits
+ 998              	.Ldebug_line0:
+ 999 0000 14020000 		.section	.debug_str,"MS",%progbits,1
+ 999      0200BD01 
+ 999      00000201 
+ 999      FB0E0D00 
+ 999      01010101 
+ 1000              	.LASF44:
+ 1001 0000 53656E64 		.ascii	"SendBytesFlag\000"
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccPiW3bK.s 			page 20
 
 
- 956 002c 00000000 		.4byte	0
- 957              		.section	.debug_ranges,"",%progbits
- 958              	.Ldebug_ranges0:
- 959 0000 00000000 		.4byte	.LFB64
- 960 0004 CC000000 		.4byte	.LFE64
- 961 0008 00000000 		.4byte	.LFB65
- 962 000c 1C000000 		.4byte	.LFE65
- 963 0010 00000000 		.4byte	.LFB66
- 964 0014 0C000000 		.4byte	.LFE66
- 965 0018 00000000 		.4byte	0
- 966 001c 00000000 		.4byte	0
- 967              		.section	.debug_line,"",%progbits
- 968              	.Ldebug_line0:
- 969 0000 0B020000 		.section	.debug_str,"MS",%progbits,1
- 969      0200B301 
- 969      00000201 
- 969      FB0E0D00 
- 969      01010101 
- 970              	.LASF45:
- 971 0000 53656E64 		.ascii	"SendBytesFlag\000"
- 971      42797465 
- 971      73466C61 
- 971      6700
- 972              	.LASF46:
- 973 000e 50757368 		.ascii	"PushButtonCounter\000"
- 973      42757474 
- 973      6F6E436F 
- 973      756E7465 
- 973      7200
- 974              	.LASF2:
- 975 0020 5F5F7569 		.ascii	"__uint8_t\000"
- 975      6E74385F 
- 975      7400
- 976              	.LASF35:
- 977 002a 41637469 		.ascii	"ActiveRegistration\000"
- 977      76655265 
- 977      67697374 
- 977      72617469 
- 977      6F6E00
- 978              	.LASF39:
- 979 003d 4D656E75 		.ascii	"MenuActive\000"
- 979      41637469 
- 979      766500
- 980              	.LASF25:
- 981 0048 43757374 		.ascii	"Custom_ISR_ADC\000"
- 981      6F6D5F49 
- 981      53525F41 
- 981      444300
- 982              	.LASF7:
- 983 0057 5F5F696E 		.ascii	"__int32_t\000"
- 983      7433325F 
- 983      7400
- 984              	.LASF51:
- 985 0061 54696D65 		.ascii	"Timer_ReadStatusRegister\000"
- 985      725F5265 
- 985      61645374 
- 985      61747573 
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccvVu3DK.s 			page 20
-
-
- 985      52656769 
- 986              	.LASF6:
- 987 007a 73686F72 		.ascii	"short unsigned int\000"
- 987      7420756E 
- 987      7369676E 
- 987      65642069 
- 987      6E7400
- 988              	.LASF12:
- 989 008d 756E7369 		.ascii	"unsigned int\000"
- 989      676E6564 
- 989      20696E74 
- 989      00
- 990              	.LASF17:
- 991 009a 75696E74 		.ascii	"uint8\000"
- 991      3800
- 992              	.LASF44:
- 993 00a0 76616C75 		.ascii	"value_mv\000"
- 993      655F6D76 
- 993      00
- 994              	.LASF58:
- 995 00a9 43757374 		.ascii	"Custom_isr_ACC\000"
- 995      6F6D5F69 
- 995      73725F41 
- 995      434300
- 996              	.LASF26:
- 997 00b8 43757374 		.ascii	"Custom_Button_ISR\000"
- 997      6F6D5F42 
- 997      7574746F 
- 997      6E5F4953 
- 997      5200
- 998              	.LASF20:
- 999 00ca 666C6F61 		.ascii	"float\000"
- 999      7400
- 1000              	.LASF36:
- 1001 00d0 41637469 		.ascii	"ActiveVisualization\000"
- 1001      76655669 
- 1001      7375616C 
- 1001      697A6174 
- 1001      696F6E00 
- 1002              	.LASF0:
- 1003 00e4 7369676E 		.ascii	"signed char\000"
- 1003      65642063 
- 1003      68617200 
- 1004              	.LASF1:
- 1005 00f0 756E7369 		.ascii	"unsigned char\000"
- 1005      676E6564 
- 1005      20636861 
- 1005      7200
- 1006              	.LASF55:
- 1007 00fe 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 1007      43313120 
- 1007      352E342E 
- 1007      31203230 
- 1007      31363036 
- 1008 0131 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 1008      20726576 
- 1008      6973696F 
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccvVu3DK.s 			page 21
-
-
- 1008      6E203233 
- 1008      37373135 
- 1009 0164 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 1009      66756E63 
- 1009      74696F6E 
- 1009      2D736563 
- 1009      74696F6E 
- 1010              	.LASF30:
- 1011 018c 57544D5F 		.ascii	"WTM_Full\000"
- 1011      46756C6C 
- 1011      00
+ 1001      42797465 
+ 1001      73466C61 
+ 1001      6700
+ 1002              	.LASF45:
+ 1003 000e 50757368 		.ascii	"PushButtonCounter\000"
+ 1003      42757474 
+ 1003      6F6E436F 
+ 1003      756E7465 
+ 1003      7200
+ 1004              	.LASF2:
+ 1005 0020 5F5F7569 		.ascii	"__uint8_t\000"
+ 1005      6E74385F 
+ 1005      7400
+ 1006              	.LASF38:
+ 1007 002a 4D656E75 		.ascii	"MenuActive\000"
+ 1007      41637469 
+ 1007      766500
+ 1008              	.LASF26:
+ 1009 0035 43757374 		.ascii	"Custom_ISR_ADC\000"
+ 1009      6F6D5F49 
+ 1009      53525F41 
+ 1009      444300
+ 1010              	.LASF7:
+ 1011 0044 5F5F696E 		.ascii	"__int32_t\000"
+ 1011      7433325F 
+ 1011      7400
  1012              	.LASF49:
- 1013 0195 54656D70 		.ascii	"TempData\000"
- 1013      44617461 
- 1013      00
- 1014              	.LASF16:
- 1015 019e 696E7433 		.ascii	"int32_t\000"
- 1015      325F7400 
- 1016              	.LASF18:
- 1017 01a6 696E7431 		.ascii	"int16\000"
- 1017      3600
- 1018              	.LASF9:
- 1019 01ac 6C6F6E67 		.ascii	"long unsigned int\000"
- 1019      20756E73 
- 1019      69676E65 
- 1019      6420696E 
- 1019      7400
- 1020              	.LASF19:
- 1021 01be 696E7433 		.ascii	"int32\000"
- 1021      3200
- 1022              	.LASF40:
- 1023 01c4 52656769 		.ascii	"Registration_Active\000"
- 1023      73747261 
- 1023      74696F6E 
- 1023      5F416374 
- 1023      69766500 
- 1024              	.LASF54:
- 1025 01d8 4649464F 		.ascii	"FIFO_Reset\000"
- 1025      5F526573 
- 1025      657400
- 1026              	.LASF53:
- 1027 01e3 4144435F 		.ascii	"ADC_DelSig_CountsTo_mVolts\000"
- 1027      44656C53 
- 1027      69675F43 
- 1027      6F756E74 
- 1027      73546F5F 
- 1028              	.LASF31:
- 1029 01fe 49544D5F 		.ascii	"ITM_RxBuffer\000"
- 1029      52784275 
- 1029      66666572 
- 1029      00
- 1030              	.LASF47:
- 1031 020b 52657365 		.ascii	"Reset_Flag\000"
- 1031      745F466C 
- 1031      616700
- 1032              	.LASF5:
- 1033 0216 5F5F7569 		.ascii	"__uint16_t\000"
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccvVu3DK.s 			page 22
+ 1013 004e 54696D65 		.ascii	"Timer_ReadStatusRegister\000"
+ 1013      725F5265 
+ 1013      61645374 
+ 1013      61747573 
+ 1013      52656769 
+ 1014              	.LASF6:
+ 1015 0067 73686F72 		.ascii	"short unsigned int\000"
+ 1015      7420756E 
+ 1015      7369676E 
+ 1015      65642069 
+ 1015      6E7400
+ 1016              	.LASF12:
+ 1017 007a 756E7369 		.ascii	"unsigned int\000"
+ 1017      676E6564 
+ 1017      20696E74 
+ 1017      00
+ 1018              	.LASF17:
+ 1019 0087 75696E74 		.ascii	"uint8\000"
+ 1019      3800
+ 1020              	.LASF43:
+ 1021 008d 76616C75 		.ascii	"value_mv\000"
+ 1021      655F6D76 
+ 1021      00
+ 1022              	.LASF56:
+ 1023 0096 43757374 		.ascii	"Custom_isr_ACC\000"
+ 1023      6F6D5F69 
+ 1023      73725F41 
+ 1023      434300
+ 1024              	.LASF27:
+ 1025 00a5 43757374 		.ascii	"Custom_Button_ISR\000"
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccPiW3bK.s 			page 21
 
 
- 1033      6E743136 
- 1033      5F7400
- 1034              	.LASF21:
- 1035 0221 646F7562 		.ascii	"double\000"
- 1035      6C6500
- 1036              	.LASF42:
- 1037 0228 54656D70 		.ascii	"TempUnit\000"
- 1037      556E6974 
- 1037      00
- 1038              	.LASF50:
- 1039 0231 76616C75 		.ascii	"value_temp_float\000"
- 1039      655F7465 
- 1039      6D705F66 
- 1039      6C6F6174 
+ 1025      6F6D5F42 
+ 1025      7574746F 
+ 1025      6E5F4953 
+ 1025      5200
+ 1026              	.LASF21:
+ 1027 00b7 666C6F61 		.ascii	"float\000"
+ 1027      7400
+ 1028              	.LASF35:
+ 1029 00bd 41637469 		.ascii	"ActiveVisualization\000"
+ 1029      76655669 
+ 1029      7375616C 
+ 1029      697A6174 
+ 1029      696F6E00 
+ 1030              	.LASF0:
+ 1031 00d1 7369676E 		.ascii	"signed char\000"
+ 1031      65642063 
+ 1031      68617200 
+ 1032              	.LASF1:
+ 1033 00dd 756E7369 		.ascii	"unsigned char\000"
+ 1033      676E6564 
+ 1033      20636861 
+ 1033      7200
+ 1034              	.LASF53:
+ 1035 00eb 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1035      43313120 
+ 1035      352E342E 
+ 1035      31203230 
+ 1035      31363036 
+ 1036 011e 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1036      20726576 
+ 1036      6973696F 
+ 1036      6E203233 
+ 1036      37373135 
+ 1037 0151 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1037      66756E63 
+ 1037      74696F6E 
+ 1037      2D736563 
+ 1037      74696F6E 
+ 1038              	.LASF30:
+ 1039 0179 57544D5F 		.ascii	"WTM_Full\000"
+ 1039      46756C6C 
  1039      00
- 1040              	.LASF3:
- 1041 0242 5F5F696E 		.ascii	"__int16_t\000"
- 1041      7431365F 
- 1041      7400
- 1042              	.LASF33:
- 1043 024c 6374726C 		.ascii	"ctrl_reg5\000"
- 1043      5F726567 
- 1043      3500
- 1044              	.LASF11:
- 1045 0256 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1045      206C6F6E 
- 1045      6720756E 
- 1045      7369676E 
- 1045      65642069 
- 1046              	.LASF13:
- 1047 026d 75696E74 		.ascii	"uint8_t\000"
- 1047      385F7400 
- 1048              	.LASF41:
- 1049 0275 53656E73 		.ascii	"Sensitivity\000"
- 1049      69746976 
- 1049      69747900 
- 1050              	.LASF32:
- 1051 0281 6669666F 		.ascii	"fifo_reg\000"
- 1051      5F726567 
- 1051      00
- 1052              	.LASF14:
- 1053 028a 696E7431 		.ascii	"int16_t\000"
- 1053      365F7400 
- 1054              	.LASF29:
- 1055 0292 76616C75 		.ascii	"value_temp\000"
- 1055      655F7465 
- 1055      6D7000
- 1056              	.LASF57:
- 1057 029d 433A5C55 		.ascii	"C:\\Users\\simon\\Desktop\\PsoC_Final_Project_1_03\\"
- 1057      73657273 
- 1057      5C73696D 
- 1057      6F6E5C44 
- 1057      65736B74 
- 1058 02cc 46494F52 		.ascii	"FIORANI_GARGIULO_IANNUZZI_Project.cydsn\000"
- 1058      414E495F 
- 1058      47415247 
- 1058      49554C4F 
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccvVu3DK.s 			page 23
+ 1040              	.LASF47:
+ 1041 0182 54656D70 		.ascii	"TempData\000"
+ 1041      44617461 
+ 1041      00
+ 1042              	.LASF16:
+ 1043 018b 696E7433 		.ascii	"int32_t\000"
+ 1043      325F7400 
+ 1044              	.LASF18:
+ 1045 0193 696E7431 		.ascii	"int16\000"
+ 1045      3600
+ 1046              	.LASF9:
+ 1047 0199 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1047      20756E73 
+ 1047      69676E65 
+ 1047      6420696E 
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccPiW3bK.s 			page 22
 
 
- 1058      5F49414E 
- 1059              	.LASF37:
- 1060 02f4 63685F72 		.ascii	"ch_received\000"
- 1060      65636569 
- 1060      76656400 
- 1061              	.LASF24:
- 1062 0300 73697A65 		.ascii	"sizetype\000"
- 1062      74797065 
- 1062      00
- 1063              	.LASF52:
- 1064 0309 4144435F 		.ascii	"ADC_DelSig_Read32\000"
- 1064      44656C53 
- 1064      69675F52 
- 1064      65616433 
- 1064      3200
- 1065              	.LASF10:
- 1066 031b 6C6F6E67 		.ascii	"long long int\000"
- 1066      206C6F6E 
- 1066      6720696E 
- 1066      7400
- 1067              	.LASF38:
- 1068 0329 4C6F6F70 		.ascii	"LoopContinue\000"
- 1068      436F6E74 
- 1068      696E7565 
- 1068      00
- 1069              	.LASF48:
- 1070 0336 6769726F 		.ascii	"giro\000"
- 1070      00
- 1071              	.LASF27:
- 1072 033b 44617461 		.ascii	"DataBuffer\000"
- 1072      42756666 
- 1072      657200
- 1073              	.LASF4:
- 1074 0346 73686F72 		.ascii	"short int\000"
- 1074      7420696E 
- 1074      7400
- 1075              	.LASF28:
- 1076 0350 5061636B 		.ascii	"PacketReadyFlag\000"
- 1076      65745265 
- 1076      61647946 
- 1076      6C616700 
- 1077              	.LASF15:
- 1078 0360 75696E74 		.ascii	"uint16_t\000"
- 1078      31365F74 
- 1078      00
- 1079              	.LASF8:
- 1080 0369 6C6F6E67 		.ascii	"long int\000"
- 1080      20696E74 
- 1080      00
- 1081              	.LASF22:
- 1082 0372 63686172 		.ascii	"char\000"
- 1082      00
- 1083              	.LASF43:
- 1084 0377 76616C75 		.ascii	"value_digit\000"
- 1084      655F6469 
- 1084      67697400 
- 1085              	.LASF23:
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccvVu3DK.s 			page 24
+ 1047      7400
+ 1048              	.LASF19:
+ 1049 01ab 696E7433 		.ascii	"int32\000"
+ 1049      3200
+ 1050              	.LASF39:
+ 1051 01b1 52656769 		.ascii	"Registration_Active\000"
+ 1051      73747261 
+ 1051      74696F6E 
+ 1051      5F416374 
+ 1051      69766500 
+ 1052              	.LASF51:
+ 1053 01c5 4144435F 		.ascii	"ADC_DelSig_CountsTo_mVolts\000"
+ 1053      44656C53 
+ 1053      69675F43 
+ 1053      6F756E74 
+ 1053      73546F5F 
+ 1054              	.LASF31:
+ 1055 01e0 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1055      52784275 
+ 1055      66666572 
+ 1055      00
+ 1056              	.LASF46:
+ 1057 01ed 52657365 		.ascii	"Reset_Flag\000"
+ 1057      745F466C 
+ 1057      616700
+ 1058              	.LASF5:
+ 1059 01f8 5F5F7569 		.ascii	"__uint16_t\000"
+ 1059      6E743136 
+ 1059      5F7400
+ 1060              	.LASF22:
+ 1061 0203 646F7562 		.ascii	"double\000"
+ 1061      6C6500
+ 1062              	.LASF41:
+ 1063 020a 54656D70 		.ascii	"TempUnit\000"
+ 1063      556E6974 
+ 1063      00
+ 1064              	.LASF20:
+ 1065 0213 666C6F61 		.ascii	"float32\000"
+ 1065      74333200 
+ 1066              	.LASF48:
+ 1067 021b 76616C75 		.ascii	"value_temp_float\000"
+ 1067      655F7465 
+ 1067      6D705F66 
+ 1067      6C6F6174 
+ 1067      00
+ 1068              	.LASF3:
+ 1069 022c 5F5F696E 		.ascii	"__int16_t\000"
+ 1069      7431365F 
+ 1069      7400
+ 1070              	.LASF33:
+ 1071 0236 6374726C 		.ascii	"ctrl_reg5\000"
+ 1071      5F726567 
+ 1071      3500
+ 1072              	.LASF11:
+ 1073 0240 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1073      206C6F6E 
+ 1073      6720756E 
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccPiW3bK.s 			page 23
 
 
- 1086 0383 6C6F6E67 		.ascii	"long double\000"
- 1086      20646F75 
- 1086      626C6500 
- 1087              	.LASF34:
- 1088 038f 73616D70 		.ascii	"samples\000"
- 1088      6C657300 
- 1089              	.LASF56:
- 1090 0397 496E7465 		.ascii	"InterruptRoutines.c\000"
- 1090      72727570 
- 1090      74526F75 
- 1090      74696E65 
- 1090      732E6300 
- 1091              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 1073      7369676E 
+ 1073      65642069 
+ 1074              	.LASF13:
+ 1075 0257 75696E74 		.ascii	"uint8_t\000"
+ 1075      385F7400 
+ 1076              	.LASF40:
+ 1077 025f 53656E73 		.ascii	"Sensitivity\000"
+ 1077      69746976 
+ 1077      69747900 
+ 1078              	.LASF32:
+ 1079 026b 6669666F 		.ascii	"fifo_reg\000"
+ 1079      5F726567 
+ 1079      00
+ 1080              	.LASF14:
+ 1081 0274 696E7431 		.ascii	"int16_t\000"
+ 1081      365F7400 
+ 1082              	.LASF29:
+ 1083 027c 76616C75 		.ascii	"value_temp\000"
+ 1083      655F7465 
+ 1083      6D7000
+ 1084              	.LASF55:
+ 1085 0287 433A5C55 		.ascii	"C:\\Users\\simon\\Desktop\\PsoC_Final_Project_1_03\\"
+ 1085      73657273 
+ 1085      5C73696D 
+ 1085      6F6E5C44 
+ 1085      65736B74 
+ 1086 02b6 46494F52 		.ascii	"FIORANI_GARGIULO_IANNUZZI_Project.cydsn\000"
+ 1086      414E495F 
+ 1086      47415247 
+ 1086      49554C4F 
+ 1086      5F49414E 
+ 1087              	.LASF36:
+ 1088 02de 63685F72 		.ascii	"ch_received\000"
+ 1088      65636569 
+ 1088      76656400 
+ 1089              	.LASF25:
+ 1090 02ea 73697A65 		.ascii	"sizetype\000"
+ 1090      74797065 
+ 1090      00
+ 1091              	.LASF50:
+ 1092 02f3 4144435F 		.ascii	"ADC_DelSig_Read32\000"
+ 1092      44656C53 
+ 1092      69675F52 
+ 1092      65616433 
+ 1092      3200
+ 1093              	.LASF10:
+ 1094 0305 6C6F6E67 		.ascii	"long long int\000"
+ 1094      206C6F6E 
+ 1094      6720696E 
+ 1094      7400
+ 1095              	.LASF37:
+ 1096 0313 4C6F6F70 		.ascii	"LoopContinue\000"
+ 1096      436F6E74 
+ 1096      696E7565 
+ 1096      00
+ 1097              	.LASF23:
+ 1098 0320 63686172 		.ascii	"char\000"
+ARM GAS  C:\Users\simon\AppData\Local\Temp\ccPiW3bK.s 			page 24
+
+
+ 1098      00
+ 1099              	.LASF4:
+ 1100 0325 73686F72 		.ascii	"short int\000"
+ 1100      7420696E 
+ 1100      7400
+ 1101              	.LASF28:
+ 1102 032f 5061636B 		.ascii	"PacketReadyFlag\000"
+ 1102      65745265 
+ 1102      61647946 
+ 1102      6C616700 
+ 1103              	.LASF15:
+ 1104 033f 75696E74 		.ascii	"uint16_t\000"
+ 1104      31365F74 
+ 1104      00
+ 1105              	.LASF8:
+ 1106 0348 6C6F6E67 		.ascii	"long int\000"
+ 1106      20696E74 
+ 1106      00
+ 1107              	.LASF42:
+ 1108 0351 76616C75 		.ascii	"value_digit\000"
+ 1108      655F6469 
+ 1108      67697400 
+ 1109              	.LASF24:
+ 1110 035d 6C6F6E67 		.ascii	"long double\000"
+ 1110      20646F75 
+ 1110      626C6500 
+ 1111              	.LASF34:
+ 1112 0369 73616D70 		.ascii	"samples\000"
+ 1112      6C657300 
+ 1113              	.LASF52:
+ 1114 0371 55415254 		.ascii	"UART_PutString\000"
+ 1114      5F507574 
+ 1114      53747269 
+ 1114      6E6700
+ 1115              	.LASF54:
+ 1116 0380 496E7465 		.ascii	"InterruptRoutines.c\000"
+ 1116      72727570 
+ 1116      74526F75 
+ 1116      74696E65 
+ 1116      732E6300 
+ 1117              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

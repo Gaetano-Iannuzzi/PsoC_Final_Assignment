@@ -31,6 +31,8 @@ int main(void) {
     /* Start UART */
     UART_Start();
     
+    Timer_Start();
+    ADC_DelSig_Start();
     /* Start SPI Masters */
     SPIM_1_Start();
     SPIM_2_Start();
@@ -48,7 +50,8 @@ int main(void) {
     
     /* Start the ISR that manage the help and the UART command from host machine*/
     isr_MENU_StartEx(Custom_ISR_MENU);
-    
+    isr_Button_StartEx(Custom_Button_ISR);
+//    isr
     /* Recover last accelerometer configuration from EEPROM */
     uint8_t ConfExist;
     
@@ -59,26 +62,15 @@ int main(void) {
     ACC_writeByte(LIS3DH_CTRL_REG4, ConfExist);
     
     ConfExist = EEPROM_readByte(EEPROM_TEMP_CONFIG);
-    if (ConfExist == CELSIUS)       {  uint8_t TempUnit = CELSIUS;      }
-    if (ConfExist == FAHRENHEIT)    {  uint8_t TempUnit = FAHRENHEIT;   }
+    if (ConfExist == CELSIUS)       {   TempUnit = CELSIUS;      }
+    if (ConfExist == FAHRENHEIT)    {   TempUnit = FAHRENHEIT;   }
     
     ConfExist = EEPROM_readByte(EEPROM_START_STOP_CONFIG);
     if (ConfExist == START) Registration_Active = START;
     if (ConfExist == STOP)  Registration_Active = STOP;
     
     Sensitivity = EEPROM_readByte(EEPROM_SENSITIVITY_VALUE); // Sensitivity that depends on full scale range
-    
-    
-//    /*Selection of the sampling frequency in Normal Mode*/
-//    uint8_t ctrl_reg1 =0;
-//    /* 1Hz */
-//    
-//    ctrl_reg1 = ACC_readByte(LIS3DH_CTRL_REG1);
-//    if (ctrl_reg1 != LIS3DH_1HZ_CTRL_REG1) 
-//    {
-//        ctrl_reg1 = LIS3DH_1HZ_CTRL_REG1;
-//        ACC_writeByte(LIS3DH_CTRL_REG1,ctrl_reg1);
-//    }
+
 
     
      /* FIFO overrun interrupt on INT1 */
@@ -87,7 +79,7 @@ int main(void) {
     if (ctrl_reg3 != LIS3DH_I1_WTM_OVR_CTRL_REG3)
     {
         ctrl_reg3 = LIS3DH_I1_WTM_OVR_CTRL_REG3;
-        ACC_writeByte(LIS3DH_CTRL_REG3,ctrl_reg3);
+        ACC_writeByte(LIS3DH_CTRL_REG3,0x04);
     }
     
     /*Enable FIFO Mode */
@@ -108,15 +100,15 @@ int main(void) {
         ACC_writeByte(LIS3DH_FIFO_CTRL_REG,fifo_reg);
     }
     
-    uint8_t ReadData[600];
-    uint8_t TransferData[3];
+    uint8_t ReadData[60];
     int16_t i=0,j=0,k=0;
+    int8_t  indexT=0;
     int16_t OutX,OutY,OutZ;
-    uint8_t Packet[80];
-    uint8_t Packet_Read[80];
+    uint8_t Packet[60];
+    uint8_t Packet_Read[60];
     uint16_t samples=0x00;
     uint16_t m=0x00;
-    int16_t X,Y,Z,TEMP;
+    int16_t X,Y,Z,T;
     uint8_t header = 0xA0;
     uint8_t footer = 0xC0;
     int32_t OutX32,OutY32,OutZ32; //int32 values of acceleration after the cast of the floating point
@@ -125,6 +117,7 @@ int main(void) {
     OutArray[0] = header;
     OutArray[15] = footer;
     
+    ADC_DelSig_StartConvert();
     int PacketInEEPROM = 0;
     
     UART_PutString("*********    HELP: POSSIBLE SETTINGS    *********\r\r");
@@ -142,10 +135,10 @@ int main(void) {
                    
                 for ( i=0; i<60; i+=6)
                 {
-                    //       
-//                    OutX = (int16)((ReadData[i] | (ReadData[i+1]<<8)))>>6;
-//                    OutY = (int16)((ReadData[i+2] | (ReadData[i+3]<<8)))>>6;
-//                    OutZ = (int16)((ReadData[i+4] | (ReadData[i+5]<<8)))>>6;
+                           
+                    OutX = (int16)((ReadData[i] | (ReadData[i+1]<<8)))>>6;
+                    OutY = (int16)((ReadData[i+2] | (ReadData[i+3]<<8)))>>6;
+                    OutZ = (int16)((ReadData[i+4] | (ReadData[i+5]<<8)))>>6;
                     
                     // Creation of Packet for EEPROM writing
                     Packet[j]= (ReadData[i+1]>>2);
@@ -153,11 +146,12 @@ int main(void) {
                     Packet[j+2] = ((ReadData[i+5]>>6)|(ReadData[i+2]>>4)|(ReadData[i+3]<<4));
                     Packet[j+3] = ((ReadData[i+4]>>6)|(ReadData[i+5]<<2));
                     
-                    if (PacketReadyFlag == 1)
+                    if( PacketReadyFlag==1)
                     {
-                    Packet[j+4] = value_temp & 0xFF;
-                    Packet[j+5] = value_temp >> 8;
-                    PacketReadyFlag = 0;
+                        
+                        Packet[j+4] = value_temp[indexT] & 0xFF;
+                        Packet[j+5] = value_temp[indexT] >> 8;
+                        indexT++;
                     }
                     // Writing of packets in EEPROM
                     EEPROM_writePage((FIRST_EEPROM_REG+m+samples),(uint8_t*)&Packet[j],6);
@@ -166,32 +160,35 @@ int main(void) {
                     j+=6;       // Index that manage which 4-byte packet write in EEPROM
                     m+=0x06;    // Increment the addrress in which start the 4-byte packet
                  
-//                    sprintf(bufferUART, "** EEPROM Read = %d %d %d \r\n",  OutX*4,OutY*4,OutZ*4);
-//                    UART_PutBuffer;
-//                    UART_PutString("*************************************\r\n");
+                    sprintf(bufferUART, "** EEPROM Read = %d %d %d \r\n",  OutX*4,OutY*4,OutZ*4);
+                    UART_PutBuffer;
+                    UART_PutString("*************************************\r\n");
             }
             
             j=0;    // In order to start from Packet[0] in next FIFO reading
-            
+
+            indexT=0;
             FIFO_Enable();
-            
+            PacketReadyFlag=0;
             samples +=0x3C;
             m= 0x00;
             PacketInEEPROM++;
-            
+            WTM_Full = 0;
             }
         }
         
         if(ActiveVisualization == 1)
             {
-            
-               EEPROM_readPage(FIRST_EEPROM_REG,(uint8_t*)&Packet_Read[0],PACKET_SIZE*PacketInEEPROM);
+               uint16_t campioni = 0x00;
+               for (int w = 0; w < 60*PacketInEEPROM ; w+= 60)
+            {
+               EEPROM_readPage(FIRST_EEPROM_REG+campioni,(uint8_t*)&Packet_Read[0],60);
                Pin_ExternalLED_Write(1);
-               for(k=0; k<PacketInEEPROM*PACKET_SIZE; k+=6){
+               for(k=0; k<60; k+=6){
                     
                    
                     X= (int16) (((Packet_Read[k+1]<<2)|(Packet_Read[k]<<10)))>>6;
-                    AccX=  X*Sensitivity*9.806*0.001; // Multiply the value for 2 because the sensitivity is 2 mg/digit and 9.806*0.001 m/s^2
+                    AccX=  X*4*9.806*0.001; // Multiply the value for 2 because the sensitivity is 2 mg/digit and 9.806*0.001 m/s^2
                     OutX32 =  AccX*100; //Cast the floating point value to an int32 
                                                        //without loosing information of 3 decimals using the multiplication by 1000
                     OutArray[1] = (uint8_t)(OutX32 & 0xFF);
@@ -201,7 +198,7 @@ int main(void) {
                     
 
                     Y = (int16) ((Packet_Read[k+2]<<4)|(Packet_Read[k+1]<<12))>>6;
-                    AccY = Y*Sensitivity*9.806*0.001; // Multiply the value for  2 because the sensitivity is 2 mg/digit and 9.806*0.001 m/s^2
+                    AccY = Y*4*9.806*0.001; // Multiply the value for  2 because the sensitivity is 2 mg/digit and 9.806*0.001 m/s^2
                     OutY32 = AccY*100; //Cast the floating point value to an int32 
                                               //without loosing information of 3 decimals using the multiplication by 1000  
                     OutArray[5] = (uint8_t)(OutY32 & 0xFF);
@@ -210,25 +207,29 @@ int main(void) {
                     OutArray[8] = (uint8_t)(OutY32 >>24);
                         
                     Z = (int16) ((Packet_Read[k+3]<<6)|(Packet_Read[k+2]<<14))>>6;
-                     AccZ = Z*Sensitivity*9.806*0.001; // Multiply the value for 2 because the sensitivity is 2 mg/digit and 9.806*0.001 m/s^2
+                     AccZ = Z*4*9.806*0.001; // Multiply the value for 2 because the sensitivity is 2 mg/digit and 9.806*0.001 m/s^2
                     OutZ32 = AccZ*100;//Cast the floating point value to an int32 
                                            //without loosing information of 3 decimals using the multiplication by 1000  
                     OutArray[9] = (uint8_t)(OutZ32 & 0xFF);
                     OutArray[10] =(uint8_t)(OutZ32 >> 8);
                     OutArray[11] = (uint8_t)(OutZ32 >>16);
                     OutArray[12] = (uint8_t)(OutZ32 >>24);
-                    
+//                    
+                    T = (int16)(Packet_Read[k+4] | (Packet_Read[k+5]<<8));
                     OutArray[13] = (uint8_t)(Packet_Read[k+4]);
                     OutArray[14] = (uint8_t)(Packet_Read[k+5]);
 //         
 //            
-//                    sprintf(bufferUART, "** EEPROM Read = %d %d %d \r\n",  X*4,Y*4,Z*4);
+//                    sprintf(bufferUART, "** EEPROM Read = %d %d %d %d \r\n",  X*4,Y*4,Z*4, T/100);
 //                    UART_PutBuffer;
 //            
 //                    UART_PutString("*************************************\r\n");
 //
                     UART_PutArray(OutArray, 16); //Send data to Uart (values in [mg])
+                    
                 }
+            campioni += 0x3C;
+            }
             
              
             }

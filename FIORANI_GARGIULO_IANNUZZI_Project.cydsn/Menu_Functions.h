@@ -34,21 +34,21 @@
     #define MAX_PACKET_IN_EEPROM        546
     #define PACKET_SIZE                 60
     
-    #define STOP            0
-    #define START           1
+    #define STOP            0x00
+    #define START           0x01
     
-    #define CELSIUS         0
-    #define FAHRENHEIT      1
+    #define CELSIUS         0x00
+    #define FAHRENHEIT      0x01
     
     #define MAX_WAITTIME    1000
 
-    int ActiveRegistration;
     int ActiveVisualization;
     
     char    ch_received;
     int     LoopContinue;
     int     MenuActive;
     int     Registration_Active;
+    
     uint8_t Sensitivity;
     uint8_t TempUnit;
     
