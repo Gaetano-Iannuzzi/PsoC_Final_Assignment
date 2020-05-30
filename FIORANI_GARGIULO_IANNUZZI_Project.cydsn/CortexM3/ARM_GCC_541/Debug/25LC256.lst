@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 1
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccEaokFq.s 			page 1
 
 
    1              		.syntax unified
@@ -35,18 +35,16 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 1
    5:25LC256.c     ****  * This c file contains the API functions to interface
    6:25LC256.c     ****  * with the SPI EEPROM 25LC256.
    7:25LC256.c     ****  *
-   8:25LC256.c     ****  * @author Mattia Pesenti
-   9:25LC256.c     ****  * @date 24 March, 2020
-  10:25LC256.c     **** */
+   8:25LC256.c     **** */
+   9:25LC256.c     **** 
+  10:25LC256.c     **** #include "25LC256.h"
   11:25LC256.c     **** 
-  12:25LC256.c     **** #include "25LC256.h"
+  12:25LC256.c     **** uint8_t eeprom_Status;
   13:25LC256.c     **** 
-  14:25LC256.c     **** uint8_t eeprom_Status;
+  14:25LC256.c     **** /** ====== Helper Functions ====== **/
   15:25LC256.c     **** 
-  16:25LC256.c     **** /** ====== Helper Functions ====== **/
-  17:25LC256.c     **** 
-  18:25LC256.c     **** uint8_t EEPROM_readStatus() {
-  28              		.loc 1 18 0
+  16:25LC256.c     **** uint8_t EEPROM_readStatus() {
+  28              		.loc 1 16 0
   29              		.cfi_startproc
   30              		@ args = 0, pretend = 0, frame = 0
   31              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -54,18 +52,18 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 1
   33              		.cfi_def_cfa_offset 8
   34              		.cfi_offset 3, -8
   35              		.cfi_offset 14, -4
-  19:25LC256.c     ****     
-  20:25LC256.c     **** 	return SPI_Interface_ReadByte(SPI_EEPROM_RDSR);
-  36              		.loc 1 20 0
+  17:25LC256.c     ****     
+  18:25LC256.c     **** 	return SPI_Interface_ReadByte(SPI_EEPROM_RDSR);
+  36              		.loc 1 18 0
   37 0002 0520     		movs	r0, #5
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 2
-
-
   38 0004 FFF7FEFF 		bl	SPI_Interface_ReadByte
   39              	.LVL0:
-  21:25LC256.c     ****     
-  22:25LC256.c     **** }
-  40              		.loc 1 22 0
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccEaokFq.s 			page 2
+
+
+  19:25LC256.c     ****     
+  20:25LC256.c     **** }
+  40              		.loc 1 20 0
   41 0008 08BD     		pop	{r3, pc}
   42              		.cfi_endproc
   43              	.LFE0:
@@ -78,9 +76,9 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 1
   50              		.type	EEPROM_writeEnable, %function
   51              	EEPROM_writeEnable:
   52              	.LFB1:
-  23:25LC256.c     **** 
-  24:25LC256.c     **** void EEPROM_writeEnable() {
-  53              		.loc 1 24 0
+  21:25LC256.c     **** 
+  22:25LC256.c     **** void EEPROM_writeEnable() {
+  53              		.loc 1 22 0
   54              		.cfi_startproc
   55              		@ args = 0, pretend = 0, frame = 0
   56              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -88,10 +86,10 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 1
   58              		.cfi_def_cfa_offset 8
   59              		.cfi_offset 3, -8
   60              		.cfi_offset 14, -4
-  25:25LC256.c     ****     
-  26:25LC256.c     **** 	/* Send 1-byte Instruction */
-  27:25LC256.c     **** 	SPI_Interface_tradeByte(SPI_EEPROM_WREN);
-  61              		.loc 1 27 0
+  23:25LC256.c     ****     
+  24:25LC256.c     **** 	/* Send 1-byte Instruction */
+  25:25LC256.c     **** 	SPI_Interface_tradeByte(SPI_EEPROM_WREN);
+  61              		.loc 1 25 0
   62 0002 0620     		movs	r0, #6
   63 0004 FFF7FEFF 		bl	SPI_Interface_tradeByte
   64              	.LVL1:
@@ -107,58 +105,58 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 1
   74              		.type	EEPROM_readByte, %function
   75              	EEPROM_readByte:
   76              	.LFB2:
-  28:25LC256.c     ****     
-  29:25LC256.c     **** }
+  26:25LC256.c     ****     
+  27:25LC256.c     **** }
+  28:25LC256.c     **** 
+  29:25LC256.c     **** /** ====== User-level Functions ====== **/
   30:25LC256.c     **** 
-  31:25LC256.c     **** /** ====== User-level Functions ====== **/
-  32:25LC256.c     **** 
-  33:25LC256.c     ****     uint8_t EEPROM_readByte(uint16_t addr) {
-  77              		.loc 1 33 0
+  31:25LC256.c     ****     uint8_t EEPROM_readByte(uint16_t addr) {
+  77              		.loc 1 31 0
   78              		.cfi_startproc
   79              		@ args = 0, pretend = 0, frame = 8
   80              		@ frame_needed = 0, uses_anonymous_args = 0
   81              	.LVL2:
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 3
-
-
   82 0000 00B5     		push	{lr}
   83              		.cfi_def_cfa_offset 4
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccEaokFq.s 			page 3
+
+
   84              		.cfi_offset 14, -4
   85 0002 83B0     		sub	sp, sp, #12
   86              		.cfi_def_cfa_offset 16
-  34:25LC256.c     **** 
-  35:25LC256.c     **** 	/* Prepare the TX data packet: instruction + address */
-  36:25LC256.c     **** 	uint8_t dataTX[3] = {SPI_EEPROM_READ, ((addr & 0xFF00) >> 8),(addr & 0x00FF)};
-  87              		.loc 1 36 0
+  32:25LC256.c     **** 
+  33:25LC256.c     **** 	/* Prepare the TX data packet: instruction + address */
+  34:25LC256.c     **** 	uint8_t dataTX[3] = {SPI_EEPROM_READ, ((addr & 0xFF00) >> 8),(addr & 0x00FF)};
+  87              		.loc 1 34 0
   88 0004 0321     		movs	r1, #3
   89 0006 8DF80410 		strb	r1, [sp, #4]
   90 000a 030A     		lsrs	r3, r0, #8
   91 000c 8DF80530 		strb	r3, [sp, #5]
   92 0010 8DF80600 		strb	r0, [sp, #6]
-  37:25LC256.c     ****     
-  38:25LC256.c     ****     /* Prepare the RX byte */
-  39:25LC256.c     **** 	uint8_t dataRX = 0;
-  93              		.loc 1 39 0
+  35:25LC256.c     ****     
+  36:25LC256.c     ****     /* Prepare the RX byte */
+  37:25LC256.c     **** 	uint8_t dataRX = 0;
+  93              		.loc 1 37 0
   94 0014 02AA     		add	r2, sp, #8
   95 0016 0023     		movs	r3, #0
   96 0018 02F8053D 		strb	r3, [r2, #-5]!
-  40:25LC256.c     **** 	
-  41:25LC256.c     **** 	/* Read 1 byte from addr */
-  42:25LC256.c     ****     SPI_Interface_Multi_RW(dataTX, 3, &dataRX, 1);
-  97              		.loc 1 42 0
+  38:25LC256.c     **** 	
+  39:25LC256.c     **** 	/* Read 1 byte from addr */
+  40:25LC256.c     ****     SPI_Interface_Multi_RW(dataTX, 3, &dataRX, 1);
+  97              		.loc 1 40 0
   98 001c 0123     		movs	r3, #1
   99 001e 01A8     		add	r0, sp, #4
  100              	.LVL3:
  101 0020 FFF7FEFF 		bl	SPI_Interface_Multi_RW
  102              	.LVL4:
-  43:25LC256.c     ****     
-  44:25LC256.c     ****     
-  45:25LC256.c     ****     return dataRX;
-  46:25LC256.c     **** 	
-  47:25LC256.c     **** 	
-  48:25LC256.c     ****    
-  49:25LC256.c     **** }
- 103              		.loc 1 49 0
+  41:25LC256.c     ****     
+  42:25LC256.c     ****     
+  43:25LC256.c     ****     return dataRX;
+  44:25LC256.c     **** 	
+  45:25LC256.c     **** 	
+  46:25LC256.c     ****    
+  47:25LC256.c     **** }
+ 103              		.loc 1 47 0
  104 0024 9DF80300 		ldrb	r0, [sp, #3]	@ zero_extendqisi2
  105 0028 03B0     		add	sp, sp, #12
  106              		.cfi_def_cfa_offset 4
@@ -175,14 +173,14 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 1
  117              		.type	EEPROM_writeByte, %function
  118              	EEPROM_writeByte:
  119              	.LFB3:
-  50:25LC256.c     **** 
-  51:25LC256.c     **** void EEPROM_writeByte(uint16_t addr, uint8_t dataByte) {
- 120              		.loc 1 51 0
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 4
-
-
+  48:25LC256.c     **** 
+  49:25LC256.c     **** void EEPROM_writeByte(uint16_t addr, uint8_t dataByte) {
+ 120              		.loc 1 49 0
  121              		.cfi_startproc
  122              		@ args = 0, pretend = 0, frame = 8
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccEaokFq.s 			page 4
+
+
  123              		@ frame_needed = 0, uses_anonymous_args = 0
  124              	.LVL5:
  125 0000 30B5     		push	{r4, r5, lr}
@@ -194,39 +192,39 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 1
  131              		.cfi_def_cfa_offset 24
  132 0004 0446     		mov	r4, r0
  133 0006 0D46     		mov	r5, r1
-  52:25LC256.c     ****     
-  53:25LC256.c     ****     /* Enable WRITE operations */
-  54:25LC256.c     ****     EEPROM_writeEnable();
- 134              		.loc 1 54 0
+  50:25LC256.c     ****     
+  51:25LC256.c     ****     /* Enable WRITE operations */
+  52:25LC256.c     ****     EEPROM_writeEnable();
+ 134              		.loc 1 52 0
  135 0008 FFF7FEFF 		bl	EEPROM_writeEnable
  136              	.LVL6:
-  55:25LC256.c     **** 	
-  56:25LC256.c     **** 	/* Prepare the TX packet */
-  57:25LC256.c     ****     uint8_t dataTX[4] = {SPI_EEPROM_WRITE, ((addr & 0xFF00) >> 8), (addr & 0x00FF), dataByte};
- 137              		.loc 1 57 0
+  53:25LC256.c     **** 	
+  54:25LC256.c     **** 	/* Prepare the TX packet */
+  55:25LC256.c     ****     uint8_t dataTX[4] = {SPI_EEPROM_WRITE, ((addr & 0xFF00) >> 8), (addr & 0x00FF), dataByte};
+ 137              		.loc 1 55 0
  138 000c 0223     		movs	r3, #2
  139 000e 8DF80430 		strb	r3, [sp, #4]
  140 0012 230A     		lsrs	r3, r4, #8
  141 0014 8DF80530 		strb	r3, [sp, #5]
  142 0018 8DF80640 		strb	r4, [sp, #6]
  143 001c 8DF80750 		strb	r5, [sp, #7]
-  58:25LC256.c     **** 	/* Nothing to RX... */
-  59:25LC256.c     **** 	uint8_t temp = 0;
- 144              		.loc 1 59 0
+  56:25LC256.c     **** 	/* Nothing to RX... */
+  57:25LC256.c     **** 	uint8_t temp = 0;
+ 144              		.loc 1 57 0
  145 0020 0023     		movs	r3, #0
  146 0022 02AA     		add	r2, sp, #8
  147 0024 02F8053D 		strb	r3, [r2, #-5]!
-  60:25LC256.c     **** 	
-  61:25LC256.c     **** 	/* Write 1 byte to addr */
-  62:25LC256.c     **** 	SPI_Interface_Multi_RW(dataTX, 4, &temp, 0);
- 148              		.loc 1 62 0
+  58:25LC256.c     **** 	
+  59:25LC256.c     **** 	/* Write 1 byte to addr */
+  60:25LC256.c     **** 	SPI_Interface_Multi_RW(dataTX, 4, &temp, 0);
+ 148              		.loc 1 60 0
  149 0028 0421     		movs	r1, #4
  150 002a 0DEB0100 		add	r0, sp, r1
  151 002e FFF7FEFF 		bl	SPI_Interface_Multi_RW
  152              	.LVL7:
-  63:25LC256.c     **** 	    
-  64:25LC256.c     **** }
- 153              		.loc 1 64 0
+  61:25LC256.c     **** 	    
+  62:25LC256.c     **** }
+ 153              		.loc 1 62 0
  154 0032 03B0     		add	sp, sp, #12
  155              		.cfi_def_cfa_offset 12
  156              		@ sp needed
@@ -238,16 +236,16 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 1
  162              		.align	2
  163              		.global	EEPROM_readPage
  164              		.thumb
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 5
-
-
  165              		.thumb_func
  166              		.type	EEPROM_readPage, %function
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccEaokFq.s 			page 5
+
+
  167              	EEPROM_readPage:
  168              	.LFB4:
-  65:25LC256.c     **** 
-  66:25LC256.c     **** void EEPROM_readPage(uint16_t addr, uint8_t* dataRX, uint8_t nBytes) {
- 169              		.loc 1 66 0
+  63:25LC256.c     **** 
+  64:25LC256.c     **** void EEPROM_readPage(uint16_t addr, uint8_t* dataRX, uint8_t nBytes) {
+ 169              		.loc 1 64 0
  170              		.cfi_startproc
  171              		@ args = 0, pretend = 0, frame = 8
  172              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -258,19 +256,19 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 1
  177              		.cfi_offset 14, -4
  178 0002 82B0     		sub	sp, sp, #8
  179              		.cfi_def_cfa_offset 16
-  67:25LC256.c     ****     
-  68:25LC256.c     **** 	/* Prepare the TX data packet: instruction + address */
-  69:25LC256.c     **** 	uint8_t dataTX[3] = {SPI_EEPROM_READ, ((addr & 0xFF00) >> 8), (addr & 0x00FF)};
- 180              		.loc 1 69 0
+  65:25LC256.c     ****     
+  66:25LC256.c     **** 	/* Prepare the TX data packet: instruction + address */
+  67:25LC256.c     **** 	uint8_t dataTX[3] = {SPI_EEPROM_READ, ((addr & 0xFF00) >> 8), (addr & 0x00FF)};
+ 180              		.loc 1 67 0
  181 0004 0324     		movs	r4, #3
  182 0006 8DF80440 		strb	r4, [sp, #4]
  183 000a 030A     		lsrs	r3, r0, #8
  184 000c 8DF80530 		strb	r3, [sp, #5]
  185 0010 8DF80600 		strb	r0, [sp, #6]
-  70:25LC256.c     **** 	
-  71:25LC256.c     **** 	/* Read the nBytes */
-  72:25LC256.c     **** 	SPI_Interface_Multi_RW(dataTX, 3, dataRX, nBytes);
- 186              		.loc 1 72 0
+  68:25LC256.c     **** 	
+  69:25LC256.c     **** 	/* Read the nBytes */
+  70:25LC256.c     **** 	SPI_Interface_Multi_RW(dataTX, 3, dataRX, nBytes);
+ 186              		.loc 1 70 0
  187 0014 1346     		mov	r3, r2
  188 0016 0A46     		mov	r2, r1
  189              	.LVL9:
@@ -280,9 +278,9 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 1
  193              	.LVL11:
  194 001c FFF7FEFF 		bl	SPI_Interface_Multi_RW
  195              	.LVL12:
-  73:25LC256.c     **** 		
-  74:25LC256.c     **** }
- 196              		.loc 1 74 0
+  71:25LC256.c     **** 		
+  72:25LC256.c     **** }
+ 196              		.loc 1 72 0
  197 0020 02B0     		add	sp, sp, #8
  198              		.cfi_def_cfa_offset 8
  199              		@ sp needed
@@ -298,12 +296,12 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 1
  209              		.type	EEPROM_writePage, %function
  210              	EEPROM_writePage:
  211              	.LFB5:
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 6
+  73:25LC256.c     **** 
+  74:25LC256.c     **** void EEPROM_writePage(uint16_t addr, uint8_t* data, uint8_t nBytes) {
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccEaokFq.s 			page 6
 
 
-  75:25LC256.c     **** 
-  76:25LC256.c     **** void EEPROM_writePage(uint16_t addr, uint8_t* data, uint8_t nBytes) {
- 212              		.loc 1 76 0
+ 212              		.loc 1 74 0
  213              		.cfi_startproc
  214              		@ args = 0, pretend = 0, frame = 8
  215              		@ frame_needed = 1, uses_anonymous_args = 0
@@ -323,69 +321,69 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 1
  229 0008 0546     		mov	r5, r0
  230 000a 8846     		mov	r8, r1
  231 000c 1446     		mov	r4, r2
-  77:25LC256.c     **** 	    
-  78:25LC256.c     ****     /* Enable WRITE operations */
-  79:25LC256.c     ****     EEPROM_writeEnable();
- 232              		.loc 1 79 0
+  75:25LC256.c     **** 	    
+  76:25LC256.c     ****     /* Enable WRITE operations */
+  77:25LC256.c     ****     EEPROM_writeEnable();
+ 232              		.loc 1 77 0
  233 000e FFF7FEFF 		bl	EEPROM_writeEnable
  234              	.LVL14:
-  80:25LC256.c     **** 	
-  81:25LC256.c     ****     CyDelayUs(1);
- 235              		.loc 1 81 0
+  78:25LC256.c     **** 	
+  79:25LC256.c     ****     CyDelayUs(1);
+ 235              		.loc 1 79 0
  236 0012 0120     		movs	r0, #1
  237 0014 FFF7FEFF 		bl	CyDelayUs
  238              	.LVL15:
-  82:25LC256.c     ****     
-  83:25LC256.c     **** 	/* Prepare the TX packet of size nBytes+3 
-  84:25LC256.c     ****        [ Write Instruction - Address MSB - Address LSB - +++data+++ ]
-  85:25LC256.c     ****     */
-  86:25LC256.c     **** 	uint8_t dataTX[3+nBytes];
- 239              		.loc 1 86 0
+  80:25LC256.c     ****     
+  81:25LC256.c     **** 	/* Prepare the TX packet of size nBytes+3 
+  82:25LC256.c     ****        [ Write Instruction - Address MSB - Address LSB - +++data+++ ]
+  83:25LC256.c     ****     */
+  84:25LC256.c     **** 	uint8_t dataTX[3+nBytes];
+ 239              		.loc 1 84 0
  240 0018 E61C     		adds	r6, r4, #3
  241              	.LVL16:
  242 001a 04F10A03 		add	r3, r4, #10
  243 001e 23F00703 		bic	r3, r3, #7
  244 0022 ADEB030D 		sub	sp, sp, r3
  245              	.LVL17:
-  87:25LC256.c     ****     dataTX[0] = SPI_EEPROM_WRITE;
- 246              		.loc 1 87 0
+  85:25LC256.c     ****     dataTX[0] = SPI_EEPROM_WRITE;
+ 246              		.loc 1 85 0
  247 0026 0223     		movs	r3, #2
  248 0028 8DF80030 		strb	r3, [sp]
-  88:25LC256.c     ****     dataTX[1] = (addr & 0xFF00) >> 8;
- 249              		.loc 1 88 0
+  86:25LC256.c     ****     dataTX[1] = (addr & 0xFF00) >> 8;
+ 249              		.loc 1 86 0
  250 002c 2B0A     		lsrs	r3, r5, #8
  251 002e 8DF80130 		strb	r3, [sp, #1]
-  89:25LC256.c     ****     dataTX[2] = addr & 0x00FF;
- 252              		.loc 1 89 0
+  87:25LC256.c     ****     dataTX[2] = addr & 0x00FF;
+ 252              		.loc 1 87 0
  253 0032 8DF80250 		strb	r5, [sp, #2]
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 7
+  88:25LC256.c     ****     /* Copy the input data in the memory */
+  89:25LC256.c     **** 	memcpy(&dataTX[3], data, nBytes);
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccEaokFq.s 			page 7
 
 
-  90:25LC256.c     ****     /* Copy the input data in the memory */
-  91:25LC256.c     **** 	memcpy(&dataTX[3], data, nBytes);
- 254              		.loc 1 91 0
+ 254              		.loc 1 89 0
  255 0036 2246     		mov	r2, r4
  256 0038 4146     		mov	r1, r8
  257 003a 0DF10300 		add	r0, sp, #3
  258 003e FFF7FEFF 		bl	memcpy
  259              	.LVL18:
-  92:25LC256.c     **** 	
-  93:25LC256.c     **** 	/* Nothing to RX: point to a dummy variable */
-  94:25LC256.c     **** 	uint8_t temp = 0;
- 260              		.loc 1 94 0
+  90:25LC256.c     **** 	
+  91:25LC256.c     **** 	/* Nothing to RX: point to a dummy variable */
+  92:25LC256.c     **** 	uint8_t temp = 0;
+ 260              		.loc 1 92 0
  261 0042 0023     		movs	r3, #0
  262 0044 07F10802 		add	r2, r7, #8
  263 0048 02F8013D 		strb	r3, [r2, #-1]!
-  95:25LC256.c     **** 	
-  96:25LC256.c     **** 	SPI_Interface_Multi_RW(dataTX, 3+nBytes, &temp, 0);
- 264              		.loc 1 96 0
+  93:25LC256.c     **** 	
+  94:25LC256.c     **** 	SPI_Interface_Multi_RW(dataTX, 3+nBytes, &temp, 0);
+ 264              		.loc 1 94 0
  265 004c F1B2     		uxtb	r1, r6
  266 004e 6846     		mov	r0, sp
  267 0050 FFF7FEFF 		bl	SPI_Interface_Multi_RW
  268              	.LVL19:
-  97:25LC256.c     **** 	
-  98:25LC256.c     **** }
- 269              		.loc 1 98 0
+  95:25LC256.c     **** 	
+  96:25LC256.c     **** }
+ 269              		.loc 1 96 0
  270 0054 0837     		adds	r7, r7, #8
  271              		.cfi_def_cfa_offset 24
  272 0056 BD46     		mov	sp, r7
@@ -404,9 +402,9 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 1
  285              		.type	EEPROM_waitForWriteComplete, %function
  286              	EEPROM_waitForWriteComplete:
  287              	.LFB6:
-  99:25LC256.c     **** 
- 100:25LC256.c     **** void EEPROM_waitForWriteComplete() {
- 288              		.loc 1 100 0
+  97:25LC256.c     **** 
+  98:25LC256.c     **** void EEPROM_waitForWriteComplete() {
+ 288              		.loc 1 98 0
  289              		.cfi_startproc
  290              		@ args = 0, pretend = 0, frame = 0
  291              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -415,19 +413,19 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 1
  294              		.cfi_offset 3, -8
  295              		.cfi_offset 14, -4
  296              	.L14:
- 101:25LC256.c     ****     
- 102:25LC256.c     ****     while( EEPROM_readStatus() & SPI_EEPROM_WRITE_IN_PROGRESS );
- 297              		.loc 1 102 0 discriminator 1
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 8
-
-
+  99:25LC256.c     ****     
+ 100:25LC256.c     ****     while( EEPROM_readStatus() & SPI_EEPROM_WRITE_IN_PROGRESS );
+ 297              		.loc 1 100 0 discriminator 1
  298 0002 FFF7FEFF 		bl	EEPROM_readStatus
  299              	.LVL21:
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccEaokFq.s 			page 8
+
+
  300 0006 10F0010F 		tst	r0, #1
  301 000a FAD1     		bne	.L14
- 103:25LC256.c     ****     
- 104:25LC256.c     **** }
- 302              		.loc 1 104 0
+ 101:25LC256.c     ****     
+ 102:25LC256.c     **** }
+ 302              		.loc 1 102 0
  303 000c 08BD     		pop	{r3, pc}
  304              		.cfi_endproc
  305              	.LFE6:
@@ -449,14 +447,14 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 1
  321 000c 9A000000 		.4byte	.LASF36
  322 0010 0C       		.byte	0xc
  323 0011 54010000 		.4byte	.LASF37
- 324 0015 E0010000 		.4byte	.LASF38
+ 324 0015 D9010000 		.4byte	.LASF38
  325 0019 00000000 		.4byte	.Ldebug_ranges0+0
  326 001d 00000000 		.4byte	0
  327 0021 00000000 		.4byte	.Ldebug_line0
  328 0025 02       		.uleb128 0x2
  329 0026 01       		.byte	0x1
  330 0027 06       		.byte	0x6
- 331 0028 AF020000 		.4byte	.LASF0
+ 331 0028 BE020000 		.4byte	.LASF0
  332 002c 03       		.uleb128 0x3
  333 002d 11000000 		.4byte	.LASF3
  334 0031 02       		.byte	0x2
@@ -469,7 +467,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 1
  341 003e 02       		.uleb128 0x2
  342 003f 02       		.byte	0x2
  343 0040 05       		.byte	0x5
- 344 0041 71020000 		.4byte	.LASF2
+ 344 0041 80020000 		.4byte	.LASF2
  345 0045 03       		.uleb128 0x3
  346 0046 67010000 		.4byte	.LASF4
  347 004a 02       		.byte	0x2
@@ -478,14 +476,14 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 1
  350 0050 02       		.uleb128 0x2
  351 0051 02       		.byte	0x2
  352 0052 07       		.byte	0x7
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 9
-
-
  353 0053 28000000 		.4byte	.LASF5
  354 0057 02       		.uleb128 0x2
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccEaokFq.s 			page 9
+
+
  355 0058 04       		.byte	0x4
  356 0059 05       		.byte	0x5
- 357 005a 95020000 		.4byte	.LASF6
+ 357 005a A4020000 		.4byte	.LASF6
  358 005e 02       		.uleb128 0x2
  359 005f 04       		.byte	0x4
  360 0060 07       		.byte	0x7
@@ -493,7 +491,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 1
  362 0065 02       		.uleb128 0x2
  363 0066 08       		.byte	0x8
  364 0067 05       		.byte	0x5
- 365 0068 5C020000 		.4byte	.LASF8
+ 365 0068 6B020000 		.4byte	.LASF8
  366 006c 02       		.uleb128 0x2
  367 006d 08       		.byte	0x8
  368 006e 07       		.byte	0x7
@@ -512,7 +510,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 1
  381 0087 18       		.byte	0x18
  382 0088 2C000000 		.4byte	0x2c
  383 008c 03       		.uleb128 0x3
- 384 008d 8C020000 		.4byte	.LASF12
+ 384 008d 9B020000 		.4byte	.LASF12
  385 0091 03       		.byte	0x3
  386 0092 24       		.byte	0x24
  387 0093 45000000 		.4byte	0x45
@@ -527,22 +525,22 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 1
  396 00a5 02       		.uleb128 0x2
  397 00a6 01       		.byte	0x1
  398 00a7 08       		.byte	0x8
- 399 00a8 9E020000 		.4byte	.LASF15
+ 399 00a8 AD020000 		.4byte	.LASF15
  400 00ac 02       		.uleb128 0x2
  401 00ad 08       		.byte	0x8
  402 00ae 04       		.byte	0x4
- 403 00af A3020000 		.4byte	.LASF16
+ 403 00af B2020000 		.4byte	.LASF16
  404 00b3 02       		.uleb128 0x2
  405 00b4 04       		.byte	0x4
  406 00b5 07       		.byte	0x7
- 407 00b6 53020000 		.4byte	.LASF17
+ 407 00b6 62020000 		.4byte	.LASF17
  408 00ba 05       		.uleb128 0x5
  409 00bb 9B010000 		.4byte	.LASF18
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 10
-
-
  410 00bf 01       		.byte	0x1
- 411 00c0 12       		.byte	0x12
+ 411 00c0 10       		.byte	0x10
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccEaokFq.s 			page 10
+
+
  412 00c1 81000000 		.4byte	0x81
  413 00c5 00000000 		.4byte	.LFB0
  414 00c9 0A000000 		.4byte	.LFE0-.LFB0
@@ -560,9 +558,9 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 1
  426 00e1 00       		.byte	0
  427 00e2 00       		.byte	0
  428 00e3 08       		.uleb128 0x8
- 429 00e4 C2020000 		.4byte	.LASF22
+ 429 00e4 D1020000 		.4byte	.LASF22
  430 00e8 01       		.byte	0x1
- 431 00e9 18       		.byte	0x18
+ 431 00e9 16       		.byte	0x16
  432 00ea 00000000 		.4byte	.LFB1
  433 00ee 0A000000 		.4byte	.LFE1-.LFB1
  434 00f2 01       		.uleb128 0x1
@@ -581,7 +579,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 1
  447 0108 05       		.uleb128 0x5
  448 0109 44010000 		.4byte	.LASF19
  449 010d 01       		.byte	0x1
- 450 010e 21       		.byte	0x21
+ 450 010e 1F       		.byte	0x1f
  451 010f 81000000 		.4byte	0x81
  452 0113 00000000 		.4byte	.LFB2
  453 0117 2E000000 		.4byte	.LFE2-.LFB2
@@ -591,24 +589,24 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 1
  457 0121 09       		.uleb128 0x9
  458 0122 3F010000 		.4byte	.LASF24
  459 0126 01       		.byte	0x1
- 460 0127 21       		.byte	0x21
+ 460 0127 1F       		.byte	0x1f
  461 0128 8C000000 		.4byte	0x8c
  462 012c 00000000 		.4byte	.LLST0
  463 0130 0A       		.uleb128 0xa
- 464 0131 BB020000 		.4byte	.LASF20
+ 464 0131 CA020000 		.4byte	.LASF20
  465 0135 01       		.byte	0x1
- 466 0136 24       		.byte	0x24
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 11
-
-
+ 466 0136 22       		.byte	0x22
  467 0137 6D010000 		.4byte	0x16d
  468 013b 02       		.uleb128 0x2
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccEaokFq.s 			page 11
+
+
  469 013c 91       		.byte	0x91
  470 013d 74       		.sleb128 -12
  471 013e 0A       		.uleb128 0xa
- 472 013f D9010000 		.4byte	.LASF21
+ 472 013f 3F020000 		.4byte	.LASF21
  473 0143 01       		.byte	0x1
- 474 0144 27       		.byte	0x27
+ 474 0144 25       		.byte	0x25
  475 0145 81000000 		.4byte	0x81
  476 0149 02       		.uleb128 0x2
  477 014a 91       		.byte	0x91
@@ -650,7 +648,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 1
  513 017d 08       		.uleb128 0x8
  514 017e 00000000 		.4byte	.LASF23
  515 0182 01       		.byte	0x1
- 516 0183 33       		.byte	0x33
+ 516 0183 31       		.byte	0x31
  517 0184 00000000 		.4byte	.LFB3
  518 0188 36000000 		.4byte	.LFE3-.LFB3
  519 018c 01       		.uleb128 0x1
@@ -658,23 +656,23 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 1
  521 018e F6010000 		.4byte	0x1f6
  522 0192 09       		.uleb128 0x9
  523 0193 3F010000 		.4byte	.LASF24
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 12
-
-
  524 0197 01       		.byte	0x1
- 525 0198 33       		.byte	0x33
+ 525 0198 31       		.byte	0x31
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccEaokFq.s 			page 12
+
+
  526 0199 8C000000 		.4byte	0x8c
  527 019d 21000000 		.4byte	.LLST1
  528 01a1 09       		.uleb128 0x9
  529 01a2 5E010000 		.4byte	.LASF25
  530 01a6 01       		.byte	0x1
- 531 01a7 33       		.byte	0x33
+ 531 01a7 31       		.byte	0x31
  532 01a8 81000000 		.4byte	0x81
  533 01ac 42000000 		.4byte	.LLST2
  534 01b0 0A       		.uleb128 0xa
- 535 01b1 BB020000 		.4byte	.LASF20
+ 535 01b1 CA020000 		.4byte	.LASF20
  536 01b5 01       		.byte	0x1
- 537 01b6 39       		.byte	0x39
+ 537 01b6 37       		.byte	0x37
  538 01b7 F6010000 		.4byte	0x1f6
  539 01bb 02       		.uleb128 0x2
  540 01bc 91       		.byte	0x91
@@ -682,7 +680,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 1
  542 01be 0A       		.uleb128 0xa
  543 01bf 3A010000 		.4byte	.LASF26
  544 01c3 01       		.byte	0x1
- 545 01c4 3B       		.byte	0x3b
+ 545 01c4 39       		.byte	0x39
  546 01c5 81000000 		.4byte	0x81
  547 01c9 02       		.uleb128 0x2
  548 01ca 91       		.byte	0x91
@@ -718,11 +716,11 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 1
  578 01f4 00       		.byte	0
  579 01f5 00       		.byte	0
  580 01f6 0B       		.uleb128 0xb
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 13
-
-
  581 01f7 81000000 		.4byte	0x81
  582 01fb 06020000 		.4byte	0x206
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccEaokFq.s 			page 13
+
+
  583 01ff 0C       		.uleb128 0xc
  584 0200 B3000000 		.4byte	0xb3
  585 0204 03       		.byte	0x3
@@ -730,7 +728,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 1
  587 0206 08       		.uleb128 0x8
  588 0207 52000000 		.4byte	.LASF27
  589 020b 01       		.byte	0x1
- 590 020c 42       		.byte	0x42
+ 590 020c 40       		.byte	0x40
  591 020d 00000000 		.4byte	.LFB4
  592 0211 24000000 		.4byte	.LFE4-.LFB4
  593 0215 01       		.uleb128 0x1
@@ -739,25 +737,25 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 1
  596 021b 09       		.uleb128 0x9
  597 021c 3F010000 		.4byte	.LASF24
  598 0220 01       		.byte	0x1
- 599 0221 42       		.byte	0x42
+ 599 0221 40       		.byte	0x40
  600 0222 8C000000 		.4byte	0x8c
  601 0226 63000000 		.4byte	.LLST3
  602 022a 09       		.uleb128 0x9
- 603 022b D9010000 		.4byte	.LASF21
+ 603 022b 3F020000 		.4byte	.LASF21
  604 022f 01       		.byte	0x1
- 605 0230 42       		.byte	0x42
+ 605 0230 40       		.byte	0x40
  606 0231 74020000 		.4byte	0x274
  607 0235 84000000 		.4byte	.LLST4
  608 0239 09       		.uleb128 0x9
  609 023a 21000000 		.4byte	.LASF28
  610 023e 01       		.byte	0x1
- 611 023f 42       		.byte	0x42
+ 611 023f 40       		.byte	0x40
  612 0240 81000000 		.4byte	0x81
  613 0244 B0000000 		.4byte	.LLST5
  614 0248 0A       		.uleb128 0xa
- 615 0249 BB020000 		.4byte	.LASF20
+ 615 0249 CA020000 		.4byte	.LASF20
  616 024d 01       		.byte	0x1
- 617 024e 45       		.byte	0x45
+ 617 024e 43       		.byte	0x43
  618 024f 6D010000 		.4byte	0x16d
  619 0253 02       		.uleb128 0x2
  620 0254 91       		.byte	0x91
@@ -778,11 +776,11 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 1
  635 0269 74       		.byte	0x74
  636 026a 00       		.sleb128 0
  637 026b 07       		.uleb128 0x7
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 14
-
-
  638 026c 01       		.uleb128 0x1
  639 026d 52       		.byte	0x52
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccEaokFq.s 			page 14
+
+
  640 026e 03       		.uleb128 0x3
  641 026f F3       		.byte	0xf3
  642 0270 01       		.uleb128 0x1
@@ -793,9 +791,9 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 1
  647 0275 04       		.byte	0x4
  648 0276 81000000 		.4byte	0x81
  649 027a 08       		.uleb128 0x8
- 650 027b 7B020000 		.4byte	.LASF29
+ 650 027b 8A020000 		.4byte	.LASF29
  651 027f 01       		.byte	0x1
- 652 0280 4C       		.byte	0x4c
+ 652 0280 4A       		.byte	0x4a
  653 0281 00000000 		.4byte	.LFB5
  654 0285 5C000000 		.4byte	.LFE5-.LFB5
  655 0289 01       		.uleb128 0x1
@@ -804,31 +802,31 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 1
  658 028f 09       		.uleb128 0x9
  659 0290 3F010000 		.4byte	.LASF24
  660 0294 01       		.byte	0x1
- 661 0295 4C       		.byte	0x4c
+ 661 0295 4A       		.byte	0x4a
  662 0296 8C000000 		.4byte	0x8c
  663 029a D1000000 		.4byte	.LLST6
  664 029e 09       		.uleb128 0x9
  665 029f 70000000 		.4byte	.LASF30
  666 02a3 01       		.byte	0x1
- 667 02a4 4C       		.byte	0x4c
+ 667 02a4 4A       		.byte	0x4a
  668 02a5 74020000 		.4byte	0x274
  669 02a9 F2000000 		.4byte	.LLST7
  670 02ad 09       		.uleb128 0x9
  671 02ae 21000000 		.4byte	.LASF28
  672 02b2 01       		.byte	0x1
- 673 02b3 4C       		.byte	0x4c
+ 673 02b3 4A       		.byte	0x4a
  674 02b4 81000000 		.4byte	0x81
  675 02b8 10010000 		.4byte	.LLST8
  676 02bc 0F       		.uleb128 0xf
- 677 02bd BB020000 		.4byte	.LASF20
+ 677 02bd CA020000 		.4byte	.LASF20
  678 02c1 01       		.byte	0x1
- 679 02c2 56       		.byte	0x56
+ 679 02c2 54       		.byte	0x54
  680 02c3 37030000 		.4byte	0x337
  681 02c7 31010000 		.4byte	.LLST9
  682 02cb 0A       		.uleb128 0xa
  683 02cc 3A010000 		.4byte	.LASF26
  684 02d0 01       		.byte	0x1
- 685 02d1 5E       		.byte	0x5e
+ 685 02d1 5C       		.byte	0x5c
  686 02d2 81000000 		.4byte	0x81
  687 02d6 02       		.uleb128 0x2
  688 02d7 91       		.byte	0x91
@@ -838,11 +836,11 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 1
  692 02de E3000000 		.4byte	0xe3
  693 02e2 10       		.uleb128 0x10
  694 02e3 18000000 		.4byte	.LVL15
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 15
-
-
  695 02e7 9F030000 		.4byte	0x39f
  696 02eb F5020000 		.4byte	0x2f5
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccEaokFq.s 			page 15
+
+
  697 02ef 07       		.uleb128 0x7
  698 02f0 01       		.uleb128 0x1
  699 02f1 50       		.byte	0x50
@@ -898,11 +896,11 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 1
  749 0332 53       		.byte	0x53
  750 0333 01       		.uleb128 0x1
  751 0334 30       		.byte	0x30
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 16
-
-
  752 0335 00       		.byte	0
  753 0336 00       		.byte	0
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccEaokFq.s 			page 16
+
+
  754 0337 0B       		.uleb128 0xb
  755 0338 81000000 		.4byte	0x81
  756 033c 4E030000 		.4byte	0x34e
@@ -918,9 +916,9 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 1
  766 034c 02       		.uleb128 0x2
  767 034d 00       		.byte	0
  768 034e 08       		.uleb128 0x8
- 769 034f 37020000 		.4byte	.LASF31
+ 769 034f 46020000 		.4byte	.LASF31
  770 0353 01       		.byte	0x1
- 771 0354 64       		.byte	0x64
+ 771 0354 62       		.byte	0x62
  772 0355 00000000 		.4byte	.LFB6
  773 0359 0E000000 		.4byte	.LFE6-.LFB6
  774 035d 01       		.uleb128 0x1
@@ -933,7 +931,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 1
  781 036d 12       		.uleb128 0x12
  782 036e 62000000 		.4byte	.LASF39
  783 0372 01       		.byte	0x1
- 784 0373 0E       		.byte	0xe
+ 784 0373 0C       		.byte	0xc
  785 0374 81000000 		.4byte	0x81
  786 0378 05       		.uleb128 0x5
  787 0379 03       		.byte	0x3
@@ -942,28 +940,28 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 1
  790 037f 75000000 		.4byte	.LASF32
  791 0383 75000000 		.4byte	.LASF32
  792 0387 04       		.byte	0x4
- 793 0388 3E       		.byte	0x3e
+ 793 0388 37       		.byte	0x37
  794 0389 13       		.uleb128 0x13
  795 038a 79010000 		.4byte	.LASF33
  796 038e 79010000 		.4byte	.LASF33
  797 0392 04       		.byte	0x4
- 798 0393 2D       		.byte	0x2d
+ 798 0393 26       		.byte	0x26
  799 0394 13       		.uleb128 0x13
  800 0395 3B000000 		.4byte	.LASF34
  801 0399 3B000000 		.4byte	.LASF34
  802 039d 04       		.byte	0x4
- 803 039e 5C       		.byte	0x5c
+ 803 039e 55       		.byte	0x55
  804 039f 13       		.uleb128 0x13
  805 03a0 91010000 		.4byte	.LASF35
  806 03a4 91010000 		.4byte	.LASF35
  807 03a8 05       		.byte	0x5
  808 03a9 77       		.byte	0x77
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 17
-
-
  809 03aa 14       		.uleb128 0x14
- 810 03ab 6A020000 		.4byte	.LASF40
- 811 03af 6A020000 		.4byte	.LASF40
+ 810 03ab 79020000 		.4byte	.LASF40
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccEaokFq.s 			page 17
+
+
+ 811 03af 79020000 		.4byte	.LASF40
  812 03b3 00       		.byte	0
  813              		.section	.debug_abbrev,"",%progbits
  814              	.Ldebug_abbrev0:
@@ -1018,11 +1016,11 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 1
  863 0030 3E       		.uleb128 0x3e
  864 0031 0B       		.uleb128 0xb
  865 0032 03       		.uleb128 0x3
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 18
-
-
  866 0033 08       		.uleb128 0x8
  867 0034 00       		.byte	0
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccEaokFq.s 			page 18
+
+
  868 0035 00       		.byte	0
  869 0036 05       		.uleb128 0x5
  870 0037 2E       		.uleb128 0x2e
@@ -1078,11 +1076,11 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 1
  920 006f 0E       		.uleb128 0xe
  921 0070 3A       		.uleb128 0x3a
  922 0071 0B       		.uleb128 0xb
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 19
-
-
  923 0072 3B       		.uleb128 0x3b
  924 0073 0B       		.uleb128 0xb
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccEaokFq.s 			page 19
+
+
  925 0074 27       		.uleb128 0x27
  926 0075 19       		.uleb128 0x19
  927 0076 11       		.uleb128 0x11
@@ -1138,11 +1136,11 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 1
  977 00a9 00       		.byte	0
  978 00aa 0C       		.uleb128 0xc
  979 00ab 21       		.uleb128 0x21
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 20
-
-
  980 00ac 00       		.byte	0
  981 00ad 49       		.uleb128 0x49
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccEaokFq.s 			page 20
+
+
  982 00ae 13       		.uleb128 0x13
  983 00af 2F       		.uleb128 0x2f
  984 00b0 0B       		.uleb128 0xb
@@ -1198,11 +1196,11 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 1
  1034 00e6 49       		.uleb128 0x49
  1035 00e7 13       		.uleb128 0x13
  1036 00e8 2F       		.uleb128 0x2f
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 21
-
-
  1037 00e9 18       		.uleb128 0x18
  1038 00ea 00       		.byte	0
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccEaokFq.s 			page 21
+
+
  1039 00eb 00       		.byte	0
  1040 00ec 12       		.uleb128 0x12
  1041 00ed 34       		.uleb128 0x34
@@ -1258,11 +1256,11 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 1
  1091 0000 00000000 		.4byte	.LVL2
  1092 0004 20000000 		.4byte	.LVL3
  1093 0008 0100     		.2byte	0x1
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 22
-
-
  1094 000a 50       		.byte	0x50
  1095 000b 20000000 		.4byte	.LVL3
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccEaokFq.s 			page 22
+
+
  1096 000f 2E000000 		.4byte	.LFE2
  1097 0013 0400     		.2byte	0x4
  1098 0015 F3       		.byte	0xf3
@@ -1318,11 +1316,11 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 1
  1148 0088 1A000000 		.4byte	.LVL10
  1149 008c 0100     		.2byte	0x1
  1150 008e 51       		.byte	0x51
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 23
-
-
  1151 008f 1A000000 		.4byte	.LVL10
  1152 0093 1F000000 		.4byte	.LVL12-1
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccEaokFq.s 			page 23
+
+
  1153 0097 0100     		.2byte	0x1
  1154 0099 52       		.byte	0x52
  1155 009a 1F000000 		.4byte	.LVL12-1
@@ -1378,11 +1376,11 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 1
  1205 0114 11000000 		.4byte	.LVL14-1
  1206 0118 0100     		.2byte	0x1
  1207 011a 52       		.byte	0x52
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 24
-
-
  1208 011b 11000000 		.4byte	.LVL14-1
  1209 011f 5C000000 		.4byte	.LFE5
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccEaokFq.s 			page 24
+
+
  1210 0123 0400     		.2byte	0x4
  1211 0125 F3       		.byte	0xf3
  1212 0126 01       		.uleb128 0x1
@@ -1438,11 +1436,11 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 1
  1262 004c 00000000 		.4byte	0
  1263              		.section	.debug_ranges,"",%progbits
  1264              	.Ldebug_ranges0:
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 25
-
-
  1265 0000 00000000 		.4byte	.LFB0
  1266 0004 0A000000 		.4byte	.LFE0
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccEaokFq.s 			page 25
+
+
  1267 0008 00000000 		.4byte	.LFB1
  1268 000c 0A000000 		.4byte	.LFE1
  1269 0010 00000000 		.4byte	.LFB2
@@ -1459,7 +1457,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 1
  1280 003c 00000000 		.4byte	0
  1281              		.section	.debug_line,"",%progbits
  1282              	.Ldebug_line0:
- 1283 0000 E3010000 		.section	.debug_str,"MS",%progbits,1
+ 1283 0000 E2010000 		.section	.debug_str,"MS",%progbits,1
  1283      02005201 
  1283      00000201 
  1283      FB0E0D00 
@@ -1498,11 +1496,11 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 1
  1297      65616450 
  1297      61676500 
  1298              	.LASF39:
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 26
-
-
  1299 0062 65657072 		.ascii	"eeprom_Status\000"
  1299      6F6D5F53 
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccEaokFq.s 			page 26
+
+
  1299      74617475 
  1299      7300
  1300              	.LASF30:
@@ -1558,11 +1556,11 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 1
  1319      6300
  1320              	.LASF25:
  1321 015e 64617461 		.ascii	"dataByte\000"
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 27
-
-
  1321      42797465 
  1321      00
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccEaokFq.s 			page 27
+
+
  1322              	.LASF4:
  1323 0167 5F5F7569 		.ascii	"__uint16_t\000"
  1323      6E743136 
@@ -1600,77 +1598,79 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 1
  1336              	.LASF11:
  1337 01d1 75696E74 		.ascii	"uint8_t\000"
  1337      385F7400 
- 1338              	.LASF21:
- 1339 01d9 64617461 		.ascii	"dataRX\000"
- 1339      525800
- 1340              	.LASF38:
- 1341 01e0 433A5C55 		.ascii	"C:\\Users\\simon\\Desktop\\PsoC_Final_Project_1_03\\"
- 1341      73657273 
- 1341      5C73696D 
- 1341      6F6E5C44 
- 1341      65736B74 
- 1342 020f 46494F52 		.ascii	"FIORANI_GARGIULO_IANNUZZI_Project.cydsn\000"
- 1342      414E495F 
- 1342      47415247 
- 1342      49554C4F 
- 1342      5F49414E 
- 1343              	.LASF31:
- 1344 0237 45455052 		.ascii	"EEPROM_waitForWriteComplete\000"
- 1344      4F4D5F77 
- 1344      61697446 
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cctASZr6.s 			page 28
+ 1338              	.LASF38:
+ 1339 01d9 433A5C55 		.ascii	"C:\\Users\\gaeta\\Documents\\PSoC Creator\\PsoC_Fin"
+ 1339      73657273 
+ 1339      5C676165 
+ 1339      74615C44 
+ 1339      6F63756D 
+ 1340 0207 616C5F50 		.ascii	"al_Project_1_03\\FIORANI_GARGIULO_IANNUZZI_Project."
+ 1340      726F6A65 
+ 1340      63745F31 
+ 1340      5F30335C 
+ 1340      46494F52 
+ 1341 0239 63796473 		.ascii	"cydsn\000"
+ 1341      6E00
+ 1342              	.LASF21:
+ 1343 023f 64617461 		.ascii	"dataRX\000"
+ 1343      525800
+ 1344              	.LASF31:
+ 1345 0246 45455052 		.ascii	"EEPROM_waitForWriteComplete\000"
+ 1345      4F4D5F77 
+ 1345      61697446 
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccEaokFq.s 			page 28
 
 
- 1344      6F725772 
- 1344      69746543 
- 1345              	.LASF17:
- 1346 0253 73697A65 		.ascii	"sizetype\000"
- 1346      74797065 
- 1346      00
- 1347              	.LASF8:
- 1348 025c 6C6F6E67 		.ascii	"long long int\000"
- 1348      206C6F6E 
- 1348      6720696E 
- 1348      7400
- 1349              	.LASF40:
- 1350 026a 6D656D63 		.ascii	"memcpy\000"
- 1350      707900
- 1351              	.LASF2:
- 1352 0271 73686F72 		.ascii	"short int\000"
- 1352      7420696E 
- 1352      7400
- 1353              	.LASF29:
- 1354 027b 45455052 		.ascii	"EEPROM_writePage\000"
- 1354      4F4D5F77 
- 1354      72697465 
- 1354      50616765 
- 1354      00
- 1355              	.LASF12:
- 1356 028c 75696E74 		.ascii	"uint16_t\000"
- 1356      31365F74 
- 1356      00
- 1357              	.LASF6:
- 1358 0295 6C6F6E67 		.ascii	"long int\000"
- 1358      20696E74 
- 1358      00
- 1359              	.LASF15:
- 1360 029e 63686172 		.ascii	"char\000"
- 1360      00
- 1361              	.LASF16:
- 1362 02a3 6C6F6E67 		.ascii	"long double\000"
- 1362      20646F75 
- 1362      626C6500 
- 1363              	.LASF0:
- 1364 02af 7369676E 		.ascii	"signed char\000"
- 1364      65642063 
- 1364      68617200 
- 1365              	.LASF20:
- 1366 02bb 64617461 		.ascii	"dataTX\000"
- 1366      545800
- 1367              	.LASF22:
- 1368 02c2 45455052 		.ascii	"EEPROM_writeEnable\000"
- 1368      4F4D5F77 
- 1368      72697465 
- 1368      456E6162 
- 1368      6C6500
- 1369              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 1345      6F725772 
+ 1345      69746543 
+ 1346              	.LASF17:
+ 1347 0262 73697A65 		.ascii	"sizetype\000"
+ 1347      74797065 
+ 1347      00
+ 1348              	.LASF8:
+ 1349 026b 6C6F6E67 		.ascii	"long long int\000"
+ 1349      206C6F6E 
+ 1349      6720696E 
+ 1349      7400
+ 1350              	.LASF40:
+ 1351 0279 6D656D63 		.ascii	"memcpy\000"
+ 1351      707900
+ 1352              	.LASF2:
+ 1353 0280 73686F72 		.ascii	"short int\000"
+ 1353      7420696E 
+ 1353      7400
+ 1354              	.LASF29:
+ 1355 028a 45455052 		.ascii	"EEPROM_writePage\000"
+ 1355      4F4D5F77 
+ 1355      72697465 
+ 1355      50616765 
+ 1355      00
+ 1356              	.LASF12:
+ 1357 029b 75696E74 		.ascii	"uint16_t\000"
+ 1357      31365F74 
+ 1357      00
+ 1358              	.LASF6:
+ 1359 02a4 6C6F6E67 		.ascii	"long int\000"
+ 1359      20696E74 
+ 1359      00
+ 1360              	.LASF15:
+ 1361 02ad 63686172 		.ascii	"char\000"
+ 1361      00
+ 1362              	.LASF16:
+ 1363 02b2 6C6F6E67 		.ascii	"long double\000"
+ 1363      20646F75 
+ 1363      626C6500 
+ 1364              	.LASF0:
+ 1365 02be 7369676E 		.ascii	"signed char\000"
+ 1365      65642063 
+ 1365      68617200 
+ 1366              	.LASF20:
+ 1367 02ca 64617461 		.ascii	"dataTX\000"
+ 1367      545800
+ 1368              	.LASF22:
+ 1369 02d1 45455052 		.ascii	"EEPROM_writeEnable\000"
+ 1369      4F4D5F77 
+ 1369      72697465 
+ 1369      456E6162 
+ 1369      6C6500
+ 1370              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

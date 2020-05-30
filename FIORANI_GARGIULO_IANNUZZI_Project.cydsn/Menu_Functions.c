@@ -1,3 +1,18 @@
+/* ========================================
+ *
+ * Copyright YOUR COMPANY, THE YEAR
+ * All Rights Reserved
+ * UNPUBLISHED, LICENSED SOFTWARE.
+ *
+ * CONFIDENTIAL AND PROPRIETARY INFORMATION
+ * WHICH IS THE PROPERTY OF your company.
+ *
+ * ========================================
+ *@authors Simone Fiorani, Alessandra Gargiulo, Gaetano Iannuzzi
+ *@date 2020
+*/
+
+
 #include    "project.h"
 #include    "Menu_Functions.h"
 

@@ -8,6 +8,8 @@
  * WHICH IS THE PROPERTY OF your company.
  *
  * ========================================
+ *@authors Simone Fiorani, Alessandra Gargiulo, Gaetano Iannuzzi
+ *@date 2020
 */
 #include "OnBoardLed.h"
 

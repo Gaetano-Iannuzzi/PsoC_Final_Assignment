@@ -8,6 +8,8 @@
  * WHICH IS THE PROPERTY OF your company.
  *
  * ========================================
+ *@authors Simone Fiorani, Alessandra Gargiulo, Gaetano Iannuzzi
+ *@date 2020
 */
 #ifndef _ONBOARDLED_H_
     #define _ONBOARDLED_H_

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 1
 
 
    1              		.syntax unified
@@ -28,144 +28,162 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
   25              	Custom_ISR_MENU:
   26              	.LFB64:
   27              		.file 1 "Menu_Functions.c"
-   1:Menu_Functions.c **** #include    "project.h"
-   2:Menu_Functions.c **** #include    "Menu_Functions.h"
-   3:Menu_Functions.c **** 
-   4:Menu_Functions.c **** uint8_t     reg_menu=0;
-   5:Menu_Functions.c **** uint8_t     Sensitivity=0;
-   6:Menu_Functions.c **** int         WaitTime=0;
-   7:Menu_Functions.c **** 
-   8:Menu_Functions.c **** CY_ISR (Custom_ISR_MENU)
-   9:Menu_Functions.c **** {
-  28              		.loc 1 9 0
+   1:Menu_Functions.c **** /* ========================================
+   2:Menu_Functions.c ****  *
+   3:Menu_Functions.c ****  * Copyright YOUR COMPANY, THE YEAR
+   4:Menu_Functions.c ****  * All Rights Reserved
+   5:Menu_Functions.c ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:Menu_Functions.c ****  *
+   7:Menu_Functions.c ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:Menu_Functions.c ****  * WHICH IS THE PROPERTY OF your company.
+   9:Menu_Functions.c ****  *
+  10:Menu_Functions.c ****  * ========================================
+  11:Menu_Functions.c ****  *@authors Simone Fiorani, Alessandra Gargiulo, Gaetano Iannuzzi
+  12:Menu_Functions.c ****  *@date 2020
+  13:Menu_Functions.c **** */
+  14:Menu_Functions.c **** 
+  15:Menu_Functions.c **** 
+  16:Menu_Functions.c **** #include    "project.h"
+  17:Menu_Functions.c **** #include    "Menu_Functions.h"
+  18:Menu_Functions.c **** 
+  19:Menu_Functions.c **** uint8_t     reg_menu=0;
+  20:Menu_Functions.c **** uint8_t     Sensitivity=0;
+  21:Menu_Functions.c **** int         WaitTime=0;
+  22:Menu_Functions.c **** 
+  23:Menu_Functions.c **** CY_ISR (Custom_ISR_MENU)
+  24:Menu_Functions.c **** {
+  28              		.loc 1 24 0
   29              		.cfi_startproc
   30              		@ args = 0, pretend = 0, frame = 0
   31              		@ frame_needed = 0, uses_anonymous_args = 0
   32 0000 38B5     		push	{r3, r4, r5, lr}
   33              		.cfi_def_cfa_offset 16
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 2
+
+
   34              		.cfi_offset 3, -16
   35              		.cfi_offset 4, -12
   36              		.cfi_offset 5, -8
   37              		.cfi_offset 14, -4
-  10:Menu_Functions.c ****     ch_received = UART_GetChar();
-  38              		.loc 1 10 0
+  25:Menu_Functions.c ****     ch_received = UART_GetChar();
+  38              		.loc 1 25 0
   39 0002 FFF7FEFF 		bl	UART_GetChar
   40              	.LVL0:
   41 0006 BE4B     		ldr	r3, .L69
   42 0008 1870     		strb	r0, [r3]
-  11:Menu_Functions.c ****     
-  12:Menu_Functions.c ****     if (ch_received == '?')
-  43              		.loc 1 12 0
+  26:Menu_Functions.c ****     
+  27:Menu_Functions.c ****     if (ch_received == '?')
+  43              		.loc 1 27 0
   44 000a 3F28     		cmp	r0, #63
   45 000c 09D1     		bne	.L2
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 2
-
-
-  13:Menu_Functions.c ****     {
-  14:Menu_Functions.c ****         UART_PutString("*********    HELP: POSSIBLE SETTINGS    *********\r\r");
-  46              		.loc 1 14 0
+  28:Menu_Functions.c ****     {
+  29:Menu_Functions.c ****         UART_PutString("*********    HELP: POSSIBLE SETTINGS    *********\r\r");
+  46              		.loc 1 29 0
   47 000e BD48     		ldr	r0, .L69+4
   48 0010 FFF7FEFF 		bl	UART_PutString
   49              	.LVL1:
-  15:Menu_Functions.c ****         UART_PutString("f. Full Scale\r\np. Sampling Freq\r\nt. Set Temperature Unit\r\nv. Print Da
-  50              		.loc 1 15 0
+  30:Menu_Functions.c ****         UART_PutString("f. Full Scale\r\np. Sampling Freq\r\nt. Set Temperature Unit\r\nv. Print Da
+  50              		.loc 1 30 0
   51 0014 BC48     		ldr	r0, .L69+8
   52 0016 FFF7FEFF 		bl	UART_PutString
   53              	.LVL2:
-  16:Menu_Functions.c ****         UART_PutString("***********************************************\r\n");
-  54              		.loc 1 16 0
+  31:Menu_Functions.c ****         UART_PutString("***********************************************\r\n");
+  54              		.loc 1 31 0
   55 001a BC48     		ldr	r0, .L69+12
   56 001c FFF7FEFF 		bl	UART_PutString
   57              	.LVL3:
   58 0020 38BD     		pop	{r3, r4, r5, pc}
   59              	.L2:
-  17:Menu_Functions.c ****     }
-  18:Menu_Functions.c ****     else if (ch_received == 'f' || ch_received == 'F')
-  60              		.loc 1 18 0
+  32:Menu_Functions.c ****     }
+  33:Menu_Functions.c ****     else if (ch_received == 'f' || ch_received == 'F')
+  60              		.loc 1 33 0
   61 0022 6628     		cmp	r0, #102
   62 0024 02D0     		beq	.L4
-  63              		.loc 1 18 0 is_stmt 0 discriminator 1
+  63              		.loc 1 33 0 is_stmt 0 discriminator 1
   64 0026 4628     		cmp	r0, #70
   65 0028 40F0BE80 		bne	.L5
   66              	.L4:
-  19:Menu_Functions.c ****     {
-  20:Menu_Functions.c ****         UART_PutString("*********    CHOOSE ACCELEROMETER FULL SCALE    *********\r\r1. +-2g\r\n2. 
-  67              		.loc 1 20 0 is_stmt 1
+  34:Menu_Functions.c ****     {
+  35:Menu_Functions.c ****         UART_PutString("*********    CHOOSE ACCELEROMETER FULL SCALE    *********\r\r1. +-2g\r\n2. 
+  67              		.loc 1 35 0 is_stmt 1
   68 002c B848     		ldr	r0, .L69+16
   69 002e FFF7FEFF 		bl	UART_PutString
   70              	.LVL4:
-  21:Menu_Functions.c ****         UART_PutString("*********************************************************\r\n");
-  71              		.loc 1 21 0
+  36:Menu_Functions.c ****         UART_PutString("*********************************************************\r\n");
+  71              		.loc 1 36 0
   72 0032 B848     		ldr	r0, .L69+20
   73 0034 FFF7FEFF 		bl	UART_PutString
   74              	.LVL5:
-  22:Menu_Functions.c ****     
-  23:Menu_Functions.c ****         while(!UART_GetRxBufferSize())
-  75              		.loc 1 23 0
+  37:Menu_Functions.c ****     
+  38:Menu_Functions.c ****         while(!UART_GetRxBufferSize())
+  75              		.loc 1 38 0
   76 0038 09E0     		b	.L6
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 3
+
+
   77              	.L8:
-  24:Menu_Functions.c ****         {
-  25:Menu_Functions.c ****             CyDelay(10);
-  78              		.loc 1 25 0
+  39:Menu_Functions.c ****         {
+  40:Menu_Functions.c ****             CyDelay(10);
+  78              		.loc 1 40 0
   79 003a 0A20     		movs	r0, #10
   80 003c FFF7FEFF 		bl	CyDelay
   81              	.LVL6:
-  26:Menu_Functions.c ****             WaitTime++;
-  82              		.loc 1 26 0
+  41:Menu_Functions.c ****             WaitTime++;
+  82              		.loc 1 41 0
   83 0040 B54A     		ldr	r2, .L69+24
   84 0042 1368     		ldr	r3, [r2]
   85 0044 0133     		adds	r3, r3, #1
   86 0046 1360     		str	r3, [r2]
-  27:Menu_Functions.c ****             if (WaitTime >= MAX_WAITTIME) break;
-  87              		.loc 1 27 0
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 3
-
-
+  42:Menu_Functions.c ****             if (WaitTime >= MAX_WAITTIME) break;
+  87              		.loc 1 42 0
   88 0048 B3F57A7F 		cmp	r3, #1000
   89 004c 03DA     		bge	.L7
   90              	.L6:
-  23:Menu_Functions.c ****         {
-  91              		.loc 1 23 0
+  38:Menu_Functions.c ****         {
+  91              		.loc 1 38 0
   92 004e FFF7FEFF 		bl	UART_GetRxBufferSize
   93              	.LVL7:
   94 0052 0028     		cmp	r0, #0
   95 0054 F1D0     		beq	.L8
   96              	.L7:
-  28:Menu_Functions.c ****         }
-  29:Menu_Functions.c ****         
-  30:Menu_Functions.c ****         if (WaitTime >= MAX_WAITTIME)   ch_received = '5';
-  97              		.loc 1 30 0
+  43:Menu_Functions.c ****         }
+  44:Menu_Functions.c ****         
+  45:Menu_Functions.c ****         if (WaitTime >= MAX_WAITTIME)   ch_received = '5';
+  97              		.loc 1 45 0
   98 0056 B04B     		ldr	r3, .L69+24
   99 0058 1B68     		ldr	r3, [r3]
  100 005a B3F57A7F 		cmp	r3, #1000
  101 005e 03DB     		blt	.L9
- 102              		.loc 1 30 0 is_stmt 0 discriminator 1
+ 102              		.loc 1 45 0 is_stmt 0 discriminator 1
  103 0060 3522     		movs	r2, #53
  104 0062 A74B     		ldr	r3, .L69
  105 0064 1A70     		strb	r2, [r3]
  106 0066 03E0     		b	.L10
  107              	.L9:
-  31:Menu_Functions.c ****         else                            ch_received = UART_GetChar();
- 108              		.loc 1 31 0 is_stmt 1
+  46:Menu_Functions.c ****         else                            ch_received = UART_GetChar();
+ 108              		.loc 1 46 0 is_stmt 1
  109 0068 FFF7FEFF 		bl	UART_GetChar
  110              	.LVL8:
  111 006c A44B     		ldr	r3, .L69
  112 006e 1870     		strb	r0, [r3]
  113              	.L10:
-  32:Menu_Functions.c ****         
-  33:Menu_Functions.c ****         WaitTime = 0;
- 114              		.loc 1 33 0
+  47:Menu_Functions.c ****         
+  48:Menu_Functions.c ****         WaitTime = 0;
+ 114              		.loc 1 48 0
  115 0070 0022     		movs	r2, #0
  116 0072 A94B     		ldr	r3, .L69+24
  117 0074 1A60     		str	r2, [r3]
-  34:Menu_Functions.c ****         
-  35:Menu_Functions.c ****         UART_ClearRxBuffer();
- 118              		.loc 1 35 0
+  49:Menu_Functions.c ****         
+  50:Menu_Functions.c ****         UART_ClearRxBuffer();
+ 118              		.loc 1 50 0
  119 0076 FFF7FEFF 		bl	UART_ClearRxBuffer
  120              	.LVL9:
-  36:Menu_Functions.c ****                         
-  37:Menu_Functions.c ****         switch (ch_received)
- 121              		.loc 1 37 0
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 4
+
+
+  51:Menu_Functions.c ****                         
+  52:Menu_Functions.c ****         switch (ch_received)
+ 121              		.loc 1 52 0
  122 007a A14B     		ldr	r3, .L69
  123 007c 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
  124 007e 313B     		subs	r3, r3, #49
@@ -178,412 +196,412 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  131 008c 45       		.byte	(.L15-.L13)/2
  132 008d 66       		.byte	(.L16-.L13)/2
  133 008e 87       		.byte	(.L17-.L13)/2
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 4
-
-
  134 008f 00       		.p2align 1
  135              	.L12:
-  38:Menu_Functions.c ****             {
-  39:Menu_Functions.c ****                 case '1':
-  40:Menu_Functions.c ****                         
-  41:Menu_Functions.c ****                     reg_menu = ACC_readByte(LIS3DH_CTRL_REG4);
- 136              		.loc 1 41 0
+  53:Menu_Functions.c ****             {
+  54:Menu_Functions.c ****                 case '1':
+  55:Menu_Functions.c ****                         
+  56:Menu_Functions.c ****                     reg_menu = ACC_readByte(LIS3DH_CTRL_REG4);
+ 136              		.loc 1 56 0
  137 0090 2320     		movs	r0, #35
  138 0092 FFF7FEFF 		bl	ACC_readByte
  139              	.LVL10:
  140 0096 A04B     		ldr	r3, .L69+24
  141 0098 1871     		strb	r0, [r3, #4]
-  42:Menu_Functions.c ****                     if (reg_menu != LIS3DH_2G_CTRL_REG4) 
- 142              		.loc 1 42 0
+  57:Menu_Functions.c ****                     if (reg_menu != LIS3DH_2G_CTRL_REG4) 
+ 142              		.loc 1 57 0
  143 009a 8028     		cmp	r0, #128
  144 009c 04D0     		beq	.L18
-  43:Menu_Functions.c ****                     {
-  44:Menu_Functions.c ****                         reg_menu = LIS3DH_2G_CTRL_REG4;
- 145              		.loc 1 44 0
+  58:Menu_Functions.c ****                     {
+  59:Menu_Functions.c ****                         reg_menu = LIS3DH_2G_CTRL_REG4;
+ 145              		.loc 1 59 0
  146 009e 8021     		movs	r1, #128
  147 00a0 1971     		strb	r1, [r3, #4]
-  45:Menu_Functions.c ****                         ACC_writeByte(LIS3DH_CTRL_REG4,reg_menu);
- 148              		.loc 1 45 0
+  60:Menu_Functions.c ****                         ACC_writeByte(LIS3DH_CTRL_REG4,reg_menu);
+ 148              		.loc 1 60 0
  149 00a2 2320     		movs	r0, #35
  150 00a4 FFF7FEFF 		bl	ACC_writeByte
  151              	.LVL11:
  152              	.L18:
-  46:Menu_Functions.c ****                     }
-  47:Menu_Functions.c ****                     
-  48:Menu_Functions.c ****                     Sensitivity = 4;
- 153              		.loc 1 48 0
+  61:Menu_Functions.c ****                     }
+  62:Menu_Functions.c ****                     
+  63:Menu_Functions.c ****                     Sensitivity = 4;
+ 153              		.loc 1 63 0
  154 00a8 9B4C     		ldr	r4, .L69+24
  155 00aa 0425     		movs	r5, #4
  156 00ac 6571     		strb	r5, [r4, #5]
-  49:Menu_Functions.c ****                     
-  50:Menu_Functions.c ****                     EEPROM_writeByte(EEPROM_FULLSCALE_CONFIG, reg_menu);
- 157              		.loc 1 50 0
+  64:Menu_Functions.c ****                     
+  65:Menu_Functions.c ****                     EEPROM_writeByte(EEPROM_FULLSCALE_CONFIG, reg_menu);
+ 157              		.loc 1 65 0
  158 00ae 2179     		ldrb	r1, [r4, #4]	@ zero_extendqisi2
  159 00b0 0120     		movs	r0, #1
  160 00b2 FFF7FEFF 		bl	EEPROM_writeByte
  161              	.LVL12:
-  51:Menu_Functions.c ****                     EEPROM_waitForWriteComplete();
- 162              		.loc 1 51 0
+  66:Menu_Functions.c ****                     EEPROM_waitForWriteComplete();
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 5
+
+
+ 162              		.loc 1 66 0
  163 00b6 FFF7FEFF 		bl	EEPROM_waitForWriteComplete
  164              	.LVL13:
-  52:Menu_Functions.c ****                     EEPROM_writeByte(EEPROM_SENSITIVITY_VALUE, Sensitivity);
- 165              		.loc 1 52 0
+  67:Menu_Functions.c ****                     EEPROM_writeByte(EEPROM_SENSITIVITY_VALUE, Sensitivity);
+ 165              		.loc 1 67 0
  166 00ba 6179     		ldrb	r1, [r4, #5]	@ zero_extendqisi2
  167 00bc 2846     		mov	r0, r5
  168 00be FFF7FEFF 		bl	EEPROM_writeByte
  169              	.LVL14:
-  53:Menu_Functions.c ****                     EEPROM_waitForWriteComplete();
- 170              		.loc 1 53 0
+  68:Menu_Functions.c ****                     EEPROM_waitForWriteComplete();
+ 170              		.loc 1 68 0
  171 00c2 FFF7FEFF 		bl	EEPROM_waitForWriteComplete
  172              	.LVL15:
-  54:Menu_Functions.c ****                     
-  55:Menu_Functions.c ****                     UART_PutString("YOU CHOOSE +-2g\r\r");
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 5
-
-
- 173              		.loc 1 55 0
+  69:Menu_Functions.c ****                     
+  70:Menu_Functions.c ****                     UART_PutString("YOU CHOOSE +-2g\r\r");
+ 173              		.loc 1 70 0
  174 00c6 9548     		ldr	r0, .L69+28
  175 00c8 FFF7FEFF 		bl	UART_PutString
  176              	.LVL16:
-  56:Menu_Functions.c ****                     
-  57:Menu_Functions.c ****                     FIFO_Reset ();
- 177              		.loc 1 57 0
+  71:Menu_Functions.c ****                     
+  72:Menu_Functions.c ****                     FIFO_Reset ();
+ 177              		.loc 1 72 0
  178 00cc FFF7FEFF 		bl	FIFO_Reset
  179              	.LVL17:
-  58:Menu_Functions.c ****                     
-  59:Menu_Functions.c ****                     break;
- 180              		.loc 1 59 0
+  73:Menu_Functions.c ****                     
+  74:Menu_Functions.c ****                     break;
+ 180              		.loc 1 74 0
  181 00d0 38BD     		pop	{r3, r4, r5, pc}
  182              	.L14:
-  60:Menu_Functions.c ****                 
-  61:Menu_Functions.c ****                 case '2':
-  62:Menu_Functions.c ****                     
-  63:Menu_Functions.c ****                     reg_menu = ACC_readByte(LIS3DH_CTRL_REG4);
- 183              		.loc 1 63 0
+  75:Menu_Functions.c ****                 
+  76:Menu_Functions.c ****                 case '2':
+  77:Menu_Functions.c ****                     
+  78:Menu_Functions.c ****                     reg_menu = ACC_readByte(LIS3DH_CTRL_REG4);
+ 183              		.loc 1 78 0
  184 00d2 2320     		movs	r0, #35
  185 00d4 FFF7FEFF 		bl	ACC_readByte
  186              	.LVL18:
  187 00d8 8F4B     		ldr	r3, .L69+24
  188 00da 1871     		strb	r0, [r3, #4]
-  64:Menu_Functions.c ****                     if (reg_menu != LIS3DH_4G_CTRL_REG4) 
- 189              		.loc 1 64 0
+  79:Menu_Functions.c ****                     if (reg_menu != LIS3DH_4G_CTRL_REG4) 
+ 189              		.loc 1 79 0
  190 00dc 9028     		cmp	r0, #144
  191 00de 04D0     		beq	.L19
-  65:Menu_Functions.c ****                     {
-  66:Menu_Functions.c ****                         reg_menu = LIS3DH_4G_CTRL_REG4;
- 192              		.loc 1 66 0
+  80:Menu_Functions.c ****                     {
+  81:Menu_Functions.c ****                         reg_menu = LIS3DH_4G_CTRL_REG4;
+ 192              		.loc 1 81 0
  193 00e0 9021     		movs	r1, #144
  194 00e2 1971     		strb	r1, [r3, #4]
-  67:Menu_Functions.c ****                         ACC_writeByte(LIS3DH_CTRL_REG4,reg_menu);
- 195              		.loc 1 67 0
+  82:Menu_Functions.c ****                         ACC_writeByte(LIS3DH_CTRL_REG4,reg_menu);
+ 195              		.loc 1 82 0
  196 00e4 2320     		movs	r0, #35
  197 00e6 FFF7FEFF 		bl	ACC_writeByte
  198              	.LVL19:
  199              	.L19:
-  68:Menu_Functions.c ****                     }
-  69:Menu_Functions.c ****                     
-  70:Menu_Functions.c ****                     Sensitivity = 8;
- 200              		.loc 1 70 0
+  83:Menu_Functions.c ****                     }
+  84:Menu_Functions.c ****                     
+  85:Menu_Functions.c ****                     Sensitivity = 8;
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 6
+
+
+ 200              		.loc 1 85 0
  201 00ea 8B4C     		ldr	r4, .L69+24
  202 00ec 0823     		movs	r3, #8
  203 00ee 6371     		strb	r3, [r4, #5]
-  71:Menu_Functions.c ****                     
-  72:Menu_Functions.c ****                     EEPROM_writeByte(EEPROM_FULLSCALE_CONFIG, reg_menu);
- 204              		.loc 1 72 0
+  86:Menu_Functions.c ****                     
+  87:Menu_Functions.c ****                     EEPROM_writeByte(EEPROM_FULLSCALE_CONFIG, reg_menu);
+ 204              		.loc 1 87 0
  205 00f0 2179     		ldrb	r1, [r4, #4]	@ zero_extendqisi2
  206 00f2 0120     		movs	r0, #1
  207 00f4 FFF7FEFF 		bl	EEPROM_writeByte
  208              	.LVL20:
-  73:Menu_Functions.c ****                     EEPROM_waitForWriteComplete();
- 209              		.loc 1 73 0
+  88:Menu_Functions.c ****                     EEPROM_waitForWriteComplete();
+ 209              		.loc 1 88 0
  210 00f8 FFF7FEFF 		bl	EEPROM_waitForWriteComplete
  211              	.LVL21:
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 6
-
-
-  74:Menu_Functions.c ****                     EEPROM_writeByte(EEPROM_SENSITIVITY_VALUE, Sensitivity);
- 212              		.loc 1 74 0
+  89:Menu_Functions.c ****                     EEPROM_writeByte(EEPROM_SENSITIVITY_VALUE, Sensitivity);
+ 212              		.loc 1 89 0
  213 00fc 6179     		ldrb	r1, [r4, #5]	@ zero_extendqisi2
  214 00fe 0420     		movs	r0, #4
  215 0100 FFF7FEFF 		bl	EEPROM_writeByte
  216              	.LVL22:
-  75:Menu_Functions.c ****                     EEPROM_waitForWriteComplete();
- 217              		.loc 1 75 0
+  90:Menu_Functions.c ****                     EEPROM_waitForWriteComplete();
+ 217              		.loc 1 90 0
  218 0104 FFF7FEFF 		bl	EEPROM_waitForWriteComplete
  219              	.LVL23:
-  76:Menu_Functions.c ****                     
-  77:Menu_Functions.c ****                     UART_PutString("YOU CHOOSE +-4g\r\r");
- 220              		.loc 1 77 0
+  91:Menu_Functions.c ****                     
+  92:Menu_Functions.c ****                     UART_PutString("YOU CHOOSE +-4g\r\r");
+ 220              		.loc 1 92 0
  221 0108 8548     		ldr	r0, .L69+32
  222 010a FFF7FEFF 		bl	UART_PutString
  223              	.LVL24:
-  78:Menu_Functions.c ****                     
-  79:Menu_Functions.c ****                     FIFO_Reset ();
- 224              		.loc 1 79 0
+  93:Menu_Functions.c ****                     
+  94:Menu_Functions.c ****                     FIFO_Reset ();
+ 224              		.loc 1 94 0
  225 010e FFF7FEFF 		bl	FIFO_Reset
  226              	.LVL25:
-  80:Menu_Functions.c ****                     
-  81:Menu_Functions.c ****                     break;
- 227              		.loc 1 81 0
+  95:Menu_Functions.c ****                     
+  96:Menu_Functions.c ****                     break;
+ 227              		.loc 1 96 0
  228 0112 38BD     		pop	{r3, r4, r5, pc}
  229              	.L15:
-  82:Menu_Functions.c ****                 
-  83:Menu_Functions.c ****                 case '3':
-  84:Menu_Functions.c ****                     
-  85:Menu_Functions.c ****                     reg_menu = ACC_readByte(LIS3DH_CTRL_REG4);
- 230              		.loc 1 85 0
+  97:Menu_Functions.c ****                 
+  98:Menu_Functions.c ****                 case '3':
+  99:Menu_Functions.c ****                     
+ 100:Menu_Functions.c ****                     reg_menu = ACC_readByte(LIS3DH_CTRL_REG4);
+ 230              		.loc 1 100 0
  231 0114 2320     		movs	r0, #35
  232 0116 FFF7FEFF 		bl	ACC_readByte
  233              	.LVL26:
  234 011a 7F4B     		ldr	r3, .L69+24
  235 011c 1871     		strb	r0, [r3, #4]
-  86:Menu_Functions.c ****                     if (reg_menu != LIS3DH_8G_CTRL_REG4) 
- 236              		.loc 1 86 0
+ 101:Menu_Functions.c ****                     if (reg_menu != LIS3DH_8G_CTRL_REG4) 
+ 236              		.loc 1 101 0
  237 011e A028     		cmp	r0, #160
  238 0120 04D0     		beq	.L20
-  87:Menu_Functions.c ****                     {
-  88:Menu_Functions.c ****                         reg_menu = LIS3DH_8G_CTRL_REG4;
- 239              		.loc 1 88 0
+ 102:Menu_Functions.c ****                     {
+ 103:Menu_Functions.c ****                         reg_menu = LIS3DH_8G_CTRL_REG4;
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 7
+
+
+ 239              		.loc 1 103 0
  240 0122 A021     		movs	r1, #160
  241 0124 1971     		strb	r1, [r3, #4]
-  89:Menu_Functions.c ****                         ACC_writeByte(LIS3DH_CTRL_REG4,reg_menu);
- 242              		.loc 1 89 0
+ 104:Menu_Functions.c ****                         ACC_writeByte(LIS3DH_CTRL_REG4,reg_menu);
+ 242              		.loc 1 104 0
  243 0126 2320     		movs	r0, #35
  244 0128 FFF7FEFF 		bl	ACC_writeByte
  245              	.LVL27:
  246              	.L20:
-  90:Menu_Functions.c ****                     }
-  91:Menu_Functions.c ****                     
-  92:Menu_Functions.c ****                     Sensitivity = 16;
- 247              		.loc 1 92 0
+ 105:Menu_Functions.c ****                     }
+ 106:Menu_Functions.c ****                     
+ 107:Menu_Functions.c ****                     Sensitivity = 16;
+ 247              		.loc 1 107 0
  248 012c 7A4C     		ldr	r4, .L69+24
  249 012e 1023     		movs	r3, #16
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 7
-
-
  250 0130 6371     		strb	r3, [r4, #5]
-  93:Menu_Functions.c ****                     
-  94:Menu_Functions.c ****                     EEPROM_writeByte(EEPROM_FULLSCALE_CONFIG, reg_menu);
- 251              		.loc 1 94 0
+ 108:Menu_Functions.c ****                     
+ 109:Menu_Functions.c ****                     EEPROM_writeByte(EEPROM_FULLSCALE_CONFIG, reg_menu);
+ 251              		.loc 1 109 0
  252 0132 2179     		ldrb	r1, [r4, #4]	@ zero_extendqisi2
  253 0134 0120     		movs	r0, #1
  254 0136 FFF7FEFF 		bl	EEPROM_writeByte
  255              	.LVL28:
-  95:Menu_Functions.c ****                     EEPROM_waitForWriteComplete();
- 256              		.loc 1 95 0
+ 110:Menu_Functions.c ****                     EEPROM_waitForWriteComplete();
+ 256              		.loc 1 110 0
  257 013a FFF7FEFF 		bl	EEPROM_waitForWriteComplete
  258              	.LVL29:
-  96:Menu_Functions.c ****                     EEPROM_writeByte(EEPROM_SENSITIVITY_VALUE, Sensitivity);
- 259              		.loc 1 96 0
+ 111:Menu_Functions.c ****                     EEPROM_writeByte(EEPROM_SENSITIVITY_VALUE, Sensitivity);
+ 259              		.loc 1 111 0
  260 013e 6179     		ldrb	r1, [r4, #5]	@ zero_extendqisi2
  261 0140 0420     		movs	r0, #4
  262 0142 FFF7FEFF 		bl	EEPROM_writeByte
  263              	.LVL30:
-  97:Menu_Functions.c ****                     EEPROM_waitForWriteComplete();
- 264              		.loc 1 97 0
+ 112:Menu_Functions.c ****                     EEPROM_waitForWriteComplete();
+ 264              		.loc 1 112 0
  265 0146 FFF7FEFF 		bl	EEPROM_waitForWriteComplete
  266              	.LVL31:
-  98:Menu_Functions.c ****                     
-  99:Menu_Functions.c ****                     UART_PutString("YOU CHOOSE +-8g\r\r");
- 267              		.loc 1 99 0
+ 113:Menu_Functions.c ****                     
+ 114:Menu_Functions.c ****                     UART_PutString("YOU CHOOSE +-8g\r\r");
+ 267              		.loc 1 114 0
  268 014a 7648     		ldr	r0, .L69+36
  269 014c FFF7FEFF 		bl	UART_PutString
  270              	.LVL32:
- 100:Menu_Functions.c ****                     
- 101:Menu_Functions.c ****                     FIFO_Reset ();
- 271              		.loc 1 101 0
+ 115:Menu_Functions.c ****                     
+ 116:Menu_Functions.c ****                     FIFO_Reset ();
+ 271              		.loc 1 116 0
  272 0150 FFF7FEFF 		bl	FIFO_Reset
  273              	.LVL33:
- 102:Menu_Functions.c ****                     
- 103:Menu_Functions.c ****                     break;
- 274              		.loc 1 103 0
+ 117:Menu_Functions.c ****                     
+ 118:Menu_Functions.c ****                     break;
+ 274              		.loc 1 118 0
  275 0154 38BD     		pop	{r3, r4, r5, pc}
  276              	.L16:
- 104:Menu_Functions.c ****                 
- 105:Menu_Functions.c ****                 case '4':
- 106:Menu_Functions.c ****                     
- 107:Menu_Functions.c ****                     reg_menu = ACC_readByte(LIS3DH_CTRL_REG4);
- 277              		.loc 1 107 0
+ 119:Menu_Functions.c ****                 
+ 120:Menu_Functions.c ****                 case '4':
+ 121:Menu_Functions.c ****                     
+ 122:Menu_Functions.c ****                     reg_menu = ACC_readByte(LIS3DH_CTRL_REG4);
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 8
+
+
+ 277              		.loc 1 122 0
  278 0156 2320     		movs	r0, #35
  279 0158 FFF7FEFF 		bl	ACC_readByte
  280              	.LVL34:
  281 015c 6E4B     		ldr	r3, .L69+24
  282 015e 1871     		strb	r0, [r3, #4]
- 108:Menu_Functions.c ****                     if (reg_menu != LIS3DH_16G_CTRL_REG4) 
- 283              		.loc 1 108 0
+ 123:Menu_Functions.c ****                     if (reg_menu != LIS3DH_16G_CTRL_REG4) 
+ 283              		.loc 1 123 0
  284 0160 B028     		cmp	r0, #176
  285 0162 04D0     		beq	.L21
- 109:Menu_Functions.c ****                     {
- 110:Menu_Functions.c ****                         reg_menu = LIS3DH_16G_CTRL_REG4;
- 286              		.loc 1 110 0
+ 124:Menu_Functions.c ****                     {
+ 125:Menu_Functions.c ****                         reg_menu = LIS3DH_16G_CTRL_REG4;
+ 286              		.loc 1 125 0
  287 0164 B021     		movs	r1, #176
  288 0166 1971     		strb	r1, [r3, #4]
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 8
-
-
- 111:Menu_Functions.c ****                         ACC_writeByte(LIS3DH_CTRL_REG4,reg_menu);
- 289              		.loc 1 111 0
+ 126:Menu_Functions.c ****                         ACC_writeByte(LIS3DH_CTRL_REG4,reg_menu);
+ 289              		.loc 1 126 0
  290 0168 2320     		movs	r0, #35
  291 016a FFF7FEFF 		bl	ACC_writeByte
  292              	.LVL35:
  293              	.L21:
- 112:Menu_Functions.c ****                     }
- 113:Menu_Functions.c ****                     
- 114:Menu_Functions.c ****                     Sensitivity = 48;
- 294              		.loc 1 114 0
+ 127:Menu_Functions.c ****                     }
+ 128:Menu_Functions.c ****                     
+ 129:Menu_Functions.c ****                     Sensitivity = 48;
+ 294              		.loc 1 129 0
  295 016e 6A4C     		ldr	r4, .L69+24
  296 0170 3023     		movs	r3, #48
  297 0172 6371     		strb	r3, [r4, #5]
- 115:Menu_Functions.c ****                     
- 116:Menu_Functions.c ****                     EEPROM_writeByte(EEPROM_FULLSCALE_CONFIG, reg_menu);
- 298              		.loc 1 116 0
+ 130:Menu_Functions.c ****                     
+ 131:Menu_Functions.c ****                     EEPROM_writeByte(EEPROM_FULLSCALE_CONFIG, reg_menu);
+ 298              		.loc 1 131 0
  299 0174 2179     		ldrb	r1, [r4, #4]	@ zero_extendqisi2
  300 0176 0120     		movs	r0, #1
  301 0178 FFF7FEFF 		bl	EEPROM_writeByte
  302              	.LVL36:
- 117:Menu_Functions.c ****                     EEPROM_waitForWriteComplete();
- 303              		.loc 1 117 0
+ 132:Menu_Functions.c ****                     EEPROM_waitForWriteComplete();
+ 303              		.loc 1 132 0
  304 017c FFF7FEFF 		bl	EEPROM_waitForWriteComplete
  305              	.LVL37:
- 118:Menu_Functions.c ****                     EEPROM_writeByte(EEPROM_SENSITIVITY_VALUE, Sensitivity);
- 306              		.loc 1 118 0
+ 133:Menu_Functions.c ****                     EEPROM_writeByte(EEPROM_SENSITIVITY_VALUE, Sensitivity);
+ 306              		.loc 1 133 0
  307 0180 6179     		ldrb	r1, [r4, #5]	@ zero_extendqisi2
  308 0182 0420     		movs	r0, #4
  309 0184 FFF7FEFF 		bl	EEPROM_writeByte
  310              	.LVL38:
- 119:Menu_Functions.c ****                     EEPROM_waitForWriteComplete();
- 311              		.loc 1 119 0
+ 134:Menu_Functions.c ****                     EEPROM_waitForWriteComplete();
+ 311              		.loc 1 134 0
  312 0188 FFF7FEFF 		bl	EEPROM_waitForWriteComplete
  313              	.LVL39:
- 120:Menu_Functions.c ****                     
- 121:Menu_Functions.c ****                     UART_PutString("YOU CHOOSE +-16g\r\r");
- 314              		.loc 1 121 0
+ 135:Menu_Functions.c ****                     
+ 136:Menu_Functions.c ****                     UART_PutString("YOU CHOOSE +-16g\r\r");
+ 314              		.loc 1 136 0
  315 018c 6648     		ldr	r0, .L69+40
  316 018e FFF7FEFF 		bl	UART_PutString
  317              	.LVL40:
- 122:Menu_Functions.c ****                     
- 123:Menu_Functions.c ****                     FIFO_Reset ();
- 318              		.loc 1 123 0
+ 137:Menu_Functions.c ****                     
+ 138:Menu_Functions.c ****                     FIFO_Reset ();
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 9
+
+
+ 318              		.loc 1 138 0
  319 0192 FFF7FEFF 		bl	FIFO_Reset
  320              	.LVL41:
- 124:Menu_Functions.c ****                     
- 125:Menu_Functions.c ****                     break;
- 321              		.loc 1 125 0
+ 139:Menu_Functions.c ****                     
+ 140:Menu_Functions.c ****                     break;
+ 321              		.loc 1 140 0
  322 0196 38BD     		pop	{r3, r4, r5, pc}
  323              	.L17:
- 126:Menu_Functions.c ****                 
- 127:Menu_Functions.c ****                 case '5':
- 128:Menu_Functions.c ****                     
- 129:Menu_Functions.c ****                     UART_PutString("EXIT....\r\r");
- 324              		.loc 1 129 0
+ 141:Menu_Functions.c ****                 
+ 142:Menu_Functions.c ****                 case '5':
+ 143:Menu_Functions.c ****                     
+ 144:Menu_Functions.c ****                     UART_PutString("EXIT....\r\r");
+ 324              		.loc 1 144 0
  325 0198 6448     		ldr	r0, .L69+44
  326 019a FFF7FEFF 		bl	UART_PutString
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 9
-
-
  327              	.LVL42:
- 130:Menu_Functions.c ****                     
- 131:Menu_Functions.c ****                     break;
- 328              		.loc 1 131 0
+ 145:Menu_Functions.c ****                     
+ 146:Menu_Functions.c ****                     break;
+ 328              		.loc 1 146 0
  329 019e 38BD     		pop	{r3, r4, r5, pc}
  330              	.L11:
- 132:Menu_Functions.c ****                 
- 133:Menu_Functions.c ****                 default:
- 134:Menu_Functions.c ****                     UART_PutString("INVALID INPUT, EXIT....\r\r\r\r\r\r");
- 331              		.loc 1 134 0
+ 147:Menu_Functions.c ****                 
+ 148:Menu_Functions.c ****                 default:
+ 149:Menu_Functions.c ****                     UART_PutString("INVALID INPUT, EXIT....\r\r\r\r\r\r");
+ 331              		.loc 1 149 0
  332 01a0 6348     		ldr	r0, .L69+48
  333 01a2 FFF7FEFF 		bl	UART_PutString
  334              	.LVL43:
  335 01a6 38BD     		pop	{r3, r4, r5, pc}
  336              	.L5:
- 135:Menu_Functions.c ****             }
- 136:Menu_Functions.c ****     }
- 137:Menu_Functions.c ****     else if (ch_received == 'p' || ch_received == 'P')
- 337              		.loc 1 137 0
+ 150:Menu_Functions.c ****             }
+ 151:Menu_Functions.c ****     }
+ 152:Menu_Functions.c ****     else if (ch_received == 'p' || ch_received == 'P')
+ 337              		.loc 1 152 0
  338 01a8 7028     		cmp	r0, #112
  339 01aa 02D0     		beq	.L22
- 340              		.loc 1 137 0 is_stmt 0 discriminator 1
+ 340              		.loc 1 152 0 is_stmt 0 discriminator 1
  341 01ac 5028     		cmp	r0, #80
  342 01ae 40F0D180 		bne	.L23
  343              	.L22:
- 138:Menu_Functions.c ****     {
- 139:Menu_Functions.c ****         UART_PutString("*********    CHOOSE ACCELEROMETER SAMPLING FREQUENCY    *********\r\r1. 1 H
- 344              		.loc 1 139 0 is_stmt 1
+ 153:Menu_Functions.c ****     {
+ 154:Menu_Functions.c ****         UART_PutString("*********    CHOOSE ACCELEROMETER SAMPLING FREQUENCY    *********\r\r1. 1 H
+ 344              		.loc 1 154 0 is_stmt 1
  345 01b2 6048     		ldr	r0, .L69+52
  346 01b4 FFF7FEFF 		bl	UART_PutString
  347              	.LVL44:
- 140:Menu_Functions.c ****         UART_PutString("*****************************************************************\r\n");
- 348              		.loc 1 140 0
+ 155:Menu_Functions.c ****         UART_PutString("*****************************************************************\r\n");
+ 348              		.loc 1 155 0
  349 01b8 5F48     		ldr	r0, .L69+56
  350 01ba FFF7FEFF 		bl	UART_PutString
  351              	.LVL45:
- 141:Menu_Functions.c ****         
- 142:Menu_Functions.c ****         while(!UART_GetRxBufferSize())
- 352              		.loc 1 142 0
+ 156:Menu_Functions.c ****         
+ 157:Menu_Functions.c ****         while(!UART_GetRxBufferSize())
+ 352              		.loc 1 157 0
  353 01be 09E0     		b	.L24
  354              	.L26:
- 143:Menu_Functions.c ****         {
- 144:Menu_Functions.c ****             CyDelay(10);
- 355              		.loc 1 144 0
+ 158:Menu_Functions.c ****         {
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 10
+
+
+ 159:Menu_Functions.c ****             CyDelay(10);
+ 355              		.loc 1 159 0
  356 01c0 0A20     		movs	r0, #10
  357 01c2 FFF7FEFF 		bl	CyDelay
  358              	.LVL46:
- 145:Menu_Functions.c ****             WaitTime++;
- 359              		.loc 1 145 0
+ 160:Menu_Functions.c ****             WaitTime++;
+ 359              		.loc 1 160 0
  360 01c6 544A     		ldr	r2, .L69+24
  361 01c8 1368     		ldr	r3, [r2]
  362 01ca 0133     		adds	r3, r3, #1
  363 01cc 1360     		str	r3, [r2]
- 146:Menu_Functions.c ****             if (WaitTime >= MAX_WAITTIME) break;
- 364              		.loc 1 146 0
+ 161:Menu_Functions.c ****             if (WaitTime >= MAX_WAITTIME) break;
+ 364              		.loc 1 161 0
  365 01ce B3F57A7F 		cmp	r3, #1000
  366 01d2 03DA     		bge	.L25
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 10
-
-
  367              	.L24:
- 142:Menu_Functions.c ****         {
- 368              		.loc 1 142 0
+ 157:Menu_Functions.c ****         {
+ 368              		.loc 1 157 0
  369 01d4 FFF7FEFF 		bl	UART_GetRxBufferSize
  370              	.LVL47:
  371 01d8 0028     		cmp	r0, #0
  372 01da F1D0     		beq	.L26
  373              	.L25:
- 147:Menu_Functions.c ****         }
- 148:Menu_Functions.c ****         
- 149:Menu_Functions.c ****         if (WaitTime >= MAX_WAITTIME)   ch_received = '5';
- 374              		.loc 1 149 0
+ 162:Menu_Functions.c ****         }
+ 163:Menu_Functions.c ****         
+ 164:Menu_Functions.c ****         if (WaitTime >= MAX_WAITTIME)   ch_received = '5';
+ 374              		.loc 1 164 0
  375 01dc 4E4B     		ldr	r3, .L69+24
  376 01de 1B68     		ldr	r3, [r3]
  377 01e0 B3F57A7F 		cmp	r3, #1000
  378 01e4 03DB     		blt	.L27
- 379              		.loc 1 149 0 is_stmt 0 discriminator 1
+ 379              		.loc 1 164 0 is_stmt 0 discriminator 1
  380 01e6 3522     		movs	r2, #53
  381 01e8 454B     		ldr	r3, .L69
  382 01ea 1A70     		strb	r2, [r3]
  383 01ec 03E0     		b	.L28
  384              	.L27:
- 150:Menu_Functions.c ****         else                            ch_received = UART_GetChar();
- 385              		.loc 1 150 0 is_stmt 1
+ 165:Menu_Functions.c ****         else                            ch_received = UART_GetChar();
+ 385              		.loc 1 165 0 is_stmt 1
  386 01ee FFF7FEFF 		bl	UART_GetChar
  387              	.LVL48:
  388 01f2 434B     		ldr	r3, .L69
  389 01f4 1870     		strb	r0, [r3]
  390              	.L28:
- 151:Menu_Functions.c ****         
- 152:Menu_Functions.c ****         WaitTime = 0;
- 391              		.loc 1 152 0
+ 166:Menu_Functions.c ****         
+ 167:Menu_Functions.c ****         WaitTime = 0;
+ 391              		.loc 1 167 0
  392 01f6 0022     		movs	r2, #0
  393 01f8 474B     		ldr	r3, .L69+24
  394 01fa 1A60     		str	r2, [r3]
- 153:Menu_Functions.c ****         
- 154:Menu_Functions.c ****         UART_ClearRxBuffer();
- 395              		.loc 1 154 0
+ 168:Menu_Functions.c ****         
+ 169:Menu_Functions.c ****         UART_ClearRxBuffer();
+ 395              		.loc 1 169 0
  396 01fc FFF7FEFF 		bl	UART_ClearRxBuffer
  397              	.LVL49:
- 155:Menu_Functions.c **** 
- 156:Menu_Functions.c ****         switch (ch_received)
- 398              		.loc 1 156 0
+ 170:Menu_Functions.c **** 
+ 171:Menu_Functions.c ****         switch (ch_received)
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 11
+
+
+ 398              		.loc 1 171 0
  399 0200 3F4B     		ldr	r3, .L69
  400 0202 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
  401 0204 313B     		subs	r3, r3, #49
@@ -598,272 +616,269 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  410 0214 74       		.byte	(.L35-.L31)/2
  411 0215 00       		.p2align 1
  412              	.L30:
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 11
-
-
- 157:Menu_Functions.c ****         {
- 158:Menu_Functions.c ****             case '1':
- 159:Menu_Functions.c ****             
- 160:Menu_Functions.c ****                 reg_menu = ACC_readByte(LIS3DH_CTRL_REG1);
- 413              		.loc 1 160 0
+ 172:Menu_Functions.c ****         {
+ 173:Menu_Functions.c ****             case '1':
+ 174:Menu_Functions.c ****             
+ 175:Menu_Functions.c ****                 reg_menu = ACC_readByte(LIS3DH_CTRL_REG1);
+ 413              		.loc 1 175 0
  414 0216 2020     		movs	r0, #32
  415 0218 FFF7FEFF 		bl	ACC_readByte
  416              	.LVL50:
  417 021c 3E4B     		ldr	r3, .L69+24
  418 021e 1871     		strb	r0, [r3, #4]
- 161:Menu_Functions.c ****                 if (reg_menu != LIS3DH_1HZ_CTRL_REG1) 
- 419              		.loc 1 161 0
+ 176:Menu_Functions.c ****                 if (reg_menu != LIS3DH_1HZ_CTRL_REG1) 
+ 419              		.loc 1 176 0
  420 0220 1728     		cmp	r0, #23
  421 0222 04D0     		beq	.L36
- 162:Menu_Functions.c ****                 {
- 163:Menu_Functions.c ****                     reg_menu = LIS3DH_1HZ_CTRL_REG1;
- 422              		.loc 1 163 0
+ 177:Menu_Functions.c ****                 {
+ 178:Menu_Functions.c ****                     reg_menu = LIS3DH_1HZ_CTRL_REG1;
+ 422              		.loc 1 178 0
  423 0224 1721     		movs	r1, #23
  424 0226 1971     		strb	r1, [r3, #4]
- 164:Menu_Functions.c ****                     ACC_writeByte(LIS3DH_CTRL_REG1,reg_menu);
- 425              		.loc 1 164 0
+ 179:Menu_Functions.c ****                     ACC_writeByte(LIS3DH_CTRL_REG1,reg_menu);
+ 425              		.loc 1 179 0
  426 0228 2020     		movs	r0, #32
  427 022a FFF7FEFF 		bl	ACC_writeByte
  428              	.LVL51:
  429              	.L36:
- 165:Menu_Functions.c ****                 }
- 166:Menu_Functions.c ****                 
- 167:Menu_Functions.c ****                 EEPROM_writeByte(EEPROM_FREQ_CONFIG, reg_menu);
- 430              		.loc 1 167 0
+ 180:Menu_Functions.c ****                 }
+ 181:Menu_Functions.c ****                 
+ 182:Menu_Functions.c ****                 EEPROM_writeByte(EEPROM_FREQ_CONFIG, reg_menu);
+ 430              		.loc 1 182 0
  431 022e 3A4B     		ldr	r3, .L69+24
  432 0230 1979     		ldrb	r1, [r3, #4]	@ zero_extendqisi2
  433 0232 0020     		movs	r0, #0
  434 0234 FFF7FEFF 		bl	EEPROM_writeByte
  435              	.LVL52:
- 168:Menu_Functions.c ****                 EEPROM_waitForWriteComplete();
- 436              		.loc 1 168 0
+ 183:Menu_Functions.c ****                 EEPROM_waitForWriteComplete();
+ 436              		.loc 1 183 0
  437 0238 FFF7FEFF 		bl	EEPROM_waitForWriteComplete
  438              	.LVL53:
- 169:Menu_Functions.c ****                 
- 170:Menu_Functions.c ****                 Timer_WritePeriod(1000);
- 439              		.loc 1 170 0
+ 184:Menu_Functions.c ****                 
+ 185:Menu_Functions.c ****                 Timer_WritePeriod(1000);
+ 439              		.loc 1 185 0
  440 023c 4FF47A70 		mov	r0, #1000
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 12
+
+
  441 0240 FFF7FEFF 		bl	Timer_WritePeriod
  442              	.LVL54:
- 171:Menu_Functions.c ****                 
- 172:Menu_Functions.c ****                 UART_PutString("YOU CHOOSE 1 Hz\r\r");
- 443              		.loc 1 172 0
+ 186:Menu_Functions.c ****                 
+ 187:Menu_Functions.c ****                 UART_PutString("YOU CHOOSE 1 Hz\r\r");
+ 443              		.loc 1 187 0
  444 0244 3D48     		ldr	r0, .L69+60
  445 0246 FFF7FEFF 		bl	UART_PutString
  446              	.LVL55:
- 173:Menu_Functions.c ****                 
- 174:Menu_Functions.c ****                 FIFO_Reset ();
- 447              		.loc 1 174 0
+ 188:Menu_Functions.c ****                 
+ 189:Menu_Functions.c ****                 FIFO_Reset ();
+ 447              		.loc 1 189 0
  448 024a FFF7FEFF 		bl	FIFO_Reset
  449              	.LVL56:
- 175:Menu_Functions.c ****                 
- 176:Menu_Functions.c ****                 break;
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 12
-
-
- 450              		.loc 1 176 0
+ 190:Menu_Functions.c ****                 
+ 191:Menu_Functions.c ****                 break;
+ 450              		.loc 1 191 0
  451 024e 38BD     		pop	{r3, r4, r5, pc}
  452              	.L32:
- 177:Menu_Functions.c ****                 
- 178:Menu_Functions.c ****             case '2':
- 179:Menu_Functions.c ****                 
- 180:Menu_Functions.c ****                 reg_menu = ACC_readByte(LIS3DH_CTRL_REG1);
- 453              		.loc 1 180 0
+ 192:Menu_Functions.c ****                 
+ 193:Menu_Functions.c ****             case '2':
+ 194:Menu_Functions.c ****                 
+ 195:Menu_Functions.c ****                 reg_menu = ACC_readByte(LIS3DH_CTRL_REG1);
+ 453              		.loc 1 195 0
  454 0250 2020     		movs	r0, #32
  455 0252 FFF7FEFF 		bl	ACC_readByte
  456              	.LVL57:
  457 0256 304B     		ldr	r3, .L69+24
  458 0258 1871     		strb	r0, [r3, #4]
- 181:Menu_Functions.c ****                 if (reg_menu != LIS3DH_10HZ_CTRL_REG1) 
- 459              		.loc 1 181 0
+ 196:Menu_Functions.c ****                 if (reg_menu != LIS3DH_10HZ_CTRL_REG1) 
+ 459              		.loc 1 196 0
  460 025a 2728     		cmp	r0, #39
  461 025c 04D0     		beq	.L37
- 182:Menu_Functions.c ****                 {
- 183:Menu_Functions.c ****                     reg_menu = LIS3DH_10HZ_CTRL_REG1;
- 462              		.loc 1 183 0
+ 197:Menu_Functions.c ****                 {
+ 198:Menu_Functions.c ****                     reg_menu = LIS3DH_10HZ_CTRL_REG1;
+ 462              		.loc 1 198 0
  463 025e 2721     		movs	r1, #39
  464 0260 1971     		strb	r1, [r3, #4]
- 184:Menu_Functions.c ****                     ACC_writeByte(LIS3DH_CTRL_REG1,reg_menu);
- 465              		.loc 1 184 0
+ 199:Menu_Functions.c ****                     ACC_writeByte(LIS3DH_CTRL_REG1,reg_menu);
+ 465              		.loc 1 199 0
  466 0262 2020     		movs	r0, #32
  467 0264 FFF7FEFF 		bl	ACC_writeByte
  468              	.LVL58:
  469              	.L37:
- 185:Menu_Functions.c ****                 }
- 186:Menu_Functions.c ****                 
- 187:Menu_Functions.c ****                 EEPROM_writeByte(EEPROM_FREQ_CONFIG, reg_menu);
- 470              		.loc 1 187 0
+ 200:Menu_Functions.c ****                 }
+ 201:Menu_Functions.c ****                 
+ 202:Menu_Functions.c ****                 EEPROM_writeByte(EEPROM_FREQ_CONFIG, reg_menu);
+ 470              		.loc 1 202 0
  471 0268 2B4B     		ldr	r3, .L69+24
  472 026a 1979     		ldrb	r1, [r3, #4]	@ zero_extendqisi2
  473 026c 0020     		movs	r0, #0
  474 026e FFF7FEFF 		bl	EEPROM_writeByte
  475              	.LVL59:
- 188:Menu_Functions.c ****                 EEPROM_waitForWriteComplete();
- 476              		.loc 1 188 0
+ 203:Menu_Functions.c ****                 EEPROM_waitForWriteComplete();
+ 476              		.loc 1 203 0
  477 0272 FFF7FEFF 		bl	EEPROM_waitForWriteComplete
  478              	.LVL60:
- 189:Menu_Functions.c ****                 
- 190:Menu_Functions.c ****                 Timer_WritePeriod(100);
- 479              		.loc 1 190 0
+ 204:Menu_Functions.c ****                 
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 13
+
+
+ 205:Menu_Functions.c ****                 Timer_WritePeriod(100);
+ 479              		.loc 1 205 0
  480 0276 6420     		movs	r0, #100
  481 0278 FFF7FEFF 		bl	Timer_WritePeriod
  482              	.LVL61:
- 191:Menu_Functions.c ****                 
- 192:Menu_Functions.c ****                 UART_PutString("YOU CHOOSE 10 Hz\r\r");
- 483              		.loc 1 192 0
+ 206:Menu_Functions.c ****                 
+ 207:Menu_Functions.c ****                 UART_PutString("YOU CHOOSE 10 Hz\r\r");
+ 483              		.loc 1 207 0
  484 027c 3048     		ldr	r0, .L69+64
  485 027e FFF7FEFF 		bl	UART_PutString
  486              	.LVL62:
- 193:Menu_Functions.c ****                 
- 194:Menu_Functions.c ****                 FIFO_Reset ();
- 487              		.loc 1 194 0
+ 208:Menu_Functions.c ****                 
+ 209:Menu_Functions.c ****                 FIFO_Reset ();
+ 487              		.loc 1 209 0
  488 0282 FFF7FEFF 		bl	FIFO_Reset
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 13
-
-
  489              	.LVL63:
- 195:Menu_Functions.c ****                 
- 196:Menu_Functions.c ****                 break;
- 490              		.loc 1 196 0
+ 210:Menu_Functions.c ****                 
+ 211:Menu_Functions.c ****                 break;
+ 490              		.loc 1 211 0
  491 0286 38BD     		pop	{r3, r4, r5, pc}
  492              	.L33:
- 197:Menu_Functions.c ****                 
- 198:Menu_Functions.c ****             case '3':
- 199:Menu_Functions.c ****                 
- 200:Menu_Functions.c ****                 reg_menu = ACC_readByte(LIS3DH_CTRL_REG1);
- 493              		.loc 1 200 0
+ 212:Menu_Functions.c ****                 
+ 213:Menu_Functions.c ****             case '3':
+ 214:Menu_Functions.c ****                 
+ 215:Menu_Functions.c ****                 reg_menu = ACC_readByte(LIS3DH_CTRL_REG1);
+ 493              		.loc 1 215 0
  494 0288 2020     		movs	r0, #32
  495 028a FFF7FEFF 		bl	ACC_readByte
  496              	.LVL64:
  497 028e 224B     		ldr	r3, .L69+24
  498 0290 1871     		strb	r0, [r3, #4]
- 201:Menu_Functions.c ****                 if (reg_menu != LIS3DH_25HZ_CTRL_REG1) 
- 499              		.loc 1 201 0
+ 216:Menu_Functions.c ****                 if (reg_menu != LIS3DH_25HZ_CTRL_REG1) 
+ 499              		.loc 1 216 0
  500 0292 3728     		cmp	r0, #55
  501 0294 04D0     		beq	.L38
- 202:Menu_Functions.c ****                 {
- 203:Menu_Functions.c ****                     reg_menu = LIS3DH_25HZ_CTRL_REG1;
- 502              		.loc 1 203 0
+ 217:Menu_Functions.c ****                 {
+ 218:Menu_Functions.c ****                     reg_menu = LIS3DH_25HZ_CTRL_REG1;
+ 502              		.loc 1 218 0
  503 0296 3721     		movs	r1, #55
  504 0298 1971     		strb	r1, [r3, #4]
- 204:Menu_Functions.c ****                     ACC_writeByte(LIS3DH_CTRL_REG1,reg_menu);
- 505              		.loc 1 204 0
+ 219:Menu_Functions.c ****                     ACC_writeByte(LIS3DH_CTRL_REG1,reg_menu);
+ 505              		.loc 1 219 0
  506 029a 2020     		movs	r0, #32
  507 029c FFF7FEFF 		bl	ACC_writeByte
  508              	.LVL65:
  509              	.L38:
- 205:Menu_Functions.c ****                 }
- 206:Menu_Functions.c ****                 
- 207:Menu_Functions.c ****                 EEPROM_writeByte(EEPROM_FREQ_CONFIG, reg_menu);
- 510              		.loc 1 207 0
+ 220:Menu_Functions.c ****                 }
+ 221:Menu_Functions.c ****                 
+ 222:Menu_Functions.c ****                 EEPROM_writeByte(EEPROM_FREQ_CONFIG, reg_menu);
+ 510              		.loc 1 222 0
  511 02a0 1D4B     		ldr	r3, .L69+24
  512 02a2 1979     		ldrb	r1, [r3, #4]	@ zero_extendqisi2
  513 02a4 0020     		movs	r0, #0
  514 02a6 FFF7FEFF 		bl	EEPROM_writeByte
  515              	.LVL66:
- 208:Menu_Functions.c ****                 EEPROM_waitForWriteComplete();
- 516              		.loc 1 208 0
+ 223:Menu_Functions.c ****                 EEPROM_waitForWriteComplete();
+ 516              		.loc 1 223 0
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 14
+
+
  517 02aa FFF7FEFF 		bl	EEPROM_waitForWriteComplete
  518              	.LVL67:
- 209:Menu_Functions.c ****                 
- 210:Menu_Functions.c ****                 UART_PutString("YOU CHOOSE 25 Hz\r\r");
- 519              		.loc 1 210 0
+ 224:Menu_Functions.c ****                 
+ 225:Menu_Functions.c ****                 UART_PutString("YOU CHOOSE 25 Hz\r\r");
+ 519              		.loc 1 225 0
  520 02ae 2548     		ldr	r0, .L69+68
  521 02b0 FFF7FEFF 		bl	UART_PutString
  522              	.LVL68:
- 211:Menu_Functions.c ****                 
- 212:Menu_Functions.c ****                 Timer_WritePeriod(40);
- 523              		.loc 1 212 0
+ 226:Menu_Functions.c ****                 
+ 227:Menu_Functions.c ****                 Timer_WritePeriod(40);
+ 523              		.loc 1 227 0
  524 02b4 2820     		movs	r0, #40
  525 02b6 FFF7FEFF 		bl	Timer_WritePeriod
  526              	.LVL69:
- 213:Menu_Functions.c ****                 
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 14
-
-
- 214:Menu_Functions.c ****                 FIFO_Reset ();
- 527              		.loc 1 214 0
+ 228:Menu_Functions.c ****                 
+ 229:Menu_Functions.c ****                 FIFO_Reset ();
+ 527              		.loc 1 229 0
  528 02ba FFF7FEFF 		bl	FIFO_Reset
  529              	.LVL70:
- 215:Menu_Functions.c ****                 
- 216:Menu_Functions.c ****                 break;
- 530              		.loc 1 216 0
+ 230:Menu_Functions.c ****                 
+ 231:Menu_Functions.c ****                 break;
+ 530              		.loc 1 231 0
  531 02be 38BD     		pop	{r3, r4, r5, pc}
  532              	.L34:
- 217:Menu_Functions.c ****                 
- 218:Menu_Functions.c ****             case '4':
- 219:Menu_Functions.c ****                 
- 220:Menu_Functions.c ****                 reg_menu = ACC_readByte(LIS3DH_CTRL_REG1);
- 533              		.loc 1 220 0
+ 232:Menu_Functions.c ****                 
+ 233:Menu_Functions.c ****             case '4':
+ 234:Menu_Functions.c ****                 
+ 235:Menu_Functions.c ****                 reg_menu = ACC_readByte(LIS3DH_CTRL_REG1);
+ 533              		.loc 1 235 0
  534 02c0 2020     		movs	r0, #32
  535 02c2 FFF7FEFF 		bl	ACC_readByte
  536              	.LVL71:
  537 02c6 144B     		ldr	r3, .L69+24
  538 02c8 1871     		strb	r0, [r3, #4]
- 221:Menu_Functions.c ****                 if (reg_menu != LIS3DH_50HZ_CTRL_REG1) 
- 539              		.loc 1 221 0
+ 236:Menu_Functions.c ****                 if (reg_menu != LIS3DH_50HZ_CTRL_REG1) 
+ 539              		.loc 1 236 0
  540 02ca 4728     		cmp	r0, #71
  541 02cc 04D0     		beq	.L39
- 222:Menu_Functions.c ****                 {
- 223:Menu_Functions.c ****                     reg_menu = LIS3DH_50HZ_CTRL_REG1;
- 542              		.loc 1 223 0
+ 237:Menu_Functions.c ****                 {
+ 238:Menu_Functions.c ****                     reg_menu = LIS3DH_50HZ_CTRL_REG1;
+ 542              		.loc 1 238 0
  543 02ce 4721     		movs	r1, #71
  544 02d0 1971     		strb	r1, [r3, #4]
- 224:Menu_Functions.c ****                     ACC_writeByte(LIS3DH_CTRL_REG1,reg_menu);
- 545              		.loc 1 224 0
+ 239:Menu_Functions.c ****                     ACC_writeByte(LIS3DH_CTRL_REG1,reg_menu);
+ 545              		.loc 1 239 0
  546 02d2 2020     		movs	r0, #32
  547 02d4 FFF7FEFF 		bl	ACC_writeByte
  548              	.LVL72:
  549              	.L39:
- 225:Menu_Functions.c ****                 }
- 226:Menu_Functions.c ****                 
- 227:Menu_Functions.c ****                 EEPROM_writeByte(EEPROM_FREQ_CONFIG, reg_menu);
- 550              		.loc 1 227 0
+ 240:Menu_Functions.c ****                 }
+ 241:Menu_Functions.c ****                 
+ 242:Menu_Functions.c ****                 EEPROM_writeByte(EEPROM_FREQ_CONFIG, reg_menu);
+ 550              		.loc 1 242 0
  551 02d8 0F4B     		ldr	r3, .L69+24
  552 02da 1979     		ldrb	r1, [r3, #4]	@ zero_extendqisi2
  553 02dc 0020     		movs	r0, #0
  554 02de FFF7FEFF 		bl	EEPROM_writeByte
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 15
+
+
  555              	.LVL73:
- 228:Menu_Functions.c ****                 EEPROM_waitForWriteComplete();
- 556              		.loc 1 228 0
+ 243:Menu_Functions.c ****                 EEPROM_waitForWriteComplete();
+ 556              		.loc 1 243 0
  557 02e2 FFF7FEFF 		bl	EEPROM_waitForWriteComplete
  558              	.LVL74:
- 229:Menu_Functions.c ****                 
- 230:Menu_Functions.c ****                 UART_PutString("YOU CHOOSE 50 Hz\r\r");
- 559              		.loc 1 230 0
+ 244:Menu_Functions.c ****                 
+ 245:Menu_Functions.c ****                 UART_PutString("YOU CHOOSE 50 Hz\r\r");
+ 559              		.loc 1 245 0
  560 02e6 1848     		ldr	r0, .L69+72
  561 02e8 FFF7FEFF 		bl	UART_PutString
  562              	.LVL75:
- 231:Menu_Functions.c ****                 
- 232:Menu_Functions.c ****                 Timer_WritePeriod(20);
- 563              		.loc 1 232 0
+ 246:Menu_Functions.c ****                 
+ 247:Menu_Functions.c ****                 Timer_WritePeriod(20);
+ 563              		.loc 1 247 0
  564 02ec 1420     		movs	r0, #20
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 15
-
-
  565 02ee FFF7FEFF 		bl	Timer_WritePeriod
  566              	.LVL76:
- 233:Menu_Functions.c ****                 
- 234:Menu_Functions.c ****                 FIFO_Reset ();
- 567              		.loc 1 234 0
+ 248:Menu_Functions.c ****                 
+ 249:Menu_Functions.c ****                 FIFO_Reset ();
+ 567              		.loc 1 249 0
  568 02f2 FFF7FEFF 		bl	FIFO_Reset
  569              	.LVL77:
- 235:Menu_Functions.c ****                 
- 236:Menu_Functions.c ****                 break;
- 570              		.loc 1 236 0
+ 250:Menu_Functions.c ****                 
+ 251:Menu_Functions.c ****                 break;
+ 570              		.loc 1 251 0
  571 02f6 38BD     		pop	{r3, r4, r5, pc}
  572              	.L35:
- 237:Menu_Functions.c ****                                             
- 238:Menu_Functions.c ****                 case '5':
- 239:Menu_Functions.c ****                 
- 240:Menu_Functions.c ****                 UART_PutString("EXIT....\r\r");
- 573              		.loc 1 240 0
+ 252:Menu_Functions.c ****                                             
+ 253:Menu_Functions.c ****                 case '5':
+ 254:Menu_Functions.c ****                 
+ 255:Menu_Functions.c ****                 UART_PutString("EXIT....\r\r");
+ 573              		.loc 1 255 0
  574 02f8 0C48     		ldr	r0, .L69+44
  575 02fa FFF7FEFF 		bl	UART_PutString
  576              	.LVL78:
- 241:Menu_Functions.c ****                 
- 242:Menu_Functions.c ****                 break;
- 577              		.loc 1 242 0
+ 256:Menu_Functions.c ****                 
+ 257:Menu_Functions.c ****                 break;
+ 577              		.loc 1 257 0
  578 02fe 38BD     		pop	{r3, r4, r5, pc}
  579              	.L70:
  580              		.align	2
@@ -883,111 +898,111 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  594 0330 F0010000 		.word	.LC10
  595 0334 10020000 		.word	.LC11
  596 0338 88020000 		.word	.LC12
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 16
+
+
  597 033c CC020000 		.word	.LC13
  598 0340 E0020000 		.word	.LC14
  599 0344 F4020000 		.word	.LC15
  600 0348 08030000 		.word	.LC16
  601              	.L29:
- 243:Menu_Functions.c ****             
- 244:Menu_Functions.c ****             default:
- 245:Menu_Functions.c ****                 UART_PutString("INVALID INPUT, EXIT....\r\r\r\r\r\r");
- 602              		.loc 1 245 0
+ 258:Menu_Functions.c ****             
+ 259:Menu_Functions.c ****             default:
+ 260:Menu_Functions.c ****                 UART_PutString("INVALID INPUT, EXIT....\r\r\r\r\r\r");
+ 602              		.loc 1 260 0
  603 034c 7548     		ldr	r0, .L71
  604 034e FFF7FEFF 		bl	UART_PutString
  605              	.LVL79:
  606 0352 38BD     		pop	{r3, r4, r5, pc}
  607              	.L23:
- 246:Menu_Functions.c ****         }
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 16
-
-
- 247:Menu_Functions.c ****     }
- 248:Menu_Functions.c ****     else if (ch_received == 't' || ch_received == 'T')
- 608              		.loc 1 248 0
+ 261:Menu_Functions.c ****         }
+ 262:Menu_Functions.c ****     }
+ 263:Menu_Functions.c ****     else if (ch_received == 't' || ch_received == 'T')
+ 608              		.loc 1 263 0
  609 0354 7428     		cmp	r0, #116
  610 0356 01D0     		beq	.L40
- 611              		.loc 1 248 0 is_stmt 0 discriminator 1
+ 611              		.loc 1 263 0 is_stmt 0 discriminator 1
  612 0358 5428     		cmp	r0, #84
  613 035a 52D1     		bne	.L41
  614              	.L40:
- 249:Menu_Functions.c ****     {
- 250:Menu_Functions.c ****         UART_PutString("*********    CHOOSE TEMPERATURE UNIT    *********\r\r1. Celsius\r\n2. Fahre
- 615              		.loc 1 250 0 is_stmt 1
+ 264:Menu_Functions.c ****     {
+ 265:Menu_Functions.c ****         UART_PutString("*********    CHOOSE TEMPERATURE UNIT    *********\r\r1. Celsius\r\n2. Fahre
+ 615              		.loc 1 265 0 is_stmt 1
  616 035c 7248     		ldr	r0, .L71+4
  617 035e FFF7FEFF 		bl	UART_PutString
  618              	.LVL80:
- 251:Menu_Functions.c ****         UART_PutString("*****************************************************************\r\n");
- 619              		.loc 1 251 0
+ 266:Menu_Functions.c ****         UART_PutString("*****************************************************************\r\n");
+ 619              		.loc 1 266 0
  620 0362 7248     		ldr	r0, .L71+8
  621 0364 FFF7FEFF 		bl	UART_PutString
  622              	.LVL81:
- 252:Menu_Functions.c ****         
- 253:Menu_Functions.c ****         while(!UART_GetRxBufferSize())
- 623              		.loc 1 253 0
+ 267:Menu_Functions.c ****         
+ 268:Menu_Functions.c ****         while(!UART_GetRxBufferSize())
+ 623              		.loc 1 268 0
  624 0368 09E0     		b	.L42
  625              	.L44:
- 254:Menu_Functions.c ****         {
- 255:Menu_Functions.c ****             CyDelay(10);
- 626              		.loc 1 255 0
+ 269:Menu_Functions.c ****         {
+ 270:Menu_Functions.c ****             CyDelay(10);
+ 626              		.loc 1 270 0
  627 036a 0A20     		movs	r0, #10
  628 036c FFF7FEFF 		bl	CyDelay
  629              	.LVL82:
- 256:Menu_Functions.c ****             WaitTime++;
- 630              		.loc 1 256 0
+ 271:Menu_Functions.c ****             WaitTime++;
+ 630              		.loc 1 271 0
  631 0370 6F4A     		ldr	r2, .L71+12
  632 0372 1368     		ldr	r3, [r2]
  633 0374 0133     		adds	r3, r3, #1
  634 0376 1360     		str	r3, [r2]
- 257:Menu_Functions.c ****             if (WaitTime >= MAX_WAITTIME) break;
- 635              		.loc 1 257 0
+ 272:Menu_Functions.c ****             if (WaitTime >= MAX_WAITTIME) break;
+ 635              		.loc 1 272 0
  636 0378 B3F57A7F 		cmp	r3, #1000
  637 037c 03DA     		bge	.L43
  638              	.L42:
- 253:Menu_Functions.c ****         {
- 639              		.loc 1 253 0
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 17
+
+
+ 268:Menu_Functions.c ****         {
+ 639              		.loc 1 268 0
  640 037e FFF7FEFF 		bl	UART_GetRxBufferSize
  641              	.LVL83:
  642 0382 0028     		cmp	r0, #0
  643 0384 F1D0     		beq	.L44
  644              	.L43:
- 258:Menu_Functions.c ****         }
- 259:Menu_Functions.c ****         
- 260:Menu_Functions.c ****         if (WaitTime >= MAX_WAITTIME)   ch_received = '3';
- 645              		.loc 1 260 0
+ 273:Menu_Functions.c ****         }
+ 274:Menu_Functions.c ****         
+ 275:Menu_Functions.c ****         if (WaitTime >= MAX_WAITTIME)   ch_received = '3';
+ 645              		.loc 1 275 0
  646 0386 6A4B     		ldr	r3, .L71+12
  647 0388 1B68     		ldr	r3, [r3]
  648 038a B3F57A7F 		cmp	r3, #1000
  649 038e 03DB     		blt	.L45
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 17
-
-
- 650              		.loc 1 260 0 is_stmt 0 discriminator 1
+ 650              		.loc 1 275 0 is_stmt 0 discriminator 1
  651 0390 3322     		movs	r2, #51
  652 0392 684B     		ldr	r3, .L71+16
  653 0394 1A70     		strb	r2, [r3]
  654 0396 03E0     		b	.L46
  655              	.L45:
- 261:Menu_Functions.c ****         else                            ch_received = UART_GetChar();
- 656              		.loc 1 261 0 is_stmt 1
+ 276:Menu_Functions.c ****         else                            ch_received = UART_GetChar();
+ 656              		.loc 1 276 0 is_stmt 1
  657 0398 FFF7FEFF 		bl	UART_GetChar
  658              	.LVL84:
  659 039c 654B     		ldr	r3, .L71+16
  660 039e 1870     		strb	r0, [r3]
  661              	.L46:
- 262:Menu_Functions.c ****         
- 263:Menu_Functions.c ****         WaitTime = 0;
- 662              		.loc 1 263 0
+ 277:Menu_Functions.c ****         
+ 278:Menu_Functions.c ****         WaitTime = 0;
+ 662              		.loc 1 278 0
  663 03a0 0022     		movs	r2, #0
  664 03a2 634B     		ldr	r3, .L71+12
  665 03a4 1A60     		str	r2, [r3]
- 264:Menu_Functions.c ****         
- 265:Menu_Functions.c ****         UART_ClearRxBuffer();
- 666              		.loc 1 265 0
+ 279:Menu_Functions.c ****         
+ 280:Menu_Functions.c ****         UART_ClearRxBuffer();
+ 666              		.loc 1 280 0
  667 03a6 FFF7FEFF 		bl	UART_ClearRxBuffer
  668              	.LVL85:
- 266:Menu_Functions.c **** 
- 267:Menu_Functions.c ****         switch (ch_received)
- 669              		.loc 1 267 0
+ 281:Menu_Functions.c **** 
+ 282:Menu_Functions.c ****         switch (ch_received)
+ 669              		.loc 1 282 0
  670 03aa 624B     		ldr	r3, .L71+16
  671 03ac 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
  672 03ae 322B     		cmp	r3, #50
@@ -996,401 +1011,401 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  675 03b4 1DD0     		beq	.L49
  676 03b6 312B     		cmp	r3, #49
  677 03b8 1FD1     		bne	.L67
- 268:Menu_Functions.c ****         {
- 269:Menu_Functions.c ****             case '1':
- 270:Menu_Functions.c ****                 TempUnit = CELSIUS;
- 678              		.loc 1 270 0
+ 283:Menu_Functions.c ****         {
+ 284:Menu_Functions.c ****             case '1':
+ 285:Menu_Functions.c ****                 TempUnit = CELSIUS;
+ 678              		.loc 1 285 0
  679 03ba 0021     		movs	r1, #0
  680 03bc 5E4B     		ldr	r3, .L71+20
  681 03be 1970     		strb	r1, [r3]
- 271:Menu_Functions.c ****                 
- 272:Menu_Functions.c ****                 EEPROM_writeByte(EEPROM_TEMP_CONFIG, TempUnit);
- 682              		.loc 1 272 0
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 18
+
+
+ 286:Menu_Functions.c ****                 
+ 287:Menu_Functions.c ****                 EEPROM_writeByte(EEPROM_TEMP_CONFIG, TempUnit);
+ 682              		.loc 1 287 0
  683 03c0 0320     		movs	r0, #3
  684 03c2 FFF7FEFF 		bl	EEPROM_writeByte
  685              	.LVL86:
- 273:Menu_Functions.c ****                 EEPROM_waitForWriteComplete();
- 686              		.loc 1 273 0
+ 288:Menu_Functions.c ****                 EEPROM_waitForWriteComplete();
+ 686              		.loc 1 288 0
  687 03c6 FFF7FEFF 		bl	EEPROM_waitForWriteComplete
  688              	.LVL87:
- 274:Menu_Functions.c ****                 
- 275:Menu_Functions.c ****                 UART_PutString("YOU CHOOSE CELSIUS UNIT\r\r");
- 689              		.loc 1 275 0
+ 289:Menu_Functions.c ****                 
+ 290:Menu_Functions.c ****                 UART_PutString("YOU CHOOSE CELSIUS UNIT\r\r");
+ 689              		.loc 1 290 0
  690 03ca 5C48     		ldr	r0, .L71+24
  691 03cc FFF7FEFF 		bl	UART_PutString
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 18
-
-
  692              	.LVL88:
- 276:Menu_Functions.c ****                 
- 277:Menu_Functions.c ****                 FIFO_Reset ();
- 693              		.loc 1 277 0
+ 291:Menu_Functions.c ****                 
+ 292:Menu_Functions.c ****                 FIFO_Reset ();
+ 693              		.loc 1 292 0
  694 03d0 FFF7FEFF 		bl	FIFO_Reset
  695              	.LVL89:
- 278:Menu_Functions.c ****                 
- 279:Menu_Functions.c ****                 break;
- 696              		.loc 1 279 0
+ 293:Menu_Functions.c ****                 
+ 294:Menu_Functions.c ****                 break;
+ 696              		.loc 1 294 0
  697 03d4 38BD     		pop	{r3, r4, r5, pc}
  698              	.L48:
- 280:Menu_Functions.c ****             
- 281:Menu_Functions.c ****             case '2':
- 282:Menu_Functions.c ****                 TempUnit = FAHRENHEIT;
- 699              		.loc 1 282 0
+ 295:Menu_Functions.c ****             
+ 296:Menu_Functions.c ****             case '2':
+ 297:Menu_Functions.c ****                 TempUnit = FAHRENHEIT;
+ 699              		.loc 1 297 0
  700 03d6 0121     		movs	r1, #1
  701 03d8 574B     		ldr	r3, .L71+20
  702 03da 1970     		strb	r1, [r3]
- 283:Menu_Functions.c ****             
- 284:Menu_Functions.c ****                 EEPROM_writeByte(EEPROM_TEMP_CONFIG, TempUnit);
- 703              		.loc 1 284 0
+ 298:Menu_Functions.c ****             
+ 299:Menu_Functions.c ****                 EEPROM_writeByte(EEPROM_TEMP_CONFIG, TempUnit);
+ 703              		.loc 1 299 0
  704 03dc 0320     		movs	r0, #3
  705 03de FFF7FEFF 		bl	EEPROM_writeByte
  706              	.LVL90:
- 285:Menu_Functions.c ****                 EEPROM_waitForWriteComplete();
- 707              		.loc 1 285 0
+ 300:Menu_Functions.c ****                 EEPROM_waitForWriteComplete();
+ 707              		.loc 1 300 0
  708 03e2 FFF7FEFF 		bl	EEPROM_waitForWriteComplete
  709              	.LVL91:
- 286:Menu_Functions.c ****                 
- 287:Menu_Functions.c ****                 UART_PutString("YOU CHOOSE FAHRENHEIT UNIT\r\r");
- 710              		.loc 1 287 0
+ 301:Menu_Functions.c ****                 
+ 302:Menu_Functions.c ****                 UART_PutString("YOU CHOOSE FAHRENHEIT UNIT\r\r");
+ 710              		.loc 1 302 0
  711 03e6 5648     		ldr	r0, .L71+28
  712 03e8 FFF7FEFF 		bl	UART_PutString
  713              	.LVL92:
- 288:Menu_Functions.c ****                 
- 289:Menu_Functions.c ****                 FIFO_Reset ();
- 714              		.loc 1 289 0
+ 303:Menu_Functions.c ****                 
+ 304:Menu_Functions.c ****                 FIFO_Reset ();
+ 714              		.loc 1 304 0
  715 03ec FFF7FEFF 		bl	FIFO_Reset
  716              	.LVL93:
- 290:Menu_Functions.c ****                 
- 291:Menu_Functions.c ****                 break;
- 717              		.loc 1 291 0
+ 305:Menu_Functions.c ****                 
+ 306:Menu_Functions.c ****                 break;
+ 717              		.loc 1 306 0
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 19
+
+
  718 03f0 38BD     		pop	{r3, r4, r5, pc}
  719              	.L49:
- 292:Menu_Functions.c ****             
- 293:Menu_Functions.c ****             case '3':
- 294:Menu_Functions.c ****             
- 295:Menu_Functions.c ****                 UART_PutString("EXIT....\r\r");
- 720              		.loc 1 295 0
+ 307:Menu_Functions.c ****             
+ 308:Menu_Functions.c ****             case '3':
+ 309:Menu_Functions.c ****             
+ 310:Menu_Functions.c ****                 UART_PutString("EXIT....\r\r");
+ 720              		.loc 1 310 0
  721 03f2 5448     		ldr	r0, .L71+32
  722 03f4 FFF7FEFF 		bl	UART_PutString
  723              	.LVL94:
- 296:Menu_Functions.c ****                 
- 297:Menu_Functions.c ****                 break;
- 724              		.loc 1 297 0
+ 311:Menu_Functions.c ****                 
+ 312:Menu_Functions.c ****                 break;
+ 724              		.loc 1 312 0
  725 03f8 38BD     		pop	{r3, r4, r5, pc}
  726              	.L67:
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 19
-
-
- 298:Menu_Functions.c ****             
- 299:Menu_Functions.c ****             default:
- 300:Menu_Functions.c ****                 UART_PutString("INVALID INPUT, EXIT....\r\r\r\r\r\r");
- 727              		.loc 1 300 0
+ 313:Menu_Functions.c ****             
+ 314:Menu_Functions.c ****             default:
+ 315:Menu_Functions.c ****                 UART_PutString("INVALID INPUT, EXIT....\r\r\r\r\r\r");
+ 727              		.loc 1 315 0
  728 03fa 4A48     		ldr	r0, .L71
  729 03fc FFF7FEFF 		bl	UART_PutString
  730              	.LVL95:
  731 0400 38BD     		pop	{r3, r4, r5, pc}
  732              	.L41:
- 301:Menu_Functions.c ****         }
- 302:Menu_Functions.c ****     }
- 303:Menu_Functions.c ****     else if (ch_received == 'b' || ch_received == 'B')
- 733              		.loc 1 303 0
+ 316:Menu_Functions.c ****         }
+ 317:Menu_Functions.c ****     }
+ 318:Menu_Functions.c ****     else if (ch_received == 'b' || ch_received == 'B')
+ 733              		.loc 1 318 0
  734 0402 6228     		cmp	r0, #98
  735 0404 01D0     		beq	.L51
- 736              		.loc 1 303 0 is_stmt 0 discriminator 1
+ 736              		.loc 1 318 0 is_stmt 0 discriminator 1
  737 0406 4228     		cmp	r0, #66
  738 0408 1DD1     		bne	.L52
  739              	.L51:
- 304:Menu_Functions.c ****     {
- 305:Menu_Functions.c ****         if (Registration_Active == 1)
- 740              		.loc 1 305 0 is_stmt 1
+ 319:Menu_Functions.c ****     {
+ 320:Menu_Functions.c ****         if (Registration_Active == 1)
+ 740              		.loc 1 320 0 is_stmt 1
  741 040a 4F4B     		ldr	r3, .L71+36
  742 040c 1B68     		ldr	r3, [r3]
  743 040e 012B     		cmp	r3, #1
  744 0410 06D1     		bne	.L53
- 306:Menu_Functions.c ****         {
- 307:Menu_Functions.c ****             UART_PutString ("*********    REGISTRATION ALREADY STARTED    *********\r");
- 745              		.loc 1 307 0
+ 321:Menu_Functions.c ****         {
+ 322:Menu_Functions.c ****             UART_PutString ("*********    REGISTRATION ALREADY STARTED    *********\r");
+ 745              		.loc 1 322 0
  746 0412 4E48     		ldr	r0, .L71+40
  747 0414 FFF7FEFF 		bl	UART_PutString
  748              	.LVL96:
- 308:Menu_Functions.c ****             UART_PutString("*****************************************************************\r\n")
- 749              		.loc 1 308 0
+ 323:Menu_Functions.c ****             UART_PutString("*****************************************************************\r\n")
+ 749              		.loc 1 323 0
  750 0418 4448     		ldr	r0, .L71+8
  751 041a FFF7FEFF 		bl	UART_PutString
  752              	.LVL97:
  753 041e 0FE0     		b	.L54
  754              	.L53:
- 309:Menu_Functions.c ****         }
- 310:Menu_Functions.c ****         else if (Registration_Active == 0)
- 755              		.loc 1 310 0
+ 324:Menu_Functions.c ****         }
+ 325:Menu_Functions.c ****         else if (Registration_Active == 0)
+ 755              		.loc 1 325 0
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 20
+
+
  756 0420 73B9     		cbnz	r3, .L54
- 311:Menu_Functions.c ****         {
- 312:Menu_Functions.c ****             Registration_Active = 1;
- 757              		.loc 1 312 0
+ 326:Menu_Functions.c ****         {
+ 327:Menu_Functions.c ****             Registration_Active = 1;
+ 757              		.loc 1 327 0
  758 0422 0124     		movs	r4, #1
  759 0424 484B     		ldr	r3, .L71+36
  760 0426 1C60     		str	r4, [r3]
- 313:Menu_Functions.c ****             UART_PutString ("*********    REGISTRATION STARTED    *********\r");
- 761              		.loc 1 313 0
+ 328:Menu_Functions.c ****             UART_PutString ("*********    REGISTRATION STARTED    *********\r");
+ 761              		.loc 1 328 0
  762 0428 4948     		ldr	r0, .L71+44
  763 042a FFF7FEFF 		bl	UART_PutString
  764              	.LVL98:
- 314:Menu_Functions.c ****             UART_PutString("*****************************************************************\r\n")
- 765              		.loc 1 314 0
+ 329:Menu_Functions.c ****             UART_PutString("*****************************************************************\r\n")
+ 765              		.loc 1 329 0
  766 042e 3F48     		ldr	r0, .L71+8
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 20
-
-
  767 0430 FFF7FEFF 		bl	UART_PutString
  768              	.LVL99:
- 315:Menu_Functions.c ****             EEPROM_writeByte(EEPROM_START_STOP_CONFIG, START);
- 769              		.loc 1 315 0
+ 330:Menu_Functions.c ****             EEPROM_writeByte(EEPROM_START_STOP_CONFIG, START);
+ 769              		.loc 1 330 0
  770 0434 2146     		mov	r1, r4
  771 0436 0220     		movs	r0, #2
  772 0438 FFF7FEFF 		bl	EEPROM_writeByte
  773              	.LVL100:
- 316:Menu_Functions.c ****             EEPROM_waitForWriteComplete();
- 774              		.loc 1 316 0
+ 331:Menu_Functions.c ****             EEPROM_waitForWriteComplete();
+ 774              		.loc 1 331 0
  775 043c FFF7FEFF 		bl	EEPROM_waitForWriteComplete
  776              	.LVL101:
  777              	.L54:
- 317:Menu_Functions.c ****             
- 318:Menu_Functions.c ****         }
- 319:Menu_Functions.c ****         
- 320:Menu_Functions.c ****         UART_ClearRxBuffer();
- 778              		.loc 1 320 0
+ 332:Menu_Functions.c ****             
+ 333:Menu_Functions.c ****         }
+ 334:Menu_Functions.c ****         
+ 335:Menu_Functions.c ****         UART_ClearRxBuffer();
+ 778              		.loc 1 335 0
  779 0440 FFF7FEFF 		bl	UART_ClearRxBuffer
  780              	.LVL102:
  781 0444 38BD     		pop	{r3, r4, r5, pc}
  782              	.L52:
- 321:Menu_Functions.c ****     }
- 322:Menu_Functions.c ****     else if (ch_received == 's' || ch_received == 'S')
- 783              		.loc 1 322 0
+ 336:Menu_Functions.c ****     }
+ 337:Menu_Functions.c ****     else if (ch_received == 's' || ch_received == 'S')
+ 783              		.loc 1 337 0
  784 0446 7328     		cmp	r0, #115
  785 0448 01D0     		beq	.L55
- 786              		.loc 1 322 0 is_stmt 0 discriminator 1
+ 786              		.loc 1 337 0 is_stmt 0 discriminator 1
  787 044a 5328     		cmp	r0, #83
  788 044c 22D1     		bne	.L56
  789              	.L55:
- 323:Menu_Functions.c ****     {
- 324:Menu_Functions.c ****         if (Registration_Active == 0)
- 790              		.loc 1 324 0 is_stmt 1
+ 338:Menu_Functions.c ****     {
+ 339:Menu_Functions.c ****         if (Registration_Active == 0)
+ 790              		.loc 1 339 0 is_stmt 1
  791 044e 3E4B     		ldr	r3, .L71+36
  792 0450 1B68     		ldr	r3, [r3]
  793 0452 33B9     		cbnz	r3, .L57
- 325:Menu_Functions.c ****         {
- 326:Menu_Functions.c ****             UART_PutString ("*********    REGISTRATION ALREADY STOPPED    *********\r");
- 794              		.loc 1 326 0
+ 340:Menu_Functions.c ****         {
+ 341:Menu_Functions.c ****             UART_PutString ("*********    REGISTRATION ALREADY STOPPED    *********\r");
+ 794              		.loc 1 341 0
  795 0454 3F48     		ldr	r0, .L71+48
  796 0456 FFF7FEFF 		bl	UART_PutString
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 21
+
+
  797              	.LVL103:
- 327:Menu_Functions.c ****             UART_PutString("*****************************************************************\r\n")
- 798              		.loc 1 327 0
+ 342:Menu_Functions.c ****             UART_PutString("*****************************************************************\r\n")
+ 798              		.loc 1 342 0
  799 045a 3448     		ldr	r0, .L71+8
  800 045c FFF7FEFF 		bl	UART_PutString
  801              	.LVL104:
  802 0460 15E0     		b	.L58
  803              	.L57:
- 328:Menu_Functions.c ****         }
- 329:Menu_Functions.c ****         else if (Registration_Active == 1)
- 804              		.loc 1 329 0
+ 343:Menu_Functions.c ****         }
+ 344:Menu_Functions.c ****         else if (Registration_Active == 1)
+ 804              		.loc 1 344 0
  805 0462 012B     		cmp	r3, #1
  806 0464 13D1     		bne	.L58
- 330:Menu_Functions.c ****         {
- 331:Menu_Functions.c ****             Registration_Active = 0;
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 21
-
-
- 807              		.loc 1 331 0
+ 345:Menu_Functions.c ****         {
+ 346:Menu_Functions.c ****             Registration_Active = 0;
+ 807              		.loc 1 346 0
  808 0466 0024     		movs	r4, #0
  809 0468 374B     		ldr	r3, .L71+36
  810 046a 1C60     		str	r4, [r3]
- 332:Menu_Functions.c ****             Led_Update(999,999);
- 811              		.loc 1 332 0
+ 347:Menu_Functions.c ****             Led_Update(999,999);
+ 811              		.loc 1 347 0
  812 046c 40F2E731 		movw	r1, #999
  813 0470 0846     		mov	r0, r1
  814 0472 FFF7FEFF 		bl	Led_Update
  815              	.LVL105:
- 333:Menu_Functions.c ****             UART_PutString ("*********    REGISTRATION STOPPED    *********\r");
- 816              		.loc 1 333 0
+ 348:Menu_Functions.c ****             UART_PutString ("*********    REGISTRATION STOPPED    *********\r");
+ 816              		.loc 1 348 0
  817 0476 3848     		ldr	r0, .L71+52
  818 0478 FFF7FEFF 		bl	UART_PutString
  819              	.LVL106:
- 334:Menu_Functions.c ****             UART_PutString("*****************************************************************\r\n")
- 820              		.loc 1 334 0
+ 349:Menu_Functions.c ****             UART_PutString("*****************************************************************\r\n")
+ 820              		.loc 1 349 0
  821 047c 2B48     		ldr	r0, .L71+8
  822 047e FFF7FEFF 		bl	UART_PutString
  823              	.LVL107:
- 335:Menu_Functions.c ****             EEPROM_writeByte(EEPROM_START_STOP_CONFIG, STOP);
- 824              		.loc 1 335 0
+ 350:Menu_Functions.c ****             EEPROM_writeByte(EEPROM_START_STOP_CONFIG, STOP);
+ 824              		.loc 1 350 0
  825 0482 2146     		mov	r1, r4
  826 0484 0220     		movs	r0, #2
  827 0486 FFF7FEFF 		bl	EEPROM_writeByte
  828              	.LVL108:
- 336:Menu_Functions.c ****             EEPROM_waitForWriteComplete();
- 829              		.loc 1 336 0
+ 351:Menu_Functions.c ****             EEPROM_waitForWriteComplete();
+ 829              		.loc 1 351 0
  830 048a FFF7FEFF 		bl	EEPROM_waitForWriteComplete
  831              	.LVL109:
  832              	.L58:
- 337:Menu_Functions.c ****             
- 338:Menu_Functions.c ****         }
- 339:Menu_Functions.c ****         
- 340:Menu_Functions.c ****         UART_ClearRxBuffer();
- 833              		.loc 1 340 0
+ 352:Menu_Functions.c ****             
+ 353:Menu_Functions.c ****         }
+ 354:Menu_Functions.c ****         
+ 355:Menu_Functions.c ****         UART_ClearRxBuffer();
+ 833              		.loc 1 355 0
  834 048e FFF7FEFF 		bl	UART_ClearRxBuffer
  835              	.LVL110:
  836 0492 38BD     		pop	{r3, r4, r5, pc}
  837              	.L56:
- 341:Menu_Functions.c ****     }
- 342:Menu_Functions.c ****     else if (ch_received == 'v' || ch_received == 'V')
- 838              		.loc 1 342 0
+ 356:Menu_Functions.c ****     }
+ 357:Menu_Functions.c ****     else if (ch_received == 'v' || ch_received == 'V')
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 22
+
+
+ 838              		.loc 1 357 0
  839 0494 7628     		cmp	r0, #118
  840 0496 01D0     		beq	.L59
- 841              		.loc 1 342 0 is_stmt 0 discriminator 1
+ 841              		.loc 1 357 0 is_stmt 0 discriminator 1
  842 0498 5628     		cmp	r0, #86
  843 049a 28D1     		bne	.L60
  844              	.L59:
- 343:Menu_Functions.c ****     {
- 344:Menu_Functions.c ****         if (Registration_Active == 0)
- 845              		.loc 1 344 0 is_stmt 1
+ 358:Menu_Functions.c ****     {
+ 359:Menu_Functions.c ****         if (Registration_Active == 0)
+ 845              		.loc 1 359 0 is_stmt 1
  846 049c 2A4B     		ldr	r3, .L71+36
  847 049e 1B68     		ldr	r3, [r3]
  848 04a0 4BB9     		cbnz	r3, .L61
- 345:Menu_Functions.c ****         {
- 346:Menu_Functions.c ****             UART_PutString ("*********    VISUALIZATION STARTED    *********\r");
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 22
-
-
- 849              		.loc 1 346 0
+ 360:Menu_Functions.c ****         {
+ 361:Menu_Functions.c ****             UART_PutString ("*********    VISUALIZATION STARTED    *********\r");
+ 849              		.loc 1 361 0
  850 04a2 2E48     		ldr	r0, .L71+56
  851 04a4 FFF7FEFF 		bl	UART_PutString
  852              	.LVL111:
- 347:Menu_Functions.c ****             UART_PutString("*****************************************************************\r\n")
- 853              		.loc 1 347 0
+ 362:Menu_Functions.c ****             UART_PutString("*****************************************************************\r\n")
+ 853              		.loc 1 362 0
  854 04a8 2048     		ldr	r0, .L71+8
  855 04aa FFF7FEFF 		bl	UART_PutString
  856              	.LVL112:
- 348:Menu_Functions.c ****             ActiveVisualization = 1;
- 857              		.loc 1 348 0
+ 363:Menu_Functions.c ****             ActiveVisualization = 1;
+ 857              		.loc 1 363 0
  858 04ae 0122     		movs	r2, #1
  859 04b0 2B4B     		ldr	r3, .L71+60
  860 04b2 1A60     		str	r2, [r3]
  861 04b4 18E0     		b	.L62
  862              	.L61:
- 349:Menu_Functions.c ****         }
- 350:Menu_Functions.c ****         else if ( Registration_Active == 1)
- 863              		.loc 1 350 0
+ 364:Menu_Functions.c ****         }
+ 365:Menu_Functions.c ****         else if ( Registration_Active == 1)
+ 863              		.loc 1 365 0
  864 04b6 012B     		cmp	r3, #1
  865 04b8 0CD1     		bne	.L63
- 351:Menu_Functions.c ****         {
- 352:Menu_Functions.c ****             Registration_Active = 0;
- 866              		.loc 1 352 0
+ 366:Menu_Functions.c ****         {
+ 367:Menu_Functions.c ****             Registration_Active = 0;
+ 866              		.loc 1 367 0
  867 04ba 0022     		movs	r2, #0
  868 04bc 224B     		ldr	r3, .L71+36
  869 04be 1A60     		str	r2, [r3]
- 353:Menu_Functions.c ****             UART_PutString ("*********    VISUALIZATION STARTED    *********\r");
- 870              		.loc 1 353 0
+ 368:Menu_Functions.c ****             UART_PutString ("*********    VISUALIZATION STARTED    *********\r");
+ 870              		.loc 1 368 0
  871 04c0 2648     		ldr	r0, .L71+56
  872 04c2 FFF7FEFF 		bl	UART_PutString
  873              	.LVL113:
- 354:Menu_Functions.c ****             UART_PutString("*****************************************************************\r\n")
- 874              		.loc 1 354 0
+ 369:Menu_Functions.c ****             UART_PutString("*****************************************************************\r\n")
+ 874              		.loc 1 369 0
  875 04c6 1948     		ldr	r0, .L71+8
  876 04c8 FFF7FEFF 		bl	UART_PutString
  877              	.LVL114:
- 355:Menu_Functions.c ****             ActiveVisualization = 1;
- 878              		.loc 1 355 0
+ 370:Menu_Functions.c ****             ActiveVisualization = 1;
+ 878              		.loc 1 370 0
  879 04cc 0122     		movs	r2, #1
  880 04ce 244B     		ldr	r3, .L71+60
  881 04d0 1A60     		str	r2, [r3]
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 23
+
+
  882 04d2 09E0     		b	.L62
  883              	.L63:
- 356:Menu_Functions.c ****         }
- 357:Menu_Functions.c ****         else if (ActiveVisualization == 1)
- 884              		.loc 1 357 0
+ 371:Menu_Functions.c ****         }
+ 372:Menu_Functions.c ****         else if (ActiveVisualization == 1)
+ 884              		.loc 1 372 0
  885 04d4 224B     		ldr	r3, .L71+60
  886 04d6 1B68     		ldr	r3, [r3]
  887 04d8 012B     		cmp	r3, #1
  888 04da 05D1     		bne	.L62
- 358:Menu_Functions.c ****         {
- 359:Menu_Functions.c ****             UART_PutString ("*********    VISUALIZATION ALREADY STARTED    *********\r");
- 889              		.loc 1 359 0
+ 373:Menu_Functions.c ****         {
+ 374:Menu_Functions.c ****             UART_PutString ("*********    VISUALIZATION ALREADY STARTED    *********\r");
+ 889              		.loc 1 374 0
  890 04dc 2148     		ldr	r0, .L71+64
  891 04de FFF7FEFF 		bl	UART_PutString
  892              	.LVL115:
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 23
-
-
- 360:Menu_Functions.c ****             UART_PutString("*****************************************************************\r\n")
- 893              		.loc 1 360 0
+ 375:Menu_Functions.c ****             UART_PutString("*****************************************************************\r\n")
+ 893              		.loc 1 375 0
  894 04e2 1248     		ldr	r0, .L71+8
  895 04e4 FFF7FEFF 		bl	UART_PutString
  896              	.LVL116:
  897              	.L62:
- 361:Menu_Functions.c ****         }
- 362:Menu_Functions.c ****         
- 363:Menu_Functions.c ****         UART_ClearRxBuffer();
- 898              		.loc 1 363 0
+ 376:Menu_Functions.c ****         }
+ 377:Menu_Functions.c ****         
+ 378:Menu_Functions.c ****         UART_ClearRxBuffer();
+ 898              		.loc 1 378 0
  899 04e8 FFF7FEFF 		bl	UART_ClearRxBuffer
  900              	.LVL117:
  901 04ec 38BD     		pop	{r3, r4, r5, pc}
  902              	.L60:
- 364:Menu_Functions.c ****     }
- 365:Menu_Functions.c ****     else if (ch_received == 'u' || ch_received == 'U')
- 903              		.loc 1 365 0
+ 379:Menu_Functions.c ****     }
+ 380:Menu_Functions.c ****     else if (ch_received == 'u' || ch_received == 'U')
+ 903              		.loc 1 380 0
  904 04ee 7528     		cmp	r0, #117
  905 04f0 01D0     		beq	.L64
- 906              		.loc 1 365 0 is_stmt 0 discriminator 1
+ 906              		.loc 1 380 0 is_stmt 0 discriminator 1
  907 04f2 5528     		cmp	r0, #85
  908 04f4 15D1     		bne	.L1
  909              	.L64:
- 366:Menu_Functions.c ****     {
- 367:Menu_Functions.c ****         if (ActiveVisualization == 1)
- 910              		.loc 1 367 0 is_stmt 1
+ 381:Menu_Functions.c ****     {
+ 382:Menu_Functions.c ****         if (ActiveVisualization == 1)
+ 910              		.loc 1 382 0 is_stmt 1
  911 04f6 1A4B     		ldr	r3, .L71+60
  912 04f8 1B68     		ldr	r3, [r3]
  913 04fa 012B     		cmp	r3, #1
  914 04fc 0BD1     		bne	.L65
- 368:Menu_Functions.c ****         {
- 369:Menu_Functions.c ****             ActiveVisualization = 0;
- 915              		.loc 1 369 0
+ 383:Menu_Functions.c ****         {
+ 384:Menu_Functions.c ****             ActiveVisualization = 0;
+ 915              		.loc 1 384 0
  916 04fe 0020     		movs	r0, #0
  917 0500 174B     		ldr	r3, .L71+60
  918 0502 1860     		str	r0, [r3]
- 370:Menu_Functions.c ****             Pin_ExternalLED_Write(0);
- 919              		.loc 1 370 0
+ 385:Menu_Functions.c ****             Pin_ExternalLED_Write(0);
+ 919              		.loc 1 385 0
  920 0504 FFF7FEFF 		bl	Pin_ExternalLED_Write
  921              	.LVL118:
- 371:Menu_Functions.c ****             UART_PutString ("*********    VISUALIZATION STOPPED    *********\r");
- 922              		.loc 1 371 0
+ 386:Menu_Functions.c ****             UART_PutString ("*********    VISUALIZATION STOPPED    *********\r");
+ 922              		.loc 1 386 0
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 24
+
+
  923 0508 1748     		ldr	r0, .L71+68
  924 050a FFF7FEFF 		bl	UART_PutString
  925              	.LVL119:
- 372:Menu_Functions.c ****             UART_PutString("*****************************************************************\r\n")
- 926              		.loc 1 372 0
+ 387:Menu_Functions.c ****             UART_PutString("*****************************************************************\r\n")
+ 926              		.loc 1 387 0
  927 050e 0748     		ldr	r0, .L71+8
  928 0510 FFF7FEFF 		bl	UART_PutString
  929              	.LVL120:
  930 0514 03E0     		b	.L66
  931              	.L65:
- 373:Menu_Functions.c ****         }
- 374:Menu_Functions.c ****         else if (ActiveVisualization == 0)
- 932              		.loc 1 374 0
+ 388:Menu_Functions.c ****         }
+ 389:Menu_Functions.c ****         else if (ActiveVisualization == 0)
+ 932              		.loc 1 389 0
  933 0516 13B9     		cbnz	r3, .L66
- 375:Menu_Functions.c ****         {
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 24
-
-
- 376:Menu_Functions.c ****             UART_PutString("INVALID INPUT....\r\r\r\r\r\r");
- 934              		.loc 1 376 0
+ 390:Menu_Functions.c ****         {
+ 391:Menu_Functions.c ****             UART_PutString("INVALID INPUT....\r\r\r\r\r\r");
+ 934              		.loc 1 391 0
  935 0518 1448     		ldr	r0, .L71+72
  936 051a FFF7FEFF 		bl	UART_PutString
  937              	.LVL121:
  938              	.L66:
- 377:Menu_Functions.c ****         }
- 378:Menu_Functions.c ****         
- 379:Menu_Functions.c ****         UART_ClearRxBuffer();
- 939              		.loc 1 379 0
+ 392:Menu_Functions.c ****         }
+ 393:Menu_Functions.c ****         
+ 394:Menu_Functions.c ****         UART_ClearRxBuffer();
+ 939              		.loc 1 394 0
  940 051e FFF7FEFF 		bl	UART_ClearRxBuffer
  941              	.LVL122:
  942              	.L1:
@@ -1423,6 +1438,9 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  969              		.global	WaitTime
  970              		.global	reg_menu
  971              		.comm	TempUnit,1,1
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 25
+
+
  972              		.global	Sensitivity
  973              		.comm	Registration_Active,4,4
  974              		.comm	MenuActive,4,4
@@ -1438,9 +1456,6 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  984              		.section	.rodata.str1.4,"aMS",%progbits,1
  985              		.align	2
  986              	.LC0:
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 25
-
-
  987 0000 2A2A2A2A 		.ascii	"*********    HELP: POSSIBLE SETTINGS    *********\015"
  987      2A2A2A2A 
  987      2A202020 
@@ -1483,6 +1498,9 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  1001      2A2A0D0D 
  1001      312E202B 
  1001      2D32670D 
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 26
+
+
  1001      0A322E20 
  1002 013c 0D0A342E 		.ascii	"\015\0124. +-16g\015\0125. Go back\015\012\015\000"
  1002      202B2D31 
@@ -1498,9 +1516,6 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  1005      2A2A2A2A 
  1006 018b 2A2A2A2A 		.ascii	"******\015\012\000"
  1006      2A2A0D0A 
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 26
-
-
  1006      00
  1007              	.LC5:
  1008 0194 594F5520 		.ascii	"YOU CHOOSE +-2g\015\015\000"
@@ -1543,6 +1558,9 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  1023      5849542E 
  1024 020e 0000     		.space	2
  1025              	.LC11:
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 27
+
+
  1026 0210 2A2A2A2A 		.ascii	"*********    CHOOSE ACCELEROMETER SAMPLING FREQUENC"
  1026      2A2A2A2A 
  1026      2A202020 
@@ -1558,9 +1576,6 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  1028      0D0A342E 
  1028      20353020 
  1028      487A0D0A 
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 27
-
-
  1029 0286 0000     		.space	2
  1030              	.LC12:
  1031 0288 2A2A2A2A 		.ascii	"***************************************************"
@@ -1603,6 +1618,9 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  1044 031b 00       		.space	1
  1045              	.LC17:
  1046 031c 2A2A2A2A 		.ascii	"*********    CHOOSE TEMPERATURE UNIT    *********\015"
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 28
+
+
  1046      2A2A2A2A 
  1046      2A202020 
  1046      2043484F 
@@ -1618,9 +1636,6 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  1051 0378 594F5520 		.ascii	"YOU CHOOSE CELSIUS UNIT\015\015\000"
  1051      43484F4F 
  1051      53452043 
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 28
-
-
  1051      454C5349 
  1051      55532055 
  1052 0392 0000     		.space	2
@@ -1663,6 +1678,9 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  1067 0484 2A2A2A2A 		.ascii	"*********    VISUALIZATION STARTED    *********\015"
  1067      2A2A2A2A 
  1067      2A202020 
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 29
+
+
  1067      20564953 
  1067      55414C49 
  1068 04b4 00       		.ascii	"\000"
@@ -1678,9 +1696,6 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  1073 04f1 000000   		.space	3
  1074              	.LC26:
  1075 04f4 2A2A2A2A 		.ascii	"*********    VISUALIZATION STOPPED    *********\015"
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 29
-
-
  1075      2A2A2A2A 
  1075      2A202020 
  1075      20564953 
@@ -1723,6 +1738,9 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  1107              		.file 12 "25LC256.h"
  1108              		.file 13 "Generated_Source\\PSoC5/Timer.h"
  1109              		.file 14 "OnBoardLed.h"
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 30
+
+
  1110              		.file 15 "Generated_Source\\PSoC5/Pin_ExternalLED.h"
  1111              		.section	.debug_info,"",%progbits
  1112              	.Ldebug_info0:
@@ -1731,20 +1749,17 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  1115 0006 00000000 		.4byte	.Ldebug_abbrev0
  1116 000a 04       		.byte	0x4
  1117 000b 01       		.uleb128 0x1
- 1118 000c CD000000 		.4byte	.LASF50
+ 1118 000c C2000000 		.4byte	.LASF50
  1119 0010 0C       		.byte	0xc
- 1120 0011 C1020000 		.4byte	.LASF51
- 1121 0015 3E020000 		.4byte	.LASF52
+ 1120 0011 D0020000 		.4byte	.LASF51
+ 1121 0015 10020000 		.4byte	.LASF52
  1122 0019 00000000 		.4byte	.Ldebug_ranges0+0
  1123 001d 00000000 		.4byte	0
  1124 0021 00000000 		.4byte	.Ldebug_line0
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 30
-
-
  1125 0025 02       		.uleb128 0x2
  1126 0026 01       		.byte	0x1
  1127 0027 06       		.byte	0x6
- 1128 0028 B3000000 		.4byte	.LASF0
+ 1128 0028 A8000000 		.4byte	.LASF0
  1129 002c 03       		.uleb128 0x3
  1130 002d 1A000000 		.4byte	.LASF2
  1131 0031 02       		.byte	0x2
@@ -1753,114 +1768,114 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  1134 0037 02       		.uleb128 0x2
  1135 0038 01       		.byte	0x1
  1136 0039 08       		.byte	0x8
- 1137 003a BF000000 		.4byte	.LASF1
+ 1137 003a B4000000 		.4byte	.LASF1
  1138 003e 03       		.uleb128 0x3
- 1139 003f E8010000 		.4byte	.LASF3
+ 1139 003f DD010000 		.4byte	.LASF3
  1140 0043 02       		.byte	0x2
  1141 0044 29       		.byte	0x29
  1142 0045 49000000 		.4byte	0x49
  1143 0049 02       		.uleb128 0x2
  1144 004a 02       		.byte	0x2
  1145 004b 05       		.byte	0x5
- 1146 004c F1020000 		.4byte	.LASF4
+ 1146 004c 00030000 		.4byte	.LASF4
  1147 0050 03       		.uleb128 0x3
- 1148 0051 C2010000 		.4byte	.LASF5
+ 1148 0051 B7010000 		.4byte	.LASF5
  1149 0055 02       		.byte	0x2
  1150 0056 2B       		.byte	0x2b
  1151 0057 5B000000 		.4byte	0x5b
  1152 005b 02       		.uleb128 0x2
  1153 005c 02       		.byte	0x2
  1154 005d 07       		.byte	0x7
- 1155 005e 97010000 		.4byte	.LASF6
+ 1155 005e 8C010000 		.4byte	.LASF6
  1156 0062 03       		.uleb128 0x3
- 1157 0063 3A000000 		.4byte	.LASF7
+ 1157 0063 2F000000 		.4byte	.LASF7
  1158 0067 02       		.byte	0x2
  1159 0068 3F       		.byte	0x3f
  1160 0069 6D000000 		.4byte	0x6d
  1161 006d 02       		.uleb128 0x2
  1162 006e 04       		.byte	0x4
  1163 006f 05       		.byte	0x5
- 1164 0070 29030000 		.4byte	.LASF8
+ 1164 0070 38030000 		.4byte	.LASF8
  1165 0074 02       		.uleb128 0x2
  1166 0075 04       		.byte	0x4
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 31
+
+
  1167 0076 07       		.byte	0x7
- 1168 0077 CD010000 		.4byte	.LASF9
+ 1168 0077 C2010000 		.4byte	.LASF9
  1169 007b 02       		.uleb128 0x2
  1170 007c 08       		.byte	0x8
  1171 007d 05       		.byte	0x5
- 1172 007e B3020000 		.4byte	.LASF10
+ 1172 007e C2020000 		.4byte	.LASF10
  1173 0082 02       		.uleb128 0x2
  1174 0083 08       		.byte	0x8
  1175 0084 07       		.byte	0x7
- 1176 0085 FC010000 		.4byte	.LASF11
+ 1176 0085 F1010000 		.4byte	.LASF11
  1177 0089 04       		.uleb128 0x4
  1178 008a 04       		.byte	0x4
  1179 008b 05       		.byte	0x5
  1180 008c 696E7400 		.ascii	"int\000"
  1181 0090 02       		.uleb128 0x2
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 31
-
-
  1182 0091 04       		.byte	0x4
  1183 0092 07       		.byte	0x7
- 1184 0093 57000000 		.4byte	.LASF12
+ 1184 0093 4C000000 		.4byte	.LASF12
  1185 0097 03       		.uleb128 0x3
- 1186 0098 13020000 		.4byte	.LASF13
+ 1186 0098 08020000 		.4byte	.LASF13
  1187 009c 03       		.byte	0x3
  1188 009d 18       		.byte	0x18
  1189 009e 2C000000 		.4byte	0x2c
  1190 00a2 03       		.uleb128 0x3
- 1191 00a3 30020000 		.4byte	.LASF14
+ 1191 00a3 8B020000 		.4byte	.LASF14
  1192 00a7 03       		.byte	0x3
  1193 00a8 20       		.byte	0x20
  1194 00a9 3E000000 		.4byte	0x3e
  1195 00ad 03       		.uleb128 0x3
- 1196 00ae 0B030000 		.4byte	.LASF15
+ 1196 00ae 1A030000 		.4byte	.LASF15
  1197 00b2 03       		.byte	0x3
  1198 00b3 24       		.byte	0x24
  1199 00b4 50000000 		.4byte	0x50
  1200 00b8 03       		.uleb128 0x3
- 1201 00b9 91000000 		.4byte	.LASF16
+ 1201 00b9 86000000 		.4byte	.LASF16
  1202 00bd 03       		.byte	0x3
  1203 00be 2C       		.byte	0x2c
  1204 00bf 62000000 		.4byte	0x62
  1205 00c3 05       		.uleb128 0x5
- 1206 00c4 38020000 		.4byte	.LASF17
+ 1206 00c4 93020000 		.4byte	.LASF17
  1207 00c8 04       		.byte	0x4
  1208 00c9 E401     		.2byte	0x1e4
  1209 00cb 37000000 		.4byte	0x37
  1210 00cf 02       		.uleb128 0x2
  1211 00d0 04       		.byte	0x4
  1212 00d1 04       		.byte	0x4
- 1213 00d2 99000000 		.4byte	.LASF18
+ 1213 00d2 8E000000 		.4byte	.LASF18
  1214 00d6 02       		.uleb128 0x2
  1215 00d7 08       		.byte	0x8
  1216 00d8 04       		.byte	0x4
- 1217 00d9 64000000 		.4byte	.LASF19
+ 1217 00d9 59000000 		.4byte	.LASF19
  1218 00dd 02       		.uleb128 0x2
  1219 00de 01       		.byte	0x1
  1220 00df 08       		.byte	0x8
- 1221 00e0 DF020000 		.4byte	.LASF20
+ 1221 00e0 EE020000 		.4byte	.LASF20
  1222 00e4 06       		.uleb128 0x6
  1223 00e5 C3000000 		.4byte	0xc3
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 32
+
+
  1224 00e9 02       		.uleb128 0x2
  1225 00ea 08       		.byte	0x8
  1226 00eb 04       		.byte	0x4
- 1227 00ec 32030000 		.4byte	.LASF21
+ 1227 00ec 41030000 		.4byte	.LASF21
  1228 00f0 02       		.uleb128 0x2
  1229 00f1 04       		.byte	0x4
  1230 00f2 07       		.byte	0x7
- 1231 00f3 A1020000 		.4byte	.LASF22
+ 1231 00f3 B0020000 		.4byte	.LASF22
  1232 00f7 07       		.uleb128 0x7
- 1233 00f8 6B000000 		.4byte	.LASF53
+ 1233 00f8 60000000 		.4byte	.LASF53
  1234 00fc 01       		.byte	0x1
- 1235 00fd 08       		.byte	0x8
+ 1235 00fd 17       		.byte	0x17
  1236 00fe 00000000 		.4byte	.LFB64
  1237 0102 70050000 		.4byte	.LFE64-.LFB64
  1238 0106 01       		.uleb128 0x1
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 32
-
-
  1239 0107 9C       		.byte	0x9c
  1240 0108 A9090000 		.4byte	0x9a9
  1241 010c 08       		.uleb128 0x8
@@ -1903,6 +1918,9 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  1278 015b 32000000 		.4byte	.LVL4
  1279 015f C00A0000 		.4byte	0xac0
  1280 0163 71010000 		.4byte	0x171
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 33
+
+
  1281 0167 0A       		.uleb128 0xa
  1282 0168 01       		.uleb128 0x1
  1283 0169 50       		.byte	0x50
@@ -1918,9 +1936,6 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  1293 017f 01       		.uleb128 0x1
  1294 0180 50       		.byte	0x50
  1295 0181 05       		.uleb128 0x5
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 33
-
-
  1296 0182 03       		.byte	0x3
  1297 0183 58010000 		.4byte	.LC4
  1298 0187 00       		.byte	0
@@ -1963,6 +1978,9 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  1335 01d9 50       		.byte	0x50
  1336 01da 02       		.uleb128 0x2
  1337 01db 08       		.byte	0x8
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 34
+
+
  1338 01dc 23       		.byte	0x23
  1339 01dd 0A       		.uleb128 0xa
  1340 01de 01       		.uleb128 0x1
@@ -1978,9 +1996,6 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  1350 01f1 0A       		.uleb128 0xa
  1351 01f2 01       		.uleb128 0x1
  1352 01f3 50       		.byte	0x50
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 34
-
-
  1353 01f4 01       		.uleb128 0x1
  1354 01f5 31       		.byte	0x31
  1355 01f6 00       		.byte	0
@@ -2023,6 +2038,9 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  1392 024b 01       		.uleb128 0x1
  1393 024c 50       		.byte	0x50
  1394 024d 02       		.uleb128 0x2
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 35
+
+
  1395 024e 08       		.byte	0x8
  1396 024f 23       		.byte	0x23
  1397 0250 00       		.byte	0
@@ -2038,9 +2056,6 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  1407 0263 23       		.byte	0x23
  1408 0264 0A       		.uleb128 0xa
  1409 0265 01       		.uleb128 0x1
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 35
-
-
  1410 0266 51       		.byte	0x51
  1411 0267 02       		.uleb128 0x2
  1412 0268 09       		.byte	0x9
@@ -2083,6 +2098,9 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  1449 02b4 03       		.byte	0x3
  1450 02b5 A8010000 		.4byte	.LC6
  1451 02b9 00       		.byte	0
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 36
+
+
  1452 02ba 08       		.uleb128 0x8
  1453 02bb 12010000 		.4byte	.LVL25
  1454 02bf 180B0000 		.4byte	0xb18
@@ -2098,9 +2116,6 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  1464 02d5 23       		.byte	0x23
  1465 02d6 00       		.byte	0
  1466 02d7 09       		.uleb128 0x9
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 36
-
-
  1467 02d8 2C010000 		.4byte	.LVL27
  1468 02dc F70A0000 		.4byte	0xaf7
  1469 02e0 F1020000 		.4byte	0x2f1
@@ -2143,6 +2158,9 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  1506 0320 08       		.uleb128 0x8
  1507 0321 4A010000 		.4byte	.LVL31
  1508 0325 0D0B0000 		.4byte	0xb0d
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 37
+
+
  1509 0329 09       		.uleb128 0x9
  1510 032a 50010000 		.4byte	.LVL32
  1511 032e C00A0000 		.4byte	0xac0
@@ -2158,9 +2176,6 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  1521 0341 54010000 		.4byte	.LVL33
  1522 0345 180B0000 		.4byte	0xb18
  1523 0349 09       		.uleb128 0x9
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 37
-
-
  1524 034a 5C010000 		.4byte	.LVL34
  1525 034e EC0A0000 		.4byte	0xaec
  1526 0352 5D030000 		.4byte	0x35d
@@ -2203,6 +2218,9 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  1563 038f 0D0B0000 		.4byte	0xb0d
  1564 0393 09       		.uleb128 0x9
  1565 0394 88010000 		.4byte	.LVL38
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 38
+
+
  1566 0398 020B0000 		.4byte	0xb02
  1567 039c A6030000 		.4byte	0x3a6
  1568 03a0 0A       		.uleb128 0xa
@@ -2218,9 +2236,6 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  1578 03b0 92010000 		.4byte	.LVL40
  1579 03b4 C00A0000 		.4byte	0xac0
  1580 03b8 C6030000 		.4byte	0x3c6
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 38
-
-
  1581 03bc 0A       		.uleb128 0xa
  1582 03bd 01       		.uleb128 0x1
  1583 03be 50       		.byte	0x50
@@ -2263,6 +2278,9 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  1620 040d 05       		.uleb128 0x5
  1621 040e 03       		.byte	0x3
  1622 040f 10020000 		.4byte	.LC11
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 39
+
+
  1623 0413 00       		.byte	0
  1624 0414 09       		.uleb128 0x9
  1625 0415 BE010000 		.4byte	.LVL45
@@ -2278,9 +2296,6 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  1635 042b 09       		.uleb128 0x9
  1636 042c C6010000 		.4byte	.LVL46
  1637 0430 CB0A0000 		.4byte	0xacb
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 39
-
-
  1638 0434 3E040000 		.4byte	0x43e
  1639 0438 0A       		.uleb128 0xa
  1640 0439 01       		.uleb128 0x1
@@ -2323,6 +2338,9 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  1677 0482 51       		.byte	0x51
  1678 0483 01       		.uleb128 0x1
  1679 0484 47       		.byte	0x47
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 40
+
+
  1680 0485 00       		.byte	0
  1681 0486 09       		.uleb128 0x9
  1682 0487 38020000 		.4byte	.LVL52
@@ -2338,9 +2356,6 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  1692 049a 3C020000 		.4byte	.LVL53
  1693 049e 0D0B0000 		.4byte	0xb0d
  1694 04a2 09       		.uleb128 0x9
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 40
-
-
  1695 04a3 44020000 		.4byte	.LVL54
  1696 04a7 230B0000 		.4byte	0xb23
  1697 04ab B7040000 		.4byte	0x4b7
@@ -2383,6 +2398,9 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  1734 04f8 0A       		.uleb128 0xa
  1735 04f9 01       		.uleb128 0x1
  1736 04fa 50       		.byte	0x50
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 41
+
+
  1737 04fb 02       		.uleb128 0x2
  1738 04fc 08       		.byte	0x8
  1739 04fd 20       		.byte	0x20
@@ -2398,9 +2416,6 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  1749 050a 020B0000 		.4byte	0xb02
  1750 050e 18050000 		.4byte	0x518
  1751 0512 0A       		.uleb128 0xa
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 41
-
-
  1752 0513 01       		.uleb128 0x1
  1753 0514 50       		.byte	0x50
  1754 0515 01       		.uleb128 0x1
@@ -2443,6 +2458,9 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  1791 0564 50       		.byte	0x50
  1792 0565 02       		.uleb128 0x2
  1793 0566 08       		.byte	0x8
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 42
+
+
  1794 0567 20       		.byte	0x20
  1795 0568 00       		.byte	0
  1796 0569 09       		.uleb128 0x9
@@ -2458,9 +2476,6 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  1806 057c 0A       		.uleb128 0xa
  1807 057d 01       		.uleb128 0x1
  1808 057e 51       		.byte	0x51
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 42
-
-
  1809 057f 02       		.uleb128 0x2
  1810 0580 08       		.byte	0x8
  1811 0581 37       		.byte	0x37
@@ -2503,6 +2518,9 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  1848 05ca 08       		.uleb128 0x8
  1849 05cb BE020000 		.4byte	.LVL70
  1850 05cf 180B0000 		.4byte	0xb18
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 43
+
+
  1851 05d3 09       		.uleb128 0x9
  1852 05d4 C6020000 		.4byte	.LVL71
  1853 05d8 EC0A0000 		.4byte	0xaec
@@ -2518,9 +2536,6 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  1863 05e8 D8020000 		.4byte	.LVL72
  1864 05ec F70A0000 		.4byte	0xaf7
  1865 05f0 01060000 		.4byte	0x601
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 43
-
-
  1866 05f4 0A       		.uleb128 0xa
  1867 05f5 01       		.uleb128 0x1
  1868 05f6 50       		.byte	0x50
@@ -2563,6 +2578,9 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  1905 0639 230B0000 		.4byte	0xb23
  1906 063d 47060000 		.4byte	0x647
  1907 0641 0A       		.uleb128 0xa
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 44
+
+
  1908 0642 01       		.uleb128 0x1
  1909 0643 50       		.byte	0x50
  1910 0644 01       		.uleb128 0x1
@@ -2578,9 +2596,6 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  1920 065d 0A       		.uleb128 0xa
  1921 065e 01       		.uleb128 0x1
  1922 065f 50       		.byte	0x50
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 44
-
-
  1923 0660 05       		.uleb128 0x5
  1924 0661 03       		.byte	0x3
  1925 0662 E4010000 		.4byte	.LC9
@@ -2623,6 +2638,9 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  1962 06b1 CB0A0000 		.4byte	0xacb
  1963 06b5 BF060000 		.4byte	0x6bf
  1964 06b9 0A       		.uleb128 0xa
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 45
+
+
  1965 06ba 01       		.uleb128 0x1
  1966 06bb 50       		.byte	0x50
  1967 06bc 01       		.uleb128 0x1
@@ -2638,9 +2656,6 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  1977 06d2 AA030000 		.4byte	.LVL85
  1978 06d6 E10A0000 		.4byte	0xae1
  1979 06da 09       		.uleb128 0x9
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 45
-
-
  1980 06db C6030000 		.4byte	.LVL86
  1981 06df 020B0000 		.4byte	0xb02
  1982 06e3 F2060000 		.4byte	0x6f2
@@ -2683,6 +2698,9 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  2019 072c 33       		.byte	0x33
  2020 072d 0A       		.uleb128 0xa
  2021 072e 01       		.uleb128 0x1
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 46
+
+
  2022 072f 51       		.byte	0x51
  2023 0730 01       		.uleb128 0x1
  2024 0731 31       		.byte	0x31
@@ -2698,9 +2716,6 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  2034 074a 01       		.uleb128 0x1
  2035 074b 50       		.byte	0x50
  2036 074c 05       		.uleb128 0x5
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 46
-
-
  2037 074d 03       		.byte	0x3
  2038 074e 94030000 		.4byte	.LC19
  2039 0752 00       		.byte	0
@@ -2743,6 +2758,9 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  2076 07a1 09       		.uleb128 0x9
  2077 07a2 1E040000 		.4byte	.LVL97
  2078 07a6 C00A0000 		.4byte	0xac0
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 47
+
+
  2079 07aa B8070000 		.4byte	0x7b8
  2080 07ae 0A       		.uleb128 0xa
  2081 07af 01       		.uleb128 0x1
@@ -2758,9 +2776,6 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  2091 07c5 0A       		.uleb128 0xa
  2092 07c6 01       		.uleb128 0x1
  2093 07c7 50       		.byte	0x50
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 47
-
-
  2094 07c8 05       		.uleb128 0x5
  2095 07c9 03       		.byte	0x3
  2096 07ca EC030000 		.4byte	.LC21
@@ -2803,6 +2818,9 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  2133 0816 C00A0000 		.4byte	0xac0
  2134 081a 28080000 		.4byte	0x828
  2135 081e 0A       		.uleb128 0xa
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 48
+
+
  2136 081f 01       		.uleb128 0x1
  2137 0820 50       		.byte	0x50
  2138 0821 05       		.uleb128 0x5
@@ -2818,9 +2836,6 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  2148 0837 50       		.byte	0x50
  2149 0838 05       		.uleb128 0x5
  2150 0839 03       		.byte	0x3
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 48
-
-
  2151 083a 88020000 		.4byte	.LC12
  2152 083e 00       		.byte	0
  2153 083f 09       		.uleb128 0x9
@@ -2863,6 +2878,9 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  2190 0884 88020000 		.4byte	.LC12
  2191 0888 00       		.byte	0
  2192 0889 09       		.uleb128 0x9
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 49
+
+
  2193 088a 8A040000 		.4byte	.LVL108
  2194 088e 020B0000 		.4byte	0xb02
  2195 0892 A2080000 		.4byte	0x8a2
@@ -2878,9 +2896,6 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  2205 089f 74       		.byte	0x74
  2206 08a0 00       		.sleb128 0
  2207 08a1 00       		.byte	0
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 49
-
-
  2208 08a2 08       		.uleb128 0x8
  2209 08a3 8E040000 		.4byte	.LVL109
  2210 08a7 0D0B0000 		.4byte	0xb0d
@@ -2923,6 +2938,9 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  2247 08f9 09       		.uleb128 0x9
  2248 08fa CC040000 		.4byte	.LVL114
  2249 08fe C00A0000 		.4byte	0xac0
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 50
+
+
  2250 0902 10090000 		.4byte	0x910
  2251 0906 0A       		.uleb128 0xa
  2252 0907 01       		.uleb128 0x1
@@ -2938,9 +2956,6 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  2262 091d 0A       		.uleb128 0xa
  2263 091e 01       		.uleb128 0x1
  2264 091f 50       		.byte	0x50
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 50
-
-
  2265 0920 05       		.uleb128 0x5
  2266 0921 03       		.byte	0x3
  2267 0922 B8040000 		.4byte	.LC25
@@ -2983,6 +2998,9 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  2304 0971 09       		.uleb128 0x9
  2305 0972 14050000 		.4byte	.LVL120
  2306 0976 C00A0000 		.4byte	0xac0
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 51
+
+
  2307 097a 88090000 		.4byte	0x988
  2308 097e 0A       		.uleb128 0xa
  2309 097f 01       		.uleb128 0x1
@@ -2998,9 +3016,6 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  2319 0995 0A       		.uleb128 0xa
  2320 0996 01       		.uleb128 0x1
  2321 0997 50       		.byte	0x50
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 51
-
-
  2322 0998 05       		.uleb128 0x5
  2323 0999 03       		.byte	0x3
  2324 099a 28050000 		.4byte	.LC27
@@ -3010,14 +3025,14 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  2328 09a4 E10A0000 		.4byte	0xae1
  2329 09a8 00       		.byte	0
  2330 09a9 0B       		.uleb128 0xb
- 2331 09aa B5010000 		.4byte	.LASF23
+ 2331 09aa AA010000 		.4byte	.LASF23
  2332 09ae 05       		.byte	0x5
  2333 09af 1207     		.2byte	0x712
  2334 09b1 B5090000 		.4byte	0x9b5
  2335 09b5 06       		.uleb128 0x6
  2336 09b6 B8000000 		.4byte	0xb8
  2337 09ba 0C       		.uleb128 0xc
- 2338 09bb FB020000 		.4byte	.LASF24
+ 2338 09bb 0A030000 		.4byte	.LASF24
  2339 09bf 06       		.byte	0x6
  2340 09c0 19       		.byte	0x19
  2341 09c1 E4000000 		.4byte	0xe4
@@ -3033,7 +3048,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  2351 09d7 03       		.byte	0x3
  2352 09d8 00000000 		.4byte	fifo_reg
  2353 09dc 0C       		.uleb128 0xc
- 2354 09dd F2010000 		.4byte	.LASF26
+ 2354 09dd E7010000 		.4byte	.LASF26
  2355 09e1 07       		.byte	0x7
  2356 09e2 1B       		.byte	0x1b
  2357 09e3 97000000 		.4byte	0x97
@@ -3041,8 +3056,11 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  2359 09e8 03       		.byte	0x3
  2360 09e9 00000000 		.4byte	ctrl_reg5
  2361 09ed 0C       		.uleb128 0xc
- 2362 09ee 4B030000 		.4byte	.LASF27
+ 2362 09ee 5A030000 		.4byte	.LASF27
  2363 09f2 07       		.byte	0x7
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 52
+
+
  2364 09f3 1C       		.byte	0x1c
  2365 09f4 AD000000 		.4byte	0xad
  2366 09f8 05       		.uleb128 0x5
@@ -3058,9 +3076,6 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  2376 0a09 00000000 		.4byte	m
  2377 0a0d 0D       		.uleb128 0xd
  2378 0a0e 6A00     		.ascii	"j\000"
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 52
-
-
  2379 0a10 07       		.byte	0x7
  2380 0a11 1E       		.byte	0x1e
  2381 0a12 A2000000 		.4byte	0xa2
@@ -3068,146 +3083,146 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  2383 0a17 03       		.byte	0x3
  2384 0a18 00000000 		.4byte	j
  2385 0a1c 0C       		.uleb128 0xc
- 2386 0a1d 9F000000 		.4byte	.LASF28
+ 2386 0a1d 94000000 		.4byte	.LASF28
  2387 0a21 08       		.byte	0x8
- 2388 0a22 2D       		.byte	0x2d
+ 2388 0a22 2F       		.byte	0x2f
  2389 0a23 89000000 		.4byte	0x89
  2390 0a27 05       		.uleb128 0x5
  2391 0a28 03       		.byte	0x3
  2392 0a29 00000000 		.4byte	ActiveVisualization
  2393 0a2d 0C       		.uleb128 0xc
- 2394 0a2e 95020000 		.4byte	.LASF29
+ 2394 0a2e A4020000 		.4byte	.LASF29
  2395 0a32 08       		.byte	0x8
- 2396 0a33 2F       		.byte	0x2f
+ 2396 0a33 31       		.byte	0x31
  2397 0a34 DD000000 		.4byte	0xdd
  2398 0a38 05       		.uleb128 0x5
  2399 0a39 03       		.byte	0x3
  2400 0a3a 00000000 		.4byte	ch_received
  2401 0a3e 0C       		.uleb128 0xc
- 2402 0a3f D2020000 		.4byte	.LASF30
+ 2402 0a3f E1020000 		.4byte	.LASF30
  2403 0a43 08       		.byte	0x8
- 2404 0a44 30       		.byte	0x30
+ 2404 0a44 32       		.byte	0x32
  2405 0a45 89000000 		.4byte	0x89
  2406 0a49 05       		.uleb128 0x5
  2407 0a4a 03       		.byte	0x3
  2408 0a4b 00000000 		.4byte	LoopContinue
  2409 0a4f 0C       		.uleb128 0xc
- 2410 0a50 2F000000 		.4byte	.LASF31
+ 2410 0a50 99020000 		.4byte	.LASF31
  2411 0a54 08       		.byte	0x8
- 2412 0a55 31       		.byte	0x31
+ 2412 0a55 33       		.byte	0x33
  2413 0a56 89000000 		.4byte	0x89
  2414 0a5a 05       		.uleb128 0x5
  2415 0a5b 03       		.byte	0x3
  2416 0a5c 00000000 		.4byte	MenuActive
  2417 0a60 0C       		.uleb128 0xc
- 2418 0a61 6A030000 		.4byte	.LASF32
+ 2418 0a61 79030000 		.4byte	.LASF32
  2419 0a65 08       		.byte	0x8
- 2420 0a66 32       		.byte	0x32
+ 2420 0a66 34       		.byte	0x34
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 53
+
+
  2421 0a67 89000000 		.4byte	0x89
  2422 0a6b 05       		.uleb128 0x5
  2423 0a6c 03       		.byte	0x3
  2424 0a6d 00000000 		.4byte	Registration_Active
  2425 0a71 0C       		.uleb128 0xc
- 2426 0a72 1B020000 		.4byte	.LASF33
+ 2426 0a72 76020000 		.4byte	.LASF33
  2427 0a76 01       		.byte	0x1
- 2428 0a77 05       		.byte	0x5
+ 2428 0a77 14       		.byte	0x14
  2429 0a78 97000000 		.4byte	0x97
  2430 0a7c 05       		.uleb128 0x5
  2431 0a7d 03       		.byte	0x3
  2432 0a7e 00000000 		.4byte	Sensitivity
  2433 0a82 0C       		.uleb128 0xc
- 2434 0a83 DF010000 		.4byte	.LASF34
+ 2434 0a83 D4010000 		.4byte	.LASF34
  2435 0a87 08       		.byte	0x8
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 53
-
-
- 2436 0a88 35       		.byte	0x35
+ 2436 0a88 37       		.byte	0x37
  2437 0a89 97000000 		.4byte	0x97
  2438 0a8d 05       		.uleb128 0x5
  2439 0a8e 03       		.byte	0x3
  2440 0a8f 00000000 		.4byte	TempUnit
  2441 0a93 0C       		.uleb128 0xc
- 2442 0a94 AA020000 		.4byte	.LASF35
+ 2442 0a94 B9020000 		.4byte	.LASF35
  2443 0a98 01       		.byte	0x1
- 2444 0a99 04       		.byte	0x4
+ 2444 0a99 13       		.byte	0x13
  2445 0a9a 97000000 		.4byte	0x97
  2446 0a9e 05       		.uleb128 0x5
  2447 0a9f 03       		.byte	0x3
  2448 0aa0 00000000 		.4byte	reg_menu
  2449 0aa4 0C       		.uleb128 0xc
- 2450 0aa5 27020000 		.4byte	.LASF36
+ 2450 0aa5 82020000 		.4byte	.LASF36
  2451 0aa9 01       		.byte	0x1
- 2452 0aaa 06       		.byte	0x6
+ 2452 0aaa 15       		.byte	0x15
  2453 0aab 89000000 		.4byte	0x89
  2454 0aaf 05       		.uleb128 0x5
  2455 0ab0 03       		.byte	0x3
  2456 0ab1 00000000 		.4byte	WaitTime
  2457 0ab5 0E       		.uleb128 0xe
- 2458 0ab6 E4020000 		.4byte	.LASF37
- 2459 0aba E4020000 		.4byte	.LASF37
+ 2458 0ab6 F3020000 		.4byte	.LASF37
+ 2459 0aba F3020000 		.4byte	.LASF37
  2460 0abe 09       		.byte	0x9
  2461 0abf 71       		.byte	0x71
  2462 0ac0 0E       		.uleb128 0xe
- 2463 0ac1 53030000 		.4byte	.LASF38
- 2464 0ac5 53030000 		.4byte	.LASF38
+ 2463 0ac1 62030000 		.4byte	.LASF38
+ 2464 0ac5 62030000 		.4byte	.LASF38
  2465 0ac9 09       		.byte	0x9
  2466 0aca 8B       		.byte	0x8b
  2467 0acb 0E       		.uleb128 0xe
- 2468 0acc 62030000 		.4byte	.LASF39
- 2469 0ad0 62030000 		.4byte	.LASF39
+ 2468 0acc 71030000 		.4byte	.LASF39
+ 2469 0ad0 71030000 		.4byte	.LASF39
  2470 0ad4 0A       		.byte	0xa
  2471 0ad5 76       		.byte	0x76
  2472 0ad6 0E       		.uleb128 0xe
- 2473 0ad7 14030000 		.4byte	.LASF40
- 2474 0adb 14030000 		.4byte	.LASF40
+ 2473 0ad7 23030000 		.4byte	.LASF40
+ 2474 0adb 23030000 		.4byte	.LASF40
  2475 0adf 09       		.byte	0x9
  2476 0ae0 73       		.byte	0x73
  2477 0ae1 0E       		.uleb128 0xe
- 2478 0ae2 44000000 		.4byte	.LASF41
- 2479 0ae6 44000000 		.4byte	.LASF41
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 54
+
+
+ 2478 0ae2 39000000 		.4byte	.LASF41
+ 2479 0ae6 39000000 		.4byte	.LASF41
  2480 0aea 09       		.byte	0x9
  2481 0aeb 75       		.byte	0x75
  2482 0aec 0E       		.uleb128 0xe
- 2483 0aed 3E030000 		.4byte	.LASF42
- 2484 0af1 3E030000 		.4byte	.LASF42
+ 2483 0aed 4D030000 		.4byte	.LASF42
+ 2484 0af1 4D030000 		.4byte	.LASF42
  2485 0af5 0B       		.byte	0xb
  2486 0af6 60       		.byte	0x60
  2487 0af7 0E       		.uleb128 0xe
- 2488 0af8 6D010000 		.4byte	.LASF43
- 2489 0afc 6D010000 		.4byte	.LASF43
+ 2488 0af8 62010000 		.4byte	.LASF43
+ 2489 0afc 62010000 		.4byte	.LASF43
  2490 0b00 0B       		.byte	0xb
  2491 0b01 61       		.byte	0x61
  2492 0b02 0E       		.uleb128 0xe
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 54
-
-
  2493 0b03 00000000 		.4byte	.LASF44
  2494 0b07 00000000 		.4byte	.LASF44
  2495 0b0b 0C       		.byte	0xc
- 2496 0b0c 52       		.byte	0x52
+ 2496 0b0c 50       		.byte	0x50
  2497 0b0d 0E       		.uleb128 0xe
- 2498 0b0e 7B010000 		.4byte	.LASF45
- 2499 0b12 7B010000 		.4byte	.LASF45
+ 2498 0b0e 70010000 		.4byte	.LASF45
+ 2499 0b12 70010000 		.4byte	.LASF45
  2500 0b16 0C       		.byte	0xc
- 2501 0b17 6B       		.byte	0x6b
+ 2501 0b17 69       		.byte	0x69
  2502 0b18 0E       		.uleb128 0xe
- 2503 0b19 AA010000 		.4byte	.LASF46
- 2504 0b1d AA010000 		.4byte	.LASF46
+ 2503 0b19 9F010000 		.4byte	.LASF46
+ 2504 0b1d 9F010000 		.4byte	.LASF46
  2505 0b21 07       		.byte	0x7
  2506 0b22 21       		.byte	0x21
  2507 0b23 0E       		.uleb128 0xe
- 2508 0b24 5B010000 		.4byte	.LASF47
- 2509 0b28 5B010000 		.4byte	.LASF47
+ 2508 0b24 50010000 		.4byte	.LASF47
+ 2509 0b28 50010000 		.4byte	.LASF47
  2510 0b2c 0D       		.byte	0xd
  2511 0b2d 68       		.byte	0x68
  2512 0b2e 0E       		.uleb128 0xe
  2513 0b2f 24000000 		.4byte	.LASF48
  2514 0b33 24000000 		.4byte	.LASF48
  2515 0b37 0E       		.byte	0xe
- 2516 0b38 28       		.byte	0x28
+ 2516 0b38 2A       		.byte	0x2a
  2517 0b39 0E       		.uleb128 0xe
- 2518 0b3a 7B000000 		.4byte	.LASF49
- 2519 0b3e 7B000000 		.4byte	.LASF49
+ 2518 0b3a 70000000 		.4byte	.LASF49
+ 2519 0b3e 70000000 		.4byte	.LASF49
  2520 0b42 0F       		.byte	0xf
  2521 0b43 26       		.byte	0x26
  2522 0b44 00       		.byte	0
@@ -3223,6 +3238,9 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  2532 0007 03       		.uleb128 0x3
  2533 0008 0E       		.uleb128 0xe
  2534 0009 1B       		.uleb128 0x1b
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 55
+
+
  2535 000a 0E       		.uleb128 0xe
  2536 000b 55       		.uleb128 0x55
  2537 000c 17       		.uleb128 0x17
@@ -3238,9 +3256,6 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  2547 0016 0B       		.uleb128 0xb
  2548 0017 0B       		.uleb128 0xb
  2549 0018 3E       		.uleb128 0x3e
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 55
-
-
  2550 0019 0B       		.uleb128 0xb
  2551 001a 03       		.uleb128 0x3
  2552 001b 0E       		.uleb128 0xe
@@ -3283,6 +3298,9 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  2589 0040 13       		.uleb128 0x13
  2590 0041 00       		.byte	0
  2591 0042 00       		.byte	0
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 56
+
+
  2592 0043 06       		.uleb128 0x6
  2593 0044 35       		.uleb128 0x35
  2594 0045 00       		.byte	0
@@ -3298,9 +3316,6 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  2604 004f 03       		.uleb128 0x3
  2605 0050 0E       		.uleb128 0xe
  2606 0051 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 56
-
-
  2607 0052 0B       		.uleb128 0xb
  2608 0053 3B       		.uleb128 0x3b
  2609 0054 0B       		.uleb128 0xb
@@ -3343,6 +3358,9 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  2646 0080 00       		.byte	0
  2647 0081 02       		.uleb128 0x2
  2648 0082 18       		.uleb128 0x18
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 57
+
+
  2649 0083 9142     		.uleb128 0x2111
  2650 0085 18       		.uleb128 0x18
  2651 0086 00       		.byte	0
@@ -3358,9 +3376,6 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  2661 0090 05       		.uleb128 0x5
  2662 0091 49       		.uleb128 0x49
  2663 0092 13       		.uleb128 0x13
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 57
-
-
  2664 0093 3F       		.uleb128 0x3f
  2665 0094 19       		.uleb128 0x19
  2666 0095 3C       		.uleb128 0x3c
@@ -3403,6 +3418,9 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  2703 00ba 00       		.byte	0
  2704 00bb 0E       		.uleb128 0xe
  2705 00bc 2E       		.uleb128 0x2e
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 58
+
+
  2706 00bd 00       		.byte	0
  2707 00be 3F       		.uleb128 0x3f
  2708 00bf 19       		.uleb128 0x19
@@ -3418,9 +3436,6 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  2718 00c9 0B       		.uleb128 0xb
  2719 00ca 00       		.byte	0
  2720 00cb 00       		.byte	0
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 58
-
-
  2721 00cc 00       		.byte	0
  2722              		.section	.debug_aranges,"",%progbits
  2723 0000 1C000000 		.4byte	0x1c
@@ -3442,7 +3457,7 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  2739 000c 00000000 		.4byte	0
  2740              		.section	.debug_line,"",%progbits
  2741              	.Ldebug_line0:
- 2742 0000 15030000 		.section	.debug_str,"MS",%progbits,1
+ 2742 0000 17030000 		.section	.debug_str,"MS",%progbits,1
  2742      0200F301 
  2742      00000201 
  2742      FB0E0D00 
@@ -3463,264 +3478,266 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 1
  2748      7400
  2749              	.LASF48:
  2750 0024 4C65645F 		.ascii	"Led_Update\000"
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 59
+
+
  2750      55706461 
  2750      746500
- 2751              	.LASF31:
- 2752 002f 4D656E75 		.ascii	"MenuActive\000"
- 2752      41637469 
- 2752      766500
- 2753              	.LASF7:
- 2754 003a 5F5F696E 		.ascii	"__int32_t\000"
- 2754      7433325F 
- 2754      7400
- 2755              	.LASF41:
- 2756 0044 55415254 		.ascii	"UART_ClearRxBuffer\000"
- 2756      5F436C65 
- 2756      61725278 
- 2756      42756666 
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 59
+ 2751              	.LASF7:
+ 2752 002f 5F5F696E 		.ascii	"__int32_t\000"
+ 2752      7433325F 
+ 2752      7400
+ 2753              	.LASF41:
+ 2754 0039 55415254 		.ascii	"UART_ClearRxBuffer\000"
+ 2754      5F436C65 
+ 2754      61725278 
+ 2754      42756666 
+ 2754      657200
+ 2755              	.LASF12:
+ 2756 004c 756E7369 		.ascii	"unsigned int\000"
+ 2756      676E6564 
+ 2756      20696E74 
+ 2756      00
+ 2757              	.LASF19:
+ 2758 0059 646F7562 		.ascii	"double\000"
+ 2758      6C6500
+ 2759              	.LASF53:
+ 2760 0060 43757374 		.ascii	"Custom_ISR_MENU\000"
+ 2760      6F6D5F49 
+ 2760      53525F4D 
+ 2760      454E5500 
+ 2761              	.LASF49:
+ 2762 0070 50696E5F 		.ascii	"Pin_ExternalLED_Write\000"
+ 2762      45787465 
+ 2762      726E616C 
+ 2762      4C45445F 
+ 2762      57726974 
+ 2763              	.LASF16:
+ 2764 0086 696E7433 		.ascii	"int32_t\000"
+ 2764      325F7400 
+ 2765              	.LASF18:
+ 2766 008e 666C6F61 		.ascii	"float\000"
+ 2766      7400
+ 2767              	.LASF28:
+ 2768 0094 41637469 		.ascii	"ActiveVisualization\000"
+ 2768      76655669 
+ 2768      7375616C 
+ 2768      697A6174 
+ 2768      696F6E00 
+ 2769              	.LASF0:
+ 2770 00a8 7369676E 		.ascii	"signed char\000"
+ 2770      65642063 
+ 2770      68617200 
+ 2771              	.LASF1:
+ 2772 00b4 756E7369 		.ascii	"unsigned char\000"
+ 2772      676E6564 
+ 2772      20636861 
+ 2772      7200
+ 2773              	.LASF50:
+ 2774 00c2 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 2774      43313120 
+ 2774      352E342E 
+ 2774      31203230 
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 60
 
 
- 2756      657200
- 2757              	.LASF12:
- 2758 0057 756E7369 		.ascii	"unsigned int\000"
- 2758      676E6564 
- 2758      20696E74 
- 2758      00
- 2759              	.LASF19:
- 2760 0064 646F7562 		.ascii	"double\000"
- 2760      6C6500
- 2761              	.LASF53:
- 2762 006b 43757374 		.ascii	"Custom_ISR_MENU\000"
- 2762      6F6D5F49 
- 2762      53525F4D 
- 2762      454E5500 
- 2763              	.LASF49:
- 2764 007b 50696E5F 		.ascii	"Pin_ExternalLED_Write\000"
- 2764      45787465 
- 2764      726E616C 
- 2764      4C45445F 
- 2764      57726974 
- 2765              	.LASF16:
- 2766 0091 696E7433 		.ascii	"int32_t\000"
- 2766      325F7400 
- 2767              	.LASF18:
- 2768 0099 666C6F61 		.ascii	"float\000"
- 2768      7400
- 2769              	.LASF28:
- 2770 009f 41637469 		.ascii	"ActiveVisualization\000"
- 2770      76655669 
- 2770      7375616C 
- 2770      697A6174 
- 2770      696F6E00 
- 2771              	.LASF0:
- 2772 00b3 7369676E 		.ascii	"signed char\000"
- 2772      65642063 
- 2772      68617200 
- 2773              	.LASF1:
- 2774 00bf 756E7369 		.ascii	"unsigned char\000"
- 2774      676E6564 
- 2774      20636861 
- 2774      7200
- 2775              	.LASF50:
- 2776 00cd 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 2776      43313120 
- 2776      352E342E 
- 2776      31203230 
- 2776      31363036 
- 2777 0100 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 2777      20726576 
- 2777      6973696F 
- 2777      6E203233 
- 2777      37373135 
- 2778 0133 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 2778      66756E63 
- 2778      74696F6E 
- 2778      2D736563 
- 2778      74696F6E 
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 60
+ 2774      31363036 
+ 2775 00f5 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 2775      20726576 
+ 2775      6973696F 
+ 2775      6E203233 
+ 2775      37373135 
+ 2776 0128 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 2776      66756E63 
+ 2776      74696F6E 
+ 2776      2D736563 
+ 2776      74696F6E 
+ 2777              	.LASF47:
+ 2778 0150 54696D65 		.ascii	"Timer_WritePeriod\000"
+ 2778      725F5772 
+ 2778      69746550 
+ 2778      6572696F 
+ 2778      6400
+ 2779              	.LASF43:
+ 2780 0162 4143435F 		.ascii	"ACC_writeByte\000"
+ 2780      77726974 
+ 2780      65427974 
+ 2780      6500
+ 2781              	.LASF45:
+ 2782 0170 45455052 		.ascii	"EEPROM_waitForWriteComplete\000"
+ 2782      4F4D5F77 
+ 2782      61697446 
+ 2782      6F725772 
+ 2782      69746543 
+ 2783              	.LASF6:
+ 2784 018c 73686F72 		.ascii	"short unsigned int\000"
+ 2784      7420756E 
+ 2784      7369676E 
+ 2784      65642069 
+ 2784      6E7400
+ 2785              	.LASF46:
+ 2786 019f 4649464F 		.ascii	"FIFO_Reset\000"
+ 2786      5F526573 
+ 2786      657400
+ 2787              	.LASF23:
+ 2788 01aa 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 2788      52784275 
+ 2788      66666572 
+ 2788      00
+ 2789              	.LASF5:
+ 2790 01b7 5F5F7569 		.ascii	"__uint16_t\000"
+ 2790      6E743136 
+ 2790      5F7400
+ 2791              	.LASF9:
+ 2792 01c2 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2792      20756E73 
+ 2792      69676E65 
+ 2792      6420696E 
+ 2792      7400
+ 2793              	.LASF34:
+ 2794 01d4 54656D70 		.ascii	"TempUnit\000"
+ 2794      556E6974 
+ 2794      00
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 61
 
 
- 2779              	.LASF47:
- 2780 015b 54696D65 		.ascii	"Timer_WritePeriod\000"
- 2780      725F5772 
- 2780      69746550 
- 2780      6572696F 
- 2780      6400
- 2781              	.LASF43:
- 2782 016d 4143435F 		.ascii	"ACC_writeByte\000"
- 2782      77726974 
- 2782      65427974 
- 2782      6500
- 2783              	.LASF45:
- 2784 017b 45455052 		.ascii	"EEPROM_waitForWriteComplete\000"
- 2784      4F4D5F77 
- 2784      61697446 
- 2784      6F725772 
- 2784      69746543 
- 2785              	.LASF6:
- 2786 0197 73686F72 		.ascii	"short unsigned int\000"
- 2786      7420756E 
- 2786      7369676E 
- 2786      65642069 
- 2786      6E7400
- 2787              	.LASF46:
- 2788 01aa 4649464F 		.ascii	"FIFO_Reset\000"
- 2788      5F526573 
- 2788      657400
- 2789              	.LASF23:
- 2790 01b5 49544D5F 		.ascii	"ITM_RxBuffer\000"
- 2790      52784275 
- 2790      66666572 
- 2790      00
- 2791              	.LASF5:
- 2792 01c2 5F5F7569 		.ascii	"__uint16_t\000"
- 2792      6E743136 
- 2792      5F7400
- 2793              	.LASF9:
- 2794 01cd 6C6F6E67 		.ascii	"long unsigned int\000"
- 2794      20756E73 
- 2794      69676E65 
- 2794      6420696E 
- 2794      7400
- 2795              	.LASF34:
- 2796 01df 54656D70 		.ascii	"TempUnit\000"
- 2796      556E6974 
- 2796      00
- 2797              	.LASF3:
- 2798 01e8 5F5F696E 		.ascii	"__int16_t\000"
- 2798      7431365F 
- 2798      7400
- 2799              	.LASF26:
- 2800 01f2 6374726C 		.ascii	"ctrl_reg5\000"
- 2800      5F726567 
- 2800      3500
- 2801              	.LASF11:
- 2802 01fc 6C6F6E67 		.ascii	"long long unsigned int\000"
- 2802      206C6F6E 
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 61
+ 2795              	.LASF3:
+ 2796 01dd 5F5F696E 		.ascii	"__int16_t\000"
+ 2796      7431365F 
+ 2796      7400
+ 2797              	.LASF26:
+ 2798 01e7 6374726C 		.ascii	"ctrl_reg5\000"
+ 2798      5F726567 
+ 2798      3500
+ 2799              	.LASF11:
+ 2800 01f1 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2800      206C6F6E 
+ 2800      6720756E 
+ 2800      7369676E 
+ 2800      65642069 
+ 2801              	.LASF13:
+ 2802 0208 75696E74 		.ascii	"uint8_t\000"
+ 2802      385F7400 
+ 2803              	.LASF52:
+ 2804 0210 433A5C55 		.ascii	"C:\\Users\\gaeta\\Documents\\PSoC Creator\\PsoC_Fin"
+ 2804      73657273 
+ 2804      5C676165 
+ 2804      74615C44 
+ 2804      6F63756D 
+ 2805 023e 616C5F50 		.ascii	"al_Project_1_03\\FIORANI_GARGIULO_IANNUZZI_Project."
+ 2805      726F6A65 
+ 2805      63745F31 
+ 2805      5F30335C 
+ 2805      46494F52 
+ 2806 0270 63796473 		.ascii	"cydsn\000"
+ 2806      6E00
+ 2807              	.LASF33:
+ 2808 0276 53656E73 		.ascii	"Sensitivity\000"
+ 2808      69746976 
+ 2808      69747900 
+ 2809              	.LASF36:
+ 2810 0282 57616974 		.ascii	"WaitTime\000"
+ 2810      54696D65 
+ 2810      00
+ 2811              	.LASF14:
+ 2812 028b 696E7431 		.ascii	"int16_t\000"
+ 2812      365F7400 
+ 2813              	.LASF17:
+ 2814 0293 75696E74 		.ascii	"uint8\000"
+ 2814      3800
+ 2815              	.LASF31:
+ 2816 0299 4D656E75 		.ascii	"MenuActive\000"
+ 2816      41637469 
+ 2816      766500
+ 2817              	.LASF29:
+ 2818 02a4 63685F72 		.ascii	"ch_received\000"
+ 2818      65636569 
+ 2818      76656400 
+ 2819              	.LASF22:
+ 2820 02b0 73697A65 		.ascii	"sizetype\000"
+ 2820      74797065 
+ 2820      00
+ 2821              	.LASF35:
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 62
 
 
- 2802      6720756E 
- 2802      7369676E 
- 2802      65642069 
- 2803              	.LASF13:
- 2804 0213 75696E74 		.ascii	"uint8_t\000"
- 2804      385F7400 
- 2805              	.LASF33:
- 2806 021b 53656E73 		.ascii	"Sensitivity\000"
- 2806      69746976 
- 2806      69747900 
- 2807              	.LASF36:
- 2808 0227 57616974 		.ascii	"WaitTime\000"
- 2808      54696D65 
- 2808      00
- 2809              	.LASF14:
- 2810 0230 696E7431 		.ascii	"int16_t\000"
- 2810      365F7400 
- 2811              	.LASF17:
- 2812 0238 75696E74 		.ascii	"uint8\000"
- 2812      3800
- 2813              	.LASF52:
- 2814 023e 433A5C55 		.ascii	"C:\\Users\\simon\\Desktop\\PsoC_Final_Project_1_03\\"
- 2814      73657273 
- 2814      5C73696D 
- 2814      6F6E5C44 
- 2814      65736B74 
- 2815 026d 46494F52 		.ascii	"FIORANI_GARGIULO_IANNUZZI_Project.cydsn\000"
- 2815      414E495F 
- 2815      47415247 
- 2815      49554C4F 
- 2815      5F49414E 
- 2816              	.LASF29:
- 2817 0295 63685F72 		.ascii	"ch_received\000"
- 2817      65636569 
- 2817      76656400 
- 2818              	.LASF22:
- 2819 02a1 73697A65 		.ascii	"sizetype\000"
- 2819      74797065 
- 2819      00
- 2820              	.LASF35:
- 2821 02aa 7265675F 		.ascii	"reg_menu\000"
- 2821      6D656E75 
- 2821      00
- 2822              	.LASF10:
- 2823 02b3 6C6F6E67 		.ascii	"long long int\000"
- 2823      206C6F6E 
- 2823      6720696E 
- 2823      7400
- 2824              	.LASF51:
- 2825 02c1 4D656E75 		.ascii	"Menu_Functions.c\000"
- 2825      5F46756E 
- 2825      6374696F 
- 2825      6E732E63 
- 2825      00
- 2826              	.LASF30:
- 2827 02d2 4C6F6F70 		.ascii	"LoopContinue\000"
- 2827      436F6E74 
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 62
+ 2822 02b9 7265675F 		.ascii	"reg_menu\000"
+ 2822      6D656E75 
+ 2822      00
+ 2823              	.LASF10:
+ 2824 02c2 6C6F6E67 		.ascii	"long long int\000"
+ 2824      206C6F6E 
+ 2824      6720696E 
+ 2824      7400
+ 2825              	.LASF51:
+ 2826 02d0 4D656E75 		.ascii	"Menu_Functions.c\000"
+ 2826      5F46756E 
+ 2826      6374696F 
+ 2826      6E732E63 
+ 2826      00
+ 2827              	.LASF30:
+ 2828 02e1 4C6F6F70 		.ascii	"LoopContinue\000"
+ 2828      436F6E74 
+ 2828      696E7565 
+ 2828      00
+ 2829              	.LASF20:
+ 2830 02ee 63686172 		.ascii	"char\000"
+ 2830      00
+ 2831              	.LASF37:
+ 2832 02f3 55415254 		.ascii	"UART_GetChar\000"
+ 2832      5F476574 
+ 2832      43686172 
+ 2832      00
+ 2833              	.LASF4:
+ 2834 0300 73686F72 		.ascii	"short int\000"
+ 2834      7420696E 
+ 2834      7400
+ 2835              	.LASF24:
+ 2836 030a 5061636B 		.ascii	"PacketReadyFlag\000"
+ 2836      65745265 
+ 2836      61647946 
+ 2836      6C616700 
+ 2837              	.LASF15:
+ 2838 031a 75696E74 		.ascii	"uint16_t\000"
+ 2838      31365F74 
+ 2838      00
+ 2839              	.LASF40:
+ 2840 0323 55415254 		.ascii	"UART_GetRxBufferSize\000"
+ 2840      5F476574 
+ 2840      52784275 
+ 2840      66666572 
+ 2840      53697A65 
+ 2841              	.LASF8:
+ 2842 0338 6C6F6E67 		.ascii	"long int\000"
+ 2842      20696E74 
+ 2842      00
+ 2843              	.LASF21:
+ 2844 0341 6C6F6E67 		.ascii	"long double\000"
+ 2844      20646F75 
+ 2844      626C6500 
+ 2845              	.LASF42:
+ 2846 034d 4143435F 		.ascii	"ACC_readByte\000"
+ 2846      72656164 
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cc1WWExp.s 			page 63
 
 
- 2827      696E7565 
- 2827      00
- 2828              	.LASF20:
- 2829 02df 63686172 		.ascii	"char\000"
- 2829      00
- 2830              	.LASF37:
- 2831 02e4 55415254 		.ascii	"UART_GetChar\000"
- 2831      5F476574 
- 2831      43686172 
- 2831      00
- 2832              	.LASF4:
- 2833 02f1 73686F72 		.ascii	"short int\000"
- 2833      7420696E 
- 2833      7400
- 2834              	.LASF24:
- 2835 02fb 5061636B 		.ascii	"PacketReadyFlag\000"
- 2835      65745265 
- 2835      61647946 
- 2835      6C616700 
- 2836              	.LASF15:
- 2837 030b 75696E74 		.ascii	"uint16_t\000"
- 2837      31365F74 
- 2837      00
- 2838              	.LASF40:
- 2839 0314 55415254 		.ascii	"UART_GetRxBufferSize\000"
- 2839      5F476574 
- 2839      52784275 
- 2839      66666572 
- 2839      53697A65 
- 2840              	.LASF8:
- 2841 0329 6C6F6E67 		.ascii	"long int\000"
- 2841      20696E74 
- 2841      00
- 2842              	.LASF21:
- 2843 0332 6C6F6E67 		.ascii	"long double\000"
- 2843      20646F75 
- 2843      626C6500 
- 2844              	.LASF42:
- 2845 033e 4143435F 		.ascii	"ACC_readByte\000"
- 2845      72656164 
- 2845      42797465 
- 2845      00
- 2846              	.LASF27:
- 2847 034b 73616D70 		.ascii	"samples\000"
- 2847      6C657300 
- 2848              	.LASF38:
- 2849 0353 55415254 		.ascii	"UART_PutString\000"
- 2849      5F507574 
- 2849      53747269 
- 2849      6E6700
- 2850              	.LASF39:
- 2851 0362 43794465 		.ascii	"CyDelay\000"
- 2851      6C617900 
- 2852              	.LASF32:
- 2853 036a 52656769 		.ascii	"Registration_Active\000"
- 2853      73747261 
- 2853      74696F6E 
-ARM GAS  C:\Users\simon\AppData\Local\Temp\ccb5RPki.s 			page 63
-
-
- 2853      5F416374 
- 2853      69766500 
- 2854              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 2846      42797465 
+ 2846      00
+ 2847              	.LASF27:
+ 2848 035a 73616D70 		.ascii	"samples\000"
+ 2848      6C657300 
+ 2849              	.LASF38:
+ 2850 0362 55415254 		.ascii	"UART_PutString\000"
+ 2850      5F507574 
+ 2850      53747269 
+ 2850      6E6700
+ 2851              	.LASF39:
+ 2852 0371 43794465 		.ascii	"CyDelay\000"
+ 2852      6C617900 
+ 2853              	.LASF32:
+ 2854 0379 52656769 		.ascii	"Registration_Active\000"
+ 2854      73747261 
+ 2854      74696F6E 
+ 2854      5F416374 
+ 2854      69766500 
+ 2855              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

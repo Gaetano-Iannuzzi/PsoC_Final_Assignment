@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc9h3aTU.s 			page 1
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccbKWCte.s 			page 1
 
 
    1              		.syntax unified
@@ -33,79 +33,81 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cc9h3aTU.s 			page 1
    3:SPI_Interface.c ****  * @brief Functions required to interface with the SPI MASTER (SPIM).
    4:SPI_Interface.c ****  * 
    5:SPI_Interface.c ****  * This source code file contains macros and functions to interface
-   6:SPI_Interface.c ****  * with the SPI Master (SPIM) of the PSoC.
-   7:SPI_Interface.c ****  *
-   8:SPI_Interface.c **** */
-   9:SPI_Interface.c **** 
-  10:SPI_Interface.c **** 
-  11:SPI_Interface.c **** #include "SPI_Interface.h"
+   6:SPI_Interface.c ****  * with the SPIM_1 and SPIM_2 Masters (SPIM) of the PSoC.
+   7:SPI_Interface.c ****  * 
+   8:SPI_Interface.c ****  *@authors Simone Fiorani, Alessandra Gargiulo, Gaetano Iannuzzi
+   9:SPI_Interface.c ****  *@date 2020
+  10:SPI_Interface.c **** */
+  11:SPI_Interface.c **** 
   12:SPI_Interface.c **** 
-  13:SPI_Interface.c **** #ifndef SLAVE_CS_Write
-  14:SPI_Interface.c ****     #define SLAVE_CS_Write      CS_1_Write
-  15:SPI_Interface.c ****     #define SLAVE_CS_Write_2    CS_2_Write
-  16:SPI_Interface.c **** #endif
-  17:SPI_Interface.c **** 
-  18:SPI_Interface.c **** /*
-  19:SPI_Interface.c **** * @brief Full-Duplex, Single-Operation 1-Byte Trade
-  20:SPI_Interface.c **** */
-  21:SPI_Interface.c **** uint8_t SPI_Interface_tradeByte(uint8_t byte) {
-  28              		.loc 1 21 0
+  13:SPI_Interface.c **** #include "SPI_Interface.h"
+  14:SPI_Interface.c **** 
+  15:SPI_Interface.c **** #ifndef SLAVE_CS_Write
+  16:SPI_Interface.c ****     #define SLAVE_CS_Write      CS_1_Write
+  17:SPI_Interface.c ****     #define SLAVE_CS_Write_2    CS_2_Write
+  18:SPI_Interface.c **** #endif
+  19:SPI_Interface.c **** 
+  20:SPI_Interface.c **** /*
+  21:SPI_Interface.c **** * @brief Full-Duplex, Single-Operation 1-Byte Trade
+  22:SPI_Interface.c **** */
+  23:SPI_Interface.c **** uint8_t SPI_Interface_tradeByte(uint8_t byte) {
+  28              		.loc 1 23 0
   29              		.cfi_startproc
   30              		@ args = 0, pretend = 0, frame = 0
   31              		@ frame_needed = 0, uses_anonymous_args = 0
   32              	.LVL0:
   33 0000 10B5     		push	{r4, lr}
   34              		.cfi_def_cfa_offset 8
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccbKWCte.s 			page 2
+
+
   35              		.cfi_offset 4, -8
   36              		.cfi_offset 14, -4
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc9h3aTU.s 			page 2
-
-
   37 0002 0446     		mov	r4, r0
-  22:SPI_Interface.c **** 	
-  23:SPI_Interface.c **** 	/* Enable the Slave */
-  24:SPI_Interface.c **** 	SLAVE_CS_Write(0);
-  38              		.loc 1 24 0
+  24:SPI_Interface.c **** 	
+  25:SPI_Interface.c **** 	/* Enable the Slave */
+  26:SPI_Interface.c **** 	SLAVE_CS_Write(0);
+  38              		.loc 1 26 0
   39 0004 0020     		movs	r0, #0
   40              	.LVL1:
   41 0006 FFF7FEFF 		bl	CS_1_Write
   42              	.LVL2:
-  25:SPI_Interface.c **** 	
-  26:SPI_Interface.c **** 	/* Load the TX Buffer */
-  27:SPI_Interface.c **** 	SPIM_1_WriteTxData(byte);
-  43              		.loc 1 27 0
+  27:SPI_Interface.c **** 	
+  28:SPI_Interface.c **** 	/* Load the TX Buffer */
+  29:SPI_Interface.c **** 	SPIM_1_WriteTxData(byte);
+  43              		.loc 1 29 0
   44 000a 2046     		mov	r0, r4
   45 000c FFF7FEFF 		bl	SPIM_1_WriteTxData
   46              	.LVL3:
   47              	.L2:
-  28:SPI_Interface.c **** 	
-  29:SPI_Interface.c **** 	/* Wait for TX */
-  30:SPI_Interface.c ****     while( !(SPIM_1_ReadTxStatus() & SPIM_1_STS_BYTE_COMPLETE) );
-  48              		.loc 1 30 0 discriminator 1
+  30:SPI_Interface.c **** 	
+  31:SPI_Interface.c **** 	/* Wait for TX */
+  32:SPI_Interface.c ****     while( !(SPIM_1_ReadTxStatus() & SPIM_1_STS_BYTE_COMPLETE) );
+  48              		.loc 1 32 0 discriminator 1
   49 0010 FFF7FEFF 		bl	SPIM_1_ReadTxStatus
   50              	.LVL4:
   51 0014 10F0080F 		tst	r0, #8
   52 0018 FAD0     		beq	.L2
-  31:SPI_Interface.c **** 	
-  32:SPI_Interface.c **** 	/* Read the RX Buffer */
-  33:SPI_Interface.c **** 	uint8_t data = SPIM_1_ReadRxData();
-  53              		.loc 1 33 0
+  33:SPI_Interface.c **** 	
+  34:SPI_Interface.c **** 	/* Read the RX Buffer */
+  35:SPI_Interface.c **** 	uint8_t data = SPIM_1_ReadRxData();
+  53              		.loc 1 35 0
   54 001a FFF7FEFF 		bl	SPIM_1_ReadRxData
   55              	.LVL5:
   56 001e 0446     		mov	r4, r0
   57              	.LVL6:
-  34:SPI_Interface.c **** 	
-  35:SPI_Interface.c **** 	/* Disable the Slave */
-  36:SPI_Interface.c **** 	SLAVE_CS_Write(1);
-  58              		.loc 1 36 0
+  36:SPI_Interface.c **** 	
+  37:SPI_Interface.c **** 	/* Disable the Slave */
+  38:SPI_Interface.c **** 	SLAVE_CS_Write(1);
+  58              		.loc 1 38 0
   59 0020 0120     		movs	r0, #1
   60 0022 FFF7FEFF 		bl	CS_1_Write
   61              	.LVL7:
-  37:SPI_Interface.c **** 	
-  38:SPI_Interface.c **** 	return data;
-  39:SPI_Interface.c ****     
-  40:SPI_Interface.c **** }
-  62              		.loc 1 40 0
+  39:SPI_Interface.c **** 	
+  40:SPI_Interface.c **** 	return data;
+  41:SPI_Interface.c ****     
+  42:SPI_Interface.c **** }
+  62              		.loc 1 42 0
   63 0026 2046     		mov	r0, r4
   64 0028 10BD     		pop	{r4, pc}
   65              		.cfi_endproc
@@ -116,19 +118,19 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cc9h3aTU.s 			page 1
   70              		.global	SPI_Interface_ReadByte
   71              		.thumb
   72              		.thumb_func
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccbKWCte.s 			page 3
+
+
   73              		.type	SPI_Interface_ReadByte, %function
   74              	SPI_Interface_ReadByte:
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc9h3aTU.s 			page 3
-
-
   75              	.LFB1:
-  41:SPI_Interface.c **** 
-  42:SPI_Interface.c **** 
-  43:SPI_Interface.c **** /*
-  44:SPI_Interface.c **** * @brief RX-only, Dual-Operation 1-Byte READ
-  45:SPI_Interface.c **** */
-  46:SPI_Interface.c **** uint8_t SPI_Interface_ReadByte(uint8_t byteTX) {
-  76              		.loc 1 46 0
+  43:SPI_Interface.c **** 
+  44:SPI_Interface.c **** 
+  45:SPI_Interface.c **** /*
+  46:SPI_Interface.c **** * @brief RX-only, Dual-Operation 1-Byte READ
+  47:SPI_Interface.c **** */
+  48:SPI_Interface.c **** uint8_t SPI_Interface_ReadByte(uint8_t byteTX) {
+  76              		.loc 1 48 0
   77              		.cfi_startproc
   78              		@ args = 0, pretend = 0, frame = 0
   79              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -138,2535 +140,2456 @@ ARM GAS  C:\Users\simon\AppData\Local\Temp\cc9h3aTU.s 			page 1
   83              		.cfi_offset 4, -8
   84              		.cfi_offset 14, -4
   85 0002 0446     		mov	r4, r0
-  47:SPI_Interface.c **** 	
-  48:SPI_Interface.c **** 	/* Enable the Slave */
-  49:SPI_Interface.c **** 	SLAVE_CS_Write(0);
-  86              		.loc 1 49 0
+  49:SPI_Interface.c **** 	
+  50:SPI_Interface.c **** 	/* Enable the Slave */
+  51:SPI_Interface.c **** 	SLAVE_CS_Write(0);
+  86              		.loc 1 51 0
   87 0004 0020     		movs	r0, #0
   88              	.LVL9:
   89 0006 FFF7FEFF 		bl	CS_1_Write
   90              	.LVL10:
-  50:SPI_Interface.c **** 	
-  51:SPI_Interface.c **** 	/* Load the TX Buffer */
-  52:SPI_Interface.c **** 	SPIM_1_WriteTxData(byteTX);
-  91              		.loc 1 52 0
+  52:SPI_Interface.c **** 	
+  53:SPI_Interface.c **** 	/* Load the TX Buffer */
+  54:SPI_Interface.c **** 	SPIM_1_WriteTxData(byteTX);
+  91              		.loc 1 54 0
   92 000a 2046     		mov	r0, r4
   93 000c FFF7FEFF 		bl	SPIM_1_WriteTxData
   94              	.LVL11:
-  53:SPI_Interface.c **** 	
-  54:SPI_Interface.c **** 	/* SPI Dummy Byte */
-  55:SPI_Interface.c **** 	SPIM_1_WriteTxData(SPI_DUMMY_BYTE);
-  95              		.loc 1 55 0
+  55:SPI_Interface.c **** 	
+  56:SPI_Interface.c **** 	/* SPI Dummy Byte */
+  57:SPI_Interface.c **** 	SPIM_1_WriteTxData(SPI_DUMMY_BYTE);
+  95              		.loc 1 57 0
   96 0010 0020     		movs	r0, #0
   97 0012 FFF7FEFF 		bl	SPIM_1_WriteTxData
   98              	.LVL12:
   99              	.L5:
-  56:SPI_Interface.c **** 	
-  57:SPI_Interface.c **** 	/* Wait for TX/RX */
-  58:SPI_Interface.c ****     while(!(SPIM_1_ReadTxStatus() & SPIM_1_STS_SPI_DONE));
- 100              		.loc 1 58 0 discriminator 1
+  58:SPI_Interface.c **** 	
+  59:SPI_Interface.c **** 	/* Wait for TX/RX */
+  60:SPI_Interface.c ****     while(!(SPIM_1_ReadTxStatus() & SPIM_1_STS_SPI_DONE));
+ 100              		.loc 1 60 0 discriminator 1
  101 0016 FFF7FEFF 		bl	SPIM_1_ReadTxStatus
  102              	.LVL13:
  103 001a 10F0010F 		tst	r0, #1
  104 001e FAD0     		beq	.L5
-  59:SPI_Interface.c **** 	
-  60:SPI_Interface.c **** 	/* Read the RX Buffer */
-  61:SPI_Interface.c **** 	SPIM_1_ReadRxData();
- 105              		.loc 1 61 0
+  61:SPI_Interface.c **** 	
+  62:SPI_Interface.c **** 	/* Read the RX Buffer */
+  63:SPI_Interface.c **** 	SPIM_1_ReadRxData();
+ 105              		.loc 1 63 0
  106 0020 FFF7FEFF 		bl	SPIM_1_ReadRxData
  107              	.LVL14:
-  62:SPI_Interface.c **** 	uint8_t byteRX = SPIM_1_ReadRxData();
- 108              		.loc 1 62 0
+  64:SPI_Interface.c **** 	uint8_t byteRX = SPIM_1_ReadRxData();
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccbKWCte.s 			page 4
+
+
+ 108              		.loc 1 64 0
  109 0024 FFF7FEFF 		bl	SPIM_1_ReadRxData
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc9h3aTU.s 			page 4
-
-
  110              	.LVL15:
  111 0028 0446     		mov	r4, r0
  112              	.LVL16:
-  63:SPI_Interface.c **** 	
-  64:SPI_Interface.c **** 	/* Disable the Slave */
-  65:SPI_Interface.c **** 	SLAVE_CS_Write(1);
- 113              		.loc 1 65 0
+  65:SPI_Interface.c **** 	
+  66:SPI_Interface.c **** 	/* Disable the Slave */
+  67:SPI_Interface.c **** 	SLAVE_CS_Write(1);
+ 113              		.loc 1 67 0
  114 002a 0120     		movs	r0, #1
  115 002c FFF7FEFF 		bl	CS_1_Write
  116              	.LVL17:
-  66:SPI_Interface.c **** 	
-  67:SPI_Interface.c **** 	return byteRX;	
   68:SPI_Interface.c **** 	
-  69:SPI_Interface.c **** }
- 117              		.loc 1 69 0
+  69:SPI_Interface.c **** 	return byteRX;	
+  70:SPI_Interface.c **** 	
+  71:SPI_Interface.c **** }
+ 117              		.loc 1 71 0
  118 0030 2046     		mov	r0, r4
  119 0032 10BD     		pop	{r4, pc}
  120              		.cfi_endproc
  121              	.LFE1:
  122              		.size	SPI_Interface_ReadByte, .-SPI_Interface_ReadByte
- 123              		.section	.text.SPI_Interface_Multi_Trade,"ax",%progbits
+ 123              		.section	.text.SPI_Interface_Multi_RW,"ax",%progbits
  124              		.align	2
- 125              		.global	SPI_Interface_Multi_Trade
+ 125              		.global	SPI_Interface_Multi_RW
  126              		.thumb
  127              		.thumb_func
- 128              		.type	SPI_Interface_Multi_Trade, %function
- 129              	SPI_Interface_Multi_Trade:
+ 128              		.type	SPI_Interface_Multi_RW, %function
+ 129              	SPI_Interface_Multi_RW:
  130              	.LFB2:
-  70:SPI_Interface.c **** 
-  71:SPI_Interface.c **** 
-  72:SPI_Interface.c **** /*
-  73:SPI_Interface.c **** * @brief Full-Duplex, Multi-Byte Trade (RX/TX)
-  74:SPI_Interface.c **** */
-  75:SPI_Interface.c **** void SPI_Interface_Multi_Trade(uint8_t* dataTX, uint8_t* dataRX, uint8_t nBytes) {
- 131              		.loc 1 75 0
+  72:SPI_Interface.c **** 
+  73:SPI_Interface.c **** 
+  74:SPI_Interface.c **** ///*
+  75:SPI_Interface.c **** //* @brief Full-Duplex, Multi-Byte Trade (RX/TX)
+  76:SPI_Interface.c **** //*/
+  77:SPI_Interface.c **** //void SPI_Interface_Multi_Trade(uint8_t* dataTX, uint8_t* dataRX, uint8_t nBytes) {
+  78:SPI_Interface.c **** //	
+  79:SPI_Interface.c **** //    
+  80:SPI_Interface.c **** //	
+  81:SPI_Interface.c **** //}
+  82:SPI_Interface.c **** 
+  83:SPI_Interface.c **** /*
+  84:SPI_Interface.c **** * @brief RX-only, Dual-Operation Multi-Byte READ/WRITE
+  85:SPI_Interface.c **** */
+  86:SPI_Interface.c **** void SPI_Interface_Multi_RW(uint8_t* dataTX, uint8_t bytesTX, uint8_t* dataRX, uint8_t bytesRX) {
+ 131              		.loc 1 86 0
  132              		.cfi_startproc
- 133              		@ args = 0, pretend = 0, frame = 0
+ 133              		@ args = 0, pretend = 0, frame = 8
  134              		@ frame_needed = 0, uses_anonymous_args = 0
- 135              		@ link register save eliminated.
- 136              	.LVL18:
- 137 0000 7047     		bx	lr
- 138              		.cfi_endproc
- 139              	.LFE2:
- 140              		.size	SPI_Interface_Multi_Trade, .-SPI_Interface_Multi_Trade
- 141 0002 00BF     		.section	.text.SPI_Interface_Multi_RW,"ax",%progbits
- 142              		.align	2
- 143              		.global	SPI_Interface_Multi_RW
- 144              		.thumb
- 145              		.thumb_func
- 146              		.type	SPI_Interface_Multi_RW, %function
- 147              	SPI_Interface_Multi_RW:
- 148              	.LFB3:
-  76:SPI_Interface.c **** 	
-  77:SPI_Interface.c ****     
-  78:SPI_Interface.c **** 	
-  79:SPI_Interface.c **** }
-  80:SPI_Interface.c **** 
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc9h3aTU.s 			page 5
+ 135              	.LVL18:
+ 136 0000 2DE9F043 		push	{r4, r5, r6, r7, r8, r9, lr}
+ 137              		.cfi_def_cfa_offset 28
+ 138              		.cfi_offset 4, -28
+ 139              		.cfi_offset 5, -24
+ 140              		.cfi_offset 6, -20
+ 141              		.cfi_offset 7, -16
+ 142              		.cfi_offset 8, -12
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccbKWCte.s 			page 5
 
 
-  81:SPI_Interface.c **** /*
-  82:SPI_Interface.c **** * @brief RX-only, Dual-Operation Multi-Byte READ/WRITE
-  83:SPI_Interface.c **** */
-  84:SPI_Interface.c **** void SPI_Interface_Multi_RW(uint8_t* dataTX, uint8_t bytesTX, uint8_t* dataRX, uint8_t bytesRX) {
- 149              		.loc 1 84 0
- 150              		.cfi_startproc
- 151              		@ args = 0, pretend = 0, frame = 8
- 152              		@ frame_needed = 0, uses_anonymous_args = 0
+ 143              		.cfi_offset 9, -8
+ 144              		.cfi_offset 14, -4
+ 145 0004 83B0     		sub	sp, sp, #12
+ 146              		.cfi_def_cfa_offset 40
+ 147 0006 0646     		mov	r6, r0
+ 148 0008 0C46     		mov	r4, r1
+ 149 000a 1746     		mov	r7, r2
+ 150 000c 9846     		mov	r8, r3
+  87:SPI_Interface.c **** 	
+  88:SPI_Interface.c **** 	/* Enable the Slave */
+  89:SPI_Interface.c ****     SLAVE_CS_Write(0);
+ 151              		.loc 1 89 0
+ 152 000e 0020     		movs	r0, #0
  153              	.LVL19:
- 154              		.loc 1 84 0
- 155 0000 2DE9F043 		push	{r4, r5, r6, r7, r8, r9, lr}
- 156              		.cfi_def_cfa_offset 28
- 157              		.cfi_offset 4, -28
- 158              		.cfi_offset 5, -24
- 159              		.cfi_offset 6, -20
- 160              		.cfi_offset 7, -16
- 161              		.cfi_offset 8, -12
- 162              		.cfi_offset 9, -8
- 163              		.cfi_offset 14, -4
- 164 0004 83B0     		sub	sp, sp, #12
- 165              		.cfi_def_cfa_offset 40
- 166 0006 0646     		mov	r6, r0
- 167 0008 0C46     		mov	r4, r1
- 168 000a 1746     		mov	r7, r2
- 169 000c 9846     		mov	r8, r3
-  85:SPI_Interface.c **** 	
-  86:SPI_Interface.c **** 	/* Enable the Slave */
-  87:SPI_Interface.c ****     SLAVE_CS_Write(0);
- 170              		.loc 1 87 0
- 171 000e 0020     		movs	r0, #0
- 172              	.LVL20:
- 173 0010 FFF7FEFF 		bl	CS_1_Write
- 174              	.LVL21:
-  88:SPI_Interface.c ****         
-  89:SPI_Interface.c ****     int8_t count = bytesTX, index = 0;
- 175              		.loc 1 89 0
- 176 0014 64B2     		sxtb	r4, r4
- 177              	.LVL22:
- 178 0016 0025     		movs	r5, #0
-  90:SPI_Interface.c ****     	
-  91:SPI_Interface.c ****     /* Transmit Data */
-  92:SPI_Interface.c ****     while ( count > 0 ) {
- 179              		.loc 1 92 0
- 180 0018 11E0     		b	.L9
- 181              	.LVL23:
- 182              	.L11:
-  93:SPI_Interface.c ****             
-  94:SPI_Interface.c ****     	/* Load the TX buffer with Data*/
-  95:SPI_Interface.c ****         SPIM_1_PutArray(&dataTX[index*SPI_TxBufferSize], (count > SPI_TxBufferSize ? SPI_TxBufferSi
- 183              		.loc 1 95 0
- 184 001a 2146     		mov	r1, r4
- 185 001c 082C     		cmp	r4, #8
- 186 001e A8BF     		it	ge
- 187 0020 0821     		movge	r1, #8
- 188 0022 C9B2     		uxtb	r1, r1
- 189 0024 06EBC500 		add	r0, r6, r5, lsl #3
- 190 0028 FFF7FEFF 		bl	SPIM_1_PutArray
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc9h3aTU.s 			page 6
+ 154 0010 FFF7FEFF 		bl	CS_1_Write
+ 155              	.LVL20:
+  90:SPI_Interface.c ****         
+  91:SPI_Interface.c ****     int8_t count = bytesTX, index = 0;
+ 156              		.loc 1 91 0
+ 157 0014 64B2     		sxtb	r4, r4
+ 158              	.LVL21:
+ 159 0016 0025     		movs	r5, #0
+  92:SPI_Interface.c ****     	
+  93:SPI_Interface.c ****     /* Transmit Data */
+  94:SPI_Interface.c ****     while ( count > 0 ) {
+ 160              		.loc 1 94 0
+ 161 0018 11E0     		b	.L8
+ 162              	.LVL22:
+ 163              	.L10:
+  95:SPI_Interface.c ****             
+  96:SPI_Interface.c ****     	/* Load the TX buffer with Data*/
+  97:SPI_Interface.c ****         SPIM_1_PutArray(&dataTX[index*SPI_TxBufferSize], (count > SPI_TxBufferSize ? SPI_TxBufferSi
+ 164              		.loc 1 97 0
+ 165 001a 2146     		mov	r1, r4
+ 166 001c 082C     		cmp	r4, #8
+ 167 001e A8BF     		it	ge
+ 168 0020 0821     		movge	r1, #8
+ 169 0022 C9B2     		uxtb	r1, r1
+ 170 0024 06EBC500 		add	r0, r6, r5, lsl #3
+ 171 0028 FFF7FEFF 		bl	SPIM_1_PutArray
+ 172              	.LVL23:
+ 173              	.L9:
+  98:SPI_Interface.c ****         /* Wait for TX */
+  99:SPI_Interface.c ****         while( !(SPIM_1_ReadTxStatus() & SPIM_1_STS_SPI_DONE) );
+ 174              		.loc 1 99 0 discriminator 1
+ 175 002c FFF7FEFF 		bl	SPIM_1_ReadTxStatus
+ 176              	.LVL24:
+ 177 0030 10F0010F 		tst	r0, #1
+ 178 0034 FAD0     		beq	.L9
+ 100:SPI_Interface.c ****         
+ 101:SPI_Interface.c ****         /* Update count */
+ 102:SPI_Interface.c ****         count -= SPI_TxBufferSize;
+ 179              		.loc 1 102 0
+ 180 0036 083C     		subs	r4, r4, #8
+ 181              	.LVL25:
+ 182 0038 64B2     		sxtb	r4, r4
+ 183              	.LVL26:
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccbKWCte.s 			page 6
 
 
- 191              	.LVL24:
- 192              	.L10:
-  96:SPI_Interface.c ****         /* Wait for TX */
-  97:SPI_Interface.c ****         while( !(SPIM_1_ReadTxStatus() & SPIM_1_STS_SPI_DONE) );
- 193              		.loc 1 97 0 discriminator 1
- 194 002c FFF7FEFF 		bl	SPIM_1_ReadTxStatus
- 195              	.LVL25:
- 196 0030 10F0010F 		tst	r0, #1
- 197 0034 FAD0     		beq	.L10
-  98:SPI_Interface.c ****         
-  99:SPI_Interface.c ****         /* Update count */
- 100:SPI_Interface.c ****         count -= SPI_TxBufferSize;
- 198              		.loc 1 100 0
- 199 0036 083C     		subs	r4, r4, #8
- 200              	.LVL26:
- 201 0038 64B2     		sxtb	r4, r4
- 202              	.LVL27:
- 101:SPI_Interface.c ****         index++;
- 203              		.loc 1 101 0
- 204 003a 0135     		adds	r5, r5, #1
- 205              	.LVL28:
- 206 003c 6DB2     		sxtb	r5, r5
- 207              	.LVL29:
- 208              	.L9:
-  92:SPI_Interface.c ****             
- 209              		.loc 1 92 0
- 210 003e 002C     		cmp	r4, #0
- 211 0040 EBDC     		bgt	.L11
- 102:SPI_Interface.c ****            
- 103:SPI_Interface.c ****     }
- 104:SPI_Interface.c ****         
- 105:SPI_Interface.c ****     /* Clear the RX Buffer */
- 106:SPI_Interface.c ****     SPIM_1_ClearFIFO();
- 212              		.loc 1 106 0
- 213 0042 FFF7FEFF 		bl	SPIM_1_ClearFIFO
- 214              	.LVL30:
- 107:SPI_Interface.c ****     SPIM_1_ClearRxBuffer();
- 215              		.loc 1 107 0
- 216 0046 FFF7FEFF 		bl	SPIM_1_ClearRxBuffer
- 217              	.LVL31:
- 108:SPI_Interface.c ****         
- 109:SPI_Interface.c ****     /* Init the Dummy TX Buffer */
- 110:SPI_Interface.c ****     uint8_t dummyTX[SPI_RxBufferSize];
- 111:SPI_Interface.c ****     memset(dummyTX, SPI_DUMMY_BYTE, SPI_RxBufferSize);
- 218              		.loc 1 111 0
- 219 004a 0026     		movs	r6, #0
- 220              	.LVL32:
- 221 004c 0096     		str	r6, [sp]
- 222 004e 0196     		str	r6, [sp, #4]
- 112:SPI_Interface.c ****         
- 113:SPI_Interface.c ****     /* Update count for RX */
- 114:SPI_Interface.c ****     count = bytesRX;
- 223              		.loc 1 114 0
- 224 0050 4FFA88F8 		sxtb	r8, r8
- 225              	.LVL33:
- 115:SPI_Interface.c ****     index = 0;
- 116:SPI_Interface.c ****         
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc9h3aTU.s 			page 7
+ 103:SPI_Interface.c ****         index++;
+ 184              		.loc 1 103 0
+ 185 003a 0135     		adds	r5, r5, #1
+ 186              	.LVL27:
+ 187 003c 6DB2     		sxtb	r5, r5
+ 188              	.LVL28:
+ 189              	.L8:
+  94:SPI_Interface.c ****             
+ 190              		.loc 1 94 0
+ 191 003e 002C     		cmp	r4, #0
+ 192 0040 EBDC     		bgt	.L10
+ 104:SPI_Interface.c ****            
+ 105:SPI_Interface.c ****     }
+ 106:SPI_Interface.c ****         
+ 107:SPI_Interface.c ****     /* Clear the RX Buffer */
+ 108:SPI_Interface.c ****     SPIM_1_ClearFIFO();
+ 193              		.loc 1 108 0
+ 194 0042 FFF7FEFF 		bl	SPIM_1_ClearFIFO
+ 195              	.LVL29:
+ 109:SPI_Interface.c ****     SPIM_1_ClearRxBuffer();
+ 196              		.loc 1 109 0
+ 197 0046 FFF7FEFF 		bl	SPIM_1_ClearRxBuffer
+ 198              	.LVL30:
+ 110:SPI_Interface.c ****         
+ 111:SPI_Interface.c ****     /* Init the Dummy TX Buffer */
+ 112:SPI_Interface.c ****     uint8_t dummyTX[SPI_RxBufferSize];
+ 113:SPI_Interface.c ****     memset(dummyTX, SPI_DUMMY_BYTE, SPI_RxBufferSize);
+ 199              		.loc 1 113 0
+ 200 004a 0026     		movs	r6, #0
+ 201              	.LVL31:
+ 202 004c 0096     		str	r6, [sp]
+ 203 004e 0196     		str	r6, [sp, #4]
+ 114:SPI_Interface.c ****         
+ 115:SPI_Interface.c ****     /* Update count for RX */
+ 116:SPI_Interface.c ****     count = bytesRX;
+ 204              		.loc 1 116 0
+ 205 0050 4FFA88F8 		sxtb	r8, r8
+ 206              	.LVL32:
+ 117:SPI_Interface.c ****     index = 0;
+ 118:SPI_Interface.c ****         
+ 119:SPI_Interface.c ****     /* Get the RX Data */
+ 120:SPI_Interface.c ****     while ( count > 0 ) {
+ 207              		.loc 1 120 0
+ 208 0054 20E0     		b	.L11
+ 209              	.LVL33:
+ 210              	.L15:
+ 121:SPI_Interface.c ****          
+ 122:SPI_Interface.c ****         /* Load the TX buffer with Dummy Bytes*/
+ 123:SPI_Interface.c ****         SPIM_1_PutArray(dummyTX, (count > SPI_TxBufferSize ? SPI_TxBufferSize : count));
+ 211              		.loc 1 123 0
+ 212 0056 C146     		mov	r9, r8
+ 213 0058 B8F1080F 		cmp	r8, #8
+ 214 005c A8BF     		it	ge
+ 215 005e 4FF00809 		movge	r9, #8
+ 216 0062 5FFA89F1 		uxtb	r1, r9
+ 217 0066 6846     		mov	r0, sp
+ 218 0068 FFF7FEFF 		bl	SPIM_1_PutArray
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccbKWCte.s 			page 7
 
 
- 117:SPI_Interface.c ****     /* Get the RX Data */
- 118:SPI_Interface.c ****     while ( count > 0 ) {
- 226              		.loc 1 118 0
- 227 0054 20E0     		b	.L12
- 228              	.LVL34:
- 229              	.L16:
- 119:SPI_Interface.c ****          
- 120:SPI_Interface.c ****         /* Load the TX buffer with Dummy Bytes*/
- 121:SPI_Interface.c ****         SPIM_1_PutArray(dummyTX, (count > SPI_TxBufferSize ? SPI_TxBufferSize : count));
- 230              		.loc 1 121 0
- 231 0056 C146     		mov	r9, r8
- 232 0058 B8F1080F 		cmp	r8, #8
- 233 005c A8BF     		it	ge
- 234 005e 4FF00809 		movge	r9, #8
- 235 0062 5FFA89F1 		uxtb	r1, r9
- 236 0066 6846     		mov	r0, sp
- 237 0068 FFF7FEFF 		bl	SPIM_1_PutArray
- 238              	.LVL35:
- 239              	.L13:
- 122:SPI_Interface.c ****         /* Wait for TX */
- 123:SPI_Interface.c ****         while( !(SPIM_1_ReadTxStatus() & SPIM_1_STS_SPI_DONE) );
- 240              		.loc 1 123 0 discriminator 1
- 241 006c FFF7FEFF 		bl	SPIM_1_ReadTxStatus
- 242              	.LVL36:
- 243 0070 10F0010F 		tst	r0, #1
- 244 0074 FAD0     		beq	.L13
- 245 0076 0024     		movs	r4, #0
- 246 0078 06E0     		b	.L14
- 247              	.LVL37:
- 248              	.L15:
- 249              	.LBB2:
- 124:SPI_Interface.c ****         /* Read the RX Buffer */
- 125:SPI_Interface.c ****         for( uint8_t j = 0; j < (count > SPI_TxBufferSize ? SPI_TxBufferSize : count); j++ ) {
- 126:SPI_Interface.c ****             dataRX[j + index*SPI_RxBufferSize] = SPIM_1_ReadRxData();   
- 250              		.loc 1 126 0 discriminator 3
- 251 007a 04EBC605 		add	r5, r4, r6, lsl #3
- 252 007e FFF7FEFF 		bl	SPIM_1_ReadRxData
- 253              	.LVL38:
- 254 0082 7855     		strb	r0, [r7, r5]
- 125:SPI_Interface.c ****             dataRX[j + index*SPI_RxBufferSize] = SPIM_1_ReadRxData();   
- 255              		.loc 1 125 0 discriminator 3
- 256 0084 0134     		adds	r4, r4, #1
- 257              	.LVL39:
- 258 0086 E4B2     		uxtb	r4, r4
- 259              	.LVL40:
- 260              	.L14:
- 125:SPI_Interface.c ****             dataRX[j + index*SPI_RxBufferSize] = SPIM_1_ReadRxData();   
- 261              		.loc 1 125 0 is_stmt 0 discriminator 1
- 262 0088 4C45     		cmp	r4, r9
- 263 008a F6DB     		blt	.L15
- 264              	.LBE2:
- 127:SPI_Interface.c ****         }
- 128:SPI_Interface.c ****         
- 129:SPI_Interface.c ****         count -= SPI_RxBufferSize;
- 265              		.loc 1 129 0 is_stmt 1
- 266 008c A8F10808 		sub	r8, r8, #8
- 267              	.LVL41:
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc9h3aTU.s 			page 8
-
-
- 268 0090 4FFA88F8 		sxtb	r8, r8
- 269              	.LVL42:
- 130:SPI_Interface.c ****         index++;
- 270              		.loc 1 130 0
- 271 0094 0136     		adds	r6, r6, #1
- 272              	.LVL43:
- 273 0096 76B2     		sxtb	r6, r6
- 274              	.LVL44:
- 275              	.L12:
- 118:SPI_Interface.c ****          
- 276              		.loc 1 118 0
- 277 0098 B8F1000F 		cmp	r8, #0
- 278 009c DBDC     		bgt	.L16
- 131:SPI_Interface.c ****         
- 132:SPI_Interface.c ****     }
+ 219              	.LVL34:
+ 220              	.L12:
+ 124:SPI_Interface.c ****         /* Wait for TX */
+ 125:SPI_Interface.c ****         while( !(SPIM_1_ReadTxStatus() & SPIM_1_STS_SPI_DONE) );
+ 221              		.loc 1 125 0 discriminator 1
+ 222 006c FFF7FEFF 		bl	SPIM_1_ReadTxStatus
+ 223              	.LVL35:
+ 224 0070 10F0010F 		tst	r0, #1
+ 225 0074 FAD0     		beq	.L12
+ 226 0076 0024     		movs	r4, #0
+ 227 0078 06E0     		b	.L13
+ 228              	.LVL36:
+ 229              	.L14:
+ 230              	.LBB2:
+ 126:SPI_Interface.c ****         /* Read the RX Buffer */
+ 127:SPI_Interface.c ****         for( uint8_t j = 0; j < (count > SPI_TxBufferSize ? SPI_TxBufferSize : count); j++ ) {
+ 128:SPI_Interface.c ****             dataRX[j + index*SPI_RxBufferSize] = SPIM_1_ReadRxData();   
+ 231              		.loc 1 128 0 discriminator 3
+ 232 007a 04EBC605 		add	r5, r4, r6, lsl #3
+ 233 007e FFF7FEFF 		bl	SPIM_1_ReadRxData
+ 234              	.LVL37:
+ 235 0082 7855     		strb	r0, [r7, r5]
+ 127:SPI_Interface.c ****             dataRX[j + index*SPI_RxBufferSize] = SPIM_1_ReadRxData();   
+ 236              		.loc 1 127 0 discriminator 3
+ 237 0084 0134     		adds	r4, r4, #1
+ 238              	.LVL38:
+ 239 0086 E4B2     		uxtb	r4, r4
+ 240              	.LVL39:
+ 241              	.L13:
+ 127:SPI_Interface.c ****             dataRX[j + index*SPI_RxBufferSize] = SPIM_1_ReadRxData();   
+ 242              		.loc 1 127 0 is_stmt 0 discriminator 1
+ 243 0088 4C45     		cmp	r4, r9
+ 244 008a F6DB     		blt	.L14
+ 245              	.LBE2:
+ 129:SPI_Interface.c ****         }
+ 130:SPI_Interface.c ****         
+ 131:SPI_Interface.c ****         count -= SPI_RxBufferSize;
+ 246              		.loc 1 131 0 is_stmt 1
+ 247 008c A8F10808 		sub	r8, r8, #8
+ 248              	.LVL40:
+ 249 0090 4FFA88F8 		sxtb	r8, r8
+ 250              	.LVL41:
+ 132:SPI_Interface.c ****         index++;
+ 251              		.loc 1 132 0
+ 252 0094 0136     		adds	r6, r6, #1
+ 253              	.LVL42:
+ 254 0096 76B2     		sxtb	r6, r6
+ 255              	.LVL43:
+ 256              	.L11:
+ 120:SPI_Interface.c ****          
+ 257              		.loc 1 120 0
+ 258 0098 B8F1000F 		cmp	r8, #0
+ 259 009c DBDC     		bgt	.L15
  133:SPI_Interface.c ****         
- 134:SPI_Interface.c ****     /* Disable the Slave */
- 135:SPI_Interface.c ****     SLAVE_CS_Write(1);
- 279              		.loc 1 135 0
- 280 009e 0120     		movs	r0, #1
- 281 00a0 FFF7FEFF 		bl	CS_1_Write
- 282              	.LVL45:
- 136:SPI_Interface.c ****     	
- 137:SPI_Interface.c ****     /* Clear */
- 138:SPI_Interface.c ****     SPIM_1_ClearFIFO();
- 283              		.loc 1 138 0
- 284 00a4 FFF7FEFF 		bl	SPIM_1_ClearFIFO
- 285              	.LVL46:
- 139:SPI_Interface.c ****     SPIM_1_ClearRxBuffer();
- 286              		.loc 1 139 0
- 287 00a8 FFF7FEFF 		bl	SPIM_1_ClearRxBuffer
- 288              	.LVL47:
- 140:SPI_Interface.c ****     SPIM_1_ClearTxBuffer();
- 289              		.loc 1 140 0
- 290 00ac FFF7FEFF 		bl	SPIM_1_ClearTxBuffer
- 291              	.LVL48:
- 141:SPI_Interface.c **** 
- 142:SPI_Interface.c **** }
- 292              		.loc 1 142 0
- 293 00b0 03B0     		add	sp, sp, #12
- 294              		.cfi_def_cfa_offset 28
- 295              		@ sp needed
- 296 00b2 BDE8F083 		pop	{r4, r5, r6, r7, r8, r9, pc}
- 297              		.cfi_endproc
- 298              	.LFE3:
- 299              		.size	SPI_Interface_Multi_RW, .-SPI_Interface_Multi_RW
- 300 00b6 00BF     		.section	.text.ACC_SPI_Interface_tradeByte,"ax",%progbits
- 301              		.align	2
- 302              		.global	ACC_SPI_Interface_tradeByte
- 303              		.thumb
- 304              		.thumb_func
- 305              		.type	ACC_SPI_Interface_tradeByte, %function
- 306              	ACC_SPI_Interface_tradeByte:
- 307              	.LFB4:
+ 134:SPI_Interface.c ****     }
+ 135:SPI_Interface.c ****         
+ 136:SPI_Interface.c ****     /* Disable the Slave */
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccbKWCte.s 			page 8
+
+
+ 137:SPI_Interface.c ****     SLAVE_CS_Write(1);
+ 260              		.loc 1 137 0
+ 261 009e 0120     		movs	r0, #1
+ 262 00a0 FFF7FEFF 		bl	CS_1_Write
+ 263              	.LVL44:
+ 138:SPI_Interface.c ****     	
+ 139:SPI_Interface.c ****     /* Clear */
+ 140:SPI_Interface.c ****     SPIM_1_ClearFIFO();
+ 264              		.loc 1 140 0
+ 265 00a4 FFF7FEFF 		bl	SPIM_1_ClearFIFO
+ 266              	.LVL45:
+ 141:SPI_Interface.c ****     SPIM_1_ClearRxBuffer();
+ 267              		.loc 1 141 0
+ 268 00a8 FFF7FEFF 		bl	SPIM_1_ClearRxBuffer
+ 269              	.LVL46:
+ 142:SPI_Interface.c ****     SPIM_1_ClearTxBuffer();
+ 270              		.loc 1 142 0
+ 271 00ac FFF7FEFF 		bl	SPIM_1_ClearTxBuffer
+ 272              	.LVL47:
  143:SPI_Interface.c **** 
- 144:SPI_Interface.c **** /********** ACCELEROMETER SPI FUNCTION **********/
+ 144:SPI_Interface.c **** }
+ 273              		.loc 1 144 0
+ 274 00b0 03B0     		add	sp, sp, #12
+ 275              		.cfi_def_cfa_offset 28
+ 276              		@ sp needed
+ 277 00b2 BDE8F083 		pop	{r4, r5, r6, r7, r8, r9, pc}
+ 278              		.cfi_endproc
+ 279              	.LFE2:
+ 280              		.size	SPI_Interface_Multi_RW, .-SPI_Interface_Multi_RW
+ 281 00b6 00BF     		.section	.text.ACC_SPI_Interface_tradeByte,"ax",%progbits
+ 282              		.align	2
+ 283              		.global	ACC_SPI_Interface_tradeByte
+ 284              		.thumb
+ 285              		.thumb_func
+ 286              		.type	ACC_SPI_Interface_tradeByte, %function
+ 287              	ACC_SPI_Interface_tradeByte:
+ 288              	.LFB3:
  145:SPI_Interface.c **** 
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc9h3aTU.s 			page 9
+ 146:SPI_Interface.c **** /********** ACCELEROMETER SPI FUNCTION **********/
+ 147:SPI_Interface.c **** 
+ 148:SPI_Interface.c **** uint8_t ACC_SPI_Interface_tradeByte(uint8_t byte) {
+ 289              		.loc 1 148 0
+ 290              		.cfi_startproc
+ 291              		@ args = 0, pretend = 0, frame = 0
+ 292              		@ frame_needed = 0, uses_anonymous_args = 0
+ 293              	.LVL48:
+ 294 0000 10B5     		push	{r4, lr}
+ 295              		.cfi_def_cfa_offset 8
+ 296              		.cfi_offset 4, -8
+ 297              		.cfi_offset 14, -4
+ 298 0002 0446     		mov	r4, r0
+ 149:SPI_Interface.c **** 	
+ 150:SPI_Interface.c **** 	/* Enable the Slave */
+ 151:SPI_Interface.c **** 	SLAVE_CS_Write_2(0);
+ 299              		.loc 1 151 0
+ 300 0004 0020     		movs	r0, #0
+ 301              	.LVL49:
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccbKWCte.s 			page 9
 
 
- 146:SPI_Interface.c **** uint8_t ACC_SPI_Interface_tradeByte(uint8_t byte) {
- 308              		.loc 1 146 0
- 309              		.cfi_startproc
- 310              		@ args = 0, pretend = 0, frame = 0
- 311              		@ frame_needed = 0, uses_anonymous_args = 0
- 312              	.LVL49:
- 313 0000 10B5     		push	{r4, lr}
- 314              		.cfi_def_cfa_offset 8
- 315              		.cfi_offset 4, -8
- 316              		.cfi_offset 14, -4
- 317 0002 0446     		mov	r4, r0
- 147:SPI_Interface.c **** 	
- 148:SPI_Interface.c **** 	/* Enable the Slave */
- 149:SPI_Interface.c **** 	SLAVE_CS_Write_2(0);
- 318              		.loc 1 149 0
- 319 0004 0020     		movs	r0, #0
- 320              	.LVL50:
- 321 0006 FFF7FEFF 		bl	CS_2_Write
- 322              	.LVL51:
- 150:SPI_Interface.c **** 	
- 151:SPI_Interface.c **** 	/* Load the TX Buffer */
- 152:SPI_Interface.c **** 	SPIM_2_WriteTxData(byte);
- 323              		.loc 1 152 0
- 324 000a 2046     		mov	r0, r4
- 325 000c FFF7FEFF 		bl	SPIM_2_WriteTxData
- 326              	.LVL52:
- 327              	.L19:
- 153:SPI_Interface.c **** 	
- 154:SPI_Interface.c **** 	/* Wait for TX */
- 155:SPI_Interface.c ****     while( !(SPIM_2_ReadTxStatus() & SPIM_1_STS_BYTE_COMPLETE) );
- 328              		.loc 1 155 0 discriminator 1
- 329 0010 FFF7FEFF 		bl	SPIM_2_ReadTxStatus
- 330              	.LVL53:
- 331 0014 10F0080F 		tst	r0, #8
- 332 0018 FAD0     		beq	.L19
- 156:SPI_Interface.c **** 	
- 157:SPI_Interface.c **** 	/* Read the RX Buffer */
- 158:SPI_Interface.c **** 	uint8_t data = SPIM_2_ReadRxData();
- 333              		.loc 1 158 0
- 334 001a FFF7FEFF 		bl	SPIM_2_ReadRxData
- 335              	.LVL54:
- 336 001e 0446     		mov	r4, r0
- 337              	.LVL55:
- 159:SPI_Interface.c **** 	
- 160:SPI_Interface.c **** 	/* Disable the Slave */
- 161:SPI_Interface.c **** 	SLAVE_CS_Write_2(1);
- 338              		.loc 1 161 0
- 339 0020 0120     		movs	r0, #1
- 340 0022 FFF7FEFF 		bl	CS_2_Write
+ 302 0006 FFF7FEFF 		bl	CS_2_Write
+ 303              	.LVL50:
+ 152:SPI_Interface.c **** 	
+ 153:SPI_Interface.c **** 	/* Load the TX Buffer */
+ 154:SPI_Interface.c **** 	SPIM_2_WriteTxData(byte);
+ 304              		.loc 1 154 0
+ 305 000a 2046     		mov	r0, r4
+ 306 000c FFF7FEFF 		bl	SPIM_2_WriteTxData
+ 307              	.LVL51:
+ 308              	.L18:
+ 155:SPI_Interface.c **** 	
+ 156:SPI_Interface.c **** 	/* Wait for TX */
+ 157:SPI_Interface.c ****     while( !(SPIM_2_ReadTxStatus() & SPIM_1_STS_BYTE_COMPLETE) );
+ 309              		.loc 1 157 0 discriminator 1
+ 310 0010 FFF7FEFF 		bl	SPIM_2_ReadTxStatus
+ 311              	.LVL52:
+ 312 0014 10F0080F 		tst	r0, #8
+ 313 0018 FAD0     		beq	.L18
+ 158:SPI_Interface.c **** 	
+ 159:SPI_Interface.c **** 	/* Read the RX Buffer */
+ 160:SPI_Interface.c **** 	uint8_t data = SPIM_2_ReadRxData();
+ 314              		.loc 1 160 0
+ 315 001a FFF7FEFF 		bl	SPIM_2_ReadRxData
+ 316              	.LVL53:
+ 317 001e 0446     		mov	r4, r0
+ 318              	.LVL54:
+ 161:SPI_Interface.c **** 	
+ 162:SPI_Interface.c **** 	/* Disable the Slave */
+ 163:SPI_Interface.c **** 	SLAVE_CS_Write_2(1);
+ 319              		.loc 1 163 0
+ 320 0020 0120     		movs	r0, #1
+ 321 0022 FFF7FEFF 		bl	CS_2_Write
+ 322              	.LVL55:
+ 164:SPI_Interface.c **** 	
+ 165:SPI_Interface.c **** 	return data;
+ 166:SPI_Interface.c ****     
+ 167:SPI_Interface.c **** }
+ 323              		.loc 1 167 0
+ 324 0026 2046     		mov	r0, r4
+ 325 0028 10BD     		pop	{r4, pc}
+ 326              		.cfi_endproc
+ 327              	.LFE3:
+ 328              		.size	ACC_SPI_Interface_tradeByte, .-ACC_SPI_Interface_tradeByte
+ 329 002a 00BF     		.section	.text.ACC_SPI_Interface_ReadByte,"ax",%progbits
+ 330              		.align	2
+ 331              		.global	ACC_SPI_Interface_ReadByte
+ 332              		.thumb
+ 333              		.thumb_func
+ 334              		.type	ACC_SPI_Interface_ReadByte, %function
+ 335              	ACC_SPI_Interface_ReadByte:
+ 336              	.LFB4:
+ 168:SPI_Interface.c **** 
+ 169:SPI_Interface.c **** uint8_t ACC_SPI_Interface_ReadByte(uint8_t byteTX) {
+ 337              		.loc 1 169 0
+ 338              		.cfi_startproc
+ 339              		@ args = 0, pretend = 0, frame = 0
+ 340              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccbKWCte.s 			page 10
+
+
  341              	.LVL56:
- 162:SPI_Interface.c **** 	
- 163:SPI_Interface.c **** 	return data;
- 164:SPI_Interface.c ****     
- 165:SPI_Interface.c **** }
- 342              		.loc 1 165 0
- 343 0026 2046     		mov	r0, r4
- 344 0028 10BD     		pop	{r4, pc}
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc9h3aTU.s 			page 10
-
-
- 345              		.cfi_endproc
- 346              	.LFE4:
- 347              		.size	ACC_SPI_Interface_tradeByte, .-ACC_SPI_Interface_tradeByte
- 348 002a 00BF     		.section	.text.ACC_SPI_Interface_ReadByte,"ax",%progbits
- 349              		.align	2
- 350              		.global	ACC_SPI_Interface_ReadByte
- 351              		.thumb
- 352              		.thumb_func
- 353              		.type	ACC_SPI_Interface_ReadByte, %function
- 354              	ACC_SPI_Interface_ReadByte:
- 355              	.LFB5:
- 166:SPI_Interface.c **** 
- 167:SPI_Interface.c **** uint8_t ACC_SPI_Interface_ReadByte(uint8_t byteTX) {
- 356              		.loc 1 167 0
- 357              		.cfi_startproc
- 358              		@ args = 0, pretend = 0, frame = 0
- 359              		@ frame_needed = 0, uses_anonymous_args = 0
- 360              	.LVL57:
- 361 0000 10B5     		push	{r4, lr}
- 362              		.cfi_def_cfa_offset 8
- 363              		.cfi_offset 4, -8
- 364              		.cfi_offset 14, -4
- 365 0002 0446     		mov	r4, r0
- 168:SPI_Interface.c **** 	
- 169:SPI_Interface.c **** 	/* Enable the Slave */
- 170:SPI_Interface.c **** 	SLAVE_CS_Write_2(0);
- 366              		.loc 1 170 0
- 367 0004 0020     		movs	r0, #0
- 368              	.LVL58:
- 369 0006 FFF7FEFF 		bl	CS_2_Write
- 370              	.LVL59:
- 171:SPI_Interface.c **** 	
- 172:SPI_Interface.c **** 	/* Load the TX Buffer */
- 173:SPI_Interface.c **** 	SPIM_2_WriteTxData(byteTX);
- 371              		.loc 1 173 0
- 372 000a 2046     		mov	r0, r4
- 373 000c FFF7FEFF 		bl	SPIM_2_WriteTxData
- 374              	.LVL60:
- 174:SPI_Interface.c **** 	
- 175:SPI_Interface.c **** 	/* SPI Dummy Byte */
- 176:SPI_Interface.c **** 	SPIM_2_WriteTxData(SPI_DUMMY_BYTE);
- 375              		.loc 1 176 0
- 376 0010 0020     		movs	r0, #0
- 377 0012 FFF7FEFF 		bl	SPIM_2_WriteTxData
- 378              	.LVL61:
- 379              	.L22:
- 177:SPI_Interface.c **** 	
- 178:SPI_Interface.c **** 	/* Wait for TX/RX */
- 179:SPI_Interface.c ****     while(!(SPIM_2_ReadTxStatus() & SPIM_2_STS_SPI_DONE));
- 380              		.loc 1 179 0 discriminator 1
- 381 0016 FFF7FEFF 		bl	SPIM_2_ReadTxStatus
- 382              	.LVL62:
- 383 001a 10F0010F 		tst	r0, #1
- 384 001e FAD0     		beq	.L22
- 180:SPI_Interface.c **** 	
- 181:SPI_Interface.c **** 	/* Read the RX Buffer */
- 182:SPI_Interface.c **** 	SPIM_2_ReadRxData();
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc9h3aTU.s 			page 11
-
-
- 385              		.loc 1 182 0
- 386 0020 FFF7FEFF 		bl	SPIM_2_ReadRxData
- 387              	.LVL63:
- 183:SPI_Interface.c **** 	uint8_t byteRX = SPIM_2_ReadRxData();
- 388              		.loc 1 183 0
- 389 0024 FFF7FEFF 		bl	SPIM_2_ReadRxData
- 390              	.LVL64:
- 391 0028 0446     		mov	r4, r0
- 392              	.LVL65:
- 184:SPI_Interface.c **** 	
- 185:SPI_Interface.c **** 	/* Disable the Slave */
- 186:SPI_Interface.c **** 	SLAVE_CS_Write_2(1);
- 393              		.loc 1 186 0
- 394 002a 0120     		movs	r0, #1
- 395 002c FFF7FEFF 		bl	CS_2_Write
- 396              	.LVL66:
- 187:SPI_Interface.c **** 	
- 188:SPI_Interface.c **** 	return byteRX;	
+ 342 0000 10B5     		push	{r4, lr}
+ 343              		.cfi_def_cfa_offset 8
+ 344              		.cfi_offset 4, -8
+ 345              		.cfi_offset 14, -4
+ 346 0002 0446     		mov	r4, r0
+ 170:SPI_Interface.c **** 	
+ 171:SPI_Interface.c **** 	/* Enable the Slave */
+ 172:SPI_Interface.c **** 	SLAVE_CS_Write_2(0);
+ 347              		.loc 1 172 0
+ 348 0004 0020     		movs	r0, #0
+ 349              	.LVL57:
+ 350 0006 FFF7FEFF 		bl	CS_2_Write
+ 351              	.LVL58:
+ 173:SPI_Interface.c **** 	
+ 174:SPI_Interface.c **** 	/* Load the TX Buffer */
+ 175:SPI_Interface.c **** 	SPIM_2_WriteTxData(byteTX);
+ 352              		.loc 1 175 0
+ 353 000a 2046     		mov	r0, r4
+ 354 000c FFF7FEFF 		bl	SPIM_2_WriteTxData
+ 355              	.LVL59:
+ 176:SPI_Interface.c **** 	
+ 177:SPI_Interface.c **** 	/* SPI Dummy Byte */
+ 178:SPI_Interface.c **** 	SPIM_2_WriteTxData(SPI_DUMMY_BYTE);
+ 356              		.loc 1 178 0
+ 357 0010 0020     		movs	r0, #0
+ 358 0012 FFF7FEFF 		bl	SPIM_2_WriteTxData
+ 359              	.LVL60:
+ 360              	.L21:
+ 179:SPI_Interface.c **** 	
+ 180:SPI_Interface.c **** 	/* Wait for TX/RX */
+ 181:SPI_Interface.c ****     while(!(SPIM_2_ReadTxStatus() & SPIM_2_STS_SPI_DONE));
+ 361              		.loc 1 181 0 discriminator 1
+ 362 0016 FFF7FEFF 		bl	SPIM_2_ReadTxStatus
+ 363              	.LVL61:
+ 364 001a 10F0010F 		tst	r0, #1
+ 365 001e FAD0     		beq	.L21
+ 182:SPI_Interface.c **** 	
+ 183:SPI_Interface.c **** 	/* Read the RX Buffer */
+ 184:SPI_Interface.c **** 	SPIM_2_ReadRxData();
+ 366              		.loc 1 184 0
+ 367 0020 FFF7FEFF 		bl	SPIM_2_ReadRxData
+ 368              	.LVL62:
+ 185:SPI_Interface.c **** 	uint8_t byteRX = SPIM_2_ReadRxData();
+ 369              		.loc 1 185 0
+ 370 0024 FFF7FEFF 		bl	SPIM_2_ReadRxData
+ 371              	.LVL63:
+ 372 0028 0446     		mov	r4, r0
+ 373              	.LVL64:
+ 186:SPI_Interface.c **** 	
+ 187:SPI_Interface.c **** 	/* Disable the Slave */
+ 188:SPI_Interface.c **** 	SLAVE_CS_Write_2(1);
+ 374              		.loc 1 188 0
+ 375 002a 0120     		movs	r0, #1
+ 376 002c FFF7FEFF 		bl	CS_2_Write
+ 377              	.LVL65:
  189:SPI_Interface.c **** 	
- 190:SPI_Interface.c **** }
- 397              		.loc 1 190 0
- 398 0030 2046     		mov	r0, r4
- 399 0032 10BD     		pop	{r4, pc}
- 400              		.cfi_endproc
- 401              	.LFE5:
- 402              		.size	ACC_SPI_Interface_ReadByte, .-ACC_SPI_Interface_ReadByte
- 403              		.section	.text.ACC_SPI_Interface_Multi_RW,"ax",%progbits
- 404              		.align	2
- 405              		.global	ACC_SPI_Interface_Multi_RW
- 406              		.thumb
- 407              		.thumb_func
- 408              		.type	ACC_SPI_Interface_Multi_RW, %function
- 409              	ACC_SPI_Interface_Multi_RW:
- 410              	.LFB6:
- 191:SPI_Interface.c **** 
- 192:SPI_Interface.c **** void ACC_SPI_Interface_Multi_RW(uint8_t* dataTX, uint8_t bytesTX, uint8_t* dataRX, uint8_t bytesRX)
- 411              		.loc 1 192 0
- 412              		.cfi_startproc
- 413              		@ args = 0, pretend = 0, frame = 8
- 414              		@ frame_needed = 0, uses_anonymous_args = 0
- 415              	.LVL67:
- 416 0000 2DE9F043 		push	{r4, r5, r6, r7, r8, r9, lr}
- 417              		.cfi_def_cfa_offset 28
- 418              		.cfi_offset 4, -28
- 419              		.cfi_offset 5, -24
- 420              		.cfi_offset 6, -20
- 421              		.cfi_offset 7, -16
- 422              		.cfi_offset 8, -12
- 423              		.cfi_offset 9, -8
- 424              		.cfi_offset 14, -4
- 425 0004 83B0     		sub	sp, sp, #12
- 426              		.cfi_def_cfa_offset 40
- 427 0006 0646     		mov	r6, r0
- 428 0008 0C46     		mov	r4, r1
- 429 000a 1746     		mov	r7, r2
- 430 000c 9846     		mov	r8, r3
- 193:SPI_Interface.c **** 	
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc9h3aTU.s 			page 12
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccbKWCte.s 			page 11
 
 
- 194:SPI_Interface.c **** 	/* Enable the Slave */
- 195:SPI_Interface.c ****     SLAVE_CS_Write_2(0);
- 431              		.loc 1 195 0
- 432 000e 0020     		movs	r0, #0
- 433              	.LVL68:
- 434 0010 FFF7FEFF 		bl	CS_2_Write
- 435              	.LVL69:
- 196:SPI_Interface.c ****         
- 197:SPI_Interface.c ****     int8_t count = bytesTX, index = 0;
- 436              		.loc 1 197 0
- 437 0014 64B2     		sxtb	r4, r4
- 438              	.LVL70:
- 439 0016 0025     		movs	r5, #0
- 198:SPI_Interface.c ****     	
- 199:SPI_Interface.c ****     /* Transmit Data */
- 200:SPI_Interface.c ****     while ( count > 0 ) {
- 440              		.loc 1 200 0
- 441 0018 11E0     		b	.L25
- 442              	.LVL71:
- 443              	.L27:
- 201:SPI_Interface.c ****             
- 202:SPI_Interface.c ****     	/* Load the TX buffer with Data*/
- 203:SPI_Interface.c ****         SPIM_2_PutArray(&dataTX[index*SPI_TxBufferSize], (count > SPI_TxBufferSize ? SPI_TxBufferSi
- 444              		.loc 1 203 0
- 445 001a 2146     		mov	r1, r4
- 446 001c 082C     		cmp	r4, #8
- 447 001e A8BF     		it	ge
- 448 0020 0821     		movge	r1, #8
- 449 0022 C9B2     		uxtb	r1, r1
- 450 0024 06EBC500 		add	r0, r6, r5, lsl #3
- 451 0028 FFF7FEFF 		bl	SPIM_2_PutArray
- 452              	.LVL72:
- 453              	.L26:
- 204:SPI_Interface.c ****         /* Wait for TX */
- 205:SPI_Interface.c ****         while( !(SPIM_2_ReadTxStatus() & SPIM_2_STS_SPI_DONE) );
- 454              		.loc 1 205 0 discriminator 1
- 455 002c FFF7FEFF 		bl	SPIM_2_ReadTxStatus
- 456              	.LVL73:
- 457 0030 10F0010F 		tst	r0, #1
- 458 0034 FAD0     		beq	.L26
- 206:SPI_Interface.c ****         
- 207:SPI_Interface.c ****         /* Update count */
- 208:SPI_Interface.c ****         count -= SPI_TxBufferSize;
- 459              		.loc 1 208 0
- 460 0036 083C     		subs	r4, r4, #8
- 461              	.LVL74:
- 462 0038 64B2     		sxtb	r4, r4
- 463              	.LVL75:
- 209:SPI_Interface.c ****         index++;
- 464              		.loc 1 209 0
- 465 003a 0135     		adds	r5, r5, #1
- 466              	.LVL76:
- 467 003c 6DB2     		sxtb	r5, r5
- 468              	.LVL77:
- 469              	.L25:
- 200:SPI_Interface.c ****             
- 470              		.loc 1 200 0
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc9h3aTU.s 			page 13
+ 190:SPI_Interface.c **** 	return byteRX;	
+ 191:SPI_Interface.c **** 	
+ 192:SPI_Interface.c **** }
+ 378              		.loc 1 192 0
+ 379 0030 2046     		mov	r0, r4
+ 380 0032 10BD     		pop	{r4, pc}
+ 381              		.cfi_endproc
+ 382              	.LFE4:
+ 383              		.size	ACC_SPI_Interface_ReadByte, .-ACC_SPI_Interface_ReadByte
+ 384              		.section	.text.ACC_SPI_Interface_Multi_RW,"ax",%progbits
+ 385              		.align	2
+ 386              		.global	ACC_SPI_Interface_Multi_RW
+ 387              		.thumb
+ 388              		.thumb_func
+ 389              		.type	ACC_SPI_Interface_Multi_RW, %function
+ 390              	ACC_SPI_Interface_Multi_RW:
+ 391              	.LFB5:
+ 193:SPI_Interface.c **** 
+ 194:SPI_Interface.c **** void ACC_SPI_Interface_Multi_RW(uint8_t* dataTX, uint8_t bytesTX, uint8_t* dataRX, uint8_t bytesRX)
+ 392              		.loc 1 194 0
+ 393              		.cfi_startproc
+ 394              		@ args = 0, pretend = 0, frame = 8
+ 395              		@ frame_needed = 0, uses_anonymous_args = 0
+ 396              	.LVL66:
+ 397 0000 2DE9F043 		push	{r4, r5, r6, r7, r8, r9, lr}
+ 398              		.cfi_def_cfa_offset 28
+ 399              		.cfi_offset 4, -28
+ 400              		.cfi_offset 5, -24
+ 401              		.cfi_offset 6, -20
+ 402              		.cfi_offset 7, -16
+ 403              		.cfi_offset 8, -12
+ 404              		.cfi_offset 9, -8
+ 405              		.cfi_offset 14, -4
+ 406 0004 83B0     		sub	sp, sp, #12
+ 407              		.cfi_def_cfa_offset 40
+ 408 0006 0646     		mov	r6, r0
+ 409 0008 0C46     		mov	r4, r1
+ 410 000a 1746     		mov	r7, r2
+ 411 000c 9846     		mov	r8, r3
+ 195:SPI_Interface.c **** 	
+ 196:SPI_Interface.c **** 	/* Enable the Slave */
+ 197:SPI_Interface.c ****     SLAVE_CS_Write_2(0);
+ 412              		.loc 1 197 0
+ 413 000e 0020     		movs	r0, #0
+ 414              	.LVL67:
+ 415 0010 FFF7FEFF 		bl	CS_2_Write
+ 416              	.LVL68:
+ 198:SPI_Interface.c ****         
+ 199:SPI_Interface.c ****     int8_t count = bytesTX, index = 0;
+ 417              		.loc 1 199 0
+ 418 0014 64B2     		sxtb	r4, r4
+ 419              	.LVL69:
+ 420 0016 0025     		movs	r5, #0
+ 200:SPI_Interface.c ****     	
+ 201:SPI_Interface.c ****     /* Transmit Data */
+ 202:SPI_Interface.c ****     while ( count > 0 ) {
+ 421              		.loc 1 202 0
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccbKWCte.s 			page 12
 
 
- 471 003e 002C     		cmp	r4, #0
- 472 0040 EBDC     		bgt	.L27
- 210:SPI_Interface.c ****            
- 211:SPI_Interface.c ****     }
- 212:SPI_Interface.c ****         
- 213:SPI_Interface.c ****     /* Clear the RX Buffer */
- 214:SPI_Interface.c ****     SPIM_2_ClearFIFO();
- 473              		.loc 1 214 0
- 474 0042 FFF7FEFF 		bl	SPIM_2_ClearFIFO
- 475              	.LVL78:
- 215:SPI_Interface.c ****     SPIM_2_ClearRxBuffer();
- 476              		.loc 1 215 0
- 477 0046 FFF7FEFF 		bl	SPIM_2_ClearRxBuffer
- 478              	.LVL79:
- 216:SPI_Interface.c ****         
- 217:SPI_Interface.c ****     /* Init the Dummy TX Buffer */
- 218:SPI_Interface.c ****     uint8_t dummyTX[SPI_RxBufferSize];
- 219:SPI_Interface.c ****     memset(dummyTX, SPI_DUMMY_BYTE, SPI_RxBufferSize);
- 479              		.loc 1 219 0
- 480 004a 0026     		movs	r6, #0
- 481              	.LVL80:
- 482 004c 0096     		str	r6, [sp]
- 483 004e 0196     		str	r6, [sp, #4]
- 220:SPI_Interface.c ****         
- 221:SPI_Interface.c ****     /* Update count for RX */
- 222:SPI_Interface.c ****     count = bytesRX;
- 484              		.loc 1 222 0
- 485 0050 4FFA88F8 		sxtb	r8, r8
- 486              	.LVL81:
- 223:SPI_Interface.c ****     index = 0;
- 224:SPI_Interface.c ****         
- 225:SPI_Interface.c ****     /* Get the RX Data */
- 226:SPI_Interface.c ****     while ( count > 0 ) {
- 487              		.loc 1 226 0
- 488 0054 20E0     		b	.L28
- 489              	.LVL82:
- 490              	.L32:
- 227:SPI_Interface.c ****          
- 228:SPI_Interface.c ****         /* Load the TX buffer with Dummy Bytes*/
- 229:SPI_Interface.c ****         SPIM_2_PutArray(dummyTX, (count > SPI_TxBufferSize ? SPI_TxBufferSize : count));
- 491              		.loc 1 229 0
- 492 0056 C146     		mov	r9, r8
- 493 0058 B8F1080F 		cmp	r8, #8
- 494 005c A8BF     		it	ge
- 495 005e 4FF00809 		movge	r9, #8
- 496 0062 5FFA89F1 		uxtb	r1, r9
- 497 0066 6846     		mov	r0, sp
- 498 0068 FFF7FEFF 		bl	SPIM_2_PutArray
- 499              	.LVL83:
- 500              	.L29:
- 230:SPI_Interface.c ****         /* Wait for TX */
- 231:SPI_Interface.c ****         while( !(SPIM_2_ReadTxStatus() & SPIM_2_STS_SPI_DONE) );
- 501              		.loc 1 231 0 discriminator 1
- 502 006c FFF7FEFF 		bl	SPIM_2_ReadTxStatus
- 503              	.LVL84:
- 504 0070 10F0010F 		tst	r0, #1
- 505 0074 FAD0     		beq	.L29
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc9h3aTU.s 			page 14
+ 422 0018 11E0     		b	.L24
+ 423              	.LVL70:
+ 424              	.L26:
+ 203:SPI_Interface.c ****             
+ 204:SPI_Interface.c ****     	/* Load the TX buffer with Data*/
+ 205:SPI_Interface.c ****         SPIM_2_PutArray(&dataTX[index*SPI_TxBufferSize], (count > SPI_TxBufferSize ? SPI_TxBufferSi
+ 425              		.loc 1 205 0
+ 426 001a 2146     		mov	r1, r4
+ 427 001c 082C     		cmp	r4, #8
+ 428 001e A8BF     		it	ge
+ 429 0020 0821     		movge	r1, #8
+ 430 0022 C9B2     		uxtb	r1, r1
+ 431 0024 06EBC500 		add	r0, r6, r5, lsl #3
+ 432 0028 FFF7FEFF 		bl	SPIM_2_PutArray
+ 433              	.LVL71:
+ 434              	.L25:
+ 206:SPI_Interface.c ****         /* Wait for TX */
+ 207:SPI_Interface.c ****         while( !(SPIM_2_ReadTxStatus() & SPIM_2_STS_SPI_DONE) );
+ 435              		.loc 1 207 0 discriminator 1
+ 436 002c FFF7FEFF 		bl	SPIM_2_ReadTxStatus
+ 437              	.LVL72:
+ 438 0030 10F0010F 		tst	r0, #1
+ 439 0034 FAD0     		beq	.L25
+ 208:SPI_Interface.c ****         
+ 209:SPI_Interface.c ****         /* Update count */
+ 210:SPI_Interface.c ****         count -= SPI_TxBufferSize;
+ 440              		.loc 1 210 0
+ 441 0036 083C     		subs	r4, r4, #8
+ 442              	.LVL73:
+ 443 0038 64B2     		sxtb	r4, r4
+ 444              	.LVL74:
+ 211:SPI_Interface.c ****         index++;
+ 445              		.loc 1 211 0
+ 446 003a 0135     		adds	r5, r5, #1
+ 447              	.LVL75:
+ 448 003c 6DB2     		sxtb	r5, r5
+ 449              	.LVL76:
+ 450              	.L24:
+ 202:SPI_Interface.c ****             
+ 451              		.loc 1 202 0
+ 452 003e 002C     		cmp	r4, #0
+ 453 0040 EBDC     		bgt	.L26
+ 212:SPI_Interface.c ****            
+ 213:SPI_Interface.c ****     }
+ 214:SPI_Interface.c ****         
+ 215:SPI_Interface.c ****     /* Clear the RX Buffer */
+ 216:SPI_Interface.c ****     SPIM_2_ClearFIFO();
+ 454              		.loc 1 216 0
+ 455 0042 FFF7FEFF 		bl	SPIM_2_ClearFIFO
+ 456              	.LVL77:
+ 217:SPI_Interface.c ****     SPIM_2_ClearRxBuffer();
+ 457              		.loc 1 217 0
+ 458 0046 FFF7FEFF 		bl	SPIM_2_ClearRxBuffer
+ 459              	.LVL78:
+ 218:SPI_Interface.c ****         
+ 219:SPI_Interface.c ****     /* Init the Dummy TX Buffer */
+ 220:SPI_Interface.c ****     uint8_t dummyTX[SPI_RxBufferSize];
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccbKWCte.s 			page 13
 
 
- 506 0076 0024     		movs	r4, #0
- 507 0078 06E0     		b	.L30
- 508              	.LVL85:
- 509              	.L31:
- 510              	.LBB3:
- 232:SPI_Interface.c ****         /* Read the RX Buffer */
- 233:SPI_Interface.c ****         for( uint8_t j = 0; j < (count > SPI_TxBufferSize ? SPI_TxBufferSize : count); j++ ) {
- 234:SPI_Interface.c ****             dataRX[j + index*SPI_RxBufferSize] = SPIM_2_ReadRxData();   
- 511              		.loc 1 234 0 discriminator 3
- 512 007a 04EBC605 		add	r5, r4, r6, lsl #3
- 513 007e FFF7FEFF 		bl	SPIM_2_ReadRxData
- 514              	.LVL86:
- 515 0082 7855     		strb	r0, [r7, r5]
- 233:SPI_Interface.c ****             dataRX[j + index*SPI_RxBufferSize] = SPIM_2_ReadRxData();   
- 516              		.loc 1 233 0 discriminator 3
- 517 0084 0134     		adds	r4, r4, #1
- 518              	.LVL87:
- 519 0086 E4B2     		uxtb	r4, r4
- 520              	.LVL88:
- 521              	.L30:
- 233:SPI_Interface.c ****             dataRX[j + index*SPI_RxBufferSize] = SPIM_2_ReadRxData();   
- 522              		.loc 1 233 0 is_stmt 0 discriminator 1
- 523 0088 4C45     		cmp	r4, r9
- 524 008a F6DB     		blt	.L31
- 525              	.LBE3:
- 235:SPI_Interface.c ****         }
- 236:SPI_Interface.c ****         
- 237:SPI_Interface.c ****         count -= SPI_RxBufferSize;
- 526              		.loc 1 237 0 is_stmt 1
- 527 008c A8F10808 		sub	r8, r8, #8
- 528              	.LVL89:
- 529 0090 4FFA88F8 		sxtb	r8, r8
- 530              	.LVL90:
- 238:SPI_Interface.c ****         index++;
- 531              		.loc 1 238 0
- 532 0094 0136     		adds	r6, r6, #1
- 533              	.LVL91:
- 534 0096 76B2     		sxtb	r6, r6
- 535              	.LVL92:
- 536              	.L28:
- 226:SPI_Interface.c ****          
- 537              		.loc 1 226 0
- 538 0098 B8F1000F 		cmp	r8, #0
- 539 009c DBDC     		bgt	.L32
- 239:SPI_Interface.c ****         
- 240:SPI_Interface.c ****     }
+ 221:SPI_Interface.c ****     memset(dummyTX, SPI_DUMMY_BYTE, SPI_RxBufferSize);
+ 460              		.loc 1 221 0
+ 461 004a 0026     		movs	r6, #0
+ 462              	.LVL79:
+ 463 004c 0096     		str	r6, [sp]
+ 464 004e 0196     		str	r6, [sp, #4]
+ 222:SPI_Interface.c ****         
+ 223:SPI_Interface.c ****     /* Update count for RX */
+ 224:SPI_Interface.c ****     count = bytesRX;
+ 465              		.loc 1 224 0
+ 466 0050 4FFA88F8 		sxtb	r8, r8
+ 467              	.LVL80:
+ 225:SPI_Interface.c ****     index = 0;
+ 226:SPI_Interface.c ****         
+ 227:SPI_Interface.c ****     /* Get the RX Data */
+ 228:SPI_Interface.c ****     while ( count > 0 ) {
+ 468              		.loc 1 228 0
+ 469 0054 20E0     		b	.L27
+ 470              	.LVL81:
+ 471              	.L31:
+ 229:SPI_Interface.c ****          
+ 230:SPI_Interface.c ****         /* Load the TX buffer with Dummy Bytes*/
+ 231:SPI_Interface.c ****         SPIM_2_PutArray(dummyTX, (count > SPI_TxBufferSize ? SPI_TxBufferSize : count));
+ 472              		.loc 1 231 0
+ 473 0056 C146     		mov	r9, r8
+ 474 0058 B8F1080F 		cmp	r8, #8
+ 475 005c A8BF     		it	ge
+ 476 005e 4FF00809 		movge	r9, #8
+ 477 0062 5FFA89F1 		uxtb	r1, r9
+ 478 0066 6846     		mov	r0, sp
+ 479 0068 FFF7FEFF 		bl	SPIM_2_PutArray
+ 480              	.LVL82:
+ 481              	.L28:
+ 232:SPI_Interface.c ****         /* Wait for TX */
+ 233:SPI_Interface.c ****         while( !(SPIM_2_ReadTxStatus() & SPIM_2_STS_SPI_DONE) );
+ 482              		.loc 1 233 0 discriminator 1
+ 483 006c FFF7FEFF 		bl	SPIM_2_ReadTxStatus
+ 484              	.LVL83:
+ 485 0070 10F0010F 		tst	r0, #1
+ 486 0074 FAD0     		beq	.L28
+ 487 0076 0024     		movs	r4, #0
+ 488 0078 06E0     		b	.L29
+ 489              	.LVL84:
+ 490              	.L30:
+ 491              	.LBB3:
+ 234:SPI_Interface.c ****         /* Read the RX Buffer */
+ 235:SPI_Interface.c ****         for( uint8_t j = 0; j < (count > SPI_TxBufferSize ? SPI_TxBufferSize : count); j++ ) {
+ 236:SPI_Interface.c ****             dataRX[j + index*SPI_RxBufferSize] = SPIM_2_ReadRxData();   
+ 492              		.loc 1 236 0 discriminator 3
+ 493 007a 04EBC605 		add	r5, r4, r6, lsl #3
+ 494 007e FFF7FEFF 		bl	SPIM_2_ReadRxData
+ 495              	.LVL85:
+ 496 0082 7855     		strb	r0, [r7, r5]
+ 235:SPI_Interface.c ****             dataRX[j + index*SPI_RxBufferSize] = SPIM_2_ReadRxData();   
+ 497              		.loc 1 235 0 discriminator 3
+ 498 0084 0134     		adds	r4, r4, #1
+ 499              	.LVL86:
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccbKWCte.s 			page 14
+
+
+ 500 0086 E4B2     		uxtb	r4, r4
+ 501              	.LVL87:
+ 502              	.L29:
+ 235:SPI_Interface.c ****             dataRX[j + index*SPI_RxBufferSize] = SPIM_2_ReadRxData();   
+ 503              		.loc 1 235 0 is_stmt 0 discriminator 1
+ 504 0088 4C45     		cmp	r4, r9
+ 505 008a F6DB     		blt	.L30
+ 506              	.LBE3:
+ 237:SPI_Interface.c ****         }
+ 238:SPI_Interface.c ****         
+ 239:SPI_Interface.c ****         count -= SPI_RxBufferSize;
+ 507              		.loc 1 239 0 is_stmt 1
+ 508 008c A8F10808 		sub	r8, r8, #8
+ 509              	.LVL88:
+ 510 0090 4FFA88F8 		sxtb	r8, r8
+ 511              	.LVL89:
+ 240:SPI_Interface.c ****         index++;
+ 512              		.loc 1 240 0
+ 513 0094 0136     		adds	r6, r6, #1
+ 514              	.LVL90:
+ 515 0096 76B2     		sxtb	r6, r6
+ 516              	.LVL91:
+ 517              	.L27:
+ 228:SPI_Interface.c ****          
+ 518              		.loc 1 228 0
+ 519 0098 B8F1000F 		cmp	r8, #0
+ 520 009c DBDC     		bgt	.L31
  241:SPI_Interface.c ****         
- 242:SPI_Interface.c ****     /* Disable the Slave */
- 243:SPI_Interface.c ****     SLAVE_CS_Write_2(1);
- 540              		.loc 1 243 0
- 541 009e 0120     		movs	r0, #1
- 542 00a0 FFF7FEFF 		bl	CS_2_Write
- 543              	.LVL93:
- 244:SPI_Interface.c ****     	
- 245:SPI_Interface.c ****     /* Clear */
- 246:SPI_Interface.c ****     SPIM_2_ClearFIFO();
- 544              		.loc 1 246 0
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc9h3aTU.s 			page 15
+ 242:SPI_Interface.c ****     }
+ 243:SPI_Interface.c ****         
+ 244:SPI_Interface.c ****     /* Disable the Slave */
+ 245:SPI_Interface.c ****     SLAVE_CS_Write_2(1);
+ 521              		.loc 1 245 0
+ 522 009e 0120     		movs	r0, #1
+ 523 00a0 FFF7FEFF 		bl	CS_2_Write
+ 524              	.LVL92:
+ 246:SPI_Interface.c ****     	
+ 247:SPI_Interface.c ****     /* Clear */
+ 248:SPI_Interface.c ****     SPIM_2_ClearFIFO();
+ 525              		.loc 1 248 0
+ 526 00a4 FFF7FEFF 		bl	SPIM_2_ClearFIFO
+ 527              	.LVL93:
+ 249:SPI_Interface.c ****     SPIM_2_ClearRxBuffer();
+ 528              		.loc 1 249 0
+ 529 00a8 FFF7FEFF 		bl	SPIM_2_ClearRxBuffer
+ 530              	.LVL94:
+ 250:SPI_Interface.c ****     SPIM_2_ClearTxBuffer();
+ 531              		.loc 1 250 0
+ 532 00ac FFF7FEFF 		bl	SPIM_2_ClearTxBuffer
+ 533              	.LVL95:
+ 251:SPI_Interface.c **** 
+ 252:SPI_Interface.c **** }
+ 534              		.loc 1 252 0
+ 535 00b0 03B0     		add	sp, sp, #12
+ 536              		.cfi_def_cfa_offset 28
+ 537              		@ sp needed
+ 538 00b2 BDE8F083 		pop	{r4, r5, r6, r7, r8, r9, pc}
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccbKWCte.s 			page 15
 
 
- 545 00a4 FFF7FEFF 		bl	SPIM_2_ClearFIFO
- 546              	.LVL94:
- 247:SPI_Interface.c ****     SPIM_2_ClearRxBuffer();
- 547              		.loc 1 247 0
- 548 00a8 FFF7FEFF 		bl	SPIM_2_ClearRxBuffer
- 549              	.LVL95:
- 248:SPI_Interface.c ****     SPIM_2_ClearTxBuffer();
- 550              		.loc 1 248 0
- 551 00ac FFF7FEFF 		bl	SPIM_2_ClearTxBuffer
- 552              	.LVL96:
- 249:SPI_Interface.c **** 
- 250:SPI_Interface.c **** }
- 553              		.loc 1 250 0
- 554 00b0 03B0     		add	sp, sp, #12
- 555              		.cfi_def_cfa_offset 28
- 556              		@ sp needed
- 557 00b2 BDE8F083 		pop	{r4, r5, r6, r7, r8, r9, pc}
- 558              		.cfi_endproc
- 559              	.LFE6:
- 560              		.size	ACC_SPI_Interface_Multi_RW, .-ACC_SPI_Interface_Multi_RW
- 561 00b6 00BF     		.text
- 562              	.Letext0:
- 563              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
- 564              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
- 565              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
- 566              		.file 5 "Generated_Source\\PSoC5/CS_1.h"
- 567              		.file 6 "Generated_Source\\PSoC5/SPIM_1.h"
- 568              		.file 7 "Generated_Source\\PSoC5/CS_2.h"
- 569              		.file 8 "Generated_Source\\PSoC5/SPIM_2.h"
- 570              		.section	.debug_info,"",%progbits
- 571              	.Ldebug_info0:
- 572 0000 8A060000 		.4byte	0x68a
- 573 0004 0400     		.2byte	0x4
- 574 0006 00000000 		.4byte	.Ldebug_abbrev0
- 575 000a 04       		.byte	0x4
- 576 000b 01       		.uleb128 0x1
- 577 000c EC000000 		.4byte	.LASF54
- 578 0010 0C       		.byte	0xc
- 579 0011 7A010000 		.4byte	.LASF55
- 580 0015 9F020000 		.4byte	.LASF56
- 581 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 582 001d 00000000 		.4byte	0
- 583 0021 00000000 		.4byte	.Ldebug_line0
- 584 0025 02       		.uleb128 0x2
- 585 0026 1B000000 		.4byte	.LASF0
- 586 002a 02       		.byte	0x2
- 587 002b 1B       		.byte	0x1b
- 588 002c 30000000 		.4byte	0x30
- 589 0030 03       		.uleb128 0x3
- 590 0031 01       		.byte	0x1
- 591 0032 06       		.byte	0x6
- 592 0033 A4030000 		.4byte	.LASF2
- 593 0037 02       		.uleb128 0x2
- 594 0038 24000000 		.4byte	.LASF1
- 595 003c 02       		.byte	0x2
- 596 003d 1D       		.byte	0x1d
- 597 003e 42000000 		.4byte	0x42
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc9h3aTU.s 			page 16
+ 539              		.cfi_endproc
+ 540              	.LFE5:
+ 541              		.size	ACC_SPI_Interface_Multi_RW, .-ACC_SPI_Interface_Multi_RW
+ 542 00b6 00BF     		.text
+ 543              	.Letext0:
+ 544              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
+ 545              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
+ 546              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 547              		.file 5 "Generated_Source\\PSoC5/CS_1.h"
+ 548              		.file 6 "Generated_Source\\PSoC5/SPIM_1.h"
+ 549              		.file 7 "Generated_Source\\PSoC5/CS_2.h"
+ 550              		.file 8 "Generated_Source\\PSoC5/SPIM_2.h"
+ 551              		.section	.debug_info,"",%progbits
+ 552              	.Ldebug_info0:
+ 553 0000 4D060000 		.4byte	0x64d
+ 554 0004 0400     		.2byte	0x4
+ 555 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 556 000a 04       		.byte	0x4
+ 557 000b 01       		.uleb128 0x1
+ 558 000c E5000000 		.4byte	.LASF52
+ 559 0010 0C       		.byte	0xc
+ 560 0011 73010000 		.4byte	.LASF53
+ 561 0015 66020000 		.4byte	.LASF54
+ 562 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 563 001d 00000000 		.4byte	0
+ 564 0021 00000000 		.4byte	.Ldebug_line0
+ 565 0025 02       		.uleb128 0x2
+ 566 0026 1B000000 		.4byte	.LASF0
+ 567 002a 02       		.byte	0x2
+ 568 002b 1B       		.byte	0x1b
+ 569 002c 30000000 		.4byte	0x30
+ 570 0030 03       		.uleb128 0x3
+ 571 0031 01       		.byte	0x1
+ 572 0032 06       		.byte	0x6
+ 573 0033 92030000 		.4byte	.LASF2
+ 574 0037 02       		.uleb128 0x2
+ 575 0038 24000000 		.4byte	.LASF1
+ 576 003c 02       		.byte	0x2
+ 577 003d 1D       		.byte	0x1d
+ 578 003e 42000000 		.4byte	0x42
+ 579 0042 03       		.uleb128 0x3
+ 580 0043 01       		.byte	0x1
+ 581 0044 08       		.byte	0x8
+ 582 0045 D7000000 		.4byte	.LASF3
+ 583 0049 03       		.uleb128 0x3
+ 584 004a 02       		.byte	0x2
+ 585 004b 05       		.byte	0x5
+ 586 004c 43030000 		.4byte	.LASF4
+ 587 0050 03       		.uleb128 0x3
+ 588 0051 02       		.byte	0x2
+ 589 0052 07       		.byte	0x7
+ 590 0053 50000000 		.4byte	.LASF5
+ 591 0057 03       		.uleb128 0x3
+ 592 0058 04       		.byte	0x4
+ 593 0059 05       		.byte	0x5
+ 594 005a 7D030000 		.4byte	.LASF6
+ 595 005e 03       		.uleb128 0x3
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccbKWCte.s 			page 16
 
 
- 598 0042 03       		.uleb128 0x3
- 599 0043 01       		.byte	0x1
- 600 0044 08       		.byte	0x8
- 601 0045 DE000000 		.4byte	.LASF3
- 602 0049 03       		.uleb128 0x3
- 603 004a 02       		.byte	0x2
- 604 004b 05       		.byte	0x5
- 605 004c 43030000 		.4byte	.LASF4
- 606 0050 03       		.uleb128 0x3
- 607 0051 02       		.byte	0x2
- 608 0052 07       		.byte	0x7
- 609 0053 57000000 		.4byte	.LASF5
- 610 0057 03       		.uleb128 0x3
- 611 0058 04       		.byte	0x4
- 612 0059 05       		.byte	0x5
- 613 005a 8F030000 		.4byte	.LASF6
- 614 005e 03       		.uleb128 0x3
- 615 005f 04       		.byte	0x4
- 616 0060 07       		.byte	0x7
- 617 0061 8A010000 		.4byte	.LASF7
- 618 0065 03       		.uleb128 0x3
- 619 0066 08       		.byte	0x8
- 620 0067 05       		.byte	0x5
- 621 0068 0A030000 		.4byte	.LASF8
- 622 006c 03       		.uleb128 0x3
- 623 006d 08       		.byte	0x8
- 624 006e 07       		.byte	0x7
- 625 006f 4E020000 		.4byte	.LASF9
- 626 0073 04       		.uleb128 0x4
- 627 0074 04       		.byte	0x4
- 628 0075 05       		.byte	0x5
- 629 0076 696E7400 		.ascii	"int\000"
- 630 007a 03       		.uleb128 0x3
- 631 007b 04       		.byte	0x4
- 632 007c 07       		.byte	0x7
- 633 007d 36020000 		.4byte	.LASF10
- 634 0081 02       		.uleb128 0x2
- 635 0082 9A000000 		.4byte	.LASF11
- 636 0086 03       		.byte	0x3
- 637 0087 14       		.byte	0x14
- 638 0088 25000000 		.4byte	0x25
- 639 008c 02       		.uleb128 0x2
- 640 008d 65020000 		.4byte	.LASF12
- 641 0091 03       		.byte	0x3
- 642 0092 18       		.byte	0x18
- 643 0093 37000000 		.4byte	0x37
- 644 0097 05       		.uleb128 0x5
- 645 0098 9C010000 		.4byte	.LASF13
- 646 009c 04       		.byte	0x4
- 647 009d E401     		.2byte	0x1e4
- 648 009f 42000000 		.4byte	0x42
- 649 00a3 03       		.uleb128 0x3
- 650 00a4 04       		.byte	0x4
- 651 00a5 04       		.byte	0x4
- 652 00a6 BC000000 		.4byte	.LASF14
- 653 00aa 03       		.uleb128 0x3
- 654 00ab 08       		.byte	0x8
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc9h3aTU.s 			page 17
+ 596 005f 04       		.byte	0x4
+ 597 0060 07       		.byte	0x7
+ 598 0061 83010000 		.4byte	.LASF7
+ 599 0065 03       		.uleb128 0x3
+ 600 0066 08       		.byte	0x8
+ 601 0067 05       		.byte	0x5
+ 602 0068 0A030000 		.4byte	.LASF8
+ 603 006c 03       		.uleb128 0x3
+ 604 006d 08       		.byte	0x8
+ 605 006e 07       		.byte	0x7
+ 606 006f 47020000 		.4byte	.LASF9
+ 607 0073 04       		.uleb128 0x4
+ 608 0074 04       		.byte	0x4
+ 609 0075 05       		.byte	0x5
+ 610 0076 696E7400 		.ascii	"int\000"
+ 611 007a 03       		.uleb128 0x3
+ 612 007b 04       		.byte	0x4
+ 613 007c 07       		.byte	0x7
+ 614 007d 2F020000 		.4byte	.LASF10
+ 615 0081 02       		.uleb128 0x2
+ 616 0082 93000000 		.4byte	.LASF11
+ 617 0086 03       		.byte	0x3
+ 618 0087 14       		.byte	0x14
+ 619 0088 25000000 		.4byte	0x25
+ 620 008c 02       		.uleb128 0x2
+ 621 008d 5E020000 		.4byte	.LASF12
+ 622 0091 03       		.byte	0x3
+ 623 0092 18       		.byte	0x18
+ 624 0093 37000000 		.4byte	0x37
+ 625 0097 05       		.uleb128 0x5
+ 626 0098 95010000 		.4byte	.LASF13
+ 627 009c 04       		.byte	0x4
+ 628 009d E401     		.2byte	0x1e4
+ 629 009f 42000000 		.4byte	0x42
+ 630 00a3 03       		.uleb128 0x3
+ 631 00a4 04       		.byte	0x4
+ 632 00a5 04       		.byte	0x4
+ 633 00a6 B5000000 		.4byte	.LASF14
+ 634 00aa 03       		.uleb128 0x3
+ 635 00ab 08       		.byte	0x8
+ 636 00ac 04       		.byte	0x4
+ 637 00ad D5010000 		.4byte	.LASF15
+ 638 00b1 03       		.uleb128 0x3
+ 639 00b2 01       		.byte	0x1
+ 640 00b3 08       		.byte	0x8
+ 641 00b4 18030000 		.4byte	.LASF16
+ 642 00b8 03       		.uleb128 0x3
+ 643 00b9 08       		.byte	0x8
+ 644 00ba 04       		.byte	0x4
+ 645 00bb 86030000 		.4byte	.LASF17
+ 646 00bf 03       		.uleb128 0x3
+ 647 00c0 04       		.byte	0x4
+ 648 00c1 07       		.byte	0x7
+ 649 00c2 01030000 		.4byte	.LASF18
+ 650 00c6 06       		.uleb128 0x6
+ 651 00c7 DC010000 		.4byte	.LASF19
+ 652 00cb 01       		.byte	0x1
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccbKWCte.s 			page 17
 
 
- 655 00ac 04       		.byte	0x4
- 656 00ad DC010000 		.4byte	.LASF15
- 657 00b1 03       		.uleb128 0x3
- 658 00b2 01       		.byte	0x1
- 659 00b3 08       		.byte	0x8
- 660 00b4 18030000 		.4byte	.LASF16
- 661 00b8 03       		.uleb128 0x3
- 662 00b9 08       		.byte	0x8
- 663 00ba 04       		.byte	0x4
- 664 00bb 98030000 		.4byte	.LASF17
- 665 00bf 03       		.uleb128 0x3
- 666 00c0 04       		.byte	0x4
- 667 00c1 07       		.byte	0x7
- 668 00c2 01030000 		.4byte	.LASF18
- 669 00c6 06       		.uleb128 0x6
- 670 00c7 E3010000 		.4byte	.LASF19
- 671 00cb 01       		.byte	0x1
- 672 00cc 15       		.byte	0x15
- 673 00cd 8C000000 		.4byte	0x8c
- 674 00d1 00000000 		.4byte	.LFB0
- 675 00d5 2A000000 		.4byte	.LFE0-.LFB0
- 676 00d9 01       		.uleb128 0x1
- 677 00da 9C       		.byte	0x9c
- 678 00db 44010000 		.4byte	0x144
- 679 00df 07       		.uleb128 0x7
- 680 00e0 6A000000 		.4byte	.LASF21
- 681 00e4 01       		.byte	0x1
- 682 00e5 15       		.byte	0x15
- 683 00e6 8C000000 		.4byte	0x8c
- 684 00ea 00000000 		.4byte	.LLST0
- 685 00ee 08       		.uleb128 0x8
- 686 00ef C2000000 		.4byte	.LASF23
- 687 00f3 01       		.byte	0x1
- 688 00f4 21       		.byte	0x21
- 689 00f5 8C000000 		.4byte	0x8c
- 690 00f9 01       		.uleb128 0x1
- 691 00fa 54       		.byte	0x54
- 692 00fb 09       		.uleb128 0x9
- 693 00fc 0A000000 		.4byte	.LVL2
- 694 0100 DD050000 		.4byte	0x5dd
- 695 0104 0E010000 		.4byte	0x10e
- 696 0108 0A       		.uleb128 0xa
- 697 0109 01       		.uleb128 0x1
- 698 010a 50       		.byte	0x50
- 699 010b 01       		.uleb128 0x1
- 700 010c 30       		.byte	0x30
- 701 010d 00       		.byte	0
- 702 010e 09       		.uleb128 0x9
- 703 010f 10000000 		.4byte	.LVL3
- 704 0113 E8050000 		.4byte	0x5e8
- 705 0117 22010000 		.4byte	0x122
- 706 011b 0A       		.uleb128 0xa
- 707 011c 01       		.uleb128 0x1
- 708 011d 50       		.byte	0x50
- 709 011e 02       		.uleb128 0x2
- 710 011f 74       		.byte	0x74
- 711 0120 00       		.sleb128 0
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc9h3aTU.s 			page 18
+ 653 00cc 17       		.byte	0x17
+ 654 00cd 8C000000 		.4byte	0x8c
+ 655 00d1 00000000 		.4byte	.LFB0
+ 656 00d5 2A000000 		.4byte	.LFE0-.LFB0
+ 657 00d9 01       		.uleb128 0x1
+ 658 00da 9C       		.byte	0x9c
+ 659 00db 44010000 		.4byte	0x144
+ 660 00df 07       		.uleb128 0x7
+ 661 00e0 6B000000 		.4byte	.LASF21
+ 662 00e4 01       		.byte	0x1
+ 663 00e5 17       		.byte	0x17
+ 664 00e6 8C000000 		.4byte	0x8c
+ 665 00ea 00000000 		.4byte	.LLST0
+ 666 00ee 08       		.uleb128 0x8
+ 667 00ef BB000000 		.4byte	.LASF23
+ 668 00f3 01       		.byte	0x1
+ 669 00f4 23       		.byte	0x23
+ 670 00f5 8C000000 		.4byte	0x8c
+ 671 00f9 01       		.uleb128 0x1
+ 672 00fa 54       		.byte	0x54
+ 673 00fb 09       		.uleb128 0x9
+ 674 00fc 0A000000 		.4byte	.LVL2
+ 675 0100 A0050000 		.4byte	0x5a0
+ 676 0104 0E010000 		.4byte	0x10e
+ 677 0108 0A       		.uleb128 0xa
+ 678 0109 01       		.uleb128 0x1
+ 679 010a 50       		.byte	0x50
+ 680 010b 01       		.uleb128 0x1
+ 681 010c 30       		.byte	0x30
+ 682 010d 00       		.byte	0
+ 683 010e 09       		.uleb128 0x9
+ 684 010f 10000000 		.4byte	.LVL3
+ 685 0113 AB050000 		.4byte	0x5ab
+ 686 0117 22010000 		.4byte	0x122
+ 687 011b 0A       		.uleb128 0xa
+ 688 011c 01       		.uleb128 0x1
+ 689 011d 50       		.byte	0x50
+ 690 011e 02       		.uleb128 0x2
+ 691 011f 74       		.byte	0x74
+ 692 0120 00       		.sleb128 0
+ 693 0121 00       		.byte	0
+ 694 0122 0B       		.uleb128 0xb
+ 695 0123 14000000 		.4byte	.LVL4
+ 696 0127 B6050000 		.4byte	0x5b6
+ 697 012b 0B       		.uleb128 0xb
+ 698 012c 1E000000 		.4byte	.LVL5
+ 699 0130 C1050000 		.4byte	0x5c1
+ 700 0134 0C       		.uleb128 0xc
+ 701 0135 26000000 		.4byte	.LVL7
+ 702 0139 A0050000 		.4byte	0x5a0
+ 703 013d 0A       		.uleb128 0xa
+ 704 013e 01       		.uleb128 0x1
+ 705 013f 50       		.byte	0x50
+ 706 0140 01       		.uleb128 0x1
+ 707 0141 31       		.byte	0x31
+ 708 0142 00       		.byte	0
+ 709 0143 00       		.byte	0
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccbKWCte.s 			page 18
 
 
- 712 0121 00       		.byte	0
- 713 0122 0B       		.uleb128 0xb
- 714 0123 14000000 		.4byte	.LVL4
- 715 0127 F3050000 		.4byte	0x5f3
- 716 012b 0B       		.uleb128 0xb
- 717 012c 1E000000 		.4byte	.LVL5
- 718 0130 FE050000 		.4byte	0x5fe
- 719 0134 0C       		.uleb128 0xc
- 720 0135 26000000 		.4byte	.LVL7
- 721 0139 DD050000 		.4byte	0x5dd
- 722 013d 0A       		.uleb128 0xa
- 723 013e 01       		.uleb128 0x1
- 724 013f 50       		.byte	0x50
- 725 0140 01       		.uleb128 0x1
- 726 0141 31       		.byte	0x31
- 727 0142 00       		.byte	0
- 728 0143 00       		.byte	0
- 729 0144 06       		.uleb128 0x6
- 730 0145 C7000000 		.4byte	.LASF20
- 731 0149 01       		.byte	0x1
- 732 014a 2E       		.byte	0x2e
- 733 014b 8C000000 		.4byte	0x8c
- 734 014f 00000000 		.4byte	.LFB1
- 735 0153 34000000 		.4byte	.LFE1-.LFB1
- 736 0157 01       		.uleb128 0x1
- 737 0158 9C       		.byte	0x9c
- 738 0159 DE010000 		.4byte	0x1de
- 739 015d 07       		.uleb128 0x7
- 740 015e B5000000 		.4byte	.LASF22
- 741 0162 01       		.byte	0x1
- 742 0163 2E       		.byte	0x2e
- 743 0164 8C000000 		.4byte	0x8c
- 744 0168 21000000 		.4byte	.LLST1
- 745 016c 08       		.uleb128 0x8
- 746 016d 0C020000 		.4byte	.LASF24
- 747 0171 01       		.byte	0x1
- 748 0172 3E       		.byte	0x3e
- 749 0173 8C000000 		.4byte	0x8c
- 750 0177 01       		.uleb128 0x1
- 751 0178 54       		.byte	0x54
- 752 0179 09       		.uleb128 0x9
- 753 017a 0A000000 		.4byte	.LVL10
- 754 017e DD050000 		.4byte	0x5dd
- 755 0182 8C010000 		.4byte	0x18c
- 756 0186 0A       		.uleb128 0xa
- 757 0187 01       		.uleb128 0x1
- 758 0188 50       		.byte	0x50
- 759 0189 01       		.uleb128 0x1
- 760 018a 30       		.byte	0x30
- 761 018b 00       		.byte	0
- 762 018c 09       		.uleb128 0x9
- 763 018d 10000000 		.4byte	.LVL11
- 764 0191 E8050000 		.4byte	0x5e8
- 765 0195 A0010000 		.4byte	0x1a0
- 766 0199 0A       		.uleb128 0xa
- 767 019a 01       		.uleb128 0x1
- 768 019b 50       		.byte	0x50
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc9h3aTU.s 			page 19
+ 710 0144 06       		.uleb128 0x6
+ 711 0145 C0000000 		.4byte	.LASF20
+ 712 0149 01       		.byte	0x1
+ 713 014a 30       		.byte	0x30
+ 714 014b 8C000000 		.4byte	0x8c
+ 715 014f 00000000 		.4byte	.LFB1
+ 716 0153 34000000 		.4byte	.LFE1-.LFB1
+ 717 0157 01       		.uleb128 0x1
+ 718 0158 9C       		.byte	0x9c
+ 719 0159 DE010000 		.4byte	0x1de
+ 720 015d 07       		.uleb128 0x7
+ 721 015e AE000000 		.4byte	.LASF22
+ 722 0162 01       		.byte	0x1
+ 723 0163 30       		.byte	0x30
+ 724 0164 8C000000 		.4byte	0x8c
+ 725 0168 21000000 		.4byte	.LLST1
+ 726 016c 08       		.uleb128 0x8
+ 727 016d 05020000 		.4byte	.LASF24
+ 728 0171 01       		.byte	0x1
+ 729 0172 40       		.byte	0x40
+ 730 0173 8C000000 		.4byte	0x8c
+ 731 0177 01       		.uleb128 0x1
+ 732 0178 54       		.byte	0x54
+ 733 0179 09       		.uleb128 0x9
+ 734 017a 0A000000 		.4byte	.LVL10
+ 735 017e A0050000 		.4byte	0x5a0
+ 736 0182 8C010000 		.4byte	0x18c
+ 737 0186 0A       		.uleb128 0xa
+ 738 0187 01       		.uleb128 0x1
+ 739 0188 50       		.byte	0x50
+ 740 0189 01       		.uleb128 0x1
+ 741 018a 30       		.byte	0x30
+ 742 018b 00       		.byte	0
+ 743 018c 09       		.uleb128 0x9
+ 744 018d 10000000 		.4byte	.LVL11
+ 745 0191 AB050000 		.4byte	0x5ab
+ 746 0195 A0010000 		.4byte	0x1a0
+ 747 0199 0A       		.uleb128 0xa
+ 748 019a 01       		.uleb128 0x1
+ 749 019b 50       		.byte	0x50
+ 750 019c 02       		.uleb128 0x2
+ 751 019d 74       		.byte	0x74
+ 752 019e 00       		.sleb128 0
+ 753 019f 00       		.byte	0
+ 754 01a0 09       		.uleb128 0x9
+ 755 01a1 16000000 		.4byte	.LVL12
+ 756 01a5 AB050000 		.4byte	0x5ab
+ 757 01a9 B3010000 		.4byte	0x1b3
+ 758 01ad 0A       		.uleb128 0xa
+ 759 01ae 01       		.uleb128 0x1
+ 760 01af 50       		.byte	0x50
+ 761 01b0 01       		.uleb128 0x1
+ 762 01b1 30       		.byte	0x30
+ 763 01b2 00       		.byte	0
+ 764 01b3 0B       		.uleb128 0xb
+ 765 01b4 1A000000 		.4byte	.LVL13
+ 766 01b8 B6050000 		.4byte	0x5b6
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccbKWCte.s 			page 19
 
 
- 769 019c 02       		.uleb128 0x2
- 770 019d 74       		.byte	0x74
- 771 019e 00       		.sleb128 0
- 772 019f 00       		.byte	0
- 773 01a0 09       		.uleb128 0x9
- 774 01a1 16000000 		.4byte	.LVL12
- 775 01a5 E8050000 		.4byte	0x5e8
- 776 01a9 B3010000 		.4byte	0x1b3
- 777 01ad 0A       		.uleb128 0xa
- 778 01ae 01       		.uleb128 0x1
- 779 01af 50       		.byte	0x50
- 780 01b0 01       		.uleb128 0x1
- 781 01b1 30       		.byte	0x30
- 782 01b2 00       		.byte	0
- 783 01b3 0B       		.uleb128 0xb
- 784 01b4 1A000000 		.4byte	.LVL13
- 785 01b8 F3050000 		.4byte	0x5f3
- 786 01bc 0B       		.uleb128 0xb
- 787 01bd 24000000 		.4byte	.LVL14
- 788 01c1 FE050000 		.4byte	0x5fe
- 789 01c5 0B       		.uleb128 0xb
- 790 01c6 28000000 		.4byte	.LVL15
- 791 01ca FE050000 		.4byte	0x5fe
- 792 01ce 0C       		.uleb128 0xc
- 793 01cf 30000000 		.4byte	.LVL17
- 794 01d3 DD050000 		.4byte	0x5dd
- 795 01d7 0A       		.uleb128 0xa
- 796 01d8 01       		.uleb128 0x1
- 797 01d9 50       		.byte	0x50
- 798 01da 01       		.uleb128 0x1
- 799 01db 31       		.byte	0x31
- 800 01dc 00       		.byte	0
- 801 01dd 00       		.byte	0
- 802 01de 0D       		.uleb128 0xd
- 803 01df 6F000000 		.4byte	.LASF28
- 804 01e3 01       		.byte	0x1
- 805 01e4 4B       		.byte	0x4b
- 806 01e5 00000000 		.4byte	.LFB2
- 807 01e9 02000000 		.4byte	.LFE2-.LFB2
- 808 01ed 01       		.uleb128 0x1
- 809 01ee 9C       		.byte	0x9c
- 810 01ef 1B020000 		.4byte	0x21b
- 811 01f3 0E       		.uleb128 0xe
- 812 01f4 B0030000 		.4byte	.LASF25
- 813 01f8 01       		.byte	0x1
- 814 01f9 4B       		.byte	0x4b
- 815 01fa 1B020000 		.4byte	0x21b
- 816 01fe 01       		.uleb128 0x1
- 817 01ff 50       		.byte	0x50
- 818 0200 0E       		.uleb128 0xe
- 819 0201 90020000 		.4byte	.LASF26
- 820 0205 01       		.byte	0x1
- 821 0206 4B       		.byte	0x4b
- 822 0207 1B020000 		.4byte	0x21b
- 823 020b 01       		.uleb128 0x1
- 824 020c 51       		.byte	0x51
- 825 020d 0E       		.uleb128 0xe
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc9h3aTU.s 			page 20
+ 767 01bc 0B       		.uleb128 0xb
+ 768 01bd 24000000 		.4byte	.LVL14
+ 769 01c1 C1050000 		.4byte	0x5c1
+ 770 01c5 0B       		.uleb128 0xb
+ 771 01c6 28000000 		.4byte	.LVL15
+ 772 01ca C1050000 		.4byte	0x5c1
+ 773 01ce 0C       		.uleb128 0xc
+ 774 01cf 30000000 		.4byte	.LVL17
+ 775 01d3 A0050000 		.4byte	0x5a0
+ 776 01d7 0A       		.uleb128 0xa
+ 777 01d8 01       		.uleb128 0x1
+ 778 01d9 50       		.byte	0x50
+ 779 01da 01       		.uleb128 0x1
+ 780 01db 31       		.byte	0x31
+ 781 01dc 00       		.byte	0
+ 782 01dd 00       		.byte	0
+ 783 01de 0D       		.uleb128 0xd
+ 784 01df A5030000 		.4byte	.LASF34
+ 785 01e3 01       		.byte	0x1
+ 786 01e4 56       		.byte	0x56
+ 787 01e5 00000000 		.4byte	.LFB2
+ 788 01e9 B6000000 		.4byte	.LFE2-.LFB2
+ 789 01ed 01       		.uleb128 0x1
+ 790 01ee 9C       		.byte	0x9c
+ 791 01ef 28030000 		.4byte	0x328
+ 792 01f3 07       		.uleb128 0x7
+ 793 01f4 9E030000 		.4byte	.LASF25
+ 794 01f8 01       		.byte	0x1
+ 795 01f9 56       		.byte	0x56
+ 796 01fa 28030000 		.4byte	0x328
+ 797 01fe 42000000 		.4byte	.LLST2
+ 798 0202 07       		.uleb128 0x7
+ 799 0203 EE020000 		.4byte	.LASF26
+ 800 0207 01       		.byte	0x1
+ 801 0208 56       		.byte	0x56
+ 802 0209 8C000000 		.4byte	0x8c
+ 803 020d 6E000000 		.4byte	.LLST3
+ 804 0211 07       		.uleb128 0x7
+ 805 0212 E7020000 		.4byte	.LASF27
+ 806 0216 01       		.byte	0x1
+ 807 0217 56       		.byte	0x56
+ 808 0218 28030000 		.4byte	0x328
+ 809 021c 8F000000 		.4byte	.LLST4
+ 810 0220 07       		.uleb128 0x7
+ 811 0221 63000000 		.4byte	.LASF28
+ 812 0225 01       		.byte	0x1
+ 813 0226 56       		.byte	0x56
+ 814 0227 8C000000 		.4byte	0x8c
+ 815 022b AD000000 		.4byte	.LLST5
+ 816 022f 0E       		.uleb128 0xe
+ 817 0230 4A000000 		.4byte	.LASF29
+ 818 0234 01       		.byte	0x1
+ 819 0235 5B       		.byte	0x5b
+ 820 0236 81000000 		.4byte	0x81
+ 821 023a CE000000 		.4byte	.LLST6
+ 822 023e 0E       		.uleb128 0xe
+ 823 023f 62030000 		.4byte	.LASF30
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccbKWCte.s 			page 20
 
 
- 826 020e 50000000 		.4byte	.LASF27
- 827 0212 01       		.byte	0x1
- 828 0213 4B       		.byte	0x4b
- 829 0214 8C000000 		.4byte	0x8c
- 830 0218 01       		.uleb128 0x1
- 831 0219 52       		.byte	0x52
- 832 021a 00       		.byte	0
- 833 021b 0F       		.uleb128 0xf
- 834 021c 04       		.byte	0x4
- 835 021d 8C000000 		.4byte	0x8c
- 836 0221 0D       		.uleb128 0xd
- 837 0222 B7030000 		.4byte	.LASF29
- 838 0226 01       		.byte	0x1
- 839 0227 54       		.byte	0x54
- 840 0228 00000000 		.4byte	.LFB3
- 841 022c B6000000 		.4byte	.LFE3-.LFB3
- 842 0230 01       		.uleb128 0x1
- 843 0231 9C       		.byte	0x9c
- 844 0232 6B030000 		.4byte	0x36b
- 845 0236 07       		.uleb128 0x7
- 846 0237 B0030000 		.4byte	.LASF25
- 847 023b 01       		.byte	0x1
- 848 023c 54       		.byte	0x54
- 849 023d 1B020000 		.4byte	0x21b
- 850 0241 42000000 		.4byte	.LLST2
- 851 0245 07       		.uleb128 0x7
- 852 0246 97020000 		.4byte	.LASF30
- 853 024a 01       		.byte	0x1
- 854 024b 54       		.byte	0x54
- 855 024c 8C000000 		.4byte	0x8c
- 856 0250 6E000000 		.4byte	.LLST3
- 857 0254 07       		.uleb128 0x7
- 858 0255 90020000 		.4byte	.LASF26
- 859 0259 01       		.byte	0x1
- 860 025a 54       		.byte	0x54
- 861 025b 1B020000 		.4byte	0x21b
- 862 025f 8F000000 		.4byte	.LLST4
- 863 0263 07       		.uleb128 0x7
- 864 0264 6D020000 		.4byte	.LASF31
- 865 0268 01       		.byte	0x1
- 866 0269 54       		.byte	0x54
- 867 026a 8C000000 		.4byte	0x8c
- 868 026e AD000000 		.4byte	.LLST5
- 869 0272 10       		.uleb128 0x10
- 870 0273 4A000000 		.4byte	.LASF32
- 871 0277 01       		.byte	0x1
- 872 0278 59       		.byte	0x59
- 873 0279 81000000 		.4byte	0x81
- 874 027d CE000000 		.4byte	.LLST6
- 875 0281 10       		.uleb128 0x10
- 876 0282 74030000 		.4byte	.LASF33
- 877 0286 01       		.byte	0x1
- 878 0287 59       		.byte	0x59
- 879 0288 81000000 		.4byte	0x81
- 880 028c 02010000 		.4byte	.LLST7
- 881 0290 08       		.uleb128 0x8
- 882 0291 75020000 		.4byte	.LASF34
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc9h3aTU.s 			page 21
+ 824 0243 01       		.byte	0x1
+ 825 0244 5B       		.byte	0x5b
+ 826 0245 81000000 		.4byte	0x81
+ 827 0249 02010000 		.4byte	.LLST7
+ 828 024d 08       		.uleb128 0x8
+ 829 024e CC020000 		.4byte	.LASF31
+ 830 0252 01       		.byte	0x1
+ 831 0253 70       		.byte	0x70
+ 832 0254 2E030000 		.4byte	0x32e
+ 833 0258 02       		.uleb128 0x2
+ 834 0259 91       		.byte	0x91
+ 835 025a 58       		.sleb128 -40
+ 836 025b 0F       		.uleb128 0xf
+ 837 025c 7A000000 		.4byte	.LBB2
+ 838 0260 12000000 		.4byte	.LBE2-.LBB2
+ 839 0264 7F020000 		.4byte	0x27f
+ 840 0268 10       		.uleb128 0x10
+ 841 0269 6A00     		.ascii	"j\000"
+ 842 026b 01       		.byte	0x1
+ 843 026c 7F       		.byte	0x7f
+ 844 026d 8C000000 		.4byte	0x8c
+ 845 0271 4E010000 		.4byte	.LLST8
+ 846 0275 0B       		.uleb128 0xb
+ 847 0276 82000000 		.4byte	.LVL37
+ 848 027a C1050000 		.4byte	0x5c1
+ 849 027e 00       		.byte	0
+ 850 027f 09       		.uleb128 0x9
+ 851 0280 14000000 		.4byte	.LVL20
+ 852 0284 A0050000 		.4byte	0x5a0
+ 853 0288 92020000 		.4byte	0x292
+ 854 028c 0A       		.uleb128 0xa
+ 855 028d 01       		.uleb128 0x1
+ 856 028e 50       		.byte	0x50
+ 857 028f 01       		.uleb128 0x1
+ 858 0290 30       		.byte	0x30
+ 859 0291 00       		.byte	0
+ 860 0292 09       		.uleb128 0x9
+ 861 0293 2C000000 		.4byte	.LVL23
+ 862 0297 CC050000 		.4byte	0x5cc
+ 863 029b BB020000 		.4byte	0x2bb
+ 864 029f 0A       		.uleb128 0xa
+ 865 02a0 01       		.uleb128 0x1
+ 866 02a1 50       		.byte	0x50
+ 867 02a2 07       		.uleb128 0x7
+ 868 02a3 75       		.byte	0x75
+ 869 02a4 00       		.sleb128 0
+ 870 02a5 33       		.byte	0x33
+ 871 02a6 24       		.byte	0x24
+ 872 02a7 76       		.byte	0x76
+ 873 02a8 00       		.sleb128 0
+ 874 02a9 22       		.byte	0x22
+ 875 02aa 0A       		.uleb128 0xa
+ 876 02ab 01       		.uleb128 0x1
+ 877 02ac 51       		.byte	0x51
+ 878 02ad 0C       		.uleb128 0xc
+ 879 02ae 38       		.byte	0x38
+ 880 02af 74       		.byte	0x74
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccbKWCte.s 			page 21
 
 
- 883 0295 01       		.byte	0x1
- 884 0296 6E       		.byte	0x6e
- 885 0297 6B030000 		.4byte	0x36b
- 886 029b 02       		.uleb128 0x2
- 887 029c 91       		.byte	0x91
- 888 029d 58       		.sleb128 -40
- 889 029e 11       		.uleb128 0x11
- 890 029f 7A000000 		.4byte	.LBB2
- 891 02a3 12000000 		.4byte	.LBE2-.LBB2
- 892 02a7 C2020000 		.4byte	0x2c2
- 893 02ab 12       		.uleb128 0x12
- 894 02ac 6A00     		.ascii	"j\000"
- 895 02ae 01       		.byte	0x1
- 896 02af 7D       		.byte	0x7d
- 897 02b0 8C000000 		.4byte	0x8c
- 898 02b4 4E010000 		.4byte	.LLST8
- 899 02b8 0B       		.uleb128 0xb
- 900 02b9 82000000 		.4byte	.LVL38
- 901 02bd FE050000 		.4byte	0x5fe
- 902 02c1 00       		.byte	0
- 903 02c2 09       		.uleb128 0x9
- 904 02c3 14000000 		.4byte	.LVL21
- 905 02c7 DD050000 		.4byte	0x5dd
- 906 02cb D5020000 		.4byte	0x2d5
- 907 02cf 0A       		.uleb128 0xa
- 908 02d0 01       		.uleb128 0x1
- 909 02d1 50       		.byte	0x50
- 910 02d2 01       		.uleb128 0x1
- 911 02d3 30       		.byte	0x30
- 912 02d4 00       		.byte	0
- 913 02d5 09       		.uleb128 0x9
- 914 02d6 2C000000 		.4byte	.LVL24
- 915 02da 09060000 		.4byte	0x609
- 916 02de FE020000 		.4byte	0x2fe
- 917 02e2 0A       		.uleb128 0xa
- 918 02e3 01       		.uleb128 0x1
- 919 02e4 50       		.byte	0x50
- 920 02e5 07       		.uleb128 0x7
- 921 02e6 75       		.byte	0x75
- 922 02e7 00       		.sleb128 0
- 923 02e8 33       		.byte	0x33
- 924 02e9 24       		.byte	0x24
- 925 02ea 76       		.byte	0x76
- 926 02eb 00       		.sleb128 0
- 927 02ec 22       		.byte	0x22
- 928 02ed 0A       		.uleb128 0xa
- 929 02ee 01       		.uleb128 0x1
- 930 02ef 51       		.byte	0x51
- 931 02f0 0C       		.uleb128 0xc
- 932 02f1 38       		.byte	0x38
- 933 02f2 74       		.byte	0x74
- 934 02f3 00       		.sleb128 0
- 935 02f4 74       		.byte	0x74
- 936 02f5 00       		.sleb128 0
- 937 02f6 38       		.byte	0x38
- 938 02f7 2A       		.byte	0x2a
- 939 02f8 28       		.byte	0x28
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc9h3aTU.s 			page 22
+ 881 02b0 00       		.sleb128 0
+ 882 02b1 74       		.byte	0x74
+ 883 02b2 00       		.sleb128 0
+ 884 02b3 38       		.byte	0x38
+ 885 02b4 2A       		.byte	0x2a
+ 886 02b5 28       		.byte	0x28
+ 887 02b6 0100     		.2byte	0x1
+ 888 02b8 16       		.byte	0x16
+ 889 02b9 13       		.byte	0x13
+ 890 02ba 00       		.byte	0
+ 891 02bb 0B       		.uleb128 0xb
+ 892 02bc 30000000 		.4byte	.LVL24
+ 893 02c0 B6050000 		.4byte	0x5b6
+ 894 02c4 0B       		.uleb128 0xb
+ 895 02c5 46000000 		.4byte	.LVL29
+ 896 02c9 D7050000 		.4byte	0x5d7
+ 897 02cd 0B       		.uleb128 0xb
+ 898 02ce 4A000000 		.4byte	.LVL30
+ 899 02d2 E2050000 		.4byte	0x5e2
+ 900 02d6 09       		.uleb128 0x9
+ 901 02d7 6C000000 		.4byte	.LVL34
+ 902 02db CC050000 		.4byte	0x5cc
+ 903 02df F0020000 		.4byte	0x2f0
+ 904 02e3 0A       		.uleb128 0xa
+ 905 02e4 01       		.uleb128 0x1
+ 906 02e5 50       		.byte	0x50
+ 907 02e6 02       		.uleb128 0x2
+ 908 02e7 7D       		.byte	0x7d
+ 909 02e8 00       		.sleb128 0
+ 910 02e9 0A       		.uleb128 0xa
+ 911 02ea 01       		.uleb128 0x1
+ 912 02eb 51       		.byte	0x51
+ 913 02ec 02       		.uleb128 0x2
+ 914 02ed 79       		.byte	0x79
+ 915 02ee 00       		.sleb128 0
+ 916 02ef 00       		.byte	0
+ 917 02f0 0B       		.uleb128 0xb
+ 918 02f1 70000000 		.4byte	.LVL35
+ 919 02f5 B6050000 		.4byte	0x5b6
+ 920 02f9 09       		.uleb128 0x9
+ 921 02fa A4000000 		.4byte	.LVL44
+ 922 02fe A0050000 		.4byte	0x5a0
+ 923 0302 0C030000 		.4byte	0x30c
+ 924 0306 0A       		.uleb128 0xa
+ 925 0307 01       		.uleb128 0x1
+ 926 0308 50       		.byte	0x50
+ 927 0309 01       		.uleb128 0x1
+ 928 030a 31       		.byte	0x31
+ 929 030b 00       		.byte	0
+ 930 030c 0B       		.uleb128 0xb
+ 931 030d A8000000 		.4byte	.LVL45
+ 932 0311 D7050000 		.4byte	0x5d7
+ 933 0315 0B       		.uleb128 0xb
+ 934 0316 AC000000 		.4byte	.LVL46
+ 935 031a E2050000 		.4byte	0x5e2
+ 936 031e 0B       		.uleb128 0xb
+ 937 031f B0000000 		.4byte	.LVL47
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccbKWCte.s 			page 22
 
 
- 940 02f9 0100     		.2byte	0x1
- 941 02fb 16       		.byte	0x16
- 942 02fc 13       		.byte	0x13
- 943 02fd 00       		.byte	0
- 944 02fe 0B       		.uleb128 0xb
- 945 02ff 30000000 		.4byte	.LVL25
- 946 0303 F3050000 		.4byte	0x5f3
- 947 0307 0B       		.uleb128 0xb
- 948 0308 46000000 		.4byte	.LVL30
- 949 030c 14060000 		.4byte	0x614
- 950 0310 0B       		.uleb128 0xb
- 951 0311 4A000000 		.4byte	.LVL31
- 952 0315 1F060000 		.4byte	0x61f
- 953 0319 09       		.uleb128 0x9
- 954 031a 6C000000 		.4byte	.LVL35
- 955 031e 09060000 		.4byte	0x609
- 956 0322 33030000 		.4byte	0x333
- 957 0326 0A       		.uleb128 0xa
- 958 0327 01       		.uleb128 0x1
- 959 0328 50       		.byte	0x50
- 960 0329 02       		.uleb128 0x2
- 961 032a 7D       		.byte	0x7d
- 962 032b 00       		.sleb128 0
- 963 032c 0A       		.uleb128 0xa
- 964 032d 01       		.uleb128 0x1
- 965 032e 51       		.byte	0x51
- 966 032f 02       		.uleb128 0x2
- 967 0330 79       		.byte	0x79
- 968 0331 00       		.sleb128 0
- 969 0332 00       		.byte	0
- 970 0333 0B       		.uleb128 0xb
- 971 0334 70000000 		.4byte	.LVL36
- 972 0338 F3050000 		.4byte	0x5f3
- 973 033c 09       		.uleb128 0x9
- 974 033d A4000000 		.4byte	.LVL45
- 975 0341 DD050000 		.4byte	0x5dd
- 976 0345 4F030000 		.4byte	0x34f
- 977 0349 0A       		.uleb128 0xa
- 978 034a 01       		.uleb128 0x1
- 979 034b 50       		.byte	0x50
- 980 034c 01       		.uleb128 0x1
- 981 034d 31       		.byte	0x31
- 982 034e 00       		.byte	0
- 983 034f 0B       		.uleb128 0xb
- 984 0350 A8000000 		.4byte	.LVL46
- 985 0354 14060000 		.4byte	0x614
- 986 0358 0B       		.uleb128 0xb
- 987 0359 AC000000 		.4byte	.LVL47
- 988 035d 1F060000 		.4byte	0x61f
- 989 0361 0B       		.uleb128 0xb
- 990 0362 B0000000 		.4byte	.LVL48
- 991 0366 2A060000 		.4byte	0x62a
- 992 036a 00       		.byte	0
- 993 036b 13       		.uleb128 0x13
- 994 036c 8C000000 		.4byte	0x8c
- 995 0370 7B030000 		.4byte	0x37b
- 996 0374 14       		.uleb128 0x14
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc9h3aTU.s 			page 23
+ 938 0323 ED050000 		.4byte	0x5ed
+ 939 0327 00       		.byte	0
+ 940 0328 11       		.uleb128 0x11
+ 941 0329 04       		.byte	0x4
+ 942 032a 8C000000 		.4byte	0x8c
+ 943 032e 12       		.uleb128 0x12
+ 944 032f 8C000000 		.4byte	0x8c
+ 945 0333 3E030000 		.4byte	0x33e
+ 946 0337 13       		.uleb128 0x13
+ 947 0338 BF000000 		.4byte	0xbf
+ 948 033c 07       		.byte	0x7
+ 949 033d 00       		.byte	0
+ 950 033e 06       		.uleb128 0x6
+ 951 033f 2E000000 		.4byte	.LASF32
+ 952 0343 01       		.byte	0x1
+ 953 0344 94       		.byte	0x94
+ 954 0345 8C000000 		.4byte	0x8c
+ 955 0349 00000000 		.4byte	.LFB3
+ 956 034d 2A000000 		.4byte	.LFE3-.LFB3
+ 957 0351 01       		.uleb128 0x1
+ 958 0352 9C       		.byte	0x9c
+ 959 0353 BC030000 		.4byte	0x3bc
+ 960 0357 07       		.uleb128 0x7
+ 961 0358 6B000000 		.4byte	.LASF21
+ 962 035c 01       		.byte	0x1
+ 963 035d 94       		.byte	0x94
+ 964 035e 8C000000 		.4byte	0x8c
+ 965 0362 6C010000 		.4byte	.LLST9
+ 966 0366 08       		.uleb128 0x8
+ 967 0367 BB000000 		.4byte	.LASF23
+ 968 036b 01       		.byte	0x1
+ 969 036c A0       		.byte	0xa0
+ 970 036d 8C000000 		.4byte	0x8c
+ 971 0371 01       		.uleb128 0x1
+ 972 0372 54       		.byte	0x54
+ 973 0373 09       		.uleb128 0x9
+ 974 0374 0A000000 		.4byte	.LVL50
+ 975 0378 F8050000 		.4byte	0x5f8
+ 976 037c 86030000 		.4byte	0x386
+ 977 0380 0A       		.uleb128 0xa
+ 978 0381 01       		.uleb128 0x1
+ 979 0382 50       		.byte	0x50
+ 980 0383 01       		.uleb128 0x1
+ 981 0384 30       		.byte	0x30
+ 982 0385 00       		.byte	0
+ 983 0386 09       		.uleb128 0x9
+ 984 0387 10000000 		.4byte	.LVL51
+ 985 038b 03060000 		.4byte	0x603
+ 986 038f 9A030000 		.4byte	0x39a
+ 987 0393 0A       		.uleb128 0xa
+ 988 0394 01       		.uleb128 0x1
+ 989 0395 50       		.byte	0x50
+ 990 0396 02       		.uleb128 0x2
+ 991 0397 74       		.byte	0x74
+ 992 0398 00       		.sleb128 0
+ 993 0399 00       		.byte	0
+ 994 039a 0B       		.uleb128 0xb
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccbKWCte.s 			page 23
 
 
- 997 0375 BF000000 		.4byte	0xbf
- 998 0379 07       		.byte	0x7
- 999 037a 00       		.byte	0
- 1000 037b 06       		.uleb128 0x6
- 1001 037c 2E000000 		.4byte	.LASF35
- 1002 0380 01       		.byte	0x1
- 1003 0381 92       		.byte	0x92
- 1004 0382 8C000000 		.4byte	0x8c
- 1005 0386 00000000 		.4byte	.LFB4
- 1006 038a 2A000000 		.4byte	.LFE4-.LFB4
- 1007 038e 01       		.uleb128 0x1
- 1008 038f 9C       		.byte	0x9c
- 1009 0390 F9030000 		.4byte	0x3f9
- 1010 0394 07       		.uleb128 0x7
- 1011 0395 6A000000 		.4byte	.LASF21
- 1012 0399 01       		.byte	0x1
- 1013 039a 92       		.byte	0x92
- 1014 039b 8C000000 		.4byte	0x8c
- 1015 039f 6C010000 		.4byte	.LLST9
- 1016 03a3 08       		.uleb128 0x8
- 1017 03a4 C2000000 		.4byte	.LASF23
- 1018 03a8 01       		.byte	0x1
- 1019 03a9 9E       		.byte	0x9e
- 1020 03aa 8C000000 		.4byte	0x8c
- 1021 03ae 01       		.uleb128 0x1
- 1022 03af 54       		.byte	0x54
- 1023 03b0 09       		.uleb128 0x9
- 1024 03b1 0A000000 		.4byte	.LVL51
- 1025 03b5 35060000 		.4byte	0x635
- 1026 03b9 C3030000 		.4byte	0x3c3
- 1027 03bd 0A       		.uleb128 0xa
- 1028 03be 01       		.uleb128 0x1
- 1029 03bf 50       		.byte	0x50
- 1030 03c0 01       		.uleb128 0x1
- 1031 03c1 30       		.byte	0x30
- 1032 03c2 00       		.byte	0
- 1033 03c3 09       		.uleb128 0x9
- 1034 03c4 10000000 		.4byte	.LVL52
- 1035 03c8 40060000 		.4byte	0x640
- 1036 03cc D7030000 		.4byte	0x3d7
- 1037 03d0 0A       		.uleb128 0xa
- 1038 03d1 01       		.uleb128 0x1
- 1039 03d2 50       		.byte	0x50
- 1040 03d3 02       		.uleb128 0x2
- 1041 03d4 74       		.byte	0x74
- 1042 03d5 00       		.sleb128 0
- 1043 03d6 00       		.byte	0
- 1044 03d7 0B       		.uleb128 0xb
- 1045 03d8 14000000 		.4byte	.LVL53
- 1046 03dc 4B060000 		.4byte	0x64b
- 1047 03e0 0B       		.uleb128 0xb
- 1048 03e1 1E000000 		.4byte	.LVL54
- 1049 03e5 56060000 		.4byte	0x656
- 1050 03e9 0C       		.uleb128 0xc
- 1051 03ea 26000000 		.4byte	.LVL56
- 1052 03ee 35060000 		.4byte	0x635
- 1053 03f2 0A       		.uleb128 0xa
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc9h3aTU.s 			page 24
+ 995 039b 14000000 		.4byte	.LVL52
+ 996 039f 0E060000 		.4byte	0x60e
+ 997 03a3 0B       		.uleb128 0xb
+ 998 03a4 1E000000 		.4byte	.LVL53
+ 999 03a8 19060000 		.4byte	0x619
+ 1000 03ac 0C       		.uleb128 0xc
+ 1001 03ad 26000000 		.4byte	.LVL55
+ 1002 03b1 F8050000 		.4byte	0x5f8
+ 1003 03b5 0A       		.uleb128 0xa
+ 1004 03b6 01       		.uleb128 0x1
+ 1005 03b7 50       		.byte	0x50
+ 1006 03b8 01       		.uleb128 0x1
+ 1007 03b9 31       		.byte	0x31
+ 1008 03ba 00       		.byte	0
+ 1009 03bb 00       		.byte	0
+ 1010 03bc 06       		.uleb128 0x6
+ 1011 03bd 00000000 		.4byte	.LASF33
+ 1012 03c1 01       		.byte	0x1
+ 1013 03c2 A9       		.byte	0xa9
+ 1014 03c3 8C000000 		.4byte	0x8c
+ 1015 03c7 00000000 		.4byte	.LFB4
+ 1016 03cb 34000000 		.4byte	.LFE4-.LFB4
+ 1017 03cf 01       		.uleb128 0x1
+ 1018 03d0 9C       		.byte	0x9c
+ 1019 03d1 56040000 		.4byte	0x456
+ 1020 03d5 07       		.uleb128 0x7
+ 1021 03d6 AE000000 		.4byte	.LASF22
+ 1022 03da 01       		.byte	0x1
+ 1023 03db A9       		.byte	0xa9
+ 1024 03dc 8C000000 		.4byte	0x8c
+ 1025 03e0 8D010000 		.4byte	.LLST10
+ 1026 03e4 08       		.uleb128 0x8
+ 1027 03e5 05020000 		.4byte	.LASF24
+ 1028 03e9 01       		.byte	0x1
+ 1029 03ea B9       		.byte	0xb9
+ 1030 03eb 8C000000 		.4byte	0x8c
+ 1031 03ef 01       		.uleb128 0x1
+ 1032 03f0 54       		.byte	0x54
+ 1033 03f1 09       		.uleb128 0x9
+ 1034 03f2 0A000000 		.4byte	.LVL58
+ 1035 03f6 F8050000 		.4byte	0x5f8
+ 1036 03fa 04040000 		.4byte	0x404
+ 1037 03fe 0A       		.uleb128 0xa
+ 1038 03ff 01       		.uleb128 0x1
+ 1039 0400 50       		.byte	0x50
+ 1040 0401 01       		.uleb128 0x1
+ 1041 0402 30       		.byte	0x30
+ 1042 0403 00       		.byte	0
+ 1043 0404 09       		.uleb128 0x9
+ 1044 0405 10000000 		.4byte	.LVL59
+ 1045 0409 03060000 		.4byte	0x603
+ 1046 040d 18040000 		.4byte	0x418
+ 1047 0411 0A       		.uleb128 0xa
+ 1048 0412 01       		.uleb128 0x1
+ 1049 0413 50       		.byte	0x50
+ 1050 0414 02       		.uleb128 0x2
+ 1051 0415 74       		.byte	0x74
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccbKWCte.s 			page 24
 
 
- 1054 03f3 01       		.uleb128 0x1
- 1055 03f4 50       		.byte	0x50
- 1056 03f5 01       		.uleb128 0x1
- 1057 03f6 31       		.byte	0x31
- 1058 03f7 00       		.byte	0
- 1059 03f8 00       		.byte	0
- 1060 03f9 06       		.uleb128 0x6
- 1061 03fa 00000000 		.4byte	.LASF36
- 1062 03fe 01       		.byte	0x1
- 1063 03ff A7       		.byte	0xa7
- 1064 0400 8C000000 		.4byte	0x8c
- 1065 0404 00000000 		.4byte	.LFB5
- 1066 0408 34000000 		.4byte	.LFE5-.LFB5
- 1067 040c 01       		.uleb128 0x1
- 1068 040d 9C       		.byte	0x9c
- 1069 040e 93040000 		.4byte	0x493
- 1070 0412 07       		.uleb128 0x7
- 1071 0413 B5000000 		.4byte	.LASF22
- 1072 0417 01       		.byte	0x1
- 1073 0418 A7       		.byte	0xa7
- 1074 0419 8C000000 		.4byte	0x8c
- 1075 041d 8D010000 		.4byte	.LLST10
- 1076 0421 08       		.uleb128 0x8
- 1077 0422 0C020000 		.4byte	.LASF24
- 1078 0426 01       		.byte	0x1
- 1079 0427 B7       		.byte	0xb7
- 1080 0428 8C000000 		.4byte	0x8c
- 1081 042c 01       		.uleb128 0x1
- 1082 042d 54       		.byte	0x54
- 1083 042e 09       		.uleb128 0x9
- 1084 042f 0A000000 		.4byte	.LVL59
- 1085 0433 35060000 		.4byte	0x635
- 1086 0437 41040000 		.4byte	0x441
- 1087 043b 0A       		.uleb128 0xa
- 1088 043c 01       		.uleb128 0x1
- 1089 043d 50       		.byte	0x50
- 1090 043e 01       		.uleb128 0x1
- 1091 043f 30       		.byte	0x30
- 1092 0440 00       		.byte	0
- 1093 0441 09       		.uleb128 0x9
- 1094 0442 10000000 		.4byte	.LVL60
- 1095 0446 40060000 		.4byte	0x640
- 1096 044a 55040000 		.4byte	0x455
- 1097 044e 0A       		.uleb128 0xa
- 1098 044f 01       		.uleb128 0x1
- 1099 0450 50       		.byte	0x50
- 1100 0451 02       		.uleb128 0x2
- 1101 0452 74       		.byte	0x74
- 1102 0453 00       		.sleb128 0
- 1103 0454 00       		.byte	0
- 1104 0455 09       		.uleb128 0x9
- 1105 0456 16000000 		.4byte	.LVL61
- 1106 045a 40060000 		.4byte	0x640
- 1107 045e 68040000 		.4byte	0x468
- 1108 0462 0A       		.uleb128 0xa
- 1109 0463 01       		.uleb128 0x1
- 1110 0464 50       		.byte	0x50
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc9h3aTU.s 			page 25
+ 1052 0416 00       		.sleb128 0
+ 1053 0417 00       		.byte	0
+ 1054 0418 09       		.uleb128 0x9
+ 1055 0419 16000000 		.4byte	.LVL60
+ 1056 041d 03060000 		.4byte	0x603
+ 1057 0421 2B040000 		.4byte	0x42b
+ 1058 0425 0A       		.uleb128 0xa
+ 1059 0426 01       		.uleb128 0x1
+ 1060 0427 50       		.byte	0x50
+ 1061 0428 01       		.uleb128 0x1
+ 1062 0429 30       		.byte	0x30
+ 1063 042a 00       		.byte	0
+ 1064 042b 0B       		.uleb128 0xb
+ 1065 042c 1A000000 		.4byte	.LVL61
+ 1066 0430 0E060000 		.4byte	0x60e
+ 1067 0434 0B       		.uleb128 0xb
+ 1068 0435 24000000 		.4byte	.LVL62
+ 1069 0439 19060000 		.4byte	0x619
+ 1070 043d 0B       		.uleb128 0xb
+ 1071 043e 28000000 		.4byte	.LVL63
+ 1072 0442 19060000 		.4byte	0x619
+ 1073 0446 0C       		.uleb128 0xc
+ 1074 0447 30000000 		.4byte	.LVL65
+ 1075 044b F8050000 		.4byte	0x5f8
+ 1076 044f 0A       		.uleb128 0xa
+ 1077 0450 01       		.uleb128 0x1
+ 1078 0451 50       		.byte	0x50
+ 1079 0452 01       		.uleb128 0x1
+ 1080 0453 31       		.byte	0x31
+ 1081 0454 00       		.byte	0
+ 1082 0455 00       		.byte	0
+ 1083 0456 0D       		.uleb128 0xd
+ 1084 0457 BC030000 		.4byte	.LASF35
+ 1085 045b 01       		.byte	0x1
+ 1086 045c C2       		.byte	0xc2
+ 1087 045d 00000000 		.4byte	.LFB5
+ 1088 0461 B6000000 		.4byte	.LFE5-.LFB5
+ 1089 0465 01       		.uleb128 0x1
+ 1090 0466 9C       		.byte	0x9c
+ 1091 0467 A0050000 		.4byte	0x5a0
+ 1092 046b 07       		.uleb128 0x7
+ 1093 046c 9E030000 		.4byte	.LASF25
+ 1094 0470 01       		.byte	0x1
+ 1095 0471 C2       		.byte	0xc2
+ 1096 0472 28030000 		.4byte	0x328
+ 1097 0476 AE010000 		.4byte	.LLST11
+ 1098 047a 07       		.uleb128 0x7
+ 1099 047b EE020000 		.4byte	.LASF26
+ 1100 047f 01       		.byte	0x1
+ 1101 0480 C2       		.byte	0xc2
+ 1102 0481 8C000000 		.4byte	0x8c
+ 1103 0485 DA010000 		.4byte	.LLST12
+ 1104 0489 07       		.uleb128 0x7
+ 1105 048a E7020000 		.4byte	.LASF27
+ 1106 048e 01       		.byte	0x1
+ 1107 048f C2       		.byte	0xc2
+ 1108 0490 28030000 		.4byte	0x328
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccbKWCte.s 			page 25
 
 
- 1111 0465 01       		.uleb128 0x1
- 1112 0466 30       		.byte	0x30
- 1113 0467 00       		.byte	0
- 1114 0468 0B       		.uleb128 0xb
- 1115 0469 1A000000 		.4byte	.LVL62
- 1116 046d 4B060000 		.4byte	0x64b
- 1117 0471 0B       		.uleb128 0xb
- 1118 0472 24000000 		.4byte	.LVL63
- 1119 0476 56060000 		.4byte	0x656
- 1120 047a 0B       		.uleb128 0xb
- 1121 047b 28000000 		.4byte	.LVL64
- 1122 047f 56060000 		.4byte	0x656
- 1123 0483 0C       		.uleb128 0xc
- 1124 0484 30000000 		.4byte	.LVL66
- 1125 0488 35060000 		.4byte	0x635
- 1126 048c 0A       		.uleb128 0xa
- 1127 048d 01       		.uleb128 0x1
- 1128 048e 50       		.byte	0x50
- 1129 048f 01       		.uleb128 0x1
- 1130 0490 31       		.byte	0x31
- 1131 0491 00       		.byte	0
- 1132 0492 00       		.byte	0
- 1133 0493 0D       		.uleb128 0xd
- 1134 0494 CE030000 		.4byte	.LASF37
- 1135 0498 01       		.byte	0x1
- 1136 0499 C0       		.byte	0xc0
- 1137 049a 00000000 		.4byte	.LFB6
- 1138 049e B6000000 		.4byte	.LFE6-.LFB6
- 1139 04a2 01       		.uleb128 0x1
- 1140 04a3 9C       		.byte	0x9c
- 1141 04a4 DD050000 		.4byte	0x5dd
- 1142 04a8 07       		.uleb128 0x7
- 1143 04a9 B0030000 		.4byte	.LASF25
- 1144 04ad 01       		.byte	0x1
- 1145 04ae C0       		.byte	0xc0
- 1146 04af 1B020000 		.4byte	0x21b
- 1147 04b3 AE010000 		.4byte	.LLST11
- 1148 04b7 07       		.uleb128 0x7
- 1149 04b8 97020000 		.4byte	.LASF30
- 1150 04bc 01       		.byte	0x1
- 1151 04bd C0       		.byte	0xc0
- 1152 04be 8C000000 		.4byte	0x8c
- 1153 04c2 DA010000 		.4byte	.LLST12
- 1154 04c6 07       		.uleb128 0x7
- 1155 04c7 90020000 		.4byte	.LASF26
- 1156 04cb 01       		.byte	0x1
- 1157 04cc C0       		.byte	0xc0
- 1158 04cd 1B020000 		.4byte	0x21b
- 1159 04d1 FB010000 		.4byte	.LLST13
- 1160 04d5 07       		.uleb128 0x7
- 1161 04d6 6D020000 		.4byte	.LASF31
- 1162 04da 01       		.byte	0x1
- 1163 04db C0       		.byte	0xc0
- 1164 04dc 8C000000 		.4byte	0x8c
- 1165 04e0 19020000 		.4byte	.LLST14
- 1166 04e4 10       		.uleb128 0x10
- 1167 04e5 4A000000 		.4byte	.LASF32
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc9h3aTU.s 			page 26
+ 1109 0494 FB010000 		.4byte	.LLST13
+ 1110 0498 07       		.uleb128 0x7
+ 1111 0499 63000000 		.4byte	.LASF28
+ 1112 049d 01       		.byte	0x1
+ 1113 049e C2       		.byte	0xc2
+ 1114 049f 8C000000 		.4byte	0x8c
+ 1115 04a3 19020000 		.4byte	.LLST14
+ 1116 04a7 0E       		.uleb128 0xe
+ 1117 04a8 4A000000 		.4byte	.LASF29
+ 1118 04ac 01       		.byte	0x1
+ 1119 04ad C7       		.byte	0xc7
+ 1120 04ae 81000000 		.4byte	0x81
+ 1121 04b2 3A020000 		.4byte	.LLST15
+ 1122 04b6 0E       		.uleb128 0xe
+ 1123 04b7 62030000 		.4byte	.LASF30
+ 1124 04bb 01       		.byte	0x1
+ 1125 04bc C7       		.byte	0xc7
+ 1126 04bd 81000000 		.4byte	0x81
+ 1127 04c1 6E020000 		.4byte	.LLST16
+ 1128 04c5 08       		.uleb128 0x8
+ 1129 04c6 CC020000 		.4byte	.LASF31
+ 1130 04ca 01       		.byte	0x1
+ 1131 04cb DC       		.byte	0xdc
+ 1132 04cc 2E030000 		.4byte	0x32e
+ 1133 04d0 02       		.uleb128 0x2
+ 1134 04d1 91       		.byte	0x91
+ 1135 04d2 58       		.sleb128 -40
+ 1136 04d3 0F       		.uleb128 0xf
+ 1137 04d4 7A000000 		.4byte	.LBB3
+ 1138 04d8 12000000 		.4byte	.LBE3-.LBB3
+ 1139 04dc F7040000 		.4byte	0x4f7
+ 1140 04e0 10       		.uleb128 0x10
+ 1141 04e1 6A00     		.ascii	"j\000"
+ 1142 04e3 01       		.byte	0x1
+ 1143 04e4 EB       		.byte	0xeb
+ 1144 04e5 8C000000 		.4byte	0x8c
+ 1145 04e9 BA020000 		.4byte	.LLST17
+ 1146 04ed 0B       		.uleb128 0xb
+ 1147 04ee 82000000 		.4byte	.LVL85
+ 1148 04f2 19060000 		.4byte	0x619
+ 1149 04f6 00       		.byte	0
+ 1150 04f7 09       		.uleb128 0x9
+ 1151 04f8 14000000 		.4byte	.LVL68
+ 1152 04fc F8050000 		.4byte	0x5f8
+ 1153 0500 0A050000 		.4byte	0x50a
+ 1154 0504 0A       		.uleb128 0xa
+ 1155 0505 01       		.uleb128 0x1
+ 1156 0506 50       		.byte	0x50
+ 1157 0507 01       		.uleb128 0x1
+ 1158 0508 30       		.byte	0x30
+ 1159 0509 00       		.byte	0
+ 1160 050a 09       		.uleb128 0x9
+ 1161 050b 2C000000 		.4byte	.LVL71
+ 1162 050f 24060000 		.4byte	0x624
+ 1163 0513 33050000 		.4byte	0x533
+ 1164 0517 0A       		.uleb128 0xa
+ 1165 0518 01       		.uleb128 0x1
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccbKWCte.s 			page 26
 
 
- 1168 04e9 01       		.byte	0x1
- 1169 04ea C5       		.byte	0xc5
- 1170 04eb 81000000 		.4byte	0x81
- 1171 04ef 3A020000 		.4byte	.LLST15
- 1172 04f3 10       		.uleb128 0x10
- 1173 04f4 74030000 		.4byte	.LASF33
- 1174 04f8 01       		.byte	0x1
- 1175 04f9 C5       		.byte	0xc5
- 1176 04fa 81000000 		.4byte	0x81
- 1177 04fe 6E020000 		.4byte	.LLST16
- 1178 0502 08       		.uleb128 0x8
- 1179 0503 75020000 		.4byte	.LASF34
- 1180 0507 01       		.byte	0x1
- 1181 0508 DA       		.byte	0xda
- 1182 0509 6B030000 		.4byte	0x36b
- 1183 050d 02       		.uleb128 0x2
- 1184 050e 91       		.byte	0x91
- 1185 050f 58       		.sleb128 -40
- 1186 0510 11       		.uleb128 0x11
- 1187 0511 7A000000 		.4byte	.LBB3
- 1188 0515 12000000 		.4byte	.LBE3-.LBB3
- 1189 0519 34050000 		.4byte	0x534
- 1190 051d 12       		.uleb128 0x12
- 1191 051e 6A00     		.ascii	"j\000"
- 1192 0520 01       		.byte	0x1
- 1193 0521 E9       		.byte	0xe9
- 1194 0522 8C000000 		.4byte	0x8c
- 1195 0526 BA020000 		.4byte	.LLST17
- 1196 052a 0B       		.uleb128 0xb
- 1197 052b 82000000 		.4byte	.LVL86
- 1198 052f 56060000 		.4byte	0x656
- 1199 0533 00       		.byte	0
- 1200 0534 09       		.uleb128 0x9
- 1201 0535 14000000 		.4byte	.LVL69
- 1202 0539 35060000 		.4byte	0x635
- 1203 053d 47050000 		.4byte	0x547
- 1204 0541 0A       		.uleb128 0xa
- 1205 0542 01       		.uleb128 0x1
- 1206 0543 50       		.byte	0x50
- 1207 0544 01       		.uleb128 0x1
- 1208 0545 30       		.byte	0x30
- 1209 0546 00       		.byte	0
- 1210 0547 09       		.uleb128 0x9
- 1211 0548 2C000000 		.4byte	.LVL72
- 1212 054c 61060000 		.4byte	0x661
- 1213 0550 70050000 		.4byte	0x570
- 1214 0554 0A       		.uleb128 0xa
- 1215 0555 01       		.uleb128 0x1
- 1216 0556 50       		.byte	0x50
- 1217 0557 07       		.uleb128 0x7
- 1218 0558 75       		.byte	0x75
- 1219 0559 00       		.sleb128 0
- 1220 055a 33       		.byte	0x33
- 1221 055b 24       		.byte	0x24
- 1222 055c 76       		.byte	0x76
- 1223 055d 00       		.sleb128 0
- 1224 055e 22       		.byte	0x22
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc9h3aTU.s 			page 27
+ 1166 0519 50       		.byte	0x50
+ 1167 051a 07       		.uleb128 0x7
+ 1168 051b 75       		.byte	0x75
+ 1169 051c 00       		.sleb128 0
+ 1170 051d 33       		.byte	0x33
+ 1171 051e 24       		.byte	0x24
+ 1172 051f 76       		.byte	0x76
+ 1173 0520 00       		.sleb128 0
+ 1174 0521 22       		.byte	0x22
+ 1175 0522 0A       		.uleb128 0xa
+ 1176 0523 01       		.uleb128 0x1
+ 1177 0524 51       		.byte	0x51
+ 1178 0525 0C       		.uleb128 0xc
+ 1179 0526 38       		.byte	0x38
+ 1180 0527 74       		.byte	0x74
+ 1181 0528 00       		.sleb128 0
+ 1182 0529 74       		.byte	0x74
+ 1183 052a 00       		.sleb128 0
+ 1184 052b 38       		.byte	0x38
+ 1185 052c 2A       		.byte	0x2a
+ 1186 052d 28       		.byte	0x28
+ 1187 052e 0100     		.2byte	0x1
+ 1188 0530 16       		.byte	0x16
+ 1189 0531 13       		.byte	0x13
+ 1190 0532 00       		.byte	0
+ 1191 0533 0B       		.uleb128 0xb
+ 1192 0534 30000000 		.4byte	.LVL72
+ 1193 0538 0E060000 		.4byte	0x60e
+ 1194 053c 0B       		.uleb128 0xb
+ 1195 053d 46000000 		.4byte	.LVL77
+ 1196 0541 2F060000 		.4byte	0x62f
+ 1197 0545 0B       		.uleb128 0xb
+ 1198 0546 4A000000 		.4byte	.LVL78
+ 1199 054a 3A060000 		.4byte	0x63a
+ 1200 054e 09       		.uleb128 0x9
+ 1201 054f 6C000000 		.4byte	.LVL82
+ 1202 0553 24060000 		.4byte	0x624
+ 1203 0557 68050000 		.4byte	0x568
+ 1204 055b 0A       		.uleb128 0xa
+ 1205 055c 01       		.uleb128 0x1
+ 1206 055d 50       		.byte	0x50
+ 1207 055e 02       		.uleb128 0x2
+ 1208 055f 7D       		.byte	0x7d
+ 1209 0560 00       		.sleb128 0
+ 1210 0561 0A       		.uleb128 0xa
+ 1211 0562 01       		.uleb128 0x1
+ 1212 0563 51       		.byte	0x51
+ 1213 0564 02       		.uleb128 0x2
+ 1214 0565 79       		.byte	0x79
+ 1215 0566 00       		.sleb128 0
+ 1216 0567 00       		.byte	0
+ 1217 0568 0B       		.uleb128 0xb
+ 1218 0569 70000000 		.4byte	.LVL83
+ 1219 056d 0E060000 		.4byte	0x60e
+ 1220 0571 09       		.uleb128 0x9
+ 1221 0572 A4000000 		.4byte	.LVL92
+ 1222 0576 F8050000 		.4byte	0x5f8
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccbKWCte.s 			page 27
 
 
- 1225 055f 0A       		.uleb128 0xa
- 1226 0560 01       		.uleb128 0x1
- 1227 0561 51       		.byte	0x51
- 1228 0562 0C       		.uleb128 0xc
- 1229 0563 38       		.byte	0x38
- 1230 0564 74       		.byte	0x74
- 1231 0565 00       		.sleb128 0
- 1232 0566 74       		.byte	0x74
- 1233 0567 00       		.sleb128 0
- 1234 0568 38       		.byte	0x38
- 1235 0569 2A       		.byte	0x2a
- 1236 056a 28       		.byte	0x28
- 1237 056b 0100     		.2byte	0x1
- 1238 056d 16       		.byte	0x16
- 1239 056e 13       		.byte	0x13
- 1240 056f 00       		.byte	0
- 1241 0570 0B       		.uleb128 0xb
- 1242 0571 30000000 		.4byte	.LVL73
- 1243 0575 4B060000 		.4byte	0x64b
- 1244 0579 0B       		.uleb128 0xb
- 1245 057a 46000000 		.4byte	.LVL78
- 1246 057e 6C060000 		.4byte	0x66c
- 1247 0582 0B       		.uleb128 0xb
- 1248 0583 4A000000 		.4byte	.LVL79
- 1249 0587 77060000 		.4byte	0x677
- 1250 058b 09       		.uleb128 0x9
- 1251 058c 6C000000 		.4byte	.LVL83
- 1252 0590 61060000 		.4byte	0x661
- 1253 0594 A5050000 		.4byte	0x5a5
- 1254 0598 0A       		.uleb128 0xa
- 1255 0599 01       		.uleb128 0x1
- 1256 059a 50       		.byte	0x50
- 1257 059b 02       		.uleb128 0x2
- 1258 059c 7D       		.byte	0x7d
- 1259 059d 00       		.sleb128 0
- 1260 059e 0A       		.uleb128 0xa
- 1261 059f 01       		.uleb128 0x1
- 1262 05a0 51       		.byte	0x51
- 1263 05a1 02       		.uleb128 0x2
- 1264 05a2 79       		.byte	0x79
- 1265 05a3 00       		.sleb128 0
- 1266 05a4 00       		.byte	0
- 1267 05a5 0B       		.uleb128 0xb
- 1268 05a6 70000000 		.4byte	.LVL84
- 1269 05aa 4B060000 		.4byte	0x64b
- 1270 05ae 09       		.uleb128 0x9
- 1271 05af A4000000 		.4byte	.LVL93
- 1272 05b3 35060000 		.4byte	0x635
- 1273 05b7 C1050000 		.4byte	0x5c1
- 1274 05bb 0A       		.uleb128 0xa
- 1275 05bc 01       		.uleb128 0x1
- 1276 05bd 50       		.byte	0x50
- 1277 05be 01       		.uleb128 0x1
- 1278 05bf 31       		.byte	0x31
- 1279 05c0 00       		.byte	0
- 1280 05c1 0B       		.uleb128 0xb
- 1281 05c2 A8000000 		.4byte	.LVL94
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc9h3aTU.s 			page 28
+ 1223 057a 84050000 		.4byte	0x584
+ 1224 057e 0A       		.uleb128 0xa
+ 1225 057f 01       		.uleb128 0x1
+ 1226 0580 50       		.byte	0x50
+ 1227 0581 01       		.uleb128 0x1
+ 1228 0582 31       		.byte	0x31
+ 1229 0583 00       		.byte	0
+ 1230 0584 0B       		.uleb128 0xb
+ 1231 0585 A8000000 		.4byte	.LVL93
+ 1232 0589 2F060000 		.4byte	0x62f
+ 1233 058d 0B       		.uleb128 0xb
+ 1234 058e AC000000 		.4byte	.LVL94
+ 1235 0592 3A060000 		.4byte	0x63a
+ 1236 0596 0B       		.uleb128 0xb
+ 1237 0597 B0000000 		.4byte	.LVL95
+ 1238 059b 45060000 		.4byte	0x645
+ 1239 059f 00       		.byte	0
+ 1240 05a0 14       		.uleb128 0x14
+ 1241 05a1 3C020000 		.4byte	.LASF36
+ 1242 05a5 3C020000 		.4byte	.LASF36
+ 1243 05a9 05       		.byte	0x5
+ 1244 05aa 26       		.byte	0x26
+ 1245 05ab 14       		.uleb128 0x14
+ 1246 05ac D4020000 		.4byte	.LASF37
+ 1247 05b0 D4020000 		.4byte	.LASF37
+ 1248 05b4 06       		.byte	0x6
+ 1249 05b5 5E       		.byte	0x5e
+ 1250 05b6 14       		.uleb128 0x14
+ 1251 05b7 9A000000 		.4byte	.LASF38
+ 1252 05bb 9A000000 		.4byte	.LASF38
+ 1253 05bf 06       		.byte	0x6
+ 1254 05c0 5C       		.byte	0x5c
+ 1255 05c1 14       		.uleb128 0x14
+ 1256 05c2 31030000 		.4byte	.LASF39
+ 1257 05c6 31030000 		.4byte	.LASF39
+ 1258 05ca 06       		.byte	0x6
+ 1259 05cb 60       		.byte	0x60
+ 1260 05cc 14       		.uleb128 0x14
+ 1261 05cd 1F020000 		.4byte	.LASF40
+ 1262 05d1 1F020000 		.4byte	.LASF40
+ 1263 05d5 06       		.byte	0x6
+ 1264 05d6 67       		.byte	0x67
+ 1265 05d7 14       		.uleb128 0x14
+ 1266 05d8 F4010000 		.4byte	.LASF41
+ 1267 05dc F4010000 		.4byte	.LASF41
+ 1268 05e0 06       		.byte	0x6
+ 1269 05e1 66       		.byte	0x66
+ 1270 05e2 14       		.uleb128 0x14
+ 1271 05e3 4D030000 		.4byte	.LASF42
+ 1272 05e7 4D030000 		.4byte	.LASF42
+ 1273 05eb 06       		.byte	0x6
+ 1274 05ec 64       		.byte	0x64
+ 1275 05ed 14       		.uleb128 0x14
+ 1276 05ee C0010000 		.4byte	.LASF43
+ 1277 05f2 C0010000 		.4byte	.LASF43
+ 1278 05f6 06       		.byte	0x6
+ 1279 05f7 65       		.byte	0x65
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccbKWCte.s 			page 28
 
 
- 1282 05c6 6C060000 		.4byte	0x66c
- 1283 05ca 0B       		.uleb128 0xb
- 1284 05cb AC000000 		.4byte	.LVL95
- 1285 05cf 77060000 		.4byte	0x677
- 1286 05d3 0B       		.uleb128 0xb
- 1287 05d4 B0000000 		.4byte	.LVL96
- 1288 05d8 82060000 		.4byte	0x682
- 1289 05dc 00       		.byte	0
- 1290 05dd 15       		.uleb128 0x15
- 1291 05de 43020000 		.4byte	.LASF38
- 1292 05e2 43020000 		.4byte	.LASF38
- 1293 05e6 05       		.byte	0x5
- 1294 05e7 26       		.byte	0x26
- 1295 05e8 15       		.uleb128 0x15
- 1296 05e9 7D020000 		.4byte	.LASF39
- 1297 05ed 7D020000 		.4byte	.LASF39
- 1298 05f1 06       		.byte	0x6
- 1299 05f2 5E       		.byte	0x5e
- 1300 05f3 15       		.uleb128 0x15
- 1301 05f4 A1000000 		.4byte	.LASF40
- 1302 05f8 A1000000 		.4byte	.LASF40
- 1303 05fc 06       		.byte	0x6
- 1304 05fd 5C       		.byte	0x5c
- 1305 05fe 15       		.uleb128 0x15
- 1306 05ff 31030000 		.4byte	.LASF41
- 1307 0603 31030000 		.4byte	.LASF41
- 1308 0607 06       		.byte	0x6
- 1309 0608 60       		.byte	0x60
- 1310 0609 15       		.uleb128 0x15
- 1311 060a 26020000 		.4byte	.LASF42
- 1312 060e 26020000 		.4byte	.LASF42
- 1313 0612 06       		.byte	0x6
- 1314 0613 67       		.byte	0x67
- 1315 0614 15       		.uleb128 0x15
- 1316 0615 FB010000 		.4byte	.LASF43
- 1317 0619 FB010000 		.4byte	.LASF43
- 1318 061d 06       		.byte	0x6
- 1319 061e 66       		.byte	0x66
- 1320 061f 15       		.uleb128 0x15
- 1321 0620 4D030000 		.4byte	.LASF44
- 1322 0624 4D030000 		.4byte	.LASF44
- 1323 0628 06       		.byte	0x6
- 1324 0629 64       		.byte	0x64
- 1325 062a 15       		.uleb128 0x15
- 1326 062b C7010000 		.4byte	.LASF45
- 1327 062f C7010000 		.4byte	.LASF45
- 1328 0633 06       		.byte	0x6
- 1329 0634 65       		.byte	0x65
- 1330 0635 15       		.uleb128 0x15
- 1331 0636 F6020000 		.4byte	.LASF46
- 1332 063a F6020000 		.4byte	.LASF46
- 1333 063e 07       		.byte	0x7
- 1334 063f 26       		.byte	0x26
- 1335 0640 15       		.uleb128 0x15
- 1336 0641 13020000 		.4byte	.LASF47
- 1337 0645 13020000 		.4byte	.LASF47
- 1338 0649 08       		.byte	0x8
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc9h3aTU.s 			page 29
+ 1280 05f8 14       		.uleb128 0x14
+ 1281 05f9 F6020000 		.4byte	.LASF44
+ 1282 05fd F6020000 		.4byte	.LASF44
+ 1283 0601 07       		.byte	0x7
+ 1284 0602 26       		.byte	0x26
+ 1285 0603 14       		.uleb128 0x14
+ 1286 0604 0C020000 		.4byte	.LASF45
+ 1287 0608 0C020000 		.4byte	.LASF45
+ 1288 060c 08       		.byte	0x8
+ 1289 060d 5E       		.byte	0x5e
+ 1290 060e 14       		.uleb128 0x14
+ 1291 060f 1D030000 		.4byte	.LASF46
+ 1292 0613 1D030000 		.4byte	.LASF46
+ 1293 0617 08       		.byte	0x8
+ 1294 0618 5C       		.byte	0x5c
+ 1295 0619 14       		.uleb128 0x14
+ 1296 061a 70000000 		.4byte	.LASF47
+ 1297 061e 70000000 		.4byte	.LASF47
+ 1298 0622 08       		.byte	0x8
+ 1299 0623 60       		.byte	0x60
+ 1300 0624 14       		.uleb128 0x14
+ 1301 0625 B0010000 		.4byte	.LASF48
+ 1302 0629 B0010000 		.4byte	.LASF48
+ 1303 062d 08       		.byte	0x8
+ 1304 062e 67       		.byte	0x67
+ 1305 062f 14       		.uleb128 0x14
+ 1306 0630 82000000 		.4byte	.LASF49
+ 1307 0634 82000000 		.4byte	.LASF49
+ 1308 0638 08       		.byte	0x8
+ 1309 0639 66       		.byte	0x66
+ 1310 063a 14       		.uleb128 0x14
+ 1311 063b 68030000 		.4byte	.LASF50
+ 1312 063f 68030000 		.4byte	.LASF50
+ 1313 0643 08       		.byte	0x8
+ 1314 0644 64       		.byte	0x64
+ 1315 0645 14       		.uleb128 0x14
+ 1316 0646 9B010000 		.4byte	.LASF51
+ 1317 064a 9B010000 		.4byte	.LASF51
+ 1318 064e 08       		.byte	0x8
+ 1319 064f 65       		.byte	0x65
+ 1320 0650 00       		.byte	0
+ 1321              		.section	.debug_abbrev,"",%progbits
+ 1322              	.Ldebug_abbrev0:
+ 1323 0000 01       		.uleb128 0x1
+ 1324 0001 11       		.uleb128 0x11
+ 1325 0002 01       		.byte	0x1
+ 1326 0003 25       		.uleb128 0x25
+ 1327 0004 0E       		.uleb128 0xe
+ 1328 0005 13       		.uleb128 0x13
+ 1329 0006 0B       		.uleb128 0xb
+ 1330 0007 03       		.uleb128 0x3
+ 1331 0008 0E       		.uleb128 0xe
+ 1332 0009 1B       		.uleb128 0x1b
+ 1333 000a 0E       		.uleb128 0xe
+ 1334 000b 55       		.uleb128 0x55
+ 1335 000c 17       		.uleb128 0x17
+ 1336 000d 11       		.uleb128 0x11
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccbKWCte.s 			page 29
 
 
- 1339 064a 5E       		.byte	0x5e
- 1340 064b 15       		.uleb128 0x15
- 1341 064c 1D030000 		.4byte	.LASF48
- 1342 0650 1D030000 		.4byte	.LASF48
- 1343 0654 08       		.byte	0x8
- 1344 0655 5C       		.byte	0x5c
- 1345 0656 15       		.uleb128 0x15
- 1346 0657 62030000 		.4byte	.LASF49
- 1347 065b 62030000 		.4byte	.LASF49
- 1348 065f 08       		.byte	0x8
- 1349 0660 60       		.byte	0x60
- 1350 0661 15       		.uleb128 0x15
- 1351 0662 B7010000 		.4byte	.LASF50
- 1352 0666 B7010000 		.4byte	.LASF50
- 1353 066a 08       		.byte	0x8
- 1354 066b 67       		.byte	0x67
- 1355 066c 15       		.uleb128 0x15
- 1356 066d 89000000 		.4byte	.LASF51
- 1357 0671 89000000 		.4byte	.LASF51
- 1358 0675 08       		.byte	0x8
- 1359 0676 66       		.byte	0x66
- 1360 0677 15       		.uleb128 0x15
- 1361 0678 7A030000 		.4byte	.LASF52
- 1362 067c 7A030000 		.4byte	.LASF52
- 1363 0680 08       		.byte	0x8
- 1364 0681 64       		.byte	0x64
- 1365 0682 15       		.uleb128 0x15
- 1366 0683 A2010000 		.4byte	.LASF53
- 1367 0687 A2010000 		.4byte	.LASF53
- 1368 068b 08       		.byte	0x8
- 1369 068c 65       		.byte	0x65
- 1370 068d 00       		.byte	0
- 1371              		.section	.debug_abbrev,"",%progbits
- 1372              	.Ldebug_abbrev0:
- 1373 0000 01       		.uleb128 0x1
- 1374 0001 11       		.uleb128 0x11
- 1375 0002 01       		.byte	0x1
- 1376 0003 25       		.uleb128 0x25
- 1377 0004 0E       		.uleb128 0xe
- 1378 0005 13       		.uleb128 0x13
- 1379 0006 0B       		.uleb128 0xb
- 1380 0007 03       		.uleb128 0x3
- 1381 0008 0E       		.uleb128 0xe
- 1382 0009 1B       		.uleb128 0x1b
- 1383 000a 0E       		.uleb128 0xe
- 1384 000b 55       		.uleb128 0x55
- 1385 000c 17       		.uleb128 0x17
- 1386 000d 11       		.uleb128 0x11
- 1387 000e 01       		.uleb128 0x1
- 1388 000f 10       		.uleb128 0x10
- 1389 0010 17       		.uleb128 0x17
- 1390 0011 00       		.byte	0
- 1391 0012 00       		.byte	0
- 1392 0013 02       		.uleb128 0x2
- 1393 0014 16       		.uleb128 0x16
- 1394 0015 00       		.byte	0
- 1395 0016 03       		.uleb128 0x3
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc9h3aTU.s 			page 30
+ 1337 000e 01       		.uleb128 0x1
+ 1338 000f 10       		.uleb128 0x10
+ 1339 0010 17       		.uleb128 0x17
+ 1340 0011 00       		.byte	0
+ 1341 0012 00       		.byte	0
+ 1342 0013 02       		.uleb128 0x2
+ 1343 0014 16       		.uleb128 0x16
+ 1344 0015 00       		.byte	0
+ 1345 0016 03       		.uleb128 0x3
+ 1346 0017 0E       		.uleb128 0xe
+ 1347 0018 3A       		.uleb128 0x3a
+ 1348 0019 0B       		.uleb128 0xb
+ 1349 001a 3B       		.uleb128 0x3b
+ 1350 001b 0B       		.uleb128 0xb
+ 1351 001c 49       		.uleb128 0x49
+ 1352 001d 13       		.uleb128 0x13
+ 1353 001e 00       		.byte	0
+ 1354 001f 00       		.byte	0
+ 1355 0020 03       		.uleb128 0x3
+ 1356 0021 24       		.uleb128 0x24
+ 1357 0022 00       		.byte	0
+ 1358 0023 0B       		.uleb128 0xb
+ 1359 0024 0B       		.uleb128 0xb
+ 1360 0025 3E       		.uleb128 0x3e
+ 1361 0026 0B       		.uleb128 0xb
+ 1362 0027 03       		.uleb128 0x3
+ 1363 0028 0E       		.uleb128 0xe
+ 1364 0029 00       		.byte	0
+ 1365 002a 00       		.byte	0
+ 1366 002b 04       		.uleb128 0x4
+ 1367 002c 24       		.uleb128 0x24
+ 1368 002d 00       		.byte	0
+ 1369 002e 0B       		.uleb128 0xb
+ 1370 002f 0B       		.uleb128 0xb
+ 1371 0030 3E       		.uleb128 0x3e
+ 1372 0031 0B       		.uleb128 0xb
+ 1373 0032 03       		.uleb128 0x3
+ 1374 0033 08       		.uleb128 0x8
+ 1375 0034 00       		.byte	0
+ 1376 0035 00       		.byte	0
+ 1377 0036 05       		.uleb128 0x5
+ 1378 0037 16       		.uleb128 0x16
+ 1379 0038 00       		.byte	0
+ 1380 0039 03       		.uleb128 0x3
+ 1381 003a 0E       		.uleb128 0xe
+ 1382 003b 3A       		.uleb128 0x3a
+ 1383 003c 0B       		.uleb128 0xb
+ 1384 003d 3B       		.uleb128 0x3b
+ 1385 003e 05       		.uleb128 0x5
+ 1386 003f 49       		.uleb128 0x49
+ 1387 0040 13       		.uleb128 0x13
+ 1388 0041 00       		.byte	0
+ 1389 0042 00       		.byte	0
+ 1390 0043 06       		.uleb128 0x6
+ 1391 0044 2E       		.uleb128 0x2e
+ 1392 0045 01       		.byte	0x1
+ 1393 0046 3F       		.uleb128 0x3f
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccbKWCte.s 			page 30
 
 
- 1396 0017 0E       		.uleb128 0xe
- 1397 0018 3A       		.uleb128 0x3a
- 1398 0019 0B       		.uleb128 0xb
- 1399 001a 3B       		.uleb128 0x3b
- 1400 001b 0B       		.uleb128 0xb
- 1401 001c 49       		.uleb128 0x49
- 1402 001d 13       		.uleb128 0x13
- 1403 001e 00       		.byte	0
- 1404 001f 00       		.byte	0
- 1405 0020 03       		.uleb128 0x3
- 1406 0021 24       		.uleb128 0x24
- 1407 0022 00       		.byte	0
- 1408 0023 0B       		.uleb128 0xb
- 1409 0024 0B       		.uleb128 0xb
- 1410 0025 3E       		.uleb128 0x3e
- 1411 0026 0B       		.uleb128 0xb
- 1412 0027 03       		.uleb128 0x3
- 1413 0028 0E       		.uleb128 0xe
- 1414 0029 00       		.byte	0
- 1415 002a 00       		.byte	0
- 1416 002b 04       		.uleb128 0x4
- 1417 002c 24       		.uleb128 0x24
- 1418 002d 00       		.byte	0
- 1419 002e 0B       		.uleb128 0xb
- 1420 002f 0B       		.uleb128 0xb
- 1421 0030 3E       		.uleb128 0x3e
- 1422 0031 0B       		.uleb128 0xb
- 1423 0032 03       		.uleb128 0x3
- 1424 0033 08       		.uleb128 0x8
- 1425 0034 00       		.byte	0
- 1426 0035 00       		.byte	0
- 1427 0036 05       		.uleb128 0x5
- 1428 0037 16       		.uleb128 0x16
- 1429 0038 00       		.byte	0
- 1430 0039 03       		.uleb128 0x3
- 1431 003a 0E       		.uleb128 0xe
- 1432 003b 3A       		.uleb128 0x3a
- 1433 003c 0B       		.uleb128 0xb
- 1434 003d 3B       		.uleb128 0x3b
- 1435 003e 05       		.uleb128 0x5
- 1436 003f 49       		.uleb128 0x49
- 1437 0040 13       		.uleb128 0x13
- 1438 0041 00       		.byte	0
- 1439 0042 00       		.byte	0
- 1440 0043 06       		.uleb128 0x6
- 1441 0044 2E       		.uleb128 0x2e
- 1442 0045 01       		.byte	0x1
- 1443 0046 3F       		.uleb128 0x3f
- 1444 0047 19       		.uleb128 0x19
- 1445 0048 03       		.uleb128 0x3
- 1446 0049 0E       		.uleb128 0xe
- 1447 004a 3A       		.uleb128 0x3a
- 1448 004b 0B       		.uleb128 0xb
- 1449 004c 3B       		.uleb128 0x3b
- 1450 004d 0B       		.uleb128 0xb
- 1451 004e 27       		.uleb128 0x27
- 1452 004f 19       		.uleb128 0x19
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc9h3aTU.s 			page 31
+ 1394 0047 19       		.uleb128 0x19
+ 1395 0048 03       		.uleb128 0x3
+ 1396 0049 0E       		.uleb128 0xe
+ 1397 004a 3A       		.uleb128 0x3a
+ 1398 004b 0B       		.uleb128 0xb
+ 1399 004c 3B       		.uleb128 0x3b
+ 1400 004d 0B       		.uleb128 0xb
+ 1401 004e 27       		.uleb128 0x27
+ 1402 004f 19       		.uleb128 0x19
+ 1403 0050 49       		.uleb128 0x49
+ 1404 0051 13       		.uleb128 0x13
+ 1405 0052 11       		.uleb128 0x11
+ 1406 0053 01       		.uleb128 0x1
+ 1407 0054 12       		.uleb128 0x12
+ 1408 0055 06       		.uleb128 0x6
+ 1409 0056 40       		.uleb128 0x40
+ 1410 0057 18       		.uleb128 0x18
+ 1411 0058 9742     		.uleb128 0x2117
+ 1412 005a 19       		.uleb128 0x19
+ 1413 005b 01       		.uleb128 0x1
+ 1414 005c 13       		.uleb128 0x13
+ 1415 005d 00       		.byte	0
+ 1416 005e 00       		.byte	0
+ 1417 005f 07       		.uleb128 0x7
+ 1418 0060 05       		.uleb128 0x5
+ 1419 0061 00       		.byte	0
+ 1420 0062 03       		.uleb128 0x3
+ 1421 0063 0E       		.uleb128 0xe
+ 1422 0064 3A       		.uleb128 0x3a
+ 1423 0065 0B       		.uleb128 0xb
+ 1424 0066 3B       		.uleb128 0x3b
+ 1425 0067 0B       		.uleb128 0xb
+ 1426 0068 49       		.uleb128 0x49
+ 1427 0069 13       		.uleb128 0x13
+ 1428 006a 02       		.uleb128 0x2
+ 1429 006b 17       		.uleb128 0x17
+ 1430 006c 00       		.byte	0
+ 1431 006d 00       		.byte	0
+ 1432 006e 08       		.uleb128 0x8
+ 1433 006f 34       		.uleb128 0x34
+ 1434 0070 00       		.byte	0
+ 1435 0071 03       		.uleb128 0x3
+ 1436 0072 0E       		.uleb128 0xe
+ 1437 0073 3A       		.uleb128 0x3a
+ 1438 0074 0B       		.uleb128 0xb
+ 1439 0075 3B       		.uleb128 0x3b
+ 1440 0076 0B       		.uleb128 0xb
+ 1441 0077 49       		.uleb128 0x49
+ 1442 0078 13       		.uleb128 0x13
+ 1443 0079 02       		.uleb128 0x2
+ 1444 007a 18       		.uleb128 0x18
+ 1445 007b 00       		.byte	0
+ 1446 007c 00       		.byte	0
+ 1447 007d 09       		.uleb128 0x9
+ 1448 007e 898201   		.uleb128 0x4109
+ 1449 0081 01       		.byte	0x1
+ 1450 0082 11       		.uleb128 0x11
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccbKWCte.s 			page 31
 
 
- 1453 0050 49       		.uleb128 0x49
- 1454 0051 13       		.uleb128 0x13
- 1455 0052 11       		.uleb128 0x11
- 1456 0053 01       		.uleb128 0x1
- 1457 0054 12       		.uleb128 0x12
- 1458 0055 06       		.uleb128 0x6
- 1459 0056 40       		.uleb128 0x40
- 1460 0057 18       		.uleb128 0x18
- 1461 0058 9742     		.uleb128 0x2117
- 1462 005a 19       		.uleb128 0x19
- 1463 005b 01       		.uleb128 0x1
- 1464 005c 13       		.uleb128 0x13
- 1465 005d 00       		.byte	0
- 1466 005e 00       		.byte	0
- 1467 005f 07       		.uleb128 0x7
- 1468 0060 05       		.uleb128 0x5
- 1469 0061 00       		.byte	0
- 1470 0062 03       		.uleb128 0x3
- 1471 0063 0E       		.uleb128 0xe
- 1472 0064 3A       		.uleb128 0x3a
- 1473 0065 0B       		.uleb128 0xb
- 1474 0066 3B       		.uleb128 0x3b
- 1475 0067 0B       		.uleb128 0xb
- 1476 0068 49       		.uleb128 0x49
- 1477 0069 13       		.uleb128 0x13
- 1478 006a 02       		.uleb128 0x2
- 1479 006b 17       		.uleb128 0x17
- 1480 006c 00       		.byte	0
- 1481 006d 00       		.byte	0
- 1482 006e 08       		.uleb128 0x8
- 1483 006f 34       		.uleb128 0x34
- 1484 0070 00       		.byte	0
- 1485 0071 03       		.uleb128 0x3
- 1486 0072 0E       		.uleb128 0xe
- 1487 0073 3A       		.uleb128 0x3a
- 1488 0074 0B       		.uleb128 0xb
- 1489 0075 3B       		.uleb128 0x3b
- 1490 0076 0B       		.uleb128 0xb
- 1491 0077 49       		.uleb128 0x49
- 1492 0078 13       		.uleb128 0x13
- 1493 0079 02       		.uleb128 0x2
- 1494 007a 18       		.uleb128 0x18
- 1495 007b 00       		.byte	0
- 1496 007c 00       		.byte	0
- 1497 007d 09       		.uleb128 0x9
- 1498 007e 898201   		.uleb128 0x4109
- 1499 0081 01       		.byte	0x1
- 1500 0082 11       		.uleb128 0x11
- 1501 0083 01       		.uleb128 0x1
- 1502 0084 31       		.uleb128 0x31
- 1503 0085 13       		.uleb128 0x13
- 1504 0086 01       		.uleb128 0x1
- 1505 0087 13       		.uleb128 0x13
- 1506 0088 00       		.byte	0
- 1507 0089 00       		.byte	0
- 1508 008a 0A       		.uleb128 0xa
- 1509 008b 8A8201   		.uleb128 0x410a
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc9h3aTU.s 			page 32
+ 1451 0083 01       		.uleb128 0x1
+ 1452 0084 31       		.uleb128 0x31
+ 1453 0085 13       		.uleb128 0x13
+ 1454 0086 01       		.uleb128 0x1
+ 1455 0087 13       		.uleb128 0x13
+ 1456 0088 00       		.byte	0
+ 1457 0089 00       		.byte	0
+ 1458 008a 0A       		.uleb128 0xa
+ 1459 008b 8A8201   		.uleb128 0x410a
+ 1460 008e 00       		.byte	0
+ 1461 008f 02       		.uleb128 0x2
+ 1462 0090 18       		.uleb128 0x18
+ 1463 0091 9142     		.uleb128 0x2111
+ 1464 0093 18       		.uleb128 0x18
+ 1465 0094 00       		.byte	0
+ 1466 0095 00       		.byte	0
+ 1467 0096 0B       		.uleb128 0xb
+ 1468 0097 898201   		.uleb128 0x4109
+ 1469 009a 00       		.byte	0
+ 1470 009b 11       		.uleb128 0x11
+ 1471 009c 01       		.uleb128 0x1
+ 1472 009d 31       		.uleb128 0x31
+ 1473 009e 13       		.uleb128 0x13
+ 1474 009f 00       		.byte	0
+ 1475 00a0 00       		.byte	0
+ 1476 00a1 0C       		.uleb128 0xc
+ 1477 00a2 898201   		.uleb128 0x4109
+ 1478 00a5 01       		.byte	0x1
+ 1479 00a6 11       		.uleb128 0x11
+ 1480 00a7 01       		.uleb128 0x1
+ 1481 00a8 31       		.uleb128 0x31
+ 1482 00a9 13       		.uleb128 0x13
+ 1483 00aa 00       		.byte	0
+ 1484 00ab 00       		.byte	0
+ 1485 00ac 0D       		.uleb128 0xd
+ 1486 00ad 2E       		.uleb128 0x2e
+ 1487 00ae 01       		.byte	0x1
+ 1488 00af 3F       		.uleb128 0x3f
+ 1489 00b0 19       		.uleb128 0x19
+ 1490 00b1 03       		.uleb128 0x3
+ 1491 00b2 0E       		.uleb128 0xe
+ 1492 00b3 3A       		.uleb128 0x3a
+ 1493 00b4 0B       		.uleb128 0xb
+ 1494 00b5 3B       		.uleb128 0x3b
+ 1495 00b6 0B       		.uleb128 0xb
+ 1496 00b7 27       		.uleb128 0x27
+ 1497 00b8 19       		.uleb128 0x19
+ 1498 00b9 11       		.uleb128 0x11
+ 1499 00ba 01       		.uleb128 0x1
+ 1500 00bb 12       		.uleb128 0x12
+ 1501 00bc 06       		.uleb128 0x6
+ 1502 00bd 40       		.uleb128 0x40
+ 1503 00be 18       		.uleb128 0x18
+ 1504 00bf 9742     		.uleb128 0x2117
+ 1505 00c1 19       		.uleb128 0x19
+ 1506 00c2 01       		.uleb128 0x1
+ 1507 00c3 13       		.uleb128 0x13
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccbKWCte.s 			page 32
 
 
- 1510 008e 00       		.byte	0
- 1511 008f 02       		.uleb128 0x2
- 1512 0090 18       		.uleb128 0x18
- 1513 0091 9142     		.uleb128 0x2111
- 1514 0093 18       		.uleb128 0x18
- 1515 0094 00       		.byte	0
- 1516 0095 00       		.byte	0
- 1517 0096 0B       		.uleb128 0xb
- 1518 0097 898201   		.uleb128 0x4109
- 1519 009a 00       		.byte	0
- 1520 009b 11       		.uleb128 0x11
- 1521 009c 01       		.uleb128 0x1
- 1522 009d 31       		.uleb128 0x31
- 1523 009e 13       		.uleb128 0x13
- 1524 009f 00       		.byte	0
- 1525 00a0 00       		.byte	0
- 1526 00a1 0C       		.uleb128 0xc
- 1527 00a2 898201   		.uleb128 0x4109
- 1528 00a5 01       		.byte	0x1
- 1529 00a6 11       		.uleb128 0x11
- 1530 00a7 01       		.uleb128 0x1
- 1531 00a8 31       		.uleb128 0x31
- 1532 00a9 13       		.uleb128 0x13
- 1533 00aa 00       		.byte	0
- 1534 00ab 00       		.byte	0
- 1535 00ac 0D       		.uleb128 0xd
- 1536 00ad 2E       		.uleb128 0x2e
- 1537 00ae 01       		.byte	0x1
- 1538 00af 3F       		.uleb128 0x3f
- 1539 00b0 19       		.uleb128 0x19
- 1540 00b1 03       		.uleb128 0x3
- 1541 00b2 0E       		.uleb128 0xe
- 1542 00b3 3A       		.uleb128 0x3a
- 1543 00b4 0B       		.uleb128 0xb
- 1544 00b5 3B       		.uleb128 0x3b
- 1545 00b6 0B       		.uleb128 0xb
- 1546 00b7 27       		.uleb128 0x27
- 1547 00b8 19       		.uleb128 0x19
- 1548 00b9 11       		.uleb128 0x11
- 1549 00ba 01       		.uleb128 0x1
- 1550 00bb 12       		.uleb128 0x12
- 1551 00bc 06       		.uleb128 0x6
- 1552 00bd 40       		.uleb128 0x40
- 1553 00be 18       		.uleb128 0x18
- 1554 00bf 9742     		.uleb128 0x2117
- 1555 00c1 19       		.uleb128 0x19
- 1556 00c2 01       		.uleb128 0x1
- 1557 00c3 13       		.uleb128 0x13
- 1558 00c4 00       		.byte	0
- 1559 00c5 00       		.byte	0
- 1560 00c6 0E       		.uleb128 0xe
- 1561 00c7 05       		.uleb128 0x5
- 1562 00c8 00       		.byte	0
- 1563 00c9 03       		.uleb128 0x3
- 1564 00ca 0E       		.uleb128 0xe
- 1565 00cb 3A       		.uleb128 0x3a
- 1566 00cc 0B       		.uleb128 0xb
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc9h3aTU.s 			page 33
+ 1508 00c4 00       		.byte	0
+ 1509 00c5 00       		.byte	0
+ 1510 00c6 0E       		.uleb128 0xe
+ 1511 00c7 34       		.uleb128 0x34
+ 1512 00c8 00       		.byte	0
+ 1513 00c9 03       		.uleb128 0x3
+ 1514 00ca 0E       		.uleb128 0xe
+ 1515 00cb 3A       		.uleb128 0x3a
+ 1516 00cc 0B       		.uleb128 0xb
+ 1517 00cd 3B       		.uleb128 0x3b
+ 1518 00ce 0B       		.uleb128 0xb
+ 1519 00cf 49       		.uleb128 0x49
+ 1520 00d0 13       		.uleb128 0x13
+ 1521 00d1 02       		.uleb128 0x2
+ 1522 00d2 17       		.uleb128 0x17
+ 1523 00d3 00       		.byte	0
+ 1524 00d4 00       		.byte	0
+ 1525 00d5 0F       		.uleb128 0xf
+ 1526 00d6 0B       		.uleb128 0xb
+ 1527 00d7 01       		.byte	0x1
+ 1528 00d8 11       		.uleb128 0x11
+ 1529 00d9 01       		.uleb128 0x1
+ 1530 00da 12       		.uleb128 0x12
+ 1531 00db 06       		.uleb128 0x6
+ 1532 00dc 01       		.uleb128 0x1
+ 1533 00dd 13       		.uleb128 0x13
+ 1534 00de 00       		.byte	0
+ 1535 00df 00       		.byte	0
+ 1536 00e0 10       		.uleb128 0x10
+ 1537 00e1 34       		.uleb128 0x34
+ 1538 00e2 00       		.byte	0
+ 1539 00e3 03       		.uleb128 0x3
+ 1540 00e4 08       		.uleb128 0x8
+ 1541 00e5 3A       		.uleb128 0x3a
+ 1542 00e6 0B       		.uleb128 0xb
+ 1543 00e7 3B       		.uleb128 0x3b
+ 1544 00e8 0B       		.uleb128 0xb
+ 1545 00e9 49       		.uleb128 0x49
+ 1546 00ea 13       		.uleb128 0x13
+ 1547 00eb 02       		.uleb128 0x2
+ 1548 00ec 17       		.uleb128 0x17
+ 1549 00ed 00       		.byte	0
+ 1550 00ee 00       		.byte	0
+ 1551 00ef 11       		.uleb128 0x11
+ 1552 00f0 0F       		.uleb128 0xf
+ 1553 00f1 00       		.byte	0
+ 1554 00f2 0B       		.uleb128 0xb
+ 1555 00f3 0B       		.uleb128 0xb
+ 1556 00f4 49       		.uleb128 0x49
+ 1557 00f5 13       		.uleb128 0x13
+ 1558 00f6 00       		.byte	0
+ 1559 00f7 00       		.byte	0
+ 1560 00f8 12       		.uleb128 0x12
+ 1561 00f9 01       		.uleb128 0x1
+ 1562 00fa 01       		.byte	0x1
+ 1563 00fb 49       		.uleb128 0x49
+ 1564 00fc 13       		.uleb128 0x13
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccbKWCte.s 			page 33
 
 
- 1567 00cd 3B       		.uleb128 0x3b
- 1568 00ce 0B       		.uleb128 0xb
- 1569 00cf 49       		.uleb128 0x49
- 1570 00d0 13       		.uleb128 0x13
- 1571 00d1 02       		.uleb128 0x2
- 1572 00d2 18       		.uleb128 0x18
- 1573 00d3 00       		.byte	0
- 1574 00d4 00       		.byte	0
- 1575 00d5 0F       		.uleb128 0xf
- 1576 00d6 0F       		.uleb128 0xf
- 1577 00d7 00       		.byte	0
- 1578 00d8 0B       		.uleb128 0xb
- 1579 00d9 0B       		.uleb128 0xb
- 1580 00da 49       		.uleb128 0x49
- 1581 00db 13       		.uleb128 0x13
- 1582 00dc 00       		.byte	0
- 1583 00dd 00       		.byte	0
- 1584 00de 10       		.uleb128 0x10
- 1585 00df 34       		.uleb128 0x34
- 1586 00e0 00       		.byte	0
- 1587 00e1 03       		.uleb128 0x3
- 1588 00e2 0E       		.uleb128 0xe
- 1589 00e3 3A       		.uleb128 0x3a
- 1590 00e4 0B       		.uleb128 0xb
- 1591 00e5 3B       		.uleb128 0x3b
- 1592 00e6 0B       		.uleb128 0xb
- 1593 00e7 49       		.uleb128 0x49
- 1594 00e8 13       		.uleb128 0x13
- 1595 00e9 02       		.uleb128 0x2
- 1596 00ea 17       		.uleb128 0x17
- 1597 00eb 00       		.byte	0
- 1598 00ec 00       		.byte	0
- 1599 00ed 11       		.uleb128 0x11
- 1600 00ee 0B       		.uleb128 0xb
- 1601 00ef 01       		.byte	0x1
- 1602 00f0 11       		.uleb128 0x11
- 1603 00f1 01       		.uleb128 0x1
- 1604 00f2 12       		.uleb128 0x12
- 1605 00f3 06       		.uleb128 0x6
- 1606 00f4 01       		.uleb128 0x1
- 1607 00f5 13       		.uleb128 0x13
- 1608 00f6 00       		.byte	0
- 1609 00f7 00       		.byte	0
- 1610 00f8 12       		.uleb128 0x12
- 1611 00f9 34       		.uleb128 0x34
- 1612 00fa 00       		.byte	0
- 1613 00fb 03       		.uleb128 0x3
- 1614 00fc 08       		.uleb128 0x8
- 1615 00fd 3A       		.uleb128 0x3a
- 1616 00fe 0B       		.uleb128 0xb
- 1617 00ff 3B       		.uleb128 0x3b
- 1618 0100 0B       		.uleb128 0xb
- 1619 0101 49       		.uleb128 0x49
- 1620 0102 13       		.uleb128 0x13
- 1621 0103 02       		.uleb128 0x2
- 1622 0104 17       		.uleb128 0x17
- 1623 0105 00       		.byte	0
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc9h3aTU.s 			page 34
+ 1565 00fd 01       		.uleb128 0x1
+ 1566 00fe 13       		.uleb128 0x13
+ 1567 00ff 00       		.byte	0
+ 1568 0100 00       		.byte	0
+ 1569 0101 13       		.uleb128 0x13
+ 1570 0102 21       		.uleb128 0x21
+ 1571 0103 00       		.byte	0
+ 1572 0104 49       		.uleb128 0x49
+ 1573 0105 13       		.uleb128 0x13
+ 1574 0106 2F       		.uleb128 0x2f
+ 1575 0107 0B       		.uleb128 0xb
+ 1576 0108 00       		.byte	0
+ 1577 0109 00       		.byte	0
+ 1578 010a 14       		.uleb128 0x14
+ 1579 010b 2E       		.uleb128 0x2e
+ 1580 010c 00       		.byte	0
+ 1581 010d 3F       		.uleb128 0x3f
+ 1582 010e 19       		.uleb128 0x19
+ 1583 010f 3C       		.uleb128 0x3c
+ 1584 0110 19       		.uleb128 0x19
+ 1585 0111 6E       		.uleb128 0x6e
+ 1586 0112 0E       		.uleb128 0xe
+ 1587 0113 03       		.uleb128 0x3
+ 1588 0114 0E       		.uleb128 0xe
+ 1589 0115 3A       		.uleb128 0x3a
+ 1590 0116 0B       		.uleb128 0xb
+ 1591 0117 3B       		.uleb128 0x3b
+ 1592 0118 0B       		.uleb128 0xb
+ 1593 0119 00       		.byte	0
+ 1594 011a 00       		.byte	0
+ 1595 011b 00       		.byte	0
+ 1596              		.section	.debug_loc,"",%progbits
+ 1597              	.Ldebug_loc0:
+ 1598              	.LLST0:
+ 1599 0000 00000000 		.4byte	.LVL0
+ 1600 0004 06000000 		.4byte	.LVL1
+ 1601 0008 0100     		.2byte	0x1
+ 1602 000a 50       		.byte	0x50
+ 1603 000b 06000000 		.4byte	.LVL1
+ 1604 000f 2A000000 		.4byte	.LFE0
+ 1605 0013 0400     		.2byte	0x4
+ 1606 0015 F3       		.byte	0xf3
+ 1607 0016 01       		.uleb128 0x1
+ 1608 0017 50       		.byte	0x50
+ 1609 0018 9F       		.byte	0x9f
+ 1610 0019 00000000 		.4byte	0
+ 1611 001d 00000000 		.4byte	0
+ 1612              	.LLST1:
+ 1613 0021 00000000 		.4byte	.LVL8
+ 1614 0025 06000000 		.4byte	.LVL9
+ 1615 0029 0100     		.2byte	0x1
+ 1616 002b 50       		.byte	0x50
+ 1617 002c 06000000 		.4byte	.LVL9
+ 1618 0030 34000000 		.4byte	.LFE1
+ 1619 0034 0400     		.2byte	0x4
+ 1620 0036 F3       		.byte	0xf3
+ 1621 0037 01       		.uleb128 0x1
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccbKWCte.s 			page 34
 
 
- 1624 0106 00       		.byte	0
- 1625 0107 13       		.uleb128 0x13
- 1626 0108 01       		.uleb128 0x1
- 1627 0109 01       		.byte	0x1
- 1628 010a 49       		.uleb128 0x49
- 1629 010b 13       		.uleb128 0x13
- 1630 010c 01       		.uleb128 0x1
- 1631 010d 13       		.uleb128 0x13
- 1632 010e 00       		.byte	0
- 1633 010f 00       		.byte	0
- 1634 0110 14       		.uleb128 0x14
- 1635 0111 21       		.uleb128 0x21
- 1636 0112 00       		.byte	0
- 1637 0113 49       		.uleb128 0x49
- 1638 0114 13       		.uleb128 0x13
- 1639 0115 2F       		.uleb128 0x2f
- 1640 0116 0B       		.uleb128 0xb
- 1641 0117 00       		.byte	0
- 1642 0118 00       		.byte	0
- 1643 0119 15       		.uleb128 0x15
- 1644 011a 2E       		.uleb128 0x2e
- 1645 011b 00       		.byte	0
- 1646 011c 3F       		.uleb128 0x3f
- 1647 011d 19       		.uleb128 0x19
- 1648 011e 3C       		.uleb128 0x3c
- 1649 011f 19       		.uleb128 0x19
- 1650 0120 6E       		.uleb128 0x6e
- 1651 0121 0E       		.uleb128 0xe
- 1652 0122 03       		.uleb128 0x3
- 1653 0123 0E       		.uleb128 0xe
- 1654 0124 3A       		.uleb128 0x3a
- 1655 0125 0B       		.uleb128 0xb
- 1656 0126 3B       		.uleb128 0x3b
- 1657 0127 0B       		.uleb128 0xb
- 1658 0128 00       		.byte	0
- 1659 0129 00       		.byte	0
- 1660 012a 00       		.byte	0
- 1661              		.section	.debug_loc,"",%progbits
- 1662              	.Ldebug_loc0:
- 1663              	.LLST0:
- 1664 0000 00000000 		.4byte	.LVL0
- 1665 0004 06000000 		.4byte	.LVL1
- 1666 0008 0100     		.2byte	0x1
- 1667 000a 50       		.byte	0x50
- 1668 000b 06000000 		.4byte	.LVL1
- 1669 000f 2A000000 		.4byte	.LFE0
- 1670 0013 0400     		.2byte	0x4
- 1671 0015 F3       		.byte	0xf3
- 1672 0016 01       		.uleb128 0x1
- 1673 0017 50       		.byte	0x50
- 1674 0018 9F       		.byte	0x9f
- 1675 0019 00000000 		.4byte	0
- 1676 001d 00000000 		.4byte	0
- 1677              	.LLST1:
- 1678 0021 00000000 		.4byte	.LVL8
- 1679 0025 06000000 		.4byte	.LVL9
- 1680 0029 0100     		.2byte	0x1
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc9h3aTU.s 			page 35
+ 1622 0038 50       		.byte	0x50
+ 1623 0039 9F       		.byte	0x9f
+ 1624 003a 00000000 		.4byte	0
+ 1625 003e 00000000 		.4byte	0
+ 1626              	.LLST2:
+ 1627 0042 00000000 		.4byte	.LVL18
+ 1628 0046 10000000 		.4byte	.LVL19
+ 1629 004a 0100     		.2byte	0x1
+ 1630 004c 50       		.byte	0x50
+ 1631 004d 10000000 		.4byte	.LVL19
+ 1632 0051 4C000000 		.4byte	.LVL31
+ 1633 0055 0100     		.2byte	0x1
+ 1634 0057 56       		.byte	0x56
+ 1635 0058 4C000000 		.4byte	.LVL31
+ 1636 005c B6000000 		.4byte	.LFE2
+ 1637 0060 0400     		.2byte	0x4
+ 1638 0062 F3       		.byte	0xf3
+ 1639 0063 01       		.uleb128 0x1
+ 1640 0064 50       		.byte	0x50
+ 1641 0065 9F       		.byte	0x9f
+ 1642 0066 00000000 		.4byte	0
+ 1643 006a 00000000 		.4byte	0
+ 1644              	.LLST3:
+ 1645 006e 00000000 		.4byte	.LVL18
+ 1646 0072 13000000 		.4byte	.LVL20-1
+ 1647 0076 0100     		.2byte	0x1
+ 1648 0078 51       		.byte	0x51
+ 1649 0079 13000000 		.4byte	.LVL20-1
+ 1650 007d B6000000 		.4byte	.LFE2
+ 1651 0081 0400     		.2byte	0x4
+ 1652 0083 F3       		.byte	0xf3
+ 1653 0084 01       		.uleb128 0x1
+ 1654 0085 51       		.byte	0x51
+ 1655 0086 9F       		.byte	0x9f
+ 1656 0087 00000000 		.4byte	0
+ 1657 008b 00000000 		.4byte	0
+ 1658              	.LLST4:
+ 1659 008f 00000000 		.4byte	.LVL18
+ 1660 0093 13000000 		.4byte	.LVL20-1
+ 1661 0097 0100     		.2byte	0x1
+ 1662 0099 52       		.byte	0x52
+ 1663 009a 13000000 		.4byte	.LVL20-1
+ 1664 009e B6000000 		.4byte	.LFE2
+ 1665 00a2 0100     		.2byte	0x1
+ 1666 00a4 57       		.byte	0x57
+ 1667 00a5 00000000 		.4byte	0
+ 1668 00a9 00000000 		.4byte	0
+ 1669              	.LLST5:
+ 1670 00ad 00000000 		.4byte	.LVL18
+ 1671 00b1 13000000 		.4byte	.LVL20-1
+ 1672 00b5 0100     		.2byte	0x1
+ 1673 00b7 53       		.byte	0x53
+ 1674 00b8 13000000 		.4byte	.LVL20-1
+ 1675 00bc B6000000 		.4byte	.LFE2
+ 1676 00c0 0400     		.2byte	0x4
+ 1677 00c2 F3       		.byte	0xf3
+ 1678 00c3 01       		.uleb128 0x1
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccbKWCte.s 			page 35
 
 
- 1681 002b 50       		.byte	0x50
- 1682 002c 06000000 		.4byte	.LVL9
- 1683 0030 34000000 		.4byte	.LFE1
- 1684 0034 0400     		.2byte	0x4
- 1685 0036 F3       		.byte	0xf3
- 1686 0037 01       		.uleb128 0x1
- 1687 0038 50       		.byte	0x50
- 1688 0039 9F       		.byte	0x9f
- 1689 003a 00000000 		.4byte	0
- 1690 003e 00000000 		.4byte	0
- 1691              	.LLST2:
- 1692 0042 00000000 		.4byte	.LVL19
- 1693 0046 10000000 		.4byte	.LVL20
- 1694 004a 0100     		.2byte	0x1
- 1695 004c 50       		.byte	0x50
- 1696 004d 10000000 		.4byte	.LVL20
- 1697 0051 4C000000 		.4byte	.LVL32
- 1698 0055 0100     		.2byte	0x1
- 1699 0057 56       		.byte	0x56
- 1700 0058 4C000000 		.4byte	.LVL32
- 1701 005c B6000000 		.4byte	.LFE3
- 1702 0060 0400     		.2byte	0x4
- 1703 0062 F3       		.byte	0xf3
- 1704 0063 01       		.uleb128 0x1
- 1705 0064 50       		.byte	0x50
- 1706 0065 9F       		.byte	0x9f
- 1707 0066 00000000 		.4byte	0
- 1708 006a 00000000 		.4byte	0
- 1709              	.LLST3:
- 1710 006e 00000000 		.4byte	.LVL19
- 1711 0072 13000000 		.4byte	.LVL21-1
- 1712 0076 0100     		.2byte	0x1
- 1713 0078 51       		.byte	0x51
- 1714 0079 13000000 		.4byte	.LVL21-1
- 1715 007d B6000000 		.4byte	.LFE3
- 1716 0081 0400     		.2byte	0x4
- 1717 0083 F3       		.byte	0xf3
- 1718 0084 01       		.uleb128 0x1
- 1719 0085 51       		.byte	0x51
- 1720 0086 9F       		.byte	0x9f
- 1721 0087 00000000 		.4byte	0
- 1722 008b 00000000 		.4byte	0
- 1723              	.LLST4:
- 1724 008f 00000000 		.4byte	.LVL19
- 1725 0093 13000000 		.4byte	.LVL21-1
- 1726 0097 0100     		.2byte	0x1
- 1727 0099 52       		.byte	0x52
- 1728 009a 13000000 		.4byte	.LVL21-1
- 1729 009e B6000000 		.4byte	.LFE3
- 1730 00a2 0100     		.2byte	0x1
- 1731 00a4 57       		.byte	0x57
- 1732 00a5 00000000 		.4byte	0
- 1733 00a9 00000000 		.4byte	0
- 1734              	.LLST5:
- 1735 00ad 00000000 		.4byte	.LVL19
- 1736 00b1 13000000 		.4byte	.LVL21-1
- 1737 00b5 0100     		.2byte	0x1
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc9h3aTU.s 			page 36
+ 1679 00c4 53       		.byte	0x53
+ 1680 00c5 9F       		.byte	0x9f
+ 1681 00c6 00000000 		.4byte	0
+ 1682 00ca 00000000 		.4byte	0
+ 1683              	.LLST6:
+ 1684 00ce 16000000 		.4byte	.LVL21
+ 1685 00d2 38000000 		.4byte	.LVL25
+ 1686 00d6 0100     		.2byte	0x1
+ 1687 00d8 54       		.byte	0x54
+ 1688 00d9 3A000000 		.4byte	.LVL26
+ 1689 00dd 54000000 		.4byte	.LVL32
+ 1690 00e1 0100     		.2byte	0x1
+ 1691 00e3 54       		.byte	0x54
+ 1692 00e4 54000000 		.4byte	.LVL32
+ 1693 00e8 90000000 		.4byte	.LVL40
+ 1694 00ec 0100     		.2byte	0x1
+ 1695 00ee 58       		.byte	0x58
+ 1696 00ef 94000000 		.4byte	.LVL41
+ 1697 00f3 B6000000 		.4byte	.LFE2
+ 1698 00f7 0100     		.2byte	0x1
+ 1699 00f9 58       		.byte	0x58
+ 1700 00fa 00000000 		.4byte	0
+ 1701 00fe 00000000 		.4byte	0
+ 1702              	.LLST7:
+ 1703 0102 16000000 		.4byte	.LVL21
+ 1704 0106 1A000000 		.4byte	.LVL22
+ 1705 010a 0200     		.2byte	0x2
+ 1706 010c 30       		.byte	0x30
+ 1707 010d 9F       		.byte	0x9f
+ 1708 010e 1A000000 		.4byte	.LVL22
+ 1709 0112 3C000000 		.4byte	.LVL27
+ 1710 0116 0100     		.2byte	0x1
+ 1711 0118 55       		.byte	0x55
+ 1712 0119 3E000000 		.4byte	.LVL28
+ 1713 011d 54000000 		.4byte	.LVL32
+ 1714 0121 0100     		.2byte	0x1
+ 1715 0123 55       		.byte	0x55
+ 1716 0124 54000000 		.4byte	.LVL32
+ 1717 0128 56000000 		.4byte	.LVL33
+ 1718 012c 0200     		.2byte	0x2
+ 1719 012e 30       		.byte	0x30
+ 1720 012f 9F       		.byte	0x9f
+ 1721 0130 56000000 		.4byte	.LVL33
+ 1722 0134 96000000 		.4byte	.LVL42
+ 1723 0138 0100     		.2byte	0x1
+ 1724 013a 56       		.byte	0x56
+ 1725 013b 98000000 		.4byte	.LVL43
+ 1726 013f B6000000 		.4byte	.LFE2
+ 1727 0143 0100     		.2byte	0x1
+ 1728 0145 56       		.byte	0x56
+ 1729 0146 00000000 		.4byte	0
+ 1730 014a 00000000 		.4byte	0
+ 1731              	.LLST8:
+ 1732 014e 7A000000 		.4byte	.LVL36
+ 1733 0152 86000000 		.4byte	.LVL38
+ 1734 0156 0100     		.2byte	0x1
+ 1735 0158 54       		.byte	0x54
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccbKWCte.s 			page 36
 
 
- 1738 00b7 53       		.byte	0x53
- 1739 00b8 13000000 		.4byte	.LVL21-1
- 1740 00bc B6000000 		.4byte	.LFE3
- 1741 00c0 0400     		.2byte	0x4
- 1742 00c2 F3       		.byte	0xf3
- 1743 00c3 01       		.uleb128 0x1
- 1744 00c4 53       		.byte	0x53
- 1745 00c5 9F       		.byte	0x9f
- 1746 00c6 00000000 		.4byte	0
- 1747 00ca 00000000 		.4byte	0
- 1748              	.LLST6:
- 1749 00ce 16000000 		.4byte	.LVL22
- 1750 00d2 38000000 		.4byte	.LVL26
- 1751 00d6 0100     		.2byte	0x1
- 1752 00d8 54       		.byte	0x54
- 1753 00d9 3A000000 		.4byte	.LVL27
- 1754 00dd 54000000 		.4byte	.LVL33
- 1755 00e1 0100     		.2byte	0x1
- 1756 00e3 54       		.byte	0x54
- 1757 00e4 54000000 		.4byte	.LVL33
- 1758 00e8 90000000 		.4byte	.LVL41
- 1759 00ec 0100     		.2byte	0x1
- 1760 00ee 58       		.byte	0x58
- 1761 00ef 94000000 		.4byte	.LVL42
- 1762 00f3 B6000000 		.4byte	.LFE3
- 1763 00f7 0100     		.2byte	0x1
- 1764 00f9 58       		.byte	0x58
- 1765 00fa 00000000 		.4byte	0
- 1766 00fe 00000000 		.4byte	0
- 1767              	.LLST7:
- 1768 0102 16000000 		.4byte	.LVL22
- 1769 0106 1A000000 		.4byte	.LVL23
- 1770 010a 0200     		.2byte	0x2
- 1771 010c 30       		.byte	0x30
- 1772 010d 9F       		.byte	0x9f
- 1773 010e 1A000000 		.4byte	.LVL23
- 1774 0112 3C000000 		.4byte	.LVL28
- 1775 0116 0100     		.2byte	0x1
- 1776 0118 55       		.byte	0x55
- 1777 0119 3E000000 		.4byte	.LVL29
- 1778 011d 54000000 		.4byte	.LVL33
- 1779 0121 0100     		.2byte	0x1
- 1780 0123 55       		.byte	0x55
- 1781 0124 54000000 		.4byte	.LVL33
- 1782 0128 56000000 		.4byte	.LVL34
- 1783 012c 0200     		.2byte	0x2
- 1784 012e 30       		.byte	0x30
- 1785 012f 9F       		.byte	0x9f
- 1786 0130 56000000 		.4byte	.LVL34
- 1787 0134 96000000 		.4byte	.LVL43
- 1788 0138 0100     		.2byte	0x1
- 1789 013a 56       		.byte	0x56
- 1790 013b 98000000 		.4byte	.LVL44
- 1791 013f B6000000 		.4byte	.LFE3
- 1792 0143 0100     		.2byte	0x1
- 1793 0145 56       		.byte	0x56
- 1794 0146 00000000 		.4byte	0
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc9h3aTU.s 			page 37
+ 1736 0159 88000000 		.4byte	.LVL39
+ 1737 015d 98000000 		.4byte	.LVL43
+ 1738 0161 0100     		.2byte	0x1
+ 1739 0163 54       		.byte	0x54
+ 1740 0164 00000000 		.4byte	0
+ 1741 0168 00000000 		.4byte	0
+ 1742              	.LLST9:
+ 1743 016c 00000000 		.4byte	.LVL48
+ 1744 0170 06000000 		.4byte	.LVL49
+ 1745 0174 0100     		.2byte	0x1
+ 1746 0176 50       		.byte	0x50
+ 1747 0177 06000000 		.4byte	.LVL49
+ 1748 017b 2A000000 		.4byte	.LFE3
+ 1749 017f 0400     		.2byte	0x4
+ 1750 0181 F3       		.byte	0xf3
+ 1751 0182 01       		.uleb128 0x1
+ 1752 0183 50       		.byte	0x50
+ 1753 0184 9F       		.byte	0x9f
+ 1754 0185 00000000 		.4byte	0
+ 1755 0189 00000000 		.4byte	0
+ 1756              	.LLST10:
+ 1757 018d 00000000 		.4byte	.LVL56
+ 1758 0191 06000000 		.4byte	.LVL57
+ 1759 0195 0100     		.2byte	0x1
+ 1760 0197 50       		.byte	0x50
+ 1761 0198 06000000 		.4byte	.LVL57
+ 1762 019c 34000000 		.4byte	.LFE4
+ 1763 01a0 0400     		.2byte	0x4
+ 1764 01a2 F3       		.byte	0xf3
+ 1765 01a3 01       		.uleb128 0x1
+ 1766 01a4 50       		.byte	0x50
+ 1767 01a5 9F       		.byte	0x9f
+ 1768 01a6 00000000 		.4byte	0
+ 1769 01aa 00000000 		.4byte	0
+ 1770              	.LLST11:
+ 1771 01ae 00000000 		.4byte	.LVL66
+ 1772 01b2 10000000 		.4byte	.LVL67
+ 1773 01b6 0100     		.2byte	0x1
+ 1774 01b8 50       		.byte	0x50
+ 1775 01b9 10000000 		.4byte	.LVL67
+ 1776 01bd 4C000000 		.4byte	.LVL79
+ 1777 01c1 0100     		.2byte	0x1
+ 1778 01c3 56       		.byte	0x56
+ 1779 01c4 4C000000 		.4byte	.LVL79
+ 1780 01c8 B6000000 		.4byte	.LFE5
+ 1781 01cc 0400     		.2byte	0x4
+ 1782 01ce F3       		.byte	0xf3
+ 1783 01cf 01       		.uleb128 0x1
+ 1784 01d0 50       		.byte	0x50
+ 1785 01d1 9F       		.byte	0x9f
+ 1786 01d2 00000000 		.4byte	0
+ 1787 01d6 00000000 		.4byte	0
+ 1788              	.LLST12:
+ 1789 01da 00000000 		.4byte	.LVL66
+ 1790 01de 13000000 		.4byte	.LVL68-1
+ 1791 01e2 0100     		.2byte	0x1
+ 1792 01e4 51       		.byte	0x51
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccbKWCte.s 			page 37
 
 
- 1795 014a 00000000 		.4byte	0
- 1796              	.LLST8:
- 1797 014e 7A000000 		.4byte	.LVL37
- 1798 0152 86000000 		.4byte	.LVL39
- 1799 0156 0100     		.2byte	0x1
- 1800 0158 54       		.byte	0x54
- 1801 0159 88000000 		.4byte	.LVL40
- 1802 015d 98000000 		.4byte	.LVL44
- 1803 0161 0100     		.2byte	0x1
- 1804 0163 54       		.byte	0x54
- 1805 0164 00000000 		.4byte	0
- 1806 0168 00000000 		.4byte	0
- 1807              	.LLST9:
- 1808 016c 00000000 		.4byte	.LVL49
- 1809 0170 06000000 		.4byte	.LVL50
- 1810 0174 0100     		.2byte	0x1
- 1811 0176 50       		.byte	0x50
- 1812 0177 06000000 		.4byte	.LVL50
- 1813 017b 2A000000 		.4byte	.LFE4
- 1814 017f 0400     		.2byte	0x4
- 1815 0181 F3       		.byte	0xf3
- 1816 0182 01       		.uleb128 0x1
- 1817 0183 50       		.byte	0x50
- 1818 0184 9F       		.byte	0x9f
- 1819 0185 00000000 		.4byte	0
- 1820 0189 00000000 		.4byte	0
- 1821              	.LLST10:
- 1822 018d 00000000 		.4byte	.LVL57
- 1823 0191 06000000 		.4byte	.LVL58
- 1824 0195 0100     		.2byte	0x1
- 1825 0197 50       		.byte	0x50
- 1826 0198 06000000 		.4byte	.LVL58
- 1827 019c 34000000 		.4byte	.LFE5
- 1828 01a0 0400     		.2byte	0x4
- 1829 01a2 F3       		.byte	0xf3
- 1830 01a3 01       		.uleb128 0x1
- 1831 01a4 50       		.byte	0x50
- 1832 01a5 9F       		.byte	0x9f
- 1833 01a6 00000000 		.4byte	0
- 1834 01aa 00000000 		.4byte	0
- 1835              	.LLST11:
- 1836 01ae 00000000 		.4byte	.LVL67
- 1837 01b2 10000000 		.4byte	.LVL68
- 1838 01b6 0100     		.2byte	0x1
- 1839 01b8 50       		.byte	0x50
- 1840 01b9 10000000 		.4byte	.LVL68
- 1841 01bd 4C000000 		.4byte	.LVL80
- 1842 01c1 0100     		.2byte	0x1
- 1843 01c3 56       		.byte	0x56
- 1844 01c4 4C000000 		.4byte	.LVL80
- 1845 01c8 B6000000 		.4byte	.LFE6
- 1846 01cc 0400     		.2byte	0x4
- 1847 01ce F3       		.byte	0xf3
- 1848 01cf 01       		.uleb128 0x1
- 1849 01d0 50       		.byte	0x50
- 1850 01d1 9F       		.byte	0x9f
- 1851 01d2 00000000 		.4byte	0
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc9h3aTU.s 			page 38
+ 1793 01e5 13000000 		.4byte	.LVL68-1
+ 1794 01e9 B6000000 		.4byte	.LFE5
+ 1795 01ed 0400     		.2byte	0x4
+ 1796 01ef F3       		.byte	0xf3
+ 1797 01f0 01       		.uleb128 0x1
+ 1798 01f1 51       		.byte	0x51
+ 1799 01f2 9F       		.byte	0x9f
+ 1800 01f3 00000000 		.4byte	0
+ 1801 01f7 00000000 		.4byte	0
+ 1802              	.LLST13:
+ 1803 01fb 00000000 		.4byte	.LVL66
+ 1804 01ff 13000000 		.4byte	.LVL68-1
+ 1805 0203 0100     		.2byte	0x1
+ 1806 0205 52       		.byte	0x52
+ 1807 0206 13000000 		.4byte	.LVL68-1
+ 1808 020a B6000000 		.4byte	.LFE5
+ 1809 020e 0100     		.2byte	0x1
+ 1810 0210 57       		.byte	0x57
+ 1811 0211 00000000 		.4byte	0
+ 1812 0215 00000000 		.4byte	0
+ 1813              	.LLST14:
+ 1814 0219 00000000 		.4byte	.LVL66
+ 1815 021d 13000000 		.4byte	.LVL68-1
+ 1816 0221 0100     		.2byte	0x1
+ 1817 0223 53       		.byte	0x53
+ 1818 0224 13000000 		.4byte	.LVL68-1
+ 1819 0228 B6000000 		.4byte	.LFE5
+ 1820 022c 0400     		.2byte	0x4
+ 1821 022e F3       		.byte	0xf3
+ 1822 022f 01       		.uleb128 0x1
+ 1823 0230 53       		.byte	0x53
+ 1824 0231 9F       		.byte	0x9f
+ 1825 0232 00000000 		.4byte	0
+ 1826 0236 00000000 		.4byte	0
+ 1827              	.LLST15:
+ 1828 023a 16000000 		.4byte	.LVL69
+ 1829 023e 38000000 		.4byte	.LVL73
+ 1830 0242 0100     		.2byte	0x1
+ 1831 0244 54       		.byte	0x54
+ 1832 0245 3A000000 		.4byte	.LVL74
+ 1833 0249 54000000 		.4byte	.LVL80
+ 1834 024d 0100     		.2byte	0x1
+ 1835 024f 54       		.byte	0x54
+ 1836 0250 54000000 		.4byte	.LVL80
+ 1837 0254 90000000 		.4byte	.LVL88
+ 1838 0258 0100     		.2byte	0x1
+ 1839 025a 58       		.byte	0x58
+ 1840 025b 94000000 		.4byte	.LVL89
+ 1841 025f B6000000 		.4byte	.LFE5
+ 1842 0263 0100     		.2byte	0x1
+ 1843 0265 58       		.byte	0x58
+ 1844 0266 00000000 		.4byte	0
+ 1845 026a 00000000 		.4byte	0
+ 1846              	.LLST16:
+ 1847 026e 16000000 		.4byte	.LVL69
+ 1848 0272 1A000000 		.4byte	.LVL70
+ 1849 0276 0200     		.2byte	0x2
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccbKWCte.s 			page 38
 
 
- 1852 01d6 00000000 		.4byte	0
- 1853              	.LLST12:
- 1854 01da 00000000 		.4byte	.LVL67
- 1855 01de 13000000 		.4byte	.LVL69-1
- 1856 01e2 0100     		.2byte	0x1
- 1857 01e4 51       		.byte	0x51
- 1858 01e5 13000000 		.4byte	.LVL69-1
- 1859 01e9 B6000000 		.4byte	.LFE6
- 1860 01ed 0400     		.2byte	0x4
- 1861 01ef F3       		.byte	0xf3
- 1862 01f0 01       		.uleb128 0x1
- 1863 01f1 51       		.byte	0x51
- 1864 01f2 9F       		.byte	0x9f
- 1865 01f3 00000000 		.4byte	0
- 1866 01f7 00000000 		.4byte	0
- 1867              	.LLST13:
- 1868 01fb 00000000 		.4byte	.LVL67
- 1869 01ff 13000000 		.4byte	.LVL69-1
- 1870 0203 0100     		.2byte	0x1
- 1871 0205 52       		.byte	0x52
- 1872 0206 13000000 		.4byte	.LVL69-1
- 1873 020a B6000000 		.4byte	.LFE6
- 1874 020e 0100     		.2byte	0x1
- 1875 0210 57       		.byte	0x57
- 1876 0211 00000000 		.4byte	0
- 1877 0215 00000000 		.4byte	0
- 1878              	.LLST14:
- 1879 0219 00000000 		.4byte	.LVL67
- 1880 021d 13000000 		.4byte	.LVL69-1
- 1881 0221 0100     		.2byte	0x1
- 1882 0223 53       		.byte	0x53
- 1883 0224 13000000 		.4byte	.LVL69-1
- 1884 0228 B6000000 		.4byte	.LFE6
- 1885 022c 0400     		.2byte	0x4
- 1886 022e F3       		.byte	0xf3
- 1887 022f 01       		.uleb128 0x1
- 1888 0230 53       		.byte	0x53
- 1889 0231 9F       		.byte	0x9f
- 1890 0232 00000000 		.4byte	0
- 1891 0236 00000000 		.4byte	0
- 1892              	.LLST15:
- 1893 023a 16000000 		.4byte	.LVL70
- 1894 023e 38000000 		.4byte	.LVL74
- 1895 0242 0100     		.2byte	0x1
- 1896 0244 54       		.byte	0x54
- 1897 0245 3A000000 		.4byte	.LVL75
- 1898 0249 54000000 		.4byte	.LVL81
- 1899 024d 0100     		.2byte	0x1
- 1900 024f 54       		.byte	0x54
- 1901 0250 54000000 		.4byte	.LVL81
- 1902 0254 90000000 		.4byte	.LVL89
- 1903 0258 0100     		.2byte	0x1
- 1904 025a 58       		.byte	0x58
- 1905 025b 94000000 		.4byte	.LVL90
- 1906 025f B6000000 		.4byte	.LFE6
- 1907 0263 0100     		.2byte	0x1
- 1908 0265 58       		.byte	0x58
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc9h3aTU.s 			page 39
+ 1850 0278 30       		.byte	0x30
+ 1851 0279 9F       		.byte	0x9f
+ 1852 027a 1A000000 		.4byte	.LVL70
+ 1853 027e 3C000000 		.4byte	.LVL75
+ 1854 0282 0100     		.2byte	0x1
+ 1855 0284 55       		.byte	0x55
+ 1856 0285 3E000000 		.4byte	.LVL76
+ 1857 0289 54000000 		.4byte	.LVL80
+ 1858 028d 0100     		.2byte	0x1
+ 1859 028f 55       		.byte	0x55
+ 1860 0290 54000000 		.4byte	.LVL80
+ 1861 0294 56000000 		.4byte	.LVL81
+ 1862 0298 0200     		.2byte	0x2
+ 1863 029a 30       		.byte	0x30
+ 1864 029b 9F       		.byte	0x9f
+ 1865 029c 56000000 		.4byte	.LVL81
+ 1866 02a0 96000000 		.4byte	.LVL90
+ 1867 02a4 0100     		.2byte	0x1
+ 1868 02a6 56       		.byte	0x56
+ 1869 02a7 98000000 		.4byte	.LVL91
+ 1870 02ab B6000000 		.4byte	.LFE5
+ 1871 02af 0100     		.2byte	0x1
+ 1872 02b1 56       		.byte	0x56
+ 1873 02b2 00000000 		.4byte	0
+ 1874 02b6 00000000 		.4byte	0
+ 1875              	.LLST17:
+ 1876 02ba 7A000000 		.4byte	.LVL84
+ 1877 02be 86000000 		.4byte	.LVL86
+ 1878 02c2 0100     		.2byte	0x1
+ 1879 02c4 54       		.byte	0x54
+ 1880 02c5 88000000 		.4byte	.LVL87
+ 1881 02c9 98000000 		.4byte	.LVL91
+ 1882 02cd 0100     		.2byte	0x1
+ 1883 02cf 54       		.byte	0x54
+ 1884 02d0 00000000 		.4byte	0
+ 1885 02d4 00000000 		.4byte	0
+ 1886              		.section	.debug_aranges,"",%progbits
+ 1887 0000 44000000 		.4byte	0x44
+ 1888 0004 0200     		.2byte	0x2
+ 1889 0006 00000000 		.4byte	.Ldebug_info0
+ 1890 000a 04       		.byte	0x4
+ 1891 000b 00       		.byte	0
+ 1892 000c 0000     		.2byte	0
+ 1893 000e 0000     		.2byte	0
+ 1894 0010 00000000 		.4byte	.LFB0
+ 1895 0014 2A000000 		.4byte	.LFE0-.LFB0
+ 1896 0018 00000000 		.4byte	.LFB1
+ 1897 001c 34000000 		.4byte	.LFE1-.LFB1
+ 1898 0020 00000000 		.4byte	.LFB2
+ 1899 0024 B6000000 		.4byte	.LFE2-.LFB2
+ 1900 0028 00000000 		.4byte	.LFB3
+ 1901 002c 2A000000 		.4byte	.LFE3-.LFB3
+ 1902 0030 00000000 		.4byte	.LFB4
+ 1903 0034 34000000 		.4byte	.LFE4-.LFB4
+ 1904 0038 00000000 		.4byte	.LFB5
+ 1905 003c B6000000 		.4byte	.LFE5-.LFB5
+ 1906 0040 00000000 		.4byte	0
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccbKWCte.s 			page 39
 
 
- 1909 0266 00000000 		.4byte	0
- 1910 026a 00000000 		.4byte	0
- 1911              	.LLST16:
- 1912 026e 16000000 		.4byte	.LVL70
- 1913 0272 1A000000 		.4byte	.LVL71
- 1914 0276 0200     		.2byte	0x2
- 1915 0278 30       		.byte	0x30
- 1916 0279 9F       		.byte	0x9f
- 1917 027a 1A000000 		.4byte	.LVL71
- 1918 027e 3C000000 		.4byte	.LVL76
- 1919 0282 0100     		.2byte	0x1
- 1920 0284 55       		.byte	0x55
- 1921 0285 3E000000 		.4byte	.LVL77
- 1922 0289 54000000 		.4byte	.LVL81
- 1923 028d 0100     		.2byte	0x1
- 1924 028f 55       		.byte	0x55
- 1925 0290 54000000 		.4byte	.LVL81
- 1926 0294 56000000 		.4byte	.LVL82
- 1927 0298 0200     		.2byte	0x2
- 1928 029a 30       		.byte	0x30
- 1929 029b 9F       		.byte	0x9f
- 1930 029c 56000000 		.4byte	.LVL82
- 1931 02a0 96000000 		.4byte	.LVL91
- 1932 02a4 0100     		.2byte	0x1
- 1933 02a6 56       		.byte	0x56
- 1934 02a7 98000000 		.4byte	.LVL92
- 1935 02ab B6000000 		.4byte	.LFE6
- 1936 02af 0100     		.2byte	0x1
- 1937 02b1 56       		.byte	0x56
- 1938 02b2 00000000 		.4byte	0
- 1939 02b6 00000000 		.4byte	0
- 1940              	.LLST17:
- 1941 02ba 7A000000 		.4byte	.LVL85
- 1942 02be 86000000 		.4byte	.LVL87
- 1943 02c2 0100     		.2byte	0x1
- 1944 02c4 54       		.byte	0x54
- 1945 02c5 88000000 		.4byte	.LVL88
- 1946 02c9 98000000 		.4byte	.LVL92
- 1947 02cd 0100     		.2byte	0x1
- 1948 02cf 54       		.byte	0x54
- 1949 02d0 00000000 		.4byte	0
- 1950 02d4 00000000 		.4byte	0
- 1951              		.section	.debug_aranges,"",%progbits
- 1952 0000 4C000000 		.4byte	0x4c
- 1953 0004 0200     		.2byte	0x2
- 1954 0006 00000000 		.4byte	.Ldebug_info0
- 1955 000a 04       		.byte	0x4
- 1956 000b 00       		.byte	0
- 1957 000c 0000     		.2byte	0
- 1958 000e 0000     		.2byte	0
- 1959 0010 00000000 		.4byte	.LFB0
- 1960 0014 2A000000 		.4byte	.LFE0-.LFB0
- 1961 0018 00000000 		.4byte	.LFB1
- 1962 001c 34000000 		.4byte	.LFE1-.LFB1
- 1963 0020 00000000 		.4byte	.LFB2
- 1964 0024 02000000 		.4byte	.LFE2-.LFB2
- 1965 0028 00000000 		.4byte	.LFB3
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc9h3aTU.s 			page 40
+ 1907 0044 00000000 		.4byte	0
+ 1908              		.section	.debug_ranges,"",%progbits
+ 1909              	.Ldebug_ranges0:
+ 1910 0000 00000000 		.4byte	.LFB0
+ 1911 0004 2A000000 		.4byte	.LFE0
+ 1912 0008 00000000 		.4byte	.LFB1
+ 1913 000c 34000000 		.4byte	.LFE1
+ 1914 0010 00000000 		.4byte	.LFB2
+ 1915 0014 B6000000 		.4byte	.LFE2
+ 1916 0018 00000000 		.4byte	.LFB3
+ 1917 001c 2A000000 		.4byte	.LFE3
+ 1918 0020 00000000 		.4byte	.LFB4
+ 1919 0024 34000000 		.4byte	.LFE4
+ 1920 0028 00000000 		.4byte	.LFB5
+ 1921 002c B6000000 		.4byte	.LFE5
+ 1922 0030 00000000 		.4byte	0
+ 1923 0034 00000000 		.4byte	0
+ 1924              		.section	.debug_line,"",%progbits
+ 1925              	.Ldebug_line0:
+ 1926 0000 73020000 		.section	.debug_str,"MS",%progbits,1
+ 1926      02007301 
+ 1926      00000201 
+ 1926      FB0E0D00 
+ 1926      01010101 
+ 1927              	.LASF33:
+ 1928 0000 4143435F 		.ascii	"ACC_SPI_Interface_ReadByte\000"
+ 1928      5350495F 
+ 1928      496E7465 
+ 1928      72666163 
+ 1928      655F5265 
+ 1929              	.LASF0:
+ 1930 001b 5F5F696E 		.ascii	"__int8_t\000"
+ 1930      74385F74 
+ 1930      00
+ 1931              	.LASF1:
+ 1932 0024 5F5F7569 		.ascii	"__uint8_t\000"
+ 1932      6E74385F 
+ 1932      7400
+ 1933              	.LASF32:
+ 1934 002e 4143435F 		.ascii	"ACC_SPI_Interface_tradeByte\000"
+ 1934      5350495F 
+ 1934      496E7465 
+ 1934      72666163 
+ 1934      655F7472 
+ 1935              	.LASF29:
+ 1936 004a 636F756E 		.ascii	"count\000"
+ 1936      7400
+ 1937              	.LASF5:
+ 1938 0050 73686F72 		.ascii	"short unsigned int\000"
+ 1938      7420756E 
+ 1938      7369676E 
+ 1938      65642069 
+ 1938      6E7400
+ 1939              	.LASF28:
+ 1940 0063 62797465 		.ascii	"bytesRX\000"
+ 1940      73525800 
+ 1941              	.LASF21:
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccbKWCte.s 			page 40
 
 
- 1966 002c B6000000 		.4byte	.LFE3-.LFB3
- 1967 0030 00000000 		.4byte	.LFB4
- 1968 0034 2A000000 		.4byte	.LFE4-.LFB4
- 1969 0038 00000000 		.4byte	.LFB5
- 1970 003c 34000000 		.4byte	.LFE5-.LFB5
- 1971 0040 00000000 		.4byte	.LFB6
- 1972 0044 B6000000 		.4byte	.LFE6-.LFB6
- 1973 0048 00000000 		.4byte	0
- 1974 004c 00000000 		.4byte	0
- 1975              		.section	.debug_ranges,"",%progbits
- 1976              	.Ldebug_ranges0:
- 1977 0000 00000000 		.4byte	.LFB0
- 1978 0004 2A000000 		.4byte	.LFE0
- 1979 0008 00000000 		.4byte	.LFB1
- 1980 000c 34000000 		.4byte	.LFE1
- 1981 0010 00000000 		.4byte	.LFB2
- 1982 0014 02000000 		.4byte	.LFE2
- 1983 0018 00000000 		.4byte	.LFB3
- 1984 001c B6000000 		.4byte	.LFE3
- 1985 0020 00000000 		.4byte	.LFB4
- 1986 0024 2A000000 		.4byte	.LFE4
- 1987 0028 00000000 		.4byte	.LFB5
- 1988 002c 34000000 		.4byte	.LFE5
- 1989 0030 00000000 		.4byte	.LFB6
- 1990 0034 B6000000 		.4byte	.LFE6
- 1991 0038 00000000 		.4byte	0
- 1992 003c 00000000 		.4byte	0
- 1993              		.section	.debug_line,"",%progbits
- 1994              	.Ldebug_line0:
- 1995 0000 84020000 		.section	.debug_str,"MS",%progbits,1
- 1995      02007301 
- 1995      00000201 
- 1995      FB0E0D00 
- 1995      01010101 
- 1996              	.LASF36:
- 1997 0000 4143435F 		.ascii	"ACC_SPI_Interface_ReadByte\000"
- 1997      5350495F 
- 1997      496E7465 
- 1997      72666163 
- 1997      655F5265 
- 1998              	.LASF0:
- 1999 001b 5F5F696E 		.ascii	"__int8_t\000"
- 1999      74385F74 
- 1999      00
- 2000              	.LASF1:
- 2001 0024 5F5F7569 		.ascii	"__uint8_t\000"
- 2001      6E74385F 
- 2001      7400
- 2002              	.LASF35:
- 2003 002e 4143435F 		.ascii	"ACC_SPI_Interface_tradeByte\000"
- 2003      5350495F 
- 2003      496E7465 
- 2003      72666163 
- 2003      655F7472 
- 2004              	.LASF32:
- 2005 004a 636F756E 		.ascii	"count\000"
- 2005      7400
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc9h3aTU.s 			page 41
+ 1942 006b 62797465 		.ascii	"byte\000"
+ 1942      00
+ 1943              	.LASF47:
+ 1944 0070 5350494D 		.ascii	"SPIM_2_ReadRxData\000"
+ 1944      5F325F52 
+ 1944      65616452 
+ 1944      78446174 
+ 1944      6100
+ 1945              	.LASF49:
+ 1946 0082 5350494D 		.ascii	"SPIM_2_ClearFIFO\000"
+ 1946      5F325F43 
+ 1946      6C656172 
+ 1946      4649464F 
+ 1946      00
+ 1947              	.LASF11:
+ 1948 0093 696E7438 		.ascii	"int8_t\000"
+ 1948      5F7400
+ 1949              	.LASF38:
+ 1950 009a 5350494D 		.ascii	"SPIM_1_ReadTxStatus\000"
+ 1950      5F315F52 
+ 1950      65616454 
+ 1950      78537461 
+ 1950      74757300 
+ 1951              	.LASF22:
+ 1952 00ae 62797465 		.ascii	"byteTX\000"
+ 1952      545800
+ 1953              	.LASF14:
+ 1954 00b5 666C6F61 		.ascii	"float\000"
+ 1954      7400
+ 1955              	.LASF23:
+ 1956 00bb 64617461 		.ascii	"data\000"
+ 1956      00
+ 1957              	.LASF20:
+ 1958 00c0 5350495F 		.ascii	"SPI_Interface_ReadByte\000"
+ 1958      496E7465 
+ 1958      72666163 
+ 1958      655F5265 
+ 1958      61644279 
+ 1959              	.LASF3:
+ 1960 00d7 756E7369 		.ascii	"unsigned char\000"
+ 1960      676E6564 
+ 1960      20636861 
+ 1960      7200
+ 1961              	.LASF52:
+ 1962 00e5 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1962      43313120 
+ 1962      352E342E 
+ 1962      31203230 
+ 1962      31363036 
+ 1963 0118 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1963      20726576 
+ 1963      6973696F 
+ 1963      6E203233 
+ 1963      37373135 
+ 1964 014b 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1964      66756E63 
+ 1964      74696F6E 
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccbKWCte.s 			page 41
 
 
- 2006              	.LASF27:
- 2007 0050 6E427974 		.ascii	"nBytes\000"
- 2007      657300
- 2008              	.LASF5:
- 2009 0057 73686F72 		.ascii	"short unsigned int\000"
- 2009      7420756E 
- 2009      7369676E 
- 2009      65642069 
- 2009      6E7400
- 2010              	.LASF21:
- 2011 006a 62797465 		.ascii	"byte\000"
- 2011      00
- 2012              	.LASF28:
- 2013 006f 5350495F 		.ascii	"SPI_Interface_Multi_Trade\000"
- 2013      496E7465 
- 2013      72666163 
- 2013      655F4D75 
- 2013      6C74695F 
- 2014              	.LASF51:
- 2015 0089 5350494D 		.ascii	"SPIM_2_ClearFIFO\000"
- 2015      5F325F43 
- 2015      6C656172 
- 2015      4649464F 
- 2015      00
- 2016              	.LASF11:
- 2017 009a 696E7438 		.ascii	"int8_t\000"
- 2017      5F7400
- 2018              	.LASF40:
- 2019 00a1 5350494D 		.ascii	"SPIM_1_ReadTxStatus\000"
- 2019      5F315F52 
- 2019      65616454 
- 2019      78537461 
- 2019      74757300 
- 2020              	.LASF22:
- 2021 00b5 62797465 		.ascii	"byteTX\000"
- 2021      545800
- 2022              	.LASF14:
- 2023 00bc 666C6F61 		.ascii	"float\000"
- 2023      7400
- 2024              	.LASF23:
- 2025 00c2 64617461 		.ascii	"data\000"
- 2025      00
- 2026              	.LASF20:
- 2027 00c7 5350495F 		.ascii	"SPI_Interface_ReadByte\000"
- 2027      496E7465 
- 2027      72666163 
- 2027      655F5265 
- 2027      61644279 
- 2028              	.LASF3:
- 2029 00de 756E7369 		.ascii	"unsigned char\000"
- 2029      676E6564 
- 2029      20636861 
- 2029      7200
- 2030              	.LASF54:
- 2031 00ec 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 2031      43313120 
- 2031      352E342E 
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc9h3aTU.s 			page 42
+ 1964      2D736563 
+ 1964      74696F6E 
+ 1965              	.LASF53:
+ 1966 0173 5350495F 		.ascii	"SPI_Interface.c\000"
+ 1966      496E7465 
+ 1966      72666163 
+ 1966      652E6300 
+ 1967              	.LASF7:
+ 1968 0183 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1968      20756E73 
+ 1968      69676E65 
+ 1968      6420696E 
+ 1968      7400
+ 1969              	.LASF13:
+ 1970 0195 75696E74 		.ascii	"uint8\000"
+ 1970      3800
+ 1971              	.LASF51:
+ 1972 019b 5350494D 		.ascii	"SPIM_2_ClearTxBuffer\000"
+ 1972      5F325F43 
+ 1972      6C656172 
+ 1972      54784275 
+ 1972      66666572 
+ 1973              	.LASF48:
+ 1974 01b0 5350494D 		.ascii	"SPIM_2_PutArray\000"
+ 1974      5F325F50 
+ 1974      75744172 
+ 1974      72617900 
+ 1975              	.LASF43:
+ 1976 01c0 5350494D 		.ascii	"SPIM_1_ClearTxBuffer\000"
+ 1976      5F315F43 
+ 1976      6C656172 
+ 1976      54784275 
+ 1976      66666572 
+ 1977              	.LASF15:
+ 1978 01d5 646F7562 		.ascii	"double\000"
+ 1978      6C6500
+ 1979              	.LASF19:
+ 1980 01dc 5350495F 		.ascii	"SPI_Interface_tradeByte\000"
+ 1980      496E7465 
+ 1980      72666163 
+ 1980      655F7472 
+ 1980      61646542 
+ 1981              	.LASF41:
+ 1982 01f4 5350494D 		.ascii	"SPIM_1_ClearFIFO\000"
+ 1982      5F315F43 
+ 1982      6C656172 
+ 1982      4649464F 
+ 1982      00
+ 1983              	.LASF24:
+ 1984 0205 62797465 		.ascii	"byteRX\000"
+ 1984      525800
+ 1985              	.LASF45:
+ 1986 020c 5350494D 		.ascii	"SPIM_2_WriteTxData\000"
+ 1986      5F325F57 
+ 1986      72697465 
+ 1986      54784461 
+ 1986      746100
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccbKWCte.s 			page 42
 
 
- 2031      31203230 
- 2031      31363036 
- 2032 011f 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 2032      20726576 
- 2032      6973696F 
- 2032      6E203233 
- 2032      37373135 
- 2033 0152 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 2033      66756E63 
- 2033      74696F6E 
- 2033      2D736563 
- 2033      74696F6E 
- 2034              	.LASF55:
- 2035 017a 5350495F 		.ascii	"SPI_Interface.c\000"
- 2035      496E7465 
- 2035      72666163 
- 2035      652E6300 
- 2036              	.LASF7:
- 2037 018a 6C6F6E67 		.ascii	"long unsigned int\000"
- 2037      20756E73 
- 2037      69676E65 
- 2037      6420696E 
- 2037      7400
- 2038              	.LASF13:
- 2039 019c 75696E74 		.ascii	"uint8\000"
- 2039      3800
- 2040              	.LASF53:
- 2041 01a2 5350494D 		.ascii	"SPIM_2_ClearTxBuffer\000"
- 2041      5F325F43 
- 2041      6C656172 
- 2041      54784275 
- 2041      66666572 
- 2042              	.LASF50:
- 2043 01b7 5350494D 		.ascii	"SPIM_2_PutArray\000"
- 2043      5F325F50 
- 2043      75744172 
- 2043      72617900 
- 2044              	.LASF45:
- 2045 01c7 5350494D 		.ascii	"SPIM_1_ClearTxBuffer\000"
- 2045      5F315F43 
- 2045      6C656172 
- 2045      54784275 
- 2045      66666572 
- 2046              	.LASF15:
- 2047 01dc 646F7562 		.ascii	"double\000"
- 2047      6C6500
- 2048              	.LASF19:
- 2049 01e3 5350495F 		.ascii	"SPI_Interface_tradeByte\000"
- 2049      496E7465 
- 2049      72666163 
- 2049      655F7472 
- 2049      61646542 
- 2050              	.LASF43:
- 2051 01fb 5350494D 		.ascii	"SPIM_1_ClearFIFO\000"
- 2051      5F315F43 
- 2051      6C656172 
- 2051      4649464F 
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc9h3aTU.s 			page 43
+ 1987              	.LASF40:
+ 1988 021f 5350494D 		.ascii	"SPIM_1_PutArray\000"
+ 1988      5F315F50 
+ 1988      75744172 
+ 1988      72617900 
+ 1989              	.LASF10:
+ 1990 022f 756E7369 		.ascii	"unsigned int\000"
+ 1990      676E6564 
+ 1990      20696E74 
+ 1990      00
+ 1991              	.LASF36:
+ 1992 023c 43535F31 		.ascii	"CS_1_Write\000"
+ 1992      5F577269 
+ 1992      746500
+ 1993              	.LASF9:
+ 1994 0247 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1994      206C6F6E 
+ 1994      6720756E 
+ 1994      7369676E 
+ 1994      65642069 
+ 1995              	.LASF12:
+ 1996 025e 75696E74 		.ascii	"uint8_t\000"
+ 1996      385F7400 
+ 1997              	.LASF54:
+ 1998 0266 433A5C55 		.ascii	"C:\\Users\\gaeta\\Documents\\PSoC Creator\\PsoC_Fin"
+ 1998      73657273 
+ 1998      5C676165 
+ 1998      74615C44 
+ 1998      6F63756D 
+ 1999 0294 616C5F50 		.ascii	"al_Project_1_03\\FIORANI_GARGIULO_IANNUZZI_Project."
+ 1999      726F6A65 
+ 1999      63745F31 
+ 1999      5F30335C 
+ 1999      46494F52 
+ 2000 02c6 63796473 		.ascii	"cydsn\000"
+ 2000      6E00
+ 2001              	.LASF31:
+ 2002 02cc 64756D6D 		.ascii	"dummyTX\000"
+ 2002      79545800 
+ 2003              	.LASF37:
+ 2004 02d4 5350494D 		.ascii	"SPIM_1_WriteTxData\000"
+ 2004      5F315F57 
+ 2004      72697465 
+ 2004      54784461 
+ 2004      746100
+ 2005              	.LASF27:
+ 2006 02e7 64617461 		.ascii	"dataRX\000"
+ 2006      525800
+ 2007              	.LASF26:
+ 2008 02ee 62797465 		.ascii	"bytesTX\000"
+ 2008      73545800 
+ 2009              	.LASF44:
+ 2010 02f6 43535F32 		.ascii	"CS_2_Write\000"
+ 2010      5F577269 
+ 2010      746500
+ 2011              	.LASF18:
+ 2012 0301 73697A65 		.ascii	"sizetype\000"
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccbKWCte.s 			page 43
 
 
- 2051      00
- 2052              	.LASF24:
- 2053 020c 62797465 		.ascii	"byteRX\000"
- 2053      525800
- 2054              	.LASF47:
- 2055 0213 5350494D 		.ascii	"SPIM_2_WriteTxData\000"
- 2055      5F325F57 
- 2055      72697465 
- 2055      54784461 
- 2055      746100
- 2056              	.LASF42:
- 2057 0226 5350494D 		.ascii	"SPIM_1_PutArray\000"
- 2057      5F315F50 
- 2057      75744172 
- 2057      72617900 
- 2058              	.LASF10:
- 2059 0236 756E7369 		.ascii	"unsigned int\000"
- 2059      676E6564 
- 2059      20696E74 
- 2059      00
- 2060              	.LASF38:
- 2061 0243 43535F31 		.ascii	"CS_1_Write\000"
- 2061      5F577269 
- 2061      746500
- 2062              	.LASF9:
- 2063 024e 6C6F6E67 		.ascii	"long long unsigned int\000"
- 2063      206C6F6E 
- 2063      6720756E 
- 2063      7369676E 
- 2063      65642069 
- 2064              	.LASF12:
- 2065 0265 75696E74 		.ascii	"uint8_t\000"
- 2065      385F7400 
- 2066              	.LASF31:
- 2067 026d 62797465 		.ascii	"bytesRX\000"
- 2067      73525800 
- 2068              	.LASF34:
- 2069 0275 64756D6D 		.ascii	"dummyTX\000"
- 2069      79545800 
- 2070              	.LASF39:
- 2071 027d 5350494D 		.ascii	"SPIM_1_WriteTxData\000"
- 2071      5F315F57 
- 2071      72697465 
- 2071      54784461 
- 2071      746100
- 2072              	.LASF26:
- 2073 0290 64617461 		.ascii	"dataRX\000"
- 2073      525800
- 2074              	.LASF30:
- 2075 0297 62797465 		.ascii	"bytesTX\000"
- 2075      73545800 
- 2076              	.LASF56:
- 2077 029f 433A5C55 		.ascii	"C:\\Users\\simon\\Desktop\\PsoC_Final_Project_1_03\\"
- 2077      73657273 
- 2077      5C73696D 
- 2077      6F6E5C44 
- 2077      65736B74 
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc9h3aTU.s 			page 44
+ 2012      74797065 
+ 2012      00
+ 2013              	.LASF8:
+ 2014 030a 6C6F6E67 		.ascii	"long long int\000"
+ 2014      206C6F6E 
+ 2014      6720696E 
+ 2014      7400
+ 2015              	.LASF16:
+ 2016 0318 63686172 		.ascii	"char\000"
+ 2016      00
+ 2017              	.LASF46:
+ 2018 031d 5350494D 		.ascii	"SPIM_2_ReadTxStatus\000"
+ 2018      5F325F52 
+ 2018      65616454 
+ 2018      78537461 
+ 2018      74757300 
+ 2019              	.LASF39:
+ 2020 0331 5350494D 		.ascii	"SPIM_1_ReadRxData\000"
+ 2020      5F315F52 
+ 2020      65616452 
+ 2020      78446174 
+ 2020      6100
+ 2021              	.LASF4:
+ 2022 0343 73686F72 		.ascii	"short int\000"
+ 2022      7420696E 
+ 2022      7400
+ 2023              	.LASF42:
+ 2024 034d 5350494D 		.ascii	"SPIM_1_ClearRxBuffer\000"
+ 2024      5F315F43 
+ 2024      6C656172 
+ 2024      52784275 
+ 2024      66666572 
+ 2025              	.LASF30:
+ 2026 0362 696E6465 		.ascii	"index\000"
+ 2026      7800
+ 2027              	.LASF50:
+ 2028 0368 5350494D 		.ascii	"SPIM_2_ClearRxBuffer\000"
+ 2028      5F325F43 
+ 2028      6C656172 
+ 2028      52784275 
+ 2028      66666572 
+ 2029              	.LASF6:
+ 2030 037d 6C6F6E67 		.ascii	"long int\000"
+ 2030      20696E74 
+ 2030      00
+ 2031              	.LASF17:
+ 2032 0386 6C6F6E67 		.ascii	"long double\000"
+ 2032      20646F75 
+ 2032      626C6500 
+ 2033              	.LASF2:
+ 2034 0392 7369676E 		.ascii	"signed char\000"
+ 2034      65642063 
+ 2034      68617200 
+ 2035              	.LASF25:
+ 2036 039e 64617461 		.ascii	"dataTX\000"
+ 2036      545800
+ 2037              	.LASF34:
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccbKWCte.s 			page 44
 
 
- 2078 02ce 46494F52 		.ascii	"FIORANI_GARGIULO_IANNUZZI_Project.cydsn\000"
- 2078      414E495F 
- 2078      47415247 
- 2078      49554C4F 
- 2078      5F49414E 
- 2079              	.LASF46:
- 2080 02f6 43535F32 		.ascii	"CS_2_Write\000"
- 2080      5F577269 
- 2080      746500
- 2081              	.LASF18:
- 2082 0301 73697A65 		.ascii	"sizetype\000"
- 2082      74797065 
- 2082      00
- 2083              	.LASF8:
- 2084 030a 6C6F6E67 		.ascii	"long long int\000"
- 2084      206C6F6E 
- 2084      6720696E 
- 2084      7400
- 2085              	.LASF16:
- 2086 0318 63686172 		.ascii	"char\000"
- 2086      00
- 2087              	.LASF48:
- 2088 031d 5350494D 		.ascii	"SPIM_2_ReadTxStatus\000"
- 2088      5F325F52 
- 2088      65616454 
- 2088      78537461 
- 2088      74757300 
- 2089              	.LASF41:
- 2090 0331 5350494D 		.ascii	"SPIM_1_ReadRxData\000"
- 2090      5F315F52 
- 2090      65616452 
- 2090      78446174 
- 2090      6100
- 2091              	.LASF4:
- 2092 0343 73686F72 		.ascii	"short int\000"
- 2092      7420696E 
- 2092      7400
- 2093              	.LASF44:
- 2094 034d 5350494D 		.ascii	"SPIM_1_ClearRxBuffer\000"
- 2094      5F315F43 
- 2094      6C656172 
- 2094      52784275 
- 2094      66666572 
- 2095              	.LASF49:
- 2096 0362 5350494D 		.ascii	"SPIM_2_ReadRxData\000"
- 2096      5F325F52 
- 2096      65616452 
- 2096      78446174 
- 2096      6100
- 2097              	.LASF33:
- 2098 0374 696E6465 		.ascii	"index\000"
- 2098      7800
- 2099              	.LASF52:
- 2100 037a 5350494D 		.ascii	"SPIM_2_ClearRxBuffer\000"
- 2100      5F325F43 
- 2100      6C656172 
- 2100      52784275 
-ARM GAS  C:\Users\simon\AppData\Local\Temp\cc9h3aTU.s 			page 45
-
-
- 2100      66666572 
- 2101              	.LASF6:
- 2102 038f 6C6F6E67 		.ascii	"long int\000"
- 2102      20696E74 
- 2102      00
- 2103              	.LASF17:
- 2104 0398 6C6F6E67 		.ascii	"long double\000"
- 2104      20646F75 
- 2104      626C6500 
- 2105              	.LASF2:
- 2106 03a4 7369676E 		.ascii	"signed char\000"
- 2106      65642063 
- 2106      68617200 
- 2107              	.LASF25:
- 2108 03b0 64617461 		.ascii	"dataTX\000"
- 2108      545800
- 2109              	.LASF29:
- 2110 03b7 5350495F 		.ascii	"SPI_Interface_Multi_RW\000"
- 2110      496E7465 
- 2110      72666163 
- 2110      655F4D75 
- 2110      6C74695F 
- 2111              	.LASF37:
- 2112 03ce 4143435F 		.ascii	"ACC_SPI_Interface_Multi_RW\000"
- 2112      5350495F 
- 2112      496E7465 
- 2112      72666163 
- 2112      655F4D75 
- 2113              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 2038 03a5 5350495F 		.ascii	"SPI_Interface_Multi_RW\000"
+ 2038      496E7465 
+ 2038      72666163 
+ 2038      655F4D75 
+ 2038      6C74695F 
+ 2039              	.LASF35:
+ 2040 03bc 4143435F 		.ascii	"ACC_SPI_Interface_Multi_RW\000"
+ 2040      5350495F 
+ 2040      496E7465 
+ 2040      72666163 
+ 2040      655F4D75 
+ 2041              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

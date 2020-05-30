@@ -3,8 +3,10 @@
  * @brief Functions required to interface with the SPI MASTER (SPIM).
  * 
  * This source code file contains macros and functions to interface
- * with the SPI Master (SPIM) of the PSoC.
- *
+ * with the SPIM_1 and SPIM_2 Masters (SPIM) of the PSoC.
+ * 
+ *@authors Simone Fiorani, Alessandra Gargiulo, Gaetano Iannuzzi
+ *@date 2020
 */
 
 
@@ -69,14 +71,14 @@ uint8_t SPI_Interface_ReadByte(uint8_t byteTX) {
 }
 
 
-/*
-* @brief Full-Duplex, Multi-Byte Trade (RX/TX)
-*/
-void SPI_Interface_Multi_Trade(uint8_t* dataTX, uint8_t* dataRX, uint8_t nBytes) {
-	
-    
-	
-}
+///*
+//* @brief Full-Duplex, Multi-Byte Trade (RX/TX)
+//*/
+//void SPI_Interface_Multi_Trade(uint8_t* dataTX, uint8_t* dataRX, uint8_t nBytes) {
+//	
+//    
+//	
+//}
 
 /*
 * @brief RX-only, Dual-Operation Multi-Byte READ/WRITE

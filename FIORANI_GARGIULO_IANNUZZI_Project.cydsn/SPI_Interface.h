@@ -3,18 +3,11 @@
  * @brief Functions required to interface with the SPI MASTER (SPIM).
  * 
  * This header file contains macros and function prototypes to interface
- * with the SPI Master (SPIM) of the PSoC.
+ * with the SPIM_1 and SPIM_2 Masters (SPIM) of the PSoC.
  *
- * @author Mattia Pesenti
- * @date 9 April, 2020
-*/
-
-/*											 
- * NOTE: in the .h Lib of the SPI Slave     		   *
- *       you need to define SLAVE_CS_Write  		   *
- *       with the name of the Chip Select    		   * 
- *       pin (as defined in the Top Design)  		   *
- * E.g.: #define SLAVE_CS_Write CS_1_Write (default)   *
+ *@authors Simone Fiorani, Alessandra Gargiulo, Gaetano Iannuzzi
+ *@date 2020
+ *
 */
 
 #pragma once
