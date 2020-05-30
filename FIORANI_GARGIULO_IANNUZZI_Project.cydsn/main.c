@@ -116,6 +116,7 @@ int main(void) {
     uint8_t OutArray[16]; // 6 bytes for the Output data + 1 byte for Header + 1 for the footer
     OutArray[0] = header;
     OutArray[15] = footer;
+    uint16_t campioni = 0x00;
     
     ADC_DelSig_StartConvert();
     int PacketInEEPROM = 0;
@@ -140,52 +141,79 @@ int main(void) {
                     OutY = (int16)((ReadData[i+2] | (ReadData[i+3]<<8)))>>6;
                     OutZ = (int16)((ReadData[i+4] | (ReadData[i+5]<<8)))>>6;
                     
-                    // Creation of Packet for EEPROM writing
-                    Packet[j]= (ReadData[i+1]>>2);
+//                    Packet[j] = ReadData[i];
+//                    Packet[j+1] = ReadData[i+1];
+//                    Packet[j+2] = ReadData[i+2];
+//                    Packet[j+3] = ReadData[i+3];
+//                    Packet[j+4] = ReadData[i+4];
+//                    Packet[j+5] = ReadData[i+5];
+                    
+                    Packet[j]   = (ReadData[i+1]>>2);
                     Packet[j+1] = ((ReadData[i+3]>>4)|(ReadData[i]>>2)|(ReadData[i+1]<<6));
                     Packet[j+2] = ((ReadData[i+5]>>6)|(ReadData[i+2]>>4)|(ReadData[i+3]<<4));
                     Packet[j+3] = ((ReadData[i+4]>>6)|(ReadData[i+5]<<2));
                     
-                    if( PacketReadyFlag==1)
-                    {
-                        
-                        Packet[j+4] = value_temp[indexT] & 0xFF;
-                        Packet[j+5] = value_temp[indexT] >> 8;
-                        indexT++;
-                    }
+                    
+                    
+//                    int16 PROVAx = (int16)((Packet[j] | (Packet[j+1]<<8)))>>6;
+//                    int16 PROVAy = (int16)((Packet[j+2] | (Packet[j+3]<<8)))>>6;
+//                    int16 PROVAz = (int16)((Packet[j+4] | (ReadData[i+5]<<8)))>>6;
+                    
+                    // Creation of Packet for EEPROM writing
+
+                    
+//                    if( PacketReadyFlag==1)
+//                    {
+//                        
+//                        Packet[j+4] = value_temp[indexT] & 0xFF;
+//                        Packet[j+5] = value_temp[indexT] >> 8;
+//                        indexT++;
+//                    }
                     // Writing of packets in EEPROM
-                    EEPROM_writePage((FIRST_EEPROM_REG+m+samples),(uint8_t*)&Packet[j],6);
+                    EEPROM_writePage((FIRST_EEPROM_REG+m+samples),&Packet[j],6);
                     EEPROM_waitForWriteComplete();
+                    
+                    EEPROM_readPage((FIRST_EEPROM_REG+m+samples),&Packet_Read[j],6);
+                    
+                    int16 oX= (int16) (((Packet_Read[j+1]<<2)|(Packet_Read[j]<<10)))>>6;
+                    int16 oY = (int16) ((Packet_Read[j+2]<<4)|(Packet_Read[j+1]<<12))>>6;
+                    int16 oZ = (int16) ((Packet_Read[j+3]<<6)|(Packet_Read[j+2]<<14))>>6;
+                    T = (int16)(Packet_Read[j+4] | (Packet_Read[j+5]<<8));
+//                    int16 oX = (int16)((Packet_Read[j] | (Packet_Read[j+1]<<8)))>>6;
+//                    int16 oY = (int16)((Packet_Read[j+2] | (Packet_Read[j+3]<<8)))>>6;
+//                    int16 oZ = (int16)((Packet_Read[j+4] | (Packet_Read[i+5]<<8)))>>6;
                     
                     j+=6;       // Index that manage which 4-byte packet write in EEPROM
                     m+=0x06;    // Increment the addrress in which start the 4-byte packet
-                 
-                    sprintf(bufferUART, "** EEPROM Read = %d %d %d \r\n",  OutX*4,OutY*4,OutZ*4);
+                    
+                    
+                    sprintf(bufferUART, "** EEPROM Read = %d %d %d \n %d %d %d %d \r\n",  OutX*4,OutY*4,OutZ*4, oX*4, oY*4,oZ*4,T/100);
                     UART_PutBuffer;
                     UART_PutString("*************************************\r\n");
-            }
+                }
             
-            j=0;    // In order to start from Packet[0] in next FIFO reading
+                j=0;    // In order to start from Packet[0] in next FIFO reading
 
-            indexT=0;
-            FIFO_Enable();
-            PacketReadyFlag=0;
-            samples +=0x3C;
-            m= 0x00;
-            PacketInEEPROM++;
-            WTM_Full = 0;
+                indexT=0;
+                FIFO_Enable();
+                PacketReadyFlag=0;
+                samples +=0x3C;
+                m= 0x00;
+                PacketInEEPROM++;
+                WTM_Full = 0;
             }
         }
         
         if(ActiveVisualization == 1)
             {
-               uint16_t campioni = 0x00;
-               for (int w = 0; w < 60*PacketInEEPROM ; w+= 60)
+               for (int w = 0; w < 60*PacketInEEPROM ; w+= 6)
             {
-               EEPROM_readPage(FIRST_EEPROM_REG+campioni,(uint8_t*)&Packet_Read[0],60);
+               EEPROM_readPage(FIRST_EEPROM_REG+campioni,(uint8_t*)&Packet_Read[0],6);
                Pin_ExternalLED_Write(1);
-               for(k=0; k<60; k+=6){
                     
+//            X = (int16)((Packet_Read[j] | (Packet_Read[j+1]<<8)))>>6;
+//            Y = (int16)((Packet_Read[j+2] | (Packet_Read[j+3]<<8)))>>6;
+//            Z = (int16)((Packet_Read[j+4] | (Packet_Read[i+5]<<8)))>>6;
                    
                     X= (int16) (((Packet_Read[k+1]<<2)|(Packet_Read[k]<<10)))>>6;
                     AccX=  X*4*9.806*0.001; // Multiply the value for 2 because the sensitivity is 2 mg/digit and 9.806*0.001 m/s^2
@@ -215,7 +243,7 @@ int main(void) {
                     OutArray[11] = (uint8_t)(OutZ32 >>16);
                     OutArray[12] = (uint8_t)(OutZ32 >>24);
 //                    
-                    T = (int16)(Packet_Read[k+4] | (Packet_Read[k+5]<<8));
+                    
                     OutArray[13] = (uint8_t)(Packet_Read[k+4]);
                     OutArray[14] = (uint8_t)(Packet_Read[k+5]);
 //         
@@ -228,12 +256,11 @@ int main(void) {
                     UART_PutArray(OutArray, 16); //Send data to Uart (values in [mg])
                     
                 }
-            campioni += 0x3C;
+            campioni += 0x06;
             }
             
              
             }
     }
-}
 
 /* [] END OF FILE */

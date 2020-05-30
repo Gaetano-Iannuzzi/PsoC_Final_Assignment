@@ -11944,7 +11944,7 @@ ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 1
  614              	.set SPIM_1_RxInternalInterrupt__INTC_CLR_PD_REG, CYREG_NVIC_CLRPEND0
  615              	.set SPIM_1_RxInternalInterrupt__INTC_MASK, 0x01
  616              	.set SPIM_1_RxInternalInterrupt__INTC_NUMBER, 0
- 617              	.set SPIM_1_RxInternalInterrupt__INTC_PRIOR_NUM, 7
+ 617              	.set SPIM_1_RxInternalInterrupt__INTC_PRIOR_NUM, 6
  618              	.set SPIM_1_RxInternalInterrupt__INTC_PRIOR_REG, CYREG_NVIC_PRI_0
  619              	.set SPIM_1_RxInternalInterrupt__INTC_SET_EN_REG, CYREG_NVIC_SETENA0
  620              	.set SPIM_1_RxInternalInterrupt__INTC_SET_PD_REG, CYREG_NVIC_SETPEND0
@@ -11952,7 +11952,7 @@ ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 1
  622              	.set SPIM_1_TxInternalInterrupt__INTC_CLR_PD_REG, CYREG_NVIC_CLRPEND0
  623              	.set SPIM_1_TxInternalInterrupt__INTC_MASK, 0x02
  624              	.set SPIM_1_TxInternalInterrupt__INTC_NUMBER, 1
- 625              	.set SPIM_1_TxInternalInterrupt__INTC_PRIOR_NUM, 7
+ 625              	.set SPIM_1_TxInternalInterrupt__INTC_PRIOR_NUM, 6
  626              	.set SPIM_1_TxInternalInterrupt__INTC_PRIOR_REG, CYREG_NVIC_PRI_1
  627              	.set SPIM_1_TxInternalInterrupt__INTC_SET_EN_REG, CYREG_NVIC_SETENA0
  628              	.set SPIM_1_TxInternalInterrupt__INTC_SET_PD_REG, CYREG_NVIC_SETPEND0
@@ -12047,7 +12047,7 @@ ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 1
  714              	.set SPIM_2_RxInternalInterrupt__INTC_CLR_PD_REG, CYREG_NVIC_CLRPEND0
  715              	.set SPIM_2_RxInternalInterrupt__INTC_MASK, 0x04
  716              	.set SPIM_2_RxInternalInterrupt__INTC_NUMBER, 2
- 717              	.set SPIM_2_RxInternalInterrupt__INTC_PRIOR_NUM, 7
+ 717              	.set SPIM_2_RxInternalInterrupt__INTC_PRIOR_NUM, 6
  718              	.set SPIM_2_RxInternalInterrupt__INTC_PRIOR_REG, CYREG_NVIC_PRI_2
  719              	.set SPIM_2_RxInternalInterrupt__INTC_SET_EN_REG, CYREG_NVIC_SETENA0
  720              	.set SPIM_2_RxInternalInterrupt__INTC_SET_PD_REG, CYREG_NVIC_SETPEND0
@@ -12055,7 +12055,7 @@ ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 1
  722              	.set SPIM_2_TxInternalInterrupt__INTC_CLR_PD_REG, CYREG_NVIC_CLRPEND0
  723              	.set SPIM_2_TxInternalInterrupt__INTC_MASK, 0x08
  724              	.set SPIM_2_TxInternalInterrupt__INTC_NUMBER, 3
- 725              	.set SPIM_2_TxInternalInterrupt__INTC_PRIOR_NUM, 7
+ 725              	.set SPIM_2_TxInternalInterrupt__INTC_PRIOR_NUM, 6
  726              	.set SPIM_2_TxInternalInterrupt__INTC_PRIOR_REG, CYREG_NVIC_PRI_3
  727              	.set SPIM_2_TxInternalInterrupt__INTC_SET_EN_REG, CYREG_NVIC_SETENA0
 ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 202
@@ -12173,7 +12173,7 @@ ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 1
  834              	.set isr_ACC__INTC_CLR_PD_REG, CYREG_NVIC_CLRPEND0
  835              	.set isr_ACC__INTC_MASK, 0x10
  836              	.set isr_ACC__INTC_NUMBER, 4
- 837              	.set isr_ACC__INTC_PRIOR_NUM, 7
+ 837              	.set isr_ACC__INTC_PRIOR_NUM, 6
  838              	.set isr_ACC__INTC_PRIOR_REG, CYREG_NVIC_PRI_4
  839              	.set isr_ACC__INTC_SET_EN_REG, CYREG_NVIC_SETENA0
  840              	.set isr_ACC__INTC_SET_PD_REG, CYREG_NVIC_SETPEND0
@@ -12186,7 +12186,7 @@ ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 1
  844              	.set isr_ADC__INTC_CLR_PD_REG, CYREG_NVIC_CLRPEND0
  845              	.set isr_ADC__INTC_MASK, 0x20000
  846              	.set isr_ADC__INTC_NUMBER, 17
- 847              	.set isr_ADC__INTC_PRIOR_NUM, 7
+ 847              	.set isr_ADC__INTC_PRIOR_NUM, 5
  848              	.set isr_ADC__INTC_PRIOR_REG, CYREG_NVIC_PRI_17
  849              	.set isr_ADC__INTC_SET_EN_REG, CYREG_NVIC_SETENA0
  850              	.set isr_ADC__INTC_SET_PD_REG, CYREG_NVIC_SETPEND0
@@ -12337,7 +12337,7 @@ ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 1
  989              	.set ADC_DelSig_IRQ__INTC_CLR_PD_REG, CYREG_NVIC_CLRPEND0
  990              	.set ADC_DelSig_IRQ__INTC_MASK, 0x20000000
  991              	.set ADC_DelSig_IRQ__INTC_NUMBER, 29
- 992              	.set ADC_DelSig_IRQ__INTC_PRIOR_NUM, 7
+ 992              	.set ADC_DelSig_IRQ__INTC_PRIOR_NUM, 6
  993              	.set ADC_DelSig_IRQ__INTC_PRIOR_REG, CYREG_NVIC_PRI_29
  994              	.set ADC_DelSig_IRQ__INTC_SET_EN_REG, CYREG_NVIC_SETENA0
  995              	.set ADC_DelSig_IRQ__INTC_SET_PD_REG, CYREG_NVIC_SETPEND0
@@ -12361,7 +12361,7 @@ ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 1
 ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 207
 
 
- 1013              	.set isr_Button__INTC_PRIOR_NUM, 7
+ 1013              	.set isr_Button__INTC_PRIOR_NUM, 6
  1014              	.set isr_Button__INTC_PRIOR_REG, CYREG_NVIC_PRI_5
  1015              	.set isr_Button__INTC_SET_EN_REG, CYREG_NVIC_SETENA0
  1016              	.set isr_Button__INTC_SET_PD_REG, CYREG_NVIC_SETPEND0
