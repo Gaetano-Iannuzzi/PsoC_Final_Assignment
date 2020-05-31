@@ -187,7 +187,6 @@ int main(void) {
                 m= 0x00;
                 PacketInEEPROM++;
                 WTM_Full = 0;
-               
             }
             else if(PacketInEEPROM > MAX_PACKET_IN_EEPROM)
             {
@@ -197,6 +196,7 @@ int main(void) {
         
         if(ActiveVisualization == 1)
             {
+                campioni = 0x00;
                for (int n = 0; n < 54*PacketInEEPROM ; n+= 54)
             {
                 for(int w=0; w<54;w+=6)
@@ -244,6 +244,7 @@ int main(void) {
 //                    UART_PutArray(OutArray, 16); //Send data to Uart (values in [mg])
                  q += 0x06; 
                 }
+                q+=0;
                 campioni += 0x36;
               }
             }

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccJiZgAk.s 			page 1
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccXyeyA0.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccJiZgAk.s 			page 1
   23:InterruptRoutines.c **** int32 value_mv;
   24:InterruptRoutines.c **** uint8 SendBytesFlag=0;
   25:InterruptRoutines.c **** uint16_t PushButtonCounter = 0;  // Initialitazion of the variable
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccJiZgAk.s 			page 2
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccXyeyA0.s 			page 2
 
 
   26:InterruptRoutines.c **** int Reset_Flag = 0,p;
@@ -66,7 +66,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccJiZgAk.s 			page 1
   28:InterruptRoutines.c **** char F;
   29:InterruptRoutines.c **** int16_t  value_temp[10];
   30:InterruptRoutines.c **** float32   value_temp_float = 0;
-  31:InterruptRoutines.c **** int  temp;
+  31:InterruptRoutines.c **** 
   32:InterruptRoutines.c **** int WTM_Full;
   33:InterruptRoutines.c **** 
   34:InterruptRoutines.c **** CY_ISR(Custom_ISR_ADC)
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccJiZgAk.s 			page 1
   67 0028 284B     		ldr	r3, .L8
   68 002a 1868     		ldr	r0, [r3]
   69 002c FFF7FEFF 		bl	ADC_DelSig_CountsTo_mVolts
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccJiZgAk.s 			page 3
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccXyeyA0.s 			page 3
 
 
   70              	.LVL2:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccJiZgAk.s 			page 1
  114 008a 1849     		ldr	r1, .L8+32
  115 008c FFF7FEFF 		bl	__aeabi_fdiv
  116              	.LVL8:
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccJiZgAk.s 			page 4
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccXyeyA0.s 			page 4
 
 
  117 0090 4FF08441 		mov	r1, #1107296256
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccJiZgAk.s 			page 1
  165              	.LFE64:
  166              		.size	Custom_ISR_ADC, .-Custom_ISR_ADC
  167              		.section	.text.Custom_Button_ISR,"ax",%progbits
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccJiZgAk.s 			page 5
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccXyeyA0.s 			page 5
 
 
  168              		.align	2
@@ -259,1252 +259,1075 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccJiZgAk.s 			page 1
  176              		.cfi_startproc
  177              		@ args = 0, pretend = 0, frame = 0
  178              		@ frame_needed = 0, uses_anonymous_args = 0
- 179 0000 08B5     		push	{r3, lr}
- 180              		.cfi_def_cfa_offset 8
- 181              		.cfi_offset 3, -8
- 182              		.cfi_offset 14, -4
-  69:InterruptRoutines.c ****     while(BUTTON_Read()==1)
- 183              		.loc 1 69 0
- 184 0002 0EE0     		b	.L12
- 185              	.L13:
-  70:InterruptRoutines.c ****     {
-  71:InterruptRoutines.c ****         CyDelay(10);
- 186              		.loc 1 71 0
- 187 0004 0A20     		movs	r0, #10
- 188 0006 FFF7FEFF 		bl	CyDelay
- 189              	.LVL12:
-  72:InterruptRoutines.c ****         temp ++;
- 190              		.loc 1 72 0
- 191 000a 084A     		ldr	r2, .L15
- 192 000c 1368     		ldr	r3, [r2]
- 193 000e 0133     		adds	r3, r3, #1
- 194 0010 1360     		str	r3, [r2]
-  73:InterruptRoutines.c ****         if(temp>= 500){
- 195              		.loc 1 73 0
- 196 0012 B3F5FA7F 		cmp	r3, #500
- 197 0016 04DB     		blt	.L12
-  74:InterruptRoutines.c ****         UART_PutString("RESET");
- 198              		.loc 1 74 0
- 199 0018 0548     		ldr	r0, .L15+4
- 200 001a FFF7FEFF 		bl	UART_PutString
- 201              	.LVL13:
-  75:InterruptRoutines.c ****         FIFO_Reset();}
- 202              		.loc 1 75 0
- 203 001e FFF7FEFF 		bl	FIFO_Reset
- 204              	.LVL14:
- 205              	.L12:
-  69:InterruptRoutines.c ****     {
- 206              		.loc 1 69 0
- 207 0022 FFF7FEFF 		bl	BUTTON_Read
- 208              	.LVL15:
- 209 0026 0128     		cmp	r0, #1
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccJiZgAk.s 			page 6
-
-
- 210 0028 ECD0     		beq	.L13
-  76:InterruptRoutines.c ****     }
+ 179              		@ link register save eliminated.
+ 180 0000 7047     		bx	lr
+ 181              		.cfi_endproc
+ 182              	.LFE65:
+ 183              		.size	Custom_Button_ISR, .-Custom_Button_ISR
+ 184 0002 00BF     		.section	.text.Custom_isr_ACC,"ax",%progbits
+ 185              		.align	2
+ 186              		.global	Custom_isr_ACC
+ 187              		.thumb
+ 188              		.thumb_func
+ 189              		.type	Custom_isr_ACC, %function
+ 190              	Custom_isr_ACC:
+ 191              	.LFB66:
+  69:InterruptRoutines.c **** //    while(BUTTON_Read()==1)
+  70:InterruptRoutines.c **** //    {
+  71:InterruptRoutines.c **** //    Timer_Button_Start();
+  72:InterruptRoutines.c **** //        int temp=Timer_Button_ReadCounter();
+  73:InterruptRoutines.c **** //        if (temp ==4999){
+  74:InterruptRoutines.c **** //        UART_PutString("RESET");
+  75:InterruptRoutines.c **** //        FIFO_Reset();}
+  76:InterruptRoutines.c **** //    }
   77:InterruptRoutines.c **** }
- 211              		.loc 1 77 0
- 212 002a 08BD     		pop	{r3, pc}
- 213              	.L16:
- 214              		.align	2
- 215              	.L15:
- 216 002c 00000000 		.word	temp
- 217 0030 00000000 		.word	.LC0
- 218              		.cfi_endproc
- 219              	.LFE65:
- 220              		.size	Custom_Button_ISR, .-Custom_Button_ISR
- 221              		.section	.text.Custom_isr_ACC,"ax",%progbits
- 222              		.align	2
- 223              		.global	Custom_isr_ACC
- 224              		.thumb
- 225              		.thumb_func
- 226              		.type	Custom_isr_ACC, %function
- 227              	Custom_isr_ACC:
- 228              	.LFB66:
   78:InterruptRoutines.c **** 
   79:InterruptRoutines.c **** CY_ISR(Custom_isr_ACC)
   80:InterruptRoutines.c **** {
- 229              		.loc 1 80 0
- 230              		.cfi_startproc
- 231              		@ args = 0, pretend = 0, frame = 0
- 232              		@ frame_needed = 0, uses_anonymous_args = 0
- 233              		@ link register save eliminated.
+ 192              		.loc 1 80 0
+ 193              		.cfi_startproc
+ 194              		@ args = 0, pretend = 0, frame = 0
+ 195              		@ frame_needed = 0, uses_anonymous_args = 0
+ 196              		@ link register save eliminated.
   81:InterruptRoutines.c ****     WTM_Full=1;
- 234              		.loc 1 81 0
- 235 0000 0122     		movs	r2, #1
- 236 0002 014B     		ldr	r3, .L18
- 237 0004 1A60     		str	r2, [r3]
- 238 0006 7047     		bx	lr
- 239              	.L19:
- 240              		.align	2
- 241              	.L18:
- 242 0008 00000000 		.word	WTM_Full
- 243              		.cfi_endproc
- 244              	.LFE66:
- 245              		.size	Custom_isr_ACC, .-Custom_isr_ACC
- 246              		.comm	WTM_Full,4,4
- 247              		.comm	temp,4,4
- 248              		.global	value_temp_float
- 249              		.comm	value_temp,20,4
- 250              		.comm	F,1,1
- 251              		.comm	TempData,2,4
- 252              		.comm	p,4,4
- 253              		.global	Reset_Flag
- 254              		.global	PushButtonCounter
- 255              		.global	SendBytesFlag
- 256              		.comm	value_mv,4,4
- 257              		.comm	value_digit,4,4
- 258              		.comm	TempUnit,1,1
- 259              		.comm	Sensitivity,1,1
- 260              		.comm	Registration_Active,4,4
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccJiZgAk.s 			page 7
+ 197              		.loc 1 81 0
+ 198 0000 0122     		movs	r2, #1
+ 199 0002 014B     		ldr	r3, .L12
+ 200 0004 1A60     		str	r2, [r3]
+ 201 0006 7047     		bx	lr
+ 202              	.L13:
+ 203              		.align	2
+ 204              	.L12:
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccXyeyA0.s 			page 6
 
 
- 261              		.comm	MenuActive,4,4
- 262              		.comm	LoopContinue,4,4
- 263              		.comm	ch_received,1,1
- 264              		.comm	ActiveVisualization,4,4
- 265              		.comm	j,2,2
- 266              		.comm	m,2,2
- 267              		.comm	samples,2,2
- 268              		.comm	ctrl_reg5,1,1
- 269              		.comm	fifo_reg,1,1
- 270              		.comm	PacketReadyFlag,1,1
- 271              		.section	.rodata.str1.4,"aMS",%progbits,1
- 272              		.align	2
- 273              	.LC0:
- 274 0000 52455345 		.ascii	"RESET\000"
- 274      5400
- 275              		.bss
- 276              		.align	2
- 277              		.set	.LANCHOR0,. + 0
- 278              		.type	value_temp_float, %object
- 279              		.size	value_temp_float, 4
- 280              	value_temp_float:
- 281 0000 00000000 		.space	4
- 282              		.type	Reset_Flag, %object
- 283              		.size	Reset_Flag, 4
- 284              	Reset_Flag:
- 285 0004 00000000 		.space	4
- 286              		.type	PushButtonCounter, %object
- 287              		.size	PushButtonCounter, 2
- 288              	PushButtonCounter:
- 289 0008 0000     		.space	2
- 290              		.type	SendBytesFlag, %object
- 291              		.size	SendBytesFlag, 1
- 292              	SendBytesFlag:
- 293 000a 00       		.space	1
- 294              		.text
- 295              	.Letext0:
- 296              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
- 297              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
- 298              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
- 299              		.file 5 "InterruptRoutines.h"
- 300              		.file 6 "Generated_Source\\PSoC5/core_cm3.h"
- 301              		.file 7 "FIFO_Functions.h"
- 302              		.file 8 "Menu_Functions.h"
- 303              		.file 9 "Generated_Source\\PSoC5/Timer.h"
- 304              		.file 10 "Generated_Source\\PSoC5/ADC_DelSig.h"
- 305              		.file 11 "Generated_Source\\PSoC5/CyLib.h"
- 306              		.file 12 "Generated_Source\\PSoC5/UART.h"
- 307              		.file 13 "Generated_Source\\PSoC5/BUTTON.h"
- 308              		.section	.debug_info,"",%progbits
- 309              	.Ldebug_info0:
- 310 0000 CB030000 		.4byte	0x3cb
- 311 0004 0400     		.2byte	0x4
- 312 0006 00000000 		.4byte	.Ldebug_abbrev0
- 313 000a 04       		.byte	0x4
- 314 000b 01       		.uleb128 0x1
- 315 000c 31030000 		.4byte	.LASF57
- 316 0010 0C       		.byte	0xc
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccJiZgAk.s 			page 8
+ 205 0008 00000000 		.word	WTM_Full
+ 206              		.cfi_endproc
+ 207              	.LFE66:
+ 208              		.size	Custom_isr_ACC, .-Custom_isr_ACC
+ 209              		.comm	WTM_Full,4,4
+ 210              		.global	value_temp_float
+ 211              		.comm	value_temp,20,4
+ 212              		.comm	F,1,1
+ 213              		.comm	TempData,2,4
+ 214              		.comm	p,4,4
+ 215              		.global	Reset_Flag
+ 216              		.global	PushButtonCounter
+ 217              		.global	SendBytesFlag
+ 218              		.comm	value_mv,4,4
+ 219              		.comm	value_digit,4,4
+ 220              		.comm	TempUnit,1,1
+ 221              		.comm	Sensitivity,1,1
+ 222              		.comm	Registration_Active,4,4
+ 223              		.comm	MenuActive,4,4
+ 224              		.comm	LoopContinue,4,4
+ 225              		.comm	ch_received,1,1
+ 226              		.comm	ActiveVisualization,4,4
+ 227              		.comm	j,2,2
+ 228              		.comm	m,2,2
+ 229              		.comm	samples,2,2
+ 230              		.comm	ctrl_reg5,1,1
+ 231              		.comm	fifo_reg,1,1
+ 232              		.comm	PacketReadyFlag,1,1
+ 233              		.bss
+ 234              		.align	2
+ 235              		.set	.LANCHOR0,. + 0
+ 236              		.type	value_temp_float, %object
+ 237              		.size	value_temp_float, 4
+ 238              	value_temp_float:
+ 239 0000 00000000 		.space	4
+ 240              		.type	Reset_Flag, %object
+ 241              		.size	Reset_Flag, 4
+ 242              	Reset_Flag:
+ 243 0004 00000000 		.space	4
+ 244              		.type	PushButtonCounter, %object
+ 245              		.size	PushButtonCounter, 2
+ 246              	PushButtonCounter:
+ 247 0008 0000     		.space	2
+ 248              		.type	SendBytesFlag, %object
+ 249              		.size	SendBytesFlag, 1
+ 250              	SendBytesFlag:
+ 251 000a 00       		.space	1
+ 252              		.text
+ 253              	.Letext0:
+ 254              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
+ 255              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
+ 256              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+ 257              		.file 5 "InterruptRoutines.h"
+ 258              		.file 6 "Generated_Source\\PSoC5/core_cm3.h"
+ 259              		.file 7 "FIFO_Functions.h"
+ 260              		.file 8 "Menu_Functions.h"
+ 261              		.file 9 "Generated_Source\\PSoC5/Timer.h"
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccXyeyA0.s 			page 7
 
 
- 317 0011 4F000000 		.4byte	.LASF58
- 318 0015 C9000000 		.4byte	.LASF59
- 319 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 320 001d 00000000 		.4byte	0
- 321 0021 00000000 		.4byte	.Ldebug_line0
- 322 0025 02       		.uleb128 0x2
- 323 0026 01       		.byte	0x1
- 324 0027 06       		.byte	0x6
- 325 0028 15020000 		.4byte	.LASF0
- 326 002c 03       		.uleb128 0x3
- 327 002d C2010000 		.4byte	.LASF2
- 328 0031 02       		.byte	0x2
- 329 0032 1D       		.byte	0x1d
- 330 0033 37000000 		.4byte	0x37
- 331 0037 02       		.uleb128 0x2
- 332 0038 01       		.byte	0x1
- 333 0039 08       		.byte	0x8
- 334 003a F0010000 		.4byte	.LASF1
- 335 003e 03       		.uleb128 0x3
- 336 003f 11030000 		.4byte	.LASF3
- 337 0043 02       		.byte	0x2
- 338 0044 29       		.byte	0x29
- 339 0045 49000000 		.4byte	0x49
- 340 0049 02       		.uleb128 0x2
- 341 004a 02       		.byte	0x2
- 342 004b 05       		.byte	0x5
- 343 004c 68000000 		.4byte	.LASF4
- 344 0050 03       		.uleb128 0x3
- 345 0051 BE000000 		.4byte	.LASF5
- 346 0055 02       		.byte	0x2
- 347 0056 2B       		.byte	0x2b
- 348 0057 5B000000 		.4byte	0x5b
- 349 005b 02       		.uleb128 0x2
- 350 005c 02       		.byte	0x2
- 351 005d 07       		.byte	0x7
- 352 005e 7E020000 		.4byte	.LASF6
- 353 0062 03       		.uleb128 0x3
- 354 0063 07030000 		.4byte	.LASF7
- 355 0067 02       		.byte	0x2
- 356 0068 3F       		.byte	0x3f
- 357 0069 6D000000 		.4byte	0x6d
- 358 006d 02       		.uleb128 0x2
- 359 006e 04       		.byte	0x4
- 360 006f 05       		.byte	0x5
- 361 0070 B9010000 		.4byte	.LASF8
- 362 0074 02       		.uleb128 0x2
- 363 0075 04       		.byte	0x4
- 364 0076 07       		.byte	0x7
- 365 0077 B4020000 		.4byte	.LASF9
- 366 007b 02       		.uleb128 0x2
- 367 007c 08       		.byte	0x8
- 368 007d 05       		.byte	0x5
- 369 007e 97010000 		.4byte	.LASF10
- 370 0082 02       		.uleb128 0x2
- 371 0083 08       		.byte	0x8
- 372 0084 07       		.byte	0x7
- 373 0085 21020000 		.4byte	.LASF11
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccJiZgAk.s 			page 9
+ 262              		.file 10 "Generated_Source\\PSoC5/ADC_DelSig.h"
+ 263              		.section	.debug_info,"",%progbits
+ 264              	.Ldebug_info0:
+ 265 0000 4D030000 		.4byte	0x34d
+ 266 0004 0400     		.2byte	0x4
+ 267 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 268 000a 04       		.byte	0x4
+ 269 000b 01       		.uleb128 0x1
+ 270 000c E0000000 		.4byte	.LASF52
+ 271 0010 0C       		.byte	0xc
+ 272 0011 80030000 		.4byte	.LASF53
+ 273 0015 54020000 		.4byte	.LASF54
+ 274 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 275 001d 00000000 		.4byte	0
+ 276 0021 00000000 		.4byte	.Ldebug_line0
+ 277 0025 02       		.uleb128 0x2
+ 278 0026 01       		.byte	0x1
+ 279 0027 06       		.byte	0x6
+ 280 0028 C6000000 		.4byte	.LASF0
+ 281 002c 03       		.uleb128 0x3
+ 282 002d 20000000 		.4byte	.LASF2
+ 283 0031 02       		.byte	0x2
+ 284 0032 1D       		.byte	0x1d
+ 285 0033 37000000 		.4byte	0x37
+ 286 0037 02       		.uleb128 0x2
+ 287 0038 01       		.byte	0x1
+ 288 0039 08       		.byte	0x8
+ 289 003a D2000000 		.4byte	.LASF1
+ 290 003e 03       		.uleb128 0x3
+ 291 003f 21020000 		.4byte	.LASF3
+ 292 0043 02       		.byte	0x2
+ 293 0044 29       		.byte	0x29
+ 294 0045 49000000 		.4byte	0x49
+ 295 0049 02       		.uleb128 0x2
+ 296 004a 02       		.byte	0x2
+ 297 004b 05       		.byte	0x5
+ 298 004c 34030000 		.4byte	.LASF4
+ 299 0050 03       		.uleb128 0x3
+ 300 0051 ED010000 		.4byte	.LASF5
+ 301 0055 02       		.byte	0x2
+ 302 0056 2B       		.byte	0x2b
+ 303 0057 5B000000 		.4byte	0x5b
+ 304 005b 02       		.uleb128 0x2
+ 305 005c 02       		.byte	0x2
+ 306 005d 07       		.byte	0x7
+ 307 005e 5C000000 		.4byte	.LASF6
+ 308 0062 03       		.uleb128 0x3
+ 309 0063 39000000 		.4byte	.LASF7
+ 310 0067 02       		.byte	0x2
+ 311 0068 3F       		.byte	0x3f
+ 312 0069 6D000000 		.4byte	0x6d
+ 313 006d 02       		.uleb128 0x2
+ 314 006e 04       		.byte	0x4
+ 315 006f 05       		.byte	0x5
+ 316 0070 57030000 		.4byte	.LASF8
+ 317 0074 02       		.uleb128 0x2
+ 318 0075 04       		.byte	0x4
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccXyeyA0.s 			page 8
 
 
- 374 0089 04       		.uleb128 0x4
- 375 008a 04       		.byte	0x4
- 376 008b 05       		.byte	0x5
- 377 008c 696E7400 		.ascii	"int\000"
- 378 0090 02       		.uleb128 0x2
- 379 0091 04       		.byte	0x4
- 380 0092 07       		.byte	0x7
- 381 0093 38020000 		.4byte	.LASF12
- 382 0097 03       		.uleb128 0x3
- 383 0098 4D010000 		.4byte	.LASF13
- 384 009c 03       		.byte	0x3
- 385 009d 18       		.byte	0x18
- 386 009e 2C000000 		.4byte	0x2c
- 387 00a2 03       		.uleb128 0x3
- 388 00a3 91020000 		.4byte	.LASF14
- 389 00a7 03       		.byte	0x3
- 390 00a8 20       		.byte	0x20
- 391 00a9 3E000000 		.4byte	0x3e
- 392 00ad 03       		.uleb128 0x3
- 393 00ae 45020000 		.4byte	.LASF15
- 394 00b2 03       		.byte	0x3
- 395 00b3 24       		.byte	0x24
- 396 00b4 50000000 		.4byte	0x50
- 397 00b8 03       		.uleb128 0x3
- 398 00b9 76020000 		.4byte	.LASF16
- 399 00bd 03       		.byte	0x3
- 400 00be 2C       		.byte	0x2c
- 401 00bf 62000000 		.4byte	0x62
- 402 00c3 05       		.uleb128 0x5
- 403 00c4 5B010000 		.4byte	.LASF17
- 404 00c8 04       		.byte	0x4
- 405 00c9 E401     		.2byte	0x1e4
- 406 00cb 37000000 		.4byte	0x37
- 407 00cf 05       		.uleb128 0x5
- 408 00d0 55010000 		.4byte	.LASF18
- 409 00d4 04       		.byte	0x4
- 410 00d5 E801     		.2byte	0x1e8
- 411 00d7 49000000 		.4byte	0x49
- 412 00db 05       		.uleb128 0x5
- 413 00dc C6020000 		.4byte	.LASF19
- 414 00e0 04       		.byte	0x4
- 415 00e1 E901     		.2byte	0x1e9
- 416 00e3 6D000000 		.4byte	0x6d
- 417 00e7 05       		.uleb128 0x5
- 418 00e8 47000000 		.4byte	.LASF20
- 419 00ec 04       		.byte	0x4
- 420 00ed EA01     		.2byte	0x1ea
- 421 00ef F3000000 		.4byte	0xf3
- 422 00f3 02       		.uleb128 0x2
- 423 00f4 04       		.byte	0x4
- 424 00f5 04       		.byte	0x4
- 425 00f6 7F010000 		.4byte	.LASF21
- 426 00fa 02       		.uleb128 0x2
- 427 00fb 08       		.byte	0x8
- 428 00fc 04       		.byte	0x4
- 429 00fd CC020000 		.4byte	.LASF22
- 430 0101 02       		.uleb128 0x2
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccJiZgAk.s 			page 10
+ 319 0076 07       		.byte	0x7
+ 320 0077 8E010000 		.4byte	.LASF9
+ 321 007b 02       		.uleb128 0x2
+ 322 007c 08       		.byte	0x8
+ 323 007d 05       		.byte	0x5
+ 324 007e 14030000 		.4byte	.LASF10
+ 325 0082 02       		.uleb128 0x2
+ 326 0083 08       		.byte	0x8
+ 327 0084 07       		.byte	0x7
+ 328 0085 35020000 		.4byte	.LASF11
+ 329 0089 04       		.uleb128 0x4
+ 330 008a 04       		.byte	0x4
+ 331 008b 05       		.byte	0x5
+ 332 008c 696E7400 		.ascii	"int\000"
+ 333 0090 02       		.uleb128 0x2
+ 334 0091 04       		.byte	0x4
+ 335 0092 07       		.byte	0x7
+ 336 0093 6F000000 		.4byte	.LASF12
+ 337 0097 03       		.uleb128 0x3
+ 338 0098 4C020000 		.4byte	.LASF13
+ 339 009c 03       		.byte	0x3
+ 340 009d 18       		.byte	0x18
+ 341 009e 2C000000 		.4byte	0x2c
+ 342 00a2 03       		.uleb128 0x3
+ 343 00a3 CF020000 		.4byte	.LASF14
+ 344 00a7 03       		.byte	0x3
+ 345 00a8 20       		.byte	0x20
+ 346 00a9 3E000000 		.4byte	0x3e
+ 347 00ad 03       		.uleb128 0x3
+ 348 00ae 4E030000 		.4byte	.LASF15
+ 349 00b2 03       		.byte	0x3
+ 350 00b3 24       		.byte	0x24
+ 351 00b4 50000000 		.4byte	0x50
+ 352 00b8 03       		.uleb128 0x3
+ 353 00b9 80010000 		.4byte	.LASF16
+ 354 00bd 03       		.byte	0x3
+ 355 00be 2C       		.byte	0x2c
+ 356 00bf 62000000 		.4byte	0x62
+ 357 00c3 05       		.uleb128 0x5
+ 358 00c4 7C000000 		.4byte	.LASF17
+ 359 00c8 04       		.byte	0x4
+ 360 00c9 E401     		.2byte	0x1e4
+ 361 00cb 37000000 		.4byte	0x37
+ 362 00cf 05       		.uleb128 0x5
+ 363 00d0 88010000 		.4byte	.LASF18
+ 364 00d4 04       		.byte	0x4
+ 365 00d5 E801     		.2byte	0x1e8
+ 366 00d7 49000000 		.4byte	0x49
+ 367 00db 05       		.uleb128 0x5
+ 368 00dc A0010000 		.4byte	.LASF19
+ 369 00e0 04       		.byte	0x4
+ 370 00e1 E901     		.2byte	0x1e9
+ 371 00e3 6D000000 		.4byte	0x6d
+ 372 00e7 05       		.uleb128 0x5
+ 373 00e8 08020000 		.4byte	.LASF20
+ 374 00ec 04       		.byte	0x4
+ 375 00ed EA01     		.2byte	0x1ea
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccXyeyA0.s 			page 9
 
 
- 431 0102 01       		.byte	0x1
- 432 0103 08       		.byte	0x8
- 433 0104 71020000 		.4byte	.LASF23
- 434 0108 06       		.uleb128 0x6
- 435 0109 C3000000 		.4byte	0xc3
- 436 010d 02       		.uleb128 0x2
- 437 010e 08       		.byte	0x8
- 438 010f 04       		.byte	0x4
- 439 0110 FE010000 		.4byte	.LASF24
- 440 0114 02       		.uleb128 0x2
- 441 0115 04       		.byte	0x4
- 442 0116 07       		.byte	0x7
- 443 0117 7D000000 		.4byte	.LASF25
- 444 011b 07       		.uleb128 0x7
- 445 011c 3E010000 		.4byte	.LASF26
- 446 0120 01       		.byte	0x1
- 447 0121 22       		.byte	0x22
- 448 0122 00000000 		.4byte	.LFB64
- 449 0126 F4000000 		.4byte	.LFE64-.LFB64
- 450 012a 01       		.uleb128 0x1
- 451 012b 9C       		.byte	0x9c
- 452 012c 4C010000 		.4byte	0x14c
- 453 0130 08       		.uleb128 0x8
- 454 0131 06000000 		.4byte	.LVL0
- 455 0135 81030000 		.4byte	0x381
- 456 0139 08       		.uleb128 0x8
- 457 013a 0A000000 		.4byte	.LVL1
- 458 013e 8C030000 		.4byte	0x38c
- 459 0142 08       		.uleb128 0x8
- 460 0143 30000000 		.4byte	.LVL2
- 461 0147 97030000 		.4byte	0x397
- 462 014b 00       		.byte	0
- 463 014c 09       		.uleb128 0x9
- 464 014d 99020000 		.4byte	.LASF27
- 465 0151 01       		.byte	0x1
- 466 0152 43       		.byte	0x43
- 467 0153 00000000 		.4byte	.LFB65
- 468 0157 34000000 		.4byte	.LFE65-.LFB65
- 469 015b 01       		.uleb128 0x1
- 470 015c 9C       		.byte	0x9c
- 471 015d 9E010000 		.4byte	0x19e
- 472 0161 0A       		.uleb128 0xa
- 473 0162 0A000000 		.4byte	.LVL12
- 474 0166 A2030000 		.4byte	0x3a2
- 475 016a 74010000 		.4byte	0x174
- 476 016e 0B       		.uleb128 0xb
- 477 016f 01       		.uleb128 0x1
- 478 0170 50       		.byte	0x50
- 479 0171 01       		.uleb128 0x1
- 480 0172 3A       		.byte	0x3a
- 481 0173 00       		.byte	0
- 482 0174 0A       		.uleb128 0xa
- 483 0175 1E000000 		.4byte	.LVL13
- 484 0179 AD030000 		.4byte	0x3ad
- 485 017d 8B010000 		.4byte	0x18b
- 486 0181 0B       		.uleb128 0xb
- 487 0182 01       		.uleb128 0x1
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccJiZgAk.s 			page 11
+ 376 00ef F3000000 		.4byte	0xf3
+ 377 00f3 02       		.uleb128 0x2
+ 378 00f4 04       		.byte	0x4
+ 379 00f5 04       		.byte	0x4
+ 380 00f6 AC000000 		.4byte	.LASF21
+ 381 00fa 02       		.uleb128 0x2
+ 382 00fb 08       		.byte	0x8
+ 383 00fc 04       		.byte	0x4
+ 384 00fd F8010000 		.4byte	.LASF22
+ 385 0101 02       		.uleb128 0x2
+ 386 0102 01       		.byte	0x1
+ 387 0103 08       		.byte	0x8
+ 388 0104 2F030000 		.4byte	.LASF23
+ 389 0108 06       		.uleb128 0x6
+ 390 0109 C3000000 		.4byte	0xc3
+ 391 010d 02       		.uleb128 0x2
+ 392 010e 08       		.byte	0x8
+ 393 010f 04       		.byte	0x4
+ 394 0110 6C030000 		.4byte	.LASF24
+ 395 0114 02       		.uleb128 0x2
+ 396 0115 04       		.byte	0x4
+ 397 0116 07       		.byte	0x7
+ 398 0117 F9020000 		.4byte	.LASF25
+ 399 011b 07       		.uleb128 0x7
+ 400 011c 2A000000 		.4byte	.LASF55
+ 401 0120 01       		.byte	0x1
+ 402 0121 22       		.byte	0x22
+ 403 0122 00000000 		.4byte	.LFB64
+ 404 0126 F4000000 		.4byte	.LFE64-.LFB64
+ 405 012a 01       		.uleb128 0x1
+ 406 012b 9C       		.byte	0x9c
+ 407 012c 4C010000 		.4byte	0x14c
+ 408 0130 08       		.uleb128 0x8
+ 409 0131 06000000 		.4byte	.LVL0
+ 410 0135 2F030000 		.4byte	0x32f
+ 411 0139 08       		.uleb128 0x8
+ 412 013a 0A000000 		.4byte	.LVL1
+ 413 013e 3A030000 		.4byte	0x33a
+ 414 0142 08       		.uleb128 0x8
+ 415 0143 30000000 		.4byte	.LVL2
+ 416 0147 45030000 		.4byte	0x345
+ 417 014b 00       		.byte	0
+ 418 014c 09       		.uleb128 0x9
+ 419 014d 9A000000 		.4byte	.LASF26
+ 420 0151 01       		.byte	0x1
+ 421 0152 43       		.byte	0x43
+ 422 0153 00000000 		.4byte	.LFB65
+ 423 0157 02000000 		.4byte	.LFE65-.LFB65
+ 424 015b 01       		.uleb128 0x1
+ 425 015c 9C       		.byte	0x9c
+ 426 015d 09       		.uleb128 0x9
+ 427 015e 8B000000 		.4byte	.LASF27
+ 428 0162 01       		.byte	0x1
+ 429 0163 4F       		.byte	0x4f
+ 430 0164 00000000 		.4byte	.LFB66
+ 431 0168 0C000000 		.4byte	.LFE66-.LFB66
+ 432 016c 01       		.uleb128 0x1
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccXyeyA0.s 			page 10
 
 
- 488 0183 50       		.byte	0x50
- 489 0184 05       		.uleb128 0x5
- 490 0185 03       		.byte	0x3
- 491 0186 00000000 		.4byte	.LC0
- 492 018a 00       		.byte	0
- 493 018b 08       		.uleb128 0x8
- 494 018c 22000000 		.4byte	.LVL14
- 495 0190 B8030000 		.4byte	0x3b8
- 496 0194 08       		.uleb128 0x8
- 497 0195 26000000 		.4byte	.LVL15
- 498 0199 C3030000 		.4byte	0x3c3
- 499 019d 00       		.byte	0
- 500 019e 0C       		.uleb128 0xc
- 501 019f 62020000 		.4byte	.LASF60
- 502 01a3 01       		.byte	0x1
- 503 01a4 4F       		.byte	0x4f
- 504 01a5 00000000 		.4byte	.LFB66
- 505 01a9 0C000000 		.4byte	.LFE66-.LFB66
- 506 01ad 01       		.uleb128 0x1
- 507 01ae 9C       		.byte	0x9c
- 508 01af 0D       		.uleb128 0xd
- 509 01b0 E0010000 		.4byte	.LASF28
- 510 01b4 05       		.byte	0x5
- 511 01b5 19       		.byte	0x19
- 512 01b6 08010000 		.4byte	0x108
- 513 01ba 05       		.uleb128 0x5
- 514 01bb 03       		.byte	0x3
- 515 01bc 00000000 		.4byte	PacketReadyFlag
- 516 01c0 0E       		.uleb128 0xe
- 517 01c1 A2000000 		.4byte	0xa2
- 518 01c5 D0010000 		.4byte	0x1d0
- 519 01c9 0F       		.uleb128 0xf
- 520 01ca 14010000 		.4byte	0x114
- 521 01ce 09       		.byte	0x9
- 522 01cf 00       		.byte	0
- 523 01d0 0D       		.uleb128 0xd
- 524 01d1 0A020000 		.4byte	.LASF29
- 525 01d5 01       		.byte	0x1
- 526 01d6 1D       		.byte	0x1d
- 527 01d7 C0010000 		.4byte	0x1c0
- 528 01db 05       		.uleb128 0x5
- 529 01dc 03       		.byte	0x3
- 530 01dd 00000000 		.4byte	value_temp
- 531 01e1 0D       		.uleb128 0xd
- 532 01e2 FE020000 		.4byte	.LASF30
- 533 01e6 01       		.byte	0x1
- 534 01e7 20       		.byte	0x20
- 535 01e8 89000000 		.4byte	0x89
- 536 01ec 05       		.uleb128 0x5
- 537 01ed 03       		.byte	0x3
- 538 01ee 00000000 		.4byte	WTM_Full
- 539 01f2 10       		.uleb128 0x10
- 540 01f3 24030000 		.4byte	.LASF31
- 541 01f7 06       		.byte	0x6
- 542 01f8 1207     		.2byte	0x712
- 543 01fa FE010000 		.4byte	0x1fe
- 544 01fe 06       		.uleb128 0x6
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccJiZgAk.s 			page 12
+ 433 016d 9C       		.byte	0x9c
+ 434 016e 0A       		.uleb128 0xa
+ 435 016f 3E030000 		.4byte	.LASF28
+ 436 0173 05       		.byte	0x5
+ 437 0174 19       		.byte	0x19
+ 438 0175 08010000 		.4byte	0x108
+ 439 0179 05       		.uleb128 0x5
+ 440 017a 03       		.byte	0x3
+ 441 017b 00000000 		.4byte	PacketReadyFlag
+ 442 017f 0B       		.uleb128 0xb
+ 443 0180 A2000000 		.4byte	0xa2
+ 444 0184 8F010000 		.4byte	0x18f
+ 445 0188 0C       		.uleb128 0xc
+ 446 0189 14010000 		.4byte	0x114
+ 447 018d 09       		.byte	0x9
+ 448 018e 00       		.byte	0
+ 449 018f 0A       		.uleb128 0xa
+ 450 0190 D7020000 		.4byte	.LASF29
+ 451 0194 01       		.byte	0x1
+ 452 0195 1D       		.byte	0x1d
+ 453 0196 7F010000 		.4byte	0x17f
+ 454 019a 05       		.uleb128 0x5
+ 455 019b 03       		.byte	0x3
+ 456 019c 00000000 		.4byte	value_temp
+ 457 01a0 0A       		.uleb128 0xa
+ 458 01a1 6E010000 		.4byte	.LASF30
+ 459 01a5 01       		.byte	0x1
+ 460 01a6 20       		.byte	0x20
+ 461 01a7 89000000 		.4byte	0x89
+ 462 01ab 05       		.uleb128 0x5
+ 463 01ac 03       		.byte	0x3
+ 464 01ad 00000000 		.4byte	WTM_Full
+ 465 01b1 0D       		.uleb128 0xd
+ 466 01b2 D5010000 		.4byte	.LASF31
+ 467 01b6 06       		.byte	0x6
+ 468 01b7 1207     		.2byte	0x712
+ 469 01b9 BD010000 		.4byte	0x1bd
+ 470 01bd 06       		.uleb128 0x6
+ 471 01be B8000000 		.4byte	0xb8
+ 472 01c2 0A       		.uleb128 0xa
+ 473 01c3 C6020000 		.4byte	.LASF32
+ 474 01c7 07       		.byte	0x7
+ 475 01c8 1A       		.byte	0x1a
+ 476 01c9 97000000 		.4byte	0x97
+ 477 01cd 05       		.uleb128 0x5
+ 478 01ce 03       		.byte	0x3
+ 479 01cf 00000000 		.4byte	fifo_reg
+ 480 01d3 0A       		.uleb128 0xa
+ 481 01d4 2B020000 		.4byte	.LASF33
+ 482 01d8 07       		.byte	0x7
+ 483 01d9 1B       		.byte	0x1b
+ 484 01da 97000000 		.4byte	0x97
+ 485 01de 05       		.uleb128 0x5
+ 486 01df 03       		.byte	0x3
+ 487 01e0 00000000 		.4byte	ctrl_reg5
+ 488 01e4 0A       		.uleb128 0xa
+ 489 01e5 78030000 		.4byte	.LASF34
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccXyeyA0.s 			page 11
 
 
- 545 01ff B8000000 		.4byte	0xb8
- 546 0203 0D       		.uleb128 0xd
- 547 0204 AB020000 		.4byte	.LASF32
- 548 0208 07       		.byte	0x7
- 549 0209 1A       		.byte	0x1a
- 550 020a 97000000 		.4byte	0x97
- 551 020e 05       		.uleb128 0x5
- 552 020f 03       		.byte	0x3
- 553 0210 00000000 		.4byte	fifo_reg
- 554 0214 0D       		.uleb128 0xd
- 555 0215 0B000000 		.4byte	.LASF33
- 556 0219 07       		.byte	0x7
- 557 021a 1B       		.byte	0x1b
- 558 021b 97000000 		.4byte	0x97
- 559 021f 05       		.uleb128 0x5
- 560 0220 03       		.byte	0x3
- 561 0221 00000000 		.4byte	ctrl_reg5
- 562 0225 0D       		.uleb128 0xd
- 563 0226 D8010000 		.4byte	.LASF34
- 564 022a 07       		.byte	0x7
- 565 022b 1C       		.byte	0x1c
- 566 022c AD000000 		.4byte	0xad
- 567 0230 05       		.uleb128 0x5
- 568 0231 03       		.byte	0x3
- 569 0232 00000000 		.4byte	samples
- 570 0236 11       		.uleb128 0x11
- 571 0237 6D00     		.ascii	"m\000"
- 572 0239 07       		.byte	0x7
- 573 023a 1D       		.byte	0x1d
- 574 023b AD000000 		.4byte	0xad
- 575 023f 05       		.uleb128 0x5
- 576 0240 03       		.byte	0x3
- 577 0241 00000000 		.4byte	m
- 578 0245 11       		.uleb128 0x11
- 579 0246 6A00     		.ascii	"j\000"
- 580 0248 07       		.byte	0x7
- 581 0249 1E       		.byte	0x1e
- 582 024a A2000000 		.4byte	0xa2
- 583 024e 05       		.uleb128 0x5
- 584 024f 03       		.byte	0x3
- 585 0250 00000000 		.4byte	j
- 586 0254 0D       		.uleb128 0xd
- 587 0255 4E020000 		.4byte	.LASF35
- 588 0259 08       		.byte	0x8
- 589 025a 2F       		.byte	0x2f
- 590 025b 89000000 		.4byte	0x89
- 591 025f 05       		.uleb128 0x5
- 592 0260 03       		.byte	0x3
- 593 0261 00000000 		.4byte	ActiveVisualization
- 594 0265 0D       		.uleb128 0xd
- 595 0266 CC010000 		.4byte	.LASF36
- 596 026a 08       		.byte	0x8
- 597 026b 31       		.byte	0x31
- 598 026c 01010000 		.4byte	0x101
- 599 0270 05       		.uleb128 0x5
- 600 0271 03       		.byte	0x3
- 601 0272 00000000 		.4byte	ch_received
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccJiZgAk.s 			page 13
+ 490 01e9 07       		.byte	0x7
+ 491 01ea 1C       		.byte	0x1c
+ 492 01eb AD000000 		.4byte	0xad
+ 493 01ef 05       		.uleb128 0x5
+ 494 01f0 03       		.byte	0x3
+ 495 01f1 00000000 		.4byte	samples
+ 496 01f5 0E       		.uleb128 0xe
+ 497 01f6 6D00     		.ascii	"m\000"
+ 498 01f8 07       		.byte	0x7
+ 499 01f9 1D       		.byte	0x1d
+ 500 01fa AD000000 		.4byte	0xad
+ 501 01fe 05       		.uleb128 0x5
+ 502 01ff 03       		.byte	0x3
+ 503 0200 00000000 		.4byte	m
+ 504 0204 0E       		.uleb128 0xe
+ 505 0205 6A00     		.ascii	"j\000"
+ 506 0207 07       		.byte	0x7
+ 507 0208 1E       		.byte	0x1e
+ 508 0209 A2000000 		.4byte	0xa2
+ 509 020d 05       		.uleb128 0x5
+ 510 020e 03       		.byte	0x3
+ 511 020f 00000000 		.4byte	j
+ 512 0213 0A       		.uleb128 0xa
+ 513 0214 B2000000 		.4byte	.LASF35
+ 514 0218 08       		.byte	0x8
+ 515 0219 2F       		.byte	0x2f
+ 516 021a 89000000 		.4byte	0x89
+ 517 021e 05       		.uleb128 0x5
+ 518 021f 03       		.byte	0x3
+ 519 0220 00000000 		.4byte	ActiveVisualization
+ 520 0224 0A       		.uleb128 0xa
+ 521 0225 ED020000 		.4byte	.LASF36
+ 522 0229 08       		.byte	0x8
+ 523 022a 31       		.byte	0x31
+ 524 022b 01010000 		.4byte	0x101
+ 525 022f 05       		.uleb128 0x5
+ 526 0230 03       		.byte	0x3
+ 527 0231 00000000 		.4byte	ch_received
+ 528 0235 0A       		.uleb128 0xa
+ 529 0236 22030000 		.4byte	.LASF37
+ 530 023a 08       		.byte	0x8
+ 531 023b 32       		.byte	0x32
+ 532 023c 89000000 		.4byte	0x89
+ 533 0240 05       		.uleb128 0x5
+ 534 0241 03       		.byte	0x3
+ 535 0242 00000000 		.4byte	LoopContinue
+ 536 0246 0A       		.uleb128 0xa
+ 537 0247 E2020000 		.4byte	.LASF38
+ 538 024b 08       		.byte	0x8
+ 539 024c 33       		.byte	0x33
+ 540 024d 89000000 		.4byte	0x89
+ 541 0251 05       		.uleb128 0x5
+ 542 0252 03       		.byte	0x3
+ 543 0253 00000000 		.4byte	MenuActive
+ 544 0257 0A       		.uleb128 0xa
+ 545 0258 A6010000 		.4byte	.LASF39
+ 546 025c 08       		.byte	0x8
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccXyeyA0.s 			page 12
 
 
- 602 0276 0D       		.uleb128 0xd
- 603 0277 3A000000 		.4byte	.LASF37
- 604 027b 08       		.byte	0x8
- 605 027c 32       		.byte	0x32
- 606 027d 89000000 		.4byte	0x89
- 607 0281 05       		.uleb128 0x5
- 608 0282 03       		.byte	0x3
- 609 0283 00000000 		.4byte	LoopContinue
- 610 0287 0D       		.uleb128 0xd
- 611 0288 8F000000 		.4byte	.LASF38
- 612 028c 08       		.byte	0x8
- 613 028d 33       		.byte	0x33
- 614 028e 89000000 		.4byte	0x89
- 615 0292 05       		.uleb128 0x5
- 616 0293 03       		.byte	0x3
- 617 0294 00000000 		.4byte	MenuActive
- 618 0298 0D       		.uleb128 0xd
- 619 0299 A5010000 		.4byte	.LASF39
- 620 029d 08       		.byte	0x8
- 621 029e 34       		.byte	0x34
- 622 029f 89000000 		.4byte	0x89
- 623 02a3 05       		.uleb128 0x5
- 624 02a4 03       		.byte	0x3
- 625 02a5 00000000 		.4byte	Registration_Active
- 626 02a9 0D       		.uleb128 0xd
- 627 02aa 15000000 		.4byte	.LASF40
- 628 02ae 08       		.byte	0x8
- 629 02af 36       		.byte	0x36
- 630 02b0 97000000 		.4byte	0x97
- 631 02b4 05       		.uleb128 0x5
- 632 02b5 03       		.byte	0x3
- 633 02b6 00000000 		.4byte	Sensitivity
- 634 02ba 0D       		.uleb128 0xd
- 635 02bb 9A000000 		.4byte	.LASF41
- 636 02bf 08       		.byte	0x8
- 637 02c0 37       		.byte	0x37
- 638 02c1 97000000 		.4byte	0x97
- 639 02c5 05       		.uleb128 0x5
- 640 02c6 03       		.byte	0x3
- 641 02c7 00000000 		.4byte	TempUnit
- 642 02cb 0D       		.uleb128 0xd
- 643 02cc 73010000 		.4byte	.LASF42
- 644 02d0 01       		.byte	0x1
- 645 02d1 16       		.byte	0x16
- 646 02d2 DB000000 		.4byte	0xdb
- 647 02d6 05       		.uleb128 0x5
- 648 02d7 03       		.byte	0x3
- 649 02d8 00000000 		.4byte	value_digit
- 650 02dc 0D       		.uleb128 0xd
- 651 02dd 1B030000 		.4byte	.LASF43
- 652 02e1 01       		.byte	0x1
- 653 02e2 17       		.byte	0x17
- 654 02e3 DB000000 		.4byte	0xdb
- 655 02e7 05       		.uleb128 0x5
- 656 02e8 03       		.byte	0x3
- 657 02e9 00000000 		.4byte	value_mv
- 658 02ed 0D       		.uleb128 0xd
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccJiZgAk.s 			page 14
+ 547 025d 34       		.byte	0x34
+ 548 025e 89000000 		.4byte	0x89
+ 549 0262 05       		.uleb128 0x5
+ 550 0263 03       		.byte	0x3
+ 551 0264 00000000 		.4byte	Registration_Active
+ 552 0268 0A       		.uleb128 0xa
+ 553 0269 BA020000 		.4byte	.LASF40
+ 554 026d 08       		.byte	0x8
+ 555 026e 36       		.byte	0x36
+ 556 026f 97000000 		.4byte	0x97
+ 557 0273 05       		.uleb128 0x5
+ 558 0274 03       		.byte	0x3
+ 559 0275 00000000 		.4byte	Sensitivity
+ 560 0279 0A       		.uleb128 0xa
+ 561 027a FF010000 		.4byte	.LASF41
+ 562 027e 08       		.byte	0x8
+ 563 027f 37       		.byte	0x37
+ 564 0280 97000000 		.4byte	0x97
+ 565 0284 05       		.uleb128 0x5
+ 566 0285 03       		.byte	0x3
+ 567 0286 00000000 		.4byte	TempUnit
+ 568 028a 0A       		.uleb128 0xa
+ 569 028b 60030000 		.4byte	.LASF42
+ 570 028f 01       		.byte	0x1
+ 571 0290 16       		.byte	0x16
+ 572 0291 DB000000 		.4byte	0xdb
+ 573 0295 05       		.uleb128 0x5
+ 574 0296 03       		.byte	0x3
+ 575 0297 00000000 		.4byte	value_digit
+ 576 029b 0A       		.uleb128 0xa
+ 577 029c 82000000 		.4byte	.LASF43
+ 578 02a0 01       		.byte	0x1
+ 579 02a1 17       		.byte	0x17
+ 580 02a2 DB000000 		.4byte	0xdb
+ 581 02a6 05       		.uleb128 0x5
+ 582 02a7 03       		.byte	0x3
+ 583 02a8 00000000 		.4byte	value_mv
+ 584 02ac 0A       		.uleb128 0xa
+ 585 02ad 00000000 		.4byte	.LASF44
+ 586 02b1 01       		.byte	0x1
+ 587 02b2 18       		.byte	0x18
+ 588 02b3 C3000000 		.4byte	0xc3
+ 589 02b7 05       		.uleb128 0x5
+ 590 02b8 03       		.byte	0x3
+ 591 02b9 00000000 		.4byte	SendBytesFlag
+ 592 02bd 0A       		.uleb128 0xa
+ 593 02be 0E000000 		.4byte	.LASF45
+ 594 02c2 01       		.byte	0x1
+ 595 02c3 19       		.byte	0x19
+ 596 02c4 AD000000 		.4byte	0xad
+ 597 02c8 05       		.uleb128 0x5
+ 598 02c9 03       		.byte	0x3
+ 599 02ca 00000000 		.4byte	PushButtonCounter
+ 600 02ce 0A       		.uleb128 0xa
+ 601 02cf E2010000 		.4byte	.LASF46
+ 602 02d3 01       		.byte	0x1
+ 603 02d4 1A       		.byte	0x1a
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccXyeyA0.s 			page 13
 
 
- 659 02ee D3020000 		.4byte	.LASF44
- 660 02f2 01       		.byte	0x1
- 661 02f3 18       		.byte	0x18
- 662 02f4 C3000000 		.4byte	0xc3
- 663 02f8 05       		.uleb128 0x5
- 664 02f9 03       		.byte	0x3
- 665 02fa 00000000 		.4byte	SendBytesFlag
- 666 02fe 0D       		.uleb128 0xd
- 667 02ff 61010000 		.4byte	.LASF45
- 668 0303 01       		.byte	0x1
- 669 0304 19       		.byte	0x19
- 670 0305 AD000000 		.4byte	0xad
- 671 0309 05       		.uleb128 0x5
- 672 030a 03       		.byte	0x3
- 673 030b 00000000 		.4byte	PushButtonCounter
- 674 030f 0D       		.uleb128 0xd
- 675 0310 72000000 		.4byte	.LASF46
- 676 0314 01       		.byte	0x1
- 677 0315 1A       		.byte	0x1a
- 678 0316 89000000 		.4byte	0x89
- 679 031a 05       		.uleb128 0x5
- 680 031b 03       		.byte	0x3
- 681 031c 00000000 		.4byte	Reset_Flag
- 682 0320 11       		.uleb128 0x11
- 683 0321 7000     		.ascii	"p\000"
- 684 0323 01       		.byte	0x1
- 685 0324 1A       		.byte	0x1a
- 686 0325 89000000 		.4byte	0x89
- 687 0329 05       		.uleb128 0x5
- 688 032a 03       		.byte	0x3
- 689 032b 00000000 		.4byte	p
- 690 032f 0E       		.uleb128 0xe
- 691 0330 97000000 		.4byte	0x97
- 692 0334 3F030000 		.4byte	0x33f
- 693 0338 0F       		.uleb128 0xf
- 694 0339 14010000 		.4byte	0x114
- 695 033d 01       		.byte	0x1
- 696 033e 00       		.byte	0
- 697 033f 0D       		.uleb128 0xd
- 698 0340 86000000 		.4byte	.LASF47
- 699 0344 01       		.byte	0x1
- 700 0345 1B       		.byte	0x1b
- 701 0346 2F030000 		.4byte	0x32f
- 702 034a 05       		.uleb128 0x5
- 703 034b 03       		.byte	0x3
- 704 034c 00000000 		.4byte	TempData
- 705 0350 11       		.uleb128 0x11
- 706 0351 4600     		.ascii	"F\000"
- 707 0353 01       		.byte	0x1
- 708 0354 1C       		.byte	0x1c
- 709 0355 01010000 		.4byte	0x101
- 710 0359 05       		.uleb128 0x5
- 711 035a 03       		.byte	0x3
- 712 035b 00000000 		.4byte	F
- 713 035f 0D       		.uleb128 0xd
- 714 0360 E1020000 		.4byte	.LASF48
- 715 0364 01       		.byte	0x1
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccJiZgAk.s 			page 15
+ 604 02d5 89000000 		.4byte	0x89
+ 605 02d9 05       		.uleb128 0x5
+ 606 02da 03       		.byte	0x3
+ 607 02db 00000000 		.4byte	Reset_Flag
+ 608 02df 0E       		.uleb128 0xe
+ 609 02e0 7000     		.ascii	"p\000"
+ 610 02e2 01       		.byte	0x1
+ 611 02e3 1A       		.byte	0x1a
+ 612 02e4 89000000 		.4byte	0x89
+ 613 02e8 05       		.uleb128 0x5
+ 614 02e9 03       		.byte	0x3
+ 615 02ea 00000000 		.4byte	p
+ 616 02ee 0B       		.uleb128 0xb
+ 617 02ef 97000000 		.4byte	0x97
+ 618 02f3 FE020000 		.4byte	0x2fe
+ 619 02f7 0C       		.uleb128 0xc
+ 620 02f8 14010000 		.4byte	0x114
+ 621 02fc 01       		.byte	0x1
+ 622 02fd 00       		.byte	0
+ 623 02fe 0A       		.uleb128 0xa
+ 624 02ff 77010000 		.4byte	.LASF47
+ 625 0303 01       		.byte	0x1
+ 626 0304 1B       		.byte	0x1b
+ 627 0305 EE020000 		.4byte	0x2ee
+ 628 0309 05       		.uleb128 0x5
+ 629 030a 03       		.byte	0x3
+ 630 030b 00000000 		.4byte	TempData
+ 631 030f 0E       		.uleb128 0xe
+ 632 0310 4600     		.ascii	"F\000"
+ 633 0312 01       		.byte	0x1
+ 634 0313 1C       		.byte	0x1c
+ 635 0314 01010000 		.4byte	0x101
+ 636 0318 05       		.uleb128 0x5
+ 637 0319 03       		.byte	0x3
+ 638 031a 00000000 		.4byte	F
+ 639 031e 0A       		.uleb128 0xa
+ 640 031f 10020000 		.4byte	.LASF48
+ 641 0323 01       		.byte	0x1
+ 642 0324 1E       		.byte	0x1e
+ 643 0325 E7000000 		.4byte	0xe7
+ 644 0329 05       		.uleb128 0x5
+ 645 032a 03       		.byte	0x3
+ 646 032b 00000000 		.4byte	value_temp_float
+ 647 032f 0F       		.uleb128 0xf
+ 648 0330 43000000 		.4byte	.LASF49
+ 649 0334 43000000 		.4byte	.LASF49
+ 650 0338 09       		.byte	0x9
+ 651 0339 5E       		.byte	0x5e
+ 652 033a 0F       		.uleb128 0xf
+ 653 033b 02030000 		.4byte	.LASF50
+ 654 033f 02030000 		.4byte	.LASF50
+ 655 0343 0A       		.byte	0xa
+ 656 0344 56       		.byte	0x56
+ 657 0345 0F       		.uleb128 0xf
+ 658 0346 BA010000 		.4byte	.LASF51
+ 659 034a BA010000 		.4byte	.LASF51
+ 660 034e 0A       		.byte	0xa
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccXyeyA0.s 			page 14
 
 
- 716 0365 1E       		.byte	0x1e
- 717 0366 E7000000 		.4byte	0xe7
- 718 036a 05       		.uleb128 0x5
- 719 036b 03       		.byte	0x3
- 720 036c 00000000 		.4byte	value_temp_float
- 721 0370 0D       		.uleb128 0xd
- 722 0371 63000000 		.4byte	.LASF49
- 723 0375 01       		.byte	0x1
- 724 0376 1F       		.byte	0x1f
- 725 0377 89000000 		.4byte	0x89
- 726 037b 05       		.uleb128 0x5
- 727 037c 03       		.byte	0x3
- 728 037d 00000000 		.4byte	temp
- 729 0381 12       		.uleb128 0x12
- 730 0382 21000000 		.4byte	.LASF50
- 731 0386 21000000 		.4byte	.LASF50
- 732 038a 09       		.byte	0x9
- 733 038b 5E       		.byte	0x5e
- 734 038c 12       		.uleb128 0x12
- 735 038d 85010000 		.4byte	.LASF51
- 736 0391 85010000 		.4byte	.LASF51
- 737 0395 0A       		.byte	0xa
- 738 0396 56       		.byte	0x56
- 739 0397 12       		.uleb128 0x12
- 740 0398 A3000000 		.4byte	.LASF52
- 741 039c A3000000 		.4byte	.LASF52
- 742 03a0 0A       		.byte	0xa
- 743 03a1 47       		.byte	0x47
- 744 03a2 12       		.uleb128 0x12
- 745 03a3 BF030000 		.4byte	.LASF53
- 746 03a7 BF030000 		.4byte	.LASF53
- 747 03ab 0B       		.byte	0xb
- 748 03ac 76       		.byte	0x76
- 749 03ad 12       		.uleb128 0x12
- 750 03ae 2F010000 		.4byte	.LASF54
- 751 03b2 2F010000 		.4byte	.LASF54
- 752 03b6 0C       		.byte	0xc
- 753 03b7 8B       		.byte	0x8b
- 754 03b8 12       		.uleb128 0x12
- 755 03b9 00000000 		.4byte	.LASF55
- 756 03bd 00000000 		.4byte	.LASF55
- 757 03c1 07       		.byte	0x7
- 758 03c2 21       		.byte	0x21
- 759 03c3 12       		.uleb128 0x12
- 760 03c4 F2020000 		.4byte	.LASF56
- 761 03c8 F2020000 		.4byte	.LASF56
- 762 03cc 0D       		.byte	0xd
- 763 03cd 29       		.byte	0x29
- 764 03ce 00       		.byte	0
- 765              		.section	.debug_abbrev,"",%progbits
- 766              	.Ldebug_abbrev0:
- 767 0000 01       		.uleb128 0x1
- 768 0001 11       		.uleb128 0x11
- 769 0002 01       		.byte	0x1
- 770 0003 25       		.uleb128 0x25
- 771 0004 0E       		.uleb128 0xe
- 772 0005 13       		.uleb128 0x13
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccJiZgAk.s 			page 16
+ 661 034f 47       		.byte	0x47
+ 662 0350 00       		.byte	0
+ 663              		.section	.debug_abbrev,"",%progbits
+ 664              	.Ldebug_abbrev0:
+ 665 0000 01       		.uleb128 0x1
+ 666 0001 11       		.uleb128 0x11
+ 667 0002 01       		.byte	0x1
+ 668 0003 25       		.uleb128 0x25
+ 669 0004 0E       		.uleb128 0xe
+ 670 0005 13       		.uleb128 0x13
+ 671 0006 0B       		.uleb128 0xb
+ 672 0007 03       		.uleb128 0x3
+ 673 0008 0E       		.uleb128 0xe
+ 674 0009 1B       		.uleb128 0x1b
+ 675 000a 0E       		.uleb128 0xe
+ 676 000b 55       		.uleb128 0x55
+ 677 000c 17       		.uleb128 0x17
+ 678 000d 11       		.uleb128 0x11
+ 679 000e 01       		.uleb128 0x1
+ 680 000f 10       		.uleb128 0x10
+ 681 0010 17       		.uleb128 0x17
+ 682 0011 00       		.byte	0
+ 683 0012 00       		.byte	0
+ 684 0013 02       		.uleb128 0x2
+ 685 0014 24       		.uleb128 0x24
+ 686 0015 00       		.byte	0
+ 687 0016 0B       		.uleb128 0xb
+ 688 0017 0B       		.uleb128 0xb
+ 689 0018 3E       		.uleb128 0x3e
+ 690 0019 0B       		.uleb128 0xb
+ 691 001a 03       		.uleb128 0x3
+ 692 001b 0E       		.uleb128 0xe
+ 693 001c 00       		.byte	0
+ 694 001d 00       		.byte	0
+ 695 001e 03       		.uleb128 0x3
+ 696 001f 16       		.uleb128 0x16
+ 697 0020 00       		.byte	0
+ 698 0021 03       		.uleb128 0x3
+ 699 0022 0E       		.uleb128 0xe
+ 700 0023 3A       		.uleb128 0x3a
+ 701 0024 0B       		.uleb128 0xb
+ 702 0025 3B       		.uleb128 0x3b
+ 703 0026 0B       		.uleb128 0xb
+ 704 0027 49       		.uleb128 0x49
+ 705 0028 13       		.uleb128 0x13
+ 706 0029 00       		.byte	0
+ 707 002a 00       		.byte	0
+ 708 002b 04       		.uleb128 0x4
+ 709 002c 24       		.uleb128 0x24
+ 710 002d 00       		.byte	0
+ 711 002e 0B       		.uleb128 0xb
+ 712 002f 0B       		.uleb128 0xb
+ 713 0030 3E       		.uleb128 0x3e
+ 714 0031 0B       		.uleb128 0xb
+ 715 0032 03       		.uleb128 0x3
+ 716 0033 08       		.uleb128 0x8
+ 717 0034 00       		.byte	0
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccXyeyA0.s 			page 15
 
 
- 773 0006 0B       		.uleb128 0xb
- 774 0007 03       		.uleb128 0x3
- 775 0008 0E       		.uleb128 0xe
- 776 0009 1B       		.uleb128 0x1b
- 777 000a 0E       		.uleb128 0xe
- 778 000b 55       		.uleb128 0x55
- 779 000c 17       		.uleb128 0x17
- 780 000d 11       		.uleb128 0x11
- 781 000e 01       		.uleb128 0x1
- 782 000f 10       		.uleb128 0x10
- 783 0010 17       		.uleb128 0x17
- 784 0011 00       		.byte	0
- 785 0012 00       		.byte	0
- 786 0013 02       		.uleb128 0x2
- 787 0014 24       		.uleb128 0x24
- 788 0015 00       		.byte	0
- 789 0016 0B       		.uleb128 0xb
- 790 0017 0B       		.uleb128 0xb
- 791 0018 3E       		.uleb128 0x3e
- 792 0019 0B       		.uleb128 0xb
- 793 001a 03       		.uleb128 0x3
- 794 001b 0E       		.uleb128 0xe
- 795 001c 00       		.byte	0
- 796 001d 00       		.byte	0
- 797 001e 03       		.uleb128 0x3
- 798 001f 16       		.uleb128 0x16
- 799 0020 00       		.byte	0
- 800 0021 03       		.uleb128 0x3
- 801 0022 0E       		.uleb128 0xe
- 802 0023 3A       		.uleb128 0x3a
- 803 0024 0B       		.uleb128 0xb
- 804 0025 3B       		.uleb128 0x3b
- 805 0026 0B       		.uleb128 0xb
- 806 0027 49       		.uleb128 0x49
- 807 0028 13       		.uleb128 0x13
- 808 0029 00       		.byte	0
- 809 002a 00       		.byte	0
- 810 002b 04       		.uleb128 0x4
- 811 002c 24       		.uleb128 0x24
- 812 002d 00       		.byte	0
- 813 002e 0B       		.uleb128 0xb
- 814 002f 0B       		.uleb128 0xb
- 815 0030 3E       		.uleb128 0x3e
- 816 0031 0B       		.uleb128 0xb
- 817 0032 03       		.uleb128 0x3
- 818 0033 08       		.uleb128 0x8
- 819 0034 00       		.byte	0
- 820 0035 00       		.byte	0
- 821 0036 05       		.uleb128 0x5
- 822 0037 16       		.uleb128 0x16
- 823 0038 00       		.byte	0
- 824 0039 03       		.uleb128 0x3
- 825 003a 0E       		.uleb128 0xe
- 826 003b 3A       		.uleb128 0x3a
- 827 003c 0B       		.uleb128 0xb
- 828 003d 3B       		.uleb128 0x3b
- 829 003e 05       		.uleb128 0x5
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccJiZgAk.s 			page 17
+ 718 0035 00       		.byte	0
+ 719 0036 05       		.uleb128 0x5
+ 720 0037 16       		.uleb128 0x16
+ 721 0038 00       		.byte	0
+ 722 0039 03       		.uleb128 0x3
+ 723 003a 0E       		.uleb128 0xe
+ 724 003b 3A       		.uleb128 0x3a
+ 725 003c 0B       		.uleb128 0xb
+ 726 003d 3B       		.uleb128 0x3b
+ 727 003e 05       		.uleb128 0x5
+ 728 003f 49       		.uleb128 0x49
+ 729 0040 13       		.uleb128 0x13
+ 730 0041 00       		.byte	0
+ 731 0042 00       		.byte	0
+ 732 0043 06       		.uleb128 0x6
+ 733 0044 35       		.uleb128 0x35
+ 734 0045 00       		.byte	0
+ 735 0046 49       		.uleb128 0x49
+ 736 0047 13       		.uleb128 0x13
+ 737 0048 00       		.byte	0
+ 738 0049 00       		.byte	0
+ 739 004a 07       		.uleb128 0x7
+ 740 004b 2E       		.uleb128 0x2e
+ 741 004c 01       		.byte	0x1
+ 742 004d 3F       		.uleb128 0x3f
+ 743 004e 19       		.uleb128 0x19
+ 744 004f 03       		.uleb128 0x3
+ 745 0050 0E       		.uleb128 0xe
+ 746 0051 3A       		.uleb128 0x3a
+ 747 0052 0B       		.uleb128 0xb
+ 748 0053 3B       		.uleb128 0x3b
+ 749 0054 0B       		.uleb128 0xb
+ 750 0055 27       		.uleb128 0x27
+ 751 0056 19       		.uleb128 0x19
+ 752 0057 11       		.uleb128 0x11
+ 753 0058 01       		.uleb128 0x1
+ 754 0059 12       		.uleb128 0x12
+ 755 005a 06       		.uleb128 0x6
+ 756 005b 40       		.uleb128 0x40
+ 757 005c 18       		.uleb128 0x18
+ 758 005d 9642     		.uleb128 0x2116
+ 759 005f 19       		.uleb128 0x19
+ 760 0060 01       		.uleb128 0x1
+ 761 0061 13       		.uleb128 0x13
+ 762 0062 00       		.byte	0
+ 763 0063 00       		.byte	0
+ 764 0064 08       		.uleb128 0x8
+ 765 0065 898201   		.uleb128 0x4109
+ 766 0068 00       		.byte	0
+ 767 0069 11       		.uleb128 0x11
+ 768 006a 01       		.uleb128 0x1
+ 769 006b 31       		.uleb128 0x31
+ 770 006c 13       		.uleb128 0x13
+ 771 006d 00       		.byte	0
+ 772 006e 00       		.byte	0
+ 773 006f 09       		.uleb128 0x9
+ 774 0070 2E       		.uleb128 0x2e
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccXyeyA0.s 			page 16
 
 
- 830 003f 49       		.uleb128 0x49
- 831 0040 13       		.uleb128 0x13
- 832 0041 00       		.byte	0
- 833 0042 00       		.byte	0
- 834 0043 06       		.uleb128 0x6
- 835 0044 35       		.uleb128 0x35
- 836 0045 00       		.byte	0
- 837 0046 49       		.uleb128 0x49
- 838 0047 13       		.uleb128 0x13
- 839 0048 00       		.byte	0
- 840 0049 00       		.byte	0
- 841 004a 07       		.uleb128 0x7
- 842 004b 2E       		.uleb128 0x2e
- 843 004c 01       		.byte	0x1
- 844 004d 3F       		.uleb128 0x3f
- 845 004e 19       		.uleb128 0x19
- 846 004f 03       		.uleb128 0x3
- 847 0050 0E       		.uleb128 0xe
- 848 0051 3A       		.uleb128 0x3a
- 849 0052 0B       		.uleb128 0xb
- 850 0053 3B       		.uleb128 0x3b
- 851 0054 0B       		.uleb128 0xb
- 852 0055 27       		.uleb128 0x27
- 853 0056 19       		.uleb128 0x19
- 854 0057 11       		.uleb128 0x11
- 855 0058 01       		.uleb128 0x1
- 856 0059 12       		.uleb128 0x12
- 857 005a 06       		.uleb128 0x6
- 858 005b 40       		.uleb128 0x40
- 859 005c 18       		.uleb128 0x18
- 860 005d 9642     		.uleb128 0x2116
- 861 005f 19       		.uleb128 0x19
- 862 0060 01       		.uleb128 0x1
- 863 0061 13       		.uleb128 0x13
- 864 0062 00       		.byte	0
- 865 0063 00       		.byte	0
- 866 0064 08       		.uleb128 0x8
- 867 0065 898201   		.uleb128 0x4109
- 868 0068 00       		.byte	0
- 869 0069 11       		.uleb128 0x11
- 870 006a 01       		.uleb128 0x1
- 871 006b 31       		.uleb128 0x31
- 872 006c 13       		.uleb128 0x13
- 873 006d 00       		.byte	0
- 874 006e 00       		.byte	0
- 875 006f 09       		.uleb128 0x9
- 876 0070 2E       		.uleb128 0x2e
- 877 0071 01       		.byte	0x1
- 878 0072 3F       		.uleb128 0x3f
- 879 0073 19       		.uleb128 0x19
- 880 0074 03       		.uleb128 0x3
- 881 0075 0E       		.uleb128 0xe
- 882 0076 3A       		.uleb128 0x3a
- 883 0077 0B       		.uleb128 0xb
- 884 0078 3B       		.uleb128 0x3b
- 885 0079 0B       		.uleb128 0xb
- 886 007a 27       		.uleb128 0x27
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccJiZgAk.s 			page 18
+ 775 0071 00       		.byte	0
+ 776 0072 3F       		.uleb128 0x3f
+ 777 0073 19       		.uleb128 0x19
+ 778 0074 03       		.uleb128 0x3
+ 779 0075 0E       		.uleb128 0xe
+ 780 0076 3A       		.uleb128 0x3a
+ 781 0077 0B       		.uleb128 0xb
+ 782 0078 3B       		.uleb128 0x3b
+ 783 0079 0B       		.uleb128 0xb
+ 784 007a 27       		.uleb128 0x27
+ 785 007b 19       		.uleb128 0x19
+ 786 007c 11       		.uleb128 0x11
+ 787 007d 01       		.uleb128 0x1
+ 788 007e 12       		.uleb128 0x12
+ 789 007f 06       		.uleb128 0x6
+ 790 0080 40       		.uleb128 0x40
+ 791 0081 18       		.uleb128 0x18
+ 792 0082 9742     		.uleb128 0x2117
+ 793 0084 19       		.uleb128 0x19
+ 794 0085 00       		.byte	0
+ 795 0086 00       		.byte	0
+ 796 0087 0A       		.uleb128 0xa
+ 797 0088 34       		.uleb128 0x34
+ 798 0089 00       		.byte	0
+ 799 008a 03       		.uleb128 0x3
+ 800 008b 0E       		.uleb128 0xe
+ 801 008c 3A       		.uleb128 0x3a
+ 802 008d 0B       		.uleb128 0xb
+ 803 008e 3B       		.uleb128 0x3b
+ 804 008f 0B       		.uleb128 0xb
+ 805 0090 49       		.uleb128 0x49
+ 806 0091 13       		.uleb128 0x13
+ 807 0092 3F       		.uleb128 0x3f
+ 808 0093 19       		.uleb128 0x19
+ 809 0094 02       		.uleb128 0x2
+ 810 0095 18       		.uleb128 0x18
+ 811 0096 00       		.byte	0
+ 812 0097 00       		.byte	0
+ 813 0098 0B       		.uleb128 0xb
+ 814 0099 01       		.uleb128 0x1
+ 815 009a 01       		.byte	0x1
+ 816 009b 49       		.uleb128 0x49
+ 817 009c 13       		.uleb128 0x13
+ 818 009d 01       		.uleb128 0x1
+ 819 009e 13       		.uleb128 0x13
+ 820 009f 00       		.byte	0
+ 821 00a0 00       		.byte	0
+ 822 00a1 0C       		.uleb128 0xc
+ 823 00a2 21       		.uleb128 0x21
+ 824 00a3 00       		.byte	0
+ 825 00a4 49       		.uleb128 0x49
+ 826 00a5 13       		.uleb128 0x13
+ 827 00a6 2F       		.uleb128 0x2f
+ 828 00a7 0B       		.uleb128 0xb
+ 829 00a8 00       		.byte	0
+ 830 00a9 00       		.byte	0
+ 831 00aa 0D       		.uleb128 0xd
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccXyeyA0.s 			page 17
 
 
- 887 007b 19       		.uleb128 0x19
- 888 007c 11       		.uleb128 0x11
- 889 007d 01       		.uleb128 0x1
- 890 007e 12       		.uleb128 0x12
- 891 007f 06       		.uleb128 0x6
- 892 0080 40       		.uleb128 0x40
- 893 0081 18       		.uleb128 0x18
- 894 0082 9742     		.uleb128 0x2117
- 895 0084 19       		.uleb128 0x19
- 896 0085 01       		.uleb128 0x1
- 897 0086 13       		.uleb128 0x13
- 898 0087 00       		.byte	0
- 899 0088 00       		.byte	0
- 900 0089 0A       		.uleb128 0xa
- 901 008a 898201   		.uleb128 0x4109
- 902 008d 01       		.byte	0x1
- 903 008e 11       		.uleb128 0x11
- 904 008f 01       		.uleb128 0x1
- 905 0090 31       		.uleb128 0x31
- 906 0091 13       		.uleb128 0x13
- 907 0092 01       		.uleb128 0x1
- 908 0093 13       		.uleb128 0x13
- 909 0094 00       		.byte	0
- 910 0095 00       		.byte	0
- 911 0096 0B       		.uleb128 0xb
- 912 0097 8A8201   		.uleb128 0x410a
- 913 009a 00       		.byte	0
- 914 009b 02       		.uleb128 0x2
- 915 009c 18       		.uleb128 0x18
- 916 009d 9142     		.uleb128 0x2111
- 917 009f 18       		.uleb128 0x18
- 918 00a0 00       		.byte	0
- 919 00a1 00       		.byte	0
- 920 00a2 0C       		.uleb128 0xc
- 921 00a3 2E       		.uleb128 0x2e
- 922 00a4 00       		.byte	0
- 923 00a5 3F       		.uleb128 0x3f
- 924 00a6 19       		.uleb128 0x19
- 925 00a7 03       		.uleb128 0x3
- 926 00a8 0E       		.uleb128 0xe
- 927 00a9 3A       		.uleb128 0x3a
- 928 00aa 0B       		.uleb128 0xb
- 929 00ab 3B       		.uleb128 0x3b
- 930 00ac 0B       		.uleb128 0xb
- 931 00ad 27       		.uleb128 0x27
- 932 00ae 19       		.uleb128 0x19
- 933 00af 11       		.uleb128 0x11
- 934 00b0 01       		.uleb128 0x1
- 935 00b1 12       		.uleb128 0x12
- 936 00b2 06       		.uleb128 0x6
- 937 00b3 40       		.uleb128 0x40
- 938 00b4 18       		.uleb128 0x18
- 939 00b5 9742     		.uleb128 0x2117
- 940 00b7 19       		.uleb128 0x19
- 941 00b8 00       		.byte	0
- 942 00b9 00       		.byte	0
- 943 00ba 0D       		.uleb128 0xd
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccJiZgAk.s 			page 19
+ 832 00ab 34       		.uleb128 0x34
+ 833 00ac 00       		.byte	0
+ 834 00ad 03       		.uleb128 0x3
+ 835 00ae 0E       		.uleb128 0xe
+ 836 00af 3A       		.uleb128 0x3a
+ 837 00b0 0B       		.uleb128 0xb
+ 838 00b1 3B       		.uleb128 0x3b
+ 839 00b2 05       		.uleb128 0x5
+ 840 00b3 49       		.uleb128 0x49
+ 841 00b4 13       		.uleb128 0x13
+ 842 00b5 3F       		.uleb128 0x3f
+ 843 00b6 19       		.uleb128 0x19
+ 844 00b7 3C       		.uleb128 0x3c
+ 845 00b8 19       		.uleb128 0x19
+ 846 00b9 00       		.byte	0
+ 847 00ba 00       		.byte	0
+ 848 00bb 0E       		.uleb128 0xe
+ 849 00bc 34       		.uleb128 0x34
+ 850 00bd 00       		.byte	0
+ 851 00be 03       		.uleb128 0x3
+ 852 00bf 08       		.uleb128 0x8
+ 853 00c0 3A       		.uleb128 0x3a
+ 854 00c1 0B       		.uleb128 0xb
+ 855 00c2 3B       		.uleb128 0x3b
+ 856 00c3 0B       		.uleb128 0xb
+ 857 00c4 49       		.uleb128 0x49
+ 858 00c5 13       		.uleb128 0x13
+ 859 00c6 3F       		.uleb128 0x3f
+ 860 00c7 19       		.uleb128 0x19
+ 861 00c8 02       		.uleb128 0x2
+ 862 00c9 18       		.uleb128 0x18
+ 863 00ca 00       		.byte	0
+ 864 00cb 00       		.byte	0
+ 865 00cc 0F       		.uleb128 0xf
+ 866 00cd 2E       		.uleb128 0x2e
+ 867 00ce 00       		.byte	0
+ 868 00cf 3F       		.uleb128 0x3f
+ 869 00d0 19       		.uleb128 0x19
+ 870 00d1 3C       		.uleb128 0x3c
+ 871 00d2 19       		.uleb128 0x19
+ 872 00d3 6E       		.uleb128 0x6e
+ 873 00d4 0E       		.uleb128 0xe
+ 874 00d5 03       		.uleb128 0x3
+ 875 00d6 0E       		.uleb128 0xe
+ 876 00d7 3A       		.uleb128 0x3a
+ 877 00d8 0B       		.uleb128 0xb
+ 878 00d9 3B       		.uleb128 0x3b
+ 879 00da 0B       		.uleb128 0xb
+ 880 00db 00       		.byte	0
+ 881 00dc 00       		.byte	0
+ 882 00dd 00       		.byte	0
+ 883              		.section	.debug_aranges,"",%progbits
+ 884 0000 2C000000 		.4byte	0x2c
+ 885 0004 0200     		.2byte	0x2
+ 886 0006 00000000 		.4byte	.Ldebug_info0
+ 887 000a 04       		.byte	0x4
+ 888 000b 00       		.byte	0
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccXyeyA0.s 			page 18
 
 
- 944 00bb 34       		.uleb128 0x34
- 945 00bc 00       		.byte	0
- 946 00bd 03       		.uleb128 0x3
- 947 00be 0E       		.uleb128 0xe
- 948 00bf 3A       		.uleb128 0x3a
- 949 00c0 0B       		.uleb128 0xb
- 950 00c1 3B       		.uleb128 0x3b
- 951 00c2 0B       		.uleb128 0xb
- 952 00c3 49       		.uleb128 0x49
- 953 00c4 13       		.uleb128 0x13
- 954 00c5 3F       		.uleb128 0x3f
- 955 00c6 19       		.uleb128 0x19
- 956 00c7 02       		.uleb128 0x2
- 957 00c8 18       		.uleb128 0x18
- 958 00c9 00       		.byte	0
- 959 00ca 00       		.byte	0
- 960 00cb 0E       		.uleb128 0xe
- 961 00cc 01       		.uleb128 0x1
- 962 00cd 01       		.byte	0x1
- 963 00ce 49       		.uleb128 0x49
- 964 00cf 13       		.uleb128 0x13
- 965 00d0 01       		.uleb128 0x1
- 966 00d1 13       		.uleb128 0x13
- 967 00d2 00       		.byte	0
- 968 00d3 00       		.byte	0
- 969 00d4 0F       		.uleb128 0xf
- 970 00d5 21       		.uleb128 0x21
- 971 00d6 00       		.byte	0
- 972 00d7 49       		.uleb128 0x49
- 973 00d8 13       		.uleb128 0x13
- 974 00d9 2F       		.uleb128 0x2f
- 975 00da 0B       		.uleb128 0xb
- 976 00db 00       		.byte	0
- 977 00dc 00       		.byte	0
- 978 00dd 10       		.uleb128 0x10
- 979 00de 34       		.uleb128 0x34
- 980 00df 00       		.byte	0
- 981 00e0 03       		.uleb128 0x3
- 982 00e1 0E       		.uleb128 0xe
- 983 00e2 3A       		.uleb128 0x3a
- 984 00e3 0B       		.uleb128 0xb
- 985 00e4 3B       		.uleb128 0x3b
- 986 00e5 05       		.uleb128 0x5
- 987 00e6 49       		.uleb128 0x49
- 988 00e7 13       		.uleb128 0x13
- 989 00e8 3F       		.uleb128 0x3f
- 990 00e9 19       		.uleb128 0x19
- 991 00ea 3C       		.uleb128 0x3c
- 992 00eb 19       		.uleb128 0x19
- 993 00ec 00       		.byte	0
- 994 00ed 00       		.byte	0
- 995 00ee 11       		.uleb128 0x11
- 996 00ef 34       		.uleb128 0x34
- 997 00f0 00       		.byte	0
- 998 00f1 03       		.uleb128 0x3
- 999 00f2 08       		.uleb128 0x8
- 1000 00f3 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccJiZgAk.s 			page 20
+ 889 000c 0000     		.2byte	0
+ 890 000e 0000     		.2byte	0
+ 891 0010 00000000 		.4byte	.LFB64
+ 892 0014 F4000000 		.4byte	.LFE64-.LFB64
+ 893 0018 00000000 		.4byte	.LFB65
+ 894 001c 02000000 		.4byte	.LFE65-.LFB65
+ 895 0020 00000000 		.4byte	.LFB66
+ 896 0024 0C000000 		.4byte	.LFE66-.LFB66
+ 897 0028 00000000 		.4byte	0
+ 898 002c 00000000 		.4byte	0
+ 899              		.section	.debug_ranges,"",%progbits
+ 900              	.Ldebug_ranges0:
+ 901 0000 00000000 		.4byte	.LFB64
+ 902 0004 F4000000 		.4byte	.LFE64
+ 903 0008 00000000 		.4byte	.LFB65
+ 904 000c 02000000 		.4byte	.LFE65
+ 905 0010 00000000 		.4byte	.LFB66
+ 906 0014 0C000000 		.4byte	.LFE66
+ 907 0018 00000000 		.4byte	0
+ 908 001c 00000000 		.4byte	0
+ 909              		.section	.debug_line,"",%progbits
+ 910              	.Ldebug_line0:
+ 911 0000 07020000 		.section	.debug_str,"MS",%progbits,1
+ 911      0200B301 
+ 911      00000201 
+ 911      FB0E0D00 
+ 911      01010101 
+ 912              	.LASF44:
+ 913 0000 53656E64 		.ascii	"SendBytesFlag\000"
+ 913      42797465 
+ 913      73466C61 
+ 913      6700
+ 914              	.LASF45:
+ 915 000e 50757368 		.ascii	"PushButtonCounter\000"
+ 915      42757474 
+ 915      6F6E436F 
+ 915      756E7465 
+ 915      7200
+ 916              	.LASF2:
+ 917 0020 5F5F7569 		.ascii	"__uint8_t\000"
+ 917      6E74385F 
+ 917      7400
+ 918              	.LASF55:
+ 919 002a 43757374 		.ascii	"Custom_ISR_ADC\000"
+ 919      6F6D5F49 
+ 919      53525F41 
+ 919      444300
+ 920              	.LASF7:
+ 921 0039 5F5F696E 		.ascii	"__int32_t\000"
+ 921      7433325F 
+ 921      7400
+ 922              	.LASF49:
+ 923 0043 54696D65 		.ascii	"Timer_ReadStatusRegister\000"
+ 923      725F5265 
+ 923      61645374 
+ 923      61747573 
+ 923      52656769 
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccXyeyA0.s 			page 19
 
 
- 1001 00f4 0B       		.uleb128 0xb
- 1002 00f5 3B       		.uleb128 0x3b
- 1003 00f6 0B       		.uleb128 0xb
- 1004 00f7 49       		.uleb128 0x49
- 1005 00f8 13       		.uleb128 0x13
- 1006 00f9 3F       		.uleb128 0x3f
- 1007 00fa 19       		.uleb128 0x19
- 1008 00fb 02       		.uleb128 0x2
- 1009 00fc 18       		.uleb128 0x18
- 1010 00fd 00       		.byte	0
- 1011 00fe 00       		.byte	0
- 1012 00ff 12       		.uleb128 0x12
- 1013 0100 2E       		.uleb128 0x2e
- 1014 0101 00       		.byte	0
- 1015 0102 3F       		.uleb128 0x3f
- 1016 0103 19       		.uleb128 0x19
- 1017 0104 3C       		.uleb128 0x3c
- 1018 0105 19       		.uleb128 0x19
- 1019 0106 6E       		.uleb128 0x6e
- 1020 0107 0E       		.uleb128 0xe
- 1021 0108 03       		.uleb128 0x3
- 1022 0109 0E       		.uleb128 0xe
- 1023 010a 3A       		.uleb128 0x3a
- 1024 010b 0B       		.uleb128 0xb
- 1025 010c 3B       		.uleb128 0x3b
- 1026 010d 0B       		.uleb128 0xb
- 1027 010e 00       		.byte	0
- 1028 010f 00       		.byte	0
- 1029 0110 00       		.byte	0
- 1030              		.section	.debug_aranges,"",%progbits
- 1031 0000 2C000000 		.4byte	0x2c
- 1032 0004 0200     		.2byte	0x2
- 1033 0006 00000000 		.4byte	.Ldebug_info0
- 1034 000a 04       		.byte	0x4
- 1035 000b 00       		.byte	0
- 1036 000c 0000     		.2byte	0
- 1037 000e 0000     		.2byte	0
- 1038 0010 00000000 		.4byte	.LFB64
- 1039 0014 F4000000 		.4byte	.LFE64-.LFB64
- 1040 0018 00000000 		.4byte	.LFB65
- 1041 001c 34000000 		.4byte	.LFE65-.LFB65
- 1042 0020 00000000 		.4byte	.LFB66
- 1043 0024 0C000000 		.4byte	.LFE66-.LFB66
- 1044 0028 00000000 		.4byte	0
- 1045 002c 00000000 		.4byte	0
- 1046              		.section	.debug_ranges,"",%progbits
- 1047              	.Ldebug_ranges0:
- 1048 0000 00000000 		.4byte	.LFB64
- 1049 0004 F4000000 		.4byte	.LFE64
- 1050 0008 00000000 		.4byte	.LFB65
- 1051 000c 34000000 		.4byte	.LFE65
- 1052 0010 00000000 		.4byte	.LFB66
- 1053 0014 0C000000 		.4byte	.LFE66
- 1054 0018 00000000 		.4byte	0
- 1055 001c 00000000 		.4byte	0
- 1056              		.section	.debug_line,"",%progbits
- 1057              	.Ldebug_line0:
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccJiZgAk.s 			page 21
+ 924              	.LASF6:
+ 925 005c 73686F72 		.ascii	"short unsigned int\000"
+ 925      7420756E 
+ 925      7369676E 
+ 925      65642069 
+ 925      6E7400
+ 926              	.LASF12:
+ 927 006f 756E7369 		.ascii	"unsigned int\000"
+ 927      676E6564 
+ 927      20696E74 
+ 927      00
+ 928              	.LASF17:
+ 929 007c 75696E74 		.ascii	"uint8\000"
+ 929      3800
+ 930              	.LASF43:
+ 931 0082 76616C75 		.ascii	"value_mv\000"
+ 931      655F6D76 
+ 931      00
+ 932              	.LASF27:
+ 933 008b 43757374 		.ascii	"Custom_isr_ACC\000"
+ 933      6F6D5F69 
+ 933      73725F41 
+ 933      434300
+ 934              	.LASF26:
+ 935 009a 43757374 		.ascii	"Custom_Button_ISR\000"
+ 935      6F6D5F42 
+ 935      7574746F 
+ 935      6E5F4953 
+ 935      5200
+ 936              	.LASF21:
+ 937 00ac 666C6F61 		.ascii	"float\000"
+ 937      7400
+ 938              	.LASF35:
+ 939 00b2 41637469 		.ascii	"ActiveVisualization\000"
+ 939      76655669 
+ 939      7375616C 
+ 939      697A6174 
+ 939      696F6E00 
+ 940              	.LASF0:
+ 941 00c6 7369676E 		.ascii	"signed char\000"
+ 941      65642063 
+ 941      68617200 
+ 942              	.LASF1:
+ 943 00d2 756E7369 		.ascii	"unsigned char\000"
+ 943      676E6564 
+ 943      20636861 
+ 943      7200
+ 944              	.LASF52:
+ 945 00e0 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 945      43313120 
+ 945      352E342E 
+ 945      31203230 
+ 945      31363036 
+ 946 0113 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 946      20726576 
+ 946      6973696F 
+ 946      6E203233 
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccXyeyA0.s 			page 20
 
 
- 1058 0000 32020000 		.section	.debug_str,"MS",%progbits,1
- 1058      0200D401 
- 1058      00000201 
- 1058      FB0E0D00 
- 1058      01010101 
- 1059              	.LASF55:
- 1060 0000 4649464F 		.ascii	"FIFO_Reset\000"
- 1060      5F526573 
- 1060      657400
- 1061              	.LASF33:
- 1062 000b 6374726C 		.ascii	"ctrl_reg5\000"
- 1062      5F726567 
- 1062      3500
- 1063              	.LASF40:
- 1064 0015 53656E73 		.ascii	"Sensitivity\000"
- 1064      69746976 
- 1064      69747900 
- 1065              	.LASF50:
- 1066 0021 54696D65 		.ascii	"Timer_ReadStatusRegister\000"
- 1066      725F5265 
- 1066      61645374 
- 1066      61747573 
- 1066      52656769 
- 1067              	.LASF37:
- 1068 003a 4C6F6F70 		.ascii	"LoopContinue\000"
- 1068      436F6E74 
- 1068      696E7565 
- 1068      00
- 1069              	.LASF20:
- 1070 0047 666C6F61 		.ascii	"float32\000"
- 1070      74333200 
- 1071              	.LASF58:
- 1072 004f 496E7465 		.ascii	"InterruptRoutines.c\000"
- 1072      72727570 
- 1072      74526F75 
- 1072      74696E65 
- 1072      732E6300 
- 1073              	.LASF49:
- 1074 0063 74656D70 		.ascii	"temp\000"
- 1074      00
- 1075              	.LASF4:
- 1076 0068 73686F72 		.ascii	"short int\000"
- 1076      7420696E 
- 1076      7400
- 1077              	.LASF46:
- 1078 0072 52657365 		.ascii	"Reset_Flag\000"
- 1078      745F466C 
- 1078      616700
- 1079              	.LASF25:
- 1080 007d 73697A65 		.ascii	"sizetype\000"
- 1080      74797065 
- 1080      00
- 1081              	.LASF47:
- 1082 0086 54656D70 		.ascii	"TempData\000"
- 1082      44617461 
- 1082      00
- 1083              	.LASF38:
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccJiZgAk.s 			page 22
+ 946      37373135 
+ 947 0146 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 947      66756E63 
+ 947      74696F6E 
+ 947      2D736563 
+ 947      74696F6E 
+ 948              	.LASF30:
+ 949 016e 57544D5F 		.ascii	"WTM_Full\000"
+ 949      46756C6C 
+ 949      00
+ 950              	.LASF47:
+ 951 0177 54656D70 		.ascii	"TempData\000"
+ 951      44617461 
+ 951      00
+ 952              	.LASF16:
+ 953 0180 696E7433 		.ascii	"int32_t\000"
+ 953      325F7400 
+ 954              	.LASF18:
+ 955 0188 696E7431 		.ascii	"int16\000"
+ 955      3600
+ 956              	.LASF9:
+ 957 018e 6C6F6E67 		.ascii	"long unsigned int\000"
+ 957      20756E73 
+ 957      69676E65 
+ 957      6420696E 
+ 957      7400
+ 958              	.LASF19:
+ 959 01a0 696E7433 		.ascii	"int32\000"
+ 959      3200
+ 960              	.LASF39:
+ 961 01a6 52656769 		.ascii	"Registration_Active\000"
+ 961      73747261 
+ 961      74696F6E 
+ 961      5F416374 
+ 961      69766500 
+ 962              	.LASF51:
+ 963 01ba 4144435F 		.ascii	"ADC_DelSig_CountsTo_mVolts\000"
+ 963      44656C53 
+ 963      69675F43 
+ 963      6F756E74 
+ 963      73546F5F 
+ 964              	.LASF31:
+ 965 01d5 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 965      52784275 
+ 965      66666572 
+ 965      00
+ 966              	.LASF46:
+ 967 01e2 52657365 		.ascii	"Reset_Flag\000"
+ 967      745F466C 
+ 967      616700
+ 968              	.LASF5:
+ 969 01ed 5F5F7569 		.ascii	"__uint16_t\000"
+ 969      6E743136 
+ 969      5F7400
+ 970              	.LASF22:
+ 971 01f8 646F7562 		.ascii	"double\000"
+ 971      6C6500
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccXyeyA0.s 			page 21
 
 
- 1084 008f 4D656E75 		.ascii	"MenuActive\000"
- 1084      41637469 
- 1084      766500
- 1085              	.LASF41:
- 1086 009a 54656D70 		.ascii	"TempUnit\000"
- 1086      556E6974 
- 1086      00
- 1087              	.LASF52:
- 1088 00a3 4144435F 		.ascii	"ADC_DelSig_CountsTo_mVolts\000"
- 1088      44656C53 
- 1088      69675F43 
- 1088      6F756E74 
- 1088      73546F5F 
- 1089              	.LASF5:
- 1090 00be 5F5F7569 		.ascii	"__uint16_t\000"
- 1090      6E743136 
- 1090      5F7400
- 1091              	.LASF59:
- 1092 00c9 433A5C55 		.ascii	"C:\\Users\\gaeta\\Documents\\PSoC Creator\\PsoC_Fin"
- 1092      73657273 
- 1092      5C676165 
- 1092      74615C44 
- 1092      6F63756D 
- 1093 00f7 616C5F50 		.ascii	"al_Project_1_03\\FIORANI_GARGIULO_IANNUZZI_Project."
- 1093      726F6A65 
- 1093      63745F31 
- 1093      5F30335C 
- 1093      46494F52 
- 1094 0129 63796473 		.ascii	"cydsn\000"
- 1094      6E00
- 1095              	.LASF54:
- 1096 012f 55415254 		.ascii	"UART_PutString\000"
- 1096      5F507574 
- 1096      53747269 
- 1096      6E6700
- 1097              	.LASF26:
- 1098 013e 43757374 		.ascii	"Custom_ISR_ADC\000"
- 1098      6F6D5F49 
- 1098      53525F41 
- 1098      444300
- 1099              	.LASF13:
- 1100 014d 75696E74 		.ascii	"uint8_t\000"
- 1100      385F7400 
- 1101              	.LASF18:
- 1102 0155 696E7431 		.ascii	"int16\000"
- 1102      3600
- 1103              	.LASF17:
- 1104 015b 75696E74 		.ascii	"uint8\000"
- 1104      3800
- 1105              	.LASF45:
- 1106 0161 50757368 		.ascii	"PushButtonCounter\000"
- 1106      42757474 
- 1106      6F6E436F 
- 1106      756E7465 
- 1106      7200
- 1107              	.LASF42:
- 1108 0173 76616C75 		.ascii	"value_digit\000"
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccJiZgAk.s 			page 23
+ 972              	.LASF41:
+ 973 01ff 54656D70 		.ascii	"TempUnit\000"
+ 973      556E6974 
+ 973      00
+ 974              	.LASF20:
+ 975 0208 666C6F61 		.ascii	"float32\000"
+ 975      74333200 
+ 976              	.LASF48:
+ 977 0210 76616C75 		.ascii	"value_temp_float\000"
+ 977      655F7465 
+ 977      6D705F66 
+ 977      6C6F6174 
+ 977      00
+ 978              	.LASF3:
+ 979 0221 5F5F696E 		.ascii	"__int16_t\000"
+ 979      7431365F 
+ 979      7400
+ 980              	.LASF33:
+ 981 022b 6374726C 		.ascii	"ctrl_reg5\000"
+ 981      5F726567 
+ 981      3500
+ 982              	.LASF11:
+ 983 0235 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 983      206C6F6E 
+ 983      6720756E 
+ 983      7369676E 
+ 983      65642069 
+ 984              	.LASF13:
+ 985 024c 75696E74 		.ascii	"uint8_t\000"
+ 985      385F7400 
+ 986              	.LASF54:
+ 987 0254 433A5C55 		.ascii	"C:\\Users\\gaeta\\Documents\\PSoC Creator\\PsoC_Fin"
+ 987      73657273 
+ 987      5C676165 
+ 987      74615C44 
+ 987      6F63756D 
+ 988 0282 616C5F50 		.ascii	"al_Project_1_03\\FIORANI_GARGIULO_IANNUZZI_Project."
+ 988      726F6A65 
+ 988      63745F31 
+ 988      5F30335C 
+ 988      46494F52 
+ 989 02b4 63796473 		.ascii	"cydsn\000"
+ 989      6E00
+ 990              	.LASF40:
+ 991 02ba 53656E73 		.ascii	"Sensitivity\000"
+ 991      69746976 
+ 991      69747900 
+ 992              	.LASF32:
+ 993 02c6 6669666F 		.ascii	"fifo_reg\000"
+ 993      5F726567 
+ 993      00
+ 994              	.LASF14:
+ 995 02cf 696E7431 		.ascii	"int16_t\000"
+ 995      365F7400 
+ 996              	.LASF29:
+ 997 02d7 76616C75 		.ascii	"value_temp\000"
+ 997      655F7465 
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccXyeyA0.s 			page 22
 
 
- 1108      655F6469 
- 1108      67697400 
- 1109              	.LASF21:
- 1110 017f 666C6F61 		.ascii	"float\000"
- 1110      7400
- 1111              	.LASF51:
- 1112 0185 4144435F 		.ascii	"ADC_DelSig_Read32\000"
- 1112      44656C53 
- 1112      69675F52 
- 1112      65616433 
- 1112      3200
- 1113              	.LASF10:
- 1114 0197 6C6F6E67 		.ascii	"long long int\000"
- 1114      206C6F6E 
- 1114      6720696E 
- 1114      7400
- 1115              	.LASF39:
- 1116 01a5 52656769 		.ascii	"Registration_Active\000"
- 1116      73747261 
- 1116      74696F6E 
- 1116      5F416374 
- 1116      69766500 
- 1117              	.LASF8:
- 1118 01b9 6C6F6E67 		.ascii	"long int\000"
- 1118      20696E74 
- 1118      00
- 1119              	.LASF2:
- 1120 01c2 5F5F7569 		.ascii	"__uint8_t\000"
- 1120      6E74385F 
- 1120      7400
- 1121              	.LASF36:
- 1122 01cc 63685F72 		.ascii	"ch_received\000"
- 1122      65636569 
- 1122      76656400 
- 1123              	.LASF34:
- 1124 01d8 73616D70 		.ascii	"samples\000"
- 1124      6C657300 
- 1125              	.LASF28:
- 1126 01e0 5061636B 		.ascii	"PacketReadyFlag\000"
- 1126      65745265 
- 1126      61647946 
- 1126      6C616700 
- 1127              	.LASF1:
- 1128 01f0 756E7369 		.ascii	"unsigned char\000"
- 1128      676E6564 
- 1128      20636861 
- 1128      7200
- 1129              	.LASF24:
- 1130 01fe 6C6F6E67 		.ascii	"long double\000"
- 1130      20646F75 
- 1130      626C6500 
- 1131              	.LASF29:
- 1132 020a 76616C75 		.ascii	"value_temp\000"
- 1132      655F7465 
- 1132      6D7000
- 1133              	.LASF0:
- 1134 0215 7369676E 		.ascii	"signed char\000"
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccJiZgAk.s 			page 24
+ 997      6D7000
+ 998              	.LASF38:
+ 999 02e2 4D656E75 		.ascii	"MenuActive\000"
+ 999      41637469 
+ 999      766500
+ 1000              	.LASF36:
+ 1001 02ed 63685F72 		.ascii	"ch_received\000"
+ 1001      65636569 
+ 1001      76656400 
+ 1002              	.LASF25:
+ 1003 02f9 73697A65 		.ascii	"sizetype\000"
+ 1003      74797065 
+ 1003      00
+ 1004              	.LASF50:
+ 1005 0302 4144435F 		.ascii	"ADC_DelSig_Read32\000"
+ 1005      44656C53 
+ 1005      69675F52 
+ 1005      65616433 
+ 1005      3200
+ 1006              	.LASF10:
+ 1007 0314 6C6F6E67 		.ascii	"long long int\000"
+ 1007      206C6F6E 
+ 1007      6720696E 
+ 1007      7400
+ 1008              	.LASF37:
+ 1009 0322 4C6F6F70 		.ascii	"LoopContinue\000"
+ 1009      436F6E74 
+ 1009      696E7565 
+ 1009      00
+ 1010              	.LASF23:
+ 1011 032f 63686172 		.ascii	"char\000"
+ 1011      00
+ 1012              	.LASF4:
+ 1013 0334 73686F72 		.ascii	"short int\000"
+ 1013      7420696E 
+ 1013      7400
+ 1014              	.LASF28:
+ 1015 033e 5061636B 		.ascii	"PacketReadyFlag\000"
+ 1015      65745265 
+ 1015      61647946 
+ 1015      6C616700 
+ 1016              	.LASF15:
+ 1017 034e 75696E74 		.ascii	"uint16_t\000"
+ 1017      31365F74 
+ 1017      00
+ 1018              	.LASF8:
+ 1019 0357 6C6F6E67 		.ascii	"long int\000"
+ 1019      20696E74 
+ 1019      00
+ 1020              	.LASF42:
+ 1021 0360 76616C75 		.ascii	"value_digit\000"
+ 1021      655F6469 
+ 1021      67697400 
+ 1022              	.LASF24:
+ 1023 036c 6C6F6E67 		.ascii	"long double\000"
+ 1023      20646F75 
+ 1023      626C6500 
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccXyeyA0.s 			page 23
 
 
- 1134      65642063 
- 1134      68617200 
- 1135              	.LASF11:
- 1136 0221 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1136      206C6F6E 
- 1136      6720756E 
- 1136      7369676E 
- 1136      65642069 
- 1137              	.LASF12:
- 1138 0238 756E7369 		.ascii	"unsigned int\000"
- 1138      676E6564 
- 1138      20696E74 
- 1138      00
- 1139              	.LASF15:
- 1140 0245 75696E74 		.ascii	"uint16_t\000"
- 1140      31365F74 
- 1140      00
- 1141              	.LASF35:
- 1142 024e 41637469 		.ascii	"ActiveVisualization\000"
- 1142      76655669 
- 1142      7375616C 
- 1142      697A6174 
- 1142      696F6E00 
- 1143              	.LASF60:
- 1144 0262 43757374 		.ascii	"Custom_isr_ACC\000"
- 1144      6F6D5F69 
- 1144      73725F41 
- 1144      434300
- 1145              	.LASF23:
- 1146 0271 63686172 		.ascii	"char\000"
- 1146      00
- 1147              	.LASF16:
- 1148 0276 696E7433 		.ascii	"int32_t\000"
- 1148      325F7400 
- 1149              	.LASF6:
- 1150 027e 73686F72 		.ascii	"short unsigned int\000"
- 1150      7420756E 
- 1150      7369676E 
- 1150      65642069 
- 1150      6E7400
- 1151              	.LASF14:
- 1152 0291 696E7431 		.ascii	"int16_t\000"
- 1152      365F7400 
- 1153              	.LASF27:
- 1154 0299 43757374 		.ascii	"Custom_Button_ISR\000"
- 1154      6F6D5F42 
- 1154      7574746F 
- 1154      6E5F4953 
- 1154      5200
- 1155              	.LASF32:
- 1156 02ab 6669666F 		.ascii	"fifo_reg\000"
- 1156      5F726567 
- 1156      00
- 1157              	.LASF9:
- 1158 02b4 6C6F6E67 		.ascii	"long unsigned int\000"
- 1158      20756E73 
- 1158      69676E65 
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccJiZgAk.s 			page 25
-
-
- 1158      6420696E 
- 1158      7400
- 1159              	.LASF19:
- 1160 02c6 696E7433 		.ascii	"int32\000"
- 1160      3200
- 1161              	.LASF22:
- 1162 02cc 646F7562 		.ascii	"double\000"
- 1162      6C6500
- 1163              	.LASF44:
- 1164 02d3 53656E64 		.ascii	"SendBytesFlag\000"
- 1164      42797465 
- 1164      73466C61 
- 1164      6700
- 1165              	.LASF48:
- 1166 02e1 76616C75 		.ascii	"value_temp_float\000"
- 1166      655F7465 
- 1166      6D705F66 
- 1166      6C6F6174 
- 1166      00
- 1167              	.LASF56:
- 1168 02f2 42555454 		.ascii	"BUTTON_Read\000"
- 1168      4F4E5F52 
- 1168      65616400 
- 1169              	.LASF30:
- 1170 02fe 57544D5F 		.ascii	"WTM_Full\000"
- 1170      46756C6C 
- 1170      00
- 1171              	.LASF7:
- 1172 0307 5F5F696E 		.ascii	"__int32_t\000"
- 1172      7433325F 
- 1172      7400
- 1173              	.LASF3:
- 1174 0311 5F5F696E 		.ascii	"__int16_t\000"
- 1174      7431365F 
- 1174      7400
- 1175              	.LASF43:
- 1176 031b 76616C75 		.ascii	"value_mv\000"
- 1176      655F6D76 
- 1176      00
- 1177              	.LASF31:
- 1178 0324 49544D5F 		.ascii	"ITM_RxBuffer\000"
- 1178      52784275 
- 1178      66666572 
- 1178      00
- 1179              	.LASF57:
- 1180 0331 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 1180      43313120 
- 1180      352E342E 
- 1180      31203230 
- 1180      31363036 
- 1181 0364 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 1181      20726576 
- 1181      6973696F 
- 1181      6E203233 
- 1181      37373135 
- 1182 0397 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 1182      66756E63 
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccJiZgAk.s 			page 26
-
-
- 1182      74696F6E 
- 1182      2D736563 
- 1182      74696F6E 
- 1183              	.LASF53:
- 1184 03bf 43794465 		.ascii	"CyDelay\000"
- 1184      6C617900 
- 1185              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 1024              	.LASF34:
+ 1025 0378 73616D70 		.ascii	"samples\000"
+ 1025      6C657300 
+ 1026              	.LASF53:
+ 1027 0380 496E7465 		.ascii	"InterruptRoutines.c\000"
+ 1027      72727570 
+ 1027      74526F75 
+ 1027      74696E65 
+ 1027      732E6300 
+ 1028              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

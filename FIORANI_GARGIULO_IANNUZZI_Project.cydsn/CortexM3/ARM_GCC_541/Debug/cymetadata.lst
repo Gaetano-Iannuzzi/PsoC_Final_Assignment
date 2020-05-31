@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccs4YSiA.s 			page 1
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 1
 
 
    1              		.syntax unified
@@ -27,21 +27,21 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccs4YSiA.s 			page 1
   24              		.section	.cyconfigecc,"a",%progbits
   25              		.align	2
   26              		.type	cy_meta_configecc, %object
-  27              		.size	cy_meta_configecc, 2284
+  27              		.size	cy_meta_configecc, 2536
   28              	cy_meta_configecc:
-  29 0000 04       		.byte	4
+  29 0000 02       		.byte	2
   30 0001 4F       		.byte	79
   31 0002 00       		.byte	0
   32 0003 40       		.byte	64
-  33 0004 04       		.byte	4
+  33 0004 03       		.byte	3
   34 0005 52       		.byte	82
   35 0006 00       		.byte	0
   36 0007 40       		.byte	64
-  37 0008 03       		.byte	3
+  37 0008 04       		.byte	4
   38 0009 64       		.byte	100
   39 000a 00       		.byte	0
   40 000b 40       		.byte	64
-  41 000c 03       		.byte	3
+  41 000c 02       		.byte	2
   42 000d 65       		.byte	101
   43 000e 00       		.byte	0
   44 000f 40       		.byte	64
@@ -49,2864 +49,3128 @@ ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccs4YSiA.s 			page 1
   46 0011 03       		.byte	3
   47 0012 01       		.byte	1
   48 0013 40       		.byte	64
-  49 0014 02       		.byte	2
-  50 0015 05       		.byte	5
+  49 0014 0F       		.byte	15
+  50 0015 04       		.byte	4
   51 0016 01       		.byte	1
   52 0017 40       		.byte	64
-  53 0018 01       		.byte	1
-  54 0019 07       		.byte	7
+  53 0018 3C       		.byte	60
+  54 0019 05       		.byte	5
   55 001a 01       		.byte	1
   56 001b 40       		.byte	64
-  57 001c 4E       		.byte	78
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccs4YSiA.s 			page 2
+  57 001c 43       		.byte	67
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 2
 
 
-  58 001d 08       		.byte	8
+  58 001d 06       		.byte	6
   59 001e 01       		.byte	1
   60 001f 40       		.byte	64
-  61 0020 38       		.byte	56
-  62 0021 09       		.byte	9
+  61 0020 46       		.byte	70
+  62 0021 07       		.byte	7
   63 0022 01       		.byte	1
   64 0023 40       		.byte	64
-  65 0024 26       		.byte	38
-  66 0025 0A       		.byte	10
+  65 0024 59       		.byte	89
+  66 0025 08       		.byte	8
   67 0026 01       		.byte	1
   68 0027 40       		.byte	64
-  69 0028 4A       		.byte	74
-  70 0029 0B       		.byte	11
+  69 0028 44       		.byte	68
+  70 0029 09       		.byte	9
   71 002a 01       		.byte	1
   72 002b 40       		.byte	64
-  73 002c 0F       		.byte	15
-  74 002d 0C       		.byte	12
+  73 002c 5D       		.byte	93
+  74 002d 0A       		.byte	10
   75 002e 01       		.byte	1
   76 002f 40       		.byte	64
-  77 0030 38       		.byte	56
-  78 0031 0D       		.byte	13
+  77 0030 4A       		.byte	74
+  78 0031 0B       		.byte	11
   79 0032 01       		.byte	1
   80 0033 40       		.byte	64
   81 0034 0C       		.byte	12
-  82 0035 15       		.byte	21
+  82 0035 0C       		.byte	12
   83 0036 01       		.byte	1
   84 0037 40       		.byte	64
-  85 0038 4E       		.byte	78
-  86 0039 16       		.byte	22
+  85 0038 34       		.byte	52
+  86 0039 0D       		.byte	13
   87 003a 01       		.byte	1
   88 003b 40       		.byte	64
-  89 003c 35       		.byte	53
-  90 003d 17       		.byte	23
+  89 003c 01       		.byte	1
+  90 003d 15       		.byte	21
   91 003e 01       		.byte	1
   92 003f 40       		.byte	64
-  93 0040 0F       		.byte	15
-  94 0041 18       		.byte	24
+  93 0040 04       		.byte	4
+  94 0041 16       		.byte	22
   95 0042 01       		.byte	1
   96 0043 40       		.byte	64
-  97 0044 51       		.byte	81
-  98 0045 19       		.byte	25
+  97 0044 0E       		.byte	14
+  98 0045 17       		.byte	23
   99 0046 01       		.byte	1
  100 0047 40       		.byte	64
- 101 0048 5F       		.byte	95
- 102 0049 1A       		.byte	26
+ 101 0048 54       		.byte	84
+ 102 0049 18       		.byte	24
  103 004a 01       		.byte	1
  104 004b 40       		.byte	64
- 105 004c 4C       		.byte	76
- 106 004d 1B       		.byte	27
+ 105 004c 48       		.byte	72
+ 106 004d 19       		.byte	25
  107 004e 01       		.byte	1
  108 004f 40       		.byte	64
- 109 0050 07       		.byte	7
- 110 0051 40       		.byte	64
+ 109 0050 4D       		.byte	77
+ 110 0051 1A       		.byte	26
  111 0052 01       		.byte	1
  112 0053 40       		.byte	64
- 113 0054 0E       		.byte	14
- 114 0055 41       		.byte	65
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccs4YSiA.s 			page 3
+ 113 0054 46       		.byte	70
+ 114 0055 1B       		.byte	27
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 3
 
 
  115 0056 01       		.byte	1
  116 0057 40       		.byte	64
- 117 0058 0A       		.byte	10
- 118 0059 42       		.byte	66
+ 117 0058 07       		.byte	7
+ 118 0059 40       		.byte	64
  119 005a 01       		.byte	1
  120 005b 40       		.byte	64
- 121 005c 08       		.byte	8
- 122 005d 43       		.byte	67
+ 121 005c 0F       		.byte	15
+ 122 005d 41       		.byte	65
  123 005e 01       		.byte	1
  124 005f 40       		.byte	64
- 125 0060 04       		.byte	4
- 126 0061 44       		.byte	68
+ 125 0060 0B       		.byte	11
+ 126 0061 42       		.byte	66
  127 0062 01       		.byte	1
  128 0063 40       		.byte	64
- 129 0064 08       		.byte	8
- 130 0065 45       		.byte	69
+ 129 0064 0D       		.byte	13
+ 130 0065 43       		.byte	67
  131 0066 01       		.byte	1
  132 0067 40       		.byte	64
- 133 0068 06       		.byte	6
- 134 0069 46       		.byte	70
+ 133 0068 04       		.byte	4
+ 134 0069 44       		.byte	68
  135 006a 01       		.byte	1
  136 006b 40       		.byte	64
- 137 006c 06       		.byte	6
- 138 006d 47       		.byte	71
+ 137 006c 08       		.byte	8
+ 138 006d 45       		.byte	69
  139 006e 01       		.byte	1
  140 006f 40       		.byte	64
- 141 0070 0A       		.byte	10
- 142 0071 48       		.byte	72
+ 141 0070 08       		.byte	8
+ 142 0071 46       		.byte	70
  143 0072 01       		.byte	1
  144 0073 40       		.byte	64
- 145 0074 09       		.byte	9
- 146 0075 49       		.byte	73
+ 145 0074 04       		.byte	4
+ 146 0075 47       		.byte	71
  147 0076 01       		.byte	1
  148 0077 40       		.byte	64
- 149 0078 06       		.byte	6
- 150 0079 4C       		.byte	76
+ 149 0078 07       		.byte	7
+ 150 0079 48       		.byte	72
  151 007a 01       		.byte	1
  152 007b 40       		.byte	64
- 153 007c 08       		.byte	8
- 154 007d 4D       		.byte	77
+ 153 007c 03       		.byte	3
+ 154 007d 49       		.byte	73
  155 007e 01       		.byte	1
  156 007f 40       		.byte	64
  157 0080 06       		.byte	6
- 158 0081 50       		.byte	80
+ 158 0081 4C       		.byte	76
  159 0082 01       		.byte	1
  160 0083 40       		.byte	64
- 161 0084 02       		.byte	2
- 162 0085 51       		.byte	81
+ 161 0084 07       		.byte	7
+ 162 0085 4D       		.byte	77
  163 0086 01       		.byte	1
  164 0087 40       		.byte	64
- 165 0088 01       		.byte	1
+ 165 0088 06       		.byte	6
  166 0089 50       		.byte	80
- 167 008a 0A       		.byte	10
- 168 008b 27       		.byte	39
- 169 008c 0D       		.byte	13
- 170 008d 40       		.byte	64
- 171 008e 16       		.byte	22
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccs4YSiA.s 			page 4
+ 167 008a 01       		.byte	1
+ 168 008b 40       		.byte	64
+ 169 008c 02       		.byte	2
+ 170 008d 51       		.byte	81
+ 171 008e 01       		.byte	1
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 4
 
 
- 172 008f 1B       		.byte	27
- 173 0090 00       		.byte	0
- 174 0091 60       		.byte	96
- 175 0092 01       		.byte	1
- 176 0093 40       		.byte	64
- 177 0094 10       		.byte	16
- 178 0095 02       		.byte	2
- 179 0096 11       		.byte	17
- 180 0097 02       		.byte	2
- 181 0098 88       		.byte	-120
- 182 0099 72       		.byte	114
- 183 009a 8C       		.byte	-116
+ 172 008f 40       		.byte	64
+ 173 0090 01       		.byte	1
+ 174 0091 40       		.byte	64
+ 175 0092 0A       		.byte	10
+ 176 0093 1B       		.byte	27
+ 177 0094 00       		.byte	0
+ 178 0095 40       		.byte	64
+ 179 0096 01       		.byte	1
+ 180 0097 60       		.byte	96
+ 181 0098 11       		.byte	17
+ 182 0099 02       		.byte	2
+ 183 009a 85       		.byte	-123
  184 009b 0F       		.byte	15
- 185 009c 8D       		.byte	-115
- 186 009d 0D       		.byte	13
- 187 009e 86       		.byte	-122
- 188 009f 0F       		.byte	15
- 189 00a0 8A       		.byte	-118
+ 185 009c 88       		.byte	-120
+ 186 009d 0F       		.byte	15
+ 187 009e 8A       		.byte	-118
+ 188 009f 0D       		.byte	13
+ 189 00a0 8C       		.byte	-116
  190 00a1 0F       		.byte	15
- 191 00a2 8B       		.byte	-117
+ 191 00a2 8A       		.byte	-118
  192 00a3 38       		.byte	56
- 193 00a4 E2       		.byte	-30
- 194 00a5 08       		.byte	8
- 195 00a6 EE       		.byte	-18
- 196 00a7 02       		.byte	2
- 197 00a8 E2       		.byte	-30
- 198 00a9 09       		.byte	9
- 199 00aa EE       		.byte	-18
- 200 00ab 02       		.byte	2
- 201 00ac E2       		.byte	-30
- 202 00ad 10       		.byte	16
- 203 00ae 01       		.byte	1
- 204 00af 04       		.byte	4
- 205 00b0 02       		.byte	2
- 206 00b1 80       		.byte	-128
- 207 00b2 04       		.byte	4
- 208 00b3 04       		.byte	4
- 209 00b4 08       		.byte	8
- 210 00b5 67       		.byte	103
- 211 00b6 09       		.byte	9
- 212 00b7 06       		.byte	6
- 213 00b8 0A       		.byte	10
- 214 00b9 18       		.byte	24
- 215 00ba 0E       		.byte	14
- 216 00bb 80       		.byte	-128
- 217 00bc 11       		.byte	17
- 218 00bd 06       		.byte	6
- 219 00be 12       		.byte	18
- 220 00bf 04       		.byte	4
- 221 00c0 13       		.byte	19
- 222 00c1 01       		.byte	1
- 223 00c2 14       		.byte	20
- 224 00c3 7F       		.byte	127
- 225 00c4 15       		.byte	21
- 226 00c5 02       		.byte	2
- 227 00c6 18       		.byte	24
- 228 00c7 3C       		.byte	60
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccs4YSiA.s 			page 5
+ 193 00a4 8B       		.byte	-117
+ 194 00a5 72       		.byte	114
+ 195 00a6 E2       		.byte	-30
+ 196 00a7 0C       		.byte	12
+ 197 00a8 EE       		.byte	-18
+ 198 00a9 02       		.byte	2
+ 199 00aa 0A       		.byte	10
+ 200 00ab 05       		.byte	5
+ 201 00ac 0E       		.byte	14
+ 202 00ad 08       		.byte	8
+ 203 00ae 14       		.byte	20
+ 204 00af 0A       		.byte	10
+ 205 00b0 16       		.byte	22
+ 206 00b1 04       		.byte	4
+ 207 00b2 18       		.byte	24
+ 208 00b3 03       		.byte	3
+ 209 00b4 1A       		.byte	26
+ 210 00b5 0C       		.byte	12
+ 211 00b6 24       		.byte	36
+ 212 00b7 03       		.byte	3
+ 213 00b8 26       		.byte	38
+ 214 00b9 04       		.byte	4
+ 215 00ba 2C       		.byte	44
+ 216 00bb 03       		.byte	3
+ 217 00bc 2E       		.byte	46
+ 218 00bd 04       		.byte	4
+ 219 00be 34       		.byte	52
+ 220 00bf 0F       		.byte	15
+ 221 00c0 3A       		.byte	58
+ 222 00c1 20       		.byte	32
+ 223 00c2 58       		.byte	88
+ 224 00c3 04       		.byte	4
+ 225 00c4 5C       		.byte	92
+ 226 00c5 03       		.byte	3
+ 227 00c6 5F       		.byte	95
+ 228 00c7 01       		.byte	1
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 5
 
 
- 229 00c8 19       		.byte	25
- 230 00c9 07       		.byte	7
- 231 00ca 1A       		.byte	26
- 232 00cb 42       		.byte	66
- 233 00cc 1C       		.byte	28
- 234 00cd 3C       		.byte	60
- 235 00ce 1E       		.byte	30
- 236 00cf 41       		.byte	65
- 237 00d0 1F       		.byte	31
- 238 00d1 01       		.byte	1
- 239 00d2 22       		.byte	34
- 240 00d3 43       		.byte	67
- 241 00d4 24       		.byte	36
- 242 00d5 08       		.byte	8
- 243 00d6 25       		.byte	37
- 244 00d7 07       		.byte	7
- 245 00d8 28       		.byte	40
- 246 00d9 18       		.byte	24
- 247 00da 29       		.byte	41
- 248 00db 01       		.byte	1
- 249 00dc 2B       		.byte	43
- 250 00dd 06       		.byte	6
- 251 00de 2C       		.byte	44
- 252 00df 10       		.byte	16
- 253 00e0 30       		.byte	48
- 254 00e1 20       		.byte	32
- 255 00e2 31       		.byte	49
- 256 00e3 07       		.byte	7
- 257 00e4 32       		.byte	50
- 258 00e5 80       		.byte	-128
- 259 00e6 34       		.byte	52
- 260 00e7 1F       		.byte	31
- 261 00e8 36       		.byte	54
- 262 00e9 58       		.byte	88
- 263 00ea 3A       		.byte	58
- 264 00eb A0       		.byte	-96
- 265 00ec 3E       		.byte	62
- 266 00ed 05       		.byte	5
- 267 00ee 56       		.byte	86
- 268 00ef 02       		.byte	2
- 269 00f0 57       		.byte	87
- 270 00f1 10       		.byte	16
- 271 00f2 58       		.byte	88
- 272 00f3 04       		.byte	4
- 273 00f4 59       		.byte	89
- 274 00f5 04       		.byte	4
- 275 00f6 5B       		.byte	91
- 276 00f7 04       		.byte	4
- 277 00f8 5C       		.byte	92
- 278 00f9 33       		.byte	51
- 279 00fa 5D       		.byte	93
- 280 00fb 30       		.byte	48
- 281 00fc 5F       		.byte	95
+ 229 00c8 00       		.byte	0
+ 230 00c9 20       		.byte	32
+ 231 00ca 01       		.byte	1
+ 232 00cb 10       		.byte	16
+ 233 00cc 02       		.byte	2
+ 234 00cd 01       		.byte	1
+ 235 00ce 04       		.byte	4
+ 236 00cf 02       		.byte	2
+ 237 00d0 05       		.byte	5
+ 238 00d1 04       		.byte	4
+ 239 00d2 07       		.byte	7
+ 240 00d3 06       		.byte	6
+ 241 00d4 0A       		.byte	10
+ 242 00d5 28       		.byte	40
+ 243 00d6 0C       		.byte	12
+ 244 00d7 80       		.byte	-128
+ 245 00d8 0D       		.byte	13
+ 246 00d9 08       		.byte	8
+ 247 00da 0E       		.byte	14
+ 248 00db 08       		.byte	8
+ 249 00dc 10       		.byte	16
+ 250 00dd 21       		.byte	33
+ 251 00de 15       		.byte	21
+ 252 00df 05       		.byte	5
+ 253 00e0 16       		.byte	22
+ 254 00e1 02       		.byte	2
+ 255 00e2 18       		.byte	24
+ 256 00e3 08       		.byte	8
+ 257 00e4 19       		.byte	25
+ 258 00e5 10       		.byte	16
+ 259 00e6 1A       		.byte	26
+ 260 00e7 08       		.byte	8
+ 261 00e8 1D       		.byte	29
+ 262 00e9 44       		.byte	68
+ 263 00ea 1E       		.byte	30
+ 264 00eb 08       		.byte	8
+ 265 00ec 1F       		.byte	31
+ 266 00ed 18       		.byte	24
+ 267 00ee 27       		.byte	39
+ 268 00ef 22       		.byte	34
+ 269 00f0 2D       		.byte	45
+ 270 00f1 80       		.byte	-128
+ 271 00f2 2E       		.byte	46
+ 272 00f3 02       		.byte	2
+ 273 00f4 2F       		.byte	47
+ 274 00f5 08       		.byte	8
+ 275 00f6 32       		.byte	50
+ 276 00f7 08       		.byte	8
+ 277 00f8 33       		.byte	51
+ 278 00f9 08       		.byte	8
+ 279 00fa 37       		.byte	55
+ 280 00fb 26       		.byte	38
+ 281 00fc 3D       		.byte	61
  282 00fd 01       		.byte	1
- 283 00fe 84       		.byte	-124
- 284 00ff 01       		.byte	1
- 285 0100 86       		.byte	-122
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccs4YSiA.s 			page 6
+ 283 00fe 3E       		.byte	62
+ 284 00ff 64       		.byte	100
+ 285 0100 45       		.byte	69
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 6
 
 
- 286 0101 0E       		.byte	14
- 287 0102 8D       		.byte	-115
- 288 0103 01       		.byte	1
- 289 0104 90       		.byte	-112
- 290 0105 1C       		.byte	28
- 291 0106 92       		.byte	-110
- 292 0107 03       		.byte	3
- 293 0108 94       		.byte	-108
- 294 0109 01       		.byte	1
- 295 010a 96       		.byte	-106
- 296 010b 16       		.byte	22
- 297 010c 9A       		.byte	-102
- 298 010d 08       		.byte	8
- 299 010e A6       		.byte	-90
- 300 010f 1C       		.byte	28
- 301 0110 AA       		.byte	-86
- 302 0111 03       		.byte	3
- 303 0112 B0       		.byte	-80
- 304 0113 0F       		.byte	15
- 305 0114 B4       		.byte	-76
- 306 0115 1A       		.byte	26
- 307 0116 B7       		.byte	-73
- 308 0117 01       		.byte	1
- 309 0118 BA       		.byte	-70
- 310 0119 22       		.byte	34
- 311 011a BF       		.byte	-65
- 312 011b 40       		.byte	64
- 313 011c C0       		.byte	-64
- 314 011d 04       		.byte	4
- 315 011e C6       		.byte	-58
- 316 011f 40       		.byte	64
- 317 0120 C9       		.byte	-55
- 318 0121 FF       		.byte	-1
- 319 0122 CA       		.byte	-54
- 320 0123 07       		.byte	7
- 321 0124 CB       		.byte	-53
- 322 0125 FF       		.byte	-1
- 323 0126 CC       		.byte	-52
- 324 0127 40       		.byte	64
- 325 0128 CD       		.byte	-51
- 326 0129 20       		.byte	32
- 327 012a CE       		.byte	-50
- 328 012b F0       		.byte	-16
- 329 012c CF       		.byte	-49
- 330 012d 05       		.byte	5
- 331 012e D0       		.byte	-48
- 332 012f 08       		.byte	8
- 333 0130 D4       		.byte	-44
- 334 0131 40       		.byte	64
- 335 0132 D6       		.byte	-42
- 336 0133 04       		.byte	4
- 337 0134 D8       		.byte	-40
- 338 0135 04       		.byte	4
- 339 0136 D9       		.byte	-39
- 340 0137 04       		.byte	4
- 341 0138 DA       		.byte	-38
- 342 0139 04       		.byte	4
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccs4YSiA.s 			page 7
+ 286 0101 28       		.byte	40
+ 287 0102 46       		.byte	70
+ 288 0103 20       		.byte	32
+ 289 0104 47       		.byte	71
+ 290 0105 02       		.byte	2
+ 291 0106 4D       		.byte	77
+ 292 0107 20       		.byte	32
+ 293 0108 4E       		.byte	78
+ 294 0109 09       		.byte	9
+ 295 010a 4F       		.byte	79
+ 296 010b 06       		.byte	6
+ 297 010c 54       		.byte	84
+ 298 010d 02       		.byte	2
+ 299 010e 56       		.byte	86
+ 300 010f 02       		.byte	2
+ 301 0110 57       		.byte	87
+ 302 0111 24       		.byte	36
+ 303 0112 67       		.byte	103
+ 304 0113 20       		.byte	32
+ 305 0114 6C       		.byte	108
+ 306 0115 01       		.byte	1
+ 307 0116 6D       		.byte	109
+ 308 0117 05       		.byte	5
+ 309 0118 6E       		.byte	110
+ 310 0119 44       		.byte	68
+ 311 011a 6F       		.byte	111
+ 312 011b 54       		.byte	84
+ 313 011c 74       		.byte	116
+ 314 011d 80       		.byte	-128
+ 315 011e 75       		.byte	117
+ 316 011f 80       		.byte	-128
+ 317 0120 80       		.byte	-128
+ 318 0121 20       		.byte	32
+ 319 0122 81       		.byte	-127
+ 320 0123 11       		.byte	17
+ 321 0124 86       		.byte	-122
+ 322 0125 01       		.byte	1
+ 323 0126 C0       		.byte	-64
+ 324 0127 F3       		.byte	-13
+ 325 0128 C2       		.byte	-62
+ 326 0129 E6       		.byte	-26
+ 327 012a C4       		.byte	-60
+ 328 012b B5       		.byte	-75
+ 329 012c CA       		.byte	-54
+ 330 012d B0       		.byte	-80
+ 331 012e CC       		.byte	-52
+ 332 012f E0       		.byte	-32
+ 333 0130 CE       		.byte	-50
+ 334 0131 F0       		.byte	-16
+ 335 0132 D0       		.byte	-48
+ 336 0133 E0       		.byte	-32
+ 337 0134 D2       		.byte	-46
+ 338 0135 30       		.byte	48
+ 339 0136 D8       		.byte	-40
+ 340 0137 40       		.byte	64
+ 341 0138 E2       		.byte	-30
+ 342 0139 09       		.byte	9
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 7
 
 
- 343 013a DB       		.byte	-37
+ 343 013a E4       		.byte	-28
  344 013b 04       		.byte	4
- 345 013c DC       		.byte	-36
- 346 013d 03       		.byte	3
- 347 013e DD       		.byte	-35
- 348 013f 13       		.byte	19
- 349 0140 DF       		.byte	-33
- 350 0141 01       		.byte	1
- 351 0142 E0       		.byte	-32
- 352 0143 40       		.byte	64
- 353 0144 E1       		.byte	-31
- 354 0145 A8       		.byte	-88
- 355 0146 E2       		.byte	-30
- 356 0147 40       		.byte	64
- 357 0148 E3       		.byte	-29
- 358 0149 20       		.byte	32
- 359 014a 00       		.byte	0
- 360 014b 04       		.byte	4
- 361 014c 05       		.byte	5
- 362 014d 38       		.byte	56
- 363 014e 06       		.byte	6
- 364 014f 01       		.byte	1
- 365 0150 07       		.byte	7
- 366 0151 40       		.byte	64
- 367 0152 09       		.byte	9
- 368 0153 28       		.byte	40
- 369 0154 0A       		.byte	10
- 370 0155 80       		.byte	-128
- 371 0156 0E       		.byte	14
- 372 0157 A9       		.byte	-87
- 373 0158 10       		.byte	16
- 374 0159 08       		.byte	8
- 375 015a 12       		.byte	18
- 376 015b 20       		.byte	32
- 377 015c 14       		.byte	20
- 378 015d 40       		.byte	64
- 379 015e 16       		.byte	22
- 380 015f 02       		.byte	2
- 381 0160 17       		.byte	23
- 382 0161 14       		.byte	20
- 383 0162 18       		.byte	24
- 384 0163 04       		.byte	4
- 385 0164 1A       		.byte	26
+ 345 013c E6       		.byte	-26
+ 346 013d 02       		.byte	2
+ 347 013e EE       		.byte	-18
+ 348 013f 20       		.byte	32
+ 349 0140 00       		.byte	0
+ 350 0141 02       		.byte	2
+ 351 0142 02       		.byte	2
+ 352 0143 D0       		.byte	-48
+ 353 0144 05       		.byte	5
+ 354 0145 0D       		.byte	13
+ 355 0146 08       		.byte	8
+ 356 0147 03       		.byte	3
+ 357 0148 0A       		.byte	10
+ 358 0149 2C       		.byte	44
+ 359 014a 0B       		.byte	11
+ 360 014b 30       		.byte	48
+ 361 014c 0C       		.byte	12
+ 362 014d D2       		.byte	-46
+ 363 014e 0D       		.byte	13
+ 364 014f 02       		.byte	2
+ 365 0150 0F       		.byte	15
+ 366 0151 0D       		.byte	13
+ 367 0152 10       		.byte	16
+ 368 0153 02       		.byte	2
+ 369 0154 11       		.byte	17
+ 370 0155 E2       		.byte	-30
+ 371 0156 13       		.byte	19
+ 372 0157 18       		.byte	24
+ 373 0158 14       		.byte	20
+ 374 0159 21       		.byte	33
+ 375 015a 15       		.byte	21
+ 376 015b 0D       		.byte	13
+ 377 015c 16       		.byte	22
+ 378 015d 14       		.byte	20
+ 379 015e 19       		.byte	25
+ 380 015f D1       		.byte	-47
+ 381 0160 1B       		.byte	27
+ 382 0161 22       		.byte	34
+ 383 0162 1D       		.byte	29
+ 384 0163 0D       		.byte	13
+ 385 0164 1E       		.byte	30
  386 0165 80       		.byte	-128
- 387 0166 1C       		.byte	28
- 388 0167 40       		.byte	64
- 389 0168 1D       		.byte	29
- 390 0169 84       		.byte	-124
- 391 016a 1E       		.byte	30
- 392 016b 0B       		.byte	11
- 393 016c 1F       		.byte	31
- 394 016d 10       		.byte	16
- 395 016e 23       		.byte	35
+ 387 0166 20       		.byte	32
+ 388 0167 03       		.byte	3
+ 389 0168 21       		.byte	33
+ 390 0169 0D       		.byte	13
+ 391 016a 22       		.byte	34
+ 392 016b 38       		.byte	56
+ 393 016c 24       		.byte	36
+ 394 016d D0       		.byte	-48
+ 395 016e 26       		.byte	38
  396 016f 02       		.byte	2
- 397 0170 26       		.byte	38
- 398 0171 02       		.byte	2
- 399 0172 27       		.byte	39
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccs4YSiA.s 			page 8
+ 397 0170 27       		.byte	39
+ 398 0171 40       		.byte	64
+ 399 0172 28       		.byte	40
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 8
 
 
- 400 0173 40       		.byte	64
- 401 0174 2D       		.byte	45
- 402 0175 20       		.byte	32
- 403 0176 2F       		.byte	47
- 404 0177 10       		.byte	16
- 405 0178 34       		.byte	52
- 406 0179 40       		.byte	64
- 407 017a 36       		.byte	54
- 408 017b 91       		.byte	-111
- 409 017c 37       		.byte	55
- 410 017d 04       		.byte	4
- 411 017e 39       		.byte	57
- 412 017f 80       		.byte	-128
- 413 0180 3E       		.byte	62
- 414 0181 22       		.byte	34
- 415 0182 42       		.byte	66
+ 400 0173 D2       		.byte	-46
+ 401 0174 29       		.byte	41
+ 402 0175 A2       		.byte	-94
+ 403 0176 2B       		.byte	43
+ 404 0177 44       		.byte	68
+ 405 0178 2C       		.byte	44
+ 406 0179 D2       		.byte	-46
+ 407 017a 2D       		.byte	45
+ 408 017b 0D       		.byte	13
+ 409 017c 30       		.byte	48
+ 410 017d 20       		.byte	32
+ 411 017e 31       		.byte	49
+ 412 017f 0F       		.byte	15
+ 413 0180 32       		.byte	50
+ 414 0181 1F       		.byte	31
+ 415 0182 34       		.byte	52
  416 0183 40       		.byte	64
- 417 0184 50       		.byte	80
- 418 0185 18       		.byte	24
- 419 0186 51       		.byte	81
- 420 0187 20       		.byte	32
- 421 0188 5C       		.byte	92
- 422 0189 40       		.byte	64
- 423 018a 60       		.byte	96
- 424 018b 10       		.byte	16
- 425 018c 63       		.byte	99
- 426 018d 4A       		.byte	74
- 427 018e 6D       		.byte	109
- 428 018f 80       		.byte	-128
- 429 0190 6E       		.byte	110
- 430 0191 14       		.byte	20
- 431 0192 74       		.byte	116
- 432 0193 20       		.byte	32
- 433 0194 76       		.byte	118
- 434 0195 32       		.byte	50
- 435 0196 77       		.byte	119
- 436 0197 14       		.byte	20
- 437 0198 8B       		.byte	-117
- 438 0199 02       		.byte	2
- 439 019a 8C       		.byte	-116
- 440 019b 80       		.byte	-128
- 441 019c 90       		.byte	-112
- 442 019d 10       		.byte	16
- 443 019e A3       		.byte	-93
- 444 019f 05       		.byte	5
- 445 01a0 AE       		.byte	-82
- 446 01a1 40       		.byte	64
- 447 01a2 AF       		.byte	-81
- 448 01a3 10       		.byte	16
- 449 01a4 B0       		.byte	-80
- 450 01a5 94       		.byte	-108
- 451 01a6 C0       		.byte	-64
- 452 01a7 F4       		.byte	-12
- 453 01a8 C2       		.byte	-62
- 454 01a9 FE       		.byte	-2
- 455 01aa C4       		.byte	-60
- 456 01ab F6       		.byte	-10
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccs4YSiA.s 			page 9
+ 417 0184 35       		.byte	53
+ 418 0185 70       		.byte	112
+ 419 0186 36       		.byte	54
+ 420 0187 80       		.byte	-128
+ 421 0188 37       		.byte	55
+ 422 0189 80       		.byte	-128
+ 423 018a 38       		.byte	56
+ 424 018b 08       		.byte	8
+ 425 018c 3B       		.byte	59
+ 426 018d 02       		.byte	2
+ 427 018e 3E       		.byte	62
+ 428 018f 51       		.byte	81
+ 429 0190 3F       		.byte	63
+ 430 0191 40       		.byte	64
+ 431 0192 54       		.byte	84
+ 432 0193 09       		.byte	9
+ 433 0194 56       		.byte	86
+ 434 0195 04       		.byte	4
+ 435 0196 58       		.byte	88
+ 436 0197 04       		.byte	4
+ 437 0198 59       		.byte	89
+ 438 0199 04       		.byte	4
+ 439 019a 5B       		.byte	91
+ 440 019b 04       		.byte	4
+ 441 019c 5C       		.byte	92
+ 442 019d 22       		.byte	34
+ 443 019e 5D       		.byte	93
+ 444 019f 20       		.byte	32
+ 445 01a0 5F       		.byte	95
+ 446 01a1 01       		.byte	1
+ 447 01a2 83       		.byte	-125
+ 448 01a3 0C       		.byte	12
+ 449 01a4 85       		.byte	-123
+ 450 01a5 01       		.byte	1
+ 451 01a6 87       		.byte	-121
+ 452 01a7 06       		.byte	6
+ 453 01a8 8B       		.byte	-117
+ 454 01a9 03       		.byte	3
+ 455 01aa 91       		.byte	-111
+ 456 01ab 01       		.byte	1
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 9
 
 
- 457 01ac CA       		.byte	-54
- 458 01ad 60       		.byte	96
- 459 01ae CC       		.byte	-52
- 460 01af F0       		.byte	-16
- 461 01b0 CE       		.byte	-50
- 462 01b1 A8       		.byte	-88
- 463 01b2 D0       		.byte	-48
- 464 01b3 01       		.byte	1
- 465 01b4 D6       		.byte	-42
- 466 01b5 10       		.byte	16
- 467 01b6 D8       		.byte	-40
- 468 01b7 0F       		.byte	15
- 469 01b8 E2       		.byte	-30
- 470 01b9 10       		.byte	16
- 471 01ba 0E       		.byte	14
- 472 01bb 01       		.byte	1
- 473 01bc 11       		.byte	17
+ 457 01ac 93       		.byte	-109
+ 458 01ad 0E       		.byte	14
+ 459 01ae 97       		.byte	-105
+ 460 01af 08       		.byte	8
+ 461 01b0 99       		.byte	-103
+ 462 01b1 0C       		.byte	12
+ 463 01b2 9B       		.byte	-101
+ 464 01b3 03       		.byte	3
+ 465 01b4 B5       		.byte	-75
+ 466 01b5 0F       		.byte	15
+ 467 01b6 BB       		.byte	-69
+ 468 01b7 20       		.byte	32
+ 469 01b8 D4       		.byte	-44
+ 470 01b9 40       		.byte	64
+ 471 01ba D6       		.byte	-42
+ 472 01bb 04       		.byte	4
+ 473 01bc D9       		.byte	-39
  474 01bd 04       		.byte	4
- 475 01be 19       		.byte	25
- 476 01bf 07       		.byte	7
- 477 01c0 1D       		.byte	29
- 478 01c1 07       		.byte	7
- 479 01c2 26       		.byte	38
- 480 01c3 01       		.byte	1
- 481 01c4 2E       		.byte	46
- 482 01c5 02       		.byte	2
- 483 01c6 2F       		.byte	47
- 484 01c7 01       		.byte	1
- 485 01c8 31       		.byte	49
- 486 01c9 02       		.byte	2
- 487 01ca 33       		.byte	51
- 488 01cb 01       		.byte	1
- 489 01cc 34       		.byte	52
- 490 01cd 01       		.byte	1
- 491 01ce 35       		.byte	53
- 492 01cf 04       		.byte	4
- 493 01d0 36       		.byte	54
+ 475 01be DB       		.byte	-37
+ 476 01bf 04       		.byte	4
+ 477 01c0 DC       		.byte	-36
+ 478 01c1 30       		.byte	48
+ 479 01c2 DD       		.byte	-35
+ 480 01c3 20       		.byte	32
+ 481 01c4 DF       		.byte	-33
+ 482 01c5 01       		.byte	1
+ 483 01c6 04       		.byte	4
+ 484 01c7 02       		.byte	2
+ 485 01c8 05       		.byte	5
+ 486 01c9 A0       		.byte	-96
+ 487 01ca 06       		.byte	6
+ 488 01cb 80       		.byte	-128
+ 489 01cc 0C       		.byte	12
+ 490 01cd 02       		.byte	2
+ 491 01ce 0D       		.byte	13
+ 492 01cf 08       		.byte	8
+ 493 01d0 0F       		.byte	15
  494 01d1 02       		.byte	2
- 495 01d2 3E       		.byte	62
- 496 01d3 10       		.byte	16
- 497 01d4 40       		.byte	64
- 498 01d5 50       		.byte	80
- 499 01d6 41       		.byte	65
- 500 01d7 03       		.byte	3
- 501 01d8 49       		.byte	73
- 502 01d9 FF       		.byte	-1
- 503 01da 4A       		.byte	74
- 504 01db FF       		.byte	-1
- 505 01dc 4B       		.byte	75
- 506 01dd FF       		.byte	-1
- 507 01de 4D       		.byte	77
- 508 01df A0       		.byte	-96
- 509 01e0 4F       		.byte	79
- 510 01e1 04       		.byte	4
- 511 01e2 50       		.byte	80
- 512 01e3 18       		.byte	24
- 513 01e4 52       		.byte	82
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccs4YSiA.s 			page 10
+ 495 01d2 16       		.byte	22
+ 496 01d3 02       		.byte	2
+ 497 01d4 17       		.byte	23
+ 498 01d5 56       		.byte	86
+ 499 01d6 1D       		.byte	29
+ 500 01d7 28       		.byte	40
+ 501 01d8 1E       		.byte	30
+ 502 01d9 42       		.byte	66
+ 503 01da 1F       		.byte	31
+ 504 01db 04       		.byte	4
+ 505 01dc 20       		.byte	32
+ 506 01dd 08       		.byte	8
+ 507 01de 22       		.byte	34
+ 508 01df 10       		.byte	16
+ 509 01e0 24       		.byte	36
+ 510 01e1 40       		.byte	64
+ 511 01e2 25       		.byte	37
+ 512 01e3 10       		.byte	16
+ 513 01e4 26       		.byte	38
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 10
 
 
  514 01e5 80       		.byte	-128
- 515 01e6 58       		.byte	88
- 516 01e7 04       		.byte	4
- 517 01e8 59       		.byte	89
- 518 01e9 04       		.byte	4
- 519 01ea 5A       		.byte	90
- 520 01eb 04       		.byte	4
- 521 01ec 5B       		.byte	91
- 522 01ed 04       		.byte	4
- 523 01ee 5C       		.byte	92
- 524 01ef 66       		.byte	102
- 525 01f0 5D       		.byte	93
- 526 01f1 66       		.byte	102
- 527 01f2 5F       		.byte	95
- 528 01f3 01       		.byte	1
- 529 01f4 60       		.byte	96
- 530 01f5 40       		.byte	64
- 531 01f6 62       		.byte	98
- 532 01f7 C0       		.byte	-64
- 533 01f8 64       		.byte	100
- 534 01f9 40       		.byte	64
- 535 01fa 65       		.byte	101
+ 515 01e6 2E       		.byte	46
+ 516 01e7 82       		.byte	-126
+ 517 01e8 2F       		.byte	47
+ 518 01e9 24       		.byte	36
+ 519 01ea 30       		.byte	48
+ 520 01eb 01       		.byte	1
+ 521 01ec 32       		.byte	50
+ 522 01ed 10       		.byte	16
+ 523 01ee 33       		.byte	51
+ 524 01ef 08       		.byte	8
+ 525 01f0 35       		.byte	53
+ 526 01f1 A0       		.byte	-96
+ 527 01f2 37       		.byte	55
+ 528 01f3 06       		.byte	6
+ 529 01f4 38       		.byte	56
+ 530 01f5 08       		.byte	8
+ 531 01f6 39       		.byte	57
+ 532 01f7 10       		.byte	16
+ 533 01f8 3A       		.byte	58
+ 534 01f9 01       		.byte	1
+ 535 01fa 3C       		.byte	60
  536 01fb 40       		.byte	64
- 537 01fc 66       		.byte	102
- 538 01fd C0       		.byte	-64
- 539 01fe 68       		.byte	104
- 540 01ff C0       		.byte	-64
- 541 0200 6A       		.byte	106
- 542 0201 C0       		.byte	-64
- 543 0202 6C       		.byte	108
- 544 0203 C0       		.byte	-64
- 545 0204 6E       		.byte	110
- 546 0205 C0       		.byte	-64
- 547 0206 01       		.byte	1
- 548 0207 80       		.byte	-128
- 549 0208 04       		.byte	4
- 550 0209 04       		.byte	4
- 551 020a 05       		.byte	5
- 552 020b 40       		.byte	64
- 553 020c 06       		.byte	6
- 554 020d 40       		.byte	64
- 555 020e 07       		.byte	7
- 556 020f 08       		.byte	8
- 557 0210 0D       		.byte	13
- 558 0211 01       		.byte	1
- 559 0212 0E       		.byte	14
- 560 0213 1C       		.byte	28
- 561 0214 0F       		.byte	15
- 562 0215 02       		.byte	2
- 563 0216 10       		.byte	16
- 564 0217 02       		.byte	2
- 565 0218 11       		.byte	17
- 566 0219 08       		.byte	8
- 567 021a 15       		.byte	21
- 568 021b 01       		.byte	1
- 569 021c 16       		.byte	22
- 570 021d 20       		.byte	32
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccs4YSiA.s 			page 11
+ 537 01fc 3D       		.byte	61
+ 538 01fd 20       		.byte	32
+ 539 01fe 3E       		.byte	62
+ 540 01ff 04       		.byte	4
+ 541 0200 5C       		.byte	92
+ 542 0201 20       		.byte	32
+ 543 0202 5D       		.byte	93
+ 544 0203 01       		.byte	1
+ 545 0204 5E       		.byte	94
+ 546 0205 40       		.byte	64
+ 547 0206 5F       		.byte	95
+ 548 0207 04       		.byte	4
+ 549 0208 60       		.byte	96
+ 550 0209 10       		.byte	16
+ 551 020a 61       		.byte	97
+ 552 020b 01       		.byte	1
+ 553 020c 63       		.byte	99
+ 554 020d 0A       		.byte	10
+ 555 020e 67       		.byte	103
+ 556 020f 82       		.byte	-126
+ 557 0210 85       		.byte	-123
+ 558 0211 40       		.byte	64
+ 559 0212 87       		.byte	-121
+ 560 0213 40       		.byte	64
+ 561 0214 8C       		.byte	-116
+ 562 0215 10       		.byte	16
+ 563 0216 8E       		.byte	-114
+ 564 0217 01       		.byte	1
+ 565 0218 90       		.byte	-112
+ 566 0219 0A       		.byte	10
+ 567 021a 91       		.byte	-111
+ 568 021b 10       		.byte	16
+ 569 021c 92       		.byte	-110
+ 570 021d 04       		.byte	4
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 11
 
 
- 571 021e 17       		.byte	23
- 572 021f 10       		.byte	16
- 573 0220 19       		.byte	25
- 574 0221 80       		.byte	-128
- 575 0222 1A       		.byte	26
- 576 0223 08       		.byte	8
- 577 0224 1C       		.byte	28
- 578 0225 14       		.byte	20
- 579 0226 1D       		.byte	29
- 580 0227 40       		.byte	64
- 581 0228 20       		.byte	32
- 582 0229 28       		.byte	40
- 583 022a 21       		.byte	33
- 584 022b 02       		.byte	2
- 585 022c 25       		.byte	37
- 586 022d 50       		.byte	80
- 587 022e 27       		.byte	39
- 588 022f 20       		.byte	32
- 589 0230 29       		.byte	41
- 590 0231 80       		.byte	-128
- 591 0232 2E       		.byte	46
- 592 0233 04       		.byte	4
- 593 0234 30       		.byte	48
- 594 0235 A0       		.byte	-96
- 595 0236 31       		.byte	49
+ 571 021e 93       		.byte	-109
+ 572 021f 04       		.byte	4
+ 573 0220 96       		.byte	-106
+ 574 0221 20       		.byte	32
+ 575 0222 98       		.byte	-104
+ 576 0223 20       		.byte	32
+ 577 0224 99       		.byte	-103
+ 578 0225 A0       		.byte	-96
+ 579 0226 9B       		.byte	-101
+ 580 0227 56       		.byte	86
+ 581 0228 9C       		.byte	-100
+ 582 0229 01       		.byte	1
+ 583 022a 9D       		.byte	-99
+ 584 022b 01       		.byte	1
+ 585 022c 9E       		.byte	-98
+ 586 022d 01       		.byte	1
+ 587 022e A0       		.byte	-96
+ 588 022f 02       		.byte	2
+ 589 0230 A3       		.byte	-93
+ 590 0231 25       		.byte	37
+ 591 0232 A5       		.byte	-91
+ 592 0233 28       		.byte	40
+ 593 0234 A8       		.byte	-88
+ 594 0235 20       		.byte	32
+ 595 0236 AA       		.byte	-86
  596 0237 02       		.byte	2
- 597 0238 35       		.byte	53
- 598 0239 40       		.byte	64
- 599 023a 37       		.byte	55
- 600 023b 08       		.byte	8
- 601 023c 3D       		.byte	61
- 602 023d 20       		.byte	32
- 603 023e 3E       		.byte	62
- 604 023f 08       		.byte	8
- 605 0240 43       		.byte	67
- 606 0241 08       		.byte	8
- 607 0242 44       		.byte	68
- 608 0243 01       		.byte	1
- 609 0244 45       		.byte	69
- 610 0245 44       		.byte	68
- 611 0246 46       		.byte	70
- 612 0247 08       		.byte	8
- 613 0248 47       		.byte	71
- 614 0249 20       		.byte	32
- 615 024a 49       		.byte	73
- 616 024b 80       		.byte	-128
- 617 024c 4C       		.byte	76
- 618 024d 20       		.byte	32
- 619 024e 4D       		.byte	77
- 620 024f 82       		.byte	-126
- 621 0250 54       		.byte	84
- 622 0251 80       		.byte	-128
- 623 0252 55       		.byte	85
- 624 0253 04       		.byte	4
- 625 0254 57       		.byte	87
- 626 0255 08       		.byte	8
- 627 0256 5C       		.byte	92
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccs4YSiA.s 			page 12
+ 597 0238 AC       		.byte	-84
+ 598 0239 10       		.byte	16
+ 599 023a AD       		.byte	-83
+ 600 023b 40       		.byte	64
+ 601 023c C0       		.byte	-64
+ 602 023d D0       		.byte	-48
+ 603 023e C2       		.byte	-62
+ 604 023f B0       		.byte	-80
+ 605 0240 C4       		.byte	-60
+ 606 0241 F0       		.byte	-16
+ 607 0242 CA       		.byte	-54
+ 608 0243 F0       		.byte	-16
+ 609 0244 CC       		.byte	-52
+ 610 0245 F7       		.byte	-9
+ 611 0246 CE       		.byte	-50
+ 612 0247 77       		.byte	119
+ 613 0248 D6       		.byte	-42
+ 614 0249 F0       		.byte	-16
+ 615 024a D8       		.byte	-40
+ 616 024b 9F       		.byte	-97
+ 617 024c E4       		.byte	-28
+ 618 024d 08       		.byte	8
+ 619 024e E8       		.byte	-24
+ 620 024f 04       		.byte	4
+ 621 0250 EA       		.byte	-22
+ 622 0251 08       		.byte	8
+ 623 0252 00       		.byte	0
+ 624 0253 10       		.byte	16
+ 625 0254 01       		.byte	1
+ 626 0255 04       		.byte	4
+ 627 0256 02       		.byte	2
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 12
 
 
- 628 0257 01       		.byte	1
- 629 0258 5E       		.byte	94
- 630 0259 40       		.byte	64
- 631 025a 5F       		.byte	95
- 632 025b 14       		.byte	20
- 633 025c 64       		.byte	100
- 634 025d 01       		.byte	1
- 635 025e 67       		.byte	103
- 636 025f 80       		.byte	-128
- 637 0260 70       		.byte	112
- 638 0261 02       		.byte	2
- 639 0262 81       		.byte	-127
- 640 0263 10       		.byte	16
- 641 0264 87       		.byte	-121
- 642 0265 40       		.byte	64
- 643 0266 90       		.byte	-112
+ 628 0257 60       		.byte	96
+ 629 0258 04       		.byte	4
+ 630 0259 02       		.byte	2
+ 631 025a 05       		.byte	5
+ 632 025b 01       		.byte	1
+ 633 025c 06       		.byte	6
+ 634 025d 0D       		.byte	13
+ 635 025e 07       		.byte	7
+ 636 025f 02       		.byte	2
+ 637 0260 08       		.byte	8
+ 638 0261 72       		.byte	114
+ 639 0262 09       		.byte	9
+ 640 0263 06       		.byte	6
+ 641 0264 0A       		.byte	10
+ 642 0265 08       		.byte	8
+ 643 0266 0B       		.byte	11
  644 0267 01       		.byte	1
- 645 0268 91       		.byte	-111
- 646 0269 03       		.byte	3
- 647 026a 92       		.byte	-110
- 648 026b 50       		.byte	80
- 649 026c 93       		.byte	-109
- 650 026d 04       		.byte	4
- 651 026e 96       		.byte	-106
- 652 026f 08       		.byte	8
- 653 0270 9A       		.byte	-102
- 654 0271 60       		.byte	96
- 655 0272 9B       		.byte	-101
- 656 0273 18       		.byte	24
- 657 0274 9C       		.byte	-100
- 658 0275 80       		.byte	-128
- 659 0276 9D       		.byte	-99
- 660 0277 42       		.byte	66
- 661 0278 9E       		.byte	-98
- 662 0279 08       		.byte	8
- 663 027a A2       		.byte	-94
- 664 027b 04       		.byte	4
- 665 027c A3       		.byte	-93
- 666 027d 05       		.byte	5
- 667 027e AE       		.byte	-82
+ 645 0268 0C       		.byte	12
+ 646 0269 CD       		.byte	-51
+ 647 026a 12       		.byte	18
+ 648 026b 80       		.byte	-128
+ 649 026c 14       		.byte	20
+ 650 026d 12       		.byte	18
+ 651 026e 15       		.byte	21
+ 652 026f 04       		.byte	4
+ 653 0270 16       		.byte	22
+ 654 0271 64       		.byte	100
+ 655 0272 18       		.byte	24
+ 656 0273 01       		.byte	1
+ 657 0274 1A       		.byte	26
+ 658 0275 32       		.byte	50
+ 659 0276 1C       		.byte	28
+ 660 0277 CD       		.byte	-51
+ 661 0278 20       		.byte	32
+ 662 0279 4D       		.byte	77
+ 663 027a 22       		.byte	34
+ 664 027b 80       		.byte	-128
+ 665 027c 24       		.byte	36
+ 666 027d 8D       		.byte	-115
+ 667 027e 26       		.byte	38
  668 027f 40       		.byte	64
- 669 0280 B4       		.byte	-76
- 670 0281 09       		.byte	9
- 671 0282 B5       		.byte	-75
- 672 0283 28       		.byte	40
- 673 0284 B6       		.byte	-74
- 674 0285 42       		.byte	66
- 675 0286 C0       		.byte	-64
- 676 0287 F1       		.byte	-15
- 677 0288 C2       		.byte	-62
- 678 0289 F0       		.byte	-16
- 679 028a C4       		.byte	-60
- 680 028b 75       		.byte	117
- 681 028c CA       		.byte	-54
- 682 028d 48       		.byte	72
- 683 028e CC       		.byte	-52
- 684 028f 5D       		.byte	93
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccs4YSiA.s 			page 13
+ 669 0280 28       		.byte	40
+ 670 0281 CD       		.byte	-51
+ 671 0282 2D       		.byte	45
+ 672 0283 08       		.byte	8
+ 673 0284 30       		.byte	48
+ 674 0285 70       		.byte	112
+ 675 0286 32       		.byte	50
+ 676 0287 0F       		.byte	15
+ 677 0288 33       		.byte	51
+ 678 0289 07       		.byte	7
+ 679 028a 34       		.byte	52
+ 680 028b 80       		.byte	-128
+ 681 028c 35       		.byte	53
+ 682 028d 08       		.byte	8
+ 683 028e 3A       		.byte	58
+ 684 028f 0A       		.byte	10
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 13
 
 
- 685 0290 CE       		.byte	-50
- 686 0291 60       		.byte	96
- 687 0292 D0       		.byte	-48
- 688 0293 42       		.byte	66
- 689 0294 D2       		.byte	-46
- 690 0295 18       		.byte	24
- 691 0296 D6       		.byte	-42
- 692 0297 F0       		.byte	-16
- 693 0298 D8       		.byte	-40
- 694 0299 90       		.byte	-112
- 695 029a 85       		.byte	-123
- 696 029b 05       		.byte	5
- 697 029c 87       		.byte	-121
- 698 029d 0A       		.byte	10
- 699 029e 91       		.byte	-111
- 700 029f 0E       		.byte	14
- 701 02a0 95       		.byte	-107
- 702 02a1 03       		.byte	3
- 703 02a2 97       		.byte	-105
- 704 02a3 04       		.byte	4
- 705 02a4 AD       		.byte	-83
- 706 02a5 04       		.byte	4
- 707 02a6 AF       		.byte	-81
- 708 02a7 09       		.byte	9
- 709 02a8 B1       		.byte	-79
- 710 02a9 0F       		.byte	15
- 711 02aa B9       		.byte	-71
- 712 02ab 02       		.byte	2
- 713 02ac D4       		.byte	-44
- 714 02ad 05       		.byte	5
- 715 02ae D9       		.byte	-39
+ 685 0290 3B       		.byte	59
+ 686 0291 08       		.byte	8
+ 687 0292 3E       		.byte	62
+ 688 0293 10       		.byte	16
+ 689 0294 3F       		.byte	63
+ 690 0295 10       		.byte	16
+ 691 0296 40       		.byte	64
+ 692 0297 54       		.byte	84
+ 693 0298 41       		.byte	65
+ 694 0299 02       		.byte	2
+ 695 029a 46       		.byte	70
+ 696 029b 0E       		.byte	14
+ 697 029c 47       		.byte	71
+ 698 029d BC       		.byte	-68
+ 699 029e 48       		.byte	72
+ 700 029f 34       		.byte	52
+ 701 02a0 49       		.byte	73
+ 702 02a1 FF       		.byte	-1
+ 703 02a2 4A       		.byte	74
+ 704 02a3 FF       		.byte	-1
+ 705 02a4 4B       		.byte	75
+ 706 02a5 FF       		.byte	-1
+ 707 02a6 4E       		.byte	78
+ 708 02a7 F0       		.byte	-16
+ 709 02a8 4F       		.byte	79
+ 710 02a9 44       		.byte	68
+ 711 02aa 50       		.byte	80
+ 712 02ab 0C       		.byte	12
+ 713 02ac 54       		.byte	84
+ 714 02ad 01       		.byte	1
+ 715 02ae 58       		.byte	88
  716 02af 04       		.byte	4
- 717 02b0 DB       		.byte	-37
+ 717 02b0 59       		.byte	89
  718 02b1 04       		.byte	4
- 719 02b2 DC       		.byte	-36
- 720 02b3 10       		.byte	16
- 721 02b4 DD       		.byte	-35
- 722 02b5 60       		.byte	96
- 723 02b6 DF       		.byte	-33
- 724 02b7 01       		.byte	1
- 725 02b8 04       		.byte	4
- 726 02b9 02       		.byte	2
- 727 02ba 05       		.byte	5
- 728 02bb 40       		.byte	64
- 729 02bc 06       		.byte	6
- 730 02bd 22       		.byte	34
- 731 02be 07       		.byte	7
- 732 02bf 0A       		.byte	10
- 733 02c0 0E       		.byte	14
- 734 02c1 8A       		.byte	-118
- 735 02c2 0F       		.byte	15
- 736 02c3 20       		.byte	32
- 737 02c4 15       		.byte	21
- 738 02c5 02       		.byte	2
- 739 02c6 17       		.byte	23
- 740 02c7 15       		.byte	21
- 741 02c8 1D       		.byte	29
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccs4YSiA.s 			page 14
+ 719 02b2 5A       		.byte	90
+ 720 02b3 04       		.byte	4
+ 721 02b4 5B       		.byte	91
+ 722 02b5 04       		.byte	4
+ 723 02b6 5C       		.byte	92
+ 724 02b7 11       		.byte	17
+ 725 02b8 5D       		.byte	93
+ 726 02b9 33       		.byte	51
+ 727 02ba 5F       		.byte	95
+ 728 02bb 01       		.byte	1
+ 729 02bc 66       		.byte	102
+ 730 02bd C0       		.byte	-64
+ 731 02be 6A       		.byte	106
+ 732 02bf 40       		.byte	64
+ 733 02c0 6B       		.byte	107
+ 734 02c1 02       		.byte	2
+ 735 02c2 84       		.byte	-124
+ 736 02c3 09       		.byte	9
+ 737 02c4 85       		.byte	-123
+ 738 02c5 08       		.byte	8
+ 739 02c6 86       		.byte	-122
+ 740 02c7 10       		.byte	16
+ 741 02c8 87       		.byte	-121
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 14
 
 
- 742 02c9 28       		.byte	40
- 743 02ca 1E       		.byte	30
- 744 02cb 80       		.byte	-128
- 745 02cc 21       		.byte	33
- 746 02cd 02       		.byte	2
- 747 02ce 24       		.byte	36
- 748 02cf 0A       		.byte	10
- 749 02d0 25       		.byte	37
- 750 02d1 04       		.byte	4
- 751 02d2 26       		.byte	38
- 752 02d3 8C       		.byte	-116
- 753 02d4 27       		.byte	39
- 754 02d5 28       		.byte	40
- 755 02d6 29       		.byte	41
- 756 02d7 40       		.byte	64
- 757 02d8 2D       		.byte	45
- 758 02d9 80       		.byte	-128
- 759 02da 2E       		.byte	46
- 760 02db 02       		.byte	2
- 761 02dc 31       		.byte	49
- 762 02dd 02       		.byte	2
- 763 02de 32       		.byte	50
- 764 02df 08       		.byte	8
- 765 02e0 36       		.byte	54
- 766 02e1 80       		.byte	-128
- 767 02e2 37       		.byte	55
- 768 02e3 29       		.byte	41
- 769 02e4 38       		.byte	56
- 770 02e5 08       		.byte	8
- 771 02e6 3D       		.byte	61
- 772 02e7 01       		.byte	1
- 773 02e8 3E       		.byte	62
+ 742 02c9 03       		.byte	3
+ 743 02ca 88       		.byte	-120
+ 744 02cb 20       		.byte	32
+ 745 02cc 8A       		.byte	-118
+ 746 02cd 03       		.byte	3
+ 747 02ce 8C       		.byte	-116
+ 748 02cf 10       		.byte	16
+ 749 02d0 8D       		.byte	-115
+ 750 02d1 08       		.byte	8
+ 751 02d2 8E       		.byte	-114
+ 752 02d3 0C       		.byte	12
+ 753 02d4 8F       		.byte	-113
+ 754 02d5 05       		.byte	5
+ 755 02d6 95       		.byte	-107
+ 756 02d7 06       		.byte	6
+ 757 02d8 97       		.byte	-105
+ 758 02d9 09       		.byte	9
+ 759 02da 9B       		.byte	-101
+ 760 02db 06       		.byte	6
+ 761 02dc 9C       		.byte	-100
+ 762 02dd 1C       		.byte	28
+ 763 02de 9E       		.byte	-98
+ 764 02df 02       		.byte	2
+ 765 02e0 A4       		.byte	-92
+ 766 02e1 10       		.byte	16
+ 767 02e2 A7       		.byte	-89
+ 768 02e3 02       		.byte	2
+ 769 02e4 A8       		.byte	-88
+ 770 02e5 0C       		.byte	12
+ 771 02e6 AA       		.byte	-86
+ 772 02e7 11       		.byte	17
+ 773 02e8 AC       		.byte	-84
  774 02e9 14       		.byte	20
- 775 02ea 3F       		.byte	63
- 776 02eb 80       		.byte	-128
- 777 02ec 44       		.byte	68
- 778 02ed 08       		.byte	8
- 779 02ee 45       		.byte	69
- 780 02ef 04       		.byte	4
- 781 02f0 47       		.byte	71
- 782 02f1 02       		.byte	2
- 783 02f2 4C       		.byte	76
- 784 02f3 04       		.byte	4
- 785 02f4 4E       		.byte	78
- 786 02f5 02       		.byte	2
- 787 02f6 4F       		.byte	79
- 788 02f7 06       		.byte	6
- 789 02f8 56       		.byte	86
- 790 02f9 40       		.byte	64
- 791 02fa 57       		.byte	87
- 792 02fb 54       		.byte	84
- 793 02fc 58       		.byte	88
- 794 02fd 80       		.byte	-128
- 795 02fe 59       		.byte	89
- 796 02ff 02       		.byte	2
- 797 0300 5A       		.byte	90
- 798 0301 08       		.byte	8
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccs4YSiA.s 			page 15
+ 775 02ea AD       		.byte	-83
+ 776 02eb 10       		.byte	16
+ 777 02ec AF       		.byte	-81
+ 778 02ed 01       		.byte	1
+ 779 02ee B2       		.byte	-78
+ 780 02ef 1F       		.byte	31
+ 781 02f0 B3       		.byte	-77
+ 782 02f1 07       		.byte	7
+ 783 02f2 B5       		.byte	-75
+ 784 02f3 18       		.byte	24
+ 785 02f4 B6       		.byte	-74
+ 786 02f5 20       		.byte	32
+ 787 02f6 B9       		.byte	-71
+ 788 02f7 20       		.byte	32
+ 789 02f8 BB       		.byte	-69
+ 790 02f9 08       		.byte	8
+ 791 02fa BE       		.byte	-66
+ 792 02fb 40       		.byte	64
+ 793 02fc D8       		.byte	-40
+ 794 02fd 04       		.byte	4
+ 795 02fe D9       		.byte	-39
+ 796 02ff 04       		.byte	4
+ 797 0300 DC       		.byte	-36
+ 798 0301 33       		.byte	51
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 15
 
 
- 799 0302 66       		.byte	102
- 800 0303 08       		.byte	8
- 801 0304 6D       		.byte	109
- 802 0305 01       		.byte	1
- 803 0306 6E       		.byte	110
- 804 0307 16       		.byte	22
- 805 0308 6F       		.byte	111
- 806 0309 15       		.byte	21
- 807 030a 75       		.byte	117
- 808 030b 80       		.byte	-128
- 809 030c 89       		.byte	-119
- 810 030d 80       		.byte	-128
- 811 030e 8A       		.byte	-118
- 812 030f 20       		.byte	32
- 813 0310 C0       		.byte	-64
- 814 0311 F0       		.byte	-16
- 815 0312 C2       		.byte	-62
- 816 0313 F0       		.byte	-16
- 817 0314 C4       		.byte	-60
- 818 0315 70       		.byte	112
- 819 0316 CA       		.byte	-54
- 820 0317 98       		.byte	-104
- 821 0318 CC       		.byte	-52
- 822 0319 F3       		.byte	-13
- 823 031a CE       		.byte	-50
- 824 031b F2       		.byte	-14
- 825 031c D0       		.byte	-48
- 826 031d E0       		.byte	-32
- 827 031e D2       		.byte	-46
- 828 031f 30       		.byte	48
- 829 0320 D6       		.byte	-42
- 830 0321 0B       		.byte	11
- 831 0322 D8       		.byte	-40
- 832 0323 40       		.byte	64
- 833 0324 E2       		.byte	-30
- 834 0325 08       		.byte	8
- 835 0326 EE       		.byte	-18
- 836 0327 02       		.byte	2
- 837 0328 8E       		.byte	-114
- 838 0329 01       		.byte	1
- 839 032a A2       		.byte	-94
- 840 032b 01       		.byte	1
- 841 032c A8       		.byte	-88
- 842 032d 80       		.byte	-128
- 843 032e AA       		.byte	-86
- 844 032f 08       		.byte	8
- 845 0330 AD       		.byte	-83
- 846 0331 20       		.byte	32
- 847 0332 B0       		.byte	-80
- 848 0333 10       		.byte	16
- 849 0334 B1       		.byte	-79
- 850 0335 24       		.byte	36
- 851 0336 B2       		.byte	-78
- 852 0337 01       		.byte	1
- 853 0338 B4       		.byte	-76
- 854 0339 40       		.byte	64
- 855 033a E2       		.byte	-30
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccs4YSiA.s 			page 16
+ 799 0302 DF       		.byte	-33
+ 800 0303 01       		.byte	1
+ 801 0304 00       		.byte	0
+ 802 0305 14       		.byte	20
+ 803 0306 01       		.byte	1
+ 804 0307 40       		.byte	64
+ 805 0308 04       		.byte	4
+ 806 0309 A0       		.byte	-96
+ 807 030a 05       		.byte	5
+ 808 030b 05       		.byte	5
+ 809 030c 0A       		.byte	10
+ 810 030d 02       		.byte	2
+ 811 030e 0C       		.byte	12
+ 812 030f 81       		.byte	-127
+ 813 0310 0E       		.byte	14
+ 814 0311 04       		.byte	4
+ 815 0312 0F       		.byte	15
+ 816 0313 90       		.byte	-112
+ 817 0314 10       		.byte	16
+ 818 0315 32       		.byte	50
+ 819 0316 13       		.byte	19
+ 820 0317 20       		.byte	32
+ 821 0318 17       		.byte	23
+ 822 0319 15       		.byte	21
+ 823 031a 18       		.byte	24
+ 824 031b 11       		.byte	17
+ 825 031c 1D       		.byte	29
+ 826 031d 05       		.byte	5
+ 827 031e 1F       		.byte	31
+ 828 031f 10       		.byte	16
+ 829 0320 20       		.byte	32
+ 830 0321 04       		.byte	4
+ 831 0322 21       		.byte	33
+ 832 0323 04       		.byte	4
+ 833 0324 22       		.byte	34
+ 834 0325 10       		.byte	16
+ 835 0326 23       		.byte	35
+ 836 0327 20       		.byte	32
+ 837 0328 24       		.byte	36
+ 838 0329 20       		.byte	32
+ 839 032a 26       		.byte	38
+ 840 032b 08       		.byte	8
+ 841 032c 27       		.byte	39
+ 842 032d 08       		.byte	8
+ 843 032e 28       		.byte	40
+ 844 032f 10       		.byte	16
+ 845 0330 2B       		.byte	43
+ 846 0331 02       		.byte	2
+ 847 0332 2E       		.byte	46
+ 848 0333 80       		.byte	-128
+ 849 0334 32       		.byte	50
+ 850 0335 10       		.byte	16
+ 851 0336 33       		.byte	51
+ 852 0337 08       		.byte	8
+ 853 0338 36       		.byte	54
+ 854 0339 08       		.byte	8
+ 855 033a 39       		.byte	57
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 16
 
 
- 856 033b 34       		.byte	52
- 857 033c EC       		.byte	-20
- 858 033d 02       		.byte	2
- 859 033e EE       		.byte	-18
- 860 033f 01       		.byte	1
- 861 0340 00       		.byte	0
- 862 0341 70       		.byte	112
- 863 0342 04       		.byte	4
- 864 0343 02       		.byte	2
- 865 0344 06       		.byte	6
- 866 0345 1D       		.byte	29
- 867 0346 08       		.byte	8
- 868 0347 20       		.byte	32
- 869 0348 0C       		.byte	12
- 870 0349 20       		.byte	32
- 871 034a 0E       		.byte	14
- 872 034b 50       		.byte	80
- 873 034c 14       		.byte	20
- 874 034d 50       		.byte	80
- 875 034e 16       		.byte	22
- 876 034f 20       		.byte	32
- 877 0350 18       		.byte	24
- 878 0351 70       		.byte	112
- 879 0352 1C       		.byte	28
- 880 0353 E3       		.byte	-29
- 881 0354 1E       		.byte	30
- 882 0355 0C       		.byte	12
- 883 0356 20       		.byte	32
- 884 0357 70       		.byte	112
- 885 0358 24       		.byte	36
- 886 0359 03       		.byte	3
- 887 035a 26       		.byte	38
- 888 035b F4       		.byte	-12
- 889 035c 28       		.byte	40
- 890 035d A1       		.byte	-95
- 891 035e 2A       		.byte	42
- 892 035f 5A       		.byte	90
- 893 0360 30       		.byte	48
- 894 0361 60       		.byte	96
- 895 0362 32       		.byte	50
- 896 0363 1F       		.byte	31
- 897 0364 36       		.byte	54
- 898 0365 80       		.byte	-128
- 899 0366 38       		.byte	56
- 900 0367 A0       		.byte	-96
- 901 0368 3A       		.byte	58
- 902 0369 08       		.byte	8
- 903 036a 3E       		.byte	62
- 904 036b 10       		.byte	16
- 905 036c 56       		.byte	86
- 906 036d 02       		.byte	2
- 907 036e 57       		.byte	87
- 908 036f 28       		.byte	40
- 909 0370 58       		.byte	88
- 910 0371 04       		.byte	4
- 911 0372 5B       		.byte	91
- 912 0373 04       		.byte	4
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccs4YSiA.s 			page 17
+ 856 033b 48       		.byte	72
+ 857 033c 3D       		.byte	61
+ 858 033d 20       		.byte	32
+ 859 033e 3E       		.byte	62
+ 860 033f 06       		.byte	6
+ 861 0340 45       		.byte	69
+ 862 0341 01       		.byte	1
+ 863 0342 47       		.byte	71
+ 864 0343 20       		.byte	32
+ 865 0344 4D       		.byte	77
+ 866 0345 40       		.byte	64
+ 867 0346 54       		.byte	84
+ 868 0347 02       		.byte	2
+ 869 0348 56       		.byte	86
+ 870 0349 84       		.byte	-124
+ 871 034a 5C       		.byte	92
+ 872 034b 20       		.byte	32
+ 873 034c 5E       		.byte	94
+ 874 034d 40       		.byte	64
+ 875 034e 5F       		.byte	95
+ 876 034f 09       		.byte	9
+ 877 0350 64       		.byte	100
+ 878 0351 20       		.byte	32
+ 879 0352 66       		.byte	102
+ 880 0353 04       		.byte	4
+ 881 0354 90       		.byte	-112
+ 882 0355 80       		.byte	-128
+ 883 0356 91       		.byte	-111
+ 884 0357 40       		.byte	64
+ 885 0358 92       		.byte	-110
+ 886 0359 44       		.byte	68
+ 887 035a 93       		.byte	-109
+ 888 035b 10       		.byte	16
+ 889 035c 9A       		.byte	-102
+ 890 035d 12       		.byte	18
+ 891 035e 9B       		.byte	-101
+ 892 035f 15       		.byte	21
+ 893 0360 9D       		.byte	-99
+ 894 0361 01       		.byte	1
+ 895 0362 9E       		.byte	-98
+ 896 0363 0C       		.byte	12
+ 897 0364 9F       		.byte	-97
+ 898 0365 20       		.byte	32
+ 899 0366 A0       		.byte	-96
+ 900 0367 80       		.byte	-128
+ 901 0368 A1       		.byte	-95
+ 902 0369 50       		.byte	80
+ 903 036a A3       		.byte	-93
+ 904 036b 40       		.byte	64
+ 905 036c A6       		.byte	-90
+ 906 036d 08       		.byte	8
+ 907 036e A7       		.byte	-89
+ 908 036f 0A       		.byte	10
+ 909 0370 AF       		.byte	-81
+ 910 0371 02       		.byte	2
+ 911 0372 B0       		.byte	-80
+ 912 0373 20       		.byte	32
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 17
 
 
- 913 0374 5C       		.byte	92
+ 913 0374 B2       		.byte	-78
  914 0375 02       		.byte	2
- 915 0376 5D       		.byte	93
- 916 0377 20       		.byte	32
- 917 0378 5F       		.byte	95
- 918 0379 01       		.byte	1
- 919 037a 82       		.byte	-126
- 920 037b 80       		.byte	-128
- 921 037c 84       		.byte	-124
- 922 037d 21       		.byte	33
- 923 037e 85       		.byte	-123
- 924 037f 20       		.byte	32
- 925 0380 86       		.byte	-122
- 926 0381 14       		.byte	20
- 927 0382 87       		.byte	-121
- 928 0383 D0       		.byte	-48
- 929 0384 88       		.byte	-120
- 930 0385 03       		.byte	3
- 931 0386 89       		.byte	-119
- 932 0387 2E       		.byte	46
- 933 0388 8A       		.byte	-118
- 934 0389 2C       		.byte	44
- 935 038a 8B       		.byte	-117
- 936 038b 81       		.byte	-127
- 937 038c 8C       		.byte	-116
- 938 038d D2       		.byte	-46
- 939 038e 8D       		.byte	-115
- 940 038f D8       		.byte	-40
- 941 0390 8F       		.byte	-113
- 942 0391 01       		.byte	1
- 943 0392 90       		.byte	-112
- 944 0393 D2       		.byte	-46
- 945 0394 91       		.byte	-111
- 946 0395 11       		.byte	17
- 947 0396 93       		.byte	-109
- 948 0397 22       		.byte	34
- 949 0398 95       		.byte	-107
- 950 0399 D1       		.byte	-47
- 951 039a 97       		.byte	-105
- 952 039b 08       		.byte	8
- 953 039c 98       		.byte	-104
- 954 039d 03       		.byte	3
- 955 039e 99       		.byte	-103
- 956 039f D9       		.byte	-39
- 957 03a0 9A       		.byte	-102
- 958 03a1 38       		.byte	56
- 959 03a2 9C       		.byte	-100
- 960 03a3 02       		.byte	2
- 961 03a4 9D       		.byte	-99
- 962 03a5 D9       		.byte	-39
- 963 03a6 A1       		.byte	-95
- 964 03a7 08       		.byte	8
- 965 03a8 A3       		.byte	-93
- 966 03a9 04       		.byte	4
- 967 03aa A4       		.byte	-92
- 968 03ab D2       		.byte	-46
- 969 03ac A5       		.byte	-91
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccs4YSiA.s 			page 18
+ 915 0376 C0       		.byte	-64
+ 916 0377 F7       		.byte	-9
+ 917 0378 C2       		.byte	-62
+ 918 0379 F1       		.byte	-15
+ 919 037a C4       		.byte	-60
+ 920 037b 77       		.byte	119
+ 921 037c CA       		.byte	-54
+ 922 037d 1A       		.byte	26
+ 923 037e CC       		.byte	-52
+ 924 037f 46       		.byte	70
+ 925 0380 CE       		.byte	-50
+ 926 0381 EA       		.byte	-22
+ 927 0382 D0       		.byte	-48
+ 928 0383 A0       		.byte	-96
+ 929 0384 D2       		.byte	-46
+ 930 0385 10       		.byte	16
+ 931 0386 D6       		.byte	-42
+ 932 0387 F0       		.byte	-16
+ 933 0388 E4       		.byte	-28
+ 934 0389 08       		.byte	8
+ 935 038a E8       		.byte	-24
+ 936 038b 04       		.byte	4
+ 937 038c 00       		.byte	0
+ 938 038d 02       		.byte	2
+ 939 038e 06       		.byte	6
+ 940 038f 01       		.byte	1
+ 941 0390 0A       		.byte	10
+ 942 0391 03       		.byte	3
+ 943 0392 0D       		.byte	13
+ 944 0393 01       		.byte	1
+ 945 0394 19       		.byte	25
+ 946 0395 01       		.byte	1
+ 947 0396 1C       		.byte	28
+ 948 0397 02       		.byte	2
+ 949 0398 1D       		.byte	29
+ 950 0399 01       		.byte	1
+ 951 039a 2E       		.byte	46
+ 952 039b 04       		.byte	4
+ 953 039c 30       		.byte	48
+ 954 039d 02       		.byte	2
+ 955 039e 32       		.byte	50
+ 956 039f 01       		.byte	1
+ 957 03a0 34       		.byte	52
+ 958 03a1 04       		.byte	4
+ 959 03a2 37       		.byte	55
+ 960 03a3 01       		.byte	1
+ 961 03a4 3E       		.byte	62
+ 962 03a5 04       		.byte	4
+ 963 03a6 40       		.byte	64
+ 964 03a7 20       		.byte	32
+ 965 03a8 41       		.byte	65
+ 966 03a9 06       		.byte	6
+ 967 03aa 49       		.byte	73
+ 968 03ab FF       		.byte	-1
+ 969 03ac 4A       		.byte	74
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 18
 
 
- 970 03ad 24       		.byte	36
- 971 03ae A7       		.byte	-89
- 972 03af 49       		.byte	73
- 973 03b0 A8       		.byte	-88
- 974 03b1 D0       		.byte	-48
- 975 03b2 AA       		.byte	-86
- 976 03b3 02       		.byte	2
- 977 03b4 AC       		.byte	-84
- 978 03b5 02       		.byte	2
- 979 03b6 AD       		.byte	-83
- 980 03b7 D9       		.byte	-39
- 981 03b8 AE       		.byte	-82
- 982 03b9 D0       		.byte	-48
- 983 03ba B0       		.byte	-80
- 984 03bb 40       		.byte	64
- 985 03bc B2       		.byte	-78
- 986 03bd 80       		.byte	-128
- 987 03be B3       		.byte	-77
- 988 03bf F0       		.byte	-16
- 989 03c0 B4       		.byte	-76
- 990 03c1 20       		.byte	32
- 991 03c2 B5       		.byte	-75
- 992 03c3 0F       		.byte	15
- 993 03c4 B6       		.byte	-74
- 994 03c5 1F       		.byte	31
- 995 03c6 B8       		.byte	-72
- 996 03c7 80       		.byte	-128
- 997 03c8 BB       		.byte	-69
- 998 03c9 38       		.byte	56
- 999 03ca BE       		.byte	-66
- 1000 03cb 15       		.byte	21
- 1001 03cc D4       		.byte	-44
+ 970 03ad FF       		.byte	-1
+ 971 03ae 4B       		.byte	75
+ 972 03af FF       		.byte	-1
+ 973 03b0 4D       		.byte	77
+ 974 03b1 A0       		.byte	-96
+ 975 03b2 4F       		.byte	79
+ 976 03b3 04       		.byte	4
+ 977 03b4 50       		.byte	80
+ 978 03b5 18       		.byte	24
+ 979 03b6 52       		.byte	82
+ 980 03b7 80       		.byte	-128
+ 981 03b8 54       		.byte	84
+ 982 03b9 05       		.byte	5
+ 983 03ba 58       		.byte	88
+ 984 03bb 04       		.byte	4
+ 985 03bc 59       		.byte	89
+ 986 03bd 04       		.byte	4
+ 987 03be 5A       		.byte	90
+ 988 03bf 04       		.byte	4
+ 989 03c0 5B       		.byte	91
+ 990 03c1 04       		.byte	4
+ 991 03c2 5C       		.byte	92
+ 992 03c3 55       		.byte	85
+ 993 03c4 5D       		.byte	93
+ 994 03c5 55       		.byte	85
+ 995 03c6 5F       		.byte	95
+ 996 03c7 01       		.byte	1
+ 997 03c8 60       		.byte	96
+ 998 03c9 40       		.byte	64
+ 999 03ca 62       		.byte	98
+ 1000 03cb C0       		.byte	-64
+ 1001 03cc 64       		.byte	100
  1002 03cd 40       		.byte	64
- 1003 03ce D6       		.byte	-42
- 1004 03cf 04       		.byte	4
- 1005 03d0 D8       		.byte	-40
- 1006 03d1 04       		.byte	4
- 1007 03d2 D9       		.byte	-39
- 1008 03d3 04       		.byte	4
- 1009 03d4 DB       		.byte	-37
- 1010 03d5 04       		.byte	4
- 1011 03d6 DC       		.byte	-36
- 1012 03d7 22       		.byte	34
- 1013 03d8 DD       		.byte	-35
- 1014 03d9 20       		.byte	32
- 1015 03da DF       		.byte	-33
- 1016 03db 01       		.byte	1
- 1017 03dc 00       		.byte	0
- 1018 03dd A2       		.byte	-94
- 1019 03de 01       		.byte	1
+ 1003 03ce 65       		.byte	101
+ 1004 03cf 40       		.byte	64
+ 1005 03d0 66       		.byte	102
+ 1006 03d1 C0       		.byte	-64
+ 1007 03d2 68       		.byte	104
+ 1008 03d3 C0       		.byte	-64
+ 1009 03d4 6A       		.byte	106
+ 1010 03d5 C0       		.byte	-64
+ 1011 03d6 6C       		.byte	108
+ 1012 03d7 C0       		.byte	-64
+ 1013 03d8 6E       		.byte	110
+ 1014 03d9 C0       		.byte	-64
+ 1015 03da 80       		.byte	-128
+ 1016 03db 02       		.byte	2
+ 1017 03dc 84       		.byte	-124
+ 1018 03dd 01       		.byte	1
+ 1019 03de 85       		.byte	-123
  1020 03df 04       		.byte	4
- 1021 03e0 05       		.byte	5
- 1022 03e1 04       		.byte	4
- 1023 03e2 06       		.byte	6
- 1024 03e3 08       		.byte	8
- 1025 03e4 07       		.byte	7
- 1026 03e5 41       		.byte	65
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccs4YSiA.s 			page 19
+ 1021 03e0 87       		.byte	-121
+ 1022 03e1 08       		.byte	8
+ 1023 03e2 89       		.byte	-119
+ 1024 03e3 0C       		.byte	12
+ 1025 03e4 8A       		.byte	-118
+ 1026 03e5 01       		.byte	1
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 19
 
 
- 1027 03e6 08       		.byte	8
- 1028 03e7 80       		.byte	-128
- 1029 03e8 09       		.byte	9
- 1030 03e9 21       		.byte	33
- 1031 03ea 0C       		.byte	12
- 1032 03eb 28       		.byte	40
- 1033 03ec 0E       		.byte	14
- 1034 03ed 01       		.byte	1
- 1035 03ee 10       		.byte	16
- 1036 03ef 2A       		.byte	42
- 1037 03f0 15       		.byte	21
- 1038 03f1 24       		.byte	36
- 1039 03f2 17       		.byte	23
- 1040 03f3 02       		.byte	2
- 1041 03f4 18       		.byte	24
- 1042 03f5 50       		.byte	80
- 1043 03f6 19       		.byte	25
- 1044 03f7 20       		.byte	32
- 1045 03f8 1A       		.byte	26
- 1046 03f9 02       		.byte	2
- 1047 03fa 1D       		.byte	29
- 1048 03fb 15       		.byte	21
- 1049 03fc 1E       		.byte	30
- 1050 03fd 02       		.byte	2
- 1051 03fe 21       		.byte	33
- 1052 03ff 34       		.byte	52
- 1053 0400 28       		.byte	40
- 1054 0401 90       		.byte	-112
- 1055 0402 29       		.byte	41
- 1056 0403 80       		.byte	-128
- 1057 0404 30       		.byte	48
- 1058 0405 28       		.byte	40
- 1059 0406 31       		.byte	49
+ 1027 03e6 8E       		.byte	-114
+ 1028 03e7 01       		.byte	1
+ 1029 03e8 95       		.byte	-107
+ 1030 03e9 04       		.byte	4
+ 1031 03ea 97       		.byte	-105
+ 1032 03eb 08       		.byte	8
+ 1033 03ec 99       		.byte	-103
+ 1034 03ed 03       		.byte	3
+ 1035 03ee 9C       		.byte	-100
+ 1036 03ef 02       		.byte	2
+ 1037 03f0 A1       		.byte	-95
+ 1038 03f1 03       		.byte	3
+ 1039 03f2 A6       		.byte	-90
+ 1040 03f3 01       		.byte	1
+ 1041 03f4 A9       		.byte	-87
+ 1042 03f5 02       		.byte	2
+ 1043 03f6 AC       		.byte	-84
+ 1044 03f7 01       		.byte	1
+ 1045 03f8 AF       		.byte	-81
+ 1046 03f9 01       		.byte	1
+ 1047 03fa B0       		.byte	-80
+ 1048 03fb 01       		.byte	1
+ 1049 03fc B1       		.byte	-79
+ 1050 03fd 08       		.byte	8
+ 1051 03fe B4       		.byte	-76
+ 1052 03ff 02       		.byte	2
+ 1053 0400 B5       		.byte	-75
+ 1054 0401 04       		.byte	4
+ 1055 0402 B7       		.byte	-73
+ 1056 0403 03       		.byte	3
+ 1057 0404 B9       		.byte	-71
+ 1058 0405 80       		.byte	-128
+ 1059 0406 BE       		.byte	-66
  1060 0407 01       		.byte	1
- 1061 0408 33       		.byte	51
- 1062 0409 40       		.byte	64
- 1063 040a 39       		.byte	57
- 1064 040b 68       		.byte	104
- 1065 040c 59       		.byte	89
- 1066 040d 01       		.byte	1
- 1067 040e 5A       		.byte	90
- 1068 040f 01       		.byte	1
- 1069 0410 60       		.byte	96
- 1070 0411 10       		.byte	16
- 1071 0412 61       		.byte	97
- 1072 0413 40       		.byte	64
- 1073 0414 62       		.byte	98
- 1074 0415 22       		.byte	34
- 1075 0416 65       		.byte	101
- 1076 0417 04       		.byte	4
- 1077 0418 6C       		.byte	108
- 1078 0419 2A       		.byte	42
- 1079 041a 6D       		.byte	109
- 1080 041b 42       		.byte	66
- 1081 041c 6F       		.byte	111
- 1082 041d 41       		.byte	65
- 1083 041e 74       		.byte	116
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccs4YSiA.s 			page 20
+ 1061 0408 BF       		.byte	-65
+ 1062 0409 51       		.byte	81
+ 1063 040a C0       		.byte	-64
+ 1064 040b 60       		.byte	96
+ 1065 040c C1       		.byte	-63
+ 1066 040d 03       		.byte	3
+ 1067 040e C5       		.byte	-59
+ 1068 040f D0       		.byte	-48
+ 1069 0410 C7       		.byte	-57
+ 1070 0411 12       		.byte	18
+ 1071 0412 C8       		.byte	-56
+ 1072 0413 36       		.byte	54
+ 1073 0414 C9       		.byte	-55
+ 1074 0415 FF       		.byte	-1
+ 1075 0416 CA       		.byte	-54
+ 1076 0417 FF       		.byte	-1
+ 1077 0418 CB       		.byte	-53
+ 1078 0419 FF       		.byte	-1
+ 1079 041a CD       		.byte	-51
+ 1080 041b AF       		.byte	-81
+ 1081 041c CE       		.byte	-50
+ 1082 041d 0F       		.byte	15
+ 1083 041e CF       		.byte	-49
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 20
 
 
- 1084 041f 40       		.byte	64
- 1085 0420 75       		.byte	117
- 1086 0421 80       		.byte	-128
- 1087 0422 77       		.byte	119
- 1088 0423 02       		.byte	2
- 1089 0424 82       		.byte	-126
- 1090 0425 20       		.byte	32
- 1091 0426 86       		.byte	-122
- 1092 0427 02       		.byte	2
- 1093 0428 88       		.byte	-120
- 1094 0429 11       		.byte	17
- 1095 042a 89       		.byte	-119
- 1096 042b 40       		.byte	64
- 1097 042c 8A       		.byte	-118
- 1098 042d 01       		.byte	1
- 1099 042e 9D       		.byte	-99
- 1100 042f 10       		.byte	16
- 1101 0430 A9       		.byte	-87
- 1102 0431 10       		.byte	16
- 1103 0432 C0       		.byte	-64
- 1104 0433 FF       		.byte	-1
- 1105 0434 C2       		.byte	-62
- 1106 0435 EB       		.byte	-21
- 1107 0436 C4       		.byte	-60
- 1108 0437 77       		.byte	119
- 1109 0438 CA       		.byte	-54
- 1110 0439 0B       		.byte	11
- 1111 043a CC       		.byte	-52
- 1112 043b 0F       		.byte	15
- 1113 043c CE       		.byte	-50
- 1114 043d 0E       		.byte	14
- 1115 043e D8       		.byte	-40
- 1116 043f 4F       		.byte	79
- 1117 0440 E6       		.byte	-26
- 1118 0441 01       		.byte	1
- 1119 0442 EA       		.byte	-22
- 1120 0443 20       		.byte	32
- 1121 0444 EC       		.byte	-20
- 1122 0445 14       		.byte	20
- 1123 0446 85       		.byte	-123
- 1124 0447 0C       		.byte	12
- 1125 0448 87       		.byte	-121
- 1126 0449 11       		.byte	17
- 1127 044a 89       		.byte	-119
- 1128 044b 10       		.byte	16
- 1129 044c 8F       		.byte	-113
- 1130 044d 03       		.byte	3
- 1131 044e 95       		.byte	-107
- 1132 044f 10       		.byte	16
- 1133 0450 97       		.byte	-105
- 1134 0451 0C       		.byte	12
- 1135 0452 99       		.byte	-103
- 1136 0453 09       		.byte	9
- 1137 0454 9B       		.byte	-101
- 1138 0455 10       		.byte	16
- 1139 0456 9D       		.byte	-99
- 1140 0457 1C       		.byte	28
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccs4YSiA.s 			page 21
+ 1084 041f 04       		.byte	4
+ 1085 0420 D0       		.byte	-48
+ 1086 0421 18       		.byte	24
+ 1087 0422 D4       		.byte	-44
+ 1088 0423 09       		.byte	9
+ 1089 0424 D6       		.byte	-42
+ 1090 0425 04       		.byte	4
+ 1091 0426 D8       		.byte	-40
+ 1092 0427 04       		.byte	4
+ 1093 0428 D9       		.byte	-39
+ 1094 0429 04       		.byte	4
+ 1095 042a DA       		.byte	-38
+ 1096 042b 04       		.byte	4
+ 1097 042c DB       		.byte	-37
+ 1098 042d 04       		.byte	4
+ 1099 042e DC       		.byte	-36
+ 1100 042f 05       		.byte	5
+ 1101 0430 DD       		.byte	-35
+ 1102 0431 15       		.byte	21
+ 1103 0432 DF       		.byte	-33
+ 1104 0433 01       		.byte	1
+ 1105 0434 E0       		.byte	-32
+ 1106 0435 40       		.byte	64
+ 1107 0436 E2       		.byte	-30
+ 1108 0437 C0       		.byte	-64
+ 1109 0438 E4       		.byte	-28
+ 1110 0439 40       		.byte	64
+ 1111 043a E5       		.byte	-27
+ 1112 043b 40       		.byte	64
+ 1113 043c E6       		.byte	-26
+ 1114 043d C0       		.byte	-64
+ 1115 043e E8       		.byte	-24
+ 1116 043f C0       		.byte	-64
+ 1117 0440 EA       		.byte	-22
+ 1118 0441 C0       		.byte	-64
+ 1119 0442 EC       		.byte	-20
+ 1120 0443 C0       		.byte	-64
+ 1121 0444 EE       		.byte	-18
+ 1122 0445 C0       		.byte	-64
+ 1123 0446 00       		.byte	0
+ 1124 0447 0A       		.byte	10
+ 1125 0448 01       		.byte	1
+ 1126 0449 20       		.byte	32
+ 1127 044a 02       		.byte	2
+ 1128 044b 40       		.byte	64
+ 1129 044c 05       		.byte	5
+ 1130 044d 80       		.byte	-128
+ 1131 044e 06       		.byte	6
+ 1132 044f 44       		.byte	68
+ 1133 0450 07       		.byte	7
+ 1134 0451 20       		.byte	32
+ 1135 0452 09       		.byte	9
+ 1136 0453 80       		.byte	-128
+ 1137 0454 0D       		.byte	13
+ 1138 0455 80       		.byte	-128
+ 1139 0456 10       		.byte	16
+ 1140 0457 02       		.byte	2
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 21
 
 
- 1141 0458 9F       		.byte	-97
- 1142 0459 02       		.byte	2
- 1143 045a A5       		.byte	-91
- 1144 045b 14       		.byte	20
- 1145 045c B7       		.byte	-73
- 1146 045d 1F       		.byte	31
- 1147 045e D9       		.byte	-39
- 1148 045f 04       		.byte	4
- 1149 0460 DC       		.byte	-36
- 1150 0461 30       		.byte	48
- 1151 0462 DF       		.byte	-33
- 1152 0463 01       		.byte	1
- 1153 0464 01       		.byte	1
- 1154 0465 80       		.byte	-128
- 1155 0466 03       		.byte	3
- 1156 0467 01       		.byte	1
- 1157 0468 05       		.byte	5
- 1158 0469 08       		.byte	8
- 1159 046a 07       		.byte	7
- 1160 046b 84       		.byte	-124
- 1161 046c 0D       		.byte	13
- 1162 046d 81       		.byte	-127
- 1163 046e 0E       		.byte	14
- 1164 046f 28       		.byte	40
- 1165 0470 10       		.byte	16
- 1166 0471 04       		.byte	4
- 1167 0472 11       		.byte	17
- 1168 0473 20       		.byte	32
- 1169 0474 14       		.byte	20
- 1170 0475 40       		.byte	64
- 1171 0476 16       		.byte	22
- 1172 0477 12       		.byte	18
- 1173 0478 17       		.byte	23
- 1174 0479 10       		.byte	16
- 1175 047a 1C       		.byte	28
- 1176 047b 20       		.byte	32
- 1177 047c 1D       		.byte	29
- 1178 047d 30       		.byte	48
- 1179 047e 1E       		.byte	30
- 1180 047f 80       		.byte	-128
- 1181 0480 1F       		.byte	31
- 1182 0481 50       		.byte	80
- 1183 0482 21       		.byte	33
- 1184 0483 40       		.byte	64
- 1185 0484 24       		.byte	36
- 1186 0485 40       		.byte	64
- 1187 0486 25       		.byte	37
- 1188 0487 10       		.byte	16
- 1189 0488 26       		.byte	38
- 1190 0489 08       		.byte	8
- 1191 048a 27       		.byte	39
- 1192 048b 01       		.byte	1
- 1193 048c 2A       		.byte	42
- 1194 048d 04       		.byte	4
- 1195 048e 2F       		.byte	47
- 1196 048f 40       		.byte	64
- 1197 0490 31       		.byte	49
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccs4YSiA.s 			page 22
+ 1141 0458 15       		.byte	21
+ 1142 0459 40       		.byte	64
+ 1143 045a 16       		.byte	22
+ 1144 045b 20       		.byte	32
+ 1145 045c 18       		.byte	24
+ 1146 045d 04       		.byte	4
+ 1147 045e 19       		.byte	25
+ 1148 045f 24       		.byte	36
+ 1149 0460 1B       		.byte	27
+ 1150 0461 01       		.byte	1
+ 1151 0462 1D       		.byte	29
+ 1152 0463 10       		.byte	16
+ 1153 0464 1E       		.byte	30
+ 1154 0465 40       		.byte	64
+ 1155 0466 22       		.byte	34
+ 1156 0467 40       		.byte	64
+ 1157 0468 24       		.byte	36
+ 1158 0469 40       		.byte	64
+ 1159 046a 25       		.byte	37
+ 1160 046b 40       		.byte	64
+ 1161 046c 26       		.byte	38
+ 1162 046d 20       		.byte	32
+ 1163 046e 2D       		.byte	45
+ 1164 046f 80       		.byte	-128
+ 1165 0470 2E       		.byte	46
+ 1166 0471 20       		.byte	32
+ 1167 0472 2F       		.byte	47
+ 1168 0473 8A       		.byte	-118
+ 1169 0474 31       		.byte	49
+ 1170 0475 90       		.byte	-112
+ 1171 0476 36       		.byte	54
+ 1172 0477 08       		.byte	8
+ 1173 0478 37       		.byte	55
+ 1174 0479 20       		.byte	32
+ 1175 047a 3A       		.byte	58
+ 1176 047b 40       		.byte	64
+ 1177 047c 3D       		.byte	61
+ 1178 047d 28       		.byte	40
+ 1179 047e 3E       		.byte	62
+ 1180 047f 04       		.byte	4
+ 1181 0480 3F       		.byte	63
+ 1182 0481 10       		.byte	16
+ 1183 0482 40       		.byte	64
+ 1184 0483 04       		.byte	4
+ 1185 0484 45       		.byte	69
+ 1186 0485 08       		.byte	8
+ 1187 0486 48       		.byte	72
+ 1188 0487 04       		.byte	4
+ 1189 0488 4D       		.byte	77
+ 1190 0489 22       		.byte	34
+ 1191 048a 54       		.byte	84
+ 1192 048b 05       		.byte	5
+ 1193 048c 55       		.byte	85
+ 1194 048d 88       		.byte	-120
+ 1195 048e 59       		.byte	89
+ 1196 048f 06       		.byte	6
+ 1197 0490 5A       		.byte	90
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 22
 
 
- 1198 0491 08       		.byte	8
- 1199 0492 32       		.byte	50
- 1200 0493 60       		.byte	96
- 1201 0494 35       		.byte	53
- 1202 0495 22       		.byte	34
- 1203 0496 36       		.byte	54
- 1204 0497 08       		.byte	8
- 1205 0498 38       		.byte	56
- 1206 0499 24       		.byte	36
- 1207 049a 39       		.byte	57
- 1208 049b 80       		.byte	-128
- 1209 049c 3C       		.byte	60
- 1210 049d 48       		.byte	72
- 1211 049e 3D       		.byte	61
- 1212 049f 01       		.byte	1
- 1213 04a0 3E       		.byte	62
- 1214 04a1 20       		.byte	32
- 1215 04a2 44       		.byte	68
- 1216 04a3 01       		.byte	1
- 1217 04a4 46       		.byte	70
- 1218 04a5 60       		.byte	96
- 1219 04a6 4D       		.byte	77
- 1220 04a7 66       		.byte	102
- 1221 04a8 57       		.byte	87
- 1222 04a9 19       		.byte	25
- 1223 04aa 5C       		.byte	92
- 1224 04ab 10       		.byte	16
- 1225 04ac 5D       		.byte	93
- 1226 04ad 04       		.byte	4
- 1227 04ae 5E       		.byte	94
- 1228 04af 02       		.byte	2
- 1229 04b0 5F       		.byte	95
- 1230 04b1 40       		.byte	64
- 1231 04b2 64       		.byte	100
- 1232 04b3 80       		.byte	-128
- 1233 04b4 65       		.byte	101
- 1234 04b5 80       		.byte	-128
- 1235 04b6 79       		.byte	121
- 1236 04b7 40       		.byte	64
- 1237 04b8 7A       		.byte	122
- 1238 04b9 01       		.byte	1
- 1239 04ba 83       		.byte	-125
- 1240 04bb 10       		.byte	16
- 1241 04bc 85       		.byte	-123
- 1242 04bd 01       		.byte	1
- 1243 04be 87       		.byte	-121
- 1244 04bf 10       		.byte	16
- 1245 04c0 88       		.byte	-120
- 1246 04c1 20       		.byte	32
- 1247 04c2 89       		.byte	-119
- 1248 04c3 01       		.byte	1
- 1249 04c4 8A       		.byte	-118
- 1250 04c5 40       		.byte	64
- 1251 04c6 8B       		.byte	-117
- 1252 04c7 81       		.byte	-127
- 1253 04c8 90       		.byte	-112
- 1254 04c9 24       		.byte	36
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccs4YSiA.s 			page 23
+ 1198 0491 80       		.byte	-128
+ 1199 0492 5C       		.byte	92
+ 1200 0493 61       		.byte	97
+ 1201 0494 5D       		.byte	93
+ 1202 0495 08       		.byte	8
+ 1203 0496 64       		.byte	100
+ 1204 0497 02       		.byte	2
+ 1205 0498 67       		.byte	103
+ 1206 0499 80       		.byte	-128
+ 1207 049a 70       		.byte	112
+ 1208 049b 02       		.byte	2
+ 1209 049c 81       		.byte	-127
+ 1210 049d 40       		.byte	64
+ 1211 049e 82       		.byte	-126
+ 1212 049f 04       		.byte	4
+ 1213 04a0 83       		.byte	-125
+ 1214 04a1 80       		.byte	-128
+ 1215 04a2 87       		.byte	-121
+ 1216 04a3 40       		.byte	64
+ 1217 04a4 88       		.byte	-120
+ 1218 04a5 02       		.byte	2
+ 1219 04a6 8A       		.byte	-118
+ 1220 04a7 20       		.byte	32
+ 1221 04a8 8B       		.byte	-117
+ 1222 04a9 01       		.byte	1
+ 1223 04aa 90       		.byte	-112
+ 1224 04ab 81       		.byte	-127
+ 1225 04ac 99       		.byte	-103
+ 1226 04ad 08       		.byte	8
+ 1227 04ae 9A       		.byte	-102
+ 1228 04af 12       		.byte	18
+ 1229 04b0 9B       		.byte	-101
+ 1230 04b1 15       		.byte	21
+ 1231 04b2 9D       		.byte	-99
+ 1232 04b3 01       		.byte	1
+ 1233 04b4 9E       		.byte	-98
+ 1234 04b5 08       		.byte	8
+ 1235 04b6 A0       		.byte	-96
+ 1236 04b7 80       		.byte	-128
+ 1237 04b8 A1       		.byte	-95
+ 1238 04b9 14       		.byte	20
+ 1239 04ba A3       		.byte	-93
+ 1240 04bb 40       		.byte	64
+ 1241 04bc A6       		.byte	-90
+ 1242 04bd 08       		.byte	8
+ 1243 04be A9       		.byte	-87
+ 1244 04bf 40       		.byte	64
+ 1245 04c0 B1       		.byte	-79
+ 1246 04c1 40       		.byte	64
+ 1247 04c2 C0       		.byte	-64
+ 1248 04c3 FE       		.byte	-2
+ 1249 04c4 C2       		.byte	-62
+ 1250 04c5 81       		.byte	-127
+ 1251 04c6 C4       		.byte	-60
+ 1252 04c7 A1       		.byte	-95
+ 1253 04c8 CA       		.byte	-54
+ 1254 04c9 B0       		.byte	-80
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 23
 
 
- 1255 04ca 92       		.byte	-110
- 1256 04cb 94       		.byte	-108
- 1257 04cc 95       		.byte	-107
- 1258 04cd 80       		.byte	-128
- 1259 04ce 96       		.byte	-106
- 1260 04cf 40       		.byte	64
- 1261 04d0 98       		.byte	-104
- 1262 04d1 42       		.byte	66
- 1263 04d2 9A       		.byte	-102
- 1264 04d3 12       		.byte	18
- 1265 04d4 9C       		.byte	-100
- 1266 04d5 80       		.byte	-128
- 1267 04d6 9D       		.byte	-99
- 1268 04d7 18       		.byte	24
- 1269 04d8 9E       		.byte	-98
- 1270 04d9 01       		.byte	1
- 1271 04da A0       		.byte	-96
- 1272 04db 28       		.byte	40
- 1273 04dc A1       		.byte	-95
- 1274 04dd C0       		.byte	-64
- 1275 04de A2       		.byte	-94
- 1276 04df 06       		.byte	6
- 1277 04e0 A5       		.byte	-91
- 1278 04e1 08       		.byte	8
+ 1255 04ca CC       		.byte	-52
+ 1256 04cb 6C       		.byte	108
+ 1257 04cc CE       		.byte	-50
+ 1258 04cd 68       		.byte	104
+ 1259 04ce D0       		.byte	-48
+ 1260 04cf 44       		.byte	68
+ 1261 04d0 D2       		.byte	-46
+ 1262 04d1 24       		.byte	36
+ 1263 04d2 D6       		.byte	-42
+ 1264 04d3 FB       		.byte	-5
+ 1265 04d4 D8       		.byte	-40
+ 1266 04d5 90       		.byte	-112
+ 1267 04d6 E6       		.byte	-26
+ 1268 04d7 02       		.byte	2
+ 1269 04d8 EE       		.byte	-18
+ 1270 04d9 24       		.byte	36
+ 1271 04da 88       		.byte	-120
+ 1272 04db 0E       		.byte	14
+ 1273 04dc 98       		.byte	-104
+ 1274 04dd 05       		.byte	5
+ 1275 04de 9A       		.byte	-102
+ 1276 04df 0A       		.byte	10
+ 1277 04e0 A4       		.byte	-92
+ 1278 04e1 03       		.byte	3
  1279 04e2 A6       		.byte	-90
- 1280 04e3 F0       		.byte	-16
- 1281 04e4 B3       		.byte	-77
- 1282 04e5 40       		.byte	64
- 1283 04e6 B4       		.byte	-76
- 1284 04e7 02       		.byte	2
- 1285 04e8 B5       		.byte	-75
- 1286 04e9 04       		.byte	4
- 1287 04ea C0       		.byte	-64
- 1288 04eb 70       		.byte	112
- 1289 04ec C2       		.byte	-62
- 1290 04ed F0       		.byte	-16
- 1291 04ee C4       		.byte	-60
- 1292 04ef F0       		.byte	-16
- 1293 04f0 CA       		.byte	-54
- 1294 04f1 82       		.byte	-126
- 1295 04f2 CC       		.byte	-52
- 1296 04f3 EE       		.byte	-18
- 1297 04f4 CE       		.byte	-50
- 1298 04f5 FE       		.byte	-2
- 1299 04f6 D0       		.byte	-48
- 1300 04f7 D0       		.byte	-48
- 1301 04f8 D2       		.byte	-46
- 1302 04f9 30       		.byte	48
- 1303 04fa D6       		.byte	-42
- 1304 04fb F0       		.byte	-16
- 1305 04fc D8       		.byte	-40
- 1306 04fd 90       		.byte	-112
- 1307 04fe E2       		.byte	-30
- 1308 04ff 80       		.byte	-128
- 1309 0500 E4       		.byte	-28
- 1310 0501 80       		.byte	-128
- 1311 0502 EA       		.byte	-22
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccs4YSiA.s 			page 24
+ 1280 04e3 04       		.byte	4
+ 1281 04e4 A8       		.byte	-88
+ 1282 04e5 04       		.byte	4
+ 1283 04e6 AA       		.byte	-86
+ 1284 04e7 09       		.byte	9
+ 1285 04e8 B2       		.byte	-78
+ 1286 04e9 0F       		.byte	15
+ 1287 04ea B8       		.byte	-72
+ 1288 04eb 08       		.byte	8
+ 1289 04ec D8       		.byte	-40
+ 1290 04ed 04       		.byte	4
+ 1291 04ee DC       		.byte	-36
+ 1292 04ef 01       		.byte	1
+ 1293 04f0 DF       		.byte	-33
+ 1294 04f1 01       		.byte	1
+ 1295 04f2 00       		.byte	0
+ 1296 04f3 10       		.byte	16
+ 1297 04f4 05       		.byte	5
+ 1298 04f5 01       		.byte	1
+ 1299 04f6 06       		.byte	6
+ 1300 04f7 05       		.byte	5
+ 1301 04f8 07       		.byte	7
+ 1302 04f9 60       		.byte	96
+ 1303 04fa 09       		.byte	9
+ 1304 04fb 10       		.byte	16
+ 1305 04fc 0D       		.byte	13
+ 1306 04fd 20       		.byte	32
+ 1307 04fe 0E       		.byte	14
+ 1308 04ff 42       		.byte	66
+ 1309 0500 0F       		.byte	15
+ 1310 0501 20       		.byte	32
+ 1311 0502 11       		.byte	17
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 24
 
 
- 1312 0503 20       		.byte	32
- 1313 0504 EC       		.byte	-20
- 1314 0505 14       		.byte	20
- 1315 0506 04       		.byte	4
- 1316 0507 0E       		.byte	14
- 1317 0508 05       		.byte	5
- 1318 0509 0D       		.byte	13
- 1319 050a 07       		.byte	7
- 1320 050b 10       		.byte	16
- 1321 050c 09       		.byte	9
- 1322 050d 0D       		.byte	13
- 1323 050e 0B       		.byte	11
- 1324 050f 30       		.byte	48
- 1325 0510 10       		.byte	16
- 1326 0511 04       		.byte	4
- 1327 0512 12       		.byte	18
- 1328 0513 08       		.byte	8
- 1329 0514 14       		.byte	20
- 1330 0515 0E       		.byte	14
- 1331 0516 15       		.byte	21
- 1332 0517 02       		.byte	2
- 1333 0518 17       		.byte	23
- 1334 0519 14       		.byte	20
- 1335 051a 1B       		.byte	27
- 1336 051b 20       		.byte	32
- 1337 051c 1C       		.byte	28
- 1338 051d 01       		.byte	1
- 1339 051e 1D       		.byte	29
- 1340 051f 28       		.byte	40
- 1341 0520 1F       		.byte	31
- 1342 0521 11       		.byte	17
- 1343 0522 25       		.byte	37
- 1344 0523 0C       		.byte	12
- 1345 0524 26       		.byte	38
- 1346 0525 08       		.byte	8
- 1347 0526 27       		.byte	39
- 1348 0527 10       		.byte	16
- 1349 0528 2A       		.byte	42
- 1350 0529 0A       		.byte	10
- 1351 052a 30       		.byte	48
- 1352 052b 06       		.byte	6
- 1353 052c 32       		.byte	50
- 1354 052d 01       		.byte	1
- 1355 052e 33       		.byte	51
- 1356 052f 3C       		.byte	60
- 1357 0530 35       		.byte	53
- 1358 0531 03       		.byte	3
- 1359 0532 36       		.byte	54
- 1360 0533 08       		.byte	8
- 1361 0534 38       		.byte	56
- 1362 0535 02       		.byte	2
- 1363 0536 39       		.byte	57
- 1364 0537 20       		.byte	32
- 1365 0538 3B       		.byte	59
- 1366 0539 08       		.byte	8
- 1367 053a 3E       		.byte	62
- 1368 053b 45       		.byte	69
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccs4YSiA.s 			page 25
+ 1312 0503 08       		.byte	8
+ 1313 0504 12       		.byte	18
+ 1314 0505 08       		.byte	8
+ 1315 0506 17       		.byte	23
+ 1316 0507 15       		.byte	21
+ 1317 0508 18       		.byte	24
+ 1318 0509 10       		.byte	16
+ 1319 050a 1C       		.byte	28
+ 1320 050b 01       		.byte	1
+ 1321 050c 1D       		.byte	29
+ 1322 050d 80       		.byte	-128
+ 1323 050e 1E       		.byte	30
+ 1324 050f 40       		.byte	64
+ 1325 0510 25       		.byte	37
+ 1326 0511 74       		.byte	116
+ 1327 0512 26       		.byte	38
+ 1328 0513 20       		.byte	32
+ 1329 0514 27       		.byte	39
+ 1330 0515 20       		.byte	32
+ 1331 0516 2D       		.byte	45
+ 1332 0517 80       		.byte	-128
+ 1333 0518 2E       		.byte	46
+ 1334 0519 21       		.byte	33
+ 1335 051a 36       		.byte	54
+ 1336 051b 28       		.byte	40
+ 1337 051c 37       		.byte	55
+ 1338 051d 41       		.byte	65
+ 1339 051e 3D       		.byte	61
+ 1340 051f 80       		.byte	-128
+ 1341 0520 3E       		.byte	62
+ 1342 0521 16       		.byte	22
+ 1343 0522 45       		.byte	69
+ 1344 0523 84       		.byte	-124
+ 1345 0524 46       		.byte	70
+ 1346 0525 A0       		.byte	-96
+ 1347 0526 4D       		.byte	77
+ 1348 0527 48       		.byte	72
+ 1349 0528 4E       		.byte	78
+ 1350 0529 08       		.byte	8
+ 1351 052a 4F       		.byte	79
+ 1352 052b 20       		.byte	32
+ 1353 052c 56       		.byte	86
+ 1354 052d 16       		.byte	22
+ 1355 052e 57       		.byte	87
+ 1356 052f 40       		.byte	64
+ 1357 0530 66       		.byte	102
+ 1358 0531 08       		.byte	8
+ 1359 0532 6C       		.byte	108
+ 1360 0533 40       		.byte	64
+ 1361 0534 6E       		.byte	110
+ 1362 0535 17       		.byte	23
+ 1363 0536 6F       		.byte	111
+ 1364 0537 15       		.byte	21
+ 1365 0538 74       		.byte	116
+ 1366 0539 80       		.byte	-128
+ 1367 053a 75       		.byte	117
+ 1368 053b 80       		.byte	-128
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 25
 
 
- 1369 053c 40       		.byte	64
- 1370 053d 36       		.byte	54
- 1371 053e 41       		.byte	65
- 1372 053f 02       		.byte	2
- 1373 0540 45       		.byte	69
- 1374 0541 EC       		.byte	-20
- 1375 0542 47       		.byte	71
- 1376 0543 0B       		.byte	11
- 1377 0544 48       		.byte	72
- 1378 0545 13       		.byte	19
- 1379 0546 49       		.byte	73
- 1380 0547 FF       		.byte	-1
- 1381 0548 4A       		.byte	74
- 1382 0549 FF       		.byte	-1
- 1383 054a 4B       		.byte	75
- 1384 054b FF       		.byte	-1
- 1385 054c 4E       		.byte	78
+ 1369 053c 76       		.byte	118
+ 1370 053d 01       		.byte	1
+ 1371 053e 82       		.byte	-126
+ 1372 053f 40       		.byte	64
+ 1373 0540 8D       		.byte	-115
+ 1374 0541 10       		.byte	16
+ 1375 0542 8E       		.byte	-114
+ 1376 0543 80       		.byte	-128
+ 1377 0544 C0       		.byte	-64
+ 1378 0545 F2       		.byte	-14
+ 1379 0546 C2       		.byte	-62
+ 1380 0547 F2       		.byte	-14
+ 1381 0548 C4       		.byte	-60
+ 1382 0549 76       		.byte	118
+ 1383 054a CA       		.byte	-54
+ 1384 054b B0       		.byte	-80
+ 1385 054c CC       		.byte	-52
  1386 054d F0       		.byte	-16
- 1387 054e 4F       		.byte	79
- 1388 054f 44       		.byte	68
- 1389 0550 50       		.byte	80
- 1390 0551 0C       		.byte	12
- 1391 0552 54       		.byte	84
- 1392 0553 01       		.byte	1
- 1393 0554 58       		.byte	88
- 1394 0555 04       		.byte	4
- 1395 0556 59       		.byte	89
- 1396 0557 04       		.byte	4
- 1397 0558 5A       		.byte	90
- 1398 0559 04       		.byte	4
- 1399 055a 5B       		.byte	91
- 1400 055b 04       		.byte	4
- 1401 055c 5C       		.byte	92
- 1402 055d 30       		.byte	48
- 1403 055e 5D       		.byte	93
- 1404 055f 33       		.byte	51
- 1405 0560 5F       		.byte	95
- 1406 0561 01       		.byte	1
- 1407 0562 66       		.byte	102
- 1408 0563 C0       		.byte	-64
- 1409 0564 6A       		.byte	106
+ 1387 054e CE       		.byte	-50
+ 1388 054f F0       		.byte	-16
+ 1389 0550 D0       		.byte	-48
+ 1390 0551 D0       		.byte	-48
+ 1391 0552 D2       		.byte	-46
+ 1392 0553 30       		.byte	48
+ 1393 0554 D8       		.byte	-40
+ 1394 0555 40       		.byte	64
+ 1395 0556 E2       		.byte	-30
+ 1396 0557 08       		.byte	8
+ 1397 0558 EE       		.byte	-18
+ 1398 0559 02       		.byte	2
+ 1399 055a E6       		.byte	-26
+ 1400 055b 02       		.byte	2
+ 1401 055c B8       		.byte	-72
+ 1402 055d 80       		.byte	-128
+ 1403 055e BE       		.byte	-66
+ 1404 055f 40       		.byte	64
+ 1405 0560 D8       		.byte	-40
+ 1406 0561 04       		.byte	4
+ 1407 0562 DF       		.byte	-33
+ 1408 0563 01       		.byte	1
+ 1409 0564 19       		.byte	25
  1410 0565 40       		.byte	64
- 1411 0566 6B       		.byte	107
- 1412 0567 02       		.byte	2
- 1413 0568 81       		.byte	-127
- 1414 0569 22       		.byte	34
- 1415 056a 83       		.byte	-125
- 1416 056b 51       		.byte	81
- 1417 056c 85       		.byte	-123
- 1418 056d E7       		.byte	-25
- 1419 056e 89       		.byte	-119
- 1420 056f E7       		.byte	-25
- 1421 0570 8D       		.byte	-115
- 1422 0571 80       		.byte	-128
- 1423 0572 95       		.byte	-107
- 1424 0573 01       		.byte	1
- 1425 0574 97       		.byte	-105
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccs4YSiA.s 			page 26
+ 1411 0566 83       		.byte	-125
+ 1412 0567 08       		.byte	8
+ 1413 0568 9D       		.byte	-99
+ 1414 0569 40       		.byte	64
+ 1415 056a A7       		.byte	-89
+ 1416 056b 08       		.byte	8
+ 1417 056c AA       		.byte	-86
+ 1418 056d 80       		.byte	-128
+ 1419 056e AB       		.byte	-85
+ 1420 056f 01       		.byte	1
+ 1421 0570 AC       		.byte	-84
+ 1422 0571 01       		.byte	1
+ 1423 0572 AD       		.byte	-83
+ 1424 0573 21       		.byte	33
+ 1425 0574 B0       		.byte	-80
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 26
 
 
- 1426 0575 0E       		.byte	14
- 1427 0576 99       		.byte	-103
- 1428 0577 44       		.byte	68
- 1429 0578 9B       		.byte	-101
- 1430 0579 31       		.byte	49
- 1431 057a B1       		.byte	-79
- 1432 057b 18       		.byte	24
- 1433 057c B3       		.byte	-77
- 1434 057d 60       		.byte	96
- 1435 057e B5       		.byte	-75
- 1436 057f 07       		.byte	7
- 1437 0580 B7       		.byte	-73
- 1438 0581 80       		.byte	-128
- 1439 0582 BA       		.byte	-70
- 1440 0583 08       		.byte	8
- 1441 0584 BF       		.byte	-65
- 1442 0585 01       		.byte	1
- 1443 0586 C0       		.byte	-64
- 1444 0587 24       		.byte	36
- 1445 0588 C1       		.byte	-63
- 1446 0589 06       		.byte	6
- 1447 058a C2       		.byte	-62
- 1448 058b 05       		.byte	5
- 1449 058c C4       		.byte	-60
- 1450 058d 01       		.byte	1
- 1451 058e C7       		.byte	-57
- 1452 058f CE       		.byte	-50
- 1453 0590 C8       		.byte	-56
- 1454 0591 30       		.byte	48
- 1455 0592 C9       		.byte	-55
- 1456 0593 FF       		.byte	-1
- 1457 0594 CA       		.byte	-54
- 1458 0595 FF       		.byte	-1
- 1459 0596 CB       		.byte	-53
- 1460 0597 FF       		.byte	-1
- 1461 0598 CC       		.byte	-52
- 1462 0599 62       		.byte	98
- 1463 059a CD       		.byte	-51
- 1464 059b A0       		.byte	-96
- 1465 059c CE       		.byte	-50
- 1466 059d F0       		.byte	-16
- 1467 059e CF       		.byte	-49
- 1468 059f 41       		.byte	65
- 1469 05a0 D0       		.byte	-48
- 1470 05a1 0C       		.byte	12
- 1471 05a2 D4       		.byte	-44
- 1472 05a3 18       		.byte	24
- 1473 05a4 D6       		.byte	-42
- 1474 05a5 04       		.byte	4
- 1475 05a6 D8       		.byte	-40
- 1476 05a7 04       		.byte	4
- 1477 05a8 D9       		.byte	-39
- 1478 05a9 04       		.byte	4
- 1479 05aa DA       		.byte	-38
- 1480 05ab 04       		.byte	4
- 1481 05ac DB       		.byte	-37
- 1482 05ad 04       		.byte	4
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccs4YSiA.s 			page 27
+ 1426 0575 04       		.byte	4
+ 1427 0576 B5       		.byte	-75
+ 1428 0577 10       		.byte	16
+ 1429 0578 B6       		.byte	-74
+ 1430 0579 01       		.byte	1
+ 1431 057a E6       		.byte	-26
+ 1432 057b 01       		.byte	1
+ 1433 057c EA       		.byte	-22
+ 1434 057d 02       		.byte	2
+ 1435 057e EE       		.byte	-18
+ 1436 057f 11       		.byte	17
+ 1437 0580 00       		.byte	0
+ 1438 0581 01       		.byte	1
+ 1439 0582 02       		.byte	2
+ 1440 0583 06       		.byte	6
+ 1441 0584 04       		.byte	4
+ 1442 0585 06       		.byte	6
+ 1443 0586 05       		.byte	5
+ 1444 0587 02       		.byte	2
+ 1445 0588 07       		.byte	7
+ 1446 0589 0D       		.byte	13
+ 1447 058a 08       		.byte	8
+ 1448 058b 02       		.byte	2
+ 1449 058c 09       		.byte	9
+ 1450 058d 05       		.byte	5
+ 1451 058e 0B       		.byte	11
+ 1452 058f 0A       		.byte	10
+ 1453 0590 15       		.byte	21
+ 1454 0591 09       		.byte	9
+ 1455 0592 16       		.byte	22
+ 1456 0593 01       		.byte	1
+ 1457 0594 17       		.byte	23
+ 1458 0595 06       		.byte	6
+ 1459 0596 18       		.byte	24
+ 1460 0597 06       		.byte	6
+ 1461 0598 1A       		.byte	26
+ 1462 0599 01       		.byte	1
+ 1463 059a 1C       		.byte	28
+ 1464 059b 04       		.byte	4
+ 1465 059c 25       		.byte	37
+ 1466 059d 03       		.byte	3
+ 1467 059e 27       		.byte	39
+ 1468 059f 0C       		.byte	12
+ 1469 05a0 28       		.byte	40
+ 1470 05a1 07       		.byte	7
+ 1471 05a2 2C       		.byte	44
+ 1472 05a3 06       		.byte	6
+ 1473 05a4 2E       		.byte	46
+ 1474 05a5 01       		.byte	1
+ 1475 05a6 33       		.byte	51
+ 1476 05a7 0F       		.byte	15
+ 1477 05a8 36       		.byte	54
+ 1478 05a9 07       		.byte	7
+ 1479 05aa 3A       		.byte	58
+ 1480 05ab 80       		.byte	-128
+ 1481 05ac 3B       		.byte	59
+ 1482 05ad 08       		.byte	8
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 27
 
 
- 1483 05ae DC       		.byte	-36
- 1484 05af 33       		.byte	51
- 1485 05b0 DD       		.byte	-35
- 1486 05b1 33       		.byte	51
- 1487 05b2 DF       		.byte	-33
- 1488 05b3 01       		.byte	1
- 1489 05b4 E6       		.byte	-26
- 1490 05b5 40       		.byte	64
- 1491 05b6 E7       		.byte	-25
- 1492 05b7 02       		.byte	2
- 1493 05b8 E9       		.byte	-23
- 1494 05b9 10       		.byte	16
- 1495 05ba EA       		.byte	-22
- 1496 05bb 30       		.byte	48
- 1497 05bc EB       		.byte	-21
- 1498 05bd 10       		.byte	16
- 1499 05be ED       		.byte	-19
- 1500 05bf 10       		.byte	16
- 1501 05c0 EE       		.byte	-18
- 1502 05c1 10       		.byte	16
- 1503 05c2 EF       		.byte	-17
- 1504 05c3 12       		.byte	18
- 1505 05c4 00       		.byte	0
+ 1483 05ae 40       		.byte	64
+ 1484 05af 01       		.byte	1
+ 1485 05b0 46       		.byte	70
+ 1486 05b1 40       		.byte	64
+ 1487 05b2 49       		.byte	73
+ 1488 05b3 FF       		.byte	-1
+ 1489 05b4 4A       		.byte	74
+ 1490 05b5 07       		.byte	7
+ 1491 05b6 4B       		.byte	75
+ 1492 05b7 FF       		.byte	-1
+ 1493 05b8 4C       		.byte	76
+ 1494 05b9 40       		.byte	64
+ 1495 05ba 4D       		.byte	77
+ 1496 05bb 20       		.byte	32
+ 1497 05bc 4E       		.byte	78
+ 1498 05bd F0       		.byte	-16
+ 1499 05be 4F       		.byte	79
+ 1500 05bf 05       		.byte	5
+ 1501 05c0 50       		.byte	80
+ 1502 05c1 08       		.byte	8
+ 1503 05c2 54       		.byte	84
+ 1504 05c3 40       		.byte	64
+ 1505 05c4 56       		.byte	86
  1506 05c5 04       		.byte	4
- 1507 05c6 09       		.byte	9
- 1508 05c7 08       		.byte	8
- 1509 05c8 0A       		.byte	10
- 1510 05c9 80       		.byte	-128
- 1511 05ca 0B       		.byte	11
- 1512 05cb 02       		.byte	2
- 1513 05cc 10       		.byte	16
- 1514 05cd 38       		.byte	56
- 1515 05ce 19       		.byte	25
- 1516 05cf 84       		.byte	-124
- 1517 05d0 1A       		.byte	26
- 1518 05d1 40       		.byte	64
- 1519 05d2 1E       		.byte	30
- 1520 05d3 20       		.byte	32
- 1521 05d4 21       		.byte	33
- 1522 05d5 08       		.byte	8
- 1523 05d6 22       		.byte	34
- 1524 05d7 20       		.byte	32
- 1525 05d8 26       		.byte	38
- 1526 05d9 80       		.byte	-128
- 1527 05da 27       		.byte	39
- 1528 05db 56       		.byte	86
- 1529 05dc 28       		.byte	40
- 1530 05dd 10       		.byte	16
- 1531 05de 30       		.byte	48
- 1532 05df 08       		.byte	8
- 1533 05e0 32       		.byte	50
- 1534 05e1 60       		.byte	96
- 1535 05e2 37       		.byte	55
- 1536 05e3 14       		.byte	20
- 1537 05e4 38       		.byte	56
- 1538 05e5 04       		.byte	4
- 1539 05e6 3A       		.byte	58
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccs4YSiA.s 			page 28
+ 1507 05c6 58       		.byte	88
+ 1508 05c7 04       		.byte	4
+ 1509 05c8 59       		.byte	89
+ 1510 05c9 04       		.byte	4
+ 1511 05ca 5A       		.byte	90
+ 1512 05cb 04       		.byte	4
+ 1513 05cc 5B       		.byte	91
+ 1514 05cd 04       		.byte	4
+ 1515 05ce 5C       		.byte	92
+ 1516 05cf 13       		.byte	19
+ 1517 05d0 5D       		.byte	93
+ 1518 05d1 13       		.byte	19
+ 1519 05d2 5F       		.byte	95
+ 1520 05d3 01       		.byte	1
+ 1521 05d4 60       		.byte	96
+ 1522 05d5 40       		.byte	64
+ 1523 05d6 61       		.byte	97
+ 1524 05d7 A8       		.byte	-88
+ 1525 05d8 62       		.byte	98
+ 1526 05d9 40       		.byte	64
+ 1527 05da 63       		.byte	99
+ 1528 05db 20       		.byte	32
+ 1529 05dc 83       		.byte	-125
+ 1530 05dd E3       		.byte	-29
+ 1531 05de 84       		.byte	-124
+ 1532 05df 0C       		.byte	12
+ 1533 05e0 85       		.byte	-123
+ 1534 05e1 80       		.byte	-128
+ 1535 05e2 88       		.byte	-120
+ 1536 05e3 04       		.byte	4
+ 1537 05e4 89       		.byte	-119
+ 1538 05e5 3C       		.byte	60
+ 1539 05e6 8B       		.byte	-117
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 28
 
 
- 1540 05e7 20       		.byte	32
- 1541 05e8 3D       		.byte	61
- 1542 05e9 80       		.byte	-128
- 1543 05ea 3E       		.byte	62
- 1544 05eb 16       		.byte	22
- 1545 05ec 40       		.byte	64
- 1546 05ed 04       		.byte	4
- 1547 05ee 41       		.byte	65
- 1548 05ef 08       		.byte	8
- 1549 05f0 42       		.byte	66
- 1550 05f1 20       		.byte	32
- 1551 05f2 45       		.byte	69
- 1552 05f3 20       		.byte	32
- 1553 05f4 47       		.byte	71
- 1554 05f5 42       		.byte	66
- 1555 05f6 48       		.byte	72
- 1556 05f7 28       		.byte	40
- 1557 05f8 49       		.byte	73
- 1558 05f9 01       		.byte	1
- 1559 05fa 4B       		.byte	75
+ 1540 05e7 C2       		.byte	-62
+ 1541 05e8 8C       		.byte	-116
+ 1542 05e9 03       		.byte	3
+ 1543 05ea 8D       		.byte	-115
+ 1544 05eb 44       		.byte	68
+ 1545 05ec 8E       		.byte	-114
+ 1546 05ed 0C       		.byte	12
+ 1547 05ee 90       		.byte	-112
+ 1548 05ef 0F       		.byte	15
+ 1549 05f0 93       		.byte	-109
+ 1550 05f1 04       		.byte	4
+ 1551 05f2 95       		.byte	-107
+ 1552 05f3 FF       		.byte	-1
+ 1553 05f4 96       		.byte	-106
+ 1554 05f5 03       		.byte	3
+ 1555 05f6 98       		.byte	-104
+ 1556 05f7 0F       		.byte	15
+ 1557 05f8 99       		.byte	-103
+ 1558 05f9 C0       		.byte	-64
+ 1559 05fa 9C       		.byte	-100
  1560 05fb 02       		.byte	2
- 1561 05fc 4E       		.byte	78
- 1562 05fd 02       		.byte	2
- 1563 05fe 4F       		.byte	79
- 1564 05ff 10       		.byte	16
- 1565 0600 52       		.byte	82
- 1566 0601 04       		.byte	4
- 1567 0602 54       		.byte	84
- 1568 0603 04       		.byte	4
- 1569 0604 56       		.byte	86
- 1570 0605 01       		.byte	1
- 1571 0606 58       		.byte	88
- 1572 0607 10       		.byte	16
- 1573 0608 59       		.byte	89
- 1574 0609 85       		.byte	-123
- 1575 060a 5E       		.byte	94
- 1576 060b 21       		.byte	33
- 1577 060c 5F       		.byte	95
- 1578 060d 10       		.byte	16
- 1579 060e 64       		.byte	100
- 1580 060f 86       		.byte	-122
- 1581 0610 82       		.byte	-126
- 1582 0611 08       		.byte	8
- 1583 0612 88       		.byte	-120
- 1584 0613 90       		.byte	-112
- 1585 0614 89       		.byte	-119
- 1586 0615 08       		.byte	8
- 1587 0616 8A       		.byte	-118
- 1588 0617 03       		.byte	3
- 1589 0618 90       		.byte	-112
- 1590 0619 04       		.byte	4
- 1591 061a 92       		.byte	-110
- 1592 061b 94       		.byte	-108
- 1593 061c 96       		.byte	-106
- 1594 061d 40       		.byte	64
- 1595 061e 98       		.byte	-104
- 1596 061f 06       		.byte	6
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccs4YSiA.s 			page 29
+ 1561 05fc 9D       		.byte	-99
+ 1562 05fd 10       		.byte	16
+ 1563 05fe A0       		.byte	-96
+ 1564 05ff 08       		.byte	8
+ 1565 0600 A1       		.byte	-95
+ 1566 0601 E7       		.byte	-25
+ 1567 0602 A3       		.byte	-93
+ 1568 0603 18       		.byte	24
+ 1569 0604 A4       		.byte	-92
+ 1570 0605 03       		.byte	3
+ 1571 0606 A5       		.byte	-91
+ 1572 0607 18       		.byte	24
+ 1573 0608 A8       		.byte	-88
+ 1574 0609 0C       		.byte	12
+ 1575 060a A9       		.byte	-87
+ 1576 060b 08       		.byte	8
+ 1577 060c AA       		.byte	-86
+ 1578 060d 03       		.byte	3
+ 1579 060e AC       		.byte	-84
+ 1580 060f 01       		.byte	1
+ 1581 0610 AD       		.byte	-83
+ 1582 0611 1C       		.byte	28
+ 1583 0612 AF       		.byte	-81
+ 1584 0613 E1       		.byte	-31
+ 1585 0614 B0       		.byte	-80
+ 1586 0615 0F       		.byte	15
+ 1587 0616 B1       		.byte	-79
+ 1588 0617 C0       		.byte	-64
+ 1589 0618 B3       		.byte	-77
+ 1590 0619 1F       		.byte	31
+ 1591 061a B7       		.byte	-73
+ 1592 061b 38       		.byte	56
+ 1593 061c BA       		.byte	-70
+ 1594 061d 02       		.byte	2
+ 1595 061e BB       		.byte	-69
+ 1596 061f 08       		.byte	8
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 29
 
 
- 1597 0620 9D       		.byte	-99
- 1598 0621 08       		.byte	8
- 1599 0622 9E       		.byte	-98
- 1600 0623 05       		.byte	5
- 1601 0624 9F       		.byte	-97
- 1602 0625 14       		.byte	20
- 1603 0626 A0       		.byte	-96
- 1604 0627 18       		.byte	24
- 1605 0628 A1       		.byte	-95
+ 1597 0620 D8       		.byte	-40
+ 1598 0621 04       		.byte	4
+ 1599 0622 D9       		.byte	-39
+ 1600 0623 04       		.byte	4
+ 1601 0624 DC       		.byte	-36
+ 1602 0625 33       		.byte	51
+ 1603 0626 DF       		.byte	-33
+ 1604 0627 01       		.byte	1
+ 1605 0628 00       		.byte	0
  1606 0629 60       		.byte	96
- 1607 062a A2       		.byte	-94
- 1608 062b 0A       		.byte	10
- 1609 062c A4       		.byte	-92
+ 1607 062a 01       		.byte	1
+ 1608 062b 28       		.byte	40
+ 1609 062c 03       		.byte	3
  1610 062d 04       		.byte	4
- 1611 062e A5       		.byte	-91
- 1612 062f 08       		.byte	8
- 1613 0630 A6       		.byte	-90
- 1614 0631 B0       		.byte	-80
- 1615 0632 A8       		.byte	-88
- 1616 0633 10       		.byte	16
- 1617 0634 AB       		.byte	-85
- 1618 0635 08       		.byte	8
- 1619 0636 AC       		.byte	-84
- 1620 0637 01       		.byte	1
- 1621 0638 AF       		.byte	-81
- 1622 0639 40       		.byte	64
- 1623 063a B1       		.byte	-79
- 1624 063b 20       		.byte	32
- 1625 063c B2       		.byte	-78
- 1626 063d 20       		.byte	32
- 1627 063e B5       		.byte	-75
- 1628 063f 40       		.byte	64
- 1629 0640 C0       		.byte	-64
- 1630 0641 04       		.byte	4
- 1631 0642 C2       		.byte	-62
- 1632 0643 0D       		.byte	13
- 1633 0644 C4       		.byte	-60
- 1634 0645 06       		.byte	6
- 1635 0646 CA       		.byte	-54
- 1636 0647 02       		.byte	2
- 1637 0648 CC       		.byte	-52
- 1638 0649 6E       		.byte	110
- 1639 064a CE       		.byte	-50
- 1640 064b F6       		.byte	-10
- 1641 064c D0       		.byte	-48
- 1642 064d B6       		.byte	-74
- 1643 064e D2       		.byte	-46
- 1644 064f 34       		.byte	52
- 1645 0650 D6       		.byte	-42
- 1646 0651 8F       		.byte	-113
- 1647 0652 D8       		.byte	-40
- 1648 0653 B0       		.byte	-80
- 1649 0654 E2       		.byte	-30
- 1650 0655 20       		.byte	32
- 1651 0656 E8       		.byte	-24
- 1652 0657 60       		.byte	96
- 1653 0658 EA       		.byte	-22
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccs4YSiA.s 			page 30
+ 1611 062e 05       		.byte	5
+ 1612 062f 09       		.byte	9
+ 1613 0630 07       		.byte	7
+ 1614 0631 04       		.byte	4
+ 1615 0632 08       		.byte	8
+ 1616 0633 02       		.byte	2
+ 1617 0634 0A       		.byte	10
+ 1618 0635 19       		.byte	25
+ 1619 0636 0B       		.byte	11
+ 1620 0637 80       		.byte	-128
+ 1621 0638 0C       		.byte	12
+ 1622 0639 80       		.byte	-128
+ 1623 063a 0D       		.byte	13
+ 1624 063b 10       		.byte	16
+ 1625 063c 0E       		.byte	14
+ 1626 063d 10       		.byte	16
+ 1627 063e 10       		.byte	16
+ 1628 063f 80       		.byte	-128
+ 1629 0640 11       		.byte	17
+ 1630 0641 40       		.byte	64
+ 1631 0642 12       		.byte	18
+ 1632 0643 20       		.byte	32
+ 1633 0644 13       		.byte	19
+ 1634 0645 10       		.byte	16
+ 1635 0646 14       		.byte	20
+ 1636 0647 06       		.byte	6
+ 1637 0648 18       		.byte	24
+ 1638 0649 40       		.byte	64
+ 1639 064a 19       		.byte	25
+ 1640 064b 01       		.byte	1
+ 1641 064c 1F       		.byte	31
+ 1642 064d 40       		.byte	64
+ 1643 064e 21       		.byte	33
+ 1644 064f 80       		.byte	-128
+ 1645 0650 22       		.byte	34
+ 1646 0651 01       		.byte	1
+ 1647 0652 23       		.byte	35
+ 1648 0653 10       		.byte	16
+ 1649 0654 25       		.byte	37
+ 1650 0655 04       		.byte	4
+ 1651 0656 28       		.byte	40
+ 1652 0657 02       		.byte	2
+ 1653 0658 29       		.byte	41
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 30
 
 
- 1654 0659 02       		.byte	2
- 1655 065a EC       		.byte	-20
- 1656 065b 80       		.byte	-128
+ 1654 0659 29       		.byte	41
+ 1655 065a 2E       		.byte	46
+ 1656 065b 04       		.byte	4
  1657 065c 30       		.byte	48
- 1658 065d 10       		.byte	16
- 1659 065e 33       		.byte	51
- 1660 065f 01       		.byte	1
- 1661 0660 35       		.byte	53
- 1662 0661 80       		.byte	-128
- 1663 0662 37       		.byte	55
- 1664 0663 02       		.byte	2
- 1665 0664 3B       		.byte	59
- 1666 0665 40       		.byte	64
- 1667 0666 CC       		.byte	-52
- 1668 0667 F0       		.byte	-16
- 1669 0668 CE       		.byte	-50
- 1670 0669 10       		.byte	16
- 1671 066a 30       		.byte	48
- 1672 066b 80       		.byte	-128
- 1673 066c 36       		.byte	54
+ 1658 065d 84       		.byte	-124
+ 1659 065e 32       		.byte	50
+ 1660 065f 26       		.byte	38
+ 1661 0660 36       		.byte	54
+ 1662 0661 08       		.byte	8
+ 1663 0662 38       		.byte	56
+ 1664 0663 01       		.byte	1
+ 1665 0664 39       		.byte	57
+ 1666 0665 68       		.byte	104
+ 1667 0666 3B       		.byte	59
+ 1668 0667 10       		.byte	16
+ 1669 0668 3D       		.byte	61
+ 1670 0669 28       		.byte	40
+ 1671 066a 3E       		.byte	62
+ 1672 066b 08       		.byte	8
+ 1673 066c 45       		.byte	69
  1674 066d 40       		.byte	64
- 1675 066e 5F       		.byte	95
- 1676 066f 01       		.byte	1
- 1677 0670 65       		.byte	101
- 1678 0671 20       		.byte	32
- 1679 0672 84       		.byte	-124
- 1680 0673 80       		.byte	-128
- 1681 0674 9C       		.byte	-100
- 1682 0675 10       		.byte	16
- 1683 0676 9D       		.byte	-99
- 1684 0677 80       		.byte	-128
- 1685 0678 9F       		.byte	-97
- 1686 0679 03       		.byte	3
- 1687 067a AF       		.byte	-81
- 1688 067b 40       		.byte	64
- 1689 067c CC       		.byte	-52
- 1690 067d 30       		.byte	48
- 1691 067e D6       		.byte	-42
- 1692 067f 80       		.byte	-128
- 1693 0680 D8       		.byte	-40
- 1694 0681 80       		.byte	-128
- 1695 0682 E2       		.byte	-30
- 1696 0683 10       		.byte	16
- 1697 0684 EE       		.byte	-18
- 1698 0685 40       		.byte	64
- 1699 0686 83       		.byte	-125
- 1700 0687 01       		.byte	1
- 1701 0688 85       		.byte	-123
+ 1675 066e 54       		.byte	84
+ 1676 066f 20       		.byte	32
+ 1677 0670 55       		.byte	85
+ 1678 0671 01       		.byte	1
+ 1679 0672 57       		.byte	87
+ 1680 0673 12       		.byte	18
+ 1681 0674 64       		.byte	100
+ 1682 0675 81       		.byte	-127
+ 1683 0676 66       		.byte	102
+ 1684 0677 10       		.byte	16
+ 1685 0678 67       		.byte	103
+ 1686 0679 20       		.byte	32
+ 1687 067a 83       		.byte	-125
+ 1688 067b 10       		.byte	16
+ 1689 067c 8C       		.byte	-116
+ 1690 067d 01       		.byte	1
+ 1691 067e 8E       		.byte	-114
+ 1692 067f 10       		.byte	16
+ 1693 0680 92       		.byte	-110
+ 1694 0681 04       		.byte	4
+ 1695 0682 93       		.byte	-109
+ 1696 0683 20       		.byte	32
+ 1697 0684 98       		.byte	-104
+ 1698 0685 01       		.byte	1
+ 1699 0686 9A       		.byte	-102
+ 1700 0687 10       		.byte	16
+ 1701 0688 9C       		.byte	-100
  1702 0689 80       		.byte	-128
- 1703 068a 97       		.byte	-105
- 1704 068b 01       		.byte	1
- 1705 068c 9C       		.byte	-100
- 1706 068d 10       		.byte	16
- 1707 068e 9D       		.byte	-99
- 1708 068f 80       		.byte	-128
- 1709 0690 9F       		.byte	-97
- 1710 0691 03       		.byte	3
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccs4YSiA.s 			page 31
+ 1703 068a 9E       		.byte	-98
+ 1704 068b 08       		.byte	8
+ 1705 068c A1       		.byte	-95
+ 1706 068d 50       		.byte	80
+ 1707 068e A2       		.byte	-94
+ 1708 068f 08       		.byte	8
+ 1709 0690 A4       		.byte	-92
+ 1710 0691 20       		.byte	32
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 31
 
 
- 1711 0692 A6       		.byte	-90
- 1712 0693 40       		.byte	64
- 1713 0694 AD       		.byte	-83
- 1714 0695 20       		.byte	32
- 1715 0696 E2       		.byte	-30
- 1716 0697 90       		.byte	-112
- 1717 0698 EE       		.byte	-18
- 1718 0699 40       		.byte	64
- 1719 069a 66       		.byte	102
- 1720 069b 02       		.byte	2
- 1721 069c 72       		.byte	114
- 1722 069d 02       		.byte	2
- 1723 069e 8F       		.byte	-113
- 1724 069f 02       		.byte	2
- 1725 06a0 9C       		.byte	-100
- 1726 06a1 10       		.byte	16
- 1727 06a2 9F       		.byte	-97
- 1728 06a3 03       		.byte	3
- 1729 06a4 A6       		.byte	-90
- 1730 06a5 40       		.byte	64
- 1731 06a6 D8       		.byte	-40
- 1732 06a7 80       		.byte	-128
- 1733 06a8 DC       		.byte	-36
- 1734 06a9 20       		.byte	32
- 1735 06aa 13       		.byte	19
- 1736 06ab 02       		.byte	2
- 1737 06ac 7C       		.byte	124
- 1738 06ad 08       		.byte	8
- 1739 06ae C4       		.byte	-60
- 1740 06af 08       		.byte	8
- 1741 06b0 DE       		.byte	-34
- 1742 06b1 01       		.byte	1
- 1743 06b2 00       		.byte	0
- 1744 06b3 20       		.byte	32
- 1745 06b4 01       		.byte	1
- 1746 06b5 08       		.byte	8
- 1747 06b6 57       		.byte	87
- 1748 06b7 02       		.byte	2
- 1749 06b8 84       		.byte	-124
- 1750 06b9 10       		.byte	16
- 1751 06ba 9C       		.byte	-100
- 1752 06bb 08       		.byte	8
- 1753 06bc AF       		.byte	-81
- 1754 06bd 02       		.byte	2
- 1755 06be C0       		.byte	-64
- 1756 06bf 0A       		.byte	10
- 1757 06c0 D6       		.byte	-42
- 1758 06c1 04       		.byte	4
- 1759 06c2 45       		.byte	69
- 1760 06c3 02       		.byte	2
- 1761 06c4 9C       		.byte	-100
- 1762 06c5 08       		.byte	8
- 1763 06c6 A7       		.byte	-89
- 1764 06c7 02       		.byte	2
- 1765 06c8 B5       		.byte	-75
- 1766 06c9 08       		.byte	8
- 1767 06ca D0       		.byte	-48
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccs4YSiA.s 			page 32
+ 1711 0692 A5       		.byte	-91
+ 1712 0693 01       		.byte	1
+ 1713 0694 A7       		.byte	-89
+ 1714 0695 02       		.byte	2
+ 1715 0696 A8       		.byte	-88
+ 1716 0697 80       		.byte	-128
+ 1717 0698 AA       		.byte	-86
+ 1718 0699 80       		.byte	-128
+ 1719 069a AB       		.byte	-85
+ 1720 069b 01       		.byte	1
+ 1721 069c AF       		.byte	-81
+ 1722 069d 20       		.byte	32
+ 1723 069e B2       		.byte	-78
+ 1724 069f 01       		.byte	1
+ 1725 06a0 B3       		.byte	-77
+ 1726 06a1 08       		.byte	8
+ 1727 06a2 B4       		.byte	-76
+ 1728 06a3 05       		.byte	5
+ 1729 06a4 C0       		.byte	-64
+ 1730 06a5 77       		.byte	119
+ 1731 06a6 C2       		.byte	-62
+ 1732 06a7 EF       		.byte	-17
+ 1733 06a8 C4       		.byte	-60
+ 1734 06a9 CF       		.byte	-49
+ 1735 06aa CA       		.byte	-54
+ 1736 06ab 4F       		.byte	79
+ 1737 06ac CC       		.byte	-52
+ 1738 06ad 4F       		.byte	79
+ 1739 06ae CE       		.byte	-50
+ 1740 06af 6F       		.byte	111
+ 1741 06b0 D0       		.byte	-48
+ 1742 06b1 10       		.byte	16
+ 1743 06b2 D8       		.byte	-40
+ 1744 06b3 F0       		.byte	-16
+ 1745 06b4 E8       		.byte	-24
+ 1746 06b5 20       		.byte	32
+ 1747 06b6 EE       		.byte	-18
+ 1748 06b7 40       		.byte	64
+ 1749 06b8 01       		.byte	1
+ 1750 06b9 22       		.byte	34
+ 1751 06ba 02       		.byte	2
+ 1752 06bb 02       		.byte	2
+ 1753 06bc 03       		.byte	3
+ 1754 06bd D1       		.byte	-47
+ 1755 06be 09       		.byte	9
+ 1756 06bf 67       		.byte	103
+ 1757 06c0 0E       		.byte	14
+ 1758 06c1 02       		.byte	2
+ 1759 06c2 12       		.byte	18
+ 1760 06c3 01       		.byte	1
+ 1761 06c4 14       		.byte	20
+ 1762 06c5 01       		.byte	1
+ 1763 06c6 15       		.byte	21
+ 1764 06c7 44       		.byte	68
+ 1765 06c8 17       		.byte	23
+ 1766 06c9 31       		.byte	49
+ 1767 06ca 19       		.byte	25
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 32
 
 
  1768 06cb 01       		.byte	1
- 1769 06cc EA       		.byte	-22
- 1770 06cd 02       		.byte	2
- 1771 06ce 8B       		.byte	-117
- 1772 06cf 40       		.byte	64
- 1773 06d0 9C       		.byte	-100
- 1774 06d1 08       		.byte	8
- 1775 06d2 A5       		.byte	-91
- 1776 06d3 02       		.byte	2
- 1777 06d4 B3       		.byte	-77
- 1778 06d5 02       		.byte	2
- 1779 06d6 E0       		.byte	-32
- 1780 06d7 04       		.byte	4
- 1781 06d8 EC       		.byte	-20
- 1782 06d9 01       		.byte	1
- 1783 06da 27       		.byte	39
- 1784 06db 04       		.byte	4
- 1785 06dc 87       		.byte	-121
- 1786 06dd 01       		.byte	1
- 1787 06de 9F       		.byte	-97
- 1788 06df 05       		.byte	5
- 1789 06e0 A6       		.byte	-90
- 1790 06e1 40       		.byte	64
- 1791 06e2 AA       		.byte	-86
- 1792 06e3 02       		.byte	2
- 1793 06e4 B0       		.byte	-80
- 1794 06e5 10       		.byte	16
- 1795 06e6 B7       		.byte	-73
- 1796 06e7 04       		.byte	4
- 1797 06e8 C8       		.byte	-56
- 1798 06e9 20       		.byte	32
- 1799 06ea E2       		.byte	-30
- 1800 06eb 40       		.byte	64
- 1801 06ec EE       		.byte	-18
- 1802 06ed 20       		.byte	32
- 1803 06ee 7B       		.byte	123
- 1804 06ef 02       		.byte	2
- 1805 06f0 7C       		.byte	124
- 1806 06f1 80       		.byte	-128
- 1807 06f2 83       		.byte	-125
- 1808 06f3 02       		.byte	2
- 1809 06f4 8A       		.byte	-118
- 1810 06f5 40       		.byte	64
- 1811 06f6 8C       		.byte	-116
- 1812 06f7 80       		.byte	-128
- 1813 06f8 A6       		.byte	-90
- 1814 06f9 40       		.byte	64
- 1815 06fa DC       		.byte	-36
- 1816 06fb 80       		.byte	-128
- 1817 06fc DE       		.byte	-34
- 1818 06fd 20       		.byte	32
- 1819 06fe E2       		.byte	-30
- 1820 06ff 20       		.byte	32
- 1821 0700 0A       		.byte	10
- 1822 0701 04       		.byte	4
- 1823 0702 93       		.byte	-109
- 1824 0703 40       		.byte	64
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccs4YSiA.s 			page 33
+ 1769 06cc 1B       		.byte	27
+ 1770 06cd 0E       		.byte	14
+ 1771 06ce 1E       		.byte	30
+ 1772 06cf 04       		.byte	4
+ 1773 06d0 25       		.byte	37
+ 1774 06d1 67       		.byte	103
+ 1775 06d2 26       		.byte	38
+ 1776 06d3 04       		.byte	4
+ 1777 06d4 2A       		.byte	42
+ 1778 06d5 01       		.byte	1
+ 1779 06d6 2C       		.byte	44
+ 1780 06d7 01       		.byte	1
+ 1781 06d8 30       		.byte	48
+ 1782 06d9 04       		.byte	4
+ 1783 06da 31       		.byte	49
+ 1784 06db 80       		.byte	-128
+ 1785 06dc 33       		.byte	51
+ 1786 06dd 60       		.byte	96
+ 1787 06de 34       		.byte	52
+ 1788 06df 02       		.byte	2
+ 1789 06e0 35       		.byte	53
+ 1790 06e1 07       		.byte	7
+ 1791 06e2 36       		.byte	54
+ 1792 06e3 01       		.byte	1
+ 1793 06e4 37       		.byte	55
+ 1794 06e5 18       		.byte	24
+ 1795 06e6 38       		.byte	56
+ 1796 06e7 80       		.byte	-128
+ 1797 06e8 3A       		.byte	58
+ 1798 06e9 08       		.byte	8
+ 1799 06ea 3E       		.byte	62
+ 1800 06eb 11       		.byte	17
+ 1801 06ec 3F       		.byte	63
+ 1802 06ed 40       		.byte	64
+ 1803 06ee 40       		.byte	64
+ 1804 06ef 43       		.byte	67
+ 1805 06f0 41       		.byte	65
+ 1806 06f1 06       		.byte	6
+ 1807 06f2 42       		.byte	66
+ 1808 06f3 05       		.byte	5
+ 1809 06f4 44       		.byte	68
+ 1810 06f5 01       		.byte	1
+ 1811 06f6 45       		.byte	69
+ 1812 06f7 0C       		.byte	12
+ 1813 06f8 46       		.byte	70
+ 1814 06f9 0E       		.byte	14
+ 1815 06fa 48       		.byte	72
+ 1816 06fb 05       		.byte	5
+ 1817 06fc 49       		.byte	73
+ 1818 06fd FF       		.byte	-1
+ 1819 06fe 4A       		.byte	74
+ 1820 06ff FF       		.byte	-1
+ 1821 0700 4B       		.byte	75
+ 1822 0701 FF       		.byte	-1
+ 1823 0702 4C       		.byte	76
+ 1824 0703 62       		.byte	98
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 33
 
 
- 1825 0704 A8       		.byte	-88
- 1826 0705 08       		.byte	8
- 1827 0706 B5       		.byte	-75
- 1828 0707 02       		.byte	2
- 1829 0708 C2       		.byte	-62
- 1830 0709 02       		.byte	2
- 1831 070a EC       		.byte	-20
- 1832 070b 08       		.byte	8
- 1833 070c 10       		.byte	16
- 1834 070d 40       		.byte	64
- 1835 070e 73       		.byte	115
- 1836 070f 40       		.byte	64
- 1837 0710 88       		.byte	-120
- 1838 0711 40       		.byte	64
- 1839 0712 93       		.byte	-109
- 1840 0713 40       		.byte	64
- 1841 0714 AE       		.byte	-82
+ 1825 0704 4D       		.byte	77
+ 1826 0705 A0       		.byte	-96
+ 1827 0706 4E       		.byte	78
+ 1828 0707 F0       		.byte	-16
+ 1829 0708 4F       		.byte	79
+ 1830 0709 41       		.byte	65
+ 1831 070a 50       		.byte	80
+ 1832 070b 0C       		.byte	12
+ 1833 070c 54       		.byte	84
+ 1834 070d 18       		.byte	24
+ 1835 070e 56       		.byte	86
+ 1836 070f 04       		.byte	4
+ 1837 0710 58       		.byte	88
+ 1838 0711 04       		.byte	4
+ 1839 0712 59       		.byte	89
+ 1840 0713 04       		.byte	4
+ 1841 0714 5A       		.byte	90
  1842 0715 04       		.byte	4
- 1843 0716 C4       		.byte	-60
- 1844 0717 08       		.byte	8
- 1845 0718 DC       		.byte	-36
- 1846 0719 01       		.byte	1
- 1847 071a E2       		.byte	-30
- 1848 071b 01       		.byte	1
- 1849 071c 00       		.byte	0
- 1850 071d 4A       		.byte	74
- 1851 071e 0C       		.byte	12
- 1852 071f 4A       		.byte	74
- 1853 0720 0E       		.byte	14
- 1854 0721 42       		.byte	66
- 1855 0722 10       		.byte	16
- 1856 0723 0C       		.byte	12
- 1857 0724 1A       		.byte	26
- 1858 0725 04       		.byte	4
- 1859 0726 1C       		.byte	28
- 1860 0727 0C       		.byte	12
- 1861 0728 00       		.byte	0
- 1862 0729 FF       		.byte	-1
- 1863 072a 01       		.byte	1
- 1864 072b 3B       		.byte	59
- 1865 072c 04       		.byte	4
- 1866 072d 80       		.byte	-128
- 1867 072e 00       		.byte	0
- 1868 072f 00       		.byte	0
- 1869 0730 40       		.byte	64
- 1870 0731 00       		.byte	0
- 1871 0732 00       		.byte	0
- 1872 0733 00       		.byte	0
- 1873 0734 40       		.byte	64
- 1874 0735 00       		.byte	0
- 1875 0736 00       		.byte	0
- 1876 0737 00       		.byte	0
- 1877 0738 02       		.byte	2
- 1878 0739 02       		.byte	2
- 1879 073a 0D       		.byte	13
- 1880 073b 0D       		.byte	13
- 1881 073c 62       		.byte	98
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccs4YSiA.s 			page 34
+ 1843 0716 5B       		.byte	91
+ 1844 0717 04       		.byte	4
+ 1845 0718 5C       		.byte	92
+ 1846 0719 33       		.byte	51
+ 1847 071a 5D       		.byte	93
+ 1848 071b 33       		.byte	51
+ 1849 071c 5F       		.byte	95
+ 1850 071d 01       		.byte	1
+ 1851 071e 66       		.byte	102
+ 1852 071f 40       		.byte	64
+ 1853 0720 67       		.byte	103
+ 1854 0721 02       		.byte	2
+ 1855 0722 69       		.byte	105
+ 1856 0723 10       		.byte	16
+ 1857 0724 6A       		.byte	106
+ 1858 0725 30       		.byte	48
+ 1859 0726 6B       		.byte	107
+ 1860 0727 10       		.byte	16
+ 1861 0728 6D       		.byte	109
+ 1862 0729 10       		.byte	16
+ 1863 072a 6E       		.byte	110
+ 1864 072b 10       		.byte	16
+ 1865 072c 6F       		.byte	111
+ 1866 072d 12       		.byte	18
+ 1867 072e 89       		.byte	-119
+ 1868 072f 01       		.byte	1
+ 1869 0730 8D       		.byte	-115
+ 1870 0731 01       		.byte	1
+ 1871 0732 98       		.byte	-104
+ 1872 0733 01       		.byte	1
+ 1873 0734 A0       		.byte	-96
+ 1874 0735 01       		.byte	1
+ 1875 0736 A1       		.byte	-95
+ 1876 0737 01       		.byte	1
+ 1877 0738 A8       		.byte	-88
+ 1878 0739 01       		.byte	1
+ 1879 073a A9       		.byte	-87
+ 1880 073b 01       		.byte	1
+ 1881 073c B1       		.byte	-79
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 34
 
 
- 1882 073d 00       		.byte	0
- 1883 073e 14       		.byte	20
- 1884 073f 10       		.byte	16
- 1885 0740 42       		.byte	66
- 1886 0741 00       		.byte	0
- 1887 0742 08       		.byte	8
- 1888 0743 00       		.byte	0
- 1889 0744 0D       		.byte	13
- 1890 0745 00       		.byte	0
- 1891 0746 80       		.byte	-128
- 1892 0747 00       		.byte	0
- 1893 0748 8D       		.byte	-115
- 1894 0749 45       		.byte	69
- 1895 074a 00       		.byte	0
- 1896 074b 3A       		.byte	58
- 1897 074c 11       		.byte	17
- 1898 074d 00       		.byte	0
- 1899 074e 22       		.byte	34
- 1900 074f 00       		.byte	0
- 1901 0750 00       		.byte	0
- 1902 0751 49       		.byte	73
- 1903 0752 80       		.byte	-128
- 1904 0753 36       		.byte	54
- 1905 0754 8D       		.byte	-115
- 1906 0755 00       		.byte	0
- 1907 0756 00       		.byte	0
- 1908 0757 00       		.byte	0
- 1909 0758 8D       		.byte	-115
- 1910 0759 63       		.byte	99
- 1911 075a 00       		.byte	0
- 1912 075b 0C       		.byte	12
- 1913 075c 8D       		.byte	-115
- 1914 075d 00       		.byte	0
- 1915 075e 00       		.byte	0
- 1916 075f 00       		.byte	0
- 1917 0760 00       		.byte	0
- 1918 0761 00       		.byte	0
- 1919 0762 00       		.byte	0
- 1920 0763 00       		.byte	0
- 1921 0764 00       		.byte	0
- 1922 0765 00       		.byte	0
- 1923 0766 80       		.byte	-128
- 1924 0767 0F       		.byte	15
- 1925 0768 0F       		.byte	15
- 1926 0769 30       		.byte	48
- 1927 076a 70       		.byte	112
- 1928 076b 40       		.byte	64
- 1929 076c 00       		.byte	0
- 1930 076d 00       		.byte	0
- 1931 076e A0       		.byte	-96
- 1932 076f 08       		.byte	8
- 1933 0770 00       		.byte	0
- 1934 0771 00       		.byte	0
- 1935 0772 04       		.byte	4
- 1936 0773 40       		.byte	64
- 1937 0774 50       		.byte	80
- 1938 0775 03       		.byte	3
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccs4YSiA.s 			page 35
+ 1882 073d 01       		.byte	1
+ 1883 073e B2       		.byte	-78
+ 1884 073f 01       		.byte	1
+ 1885 0740 BF       		.byte	-65
+ 1886 0741 01       		.byte	1
+ 1887 0742 D6       		.byte	-42
+ 1888 0743 02       		.byte	2
+ 1889 0744 D7       		.byte	-41
+ 1890 0745 10       		.byte	16
+ 1891 0746 D8       		.byte	-40
+ 1892 0747 04       		.byte	4
+ 1893 0748 D9       		.byte	-39
+ 1894 0749 04       		.byte	4
+ 1895 074a DB       		.byte	-37
+ 1896 074b 04       		.byte	4
+ 1897 074c DC       		.byte	-36
+ 1898 074d 03       		.byte	3
+ 1899 074e DD       		.byte	-35
+ 1900 074f 30       		.byte	48
+ 1901 0750 DF       		.byte	-33
+ 1902 0751 01       		.byte	1
+ 1903 0752 01       		.byte	1
+ 1904 0753 80       		.byte	-128
+ 1905 0754 03       		.byte	3
+ 1906 0755 80       		.byte	-128
+ 1907 0756 08       		.byte	8
+ 1908 0757 04       		.byte	4
+ 1909 0758 09       		.byte	9
+ 1910 0759 80       		.byte	-128
+ 1911 075a 0B       		.byte	11
+ 1912 075b 80       		.byte	-128
+ 1913 075c 0C       		.byte	12
+ 1914 075d 10       		.byte	16
+ 1915 075e 0D       		.byte	13
+ 1916 075f 80       		.byte	-128
+ 1917 0760 0E       		.byte	14
+ 1918 0761 0A       		.byte	10
+ 1919 0762 10       		.byte	16
+ 1920 0763 20       		.byte	32
+ 1921 0764 11       		.byte	17
+ 1922 0765 80       		.byte	-128
+ 1923 0766 13       		.byte	19
+ 1924 0767 10       		.byte	16
+ 1925 0768 15       		.byte	21
+ 1926 0769 10       		.byte	16
+ 1927 076a 17       		.byte	23
+ 1928 076b 01       		.byte	1
+ 1929 076c 18       		.byte	24
+ 1930 076d 04       		.byte	4
+ 1931 076e 19       		.byte	25
+ 1932 076f 80       		.byte	-128
+ 1933 0770 1B       		.byte	27
+ 1934 0771 09       		.byte	9
+ 1935 0772 1E       		.byte	30
+ 1936 0773 10       		.byte	16
+ 1937 0774 20       		.byte	32
+ 1938 0775 01       		.byte	1
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 35
 
 
- 1939 0776 00       		.byte	0
- 1940 0777 00       		.byte	0
- 1941 0778 00       		.byte	0
- 1942 0779 D1       		.byte	-47
- 1943 077a 00       		.byte	0
- 1944 077b 02       		.byte	2
- 1945 077c 17       		.byte	23
- 1946 077d FF       		.byte	-1
- 1947 077e FF       		.byte	-1
- 1948 077f FF       		.byte	-1
- 1949 0780 00       		.byte	0
- 1950 0781 AF       		.byte	-81
- 1951 0782 0F       		.byte	15
- 1952 0783 04       		.byte	4
- 1953 0784 18       		.byte	24
- 1954 0785 00       		.byte	0
- 1955 0786 00       		.byte	0
- 1956 0787 00       		.byte	0
- 1957 0788 09       		.byte	9
- 1958 0789 00       		.byte	0
- 1959 078a 04       		.byte	4
- 1960 078b 00       		.byte	0
- 1961 078c 04       		.byte	4
- 1962 078d 04       		.byte	4
- 1963 078e 04       		.byte	4
- 1964 078f 04       		.byte	4
- 1965 0790 11       		.byte	17
- 1966 0791 16       		.byte	22
- 1967 0792 00       		.byte	0
- 1968 0793 01       		.byte	1
- 1969 0794 40       		.byte	64
- 1970 0795 00       		.byte	0
- 1971 0796 C0       		.byte	-64
- 1972 0797 00       		.byte	0
- 1973 0798 40       		.byte	64
- 1974 0799 40       		.byte	64
- 1975 079a C0       		.byte	-64
- 1976 079b 00       		.byte	0
- 1977 079c C0       		.byte	-64
- 1978 079d 00       		.byte	0
- 1979 079e C0       		.byte	-64
- 1980 079f 00       		.byte	0
- 1981 07a0 C0       		.byte	-64
- 1982 07a1 00       		.byte	0
- 1983 07a2 C0       		.byte	-64
- 1984 07a3 00       		.byte	0
- 1985 07a4 00       		.byte	0
- 1986 07a5 00       		.byte	0
- 1987 07a6 00       		.byte	0
- 1988 07a7 00       		.byte	0
- 1989 07a8 00       		.byte	0
- 1990 07a9 00       		.byte	0
- 1991 07aa 00       		.byte	0
- 1992 07ab 00       		.byte	0
- 1993 07ac 00       		.byte	0
- 1994 07ad 00       		.byte	0
- 1995 07ae 00       		.byte	0
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccs4YSiA.s 			page 36
+ 1939 0776 21       		.byte	33
+ 1940 0777 0C       		.byte	12
+ 1941 0778 22       		.byte	34
+ 1942 0779 22       		.byte	34
+ 1943 077a 27       		.byte	39
+ 1944 077b 80       		.byte	-128
+ 1945 077c 28       		.byte	40
+ 1946 077d 10       		.byte	16
+ 1947 077e 2C       		.byte	44
+ 1948 077f 0C       		.byte	12
+ 1949 0780 2F       		.byte	47
+ 1950 0781 48       		.byte	72
+ 1951 0782 31       		.byte	49
+ 1952 0783 08       		.byte	8
+ 1953 0784 32       		.byte	50
+ 1954 0785 20       		.byte	32
+ 1955 0786 38       		.byte	56
+ 1956 0787 02       		.byte	2
+ 1957 0788 39       		.byte	57
+ 1958 0789 10       		.byte	16
+ 1959 078a 3C       		.byte	60
+ 1960 078b 40       		.byte	64
+ 1961 078c 3D       		.byte	61
+ 1962 078d 80       		.byte	-128
+ 1963 078e 3F       		.byte	63
+ 1964 078f 10       		.byte	16
+ 1965 0790 40       		.byte	64
+ 1966 0791 41       		.byte	65
+ 1967 0792 42       		.byte	66
+ 1968 0793 10       		.byte	16
+ 1969 0794 48       		.byte	72
+ 1970 0795 28       		.byte	40
+ 1971 0796 4A       		.byte	74
+ 1972 0797 01       		.byte	1
+ 1973 0798 53       		.byte	83
+ 1974 0799 80       		.byte	-128
+ 1975 079a 5A       		.byte	90
+ 1976 079b 02       		.byte	2
+ 1977 079c 5F       		.byte	95
+ 1978 079d 80       		.byte	-128
+ 1979 079e 60       		.byte	96
+ 1980 079f 04       		.byte	4
+ 1981 07a0 63       		.byte	99
+ 1982 07a1 42       		.byte	66
+ 1983 07a2 6D       		.byte	109
+ 1984 07a3 10       		.byte	16
+ 1985 07a4 6E       		.byte	110
+ 1986 07a5 08       		.byte	8
+ 1987 07a6 6F       		.byte	111
+ 1988 07a7 01       		.byte	1
+ 1989 07a8 74       		.byte	116
+ 1990 07a9 90       		.byte	-112
+ 1991 07aa 75       		.byte	117
+ 1992 07ab 08       		.byte	8
+ 1993 07ac 87       		.byte	-121
+ 1994 07ad 40       		.byte	64
+ 1995 07ae 8C       		.byte	-116
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 36
 
 
- 1996 07af 00       		.byte	0
- 1997 07b0 00       		.byte	0
- 1998 07b1 00       		.byte	0
- 1999 07b2 00       		.byte	0
- 2000 07b3 00       		.byte	0
- 2001 07b4 04       		.byte	4
- 2002 07b5 9A       		.byte	-102
- 2003 07b6 00       		.byte	0
- 2004 07b7 00       		.byte	0
- 2005 07b8 84       		.byte	-124
- 2006 07b9 98       		.byte	-104
- 2007 07ba 00       		.byte	0
- 2008 07bb 02       		.byte	2
- 2009 07bc 0A       		.byte	10
- 2010 07bd 02       		.byte	2
- 2011 07be 10       		.byte	16
- 2012 07bf 98       		.byte	-104
- 2013 07c0 56       		.byte	86
- 2014 07c1 02       		.byte	2
- 2015 07c2 09       		.byte	9
- 2016 07c3 00       		.byte	0
- 2017 07c4 01       		.byte	1
- 2018 07c5 98       		.byte	-104
- 2019 07c6 00       		.byte	0
- 2020 07c7 02       		.byte	2
- 2021 07c8 60       		.byte	96
- 2022 07c9 21       		.byte	33
- 2023 07ca 00       		.byte	0
- 2024 07cb D8       		.byte	-40
- 2025 07cc 07       		.byte	7
- 2026 07cd 13       		.byte	19
- 2027 07ce 38       		.byte	56
- 2028 07cf 64       		.byte	100
- 2029 07d0 84       		.byte	-124
- 2030 07d1 38       		.byte	56
- 2031 07d2 00       		.byte	0
- 2032 07d3 C0       		.byte	-64
- 2033 07d4 04       		.byte	4
- 2034 07d5 FC       		.byte	-4
- 2035 07d6 80       		.byte	-128
- 2036 07d7 03       		.byte	3
- 2037 07d8 80       		.byte	-128
- 2038 07d9 00       		.byte	0
- 2039 07da 04       		.byte	4
- 2040 07db 00       		.byte	0
- 2041 07dc 84       		.byte	-124
- 2042 07dd 00       		.byte	0
- 2043 07de 00       		.byte	0
- 2044 07df 00       		.byte	0
- 2045 07e0 00       		.byte	0
- 2046 07e1 9A       		.byte	-102
- 2047 07e2 00       		.byte	0
- 2048 07e3 00       		.byte	0
- 2049 07e4 7F       		.byte	127
- 2050 07e5 00       		.byte	0
- 2051 07e6 80       		.byte	-128
- 2052 07e7 13       		.byte	19
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccs4YSiA.s 			page 37
+ 1996 07af 01       		.byte	1
+ 1997 07b0 8D       		.byte	-115
+ 1998 07b1 40       		.byte	64
+ 1999 07b2 90       		.byte	-112
+ 2000 07b3 40       		.byte	64
+ 2001 07b4 92       		.byte	-110
+ 2002 07b5 02       		.byte	2
+ 2003 07b6 93       		.byte	-109
+ 2004 07b7 90       		.byte	-112
+ 2005 07b8 95       		.byte	-107
+ 2006 07b9 48       		.byte	72
+ 2007 07ba 96       		.byte	-106
+ 2008 07bb 10       		.byte	16
+ 2009 07bc 9C       		.byte	-100
+ 2010 07bd 04       		.byte	4
+ 2011 07be 9D       		.byte	-99
+ 2012 07bf 08       		.byte	8
+ 2013 07c0 A1       		.byte	-95
+ 2014 07c1 80       		.byte	-128
+ 2015 07c2 A4       		.byte	-92
+ 2016 07c3 90       		.byte	-112
+ 2017 07c4 A6       		.byte	-90
+ 2018 07c5 22       		.byte	34
+ 2019 07c6 B1       		.byte	-79
+ 2020 07c7 04       		.byte	4
+ 2021 07c8 B2       		.byte	-78
+ 2022 07c9 01       		.byte	1
+ 2023 07ca C0       		.byte	-64
+ 2024 07cb 09       		.byte	9
+ 2025 07cc C2       		.byte	-62
+ 2026 07cd 4D       		.byte	77
+ 2027 07ce C4       		.byte	-60
+ 2028 07cf 57       		.byte	87
+ 2029 07d0 CA       		.byte	-54
+ 2030 07d1 A2       		.byte	-94
+ 2031 07d2 CC       		.byte	-52
+ 2032 07d3 06       		.byte	6
+ 2033 07d4 CE       		.byte	-50
+ 2034 07d5 35       		.byte	53
+ 2035 07d6 D0       		.byte	-48
+ 2036 07d7 0B       		.byte	11
+ 2037 07d8 D2       		.byte	-46
+ 2038 07d9 0C       		.byte	12
+ 2039 07da D6       		.byte	-42
+ 2040 07db 11       		.byte	17
+ 2041 07dc D8       		.byte	-40
+ 2042 07dd 0D       		.byte	13
+ 2043 07de 30       		.byte	48
+ 2044 07df 02       		.byte	2
+ 2045 07e0 32       		.byte	50
+ 2046 07e1 40       		.byte	64
+ 2047 07e2 35       		.byte	53
+ 2048 07e3 80       		.byte	-128
+ 2049 07e4 36       		.byte	54
+ 2050 07e5 08       		.byte	8
+ 2051 07e6 3B       		.byte	59
+ 2052 07e7 40       		.byte	64
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 37
 
 
- 2053 07e8 08       		.byte	8
- 2054 07e9 0F       		.byte	15
- 2055 07ea 00       		.byte	0
- 2056 07eb E0       		.byte	-32
- 2057 07ec 02       		.byte	2
- 2058 07ed 00       		.byte	0
- 2059 07ee 00       		.byte	0
- 2060 07ef A0       		.byte	-96
- 2061 07f0 00       		.byte	0
- 2062 07f1 00       		.byte	0
- 2063 07f2 14       		.byte	20
- 2064 07f3 00       		.byte	0
- 2065 07f4 64       		.byte	100
- 2066 07f5 03       		.byte	3
- 2067 07f6 50       		.byte	80
- 2068 07f7 00       		.byte	0
- 2069 07f8 02       		.byte	2
- 2070 07f9 DE       		.byte	-34
- 2071 07fa BC       		.byte	-68
- 2072 07fb 0F       		.byte	15
- 2073 07fc 1F       		.byte	31
- 2074 07fd FF       		.byte	-1
- 2075 07fe FF       		.byte	-1
- 2076 07ff FF       		.byte	-1
- 2077 0800 22       		.byte	34
- 2078 0801 00       		.byte	0
- 2079 0802 F0       		.byte	-16
- 2080 0803 08       		.byte	8
- 2081 0804 04       		.byte	4
- 2082 0805 00       		.byte	0
- 2083 0806 00       		.byte	0
- 2084 0807 00       		.byte	0
- 2085 0808 00       		.byte	0
- 2086 0809 00       		.byte	0
- 2087 080a 02       		.byte	2
- 2088 080b 28       		.byte	40
- 2089 080c 04       		.byte	4
- 2090 080d 04       		.byte	4
- 2091 080e 04       		.byte	4
- 2092 080f 04       		.byte	4
- 2093 0810 11       		.byte	17
- 2094 0811 11       		.byte	17
- 2095 0812 00       		.byte	0
- 2096 0813 01       		.byte	1
- 2097 0814 00       		.byte	0
- 2098 0815 00       		.byte	0
- 2099 0816 C0       		.byte	-64
- 2100 0817 00       		.byte	0
- 2101 0818 40       		.byte	64
- 2102 0819 01       		.byte	1
- 2103 081a 10       		.byte	16
- 2104 081b 11       		.byte	17
- 2105 081c C0       		.byte	-64
- 2106 081d 01       		.byte	1
- 2107 081e 00       		.byte	0
- 2108 081f 11       		.byte	17
- 2109 0820 40       		.byte	64
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccs4YSiA.s 			page 38
+ 2053 07e8 CC       		.byte	-52
+ 2054 07e9 F0       		.byte	-16
+ 2055 07ea CE       		.byte	-50
+ 2056 07eb 10       		.byte	16
+ 2057 07ec 30       		.byte	48
+ 2058 07ed 80       		.byte	-128
+ 2059 07ee 36       		.byte	54
+ 2060 07ef 20       		.byte	32
+ 2061 07f0 62       		.byte	98
+ 2062 07f1 02       		.byte	2
+ 2063 07f2 65       		.byte	101
+ 2064 07f3 01       		.byte	1
+ 2065 07f4 81       		.byte	-127
+ 2066 07f5 01       		.byte	1
+ 2067 07f6 84       		.byte	-124
+ 2068 07f7 80       		.byte	-128
+ 2069 07f8 96       		.byte	-106
+ 2070 07f9 80       		.byte	-128
+ 2071 07fa 9D       		.byte	-99
+ 2072 07fb 80       		.byte	-128
+ 2073 07fc A4       		.byte	-92
+ 2074 07fd 02       		.byte	2
+ 2075 07fe A6       		.byte	-90
+ 2076 07ff 08       		.byte	8
+ 2077 0800 AF       		.byte	-81
+ 2078 0801 40       		.byte	64
+ 2079 0802 CC       		.byte	-52
+ 2080 0803 30       		.byte	48
+ 2081 0804 D8       		.byte	-40
+ 2082 0805 C0       		.byte	-64
+ 2083 0806 E2       		.byte	-30
+ 2084 0807 30       		.byte	48
+ 2085 0808 EE       		.byte	-18
+ 2086 0809 40       		.byte	64
+ 2087 080a 52       		.byte	82
+ 2088 080b 80       		.byte	-128
+ 2089 080c 55       		.byte	85
+ 2090 080d 08       		.byte	8
+ 2091 080e 80       		.byte	-128
+ 2092 080f 02       		.byte	2
+ 2093 0810 85       		.byte	-123
+ 2094 0811 80       		.byte	-128
+ 2095 0812 96       		.byte	-106
+ 2096 0813 80       		.byte	-128
+ 2097 0814 9D       		.byte	-99
+ 2098 0815 80       		.byte	-128
+ 2099 0816 A4       		.byte	-92
+ 2100 0817 02       		.byte	2
+ 2101 0818 A6       		.byte	-90
+ 2102 0819 28       		.byte	40
+ 2103 081a B2       		.byte	-78
+ 2104 081b 02       		.byte	2
+ 2105 081c D4       		.byte	-44
+ 2106 081d 60       		.byte	96
+ 2107 081e E2       		.byte	-30
+ 2108 081f 30       		.byte	48
+ 2109 0820 60       		.byte	96
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 38
 
 
- 2110 0821 01       		.byte	1
- 2111 0822 40       		.byte	64
- 2112 0823 01       		.byte	1
- 2113 0824 00       		.byte	0
- 2114 0825 00       		.byte	0
- 2115 0826 00       		.byte	0
- 2116 0827 00       		.byte	0
- 2117 0828 00       		.byte	0
- 2118 0829 00       		.byte	0
- 2119 082a 00       		.byte	0
- 2120 082b 00       		.byte	0
- 2121 082c 00       		.byte	0
- 2122 082d 00       		.byte	0
- 2123 082e 00       		.byte	0
- 2124 082f 00       		.byte	0
- 2125 0830 00       		.byte	0
- 2126 0831 00       		.byte	0
- 2127 0832 00       		.byte	0
- 2128 0833 00       		.byte	0
- 2129 0834 04       		.byte	4
- 2130 0835 6B       		.byte	107
- 2131 0836 00       		.byte	0
- 2132 0837 14       		.byte	20
- 2133 0838 21       		.byte	33
- 2134 0839 00       		.byte	0
- 2135 083a 10       		.byte	16
- 2136 083b 80       		.byte	-128
- 2137 083c 63       		.byte	99
- 2138 083d 70       		.byte	112
- 2139 083e 00       		.byte	0
- 2140 083f 09       		.byte	9
- 2141 0840 00       		.byte	0
- 2142 0841 06       		.byte	6
+ 2110 0821 08       		.byte	8
+ 2111 0822 84       		.byte	-124
+ 2112 0823 08       		.byte	8
+ 2113 0824 86       		.byte	-122
+ 2114 0825 08       		.byte	8
+ 2115 0826 96       		.byte	-106
+ 2116 0827 80       		.byte	-128
+ 2117 0828 A5       		.byte	-91
+ 2118 0829 28       		.byte	40
+ 2119 082a A6       		.byte	-90
+ 2120 082b 28       		.byte	40
+ 2121 082c A9       		.byte	-87
+ 2122 082d 20       		.byte	32
+ 2123 082e AE       		.byte	-82
+ 2124 082f 80       		.byte	-128
+ 2125 0830 D8       		.byte	-40
+ 2126 0831 40       		.byte	64
+ 2127 0832 E2       		.byte	-30
+ 2128 0833 10       		.byte	16
+ 2129 0834 E6       		.byte	-26
+ 2130 0835 10       		.byte	16
+ 2131 0836 E8       		.byte	-24
+ 2132 0837 20       		.byte	32
+ 2133 0838 EE       		.byte	-18
+ 2134 0839 10       		.byte	16
+ 2135 083a 13       		.byte	19
+ 2136 083b 02       		.byte	2
+ 2137 083c 7F       		.byte	127
+ 2138 083d 04       		.byte	4
+ 2139 083e C4       		.byte	-60
+ 2140 083f 08       		.byte	8
+ 2141 0840 DE       		.byte	-34
+ 2142 0841 01       		.byte	1
  2143 0842 00       		.byte	0
- 2144 0843 00       		.byte	0
- 2145 0844 E3       		.byte	-29
- 2146 0845 00       		.byte	0
- 2147 0846 0C       		.byte	12
- 2148 0847 20       		.byte	32
- 2149 0848 EF       		.byte	-17
- 2150 0849 00       		.byte	0
- 2151 084a 00       		.byte	0
- 2152 084b 18       		.byte	24
- 2153 084c 0C       		.byte	12
- 2154 084d 55       		.byte	85
- 2155 084e E3       		.byte	-29
- 2156 084f 22       		.byte	34
- 2157 0850 0F       		.byte	15
- 2158 0851 00       		.byte	0
- 2159 0852 E0       		.byte	-32
- 2160 0853 00       		.byte	0
- 2161 0854 00       		.byte	0
- 2162 0855 00       		.byte	0
- 2163 0856 63       		.byte	99
- 2164 0857 80       		.byte	-128
- 2165 0858 0C       		.byte	12
- 2166 0859 00       		.byte	0
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccs4YSiA.s 			page 39
+ 2144 0843 20       		.byte	32
+ 2145 0844 01       		.byte	1
+ 2146 0845 02       		.byte	2
+ 2147 0846 59       		.byte	89
+ 2148 0847 40       		.byte	64
+ 2149 0848 84       		.byte	-124
+ 2150 0849 10       		.byte	16
+ 2151 084a 97       		.byte	-105
+ 2152 084b 08       		.byte	8
+ 2153 084c AF       		.byte	-81
+ 2154 084d 02       		.byte	2
+ 2155 084e C0       		.byte	-64
+ 2156 084f 0A       		.byte	10
+ 2157 0850 D4       		.byte	-44
+ 2158 0851 01       		.byte	1
+ 2159 0852 47       		.byte	71
+ 2160 0853 08       		.byte	8
+ 2161 0854 85       		.byte	-123
+ 2162 0855 80       		.byte	-128
+ 2163 0856 89       		.byte	-119
+ 2164 0857 40       		.byte	64
+ 2165 0858 97       		.byte	-105
+ 2166 0859 08       		.byte	8
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 39
 
 
- 2167 085a 00       		.byte	0
- 2168 085b 00       		.byte	0
- 2169 085c 42       		.byte	66
- 2170 085d 00       		.byte	0
- 2171 085e 00       		.byte	0
- 2172 085f 00       		.byte	0
- 2173 0860 08       		.byte	8
- 2174 0861 00       		.byte	0
- 2175 0862 00       		.byte	0
- 2176 0863 00       		.byte	0
- 2177 0864 10       		.byte	16
- 2178 0865 07       		.byte	7
- 2179 0866 60       		.byte	96
- 2180 0867 38       		.byte	56
- 2181 0868 0F       		.byte	15
- 2182 0869 80       		.byte	-128
- 2183 086a 80       		.byte	-128
- 2184 086b 40       		.byte	64
- 2185 086c 80       		.byte	-128
- 2186 086d 02       		.byte	2
- 2187 086e 20       		.byte	32
- 2188 086f 00       		.byte	0
- 2189 0870 00       		.byte	0
- 2190 0871 00       		.byte	0
- 2191 0872 00       		.byte	0
- 2192 0873 50       		.byte	80
- 2193 0874 63       		.byte	99
- 2194 0875 04       		.byte	4
- 2195 0876 50       		.byte	80
- 2196 0877 00       		.byte	0
- 2197 0878 01       		.byte	1
- 2198 0879 BE       		.byte	-66
- 2199 087a F0       		.byte	-16
- 2200 087b DC       		.byte	-36
- 2201 087c 3B       		.byte	59
- 2202 087d FF       		.byte	-1
- 2203 087e FF       		.byte	-1
- 2204 087f FF       		.byte	-1
- 2205 0880 22       		.byte	34
- 2206 0881 00       		.byte	0
- 2207 0882 F0       		.byte	-16
- 2208 0883 0C       		.byte	12
- 2209 0884 04       		.byte	4
- 2210 0885 00       		.byte	0
- 2211 0886 00       		.byte	0
- 2212 0887 00       		.byte	0
- 2213 0888 09       		.byte	9
- 2214 0889 00       		.byte	0
- 2215 088a 04       		.byte	4
- 2216 088b 00       		.byte	0
- 2217 088c 04       		.byte	4
- 2218 088d 04       		.byte	4
- 2219 088e 04       		.byte	4
- 2220 088f 04       		.byte	4
- 2221 0890 23       		.byte	35
- 2222 0891 22       		.byte	34
- 2223 0892 00       		.byte	0
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccs4YSiA.s 			page 40
+ 2167 085a 9D       		.byte	-99
+ 2168 085b 40       		.byte	64
+ 2169 085c A9       		.byte	-87
+ 2170 085d 02       		.byte	2
+ 2171 085e D0       		.byte	-48
+ 2172 085f 01       		.byte	1
+ 2173 0860 E0       		.byte	-32
+ 2174 0861 01       		.byte	1
+ 2175 0862 87       		.byte	-121
+ 2176 0863 04       		.byte	4
+ 2177 0864 97       		.byte	-105
+ 2178 0865 08       		.byte	8
+ 2179 0866 A5       		.byte	-91
+ 2180 0867 80       		.byte	-128
+ 2181 0868 AB       		.byte	-85
+ 2182 0869 08       		.byte	8
+ 2183 086a 25       		.byte	37
+ 2184 086b 20       		.byte	32
+ 2185 086c A5       		.byte	-91
+ 2186 086d 20       		.byte	32
+ 2187 086e A6       		.byte	-90
+ 2188 086f 20       		.byte	32
+ 2189 0870 AA       		.byte	-86
+ 2190 0871 40       		.byte	64
+ 2191 0872 B5       		.byte	-75
+ 2192 0873 08       		.byte	8
+ 2193 0874 C8       		.byte	-56
+ 2194 0875 20       		.byte	32
+ 2195 0876 EE       		.byte	-18
+ 2196 0877 80       		.byte	-128
+ 2197 0878 86       		.byte	-122
+ 2198 0879 20       		.byte	32
+ 2199 087a A6       		.byte	-90
+ 2200 087b 20       		.byte	32
+ 2201 087c E6       		.byte	-26
+ 2202 087d 40       		.byte	64
+ 2203 087e 09       		.byte	9
+ 2204 087f 80       		.byte	-128
+ 2205 0880 A0       		.byte	-96
+ 2206 0881 08       		.byte	8
+ 2207 0882 A5       		.byte	-91
+ 2208 0883 80       		.byte	-128
+ 2209 0884 B4       		.byte	-76
+ 2210 0885 08       		.byte	8
+ 2211 0886 C2       		.byte	-62
+ 2212 0887 02       		.byte	2
+ 2213 0888 EC       		.byte	-20
+ 2214 0889 08       		.byte	8
+ 2215 088a 12       		.byte	18
+ 2216 088b 80       		.byte	-128
+ 2217 088c 74       		.byte	116
+ 2218 088d 08       		.byte	8
+ 2219 088e 8E       		.byte	-114
+ 2220 088f 80       		.byte	-128
+ 2221 0890 A0       		.byte	-96
+ 2222 0891 08       		.byte	8
+ 2223 0892 C4       		.byte	-60
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 40
 
 
- 2224 0893 01       		.byte	1
- 2225 0894 00       		.byte	0
- 2226 0895 00       		.byte	0
- 2227 0896 C0       		.byte	-64
- 2228 0897 00       		.byte	0
- 2229 0898 40       		.byte	64
- 2230 0899 01       		.byte	1
- 2231 089a 10       		.byte	16
- 2232 089b 11       		.byte	17
- 2233 089c C0       		.byte	-64
- 2234 089d 01       		.byte	1
- 2235 089e 00       		.byte	0
- 2236 089f 11       		.byte	17
- 2237 08a0 40       		.byte	64
- 2238 08a1 01       		.byte	1
- 2239 08a2 40       		.byte	64
- 2240 08a3 01       		.byte	1
+ 2224 0893 08       		.byte	8
+ 2225 0894 DE       		.byte	-34
+ 2226 0895 04       		.byte	4
+ 2227 0896 E2       		.byte	-30
+ 2228 0897 02       		.byte	2
+ 2229 0898 00       		.byte	0
+ 2230 0899 2E       		.byte	46
+ 2231 089a 0A       		.byte	10
+ 2232 089b 0C       		.byte	12
+ 2233 089c 0C       		.byte	12
+ 2234 089d 2A       		.byte	42
+ 2235 089e 0E       		.byte	14
+ 2236 089f 02       		.byte	2
+ 2237 08a0 10       		.byte	16
+ 2238 08a1 0A       		.byte	10
+ 2239 08a2 1C       		.byte	28
+ 2240 08a3 0A       		.byte	10
  2241 08a4 00       		.byte	0
- 2242 08a5 00       		.byte	0
- 2243 08a6 00       		.byte	0
- 2244 08a7 00       		.byte	0
- 2245 08a8 00       		.byte	0
- 2246 08a9 00       		.byte	0
+ 2242 08a5 FF       		.byte	-1
+ 2243 08a6 01       		.byte	1
+ 2244 08a7 3B       		.byte	59
+ 2245 08a8 88       		.byte	-120
+ 2246 08a9 8C       		.byte	-116
  2247 08aa 00       		.byte	0
  2248 08ab 00       		.byte	0
- 2249 08ac 00       		.byte	0
+ 2249 08ac 40       		.byte	64
  2250 08ad 00       		.byte	0
  2251 08ae 00       		.byte	0
  2252 08af 00       		.byte	0
- 2253 08b0 00       		.byte	0
- 2254 08b1 00       		.byte	0
- 2255 08b2 00       		.byte	0
+ 2253 08b0 20       		.byte	32
+ 2254 08b1 09       		.byte	9
+ 2255 08b2 50       		.byte	80
  2256 08b3 00       		.byte	0
- 2257 08b4 00       		.byte	0
- 2258 08b5 60       		.byte	96
- 2259 08b6 60       		.byte	96
+ 2257 08b4 E3       		.byte	-29
+ 2258 08b5 09       		.byte	9
+ 2259 08b6 0C       		.byte	12
  2260 08b7 00       		.byte	0
- 2261 08b8 60       		.byte	96
- 2262 08b9 00       		.byte	0
- 2263 08ba 00       		.byte	0
- 2264 08bb 00       		.byte	0
- 2265 08bc 84       		.byte	-124
- 2266 08bd 00       		.byte	0
- 2267 08be 50       		.byte	80
- 2268 08bf 8C       		.byte	-116
- 2269 08c0 8C       		.byte	-116
- 2270 08c1 00       		.byte	0
- 2271 08c2 8C       		.byte	-116
- 2272 08c3 00       		.byte	0
- 2273 08c4 00       		.byte	0
- 2274 08c5 00       		.byte	0
- 2275 08c6 00       		.byte	0
- 2276 08c7 00       		.byte	0
- 2277 08c8 80       		.byte	-128
- 2278 08c9 00       		.byte	0
- 2279 08ca 40       		.byte	64
- 2280 08cb 8B       		.byte	-117
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccs4YSiA.s 			page 41
+ 2261 08b8 50       		.byte	80
+ 2262 08b9 54       		.byte	84
+ 2263 08ba 20       		.byte	32
+ 2264 08bb 29       		.byte	41
+ 2265 08bc A1       		.byte	-95
+ 2266 08bd 08       		.byte	8
+ 2267 08be 5A       		.byte	90
+ 2268 08bf 01       		.byte	1
+ 2269 08c0 00       		.byte	0
+ 2270 08c1 0E       		.byte	14
+ 2271 08c2 00       		.byte	0
+ 2272 08c3 11       		.byte	17
+ 2273 08c4 03       		.byte	3
+ 2274 08c5 01       		.byte	1
+ 2275 08c6 F4       		.byte	-12
+ 2276 08c7 08       		.byte	8
+ 2277 08c8 02       		.byte	2
+ 2278 08c9 60       		.byte	96
+ 2279 08ca 1D       		.byte	29
+ 2280 08cb 00       		.byte	0
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 41
 
 
- 2281 08cc 8B       		.byte	-117
+ 2281 08cc 70       		.byte	112
  2282 08cd 00       		.byte	0
  2283 08ce 00       		.byte	0
  2284 08cf 00       		.byte	0
- 2285 08d0 00       		.byte	0
- 2286 08d1 00       		.byte	0
+ 2285 08d0 70       		.byte	112
+ 2286 08d1 08       		.byte	8
  2287 08d2 00       		.byte	0
- 2288 08d3 00       		.byte	0
- 2289 08d4 10       		.byte	16
+ 2288 08d3 04       		.byte	4
+ 2289 08d4 70       		.byte	112
  2290 08d5 00       		.byte	0
- 2291 08d6 01       		.byte	1
- 2292 08d7 16       		.byte	22
- 2293 08d8 12       		.byte	18
- 2294 08d9 00       		.byte	0
- 2295 08da 02       		.byte	2
- 2296 08db 00       		.byte	0
- 2297 08dc 00       		.byte	0
- 2298 08dd 00       		.byte	0
+ 2291 08d6 00       		.byte	0
+ 2292 08d7 00       		.byte	0
+ 2293 08d8 00       		.byte	0
+ 2294 08d9 31       		.byte	49
+ 2295 08da 00       		.byte	0
+ 2296 08db 42       		.byte	66
+ 2297 08dc 20       		.byte	32
+ 2298 08dd 09       		.byte	9
  2299 08de 00       		.byte	0
  2300 08df 00       		.byte	0
  2301 08e0 00       		.byte	0
- 2302 08e1 01       		.byte	1
- 2303 08e2 01       		.byte	1
- 2304 08e3 00       		.byte	0
- 2305 08e4 00       		.byte	0
+ 2302 08e1 00       		.byte	0
+ 2303 08e2 60       		.byte	96
+ 2304 08e3 70       		.byte	112
+ 2305 08e4 1F       		.byte	31
  2306 08e5 00       		.byte	0
- 2307 08e6 10       		.byte	16
- 2308 08e7 00       		.byte	0
- 2309 08e8 25       		.byte	37
- 2310 08e9 00       		.byte	0
- 2311 08ea 18       		.byte	24
- 2312 08eb 01       		.byte	1
- 2313              		.section	.cywolatch,"a",%progbits
- 2314              		.align	2
- 2315              		.type	cy_meta_wonvl, %object
- 2316              		.size	cy_meta_wonvl, 4
- 2317              	cy_meta_wonvl:
- 2318 0000 BC       		.byte	-68
- 2319 0001 90       		.byte	-112
- 2320 0002 AC       		.byte	-84
- 2321 0003 AF       		.byte	-81
- 2322              		.section	.cycustnvl,"a",%progbits
- 2323              		.align	2
- 2324              		.type	cy_meta_custnvl, %object
- 2325              		.size	cy_meta_custnvl, 4
- 2326              	cy_meta_custnvl:
- 2327 0000 00       		.byte	0
- 2328 0001 00       		.byte	0
- 2329 0002 40       		.byte	64
- 2330 0003 05       		.byte	5
- 2331              		.section	.cymeta,"a",%progbits
- 2332              		.align	2
- 2333              		.type	cy_metadata, %object
- 2334              		.size	cy_metadata, 12
- 2335              	cy_metadata:
- 2336 0000 00       		.byte	0
- 2337 0001 01       		.byte	1
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccs4YSiA.s 			page 42
+ 2307 08e6 80       		.byte	-128
+ 2308 08e7 0F       		.byte	15
+ 2309 08e8 80       		.byte	-128
+ 2310 08e9 08       		.byte	8
+ 2311 08ea 20       		.byte	32
+ 2312 08eb C0       		.byte	-64
+ 2313 08ec 00       		.byte	0
+ 2314 08ed 00       		.byte	0
+ 2315 08ee 00       		.byte	0
+ 2316 08ef 00       		.byte	0
+ 2317 08f0 34       		.byte	52
+ 2318 08f1 06       		.byte	6
+ 2319 08f2 20       		.byte	32
+ 2320 08f3 00       		.byte	0
+ 2321 08f4 05       		.byte	5
+ 2322 08f5 DE       		.byte	-34
+ 2323 08f6 B0       		.byte	-80
+ 2324 08f7 CF       		.byte	-49
+ 2325 08f8 3B       		.byte	59
+ 2326 08f9 FF       		.byte	-1
+ 2327 08fa FF       		.byte	-1
+ 2328 08fb FF       		.byte	-1
+ 2329 08fc 22       		.byte	34
+ 2330 08fd 00       		.byte	0
+ 2331 08fe F0       		.byte	-16
+ 2332 08ff 0C       		.byte	12
+ 2333 0900 04       		.byte	4
+ 2334 0901 00       		.byte	0
+ 2335 0902 00       		.byte	0
+ 2336 0903 00       		.byte	0
+ 2337 0904 00       		.byte	0
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 42
 
 
- 2338 0002 2E       		.byte	46
- 2339 0003 16       		.byte	22
- 2340 0004 10       		.byte	16
- 2341 0005 69       		.byte	105
- 2342 0006 00       		.byte	0
- 2343 0007 01       		.byte	1
- 2344 0008 00       		.byte	0
- 2345 0009 00       		.byte	0
- 2346 000a 00       		.byte	0
- 2347 000b 00       		.byte	0
- 2348              		.section	.cyflashprotect,"a",%progbits
- 2349              		.align	2
- 2350              		.type	cy_meta_flashprotect, %object
- 2351              		.size	cy_meta_flashprotect, 256
- 2352              	cy_meta_flashprotect:
- 2353 0000 00000000 		.space	256
- 2353      00000000 
- 2353      00000000 
- 2353      00000000 
- 2353      00000000 
- 2354              		.text
- 2355              	.Letext0:
- 2356              		.file 1 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
- 2357              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
- 2358              		.file 3 "Generated_Source\\PSoC5\\cymetadata.c"
- 2359              		.section	.debug_info,"",%progbits
- 2360              	.Ldebug_info0:
- 2361 0000 35010000 		.4byte	0x135
- 2362 0004 0400     		.2byte	0x4
- 2363 0006 00000000 		.4byte	.Ldebug_abbrev0
- 2364 000a 04       		.byte	0x4
- 2365 000b 01       		.uleb128 0x1
- 2366 000c 24000000 		.4byte	.LASF17
- 2367 0010 0C       		.byte	0xc
- 2368 0011 E4010000 		.4byte	.LASF18
- 2369 0015 25010000 		.4byte	.LASF19
- 2370 0019 00000000 		.4byte	.Ldebug_line0
- 2371 001d 02       		.uleb128 0x2
- 2372 001e 01       		.byte	0x1
- 2373 001f 06       		.byte	0x6
- 2374 0020 D8010000 		.4byte	.LASF0
- 2375 0024 03       		.uleb128 0x3
- 2376 0025 00000000 		.4byte	.LASF9
- 2377 0029 01       		.byte	0x1
- 2378 002a 1D       		.byte	0x1d
- 2379 002b 2F000000 		.4byte	0x2f
- 2380 002f 02       		.uleb128 0x2
- 2381 0030 01       		.byte	0x1
- 2382 0031 08       		.byte	0x8
- 2383 0032 16000000 		.4byte	.LASF1
- 2384 0036 02       		.uleb128 0x2
- 2385 0037 02       		.byte	0x2
- 2386 0038 05       		.byte	0x5
- 2387 0039 C5010000 		.4byte	.LASF2
- 2388 003d 02       		.uleb128 0x2
- 2389 003e 02       		.byte	0x2
- 2390 003f 07       		.byte	0x7
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccs4YSiA.s 			page 43
+ 2338 0905 00       		.byte	0
+ 2339 0906 02       		.byte	2
+ 2340 0907 28       		.byte	40
+ 2341 0908 04       		.byte	4
+ 2342 0909 04       		.byte	4
+ 2343 090a 04       		.byte	4
+ 2344 090b 04       		.byte	4
+ 2345 090c 22       		.byte	34
+ 2346 090d 22       		.byte	34
+ 2347 090e 00       		.byte	0
+ 2348 090f 01       		.byte	1
+ 2349 0910 00       		.byte	0
+ 2350 0911 00       		.byte	0
+ 2351 0912 C0       		.byte	-64
+ 2352 0913 00       		.byte	0
+ 2353 0914 40       		.byte	64
+ 2354 0915 01       		.byte	1
+ 2355 0916 10       		.byte	16
+ 2356 0917 11       		.byte	17
+ 2357 0918 C0       		.byte	-64
+ 2358 0919 01       		.byte	1
+ 2359 091a 00       		.byte	0
+ 2360 091b 11       		.byte	17
+ 2361 091c 40       		.byte	64
+ 2362 091d 01       		.byte	1
+ 2363 091e 40       		.byte	64
+ 2364 091f 01       		.byte	1
+ 2365 0920 00       		.byte	0
+ 2366 0921 00       		.byte	0
+ 2367 0922 00       		.byte	0
+ 2368 0923 00       		.byte	0
+ 2369 0924 00       		.byte	0
+ 2370 0925 00       		.byte	0
+ 2371 0926 00       		.byte	0
+ 2372 0927 00       		.byte	0
+ 2373 0928 00       		.byte	0
+ 2374 0929 00       		.byte	0
+ 2375 092a 00       		.byte	0
+ 2376 092b 00       		.byte	0
+ 2377 092c 00       		.byte	0
+ 2378 092d 00       		.byte	0
+ 2379 092e 00       		.byte	0
+ 2380 092f 00       		.byte	0
+ 2381 0930 04       		.byte	4
+ 2382 0931 02       		.byte	2
+ 2383 0932 00       		.byte	0
+ 2384 0933 00       		.byte	0
+ 2385 0934 07       		.byte	7
+ 2386 0935 18       		.byte	24
+ 2387 0936 38       		.byte	56
+ 2388 0937 02       		.byte	2
+ 2389 0938 60       		.byte	96
+ 2390 0939 02       		.byte	2
+ 2391 093a 00       		.byte	0
+ 2392 093b 18       		.byte	24
+ 2393 093c 84       		.byte	-124
+ 2394 093d 00       		.byte	0
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 43
 
 
- 2391 0040 C4000000 		.4byte	.LASF3
- 2392 0044 02       		.uleb128 0x2
- 2393 0045 04       		.byte	0x4
- 2394 0046 05       		.byte	0x5
- 2395 0047 CF010000 		.4byte	.LASF4
- 2396 004b 02       		.uleb128 0x2
- 2397 004c 04       		.byte	0x4
- 2398 004d 07       		.byte	0x7
- 2399 004e B2000000 		.4byte	.LASF5
- 2400 0052 02       		.uleb128 0x2
- 2401 0053 08       		.byte	0x8
- 2402 0054 05       		.byte	0x5
- 2403 0055 B7010000 		.4byte	.LASF6
- 2404 0059 02       		.uleb128 0x2
- 2405 005a 08       		.byte	0x8
- 2406 005b 07       		.byte	0x7
- 2407 005c 06010000 		.4byte	.LASF7
- 2408 0060 04       		.uleb128 0x4
- 2409 0061 04       		.byte	0x4
- 2410 0062 05       		.byte	0x5
- 2411 0063 696E7400 		.ascii	"int\000"
- 2412 0067 02       		.uleb128 0x2
- 2413 0068 04       		.byte	0x4
- 2414 0069 07       		.byte	0x7
- 2415 006a F9000000 		.4byte	.LASF8
- 2416 006e 03       		.uleb128 0x3
- 2417 006f 1D010000 		.4byte	.LASF10
- 2418 0073 02       		.byte	0x2
- 2419 0074 18       		.byte	0x18
- 2420 0075 24000000 		.4byte	0x24
- 2421 0079 05       		.uleb128 0x5
- 2422 007a 91000000 		.4byte	0x91
- 2423 007e 8A000000 		.4byte	0x8a
- 2424 0082 06       		.uleb128 0x6
- 2425 0083 8A000000 		.4byte	0x8a
- 2426 0087 EB08     		.2byte	0x8eb
- 2427 0089 00       		.byte	0
- 2428 008a 02       		.uleb128 0x2
- 2429 008b 04       		.byte	0x4
- 2430 008c 07       		.byte	0x7
- 2431 008d AE010000 		.4byte	.LASF11
- 2432 0091 07       		.uleb128 0x7
- 2433 0092 6E000000 		.4byte	0x6e
- 2434 0096 08       		.uleb128 0x8
- 2435 0097 E7000000 		.4byte	.LASF12
- 2436 009b 03       		.byte	0x3
- 2437 009c 1F       		.byte	0x1f
- 2438 009d A7000000 		.4byte	0xa7
- 2439 00a1 05       		.uleb128 0x5
- 2440 00a2 03       		.byte	0x3
- 2441 00a3 00000000 		.4byte	cy_meta_configecc
- 2442 00a7 07       		.uleb128 0x7
- 2443 00a8 79000000 		.4byte	0x79
- 2444 00ac 05       		.uleb128 0x5
- 2445 00ad 91000000 		.4byte	0x91
- 2446 00b1 BC000000 		.4byte	0xbc
- 2447 00b5 09       		.uleb128 0x9
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccs4YSiA.s 			page 44
+ 2395 093e 00       		.byte	0
+ 2396 093f 20       		.byte	32
+ 2397 0940 01       		.byte	1
+ 2398 0941 18       		.byte	24
+ 2399 0942 00       		.byte	0
+ 2400 0943 02       		.byte	2
+ 2401 0944 56       		.byte	86
+ 2402 0945 1C       		.byte	28
+ 2403 0946 09       		.byte	9
+ 2404 0947 63       		.byte	99
+ 2405 0948 0A       		.byte	10
+ 2406 0949 01       		.byte	1
+ 2407 094a 10       		.byte	16
+ 2408 094b 78       		.byte	120
+ 2409 094c 84       		.byte	-124
+ 2410 094d 18       		.byte	24
+ 2411 094e 00       		.byte	0
+ 2412 094f 00       		.byte	0
+ 2413 0950 04       		.byte	4
+ 2414 0951 1A       		.byte	26
+ 2415 0952 80       		.byte	-128
+ 2416 0953 00       		.byte	0
+ 2417 0954 80       		.byte	-128
+ 2418 0955 00       		.byte	0
+ 2419 0956 04       		.byte	4
+ 2420 0957 00       		.byte	0
+ 2421 0958 84       		.byte	-124
+ 2422 0959 53       		.byte	83
+ 2423 095a 00       		.byte	0
+ 2424 095b 04       		.byte	4
+ 2425 095c 00       		.byte	0
+ 2426 095d 1A       		.byte	26
+ 2427 095e 00       		.byte	0
+ 2428 095f 00       		.byte	0
+ 2429 0960 7F       		.byte	127
+ 2430 0961 00       		.byte	0
+ 2431 0962 00       		.byte	0
+ 2432 0963 13       		.byte	19
+ 2433 0964 00       		.byte	0
+ 2434 0965 0F       		.byte	15
+ 2435 0966 80       		.byte	-128
+ 2436 0967 60       		.byte	96
+ 2437 0968 02       		.byte	2
+ 2438 0969 00       		.byte	0
+ 2439 096a 00       		.byte	0
+ 2440 096b 20       		.byte	32
+ 2441 096c 00       		.byte	0
+ 2442 096d 00       		.byte	0
+ 2443 096e 40       		.byte	64
+ 2444 096f 00       		.byte	0
+ 2445 0970 46       		.byte	70
+ 2446 0971 03       		.byte	3
+ 2447 0972 10       		.byte	16
+ 2448 0973 00       		.byte	0
+ 2449 0974 05       		.byte	5
+ 2450 0975 0E       		.byte	14
+ 2451 0976 FD       		.byte	-3
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 44
 
 
- 2448 00b6 8A000000 		.4byte	0x8a
- 2449 00ba 03       		.byte	0x3
- 2450 00bb 00       		.byte	0
- 2451 00bc 0A       		.uleb128 0xa
- 2452 00bd D7000000 		.4byte	.LASF13
- 2453 00c1 03       		.byte	0x3
- 2454 00c2 4A01     		.2byte	0x14a
- 2455 00c4 CE000000 		.4byte	0xce
- 2456 00c8 05       		.uleb128 0x5
- 2457 00c9 03       		.byte	0x3
- 2458 00ca 00000000 		.4byte	cy_meta_custnvl
- 2459 00ce 07       		.uleb128 0x7
- 2460 00cf AC000000 		.4byte	0xac
- 2461 00d3 0A       		.uleb128 0xa
- 2462 00d4 A0010000 		.4byte	.LASF14
- 2463 00d8 03       		.byte	0x3
- 2464 00d9 5801     		.2byte	0x158
- 2465 00db E5000000 		.4byte	0xe5
- 2466 00df 05       		.uleb128 0x5
- 2467 00e0 03       		.byte	0x3
- 2468 00e1 00000000 		.4byte	cy_meta_wonvl
- 2469 00e5 07       		.uleb128 0x7
- 2470 00e6 AC000000 		.4byte	0xac
- 2471 00ea 05       		.uleb128 0x5
- 2472 00eb 91000000 		.4byte	0x91
- 2473 00ef FA000000 		.4byte	0xfa
- 2474 00f3 09       		.uleb128 0x9
- 2475 00f4 8A000000 		.4byte	0x8a
- 2476 00f8 FF       		.byte	0xff
- 2477 00f9 00       		.byte	0
- 2478 00fa 0A       		.uleb128 0xa
- 2479 00fb 8B010000 		.4byte	.LASF15
- 2480 00ff 03       		.byte	0x3
- 2481 0100 6601     		.2byte	0x166
- 2482 0102 0C010000 		.4byte	0x10c
- 2483 0106 05       		.uleb128 0x5
- 2484 0107 03       		.byte	0x3
- 2485 0108 00000000 		.4byte	cy_meta_flashprotect
- 2486 010c 07       		.uleb128 0x7
- 2487 010d EA000000 		.4byte	0xea
- 2488 0111 05       		.uleb128 0x5
- 2489 0112 91000000 		.4byte	0x91
- 2490 0116 21010000 		.4byte	0x121
- 2491 011a 09       		.uleb128 0x9
- 2492 011b 8A000000 		.4byte	0x8a
- 2493 011f 0B       		.byte	0xb
- 2494 0120 00       		.byte	0
- 2495 0121 0A       		.uleb128 0xa
- 2496 0122 0A000000 		.4byte	.LASF16
- 2497 0126 03       		.byte	0x3
- 2498 0127 9301     		.2byte	0x193
- 2499 0129 33010000 		.4byte	0x133
- 2500 012d 05       		.uleb128 0x5
- 2501 012e 03       		.byte	0x3
- 2502 012f 00000000 		.4byte	cy_metadata
- 2503 0133 07       		.uleb128 0x7
- 2504 0134 11010000 		.4byte	0x111
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccs4YSiA.s 			page 45
+ 2452 0977 CB       		.byte	-53
+ 2453 0978 3D       		.byte	61
+ 2454 0979 FF       		.byte	-1
+ 2455 097a FF       		.byte	-1
+ 2456 097b FF       		.byte	-1
+ 2457 097c 22       		.byte	34
+ 2458 097d 00       		.byte	0
+ 2459 097e F0       		.byte	-16
+ 2460 097f 08       		.byte	8
+ 2461 0980 04       		.byte	4
+ 2462 0981 00       		.byte	0
+ 2463 0982 00       		.byte	0
+ 2464 0983 00       		.byte	0
+ 2465 0984 00       		.byte	0
+ 2466 0985 00       		.byte	0
+ 2467 0986 02       		.byte	2
+ 2468 0987 28       		.byte	40
+ 2469 0988 04       		.byte	4
+ 2470 0989 04       		.byte	4
+ 2471 098a 04       		.byte	4
+ 2472 098b 04       		.byte	4
+ 2473 098c 11       		.byte	17
+ 2474 098d 11       		.byte	17
+ 2475 098e 00       		.byte	0
+ 2476 098f 01       		.byte	1
+ 2477 0990 00       		.byte	0
+ 2478 0991 00       		.byte	0
+ 2479 0992 C0       		.byte	-64
+ 2480 0993 00       		.byte	0
+ 2481 0994 40       		.byte	64
+ 2482 0995 01       		.byte	1
+ 2483 0996 10       		.byte	16
+ 2484 0997 11       		.byte	17
+ 2485 0998 C0       		.byte	-64
+ 2486 0999 01       		.byte	1
+ 2487 099a 00       		.byte	0
+ 2488 099b 11       		.byte	17
+ 2489 099c 40       		.byte	64
+ 2490 099d 01       		.byte	1
+ 2491 099e 40       		.byte	64
+ 2492 099f 01       		.byte	1
+ 2493 09a0 00       		.byte	0
+ 2494 09a1 00       		.byte	0
+ 2495 09a2 00       		.byte	0
+ 2496 09a3 00       		.byte	0
+ 2497 09a4 00       		.byte	0
+ 2498 09a5 00       		.byte	0
+ 2499 09a6 00       		.byte	0
+ 2500 09a7 00       		.byte	0
+ 2501 09a8 00       		.byte	0
+ 2502 09a9 00       		.byte	0
+ 2503 09aa 00       		.byte	0
+ 2504 09ab 00       		.byte	0
+ 2505 09ac 00       		.byte	0
+ 2506 09ad 00       		.byte	0
+ 2507 09ae 00       		.byte	0
+ 2508 09af 00       		.byte	0
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 45
 
 
- 2505 0138 00       		.byte	0
- 2506              		.section	.debug_abbrev,"",%progbits
- 2507              	.Ldebug_abbrev0:
- 2508 0000 01       		.uleb128 0x1
- 2509 0001 11       		.uleb128 0x11
- 2510 0002 01       		.byte	0x1
- 2511 0003 25       		.uleb128 0x25
- 2512 0004 0E       		.uleb128 0xe
- 2513 0005 13       		.uleb128 0x13
- 2514 0006 0B       		.uleb128 0xb
- 2515 0007 03       		.uleb128 0x3
- 2516 0008 0E       		.uleb128 0xe
- 2517 0009 1B       		.uleb128 0x1b
- 2518 000a 0E       		.uleb128 0xe
- 2519 000b 10       		.uleb128 0x10
- 2520 000c 17       		.uleb128 0x17
- 2521 000d 00       		.byte	0
- 2522 000e 00       		.byte	0
- 2523 000f 02       		.uleb128 0x2
- 2524 0010 24       		.uleb128 0x24
- 2525 0011 00       		.byte	0
- 2526 0012 0B       		.uleb128 0xb
- 2527 0013 0B       		.uleb128 0xb
- 2528 0014 3E       		.uleb128 0x3e
- 2529 0015 0B       		.uleb128 0xb
- 2530 0016 03       		.uleb128 0x3
- 2531 0017 0E       		.uleb128 0xe
- 2532 0018 00       		.byte	0
- 2533 0019 00       		.byte	0
- 2534 001a 03       		.uleb128 0x3
- 2535 001b 16       		.uleb128 0x16
- 2536 001c 00       		.byte	0
- 2537 001d 03       		.uleb128 0x3
- 2538 001e 0E       		.uleb128 0xe
- 2539 001f 3A       		.uleb128 0x3a
- 2540 0020 0B       		.uleb128 0xb
- 2541 0021 3B       		.uleb128 0x3b
- 2542 0022 0B       		.uleb128 0xb
- 2543 0023 49       		.uleb128 0x49
- 2544 0024 13       		.uleb128 0x13
- 2545 0025 00       		.byte	0
- 2546 0026 00       		.byte	0
- 2547 0027 04       		.uleb128 0x4
- 2548 0028 24       		.uleb128 0x24
- 2549 0029 00       		.byte	0
- 2550 002a 0B       		.uleb128 0xb
- 2551 002b 0B       		.uleb128 0xb
- 2552 002c 3E       		.uleb128 0x3e
- 2553 002d 0B       		.uleb128 0xb
- 2554 002e 03       		.uleb128 0x3
- 2555 002f 08       		.uleb128 0x8
- 2556 0030 00       		.byte	0
- 2557 0031 00       		.byte	0
- 2558 0032 05       		.uleb128 0x5
- 2559 0033 01       		.uleb128 0x1
- 2560 0034 01       		.byte	0x1
- 2561 0035 49       		.uleb128 0x49
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccs4YSiA.s 			page 46
+ 2509 09b0 00       		.byte	0
+ 2510 09b1 60       		.byte	96
+ 2511 09b2 60       		.byte	96
+ 2512 09b3 00       		.byte	0
+ 2513 09b4 60       		.byte	96
+ 2514 09b5 00       		.byte	0
+ 2515 09b6 00       		.byte	0
+ 2516 09b7 00       		.byte	0
+ 2517 09b8 84       		.byte	-124
+ 2518 09b9 00       		.byte	0
+ 2519 09ba 50       		.byte	80
+ 2520 09bb 8C       		.byte	-116
+ 2521 09bc 8C       		.byte	-116
+ 2522 09bd 00       		.byte	0
+ 2523 09be 8C       		.byte	-116
+ 2524 09bf 00       		.byte	0
+ 2525 09c0 00       		.byte	0
+ 2526 09c1 00       		.byte	0
+ 2527 09c2 00       		.byte	0
+ 2528 09c3 00       		.byte	0
+ 2529 09c4 80       		.byte	-128
+ 2530 09c5 00       		.byte	0
+ 2531 09c6 40       		.byte	64
+ 2532 09c7 8B       		.byte	-117
+ 2533 09c8 8B       		.byte	-117
+ 2534 09c9 00       		.byte	0
+ 2535 09ca 00       		.byte	0
+ 2536 09cb 00       		.byte	0
+ 2537 09cc 00       		.byte	0
+ 2538 09cd 00       		.byte	0
+ 2539 09ce 00       		.byte	0
+ 2540 09cf 00       		.byte	0
+ 2541 09d0 10       		.byte	16
+ 2542 09d1 00       		.byte	0
+ 2543 09d2 01       		.byte	1
+ 2544 09d3 16       		.byte	22
+ 2545 09d4 12       		.byte	18
+ 2546 09d5 00       		.byte	0
+ 2547 09d6 02       		.byte	2
+ 2548 09d7 00       		.byte	0
+ 2549 09d8 00       		.byte	0
+ 2550 09d9 00       		.byte	0
+ 2551 09da 00       		.byte	0
+ 2552 09db 00       		.byte	0
+ 2553 09dc 00       		.byte	0
+ 2554 09dd 01       		.byte	1
+ 2555 09de 01       		.byte	1
+ 2556 09df 00       		.byte	0
+ 2557 09e0 00       		.byte	0
+ 2558 09e1 00       		.byte	0
+ 2559 09e2 10       		.byte	16
+ 2560 09e3 00       		.byte	0
+ 2561 09e4 25       		.byte	37
+ 2562 09e5 00       		.byte	0
+ 2563 09e6 18       		.byte	24
+ 2564 09e7 01       		.byte	1
+ 2565              		.section	.cywolatch,"a",%progbits
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 46
 
 
- 2562 0036 13       		.uleb128 0x13
- 2563 0037 01       		.uleb128 0x1
- 2564 0038 13       		.uleb128 0x13
- 2565 0039 00       		.byte	0
- 2566 003a 00       		.byte	0
- 2567 003b 06       		.uleb128 0x6
- 2568 003c 21       		.uleb128 0x21
- 2569 003d 00       		.byte	0
- 2570 003e 49       		.uleb128 0x49
- 2571 003f 13       		.uleb128 0x13
- 2572 0040 2F       		.uleb128 0x2f
- 2573 0041 05       		.uleb128 0x5
- 2574 0042 00       		.byte	0
- 2575 0043 00       		.byte	0
- 2576 0044 07       		.uleb128 0x7
- 2577 0045 26       		.uleb128 0x26
- 2578 0046 00       		.byte	0
- 2579 0047 49       		.uleb128 0x49
- 2580 0048 13       		.uleb128 0x13
- 2581 0049 00       		.byte	0
- 2582 004a 00       		.byte	0
- 2583 004b 08       		.uleb128 0x8
- 2584 004c 34       		.uleb128 0x34
- 2585 004d 00       		.byte	0
- 2586 004e 03       		.uleb128 0x3
- 2587 004f 0E       		.uleb128 0xe
- 2588 0050 3A       		.uleb128 0x3a
- 2589 0051 0B       		.uleb128 0xb
- 2590 0052 3B       		.uleb128 0x3b
- 2591 0053 0B       		.uleb128 0xb
- 2592 0054 49       		.uleb128 0x49
- 2593 0055 13       		.uleb128 0x13
- 2594 0056 3F       		.uleb128 0x3f
- 2595 0057 19       		.uleb128 0x19
- 2596 0058 02       		.uleb128 0x2
- 2597 0059 18       		.uleb128 0x18
- 2598 005a 00       		.byte	0
- 2599 005b 00       		.byte	0
- 2600 005c 09       		.uleb128 0x9
- 2601 005d 21       		.uleb128 0x21
- 2602 005e 00       		.byte	0
- 2603 005f 49       		.uleb128 0x49
- 2604 0060 13       		.uleb128 0x13
- 2605 0061 2F       		.uleb128 0x2f
- 2606 0062 0B       		.uleb128 0xb
- 2607 0063 00       		.byte	0
- 2608 0064 00       		.byte	0
- 2609 0065 0A       		.uleb128 0xa
- 2610 0066 34       		.uleb128 0x34
- 2611 0067 00       		.byte	0
- 2612 0068 03       		.uleb128 0x3
- 2613 0069 0E       		.uleb128 0xe
- 2614 006a 3A       		.uleb128 0x3a
- 2615 006b 0B       		.uleb128 0xb
- 2616 006c 3B       		.uleb128 0x3b
- 2617 006d 05       		.uleb128 0x5
- 2618 006e 49       		.uleb128 0x49
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccs4YSiA.s 			page 47
+ 2566              		.align	2
+ 2567              		.type	cy_meta_wonvl, %object
+ 2568              		.size	cy_meta_wonvl, 4
+ 2569              	cy_meta_wonvl:
+ 2570 0000 BC       		.byte	-68
+ 2571 0001 90       		.byte	-112
+ 2572 0002 AC       		.byte	-84
+ 2573 0003 AF       		.byte	-81
+ 2574              		.section	.cycustnvl,"a",%progbits
+ 2575              		.align	2
+ 2576              		.type	cy_meta_custnvl, %object
+ 2577              		.size	cy_meta_custnvl, 4
+ 2578              	cy_meta_custnvl:
+ 2579 0000 00       		.byte	0
+ 2580 0001 00       		.byte	0
+ 2581 0002 40       		.byte	64
+ 2582 0003 05       		.byte	5
+ 2583              		.section	.cymeta,"a",%progbits
+ 2584              		.align	2
+ 2585              		.type	cy_metadata, %object
+ 2586              		.size	cy_metadata, 12
+ 2587              	cy_metadata:
+ 2588 0000 00       		.byte	0
+ 2589 0001 01       		.byte	1
+ 2590 0002 2E       		.byte	46
+ 2591 0003 16       		.byte	22
+ 2592 0004 10       		.byte	16
+ 2593 0005 69       		.byte	105
+ 2594 0006 00       		.byte	0
+ 2595 0007 01       		.byte	1
+ 2596 0008 00       		.byte	0
+ 2597 0009 00       		.byte	0
+ 2598 000a 00       		.byte	0
+ 2599 000b 00       		.byte	0
+ 2600              		.section	.cyflashprotect,"a",%progbits
+ 2601              		.align	2
+ 2602              		.type	cy_meta_flashprotect, %object
+ 2603              		.size	cy_meta_flashprotect, 256
+ 2604              	cy_meta_flashprotect:
+ 2605 0000 00000000 		.space	256
+ 2605      00000000 
+ 2605      00000000 
+ 2605      00000000 
+ 2605      00000000 
+ 2606              		.text
+ 2607              	.Letext0:
+ 2608              		.file 1 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
+ 2609              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.3\\psoc creator\\import\\gnu\\arm\\5.4.
+ 2610              		.file 3 "Generated_Source\\PSoC5\\cymetadata.c"
+ 2611              		.section	.debug_info,"",%progbits
+ 2612              	.Ldebug_info0:
+ 2613 0000 35010000 		.4byte	0x135
+ 2614 0004 0400     		.2byte	0x4
+ 2615 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 2616 000a 04       		.byte	0x4
+ 2617 000b 01       		.uleb128 0x1
+ 2618 000c 24000000 		.4byte	.LASF17
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 47
 
 
- 2619 006f 13       		.uleb128 0x13
- 2620 0070 3F       		.uleb128 0x3f
- 2621 0071 19       		.uleb128 0x19
- 2622 0072 02       		.uleb128 0x2
- 2623 0073 18       		.uleb128 0x18
- 2624 0074 00       		.byte	0
- 2625 0075 00       		.byte	0
- 2626 0076 00       		.byte	0
- 2627              		.section	.debug_aranges,"",%progbits
- 2628 0000 14000000 		.4byte	0x14
- 2629 0004 0200     		.2byte	0x2
- 2630 0006 00000000 		.4byte	.Ldebug_info0
- 2631 000a 04       		.byte	0x4
- 2632 000b 00       		.byte	0
- 2633 000c 0000     		.2byte	0
- 2634 000e 0000     		.2byte	0
- 2635 0010 00000000 		.4byte	0
- 2636 0014 00000000 		.4byte	0
- 2637              		.section	.debug_line,"",%progbits
- 2638              	.Ldebug_line0:
- 2639 0000 3D010000 		.section	.debug_str,"MS",%progbits,1
- 2639      02003701 
- 2639      00000201 
- 2639      FB0E0D00 
- 2639      01010101 
- 2640              	.LASF9:
- 2641 0000 5F5F7569 		.ascii	"__uint8_t\000"
- 2641      6E74385F 
- 2641      7400
- 2642              	.LASF16:
- 2643 000a 63795F6D 		.ascii	"cy_metadata\000"
- 2643      65746164 
- 2643      61746100 
- 2644              	.LASF1:
- 2645 0016 756E7369 		.ascii	"unsigned char\000"
- 2645      676E6564 
- 2645      20636861 
- 2645      7200
- 2646              	.LASF17:
- 2647 0024 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 2647      43313120 
- 2647      352E342E 
- 2647      31203230 
- 2647      31363036 
- 2648 0057 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 2648      20726576 
- 2648      6973696F 
- 2648      6E203233 
- 2648      37373135 
- 2649 008a 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 2649      66756E63 
- 2649      74696F6E 
- 2649      2D736563 
- 2649      74696F6E 
- 2650              	.LASF5:
- 2651 00b2 6C6F6E67 		.ascii	"long unsigned int\000"
- 2651      20756E73 
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccs4YSiA.s 			page 48
+ 2619 0010 0C       		.byte	0xc
+ 2620 0011 E4010000 		.4byte	.LASF18
+ 2621 0015 25010000 		.4byte	.LASF19
+ 2622 0019 00000000 		.4byte	.Ldebug_line0
+ 2623 001d 02       		.uleb128 0x2
+ 2624 001e 01       		.byte	0x1
+ 2625 001f 06       		.byte	0x6
+ 2626 0020 D8010000 		.4byte	.LASF0
+ 2627 0024 03       		.uleb128 0x3
+ 2628 0025 00000000 		.4byte	.LASF9
+ 2629 0029 01       		.byte	0x1
+ 2630 002a 1D       		.byte	0x1d
+ 2631 002b 2F000000 		.4byte	0x2f
+ 2632 002f 02       		.uleb128 0x2
+ 2633 0030 01       		.byte	0x1
+ 2634 0031 08       		.byte	0x8
+ 2635 0032 16000000 		.4byte	.LASF1
+ 2636 0036 02       		.uleb128 0x2
+ 2637 0037 02       		.byte	0x2
+ 2638 0038 05       		.byte	0x5
+ 2639 0039 C5010000 		.4byte	.LASF2
+ 2640 003d 02       		.uleb128 0x2
+ 2641 003e 02       		.byte	0x2
+ 2642 003f 07       		.byte	0x7
+ 2643 0040 C4000000 		.4byte	.LASF3
+ 2644 0044 02       		.uleb128 0x2
+ 2645 0045 04       		.byte	0x4
+ 2646 0046 05       		.byte	0x5
+ 2647 0047 CF010000 		.4byte	.LASF4
+ 2648 004b 02       		.uleb128 0x2
+ 2649 004c 04       		.byte	0x4
+ 2650 004d 07       		.byte	0x7
+ 2651 004e B2000000 		.4byte	.LASF5
+ 2652 0052 02       		.uleb128 0x2
+ 2653 0053 08       		.byte	0x8
+ 2654 0054 05       		.byte	0x5
+ 2655 0055 B7010000 		.4byte	.LASF6
+ 2656 0059 02       		.uleb128 0x2
+ 2657 005a 08       		.byte	0x8
+ 2658 005b 07       		.byte	0x7
+ 2659 005c 06010000 		.4byte	.LASF7
+ 2660 0060 04       		.uleb128 0x4
+ 2661 0061 04       		.byte	0x4
+ 2662 0062 05       		.byte	0x5
+ 2663 0063 696E7400 		.ascii	"int\000"
+ 2664 0067 02       		.uleb128 0x2
+ 2665 0068 04       		.byte	0x4
+ 2666 0069 07       		.byte	0x7
+ 2667 006a F9000000 		.4byte	.LASF8
+ 2668 006e 03       		.uleb128 0x3
+ 2669 006f 1D010000 		.4byte	.LASF10
+ 2670 0073 02       		.byte	0x2
+ 2671 0074 18       		.byte	0x18
+ 2672 0075 24000000 		.4byte	0x24
+ 2673 0079 05       		.uleb128 0x5
+ 2674 007a 91000000 		.4byte	0x91
+ 2675 007e 8A000000 		.4byte	0x8a
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 48
 
 
- 2651      69676E65 
- 2651      6420696E 
- 2651      7400
- 2652              	.LASF3:
- 2653 00c4 73686F72 		.ascii	"short unsigned int\000"
- 2653      7420756E 
- 2653      7369676E 
- 2653      65642069 
- 2653      6E7400
- 2654              	.LASF13:
- 2655 00d7 63795F6D 		.ascii	"cy_meta_custnvl\000"
- 2655      6574615F 
- 2655      63757374 
- 2655      6E766C00 
- 2656              	.LASF12:
- 2657 00e7 63795F6D 		.ascii	"cy_meta_configecc\000"
- 2657      6574615F 
- 2657      636F6E66 
- 2657      69676563 
- 2657      6300
- 2658              	.LASF8:
- 2659 00f9 756E7369 		.ascii	"unsigned int\000"
- 2659      676E6564 
- 2659      20696E74 
- 2659      00
- 2660              	.LASF7:
- 2661 0106 6C6F6E67 		.ascii	"long long unsigned int\000"
- 2661      206C6F6E 
- 2661      6720756E 
- 2661      7369676E 
- 2661      65642069 
- 2662              	.LASF10:
- 2663 011d 75696E74 		.ascii	"uint8_t\000"
- 2663      385F7400 
- 2664              	.LASF19:
- 2665 0125 433A5C55 		.ascii	"C:\\Users\\gaeta\\Documents\\PSoC Creator\\PsoC_Fin"
- 2665      73657273 
- 2665      5C676165 
- 2665      74615C44 
- 2665      6F63756D 
- 2666 0153 616C5F50 		.ascii	"al_Project_1_03\\FIORANI_GARGIULO_IANNUZZI_Project."
- 2666      726F6A65 
- 2666      63745F31 
- 2666      5F30335C 
- 2666      46494F52 
- 2667 0185 63796473 		.ascii	"cydsn\000"
- 2667      6E00
- 2668              	.LASF15:
- 2669 018b 63795F6D 		.ascii	"cy_meta_flashprotect\000"
- 2669      6574615F 
- 2669      666C6173 
- 2669      6870726F 
- 2669      74656374 
- 2670              	.LASF14:
- 2671 01a0 63795F6D 		.ascii	"cy_meta_wonvl\000"
- 2671      6574615F 
- 2671      776F6E76 
-ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccs4YSiA.s 			page 49
+ 2676 0082 06       		.uleb128 0x6
+ 2677 0083 8A000000 		.4byte	0x8a
+ 2678 0087 E709     		.2byte	0x9e7
+ 2679 0089 00       		.byte	0
+ 2680 008a 02       		.uleb128 0x2
+ 2681 008b 04       		.byte	0x4
+ 2682 008c 07       		.byte	0x7
+ 2683 008d AE010000 		.4byte	.LASF11
+ 2684 0091 07       		.uleb128 0x7
+ 2685 0092 6E000000 		.4byte	0x6e
+ 2686 0096 08       		.uleb128 0x8
+ 2687 0097 E7000000 		.4byte	.LASF12
+ 2688 009b 03       		.byte	0x3
+ 2689 009c 1F       		.byte	0x1f
+ 2690 009d A7000000 		.4byte	0xa7
+ 2691 00a1 05       		.uleb128 0x5
+ 2692 00a2 03       		.byte	0x3
+ 2693 00a3 00000000 		.4byte	cy_meta_configecc
+ 2694 00a7 07       		.uleb128 0x7
+ 2695 00a8 79000000 		.4byte	0x79
+ 2696 00ac 05       		.uleb128 0x5
+ 2697 00ad 91000000 		.4byte	0x91
+ 2698 00b1 BC000000 		.4byte	0xbc
+ 2699 00b5 09       		.uleb128 0x9
+ 2700 00b6 8A000000 		.4byte	0x8a
+ 2701 00ba 03       		.byte	0x3
+ 2702 00bb 00       		.byte	0
+ 2703 00bc 0A       		.uleb128 0xa
+ 2704 00bd D7000000 		.4byte	.LASF13
+ 2705 00c1 03       		.byte	0x3
+ 2706 00c2 6901     		.2byte	0x169
+ 2707 00c4 CE000000 		.4byte	0xce
+ 2708 00c8 05       		.uleb128 0x5
+ 2709 00c9 03       		.byte	0x3
+ 2710 00ca 00000000 		.4byte	cy_meta_custnvl
+ 2711 00ce 07       		.uleb128 0x7
+ 2712 00cf AC000000 		.4byte	0xac
+ 2713 00d3 0A       		.uleb128 0xa
+ 2714 00d4 A0010000 		.4byte	.LASF14
+ 2715 00d8 03       		.byte	0x3
+ 2716 00d9 7701     		.2byte	0x177
+ 2717 00db E5000000 		.4byte	0xe5
+ 2718 00df 05       		.uleb128 0x5
+ 2719 00e0 03       		.byte	0x3
+ 2720 00e1 00000000 		.4byte	cy_meta_wonvl
+ 2721 00e5 07       		.uleb128 0x7
+ 2722 00e6 AC000000 		.4byte	0xac
+ 2723 00ea 05       		.uleb128 0x5
+ 2724 00eb 91000000 		.4byte	0x91
+ 2725 00ef FA000000 		.4byte	0xfa
+ 2726 00f3 09       		.uleb128 0x9
+ 2727 00f4 8A000000 		.4byte	0x8a
+ 2728 00f8 FF       		.byte	0xff
+ 2729 00f9 00       		.byte	0
+ 2730 00fa 0A       		.uleb128 0xa
+ 2731 00fb 8B010000 		.4byte	.LASF15
+ 2732 00ff 03       		.byte	0x3
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 49
 
 
- 2671      6C00
- 2672              	.LASF11:
- 2673 01ae 73697A65 		.ascii	"sizetype\000"
- 2673      74797065 
- 2673      00
- 2674              	.LASF6:
- 2675 01b7 6C6F6E67 		.ascii	"long long int\000"
- 2675      206C6F6E 
- 2675      6720696E 
- 2675      7400
- 2676              	.LASF2:
- 2677 01c5 73686F72 		.ascii	"short int\000"
- 2677      7420696E 
- 2677      7400
- 2678              	.LASF4:
- 2679 01cf 6C6F6E67 		.ascii	"long int\000"
- 2679      20696E74 
- 2679      00
- 2680              	.LASF0:
- 2681 01d8 7369676E 		.ascii	"signed char\000"
- 2681      65642063 
- 2681      68617200 
- 2682              	.LASF18:
- 2683 01e4 47656E65 		.ascii	"Generated_Source\\PSoC5\\cymetadata.c\000"
- 2683      72617465 
- 2683      645F536F 
- 2683      75726365 
- 2683      5C50536F 
- 2684              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 2733 0100 8501     		.2byte	0x185
+ 2734 0102 0C010000 		.4byte	0x10c
+ 2735 0106 05       		.uleb128 0x5
+ 2736 0107 03       		.byte	0x3
+ 2737 0108 00000000 		.4byte	cy_meta_flashprotect
+ 2738 010c 07       		.uleb128 0x7
+ 2739 010d EA000000 		.4byte	0xea
+ 2740 0111 05       		.uleb128 0x5
+ 2741 0112 91000000 		.4byte	0x91
+ 2742 0116 21010000 		.4byte	0x121
+ 2743 011a 09       		.uleb128 0x9
+ 2744 011b 8A000000 		.4byte	0x8a
+ 2745 011f 0B       		.byte	0xb
+ 2746 0120 00       		.byte	0
+ 2747 0121 0A       		.uleb128 0xa
+ 2748 0122 0A000000 		.4byte	.LASF16
+ 2749 0126 03       		.byte	0x3
+ 2750 0127 B201     		.2byte	0x1b2
+ 2751 0129 33010000 		.4byte	0x133
+ 2752 012d 05       		.uleb128 0x5
+ 2753 012e 03       		.byte	0x3
+ 2754 012f 00000000 		.4byte	cy_metadata
+ 2755 0133 07       		.uleb128 0x7
+ 2756 0134 11010000 		.4byte	0x111
+ 2757 0138 00       		.byte	0
+ 2758              		.section	.debug_abbrev,"",%progbits
+ 2759              	.Ldebug_abbrev0:
+ 2760 0000 01       		.uleb128 0x1
+ 2761 0001 11       		.uleb128 0x11
+ 2762 0002 01       		.byte	0x1
+ 2763 0003 25       		.uleb128 0x25
+ 2764 0004 0E       		.uleb128 0xe
+ 2765 0005 13       		.uleb128 0x13
+ 2766 0006 0B       		.uleb128 0xb
+ 2767 0007 03       		.uleb128 0x3
+ 2768 0008 0E       		.uleb128 0xe
+ 2769 0009 1B       		.uleb128 0x1b
+ 2770 000a 0E       		.uleb128 0xe
+ 2771 000b 10       		.uleb128 0x10
+ 2772 000c 17       		.uleb128 0x17
+ 2773 000d 00       		.byte	0
+ 2774 000e 00       		.byte	0
+ 2775 000f 02       		.uleb128 0x2
+ 2776 0010 24       		.uleb128 0x24
+ 2777 0011 00       		.byte	0
+ 2778 0012 0B       		.uleb128 0xb
+ 2779 0013 0B       		.uleb128 0xb
+ 2780 0014 3E       		.uleb128 0x3e
+ 2781 0015 0B       		.uleb128 0xb
+ 2782 0016 03       		.uleb128 0x3
+ 2783 0017 0E       		.uleb128 0xe
+ 2784 0018 00       		.byte	0
+ 2785 0019 00       		.byte	0
+ 2786 001a 03       		.uleb128 0x3
+ 2787 001b 16       		.uleb128 0x16
+ 2788 001c 00       		.byte	0
+ 2789 001d 03       		.uleb128 0x3
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 50
+
+
+ 2790 001e 0E       		.uleb128 0xe
+ 2791 001f 3A       		.uleb128 0x3a
+ 2792 0020 0B       		.uleb128 0xb
+ 2793 0021 3B       		.uleb128 0x3b
+ 2794 0022 0B       		.uleb128 0xb
+ 2795 0023 49       		.uleb128 0x49
+ 2796 0024 13       		.uleb128 0x13
+ 2797 0025 00       		.byte	0
+ 2798 0026 00       		.byte	0
+ 2799 0027 04       		.uleb128 0x4
+ 2800 0028 24       		.uleb128 0x24
+ 2801 0029 00       		.byte	0
+ 2802 002a 0B       		.uleb128 0xb
+ 2803 002b 0B       		.uleb128 0xb
+ 2804 002c 3E       		.uleb128 0x3e
+ 2805 002d 0B       		.uleb128 0xb
+ 2806 002e 03       		.uleb128 0x3
+ 2807 002f 08       		.uleb128 0x8
+ 2808 0030 00       		.byte	0
+ 2809 0031 00       		.byte	0
+ 2810 0032 05       		.uleb128 0x5
+ 2811 0033 01       		.uleb128 0x1
+ 2812 0034 01       		.byte	0x1
+ 2813 0035 49       		.uleb128 0x49
+ 2814 0036 13       		.uleb128 0x13
+ 2815 0037 01       		.uleb128 0x1
+ 2816 0038 13       		.uleb128 0x13
+ 2817 0039 00       		.byte	0
+ 2818 003a 00       		.byte	0
+ 2819 003b 06       		.uleb128 0x6
+ 2820 003c 21       		.uleb128 0x21
+ 2821 003d 00       		.byte	0
+ 2822 003e 49       		.uleb128 0x49
+ 2823 003f 13       		.uleb128 0x13
+ 2824 0040 2F       		.uleb128 0x2f
+ 2825 0041 05       		.uleb128 0x5
+ 2826 0042 00       		.byte	0
+ 2827 0043 00       		.byte	0
+ 2828 0044 07       		.uleb128 0x7
+ 2829 0045 26       		.uleb128 0x26
+ 2830 0046 00       		.byte	0
+ 2831 0047 49       		.uleb128 0x49
+ 2832 0048 13       		.uleb128 0x13
+ 2833 0049 00       		.byte	0
+ 2834 004a 00       		.byte	0
+ 2835 004b 08       		.uleb128 0x8
+ 2836 004c 34       		.uleb128 0x34
+ 2837 004d 00       		.byte	0
+ 2838 004e 03       		.uleb128 0x3
+ 2839 004f 0E       		.uleb128 0xe
+ 2840 0050 3A       		.uleb128 0x3a
+ 2841 0051 0B       		.uleb128 0xb
+ 2842 0052 3B       		.uleb128 0x3b
+ 2843 0053 0B       		.uleb128 0xb
+ 2844 0054 49       		.uleb128 0x49
+ 2845 0055 13       		.uleb128 0x13
+ 2846 0056 3F       		.uleb128 0x3f
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 51
+
+
+ 2847 0057 19       		.uleb128 0x19
+ 2848 0058 02       		.uleb128 0x2
+ 2849 0059 18       		.uleb128 0x18
+ 2850 005a 00       		.byte	0
+ 2851 005b 00       		.byte	0
+ 2852 005c 09       		.uleb128 0x9
+ 2853 005d 21       		.uleb128 0x21
+ 2854 005e 00       		.byte	0
+ 2855 005f 49       		.uleb128 0x49
+ 2856 0060 13       		.uleb128 0x13
+ 2857 0061 2F       		.uleb128 0x2f
+ 2858 0062 0B       		.uleb128 0xb
+ 2859 0063 00       		.byte	0
+ 2860 0064 00       		.byte	0
+ 2861 0065 0A       		.uleb128 0xa
+ 2862 0066 34       		.uleb128 0x34
+ 2863 0067 00       		.byte	0
+ 2864 0068 03       		.uleb128 0x3
+ 2865 0069 0E       		.uleb128 0xe
+ 2866 006a 3A       		.uleb128 0x3a
+ 2867 006b 0B       		.uleb128 0xb
+ 2868 006c 3B       		.uleb128 0x3b
+ 2869 006d 05       		.uleb128 0x5
+ 2870 006e 49       		.uleb128 0x49
+ 2871 006f 13       		.uleb128 0x13
+ 2872 0070 3F       		.uleb128 0x3f
+ 2873 0071 19       		.uleb128 0x19
+ 2874 0072 02       		.uleb128 0x2
+ 2875 0073 18       		.uleb128 0x18
+ 2876 0074 00       		.byte	0
+ 2877 0075 00       		.byte	0
+ 2878 0076 00       		.byte	0
+ 2879              		.section	.debug_aranges,"",%progbits
+ 2880 0000 14000000 		.4byte	0x14
+ 2881 0004 0200     		.2byte	0x2
+ 2882 0006 00000000 		.4byte	.Ldebug_info0
+ 2883 000a 04       		.byte	0x4
+ 2884 000b 00       		.byte	0
+ 2885 000c 0000     		.2byte	0
+ 2886 000e 0000     		.2byte	0
+ 2887 0010 00000000 		.4byte	0
+ 2888 0014 00000000 		.4byte	0
+ 2889              		.section	.debug_line,"",%progbits
+ 2890              	.Ldebug_line0:
+ 2891 0000 3D010000 		.section	.debug_str,"MS",%progbits,1
+ 2891      02003701 
+ 2891      00000201 
+ 2891      FB0E0D00 
+ 2891      01010101 
+ 2892              	.LASF9:
+ 2893 0000 5F5F7569 		.ascii	"__uint8_t\000"
+ 2893      6E74385F 
+ 2893      7400
+ 2894              	.LASF16:
+ 2895 000a 63795F6D 		.ascii	"cy_metadata\000"
+ 2895      65746164 
+ 2895      61746100 
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 52
+
+
+ 2896              	.LASF1:
+ 2897 0016 756E7369 		.ascii	"unsigned char\000"
+ 2897      676E6564 
+ 2897      20636861 
+ 2897      7200
+ 2898              	.LASF17:
+ 2899 0024 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 2899      43313120 
+ 2899      352E342E 
+ 2899      31203230 
+ 2899      31363036 
+ 2900 0057 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 2900      20726576 
+ 2900      6973696F 
+ 2900      6E203233 
+ 2900      37373135 
+ 2901 008a 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 2901      66756E63 
+ 2901      74696F6E 
+ 2901      2D736563 
+ 2901      74696F6E 
+ 2902              	.LASF5:
+ 2903 00b2 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2903      20756E73 
+ 2903      69676E65 
+ 2903      6420696E 
+ 2903      7400
+ 2904              	.LASF3:
+ 2905 00c4 73686F72 		.ascii	"short unsigned int\000"
+ 2905      7420756E 
+ 2905      7369676E 
+ 2905      65642069 
+ 2905      6E7400
+ 2906              	.LASF13:
+ 2907 00d7 63795F6D 		.ascii	"cy_meta_custnvl\000"
+ 2907      6574615F 
+ 2907      63757374 
+ 2907      6E766C00 
+ 2908              	.LASF12:
+ 2909 00e7 63795F6D 		.ascii	"cy_meta_configecc\000"
+ 2909      6574615F 
+ 2909      636F6E66 
+ 2909      69676563 
+ 2909      6300
+ 2910              	.LASF8:
+ 2911 00f9 756E7369 		.ascii	"unsigned int\000"
+ 2911      676E6564 
+ 2911      20696E74 
+ 2911      00
+ 2912              	.LASF7:
+ 2913 0106 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2913      206C6F6E 
+ 2913      6720756E 
+ 2913      7369676E 
+ 2913      65642069 
+ 2914              	.LASF10:
+ 2915 011d 75696E74 		.ascii	"uint8_t\000"
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccjPXsCg.s 			page 53
+
+
+ 2915      385F7400 
+ 2916              	.LASF19:
+ 2917 0125 433A5C55 		.ascii	"C:\\Users\\gaeta\\Documents\\PSoC Creator\\PsoC_Fin"
+ 2917      73657273 
+ 2917      5C676165 
+ 2917      74615C44 
+ 2917      6F63756D 
+ 2918 0153 616C5F50 		.ascii	"al_Project_1_03\\FIORANI_GARGIULO_IANNUZZI_Project."
+ 2918      726F6A65 
+ 2918      63745F31 
+ 2918      5F30335C 
+ 2918      46494F52 
+ 2919 0185 63796473 		.ascii	"cydsn\000"
+ 2919      6E00
+ 2920              	.LASF15:
+ 2921 018b 63795F6D 		.ascii	"cy_meta_flashprotect\000"
+ 2921      6574615F 
+ 2921      666C6173 
+ 2921      6870726F 
+ 2921      74656374 
+ 2922              	.LASF14:
+ 2923 01a0 63795F6D 		.ascii	"cy_meta_wonvl\000"
+ 2923      6574615F 
+ 2923      776F6E76 
+ 2923      6C00
+ 2924              	.LASF11:
+ 2925 01ae 73697A65 		.ascii	"sizetype\000"
+ 2925      74797065 
+ 2925      00
+ 2926              	.LASF6:
+ 2927 01b7 6C6F6E67 		.ascii	"long long int\000"
+ 2927      206C6F6E 
+ 2927      6720696E 
+ 2927      7400
+ 2928              	.LASF2:
+ 2929 01c5 73686F72 		.ascii	"short int\000"
+ 2929      7420696E 
+ 2929      7400
+ 2930              	.LASF4:
+ 2931 01cf 6C6F6E67 		.ascii	"long int\000"
+ 2931      20696E74 
+ 2931      00
+ 2932              	.LASF0:
+ 2933 01d8 7369676E 		.ascii	"signed char\000"
+ 2933      65642063 
+ 2933      68617200 
+ 2934              	.LASF18:
+ 2935 01e4 47656E65 		.ascii	"Generated_Source\\PSoC5\\cymetadata.c\000"
+ 2935      72617465 
+ 2935      645F536F 
+ 2935      75726365 
+ 2935      5C50536F 
+ 2936              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
