@@ -187,6 +187,7 @@ int main(void) {
                 m= 0x00;
                 PacketInEEPROM++;
                 WTM_Full = 0;
+               
             }
             else if(PacketInEEPROM > MAX_PACKET_IN_EEPROM)
             {

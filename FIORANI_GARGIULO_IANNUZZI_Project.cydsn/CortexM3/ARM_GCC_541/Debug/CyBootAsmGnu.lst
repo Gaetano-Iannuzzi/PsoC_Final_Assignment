@@ -12249,10 +12249,10 @@ ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 1
  904              	/* isr_MENU */
  905              	.set isr_MENU__INTC_CLR_EN_REG, CYREG_NVIC_CLRENA0
  906              	.set isr_MENU__INTC_CLR_PD_REG, CYREG_NVIC_CLRPEND0
- 907              	.set isr_MENU__INTC_MASK, 0x20
- 908              	.set isr_MENU__INTC_NUMBER, 5
+ 907              	.set isr_MENU__INTC_MASK, 0x40
+ 908              	.set isr_MENU__INTC_NUMBER, 6
  909              	.set isr_MENU__INTC_PRIOR_NUM, 7
- 910              	.set isr_MENU__INTC_PRIOR_REG, CYREG_NVIC_PRI_5
+ 910              	.set isr_MENU__INTC_PRIOR_REG, CYREG_NVIC_PRI_6
  911              	.set isr_MENU__INTC_SET_EN_REG, CYREG_NVIC_SETENA0
  912              	.set isr_MENU__INTC_SET_PD_REG, CYREG_NVIC_SETPEND0
  913              	
@@ -12377,10 +12377,10 @@ ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 1
  1026              	/* isr_Button */
  1027              	.set isr_Button__INTC_CLR_EN_REG, CYREG_NVIC_CLRENA0
  1028              	.set isr_Button__INTC_CLR_PD_REG, CYREG_NVIC_CLRPEND0
- 1029              	.set isr_Button__INTC_MASK, 0x40000
- 1030              	.set isr_Button__INTC_NUMBER, 18
+ 1029              	.set isr_Button__INTC_MASK, 0x20
+ 1030              	.set isr_Button__INTC_NUMBER, 5
  1031              	.set isr_Button__INTC_PRIOR_NUM, 6
- 1032              	.set isr_Button__INTC_PRIOR_REG, CYREG_NVIC_PRI_18
+ 1032              	.set isr_Button__INTC_PRIOR_REG, CYREG_NVIC_PRI_5
  1033              	.set isr_Button__INTC_SET_EN_REG, CYREG_NVIC_SETENA0
  1034              	.set isr_Button__INTC_SET_PD_REG, CYREG_NVIC_SETPEND0
  1035              	
@@ -12621,7 +12621,7 @@ ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 1
  1258              	.set CYDEV_ECC_ENABLE, 0
  1259              	.set CYDEV_HEAP_SIZE, 0x80
  1260              	.set CYDEV_INSTRUCT_CACHE_ENABLED, 1
- 1261              	.set CYDEV_INTR_RISING, 0x0000003F
+ 1261              	.set CYDEV_INTR_RISING, 0x0000005F
  1262              	.set CYDEV_IS_EXPORTING_CODE, 0
  1263              	.set CYDEV_IS_IMPORTING_CODE, 0
  1264              	.set CYDEV_PROJ_TYPE, 0

@@ -28,7 +28,7 @@ uint8_t TempData[2];
 char F;
 int16_t  value_temp[10];
 float32   value_temp_float = 0;
-
+int  temp;
 int WTM_Full;
 
 CY_ISR(Custom_ISR_ADC)
@@ -66,14 +66,14 @@ CY_ISR(Custom_ISR_ADC)
 
 CY_ISR(Custom_Button_ISR)
 {  
-//    while(BUTTON_Read()==1)
-//    {
-//    Timer_Button_Start();
-//        int temp=Timer_Button_ReadCounter();
-//        if (temp ==4999){
-//        UART_PutString("RESET");
-//        FIFO_Reset();}
-//    }
+    while(BUTTON_Read()==1)
+    {
+        CyDelay(10);
+        temp ++;
+        if(temp>= 500){
+        UART_PutString("RESET");
+        FIFO_Reset();}
+    }
 }
 
 CY_ISR(Custom_isr_ACC)
