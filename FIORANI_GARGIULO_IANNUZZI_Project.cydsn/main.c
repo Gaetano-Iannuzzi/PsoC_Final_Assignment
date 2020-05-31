@@ -72,7 +72,7 @@ int main(void) {
     if (ConfExist == STOP)  Registration_Active = STOP;
     
     Sensitivity = EEPROM_readByte(EEPROM_SENSITIVITY_VALUE); // Sensitivity that depends on full scale range
-
+    
 
     
      /* FIFO overrun interrupt on INT1 */
@@ -170,7 +170,7 @@ int main(void) {
                      Y = (int16) ((Packet_Read[j+2]<<4)|(Packet_Read[j+1]<<12))>>6;
                      Z = (int16) ((Packet_Read[j+3]<<6)|(Packet_Read[j+2]<<14))>>6;
                     T = (int16) (Packet_Read[j+4] | (Packet_Read[j+5]<<8));
-                    sprintf(bufferUART, "** EEPROM Read = %d %d %d %d \r\n",  X*4,Y*4,Z*4, T/100);
+                    sprintf(bufferUART, "** EEPROM Read = %d %d %d %d \r\n",  X*Sensitivity,Y*Sensitivity,Z*Sensitivity, T/100);
                     UART_PutBuffer;
             
                     UART_PutString("*************************************\r\n");
@@ -234,12 +234,12 @@ int main(void) {
                     OutArray[14] = (uint8_t)(Packet_Read[w+5]);
          
             
-//                    sprintf(bufferUART, "** EEPROM Read = %d %d %d %d \r\n",  X*4,Y*4,Z*4, T/100);
-//                    UART_PutBuffer;
-//            
-//                    UART_PutString("*************************************\r\n");
+                    sprintf(bufferUART, "** EEPROM Read = %d %d %d %d \r\n",  X*4,Y*4,Z*4, T/100);
+                    UART_PutBuffer;
+            
+                    UART_PutString("*************************************\r\n");
 //
-                    UART_PutArray(OutArray, 16); //Send data to Uart (values in [mg])
+//                    UART_PutArray(OutArray, 16); //Send data to Uart (values in [mg])
                     
               }
                   campioni += 0x06;

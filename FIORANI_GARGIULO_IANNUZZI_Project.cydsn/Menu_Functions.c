@@ -17,7 +17,7 @@
 #include    "Menu_Functions.h"
 
 uint8_t     reg_menu=0;
-uint8_t     Sensitivity=0;
+uint8_t     Sensitivity;
 int         WaitTime=0;
 
 CY_ISR (Custom_ISR_MENU)

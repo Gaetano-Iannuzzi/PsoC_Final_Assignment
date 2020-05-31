@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUv3uui.s 			page 1
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccNQuNfm.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUv3uui.s 			page 1
   28:Generated_Source\PSoC5/PWM_Led_PM.c **** *  Saves the current user configuration of the component.
   29:Generated_Source\PSoC5/PWM_Led_PM.c **** *
   30:Generated_Source\PSoC5/PWM_Led_PM.c **** * Parameters:
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUv3uui.s 			page 2
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccNQuNfm.s 			page 2
 
 
   31:Generated_Source\PSoC5/PWM_Led_PM.c **** *  None
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUv3uui.s 			page 1
   64:Generated_Source\PSoC5/PWM_Led_PM.c ****             PWM_Led_backup.PWMControlRegister = PWM_Led_ReadControlRegister();
   49              		.loc 1 64 0
   50 0016 FFF7FEFF 		bl	PWM_Led_ReadControlRegister
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUv3uui.s 			page 3
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccNQuNfm.s 			page 3
 
 
   51              	.LVL2:
@@ -128,7 +128,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUv3uui.s 			page 1
   55 001e 00BF     		.align	2
   56              	.L3:
   57 0020 00000000 		.word	.LANCHOR0
-  58 0024 87640040 		.word	1073767559
+  58 0024 8D640040 		.word	1073767565
   59              		.cfi_endproc
   60              	.LFE0:
   61              		.size	PWM_Led_SaveConfig, .-PWM_Led_SaveConfig
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUv3uui.s 			page 1
   92:Generated_Source\PSoC5/PWM_Led_PM.c ****                 PWM_Led_WritePeriod(PWM_Led_backup.PWMPeriod);
   78              		.loc 1 92 0
   79 0002 074C     		ldr	r4, .L7
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUv3uui.s 			page 4
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccNQuNfm.s 			page 4
 
 
   80 0004 A088     		ldrh	r0, [r4, #4]
@@ -220,7 +220,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUv3uui.s 			page 1
   97 001e 00BF     		.align	2
   98              	.L7:
   99 0020 00000000 		.word	.LANCHOR0
- 100 0024 87640040 		.word	1073767559
+ 100 0024 8D640040 		.word	1073767565
  101              		.cfi_endproc
  102              	.LFE1:
  103              		.size	PWM_Led_RestoreConfig, .-PWM_Led_RestoreConfig
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUv3uui.s 			page 1
  115:Generated_Source\PSoC5/PWM_Led_PM.c **** 
  116:Generated_Source\PSoC5/PWM_Led_PM.c **** 
  117:Generated_Source\PSoC5/PWM_Led_PM.c **** /*******************************************************************************
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUv3uui.s 			page 5
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccNQuNfm.s 			page 5
 
 
  118:Generated_Source\PSoC5/PWM_Led_PM.c **** * Function Name: PWM_Led_Sleep
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUv3uui.s 			page 1
  148:Generated_Source\PSoC5/PWM_Led_PM.c ****         }
  149:Generated_Source\PSoC5/PWM_Led_PM.c ****     #endif /* (PWM_Led_UseControl) */
  150:Generated_Source\PSoC5/PWM_Led_PM.c **** 
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUv3uui.s 			page 6
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccNQuNfm.s 			page 6
 
 
  151:Generated_Source\PSoC5/PWM_Led_PM.c ****     /* Stop component */
@@ -316,7 +316,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUv3uui.s 			page 1
  143              	.L14:
  144              		.align	2
  145              	.L13:
- 146 0024 78650040 		.word	1073767800
+ 146 0024 7A640040 		.word	1073767546
  147 0028 00000000 		.word	.LANCHOR0
  148              		.cfi_endproc
  149              	.LFE2:
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUv3uui.s 			page 1
  161              		@ args = 0, pretend = 0, frame = 0
  162              		@ frame_needed = 0, uses_anonymous_args = 0
  163 0000 08B5     		push	{r3, lr}
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUv3uui.s 			page 7
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccNQuNfm.s 			page 7
 
 
  164              		.cfi_def_cfa_offset 8
@@ -409,16 +409,16 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUv3uui.s 			page 1
  201 0006 00000000 		.4byte	.Ldebug_abbrev0
  202 000a 04       		.byte	0x4
  203 000b 01       		.uleb128 0x1
- 204 000c F8000000 		.4byte	.LASF35
+ 204 000c 92000000 		.4byte	.LASF35
  205 0010 0C       		.byte	0xc
  206 0011 DB020000 		.4byte	.LASF36
- 207 0015 57000000 		.4byte	.LASF37
+ 207 0015 E0010000 		.4byte	.LASF37
  208 0019 00000000 		.4byte	.Ldebug_ranges0+0
  209 001d 00000000 		.4byte	0
  210 0021 00000000 		.4byte	.Ldebug_line0
  211 0025 02       		.uleb128 0x2
  212 0026 01       		.byte	0x1
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUv3uui.s 			page 8
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccNQuNfm.s 			page 8
 
 
  213 0027 06       		.byte	0x6
@@ -426,7 +426,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUv3uui.s 			page 1
  215 002c 02       		.uleb128 0x2
  216 002d 01       		.byte	0x1
  217 002e 08       		.byte	0x8
- 218 002f EA000000 		.4byte	.LASF1
+ 218 002f 84000000 		.4byte	.LASF1
  219 0033 02       		.uleb128 0x2
  220 0034 02       		.byte	0x2
  221 0035 05       		.byte	0x5
@@ -442,7 +442,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUv3uui.s 			page 1
  231 0048 02       		.uleb128 0x2
  232 0049 04       		.byte	0x4
  233 004a 07       		.byte	0x7
- 234 004b A4010000 		.4byte	.LASF5
+ 234 004b 3E010000 		.4byte	.LASF5
  235 004f 02       		.uleb128 0x2
  236 0050 08       		.byte	0x8
  237 0051 05       		.byte	0x5
@@ -450,7 +450,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUv3uui.s 			page 1
  239 0056 02       		.uleb128 0x2
  240 0057 08       		.byte	0x8
  241 0058 07       		.byte	0x7
- 242 0059 2F020000 		.4byte	.LASF7
+ 242 0059 C9010000 		.4byte	.LASF7
  243 005d 03       		.uleb128 0x3
  244 005e 04       		.byte	0x4
  245 005f 05       		.byte	0x5
@@ -458,27 +458,27 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUv3uui.s 			page 1
  247 0064 02       		.uleb128 0x2
  248 0065 04       		.byte	0x4
  249 0066 07       		.byte	0x7
- 250 0067 22020000 		.4byte	.LASF8
+ 250 0067 BC010000 		.4byte	.LASF8
  251 006b 04       		.uleb128 0x4
- 252 006c B6010000 		.4byte	.LASF9
+ 252 006c 50010000 		.4byte	.LASF9
  253 0070 02       		.byte	0x2
  254 0071 E401     		.2byte	0x1e4
  255 0073 2C000000 		.4byte	0x2c
  256 0077 04       		.uleb128 0x4
- 257 0078 07020000 		.4byte	.LASF10
+ 257 0078 A1010000 		.4byte	.LASF10
  258 007c 02       		.byte	0x2
  259 007d E501     		.2byte	0x1e5
  260 007f 3A000000 		.4byte	0x3a
  261 0083 02       		.uleb128 0x2
  262 0084 04       		.byte	0x4
  263 0085 04       		.byte	0x4
- 264 0086 D1000000 		.4byte	.LASF11
+ 264 0086 6B000000 		.4byte	.LASF11
  265 008a 02       		.uleb128 0x2
  266 008b 08       		.byte	0x8
  267 008c 04       		.byte	0x4
- 268 008d ED010000 		.4byte	.LASF12
+ 268 008d 87010000 		.4byte	.LASF12
  269 0091 02       		.uleb128 0x2
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUv3uui.s 			page 9
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccNQuNfm.s 			page 9
 
 
  270 0092 01       		.byte	0x1
@@ -505,7 +505,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUv3uui.s 			page 1
  291 00ba 6B       		.byte	0x6b
  292 00bb FC000000 		.4byte	0xfc
  293 00bf 07       		.uleb128 0x7
- 294 00c0 86010000 		.4byte	.LASF17
+ 294 00c0 20010000 		.4byte	.LASF17
  295 00c4 03       		.byte	0x3
  296 00c5 6E       		.byte	0x6e
  297 00c6 6B000000 		.4byte	0x6b
@@ -529,7 +529,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUv3uui.s 			page 1
  315 00ea 6B000000 		.4byte	0x6b
  316 00ee 06       		.byte	0x6
  317 00ef 07       		.uleb128 0x7
- 318 00f0 D7000000 		.4byte	.LASF21
+ 318 00f0 71000000 		.4byte	.LASF21
  319 00f4 03       		.byte	0x3
  320 00f5 86       		.byte	0x86
  321 00f6 6B000000 		.4byte	0x6b
@@ -538,13 +538,13 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUv3uui.s 			page 1
  324 00fc 08       		.uleb128 0x8
  325 00fd C6020000 		.4byte	.LASF22
  326 0101 03       		.byte	0x3
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUv3uui.s 			page 10
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccNQuNfm.s 			page 10
 
 
  327 0102 8B       		.byte	0x8b
  328 0103 B7000000 		.4byte	0xb7
  329 0107 09       		.uleb128 0x9
- 330 0108 F4010000 		.4byte	.LASF23
+ 330 0108 8E010000 		.4byte	.LASF23
  331 010c 01       		.byte	0x1
  332 010d 2A       		.byte	0x2a
  333 010e 00000000 		.4byte	.LFB0
@@ -598,10 +598,10 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUv3uui.s 			page 1
  381 018c 07010000 		.4byte	0x107
  382 0190 00       		.byte	0
  383 0191 09       		.uleb128 0x9
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUv3uui.s 			page 11
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccNQuNfm.s 			page 11
 
 
- 384 0192 95010000 		.4byte	.LASF26
+ 384 0192 2F010000 		.4byte	.LASF26
  385 0196 01       		.byte	0x1
  386 0197 B2       		.byte	0xb2
  387 0198 00000000 		.4byte	.LFB3
@@ -630,23 +630,23 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUv3uui.s 			page 1
  410 01d3 03       		.byte	0x3
  411 01d4 C0       		.byte	0xc0
  412 01d5 0C       		.uleb128 0xc
- 413 01d6 BD000000 		.4byte	.LASF28
- 414 01da BD000000 		.4byte	.LASF28
+ 413 01d6 57000000 		.4byte	.LASF28
+ 414 01da 57000000 		.4byte	.LASF28
  415 01de 03       		.byte	0x3
  416 01df B3       		.byte	0xb3
  417 01e0 0C       		.uleb128 0xc
- 418 01e1 BC010000 		.4byte	.LASF29
- 419 01e5 BC010000 		.4byte	.LASF29
+ 418 01e1 56010000 		.4byte	.LASF29
+ 419 01e5 56010000 		.4byte	.LASF29
  420 01e9 03       		.byte	0x3
  421 01ea 9D       		.byte	0x9d
  422 01eb 0C       		.uleb128 0xc
- 423 01ec 0E020000 		.4byte	.LASF30
- 424 01f0 0E020000 		.4byte	.LASF30
+ 423 01ec A8010000 		.4byte	.LASF30
+ 424 01f0 A8010000 		.4byte	.LASF30
  425 01f4 03       		.byte	0x3
  426 01f5 BE       		.byte	0xbe
  427 01f6 0C       		.uleb128 0xc
- 428 01f7 D8010000 		.4byte	.LASF31
- 429 01fb D8010000 		.4byte	.LASF31
+ 428 01f7 72010000 		.4byte	.LASF31
+ 429 01fb 72010000 		.4byte	.LASF31
  430 01ff 03       		.byte	0x3
  431 0200 BA       		.byte	0xba
  432 0201 0C       		.uleb128 0xc
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUv3uui.s 			page 1
  438 020d 1F000000 		.4byte	.LASF33
  439 0211 1F000000 		.4byte	.LASF33
  440 0215 03       		.byte	0x3
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUv3uui.s 			page 12
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccNQuNfm.s 			page 12
 
 
  441 0216 93       		.byte	0x93
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUv3uui.s 			page 1
  495 002d 0E       		.uleb128 0xe
  496 002e 3A       		.uleb128 0x3a
  497 002f 0B       		.uleb128 0xb
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUv3uui.s 			page 13
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccNQuNfm.s 			page 13
 
 
  498 0030 3B       		.uleb128 0x3b
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUv3uui.s 			page 1
  552 0066 09       		.uleb128 0x9
  553 0067 2E       		.uleb128 0x2e
  554 0068 01       		.byte	0x1
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUv3uui.s 			page 14
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccNQuNfm.s 			page 14
 
 
  555 0069 3F       		.uleb128 0x3f
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUv3uui.s 			page 1
  609 00a2 0E       		.uleb128 0xe
  610 00a3 03       		.uleb128 0x3
  611 00a4 0E       		.uleb128 0xe
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUv3uui.s 			page 15
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccNQuNfm.s 			page 15
 
 
  612 00a5 3A       		.uleb128 0x3a
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUv3uui.s 			page 1
  657      6572696F 
  657      6400
  658              	.LASF33:
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUv3uui.s 			page 16
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccNQuNfm.s 			page 16
 
 
  659 001f 50574D5F 		.ascii	"PWM_Led_Stop\000"
@@ -920,121 +920,121 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUv3uui.s 			page 1
  665      7369676E 
  665      65642069 
  665      6E7400
- 666              	.LASF37:
- 667 0057 433A5C55 		.ascii	"C:\\Users\\aless\\Documents\\PSoC Creator\\PsoC_Fin"
- 667      73657273 
- 667      5C616C65 
- 667      73735C44 
- 667      6F63756D 
- 668 0085 616C5F50 		.ascii	"al_Project_1_03\\FIORANI_GARGIULO_IANNUZZI_Project."
- 668      726F6A65 
- 668      63745F31 
- 668      5F30335C 
- 668      46494F52 
- 669 00b7 63796473 		.ascii	"cydsn\000"
- 669      6E00
- 670              	.LASF28:
- 671 00bd 50574D5F 		.ascii	"PWM_Led_ReadCounter\000"
- 671      4C65645F 
- 671      52656164 
- 671      436F756E 
- 671      74657200 
- 672              	.LASF11:
- 673 00d1 666C6F61 		.ascii	"float\000"
- 673      7400
- 674              	.LASF21:
- 675 00d7 50574D43 		.ascii	"PWMControlRegister\000"
- 675      6F6E7472 
- 675      6F6C5265 
- 675      67697374 
- 675      657200
- 676              	.LASF1:
- 677 00ea 756E7369 		.ascii	"unsigned char\000"
- 677      676E6564 
- 677      20636861 
- 677      7200
- 678              	.LASF35:
- 679 00f8 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 679      43313120 
- 679      352E342E 
- 679      31203230 
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUv3uui.s 			page 17
+ 666              	.LASF28:
+ 667 0057 50574D5F 		.ascii	"PWM_Led_ReadCounter\000"
+ 667      4C65645F 
+ 667      52656164 
+ 667      436F756E 
+ 667      74657200 
+ 668              	.LASF11:
+ 669 006b 666C6F61 		.ascii	"float\000"
+ 669      7400
+ 670              	.LASF21:
+ 671 0071 50574D43 		.ascii	"PWMControlRegister\000"
+ 671      6F6E7472 
+ 671      6F6C5265 
+ 671      67697374 
+ 671      657200
+ 672              	.LASF1:
+ 673 0084 756E7369 		.ascii	"unsigned char\000"
+ 673      676E6564 
+ 673      20636861 
+ 673      7200
+ 674              	.LASF35:
+ 675 0092 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 675      43313120 
+ 675      352E342E 
+ 675      31203230 
+ 675      31363036 
+ 676 00c5 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 676      20726576 
+ 676      6973696F 
+ 676      6E203233 
+ 676      37373135 
+ 677 00f8 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 677      66756E63 
+ 677      74696F6E 
+ 677      2D736563 
+ 677      74696F6E 
+ 678              	.LASF17:
+ 679 0120 50574D45 		.ascii	"PWMEnableState\000"
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccNQuNfm.s 			page 17
 
 
- 679      31363036 
- 680 012b 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 680      20726576 
- 680      6973696F 
- 680      6E203233 
- 680      37373135 
- 681 015e 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 681      66756E63 
- 681      74696F6E 
- 681      2D736563 
- 681      74696F6E 
- 682              	.LASF17:
- 683 0186 50574D45 		.ascii	"PWMEnableState\000"
- 683      6E61626C 
- 683      65537461 
- 683      746500
- 684              	.LASF26:
- 685 0195 50574D5F 		.ascii	"PWM_Led_Wakeup\000"
- 685      4C65645F 
- 685      57616B65 
- 685      757000
- 686              	.LASF5:
- 687 01a4 6C6F6E67 		.ascii	"long unsigned int\000"
- 687      20756E73 
- 687      69676E65 
- 687      6420696E 
- 687      7400
- 688              	.LASF9:
- 689 01b6 75696E74 		.ascii	"uint8\000"
- 689      3800
- 690              	.LASF29:
- 691 01bc 50574D5F 		.ascii	"PWM_Led_ReadControlRegister\000"
- 691      4C65645F 
- 691      52656164 
- 691      436F6E74 
- 691      726F6C52 
- 692              	.LASF31:
- 693 01d8 50574D5F 		.ascii	"PWM_Led_WriteCounter\000"
+ 679      6E61626C 
+ 679      65537461 
+ 679      746500
+ 680              	.LASF26:
+ 681 012f 50574D5F 		.ascii	"PWM_Led_Wakeup\000"
+ 681      4C65645F 
+ 681      57616B65 
+ 681      757000
+ 682              	.LASF5:
+ 683 013e 6C6F6E67 		.ascii	"long unsigned int\000"
+ 683      20756E73 
+ 683      69676E65 
+ 683      6420696E 
+ 683      7400
+ 684              	.LASF9:
+ 685 0150 75696E74 		.ascii	"uint8\000"
+ 685      3800
+ 686              	.LASF29:
+ 687 0156 50574D5F 		.ascii	"PWM_Led_ReadControlRegister\000"
+ 687      4C65645F 
+ 687      52656164 
+ 687      436F6E74 
+ 687      726F6C52 
+ 688              	.LASF31:
+ 689 0172 50574D5F 		.ascii	"PWM_Led_WriteCounter\000"
+ 689      4C65645F 
+ 689      57726974 
+ 689      65436F75 
+ 689      6E746572 
+ 690              	.LASF12:
+ 691 0187 646F7562 		.ascii	"double\000"
+ 691      6C6500
+ 692              	.LASF23:
+ 693 018e 50574D5F 		.ascii	"PWM_Led_SaveConfig\000"
  693      4C65645F 
- 693      57726974 
- 693      65436F75 
- 693      6E746572 
- 694              	.LASF12:
- 695 01ed 646F7562 		.ascii	"double\000"
- 695      6C6500
- 696              	.LASF23:
- 697 01f4 50574D5F 		.ascii	"PWM_Led_SaveConfig\000"
+ 693      53617665 
+ 693      436F6E66 
+ 693      696700
+ 694              	.LASF10:
+ 695 01a1 75696E74 		.ascii	"uint16\000"
+ 695      313600
+ 696              	.LASF30:
+ 697 01a8 50574D5F 		.ascii	"PWM_Led_WritePeriod\000"
  697      4C65645F 
- 697      53617665 
- 697      436F6E66 
- 697      696700
- 698              	.LASF10:
- 699 0207 75696E74 		.ascii	"uint16\000"
- 699      313600
- 700              	.LASF30:
- 701 020e 50574D5F 		.ascii	"PWM_Led_WritePeriod\000"
- 701      4C65645F 
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUv3uui.s 			page 18
+ 697      57726974 
+ 697      65506572 
+ 697      696F6400 
+ 698              	.LASF8:
+ 699 01bc 756E7369 		.ascii	"unsigned int\000"
+ 699      676E6564 
+ 699      20696E74 
+ 699      00
+ 700              	.LASF7:
+ 701 01c9 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 701      206C6F6E 
+ 701      6720756E 
+ 701      7369676E 
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccNQuNfm.s 			page 18
 
 
- 701      57726974 
- 701      65506572 
- 701      696F6400 
- 702              	.LASF8:
- 703 0222 756E7369 		.ascii	"unsigned int\000"
- 703      676E6564 
- 703      20696E74 
- 703      00
- 704              	.LASF7:
- 705 022f 6C6F6E67 		.ascii	"long long unsigned int\000"
- 705      206C6F6E 
- 705      6720756E 
- 705      7369676E 
- 705      65642069 
+ 701      65642069 
+ 702              	.LASF37:
+ 703 01e0 433A5C55 		.ascii	"C:\\Users\\gaeta\\Documents\\PSoC Creator\\PsoC_Fin"
+ 703      73657273 
+ 703      5C676165 
+ 703      74615C44 
+ 703      6F63756D 
+ 704 020e 616C5F50 		.ascii	"al_Project_1_03\\FIORANI_GARGIULO_IANNUZZI_Project."
+ 704      726F6A65 
+ 704      63745F31 
+ 704      5F30335C 
+ 704      46494F52 
+ 705 0240 63796473 		.ascii	"cydsn\000"
+ 705      6E00
  706              	.LASF24:
  707 0246 50574D5F 		.ascii	"PWM_Led_RestoreConfig\000"
  707      4C65645F 
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUv3uui.s 			page 1
  723      7420696E 
  723      7400
  724              	.LASF22:
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUv3uui.s 			page 19
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccNQuNfm.s 			page 19
 
 
  725 02c6 50574D5F 		.ascii	"PWM_Led_backupStruct\000"

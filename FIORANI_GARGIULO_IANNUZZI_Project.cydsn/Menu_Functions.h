@@ -51,8 +51,8 @@
     int     MenuActive;
     int     Registration_Active;
     
-    uint8_t Sensitivity;
-    uint8_t TempUnit;
+     uint8_t Sensitivity;
+     uint8_t TempUnit;
     
     CY_ISR_PROTO (Custom_ISR_MENU);
     

@@ -254,6 +254,7 @@
       <Data key="7a3b0a10-9d97-45a8-a74a-867ab34ab784/2f0e1ca3-d7f9-4fde-aef9-0b36f082c803" value="SPIM_2_TxInternalInterrupt" />
       <Data key="7a3b0a10-9d97-45a8-a74a-867ab34ab784/14fe96ba-901d-4b28-a648-bce191698c4b" value="SPIM_2_RxInternalInterrupt" />
       <Data key="9de699e0-922c-46b8-884e-6a715a1c3620" value="isr_ACC" />
+      <Data key="09ec309c-e4a4-4193-8863-39ad499afbba" value="isr_Button" />
       <Data key="15cb15b3-05f2-49b1-a67e-9f121bc62871/2f0e1ca3-d7f9-4fde-aef9-0b36f082c803" value="SPIM_1_TxInternalInterrupt" />
       <Data key="15cb15b3-05f2-49b1-a67e-9f121bc62871/14fe96ba-901d-4b28-a648-bce191698c4b" value="SPIM_1_RxInternalInterrupt" />
       <Data key="48dacb36-41b5-4971-bdb3-b753ad6b6e9b" value="isr_MENU" />
@@ -3379,6 +3380,13 @@
       </Group>
     </Group>
     <Group key="9de699e0-922c-46b8-884e-6a715a1c3620">
+      <Group key="CortexM3">
+        <Data key="Assigned" value="True" />
+        <Data key="Priority" value="6" />
+        <Data key="Vector" value="-1" />
+      </Group>
+    </Group>
+    <Group key="09ec309c-e4a4-4193-8863-39ad499afbba">
       <Group key="CortexM3">
         <Data key="Assigned" value="True" />
         <Data key="Priority" value="6" />

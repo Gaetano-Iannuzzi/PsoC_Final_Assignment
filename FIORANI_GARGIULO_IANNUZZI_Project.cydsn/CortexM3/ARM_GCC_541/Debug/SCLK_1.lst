@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccmys3S0.s 			page 1
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cchXo0ZH.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccmys3S0.s 			page 1
   28:Generated_Source\PSoC5/SCLK_1.c **** *
   29:Generated_Source\PSoC5/SCLK_1.c **** * \brief Writes the value to the physical port (data output register), masking
   30:Generated_Source\PSoC5/SCLK_1.c **** *  and shifting the bits appropriately. 
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccmys3S0.s 			page 2
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cchXo0ZH.s 			page 2
 
 
   31:Generated_Source\PSoC5/SCLK_1.c **** *
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccmys3S0.s 			page 1
   52              		.size	SCLK_1_Write, .-SCLK_1_Write
   53              		.section	.text.SCLK_1_SetDriveMode,"ax",%progbits
   54              		.align	2
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccmys3S0.s 			page 3
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cchXo0ZH.s 			page 3
 
 
   55              		.global	SCLK_1_SetDriveMode
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccmys3S0.s 			page 1
   77 0012 00BF     		.align	2
   78              	.L5:
   79 0014 05500040 		.word	1073762309
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccmys3S0.s 			page 4
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cchXo0ZH.s 			page 4
 
 
   80              		.cfi_endproc
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccmys3S0.s 			page 1
  110              		.align	2
  111              		.global	SCLK_1_ReadDataReg
  112              		.thumb
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccmys3S0.s 			page 5
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cchXo0ZH.s 			page 5
 
 
  113              		.thumb_func
@@ -298,16 +298,16 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccmys3S0.s 			page 1
  139              	.Ldebug_info0:
  140 0000 1B010000 		.4byte	0x11b
  141 0004 0400     		.2byte	0x4
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccmys3S0.s 			page 6
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cchXo0ZH.s 			page 6
 
 
  142 0006 00000000 		.4byte	.Ldebug_abbrev0
  143 000a 04       		.byte	0x4
  144 000b 01       		.uleb128 0x1
- 145 000c C4000000 		.4byte	.LASF20
+ 145 000c 5E000000 		.4byte	.LASF20
  146 0010 0C       		.byte	0xc
  147 0011 00000000 		.4byte	.LASF21
- 148 0015 3E000000 		.4byte	.LASF22
+ 148 0015 54010000 		.4byte	.LASF22
  149 0019 00000000 		.4byte	.Ldebug_ranges0+0
  150 001d 00000000 		.4byte	0
  151 0021 00000000 		.4byte	.Ldebug_line0
@@ -318,7 +318,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccmys3S0.s 			page 1
  156 002c 02       		.uleb128 0x2
  157 002d 01       		.byte	0x1
  158 002e 08       		.byte	0x8
- 159 002f B6000000 		.4byte	.LASF1
+ 159 002f 50000000 		.4byte	.LASF1
  160 0033 02       		.uleb128 0x2
  161 0034 02       		.byte	0x2
  162 0035 05       		.byte	0x5
@@ -326,7 +326,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccmys3S0.s 			page 1
  164 003a 02       		.uleb128 0x2
  165 003b 02       		.byte	0x2
  166 003c 07       		.byte	0x7
- 167 003d 69010000 		.4byte	.LASF3
+ 167 003d 03010000 		.4byte	.LASF3
  168 0041 02       		.uleb128 0x2
  169 0042 04       		.byte	0x4
  170 0043 05       		.byte	0x5
@@ -334,7 +334,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccmys3S0.s 			page 1
  172 0048 02       		.uleb128 0x2
  173 0049 04       		.byte	0x4
  174 004a 07       		.byte	0x7
- 175 004b 57010000 		.4byte	.LASF5
+ 175 004b F1000000 		.4byte	.LASF5
  176 004f 02       		.uleb128 0x2
  177 0050 08       		.byte	0x8
  178 0051 05       		.byte	0x5
@@ -342,7 +342,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccmys3S0.s 			page 1
  180 0056 02       		.uleb128 0x2
  181 0057 08       		.byte	0x8
  182 0058 07       		.byte	0x7
- 183 0059 A3010000 		.4byte	.LASF7
+ 183 0059 3D010000 		.4byte	.LASF7
  184 005d 03       		.uleb128 0x3
  185 005e 04       		.byte	0x4
  186 005f 05       		.byte	0x5
@@ -350,7 +350,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccmys3S0.s 			page 1
  188 0064 02       		.uleb128 0x2
  189 0065 04       		.byte	0x4
  190 0066 07       		.byte	0x7
- 191 0067 96010000 		.4byte	.LASF8
+ 191 0067 30010000 		.4byte	.LASF8
  192 006b 04       		.uleb128 0x4
  193 006c DC010000 		.4byte	.LASF12
  194 0070 02       		.byte	0x2
@@ -358,21 +358,21 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccmys3S0.s 			page 1
  196 0073 2C000000 		.4byte	0x2c
  197 0077 02       		.uleb128 0x2
  198 0078 04       		.byte	0x4
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccmys3S0.s 			page 7
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cchXo0ZH.s 			page 7
 
 
  199 0079 04       		.byte	0x4
- 200 007a B0000000 		.4byte	.LASF9
+ 200 007a 4A000000 		.4byte	.LASF9
  201 007e 02       		.uleb128 0x2
  202 007f 08       		.byte	0x8
  203 0080 04       		.byte	0x4
- 204 0081 7C010000 		.4byte	.LASF10
+ 204 0081 16010000 		.4byte	.LASF10
  205 0085 02       		.uleb128 0x2
  206 0086 01       		.byte	0x1
  207 0087 08       		.byte	0x8
  208 0088 CD010000 		.4byte	.LASF11
  209 008c 04       		.uleb128 0x4
- 210 008d 52010000 		.4byte	.LASF13
+ 210 008d EC000000 		.4byte	.LASF13
  211 0091 02       		.byte	0x2
  212 0092 8E02     		.2byte	0x28e
  213 0094 98000000 		.4byte	0x98
@@ -418,10 +418,10 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccmys3S0.s 			page 1
  253 00ef 21000000 		.4byte	.LLST1
  254 00f3 00       		.byte	0
  255 00f4 09       		.uleb128 0x9
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccmys3S0.s 			page 8
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cchXo0ZH.s 			page 8
 
 
- 256 00f5 A4000000 		.4byte	.LASF18
+ 256 00f5 3E000000 		.4byte	.LASF18
  257 00f9 01       		.byte	0x1
  258 00fa 71       		.byte	0x71
  259 00fb 6B000000 		.4byte	0x6b
@@ -430,7 +430,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccmys3S0.s 			page 1
  262 0107 01       		.uleb128 0x1
  263 0108 9C       		.byte	0x9c
  264 0109 09       		.uleb128 0x9
- 265 010a 83010000 		.4byte	.LASF19
+ 265 010a 1D010000 		.4byte	.LASF19
  266 010e 01       		.byte	0x1
  267 010f 8D       		.byte	0x8d
  268 0110 6B000000 		.4byte	0x6b
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccmys3S0.s 			page 1
  310 0022 0B       		.uleb128 0xb
  311 0023 3E       		.uleb128 0x3e
  312 0024 0B       		.uleb128 0xb
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccmys3S0.s 			page 9
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cchXo0ZH.s 			page 9
 
 
  313 0025 03       		.uleb128 0x3
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccmys3S0.s 			page 1
  367 005c 3A       		.uleb128 0x3a
  368 005d 0B       		.uleb128 0xb
  369 005e 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccmys3S0.s 			page 10
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cchXo0ZH.s 			page 10
 
 
  370 005f 0B       		.uleb128 0xb
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccmys3S0.s 			page 1
  424 000a 50       		.byte	0x50
  425 000b 0A000000 		.4byte	.LVL2
  426 000f 18000000 		.4byte	.LFE0
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccmys3S0.s 			page 11
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cchXo0ZH.s 			page 11
 
 
  427 0013 0400     		.2byte	0x4
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccmys3S0.s 			page 1
  480      02004300 
  480      00000201 
  480      FB0E0D00 
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccmys3S0.s 			page 12
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cchXo0ZH.s 			page 12
 
 
  480      01010101 
@@ -680,85 +680,85 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccmys3S0.s 			page 1
  488 0033 73746174 		.ascii	"staticBits\000"
  488      69634269 
  488      747300
- 489              	.LASF22:
- 490 003e 433A5C55 		.ascii	"C:\\Users\\aless\\Documents\\PSoC Creator\\PsoC_Fin"
- 490      73657273 
- 490      5C616C65 
- 490      73735C44 
- 490      6F63756D 
- 491 006c 616C5F50 		.ascii	"al_Project_1_03\\FIORANI_GARGIULO_IANNUZZI_Project."
- 491      726F6A65 
- 491      63745F31 
- 491      5F30335C 
- 491      46494F52 
- 492 009e 63796473 		.ascii	"cydsn\000"
- 492      6E00
- 493              	.LASF18:
- 494 00a4 53434C4B 		.ascii	"SCLK_1_Read\000"
- 494      5F315F52 
- 494      65616400 
- 495              	.LASF9:
- 496 00b0 666C6F61 		.ascii	"float\000"
- 496      7400
- 497              	.LASF1:
- 498 00b6 756E7369 		.ascii	"unsigned char\000"
- 498      676E6564 
- 498      20636861 
- 498      7200
- 499              	.LASF20:
- 500 00c4 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 500      43313120 
- 500      352E342E 
- 500      31203230 
- 500      31363036 
- 501 00f7 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 501      20726576 
- 501      6973696F 
- 501      6E203233 
- 501      37373135 
- 502 012a 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 502      66756E63 
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccmys3S0.s 			page 13
+ 489              	.LASF18:
+ 490 003e 53434C4B 		.ascii	"SCLK_1_Read\000"
+ 490      5F315F52 
+ 490      65616400 
+ 491              	.LASF9:
+ 492 004a 666C6F61 		.ascii	"float\000"
+ 492      7400
+ 493              	.LASF1:
+ 494 0050 756E7369 		.ascii	"unsigned char\000"
+ 494      676E6564 
+ 494      20636861 
+ 494      7200
+ 495              	.LASF20:
+ 496 005e 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 496      43313120 
+ 496      352E342E 
+ 496      31203230 
+ 496      31363036 
+ 497 0091 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 497      20726576 
+ 497      6973696F 
+ 497      6E203233 
+ 497      37373135 
+ 498 00c4 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 498      66756E63 
+ 498      74696F6E 
+ 498      2D736563 
+ 498      74696F6E 
+ 499              	.LASF13:
+ 500 00ec 72656738 		.ascii	"reg8\000"
+ 500      00
+ 501              	.LASF5:
+ 502 00f1 6C6F6E67 		.ascii	"long unsigned int\000"
+ 502      20756E73 
+ 502      69676E65 
+ 502      6420696E 
+ 502      7400
+ 503              	.LASF3:
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cchXo0ZH.s 			page 13
 
 
- 502      74696F6E 
- 502      2D736563 
- 502      74696F6E 
- 503              	.LASF13:
- 504 0152 72656738 		.ascii	"reg8\000"
- 504      00
- 505              	.LASF5:
- 506 0157 6C6F6E67 		.ascii	"long unsigned int\000"
- 506      20756E73 
- 506      69676E65 
- 506      6420696E 
- 506      7400
- 507              	.LASF3:
- 508 0169 73686F72 		.ascii	"short unsigned int\000"
- 508      7420756E 
- 508      7369676E 
- 508      65642069 
- 508      6E7400
- 509              	.LASF10:
- 510 017c 646F7562 		.ascii	"double\000"
- 510      6C6500
- 511              	.LASF19:
- 512 0183 53434C4B 		.ascii	"SCLK_1_ReadDataReg\000"
- 512      5F315F52 
- 512      65616444 
- 512      61746152 
- 512      656700
- 513              	.LASF8:
- 514 0196 756E7369 		.ascii	"unsigned int\000"
- 514      676E6564 
- 514      20696E74 
- 514      00
- 515              	.LASF7:
- 516 01a3 6C6F6E67 		.ascii	"long long unsigned int\000"
- 516      206C6F6E 
- 516      6720756E 
- 516      7369676E 
- 516      65642069 
+ 504 0103 73686F72 		.ascii	"short unsigned int\000"
+ 504      7420756E 
+ 504      7369676E 
+ 504      65642069 
+ 504      6E7400
+ 505              	.LASF10:
+ 506 0116 646F7562 		.ascii	"double\000"
+ 506      6C6500
+ 507              	.LASF19:
+ 508 011d 53434C4B 		.ascii	"SCLK_1_ReadDataReg\000"
+ 508      5F315F52 
+ 508      65616444 
+ 508      61746152 
+ 508      656700
+ 509              	.LASF8:
+ 510 0130 756E7369 		.ascii	"unsigned int\000"
+ 510      676E6564 
+ 510      20696E74 
+ 510      00
+ 511              	.LASF7:
+ 512 013d 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 512      206C6F6E 
+ 512      6720756E 
+ 512      7369676E 
+ 512      65642069 
+ 513              	.LASF22:
+ 514 0154 433A5C55 		.ascii	"C:\\Users\\gaeta\\Documents\\PSoC Creator\\PsoC_Fin"
+ 514      73657273 
+ 514      5C676165 
+ 514      74615C44 
+ 514      6F63756D 
+ 515 0182 616C5F50 		.ascii	"al_Project_1_03\\FIORANI_GARGIULO_IANNUZZI_Project."
+ 515      726F6A65 
+ 515      63745F31 
+ 515      5F30335C 
+ 515      46494F52 
+ 516 01b4 63796473 		.ascii	"cydsn\000"
+ 516      6E00
  517              	.LASF17:
  518 01ba 6D6F6465 		.ascii	"mode\000"
  518      00
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccmys3S0.s 			page 1
  526 01dc 75696E74 		.ascii	"uint8\000"
  526      3800
  527              	.LASF4:
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccmys3S0.s 			page 14
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\cchXo0ZH.s 			page 14
 
 
  528 01e2 6C6F6E67 		.ascii	"long int\000"

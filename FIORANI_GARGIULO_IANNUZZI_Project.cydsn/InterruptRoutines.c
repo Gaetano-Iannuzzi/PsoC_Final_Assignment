@@ -66,12 +66,14 @@ CY_ISR(Custom_ISR_ADC)
 
 CY_ISR(Custom_Button_ISR)
 {  
-    
-    PushButtonCounter ++;  // increment of the variable
-    if(PushButtonCounter > 1)
-    {
-        UART_PutString("RESET");
-    }
+//    while(BUTTON_Read()==1)
+//    {
+//    Timer_Button_Start();
+//        int temp=Timer_Button_ReadCounter();
+//        if (temp ==4999){
+//        UART_PutString("RESET");
+//        FIFO_Reset();}
+//    }
 }
 
 CY_ISR(Custom_isr_ACC)
