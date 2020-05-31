@@ -29,18 +29,18 @@
     #define EEPROM_START_STOP_CONFIG    0x0002
     #define EEPROM_TEMP_CONFIG          0x0003
     #define EEPROM_SENSITIVITY_VALUE    0x0004  // EEPROM address containing initial sensitivity value
-
+    #define EEPROM_ADDRESS_INDEX        0x0005
     #define EEPROM_CONFIG_EXIST         0x0009
     
     #define FIRST_EEPROM_REG            0x000A
     #define MAX_PACKET_IN_EEPROM        546
     #define PACKET_SIZE                 60
     
-    #define STOP            0x00
-    #define START           0x01
+    #define STOP            0
+    #define START           1
     
-    #define CELSIUS         0x00
-    #define FAHRENHEIT      0x01
+    #define CELSIUS         0
+    #define FAHRENHEIT      1
     
     #define MAX_WAITTIME    1000
 
