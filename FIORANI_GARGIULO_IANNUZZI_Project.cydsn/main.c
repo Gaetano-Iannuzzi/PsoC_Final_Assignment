@@ -96,9 +96,9 @@ int main(void) {
     
      /*WTM 10 */
     fifo_reg = ACC_readByte(LIS3DH_FIFO_CTRL_REG);
-    if( fifo_reg != LIS3DH_WTM10_MODE_CTRL_REG5) 
+    if( fifo_reg != LIS3DH_WTM9_MODE_CTRL_REG5) 
     {
-        fifo_reg = LIS3DH_WTM10_MODE_CTRL_REG5;
+        fifo_reg = LIS3DH_WTM9_MODE_CTRL_REG5;
         ACC_writeByte(LIS3DH_FIFO_CTRL_REG,fifo_reg);
     }
     
@@ -109,7 +109,7 @@ int main(void) {
     uint8_t Packet[60];
     uint8_t Packet_Read[60];
     uint16_t samples=0x00;
-    uint16_t m=0x00;
+    uint16_t m=0x00,q=0x00;
     int16_t X,Y,Z,T;
     uint8_t header = 0xA0;
     uint8_t footer = 0xC0;
@@ -134,9 +134,9 @@ int main(void) {
             if ((WTM_Full == 1) && (PacketInEEPROM <= MAX_PACKET_IN_EEPROM))
             {    
                 Led_Update(999,499);    //ACQUISITION_ON
-                ACC_readMultibytes(LIS3DH_OUT_X_L, &ReadData[0],66);
+                ACC_readMultibytes(LIS3DH_OUT_X_L, &ReadData[0],60);
                    
-                for ( i=0; i<66; i+=6)
+                for ( i=6; i<60; i+=6)
                 {
                     
                       
@@ -165,15 +165,16 @@ int main(void) {
                     EEPROM_waitForWriteComplete();
                     j+=6;       // Index that manage which 4-byte packet write in EEPROM
                     m+=0x06;    // Increment the addrress in which start the 4-byte packet
-                    EEPROM_readPage(FIRST_EEPROM_REG+m+samples,(uint8_t*)&Packet_Read[j],6);
-                    X= (int16) (((Packet_Read[j+1]<<2)|(Packet_Read[j]<<10)))>>6;
-                     Y = (int16) ((Packet_Read[j+2]<<4)|(Packet_Read[j+1]<<12))>>6;
-                     Z = (int16) ((Packet_Read[j+3]<<6)|(Packet_Read[j+2]<<14))>>6;
-                    T = (int16) (Packet_Read[j+4] | (Packet_Read[j+5]<<8));
-                    sprintf(bufferUART, "** EEPROM Read = %d %d %d %d \r\n",  X*Sensitivity,Y*Sensitivity,Z*Sensitivity, T/100);
-                    UART_PutBuffer;
-            
-                    UART_PutString("*************************************\r\n");
+//                    EEPROM_readPage(FIRST_EEPROM_REG+m+samples,(uint8_t*)&Packet_Read[j],6);
+//                    CyDelay(10);
+//                    int16 OX= (int16) (((Packet_Read[j+1]<<2)|(Packet_Read[j]<<10)))>>6;
+//                    int16 OY = (int16) ((Packet_Read[j+2]<<4)|(Packet_Read[j+1]<<12))>>6;
+//                    int16 OZ = (int16) ((Packet_Read[j+3]<<6)|(Packet_Read[j+2]<<14))>>6;
+//                    int16 OT = (int16) (Packet_Read[j+4] | (Packet_Read[j+5]<<8));
+//                    sprintf(bufferUART, "** EEPROM Read = %d %d %d %d \r\n",  OX*4,OY*4,OZ*4, OT/100);
+//                    UART_PutBuffer;
+//            
+//                    UART_PutString("*************************************\r\n");
                     
                 }
             
@@ -182,7 +183,7 @@ int main(void) {
                 indexT=0;
                 FIFO_Enable();
                 PacketReadyFlag=0;
-                samples +=0x3C;
+                samples +=0x36;
                 m= 0x00;
                 PacketInEEPROM++;
                 WTM_Full = 0;
@@ -195,12 +196,12 @@ int main(void) {
         
         if(ActiveVisualization == 1)
             {
-               for (int w = 0; w < 60*PacketInEEPROM ; w+= 6)
+               for (int n = 0; n < 54*PacketInEEPROM ; n+= 54)
             {
-                   EEPROM_readPage(FIRST_EEPROM_REG+campioni,(uint8_t*)&Packet_Read[0],6);
-                   Pin_ExternalLED_Write(1);
+                for(int w=0; w<54;w+=6)
+                {
+                   EEPROM_readPage(FIRST_EEPROM_REG+q+campioni,(uint8_t*)&Packet_Read[w],6);
                     
-            
                     X= (int16) (((Packet_Read[w+1]<<2)|(Packet_Read[w]<<10)))>>6;
                     AccX=  X*4*9.806*0.001; // Multiply the value for 2 because the sensitivity is 2 mg/digit and 9.806*0.001 m/s^2
                     OutX32 =  AccX*100; //Cast the floating point value to an int32 
@@ -229,7 +230,7 @@ int main(void) {
                     OutArray[11] = (uint8_t)(OutZ32 >>16);
                     OutArray[12] = (uint8_t)(OutZ32 >>24);
                     
-                    
+                    T = (int16) (Packet_Read[j+4] | (Packet_Read[j+5]<<8));
                     OutArray[13] = (uint8_t)(Packet_Read[w+4]);
                     OutArray[14] = (uint8_t)(Packet_Read[w+5]);
          
@@ -240,9 +241,10 @@ int main(void) {
                     UART_PutString("*************************************\r\n");
 //
 //                    UART_PutArray(OutArray, 16); //Send data to Uart (values in [mg])
-                    
+                 q += 0x06; 
+                }
+                campioni += 0x36;
               }
-                  campioni += 0x06;
             }
             
             }

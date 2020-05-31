@@ -78,7 +78,7 @@
 #define LIS3DH_OVRN_FIFO               
 #define LIS3DH_BYPASS_MODE_CTRL_REG   0x00
 #define LIS3DH_FIFO_MODE_CTRL_REG     0x40
-#define LIS3DH_WTM10_MODE_CTRL_REG5   0x4A
+#define LIS3DH_WTM9_MODE_CTRL_REG5    0x49
 
 //Enable Interrupt on INT1
 #define LIS3DH_I1_OVERRUN_CTRL_REG3   0x02

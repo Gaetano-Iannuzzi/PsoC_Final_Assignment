@@ -56,7 +56,7 @@ CY_ISR(Custom_ISR_ADC)
         value_temp[p] = (int16)(value_temp_float * 100); 
     }
      p++;
-    if(p ==10){
+    if(p ==9){
     PacketReadyFlag=1;
         p=0;
     }

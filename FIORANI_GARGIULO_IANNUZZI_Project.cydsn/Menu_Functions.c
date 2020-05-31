@@ -361,6 +361,7 @@ CY_ISR (Custom_ISR_MENU)
             UART_PutString ("*********    VISUALIZATION STARTED    *********\r");
             UART_PutString("*****************************************************************\r\n");
             ActiveVisualization = 1;
+            Pin_ExternalLED_Write(1);
         }
         else if ( Registration_Active == 1)
         {
@@ -368,6 +369,7 @@ CY_ISR (Custom_ISR_MENU)
             UART_PutString ("*********    VISUALIZATION STARTED    *********\r");
             UART_PutString("*****************************************************************\r\n");
             ActiveVisualization = 1;
+            Pin_ExternalLED_Write(1);
         }
         else if (ActiveVisualization == 1)
         {

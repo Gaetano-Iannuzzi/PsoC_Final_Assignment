@@ -27,9 +27,9 @@ void FIFO_Enable ()
             
             /*FIFO */
             fifo_reg = ACC_readByte(LIS3DH_FIFO_CTRL_REG);
-            if( fifo_reg != LIS3DH_WTM10_MODE_CTRL_REG5) 
+            if( fifo_reg != LIS3DH_WTM9_MODE_CTRL_REG5) 
             {
-                fifo_reg = LIS3DH_WTM10_MODE_CTRL_REG5;
+                fifo_reg = LIS3DH_WTM9_MODE_CTRL_REG5;
                 ACC_writeByte(LIS3DH_FIFO_CTRL_REG,fifo_reg);
             }
 }
