@@ -244,8 +244,8 @@ CY_ISR (Custom_ISR_MENU)
                 
                 UART_PutString("YOU CHOOSE 50 Hz\r\r");
                 
-                Timer_WritePeriod(20);
-                
+//                Timer_WritePeriod(20);
+
                 FIFO_Reset ();
                 
                 break;
@@ -325,11 +325,15 @@ CY_ISR (Custom_ISR_MENU)
         else if (Registration_Active == 0)
         {
             Registration_Active = 1;
+            Led_Update(999,499);
             UART_PutString ("*********    REGISTRATION STARTED    *********\r");
             UART_PutString("*****************************************************************\r\n");
             EEPROM_writeByte(EEPROM_START_STOP_CONFIG, START);
             EEPROM_waitForWriteComplete();
             
+            Timer_Start();
+            ADC_DelSig_StartConvert();
+//            
         }
         
         UART_ClearRxBuffer();
@@ -347,8 +351,15 @@ CY_ISR (Custom_ISR_MENU)
             Led_Update(999,999);
             UART_PutString ("*********    REGISTRATION STOPPED    *********\r");
             UART_PutString("*****************************************************************\r\n");
+           
             EEPROM_writeByte(EEPROM_START_STOP_CONFIG, STOP);
             EEPROM_waitForWriteComplete();
+            
+            EEPROM_writePage(EEPROM_ADDRESS_INDEX, (uint8_t*)&address_index,2);
+            EEPROM_waitForWriteComplete();
+            
+            Timer_Stop();
+            ADC_DelSig_StopConvert();
             
         }
         
@@ -362,6 +373,8 @@ CY_ISR (Custom_ISR_MENU)
             UART_PutString("*****************************************************************\r\n");
             ActiveVisualization = 1;
             Pin_ExternalLED_Write(1);
+              Timer_Stop();
+            ADC_DelSig_StopConvert();
         }
         else if ( Registration_Active == 1)
         {
@@ -370,6 +383,8 @@ CY_ISR (Custom_ISR_MENU)
             UART_PutString("*****************************************************************\r\n");
             ActiveVisualization = 1;
             Pin_ExternalLED_Write(1);
+              Timer_Stop();
+            ADC_DelSig_StopConvert();
         }
         else if (ActiveVisualization == 1)
         {

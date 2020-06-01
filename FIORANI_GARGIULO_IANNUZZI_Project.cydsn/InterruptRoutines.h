@@ -22,9 +22,9 @@
     CY_ISR_PROTO(Custom_isr_ACC);
     
     
-    volatile uint8 PacketReadyFlag;
-    
-    extern int16_t value_temp[10];
+    volatile uint8 PacketReadyFlag,p;
+    int temp;
+    extern int16_t value_temp[8];
     
     extern int WTM_Full;
     

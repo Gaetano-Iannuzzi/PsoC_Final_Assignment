@@ -40,9 +40,17 @@ void FIFO_Reset ()
 {
     samples = 0x0000;
     j = 0;
-    m = 0;
+    m = 0x00;
     
     if (ActiveVisualization == 1)   ActiveVisualization = 0;
+    if (Registration_Active == 1)   Registration_Active = 0;
+    
+    EEPROM_writeByte(EEPROM_START_STOP_CONFIG, STOP);
+    EEPROM_waitForWriteComplete();
+    
+    EEPROM_writePage(EEPROM_ADDRESS_INDEX, (uint8_t*)&samples,2);
+    EEPROM_waitForWriteComplete();
+    
     
     FIFO_Enable();
 }

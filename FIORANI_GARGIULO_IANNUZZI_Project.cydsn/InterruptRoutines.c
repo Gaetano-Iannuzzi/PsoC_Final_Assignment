@@ -23,10 +23,10 @@ int32 value_digit;
 int32 value_mv;
 uint8 SendBytesFlag=0;
 uint16_t PushButtonCounter = 0;  // Initialitazion of the variable
-int Reset_Flag = 0,p;
+int Reset_Flag = 0;
 uint8_t TempData[2];
 char F;
-int16_t  value_temp[10];
+int16_t  value_temp[8];
 float32   value_temp_float = 0;
 
 int WTM_Full;
@@ -34,7 +34,8 @@ int WTM_Full;
 CY_ISR(Custom_ISR_ADC)
 {
     // Read Timer status register to bring interrupt line low
-    Timer_ReadStatusRegister();
+    if(p<8){
+    Timer_ReadStatusRegister();}
     
     
     value_digit = ADC_DelSig_Read32();
@@ -56,24 +57,39 @@ CY_ISR(Custom_ISR_ADC)
         value_temp[p] = (int16)(value_temp_float * 100); 
     }
      p++;
-    if(p ==9){
+    if(p ==8){
     PacketReadyFlag=1;
-        p=0;
+//        p=0;
     }
+
     }
 
 
 
 CY_ISR(Custom_Button_ISR)
 {  
-//    while(BUTTON_Read()==1)
-//    {
-//    Timer_Button_Start();
-//        int temp=Timer_Button_ReadCounter();
-//        if (temp ==4999){
-//        UART_PutString("RESET");
-//        FIFO_Reset();}
-//    }
+    if (Pin_provatasto_Read()==1)
+    {
+        Timer_Button_ReadStatusRegister();
+        temp = 0;
+    }
+    
+    else if (Pin_provatasto_Read() == 0)
+    {
+        Timer_Button_ReadStatusRegister();
+    temp++;
+    }
+    if (temp >= 5)
+    {
+        Led_Update(999,999);
+        UART_PutString("\r***** RESET EEPROM*****\r");
+        FIFO_Reset();
+        UART_PutString("*********    HELP: POSSIBLE SETTINGS    *********\r\r");
+        UART_PutString("f. Full Scale\r\np. Sampling Freq\r\nt. Set Temperature Unit\r\nv. Print Data on BCP\r\nb. Start Registration\r\ns. Stop Registration\r\n\r");        
+        UART_PutString("***********************************************\r\n");
+        temp = 0;
+    }
+    
 }
 
 CY_ISR(Custom_isr_ACC)

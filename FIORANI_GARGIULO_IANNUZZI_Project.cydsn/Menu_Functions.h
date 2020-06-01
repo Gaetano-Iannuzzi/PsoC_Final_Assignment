@@ -30,6 +30,8 @@
     #define EEPROM_TEMP_CONFIG          0x0003
     #define EEPROM_SENSITIVITY_VALUE    0x0004  // EEPROM address containing initial sensitivity value
     #define EEPROM_ADDRESS_INDEX        0x0005
+    // Address index byte occupy 2 byte 0x0006
+    
     #define EEPROM_CONFIG_EXIST         0x0009
     
     #define FIRST_EEPROM_REG            0x000A
@@ -51,8 +53,10 @@
     int     MenuActive;
     int     Registration_Active;
     
-     uint8_t Sensitivity;
-     uint8_t TempUnit;
+    uint8_t Sensitivity;
+    extern uint16_t samples;
+    uint8_t TempUnit;
+    uint16_t address_index;
     
     CY_ISR_PROTO (Custom_ISR_MENU);
     
