@@ -1,5 +1,3 @@
-# PsoC_Final_Project_1_03
-LIS3DH and TMP36GT9Z connected to an external EEPROM
 
 # PsoC_Final_Project_1_03
 In this project, you are required to develop a program able to store accelerometer data in the external EEPROM, and stream them over UART for visualization. You can test your program by connecting the PSoC to your laptop, but if you want you can power it using the battery pack we have provided to you, so that you can freely move the accelerometer around (e.g., walking around).
