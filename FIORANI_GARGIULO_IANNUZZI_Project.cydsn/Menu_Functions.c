@@ -182,7 +182,7 @@ CY_ISR (Custom_ISR_MENU)
                 EEPROM_writeByte(EEPROM_FREQ_CONFIG, reg_menu);
                 EEPROM_waitForWriteComplete();
                 
-                Timer_WritePeriod(1000);
+//                Timer_WritePeriod(1000);
                 
                 UART_PutString("YOU CHOOSE 1 Hz\r\r");
                 
@@ -202,7 +202,7 @@ CY_ISR (Custom_ISR_MENU)
                 EEPROM_writeByte(EEPROM_FREQ_CONFIG, reg_menu);
                 EEPROM_waitForWriteComplete();
                 
-                Timer_WritePeriod(100);
+//                Timer_WritePeriod(100);
                 
                 UART_PutString("YOU CHOOSE 10 Hz\r\r");
                 
@@ -224,7 +224,7 @@ CY_ISR (Custom_ISR_MENU)
                 
                 UART_PutString("YOU CHOOSE 25 Hz\r\r");
                 
-                Timer_WritePeriod(40);
+//                Timer_WritePeriod(40);
                 
                 FIFO_Reset ();
                 
@@ -244,7 +244,7 @@ CY_ISR (Custom_ISR_MENU)
                 
                 UART_PutString("YOU CHOOSE 50 Hz\r\r");
                 
-                Timer_WritePeriod(20);
+//                Timer_WritePeriod(20);
 
                 FIFO_Reset ();
                 
