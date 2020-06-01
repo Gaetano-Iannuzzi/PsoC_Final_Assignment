@@ -244,7 +244,7 @@ CY_ISR (Custom_ISR_MENU)
                 
                 UART_PutString("YOU CHOOSE 50 Hz\r\r");
                 
-//                Timer_WritePeriod(20);
+                Timer_WritePeriod(20);
 
                 FIFO_Reset ();
                 
@@ -373,7 +373,7 @@ CY_ISR (Custom_ISR_MENU)
             UART_PutString("*****************************************************************\r\n");
             ActiveVisualization = 1;
             Pin_ExternalLED_Write(1);
-              Timer_Stop();
+            Timer_Stop();
             ADC_DelSig_StopConvert();
         }
         else if ( Registration_Active == 1)
@@ -383,7 +383,7 @@ CY_ISR (Custom_ISR_MENU)
             UART_PutString("*****************************************************************\r\n");
             ActiveVisualization = 1;
             Pin_ExternalLED_Write(1);
-              Timer_Stop();
+            Timer_Stop();
             ADC_DelSig_StopConvert();
         }
         else if (ActiveVisualization == 1)

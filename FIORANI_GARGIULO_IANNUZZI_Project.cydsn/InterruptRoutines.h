@@ -26,7 +26,7 @@
     int temp;
     extern int16_t value_temp[8];
     
-    extern int WTM_Full;
+    extern int WTM_Full;  //Watermark on INT1 of LIS3DH
     
 #endif
 

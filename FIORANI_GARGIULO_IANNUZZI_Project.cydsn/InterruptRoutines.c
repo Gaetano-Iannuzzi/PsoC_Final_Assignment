@@ -22,14 +22,11 @@
 int32 value_digit;
 int32 value_mv;
 uint8 SendBytesFlag=0;
-uint16_t PushButtonCounter = 0;  // Initialitazion of the variable
-int Reset_Flag = 0;
-uint8_t TempData[2];
 char F;
-int16_t  value_temp[8];
+int16_t  value_temp[8];  //array of temperature data
 float32   value_temp_float = 0;
 
-int WTM_Full;
+int WTM_Full;  //Interrupt on Watemark of LIS3DH
 
 CY_ISR(Custom_ISR_ADC)
 {
@@ -59,7 +56,6 @@ CY_ISR(Custom_ISR_ADC)
      p++;
     if(p ==8){
     PacketReadyFlag=1;
-//        p=0;
     }
 
     }
@@ -68,13 +64,13 @@ CY_ISR(Custom_ISR_ADC)
 
 CY_ISR(Custom_Button_ISR)
 {  
-    if (Pin_provatasto_Read()==1)
+    if (Pin_Button_Read()==1)
     {
         Timer_Button_ReadStatusRegister();
         temp = 0;
     }
     
-    else if (Pin_provatasto_Read() == 0)
+    else if (Pin_Button_Read() == 0)
     {
         Timer_Button_ReadStatusRegister();
     temp++;

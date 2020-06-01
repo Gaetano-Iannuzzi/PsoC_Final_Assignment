@@ -15,7 +15,7 @@
 #include "FIFO_Functions.h"
 #include "Menu_Functions.h"
 
-void FIFO_Enable ()
+void FIFO_Enable ()    //FIFO enable function 
 {
             /*Bypass Mode */                                    // Necessary to restart the FIFO accumulation
             fifo_reg = ACC_readByte(LIS3DH_FIFO_CTRL_REG);
@@ -36,7 +36,7 @@ void FIFO_Enable ()
 
 
 
-void FIFO_Reset ()
+void FIFO_Reset () //Reset the register index
 {
     samples = 0x0000;
     j = 0;

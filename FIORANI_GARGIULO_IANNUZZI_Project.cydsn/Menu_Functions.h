@@ -34,9 +34,9 @@
     
     #define EEPROM_CONFIG_EXIST         0x0009
     
-    #define FIRST_EEPROM_REG            0x000A
-    #define MAX_PACKET_IN_EEPROM        546
-    #define PACKET_SIZE                 60
+    #define FIRST_EEPROM_REG            0x000A  //EEPROM address of the First bytes of the data 
+    #define MAX_PACKET_IN_EEPROM        606  //Maximum number packets of 6 bytes available in the EEPROM
+    #define PACKET_SIZE                 54  //Size of 9 samples of accelerometer and temperature
     
     #define STOP            0
     #define START           1
@@ -44,7 +44,7 @@
     #define CELSIUS         0
     #define FAHRENHEIT      1
     
-    #define MAX_WAITTIME    1000
+    #define MAX_WAITTIME    1000   
 
     int ActiveVisualization;
     
@@ -53,7 +53,7 @@
     int     MenuActive;
     int     Registration_Active;
     
-    uint8_t Sensitivity;
+    uint8_t Sensitivity;   
     extern uint16_t samples;
     uint8_t TempUnit;
     uint16_t address_index;

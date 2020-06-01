@@ -15,10 +15,6 @@
     #define _ONBOARDLED_H_
     #include "project.h"
     
-//    const int Period_ACQUISITION_ON = 999;   // 1s.
-//    const int Compare_ACQUISITION_ON= 499;  //0.5s.
-//    const int Period_EEPROM_FULL = 249;   //0.25s.
-//    const int Compare_EEPROM_FULL =124;  //0.125s.
     /*
     // definition of a period and compare variable
     */
