@@ -184,7 +184,7 @@ int main(void) {
            
            for ( n = 0; n < 54*PacketInEEPROM ; n+=54)
             {
-                for(w=0; w<54;w+=4)
+                for(w=0; w<54;w+=6)
                 {
                    //Reading EEPROM packets
                     EEPROM_readPage(FIRST_EEPROM_REG+q+samples_read,(uint8_t*)&Packet_Read[w],6);

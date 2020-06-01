@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
   28:Generated_Source\PSoC5/SPIM_2.c ****     volatile uint8 SPIM_2_rxBuffer[SPIM_2_RX_BUFFER_SIZE];
   29:Generated_Source\PSoC5/SPIM_2.c ****     volatile uint8 SPIM_2_rxBufferFull;
   30:Generated_Source\PSoC5/SPIM_2.c ****     volatile uint8 SPIM_2_rxBufferRead;
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 2
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 2
 
 
   31:Generated_Source\PSoC5/SPIM_2.c ****     volatile uint8 SPIM_2_rxBufferWrite;
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
   85:Generated_Source\PSoC5/SPIM_2.c ****     #if(SPIM_2_RX_SOFTWARE_BUF_ENABLED)
   86:Generated_Source\PSoC5/SPIM_2.c ****         SPIM_2_rxBufferFull  = 0u;
   87:Generated_Source\PSoC5/SPIM_2.c ****         SPIM_2_rxBufferRead  = 0u;
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 3
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 3
 
 
   88:Generated_Source\PSoC5/SPIM_2.c ****         SPIM_2_rxBufferWrite = 0u;
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  142:Generated_Source\PSoC5/SPIM_2.c **** *
  143:Generated_Source\PSoC5/SPIM_2.c **** * Summary:
  144:Generated_Source\PSoC5/SPIM_2.c **** *  Initialize and Enable the SPI Master component.
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 4
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 4
 
 
  145:Generated_Source\PSoC5/SPIM_2.c **** *
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  199:Generated_Source\PSoC5/SPIM_2.c ****     CyExitCriticalSection(enableInterrupts);
  200:Generated_Source\PSoC5/SPIM_2.c **** 
  201:Generated_Source\PSoC5/SPIM_2.c ****     #if(0u != SPIM_2_INTERNAL_CLOCK)
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 5
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 5
 
 
  202:Generated_Source\PSoC5/SPIM_2.c ****         SPIM_2_IntClock_Disable();
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  231:Generated_Source\PSoC5/SPIM_2.c ****     #endif /* (0u != SPIM_2_INTERNAL_TX_INT_ENABLED) */
  232:Generated_Source\PSoC5/SPIM_2.c **** }
  233:Generated_Source\PSoC5/SPIM_2.c **** 
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 6
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 6
 
 
  234:Generated_Source\PSoC5/SPIM_2.c **** 
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
   84              		.cfi_offset 3, -8
   85              		.cfi_offset 14, -4
  124:Generated_Source\PSoC5/SPIM_2.c ****     SPIM_2_COUNTER_CONTROL_REG |= SPIM_2_CNTR_ENABLE;
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 7
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 7
 
 
   86              		.loc 1 124 0
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  257:Generated_Source\PSoC5/SPIM_2.c **** }
  258:Generated_Source\PSoC5/SPIM_2.c **** 
  259:Generated_Source\PSoC5/SPIM_2.c **** 
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 8
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 8
 
 
  260:Generated_Source\PSoC5/SPIM_2.c **** /*******************************************************************************
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  289:Generated_Source\PSoC5/SPIM_2.c **** * Summary:
  290:Generated_Source\PSoC5/SPIM_2.c **** *  Disable internal Rx interrupt generation.
  291:Generated_Source\PSoC5/SPIM_2.c **** *
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 9
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 9
 
 
  292:Generated_Source\PSoC5/SPIM_2.c **** * Parameters:
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  194 0006 094A     		ldr	r2, .L19
  195 0008 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
  196 000a 03F0EF03 		and	r3, r3, #239
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 10
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 10
 
 
  197 000e 1370     		strb	r3, [r2]
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  321:Generated_Source\PSoC5/SPIM_2.c **** * Return:
  322:Generated_Source\PSoC5/SPIM_2.c **** *  None.
  323:Generated_Source\PSoC5/SPIM_2.c **** *
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 11
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 11
 
 
  324:Generated_Source\PSoC5/SPIM_2.c **** * Theory:
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  353:Generated_Source\PSoC5/SPIM_2.c **** {
  256              		.loc 1 353 0
  257              		.cfi_startproc
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 12
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 12
 
 
  258              		@ args = 0, pretend = 0, frame = 0
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  385:Generated_Source\PSoC5/SPIM_2.c **** *******************************************************************************/
  386:Generated_Source\PSoC5/SPIM_2.c **** uint8 SPIM_2_ReadTxStatus(void) 
  387:Generated_Source\PSoC5/SPIM_2.c **** {
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 13
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 13
 
 
  281              		.loc 1 387 0
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  316              	.LFE10:
  317              		.size	SPIM_2_ReadTxStatus, .-SPIM_2_ReadTxStatus
  318              		.section	.text.SPIM_2_ReadRxStatus,"ax",%progbits
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 14
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 14
 
 
  319              		.align	2
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  336              	.LVL16:
  444:Generated_Source\PSoC5/SPIM_2.c **** 
  445:Generated_Source\PSoC5/SPIM_2.c ****         tmpStatus = SPIM_2_GET_STATUS_RX(SPIM_2_swStatusRx);
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 15
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 15
 
 
  337              		.loc 1 445 0
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  466:Generated_Source\PSoC5/SPIM_2.c **** *
  467:Generated_Source\PSoC5/SPIM_2.c **** * Parameters:
  468:Generated_Source\PSoC5/SPIM_2.c **** *  txDataByte: The data value to send across the SPI.
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 16
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 16
 
 
  469:Generated_Source\PSoC5/SPIM_2.c **** *
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  388 000c 12B1     		cbz	r2, .L43
  506:Generated_Source\PSoC5/SPIM_2.c ****             {
  507:Generated_Source\PSoC5/SPIM_2.c ****                 tmpTxBufferRead = (SPIM_2_TX_BUFFER_SIZE - 1u);
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 17
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 17
 
 
  508:Generated_Source\PSoC5/SPIM_2.c ****             }
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  426 003e DBB2     		uxtb	r3, r3
  427 0040 9A42     		cmp	r2, r3
  428 0042 07D1     		bne	.L38
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 18
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 18
 
 
  524:Generated_Source\PSoC5/SPIM_2.c ****            (0u != (SPIM_2_swStatusTx & SPIM_2_STS_TX_FIFO_NOT_FULL)))
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  467 007a 0ED1     		bne	.L41
  539:Generated_Source\PSoC5/SPIM_2.c ****             {
  540:Generated_Source\PSoC5/SPIM_2.c ****                 SPIM_2_txBufferRead++;
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 19
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 19
 
 
  468              		.loc 1 540 0
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  509 00b8 00000000 		.word	SPIM_2_txBufferWrite
  510 00bc 67650040 		.word	1073767783
  511 00c0 00000000 		.word	SPIM_2_swStatusTx
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 20
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 20
 
 
  512 00c4 47650040 		.word	1073767751
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  593:Generated_Source\PSoC5/SPIM_2.c **** * Side Effects:
  594:Generated_Source\PSoC5/SPIM_2.c **** *  Will return invalid data if the FIFO is empty. The user should Call
  595:Generated_Source\PSoC5/SPIM_2.c **** *  GetRxBufferSize() and if it returns a non-zero value then it is safe to call
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 21
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 21
 
 
  596:Generated_Source\PSoC5/SPIM_2.c **** *  ReadByte() function.
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  560 002c DBB2     		uxtb	r3, r3
  561 002e 072B     		cmp	r3, #7
  562 0030 06D9     		bls	.L48
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 22
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 22
 
 
  617:Generated_Source\PSoC5/SPIM_2.c ****                 {
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  595 0060 00000000 		.word	SPIM_2_rxBuffer
  596              		.cfi_endproc
  597              	.LFE13:
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 23
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 23
 
 
  598              		.size	SPIM_2_ReadRxData, .-SPIM_2_ReadRxData
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  617              	.LVL36:
  674:Generated_Source\PSoC5/SPIM_2.c **** 
  675:Generated_Source\PSoC5/SPIM_2.c ****         if(SPIM_2_rxBufferRead == SPIM_2_rxBufferWrite)
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 24
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 24
 
 
  618              		.loc 1 675 0
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  661              	.L54:
  662              	.LVL41:
  686:Generated_Source\PSoC5/SPIM_2.c ****         }
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 25
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 25
 
 
  687:Generated_Source\PSoC5/SPIM_2.c **** 
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  718:Generated_Source\PSoC5/SPIM_2.c **** *  SPIM_2_txBufferWrite - used for the account of the bytes which
  719:Generated_Source\PSoC5/SPIM_2.c **** *  have been written down in the TX software buffer.
  720:Generated_Source\PSoC5/SPIM_2.c **** *  SPIM_2_txBufferRead - used for the account of the bytes which
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 26
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 26
 
 
  721:Generated_Source\PSoC5/SPIM_2.c **** *  have been read from the TX software buffer.
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  719 002c 1478     		ldrb	r4, [r2]	@ zero_extendqisi2
  720 002e 1C1B     		subs	r4, r3, r4
  721 0030 E4B2     		uxtb	r4, r4
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 27
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 27
 
 
  722              	.LVL45:
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  746 004a 2046     		mov	r0, r4
  747 004c 10BD     		pop	{r4, pc}
  748              	.LVL51:
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 28
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 28
 
 
  749              	.L66:
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  766              		.cfi_startproc
  767              		@ args = 0, pretend = 0, frame = 0
  768              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 29
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 29
 
 
  769 0000 08B5     		push	{r3, lr}
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  807 0034 00000000 		.word	SPIM_2_rxBufferFull
  808 0038 00000000 		.word	SPIM_2_rxBufferRead
  809 003c 00000000 		.word	SPIM_2_rxBufferWrite
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 30
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 30
 
 
  810              		.cfi_endproc
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  824              		@ frame_needed = 0, uses_anonymous_args = 0
  825 0000 08B5     		push	{r3, lr}
  826              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 31
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 31
 
 
  827              		.cfi_offset 3, -8
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  857              		.loc 1 886 0
  858 002e 084A     		ldr	r2, .L75+16
  859 0030 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 32
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 32
 
 
  860 0032 03F0FB03 		and	r3, r3, #251
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  916:Generated_Source\PSoC5/SPIM_2.c ****     * Function Name: SPIM_2_TxDisable
  917:Generated_Source\PSoC5/SPIM_2.c ****     ********************************************************************************
  918:Generated_Source\PSoC5/SPIM_2.c ****     *
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 33
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 33
 
 
  919:Generated_Source\PSoC5/SPIM_2.c ****     * Summary:
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  893              		.cfi_offset 5, -12
  894              		.cfi_offset 6, -8
  895              		.cfi_offset 14, -4
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 34
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 34
 
 
  896 0002 0646     		mov	r6, r0
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  978:Generated_Source\PSoC5/SPIM_2.c **** /*******************************************************************************
  979:Generated_Source\PSoC5/SPIM_2.c **** * Function Name: SPIM_2_ClearFIFO
  980:Generated_Source\PSoC5/SPIM_2.c **** ********************************************************************************
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 35
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 35
 
 
  981:Generated_Source\PSoC5/SPIM_2.c **** *
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  962 001a 42F00102 		orr	r2, r2, #1
  963 001e 1A70     		strb	r2, [r3]
 1008:Generated_Source\PSoC5/SPIM_2.c ****     SPIM_2_AUX_CONTROL_DP0_REG &= ((uint8) ~SPIM_2_TX_FIFO_CLR);
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 36
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 36
 
 
  964              		.loc 1 1008 0
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  1007 0010 0320     		movs	r0, #3
  1008 0012 FFF7FEFF 		bl	CyIntSetPriority
  1009              	.LVL68:
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 37
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 37
 
 
   72:Generated_Source\PSoC5/SPIM_2.c ****     #endif /* (0u != SPIM_2_INTERNAL_TX_INT_ENABLED) */
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  1052              	.LVL73:
   98:Generated_Source\PSoC5/SPIM_2.c **** 
  1053              		.loc 1 98 0
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 38
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 38
 
 
  1054 0054 FFF7FEFF 		bl	SPIM_2_ReadRxStatus
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  1103              	.LVL75:
  168:Generated_Source\PSoC5/SPIM_2.c ****     }
  1104              		.loc 1 168 0
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 39
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 39
 
 
  1105 000c 0122     		movs	r2, #1
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  1131              		@ frame_needed = 0, uses_anonymous_args = 0
  1132 0000 08B5     		push	{r3, lr}
  1133              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 40
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 40
 
 
  1134              		.cfi_offset 3, -8
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  1163 0002 FFF7FEFF 		bl	SPIM_2_DisableTxInt
  1164              	.LVL79:
 1068:Generated_Source\PSoC5/SPIM_2.c ****     SPIM_2_DisableRxInt();
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 41
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 41
 
 
  1165              		.loc 1 1068 0
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  1194              	.L102:
  1195 000e 00BF     		.align	2
  1196              	.L101:
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 42
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 42
 
 
  1197 0010 87650040 		.word	1073767815
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
 1128:Generated_Source\PSoC5/SPIM_2.c **** 
 1129:Generated_Source\PSoC5/SPIM_2.c ****     #if(SPIM_2_TX_SOFTWARE_BUF_ENABLED || SPIM_2_RX_SOFTWARE_BUF_ENABLED)
 1130:Generated_Source\PSoC5/SPIM_2.c **** 
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 43
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 43
 
 
 1131:Generated_Source\PSoC5/SPIM_2.c ****         SPIM_2_DisableInt();
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  1250 0034 10BD     		pop	{r4, pc}
  1251              	.LVL87:
  1252              	.L106:
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 44
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 44
 
 
  1253 0036 00BF     		.align	2
@@ -2622,7 +2622,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  1291 000c DE030000 		.4byte	.LASF70
  1292 0010 0C       		.byte	0xc
  1293 0011 3A000000 		.4byte	.LASF71
- 1294 0015 1C030000 		.4byte	.LASF72
+ 1294 0015 B8010000 		.4byte	.LASF72
  1295 0019 00000000 		.4byte	.Ldebug_ranges0+0
  1296 001d 00000000 		.4byte	0
  1297 0021 00000000 		.4byte	.Ldebug_line0
@@ -2638,13 +2638,13 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  1307 0034 02       		.byte	0x2
  1308 0035 05       		.byte	0x5
  1309 0036 D4030000 		.4byte	.LASF2
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 45
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 45
 
 
  1310 003a 02       		.uleb128 0x2
  1311 003b 02       		.byte	0x2
  1312 003c 07       		.byte	0x7
- 1313 003d 3C020000 		.4byte	.LASF3
+ 1313 003d A2020000 		.4byte	.LASF3
  1314 0041 02       		.uleb128 0x2
  1315 0042 04       		.byte	0x4
  1316 0043 05       		.byte	0x5
@@ -2652,7 +2652,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  1318 0048 02       		.uleb128 0x2
  1319 0049 04       		.byte	0x4
  1320 004a 07       		.byte	0x7
- 1321 004b 0E020000 		.4byte	.LASF5
+ 1321 004b 74020000 		.4byte	.LASF5
  1322 004f 02       		.uleb128 0x2
  1323 0050 08       		.byte	0x8
  1324 0051 05       		.byte	0x5
@@ -2668,7 +2668,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  1334 0064 02       		.uleb128 0x2
  1335 0065 04       		.byte	0x4
  1336 0066 07       		.byte	0x7
- 1337 0067 01020000 		.4byte	.LASF8
+ 1337 0067 67020000 		.4byte	.LASF8
  1338 006b 04       		.uleb128 0x4
  1339 006c 80010000 		.4byte	.LASF9
  1340 0070 02       		.byte	0x2
@@ -2698,11 +2698,11 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  1364 00a0 A4000000 		.4byte	0xa4
  1365 00a4 05       		.uleb128 0x5
  1366 00a5 6B000000 		.4byte	0x6b
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 46
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 46
 
 
  1367 00a9 04       		.uleb128 0x4
- 1368 00aa B8020000 		.4byte	.LASF15
+ 1368 00aa 1E030000 		.4byte	.LASF15
  1369 00ae 02       		.byte	0x2
  1370 00af 9002     		.2byte	0x290
  1371 00b1 B5000000 		.4byte	0xb5
@@ -2711,11 +2711,11 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  1374 00ba 02       		.uleb128 0x2
  1375 00bb 08       		.byte	0x8
  1376 00bc 04       		.byte	0x4
- 1377 00bd E1020000 		.4byte	.LASF16
+ 1377 00bd 47030000 		.4byte	.LASF16
  1378 00c1 02       		.uleb128 0x2
  1379 00c2 04       		.byte	0x4
  1380 00c3 07       		.byte	0x7
- 1381 00c4 BE020000 		.4byte	.LASF17
+ 1381 00c4 24030000 		.4byte	.LASF17
  1382 00c8 06       		.uleb128 0x6
  1383 00c9 AC040000 		.4byte	.LASF18
  1384 00cd 01       		.byte	0x1
@@ -2725,7 +2725,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  1388 00d7 01       		.uleb128 0x1
  1389 00d8 9C       		.byte	0x9c
  1390 00d9 06       		.uleb128 0x6
- 1391 00da ED020000 		.4byte	.LASF19
+ 1391 00da 53030000 		.4byte	.LASF19
  1392 00de 01       		.byte	0x1
  1393 00df FC       		.byte	0xfc
  1394 00e0 00000000 		.4byte	.LFB5
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  1421 0125 DC060000 		.4byte	0x6dc
  1422 0129 09       		.uleb128 0x9
  1423 012a 30000000 		.4byte	.LVL3
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 47
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 47
 
 
  1424 012e C8000000 		.4byte	0xc8
@@ -2767,7 +2767,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  1427 0137 D9000000 		.4byte	0xd9
  1428 013b 00       		.byte	0
  1429 013c 0A       		.uleb128 0xa
- 1430 013d 97020000 		.4byte	.LASF20
+ 1430 013d FD020000 		.4byte	.LASF20
  1431 0141 01       		.byte	0x1
  1432 0142 1501     		.2byte	0x115
  1433 0144 00000000 		.4byte	.LFB6
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  1478 01b7 01       		.byte	0x1
  1479 01b8 4801     		.2byte	0x148
  1480 01ba 00000000 		.4byte	.LFB8
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 48
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 48
 
 
  1481 01be 0C000000 		.4byte	.LFE8-.LFB8
@@ -2826,7 +2826,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  1483 01c3 9C       		.byte	0x9c
  1484 01c4 D7010000 		.4byte	0x1d7
  1485 01c8 0C       		.uleb128 0xc
- 1486 01c9 7C020000 		.4byte	.LASF27
+ 1486 01c9 E2020000 		.4byte	.LASF27
  1487 01cd 01       		.byte	0x1
  1488 01ce 4801     		.2byte	0x148
  1489 01d0 6B000000 		.4byte	0x6b
@@ -2834,7 +2834,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  1491 01d5 50       		.byte	0x50
  1492 01d6 00       		.byte	0
  1493 01d7 0B       		.uleb128 0xb
- 1494 01d8 C7020000 		.4byte	.LASF26
+ 1494 01d8 2D030000 		.4byte	.LASF26
  1495 01dc 01       		.byte	0x1
  1496 01dd 6001     		.2byte	0x160
  1497 01df 00000000 		.4byte	.LFB9
@@ -2843,7 +2843,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  1500 01e8 9C       		.byte	0x9c
  1501 01e9 FC010000 		.4byte	0x1fc
  1502 01ed 0C       		.uleb128 0xc
- 1503 01ee 7C020000 		.4byte	.LASF27
+ 1503 01ee E2020000 		.4byte	.LASF27
  1504 01f2 01       		.byte	0x1
  1505 01f3 6001     		.2byte	0x160
  1506 01f5 6B000000 		.4byte	0x6b
@@ -2851,7 +2851,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  1508 01fa 50       		.byte	0x50
  1509 01fb 00       		.byte	0
  1510 01fc 0D       		.uleb128 0xd
- 1511 01fd 83020000 		.4byte	.LASF29
+ 1511 01fd E9020000 		.4byte	.LASF29
  1512 0201 01       		.byte	0x1
  1513 0202 8201     		.2byte	0x182
  1514 0204 6B000000 		.4byte	0x6b
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  1535 023e 01       		.byte	0x1
  1536 023f B501     		.2byte	0x1b5
  1537 0241 6B000000 		.4byte	0x6b
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 49
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 49
 
 
  1538 0245 00000000 		.4byte	.LFB11
@@ -2900,7 +2900,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  1554 0271 D9000000 		.4byte	0xd9
  1555 0275 00       		.byte	0
  1556 0276 0B       		.uleb128 0xb
- 1557 0277 CC010000 		.4byte	.LASF31
+ 1557 0277 32020000 		.4byte	.LASF31
  1558 027b 01       		.byte	0x1
  1559 027c EE01     		.2byte	0x1ee
  1560 027e 00000000 		.4byte	.LFB12
@@ -2915,7 +2915,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  1569 0294 6B000000 		.4byte	0x6b
  1570 0298 62000000 		.4byte	.LLST4
  1571 029c 0E       		.uleb128 0xe
- 1572 029d 00030000 		.4byte	.LASF33
+ 1572 029d 66030000 		.4byte	.LASF33
  1573 02a1 01       		.byte	0x1
  1574 02a2 F201     		.2byte	0x1f2
  1575 02a4 6B000000 		.4byte	0x6b
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  1592 02d4 01       		.byte	0x1
  1593 02d5 5A02     		.2byte	0x25a
  1594 02d7 6B000000 		.4byte	0x6b
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 50
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 50
 
 
  1595 02db 00000000 		.4byte	.LFB13
@@ -2970,7 +2970,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  1621 0321 9C       		.byte	0x9c
  1622 0322 49030000 		.4byte	0x349
  1623 0326 0E       		.uleb128 0xe
- 1624 0327 37020000 		.4byte	.LASF38
+ 1624 0327 9D020000 		.4byte	.LASF38
  1625 032b 01       		.byte	0x1
  1626 032c 9C02     		.2byte	0x29c
  1627 032e 6B000000 		.4byte	0x6b
@@ -2993,12 +2993,12 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  1644 035e 9C       		.byte	0x9c
  1645 035f 86030000 		.4byte	0x386
  1646 0363 0E       		.uleb128 0xe
- 1647 0364 37020000 		.4byte	.LASF38
+ 1647 0364 9D020000 		.4byte	.LASF38
  1648 0368 01       		.byte	0x1
  1649 0369 D902     		.2byte	0x2d9
  1650 036b 6B000000 		.4byte	0x6b
  1651 036f 2F010000 		.4byte	.LLST9
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 51
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 51
 
 
  1652 0373 09       		.uleb128 0x9
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  1706 0400 C203     		.2byte	0x3c2
  1707 0402 00000000 		.4byte	.LFB18
  1708 0406 1E000000 		.4byte	.LFE18-.LFB18
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 52
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 52
 
 
  1709 040a 01       		.uleb128 0x1
@@ -3077,7 +3077,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  1722 0428 6B000000 		.4byte	0x6b
  1723 042c 89010000 		.4byte	.LLST12
  1724 0430 0E       		.uleb128 0xe
- 1725 0431 73020000 		.4byte	.LASF45
+ 1725 0431 D9020000 		.4byte	.LASF45
  1726 0435 01       		.byte	0x1
  1727 0436 C503     		.2byte	0x3c5
  1728 0438 6B000000 		.4byte	0x6b
@@ -3114,11 +3114,11 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  1759 0489 D1060000 		.4byte	0x6d1
  1760 048d 00       		.byte	0
  1761 048e 07       		.uleb128 0x7
- 1762 048f DF010000 		.4byte	.LASF47
+ 1762 048f 45020000 		.4byte	.LASF47
  1763 0493 01       		.byte	0x1
  1764 0494 3F       		.byte	0x3f
  1765 0495 00000000 		.4byte	.LFB0
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 53
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 53
 
 
  1766 0499 90000000 		.4byte	.LFE0-.LFB0
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  1820 04f9 09       		.uleb128 0x9
  1821 04fa 36000000 		.4byte	.LVL72
  1822 04fe 55040000 		.4byte	0x455
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 54
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 54
 
 
  1823 0502 09       		.uleb128 0x9
@@ -3189,7 +3189,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  1828 0510 39020000 		.4byte	0x239
  1829 0514 00       		.byte	0
  1830 0515 07       		.uleb128 0x7
- 1831 0516 AB020000 		.4byte	.LASF48
+ 1831 0516 11030000 		.4byte	.LASF48
  1832 051a 01       		.byte	0x1
  1833 051b A3       		.byte	0xa3
  1834 051c 00000000 		.4byte	.LFB2
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  1877 058e 00       		.byte	0
  1878 058f 0B       		.uleb128 0xb
  1879 0590 94000000 		.4byte	.LASF51
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 55
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 55
 
 
  1880 0594 01       		.byte	0x1
@@ -3249,7 +3249,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  1885 05a0 9C       		.byte	0x9c
  1886 05a1 B4050000 		.4byte	0x5b4
  1887 05a5 0C       		.uleb128 0xc
- 1888 05a6 7C020000 		.4byte	.LASF27
+ 1888 05a6 E2020000 		.4byte	.LASF27
  1889 05aa 01       		.byte	0x1
  1890 05ab 4204     		.2byte	0x442
  1891 05ad 6B000000 		.4byte	0x6b
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  1934 0613 14       		.uleb128 0x14
  1935 0614 C2030000 		.4byte	.LASF55
  1936 0618 01       		.byte	0x1
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 56
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 56
 
 
  1937 0619 25       		.byte	0x25
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  1991 068e 05       		.uleb128 0x5
  1992 068f 24060000 		.4byte	0x624
  1993 0693 14       		.uleb128 0x14
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 57
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 57
 
 
  1994 0694 03050000 		.4byte	.LASF61
@@ -3369,7 +3369,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  1999 069f 03       		.byte	0x3
  2000 06a0 00000000 		.4byte	SPIM_2_rxBufferRead
  2001 06a4 14       		.uleb128 0x14
- 2002 06a5 4F020000 		.4byte	.LASF62
+ 2002 06a5 B5020000 		.4byte	.LASF62
  2003 06a9 01       		.byte	0x1
  2004 06aa 1F       		.byte	0x1f
  2005 06ab A4000000 		.4byte	0xa4
@@ -3377,7 +3377,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  2007 06b0 03       		.byte	0x3
  2008 06b1 00000000 		.4byte	SPIM_2_rxBufferWrite
  2009 06b5 14       		.uleb128 0x14
- 2010 06b6 B8010000 		.4byte	.LASF63
+ 2010 06b6 1E020000 		.4byte	.LASF63
  2011 06ba 01       		.byte	0x1
  2012 06bb 1D       		.byte	0x1d
  2013 06bc A4000000 		.4byte	0xa4
@@ -3385,8 +3385,8 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  2015 06c1 03       		.byte	0x3
  2016 06c2 00000000 		.4byte	SPIM_2_rxBufferFull
  2017 06c6 17       		.uleb128 0x17
- 2018 06c7 20020000 		.4byte	.LASF64
- 2019 06cb 20020000 		.4byte	.LASF64
+ 2018 06c7 86020000 		.4byte	.LASF64
+ 2019 06cb 86020000 		.4byte	.LASF64
  2020 06cf 03       		.byte	0x3
  2021 06d0 7D       		.byte	0x7d
  2022 06d1 17       		.uleb128 0x17
@@ -3395,8 +3395,8 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  2025 06da 03       		.byte	0x3
  2026 06db 7E       		.byte	0x7e
  2027 06dc 17       		.uleb128 0x17
- 2028 06dd EB010000 		.4byte	.LASF66
- 2029 06e1 EB010000 		.4byte	.LASF66
+ 2028 06dd 51020000 		.4byte	.LASF66
+ 2029 06e1 51020000 		.4byte	.LASF66
  2030 06e5 04       		.byte	0x4
  2031 06e6 27       		.byte	0x27
  2032 06e7 17       		.uleb128 0x17
@@ -3405,20 +3405,20 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  2035 06f0 04       		.byte	0x4
  2036 06f1 28       		.byte	0x28
  2037 06f2 17       		.uleb128 0x17
- 2038 06f3 0B030000 		.4byte	.LASF68
- 2039 06f7 0B030000 		.4byte	.LASF68
+ 2038 06f3 71030000 		.4byte	.LASF68
+ 2039 06f7 71030000 		.4byte	.LASF68
  2040 06fb 03       		.byte	0x3
  2041 06fc 8B       		.byte	0x8b
  2042 06fd 17       		.uleb128 0x17
- 2043 06fe 64020000 		.4byte	.LASF69
- 2044 0702 64020000 		.4byte	.LASF69
+ 2043 06fe CA020000 		.4byte	.LASF69
+ 2044 0702 CA020000 		.4byte	.LASF69
  2045 0706 03       		.byte	0x3
  2046 0707 88       		.byte	0x88
  2047 0708 00       		.byte	0
  2048              		.section	.debug_abbrev,"",%progbits
  2049              	.Ldebug_abbrev0:
  2050 0000 01       		.uleb128 0x1
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 58
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 58
 
 
  2051 0001 11       		.uleb128 0x11
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  2105 0037 35       		.uleb128 0x35
  2106 0038 00       		.byte	0
  2107 0039 49       		.uleb128 0x49
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 59
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 59
 
 
  2108 003a 13       		.uleb128 0x13
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  2162 0072 03       		.uleb128 0x3
  2163 0073 0E       		.uleb128 0xe
  2164 0074 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 60
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 60
 
 
  2165 0075 0B       		.uleb128 0xb
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  2219 00ae 11       		.uleb128 0x11
  2220 00af 01       		.uleb128 0x1
  2221 00b0 12       		.uleb128 0x12
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 61
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 61
 
 
  2222 00b1 06       		.uleb128 0x6
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  2276 00e9 03       		.uleb128 0x3
  2277 00ea 0E       		.uleb128 0xe
  2278 00eb 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 62
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 62
 
 
  2279 00ec 0B       		.uleb128 0xb
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  2333 0126 02       		.uleb128 0x2
  2334 0127 18       		.uleb128 0x18
  2335 0128 9142     		.uleb128 0x2111
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 63
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 63
 
 
  2336 012a 18       		.uleb128 0x18
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  2390 0160 00       		.byte	0
  2391 0161 00       		.byte	0
  2392              		.section	.debug_loc,"",%progbits
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 64
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 64
 
 
  2393              	.Ldebug_loc0:
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  2447 008b 0100     		.2byte	0x1
  2448 008d 53       		.byte	0x53
  2449 008e 36000000 		.4byte	.LVL27
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 65
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 65
 
 
  2450 0092 52000000 		.4byte	.LVL28
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  2504 0127 00000000 		.4byte	0
  2505 012b 00000000 		.4byte	0
  2506              	.LLST9:
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 66
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 66
 
 
  2507 012f 32000000 		.4byte	.LVL45
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  2561 01c2 12000000 		.4byte	.LVL62
  2562 01c6 0100     		.2byte	0x1
  2563 01c8 55       		.byte	0x55
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 67
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 67
 
 
  2564 01c9 14000000 		.4byte	.LVL63
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  2618 0068 00000000 		.4byte	.LFB13
  2619 006c 64000000 		.4byte	.LFE13-.LFB13
  2620 0070 00000000 		.4byte	.LFB14
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 68
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 68
 
 
  2621 0074 58000000 		.4byte	.LFE14-.LFB14
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  2675 006c 58000000 		.4byte	.LFE15
  2676 0070 00000000 		.4byte	.LFB16
  2677 0074 40000000 		.4byte	.LFE16
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 69
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 69
 
 
  2678 0078 00000000 		.4byte	.LFB17
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  2710      78537461 
  2710      74757300 
  2711              	.LASF49:
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 70
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 70
 
 
  2712 006e 5350494D 		.ascii	"SPIM_2_EnableInt\000"
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  2732 011c 5350494D 		.ascii	"SPIM_2_DisableInt\000"
  2732      5F325F44 
  2732      69736162 
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 71
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 71
 
 
  2732      6C65496E 
@@ -4249,144 +4249,144 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  2751              	.LASF10:
  2752 01b1 75696E74 		.ascii	"uint32\000"
  2752      333200
- 2753              	.LASF63:
- 2754 01b8 5350494D 		.ascii	"SPIM_2_rxBufferFull\000"
- 2754      5F325F72 
- 2754      78427566 
- 2754      66657246 
- 2754      756C6C00 
- 2755              	.LASF31:
- 2756 01cc 5350494D 		.ascii	"SPIM_2_WriteTxData\000"
- 2756      5F325F57 
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 72
+ 2753              	.LASF72:
+ 2754 01b8 433A5C55 		.ascii	"C:\\Users\\gaeta\\Documents\\PSoC Creator\\PsoC_Fin"
+ 2754      73657273 
+ 2754      5C676165 
+ 2754      74615C44 
+ 2754      6F63756D 
+ 2755 01e6 616C5F50 		.ascii	"al_Project_1_03\\FIORANI_GARGIULO_IANNUZZI_Project."
+ 2755      726F6A65 
+ 2755      63745F31 
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 72
 
 
- 2756      72697465 
- 2756      54784461 
- 2756      746100
- 2757              	.LASF47:
- 2758 01df 5350494D 		.ascii	"SPIM_2_Init\000"
- 2758      5F325F49 
- 2758      6E697400 
- 2759              	.LASF66:
- 2760 01eb 5350494D 		.ascii	"SPIM_2_IntClock_Start\000"
- 2760      5F325F49 
- 2760      6E74436C 
- 2760      6F636B5F 
- 2760      53746172 
- 2761              	.LASF8:
- 2762 0201 756E7369 		.ascii	"unsigned int\000"
- 2762      676E6564 
- 2762      20696E74 
- 2762      00
- 2763              	.LASF5:
- 2764 020e 6C6F6E67 		.ascii	"long unsigned int\000"
- 2764      20756E73 
- 2764      69676E65 
- 2764      6420696E 
- 2764      7400
- 2765              	.LASF64:
- 2766 0220 4379456E 		.ascii	"CyEnterCriticalSection\000"
- 2766      74657243 
- 2766      72697469 
- 2766      63616C53 
- 2766      65637469 
- 2767              	.LASF38:
- 2768 0237 73697A65 		.ascii	"size\000"
- 2768      00
- 2769              	.LASF3:
- 2770 023c 73686F72 		.ascii	"short unsigned int\000"
- 2770      7420756E 
- 2770      7369676E 
- 2770      65642069 
- 2770      6E7400
- 2771              	.LASF62:
- 2772 024f 5350494D 		.ascii	"SPIM_2_rxBufferWrite\000"
- 2772      5F325F72 
- 2772      78427566 
- 2772      66657257 
- 2772      72697465 
- 2773              	.LASF69:
- 2774 0264 4379496E 		.ascii	"CyIntSetVector\000"
- 2774      74536574 
- 2774      56656374 
- 2774      6F7200
- 2775              	.LASF45:
- 2776 0273 62756649 		.ascii	"bufIndex\000"
- 2776      6E646578 
- 2776      00
- 2777              	.LASF27:
- 2778 027c 696E7453 		.ascii	"intSrc\000"
- 2778      726300
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 73
+ 2755      5F30335C 
+ 2755      46494F52 
+ 2756 0218 63796473 		.ascii	"cydsn\000"
+ 2756      6E00
+ 2757              	.LASF63:
+ 2758 021e 5350494D 		.ascii	"SPIM_2_rxBufferFull\000"
+ 2758      5F325F72 
+ 2758      78427566 
+ 2758      66657246 
+ 2758      756C6C00 
+ 2759              	.LASF31:
+ 2760 0232 5350494D 		.ascii	"SPIM_2_WriteTxData\000"
+ 2760      5F325F57 
+ 2760      72697465 
+ 2760      54784461 
+ 2760      746100
+ 2761              	.LASF47:
+ 2762 0245 5350494D 		.ascii	"SPIM_2_Init\000"
+ 2762      5F325F49 
+ 2762      6E697400 
+ 2763              	.LASF66:
+ 2764 0251 5350494D 		.ascii	"SPIM_2_IntClock_Start\000"
+ 2764      5F325F49 
+ 2764      6E74436C 
+ 2764      6F636B5F 
+ 2764      53746172 
+ 2765              	.LASF8:
+ 2766 0267 756E7369 		.ascii	"unsigned int\000"
+ 2766      676E6564 
+ 2766      20696E74 
+ 2766      00
+ 2767              	.LASF5:
+ 2768 0274 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2768      20756E73 
+ 2768      69676E65 
+ 2768      6420696E 
+ 2768      7400
+ 2769              	.LASF64:
+ 2770 0286 4379456E 		.ascii	"CyEnterCriticalSection\000"
+ 2770      74657243 
+ 2770      72697469 
+ 2770      63616C53 
+ 2770      65637469 
+ 2771              	.LASF38:
+ 2772 029d 73697A65 		.ascii	"size\000"
+ 2772      00
+ 2773              	.LASF3:
+ 2774 02a2 73686F72 		.ascii	"short unsigned int\000"
+ 2774      7420756E 
+ 2774      7369676E 
+ 2774      65642069 
+ 2774      6E7400
+ 2775              	.LASF62:
+ 2776 02b5 5350494D 		.ascii	"SPIM_2_rxBufferWrite\000"
+ 2776      5F325F72 
+ 2776      78427566 
+ 2776      66657257 
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 73
 
 
- 2779              	.LASF29:
- 2780 0283 5350494D 		.ascii	"SPIM_2_ReadTxStatus\000"
- 2780      5F325F52 
- 2780      65616454 
- 2780      78537461 
- 2780      74757300 
- 2781              	.LASF20:
- 2782 0297 5350494D 		.ascii	"SPIM_2_DisableTxInt\000"
- 2782      5F325F44 
- 2782      69736162 
- 2782      6C655478 
- 2782      496E7400 
- 2783              	.LASF48:
- 2784 02ab 5350494D 		.ascii	"SPIM_2_Start\000"
- 2784      5F325F53 
- 2784      74617274 
- 2784      00
- 2785              	.LASF15:
- 2786 02b8 72656733 		.ascii	"reg32\000"
- 2786      3200
- 2787              	.LASF17:
- 2788 02be 73697A65 		.ascii	"sizetype\000"
- 2788      74797065 
+ 2776      72697465 
+ 2777              	.LASF69:
+ 2778 02ca 4379496E 		.ascii	"CyIntSetVector\000"
+ 2778      74536574 
+ 2778      56656374 
+ 2778      6F7200
+ 2779              	.LASF45:
+ 2780 02d9 62756649 		.ascii	"bufIndex\000"
+ 2780      6E646578 
+ 2780      00
+ 2781              	.LASF27:
+ 2782 02e2 696E7453 		.ascii	"intSrc\000"
+ 2782      726300
+ 2783              	.LASF29:
+ 2784 02e9 5350494D 		.ascii	"SPIM_2_ReadTxStatus\000"
+ 2784      5F325F52 
+ 2784      65616454 
+ 2784      78537461 
+ 2784      74757300 
+ 2785              	.LASF20:
+ 2786 02fd 5350494D 		.ascii	"SPIM_2_DisableTxInt\000"
+ 2786      5F325F44 
+ 2786      69736162 
+ 2786      6C655478 
+ 2786      496E7400 
+ 2787              	.LASF48:
+ 2788 0311 5350494D 		.ascii	"SPIM_2_Start\000"
+ 2788      5F325F53 
+ 2788      74617274 
  2788      00
- 2789              	.LASF26:
- 2790 02c7 5350494D 		.ascii	"SPIM_2_SetRxInterruptMode\000"
- 2790      5F325F53 
- 2790      65745278 
- 2790      496E7465 
- 2790      72727570 
- 2791              	.LASF16:
- 2792 02e1 6C6F6E67 		.ascii	"long double\000"
- 2792      20646F75 
- 2792      626C6500 
- 2793              	.LASF19:
- 2794 02ed 5350494D 		.ascii	"SPIM_2_EnableRxInt\000"
- 2794      5F325F45 
- 2794      6E61626C 
- 2794      65527849 
- 2794      6E7400
- 2795              	.LASF33:
- 2796 0300 74656D70 		.ascii	"tempStatus\000"
- 2796      53746174 
- 2796      757300
- 2797              	.LASF68:
- 2798 030b 4379496E 		.ascii	"CyIntSetPriority\000"
- 2798      74536574 
- 2798      5072696F 
- 2798      72697479 
- 2798      00
- 2799              	.LASF72:
- 2800 031c 433A5C55 		.ascii	"C:\\Users\\aless\\Documents\\PSoC Creator\\PsoC_Fin"
- 2800      73657273 
- 2800      5C616C65 
- 2800      73735C44 
- 2800      6F63756D 
- 2801 034a 616C5F50 		.ascii	"al_Project_1_03\\FIORANI_GARGIULO_IANNUZZI_Project."
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 74
+ 2789              	.LASF15:
+ 2790 031e 72656733 		.ascii	"reg32\000"
+ 2790      3200
+ 2791              	.LASF17:
+ 2792 0324 73697A65 		.ascii	"sizetype\000"
+ 2792      74797065 
+ 2792      00
+ 2793              	.LASF26:
+ 2794 032d 5350494D 		.ascii	"SPIM_2_SetRxInterruptMode\000"
+ 2794      5F325F53 
+ 2794      65745278 
+ 2794      496E7465 
+ 2794      72727570 
+ 2795              	.LASF16:
+ 2796 0347 6C6F6E67 		.ascii	"long double\000"
+ 2796      20646F75 
+ 2796      626C6500 
+ 2797              	.LASF19:
+ 2798 0353 5350494D 		.ascii	"SPIM_2_EnableRxInt\000"
+ 2798      5F325F45 
+ 2798      6E61626C 
+ 2798      65527849 
+ 2798      6E7400
+ 2799              	.LASF33:
+ 2800 0366 74656D70 		.ascii	"tempStatus\000"
+ 2800      53746174 
+ 2800      757300
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 74
 
 
- 2801      726F6A65 
- 2801      63745F31 
- 2801      5F30335C 
- 2801      46494F52 
- 2802 037c 63796473 		.ascii	"cydsn\000"
- 2802      6E00
+ 2801              	.LASF68:
+ 2802 0371 4379496E 		.ascii	"CyIntSetPriority\000"
+ 2802      74536574 
+ 2802      5072696F 
+ 2802      72697479 
+ 2802      00
  2803              	.LASF11:
  2804 0382 666C6F61 		.ascii	"float\000"
  2804      7400
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  2821              	.LASF44:
  2822 046c 62797465 		.ascii	"byteCount\000"
  2822      436F756E 
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 75
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 75
 
 
  2822      7400
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 1
  2844      5F325F53 
  2844      746F7000 
  2845              	.LASF54:
-ARM GAS  C:\Users\aless\AppData\Local\Temp\ccUGSRok.s 			page 76
+ARM GAS  C:\Users\gaeta\AppData\Local\Temp\ccAHJ9O6.s 			page 76
 
 
  2846 0523 5350494D 		.ascii	"SPIM_2_swStatusTx\000"
